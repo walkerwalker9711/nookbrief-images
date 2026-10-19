@@ -1,0 +1,3 @@
+usbc-cable-60w-240w-01-cover.png | 01 | Two USB-C cables beside a closed laptop, with a subtle teal glow along the braided cable.
+usbc-cable-60w-240w-02-body.png | 02 | Three differently sized adapters connected to laptop silhouettes with progressively thicker cables.
+usbc-cable-60w-240w-03-body.png | 03 | A hand inspecting a USB-C connector housing beside a magnifying glass.
