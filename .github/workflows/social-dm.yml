@@ -1,0 +1,30 @@
+name: social-dm
+# Every 15 minutes: DM the guide link to people who comment the keyword on a Reel.
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: social-state
+  cancel-in-progress: false
+jobs:
+  dm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install requests==2.32.3
+      - name: Reply to comments
+        working-directory: scripts/social
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python ig_dm.py
+      - name: Save sent list
+        run: |
+          git config user.name "nookbrief-bot"
+          git config user.email "nookbrief-bot@users.noreply.github.com"
+          git add social/state
+          git diff --cached --quiet || (git commit -m "social: dm log" && git pull --rebase && git push)
