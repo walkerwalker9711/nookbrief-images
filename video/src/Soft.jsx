@@ -81,15 +81,17 @@ const Product = ({s}) => {
 
 const Scene = ({s, i}) => {
   const f = useCurrentFrame();
-  const fadeIn = interpolate(f, [0, 8], [0, 1], {extrapolateRight: 'clamp'});
+  const fadeIn = interpolate(f, [0, 6], [0.35, 1], {extrapolateRight: 'clamp'});
   return <AbsoluteFill style={{opacity: i ? fadeIn : 1, background: INK}}>
     {s.kind === 'product' ? <Product s={s} /> : s.img ? <Still img={s.img} i={i} blur={s.kind === 'cta' ? 16 : 0} /> : null}
     {s.kind === 'cta' && <AbsoluteFill style={{background: 'rgba(23,35,31,.35)'}} />}
+    {s.title && <AbsoluteFill style={{background: 'linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,0) 35%)'}} />}
     {s.title && <Kicker text={s.title} />}
     {s.kind === 'cta' && s.big && <div style={{position: 'absolute', top: 820, width: '100%', textAlign: 'center',
       fontFamily: serif, fontSize: 110, color: 'white'}}>{s.big}</div>}
     {s.kind === 'cta' && s.foot && <div style={{position: 'absolute', bottom: 100, width: '100%', textAlign: 'center',
       padding: '0 80px', fontFamily: sans, fontSize: 30, color: 'rgba(255,255,255,.75)'}}>{s.foot}</div>}
+    <AbsoluteFill style={{background: 'linear-gradient(rgba(0,0,0,0) 65%, rgba(0,0,0,.45))'}} />
     {s.words && s.kind !== 'cta' && <Caption words={s.words} />}
     {s.vo && <Audio src={staticFile(s.vo)} />}
   </AbsoluteFill>;
