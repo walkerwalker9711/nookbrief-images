@@ -37,6 +37,8 @@ def main():
         text = ig["dm"].replace("{link}", link)
         comments = call("GET", f"{IG}/{media['media_id']}/comments",
                         params={"fields": "id,text,timestamp", "limit": 50, "access_token": tok}).get("data", [])
+        hits = sum(1 for c in comments if pattern.search(c.get("text", "")))
+        print(item["topic"], "media", media["media_id"], "comments:", len(comments), "keyword hits:", hits)
         for c in comments:
             if c["id"] in sent or not pattern.search(c.get("text", "")):
                 continue
