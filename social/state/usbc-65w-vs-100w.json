@@ -9,5 +9,8 @@
     "post_id": "18156815002524324",
     "reply_id": "18172577305416030"
   },
-  "youtube": "skipped: YouTube secrets not set"
+  "youtube": {
+    "video_id": "CdvbRuMcKzA",
+    "privacy": "public"
+  }
 }
