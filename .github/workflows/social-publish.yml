@@ -1,0 +1,41 @@
+name: social-publish
+# Posts approved short videos to Pinterest, Instagram Reels and Threads.
+on:
+  push:
+    branches: [main]
+    paths: ["social/queue/**"]
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Only this topic (optional)"
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: social-state
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install requests==2.32.3
+      - name: Publish
+        working-directory: scripts/social
+        env:
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+        run: python publish.py ${{ inputs.topic }}
+      - name: Save results
+        if: always()
+        run: |
+          git config user.name "nookbrief-bot"
+          git config user.email "nookbrief-bot@users.noreply.github.com"
+          git add social/state
+          git diff --cached --quiet || (git commit -m "social: publish results" && git pull --rebase && git push)
