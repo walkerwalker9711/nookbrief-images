@@ -146,9 +146,12 @@ def main(only=None):
         sf = STATE / qf.name
         st = load(sf, {})
         item["_video_path"] = {k: str(ROOT / v) for k, v in item["video"].items()}
-        for k, v in item["video"].items():  # what Meta/Pinterest will see when they fetch the video
-            r = requests.head(cdn(v), allow_redirects=True, timeout=60)
-            print(qf.stem, "video", k, r.status_code, r.headers.get("content-type"), r.headers.get("content-length"))
+        for k, v in item["video"].items():  # what Meta/Pinterest will see when they fetch the video (info only)
+            try:
+                r = requests.head(cdn(v), allow_redirects=True, timeout=30)
+                print(qf.stem, "video", k, r.status_code, r.headers.get("content-type"), r.headers.get("content-length"))
+            except requests.RequestException as e:
+                print(qf.stem, "video", k, "HEAD failed:", e)
         for name, fn in CHANNELS.items():
             if name not in item or isinstance(st.get(name), dict):
                 continue
