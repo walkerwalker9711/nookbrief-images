@@ -64,13 +64,24 @@ def threads(item, st):
     if not tok:
         return "skipped: THREADS_TOKEN not set"
     me = call("GET", f"{TH}/me", params={"fields": "id", "access_token": tok})["id"]
-    text = item["threads"]["text"].replace("{link}", utm(item["post_url"], "threads", "video", item["topic"]))
-    c = call("POST", f"{TH}/{me}/threads", data={
-        "media_type": "VIDEO", "video_url": cdn(item["video"]["link"]), "text": text, "access_token": tok})["id"]
-    wait_until(lambda: call("GET", f"{TH}/{c}", params={"fields": "status", "access_token": tok})["status"],
-               {"FINISHED"}, {"ERROR", "EXPIRED"})
-    post = call("POST", f"{TH}/{me}/threads_publish", data={"creation_id": c, "access_token": tok})["id"]
-    return {"post_id": post}
+    link = utm(item["post_url"], "threads", "video", item["topic"])
+    th = item["threads"]
+
+    def publish(data):
+        c = call("POST", f"{TH}/{me}/threads", data={**data, "access_token": tok})["id"]
+        wait_until(lambda: call("GET", f"{TH}/{c}", params={"fields": "status", "access_token": tok})["status"],
+                   {"FINISHED"}, {"ERROR", "EXPIRED"})
+        return call("POST", f"{TH}/{me}/threads_publish", data={"creation_id": c, "access_token": tok})["id"]
+
+    # Main post carries the video and a conversational hook; the link goes in our own first reply,
+    # since posts with outbound links tend to get less reach on Threads.
+    post = st.get("threads_post") or publish({"media_type": "VIDEO", "video_url": cdn(item["video"]["link"]),
+                                              "text": th["text"].replace("{link}", link)})
+    st["threads_post"] = post
+    if not th.get("reply"):
+        return {"post_id": post}
+    reply = publish({"media_type": "TEXT", "text": th["reply"].replace("{link}", link), "reply_to_id": post})
+    return {"post_id": post, "reply_id": reply}
 
 
 CHANNELS = {"pinterest": pinterest, "instagram": instagram, "threads": threads}
