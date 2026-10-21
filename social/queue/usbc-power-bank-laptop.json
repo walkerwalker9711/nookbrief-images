@@ -1,0 +1,27 @@
+{
+  "topic": "usbc-power-bank-laptop",
+  "approved": false,
+  "post_url": null,
+  "video": {
+    "ig": "posts/usbc-power-bank-laptop/usbc-power-bank-laptop-short-ig.mp4",
+    "link": "posts/usbc-power-bank-laptop/usbc-power-bank-laptop-short-link.mp4",
+    "blog": "posts/usbc-power-bank-laptop/usbc-power-bank-laptop-short-blog.mp4"
+  },
+  "pinterest": {
+    "board": "USB-C Charging Tips",
+    "title": "Can a Power Bank Charge Your Laptop? Check This One Number",
+    "description": "Match one USB-C port's watts to your laptop charger, and stay under 100Wh for flights. Illustrations are AI-generated. #CommissionsEarned"
+  },
+  "instagram": {
+    "caption": "Most USB-C laptops can charge from a power bank. The number that matters isn't the mAh. It's the watts from one USB-C port. Comment GUIDE and I'll DM you the full breakdown + our picks. Illustrations are AI-generated. #CommissionsEarned #usbc #powerbank #laptop #travel",
+    "keywords": [
+      "GUIDE",
+      "LINK"
+    ],
+    "dm": "Here's the full guide: {link}\n\nOur picks are in the boxes near the end. As an Amazon Associate I earn from qualifying purchases.",
+    "public_reply": "Sent! Check your DMs 📬"
+  },
+  "threads": {
+    "text": "Can a power bank charge your laptop? Usually, if one USB-C port matches your laptop charger's watts. mAh tells you how long it lasts, not how fast it charges. Full breakdown + our picks: {link} Illustrations are AI-generated. #CommissionsEarned"
+  }
+}
