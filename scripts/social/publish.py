@@ -1,15 +1,16 @@
-"""Publish approved NookBrief short videos to Pinterest, Instagram Reels and Threads.
+"""Publish approved NookBrief short videos to Pinterest, Instagram Reels, Threads and YouTube Shorts.
 
 Reads social/queue/<topic>.json. A topic is published only when "approved" is true.
 Each channel runs once per topic; results go to social/state/<topic>.json, so re-runs skip
 what is already live. A channel whose secrets are missing is skipped, not failed.
 """
+import os
 import sys
 import time
 
 import requests
 
-from common import IG, PIN, QUEUE, ROOT, STATE, TH, call, cdn, env, load, save, utm, wait_until
+from common import IG, PIN, QUEUE, ROOT, STATE, TH, YT, call, cdn, env, google_token, load, save, utm, wait_until
 
 
 def pinterest(item, st):
@@ -53,8 +54,12 @@ def instagram(item, st):
     c = call("POST", f"{IG}/{me}/media", data={
         "media_type": "REELS", "video_url": cdn(item["video"]["ig"]),
         "caption": item["instagram"]["caption"], "share_to_feed": "true", "access_token": tok})["id"]
-    wait_until(lambda: call("GET", f"{IG}/{c}", params={"fields": "status_code", "access_token": tok})["status_code"],
-               {"FINISHED"}, {"ERROR", "EXPIRED"})
+    try:
+        wait_until(lambda: call("GET", f"{IG}/{c}", params={"fields": "status_code", "access_token": tok})["status_code"],
+                   {"FINISHED"}, {"ERROR", "EXPIRED"})
+    except RuntimeError as e:  # "status" carries Meta's reason, e.g. a video it could not fetch or decode
+        why = call("GET", f"{IG}/{c}", params={"fields": "status", "access_token": tok}).get("status")
+        raise RuntimeError(f"{e} ({why})") from None
     media = call("POST", f"{IG}/{me}/media_publish", data={"creation_id": c, "access_token": tok})["id"]
     return {"media_id": media, "published_at": int(time.time())}
 
@@ -69,8 +74,12 @@ def threads(item, st):
 
     def publish(data):
         c = call("POST", f"{TH}/{me}/threads", data={**data, "access_token": tok})["id"]
-        wait_until(lambda: call("GET", f"{TH}/{c}", params={"fields": "status", "access_token": tok})["status"],
-                   {"FINISHED"}, {"ERROR", "EXPIRED"})
+        try:
+            wait_until(lambda: call("GET", f"{TH}/{c}", params={"fields": "status", "access_token": tok})["status"],
+                       {"FINISHED"}, {"ERROR", "EXPIRED"})
+        except RuntimeError as e:
+            why = call("GET", f"{TH}/{c}", params={"fields": "error_message", "access_token": tok}).get("error_message")
+            raise RuntimeError(f"{e} ({why})") from None
         return call("POST", f"{TH}/{me}/threads_publish", data={"creation_id": c, "access_token": tok})["id"]
 
     # Main post carries the video and a conversational hook; the link goes in our own first reply,
@@ -84,7 +93,34 @@ def threads(item, st):
     return {"post_id": post, "reply_id": reply}
 
 
-CHANNELS = {"pinterest": pinterest, "instagram": instagram, "threads": threads}
+def youtube(item, st):
+    tok = google_token()
+    if not tok:
+        return "skipped: YouTube secrets not set"
+    y = item["youtube"]
+    meta = {
+        "snippet": {"title": y["title"][:100], "description": y["description"][:5000],
+                    "tags": y.get("tags", []), "categoryId": y.get("category", "26")},  # 26 = Howto & Style
+        # Photo-like AI stills count as realistic synthetic media, so YouTube wants the label on.
+        "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True},
+    }
+    path = item["_video_path"].get("yt") or item["_video_path"]["link"]
+    size = os.path.getsize(path)
+    r = requests.post(f"{YT}/upload/youtube/v3/videos", params={"uploadType": "resumable", "part": "snippet,status"},
+                      headers={"Authorization": f"Bearer {tok}", "X-Upload-Content-Type": "video/mp4",
+                               "X-Upload-Content-Length": str(size)}, json=meta, timeout=60)
+    if r.status_code >= 300:
+        raise RuntimeError(f"YouTube upload start -> {r.status_code}: {r.text[:300]}")
+    with open(path, "rb") as f:
+        up = requests.put(r.headers["Location"], data=f, headers={"Content-Type": "video/mp4"}, timeout=600)
+    if up.status_code >= 300:
+        raise RuntimeError(f"YouTube upload -> {up.status_code}: {up.text[:300]}")
+    v = up.json()
+    # Uploads from an API project that has not passed YouTube's audit are locked to private.
+    return {"video_id": v["id"], "privacy": v.get("status", {}).get("privacyStatus")}
+
+
+CHANNELS = {"pinterest": pinterest, "instagram": instagram, "threads": threads, "youtube": youtube}
 
 
 def main(only=None):
@@ -96,6 +132,9 @@ def main(only=None):
         sf = STATE / qf.name
         st = load(sf, {})
         item["_video_path"] = {k: str(ROOT / v) for k, v in item["video"].items()}
+        for k, v in item["video"].items():  # what Meta/Pinterest will see when they fetch the video
+            r = requests.head(cdn(v), allow_redirects=True, timeout=60)
+            print(qf.stem, "video", k, r.status_code, r.headers.get("content-type"), r.headers.get("content-length"))
         for name, fn in CHANNELS.items():
             if name not in item or isinstance(st.get(name), dict):
                 continue

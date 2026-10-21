@@ -5,7 +5,8 @@
   "video": {
     "ig": "posts/usbc-65w-vs-100w/usbc-65w-vs-100w-short-ig.mp4",
     "link": "posts/usbc-65w-vs-100w/usbc-65w-vs-100w-short-link.mp4",
-    "blog": "posts/usbc-65w-vs-100w/usbc-65w-vs-100w-short-blog.mp4"
+    "blog": "posts/usbc-65w-vs-100w/usbc-65w-vs-100w-short-blog.mp4",
+    "yt": "posts/usbc-65w-vs-100w/usbc-65w-vs-100w-short-yt.mp4"
   },
   "pinterest": {
     "board": "USB-C Charging Tips",
@@ -24,5 +25,17 @@
   "threads": {
     "text": "laptop charging weirdly slow on a 65W brick? check if your phone's plugged into it too. it splits the power, laptop ends up with like 45W\n\nanyone else run everything off one charger? #techtips",
     "reply": "full breakdown + the two we'd pick → {link}\n\nAI voice & visuals · #CommissionsEarned"
+  },
+  "youtube": {
+    "title": "why your 65W charger slows down when your phone's plugged in #shorts",
+    "description": "a 65W two-port charger splits the power. laptop drops to about 45W, phone gets 20. on a 100W one the laptop keeps its 65.\n\nfull breakdown + the two we'd pick: https://nookbrief.blogspot.com/2026/09/65w-vs-100w-usb-c-chargers-which-works.html (also linked on the channel page)\n\nAI voice & visuals. As an Amazon Associate I earn from qualifying purchases. #CommissionsEarned",
+    "tags": [
+      "usb-c charger",
+      "65w vs 100w",
+      "laptop charger",
+      "gan charger",
+      "desk setup",
+      "tech tips"
+    ]
   }
 }

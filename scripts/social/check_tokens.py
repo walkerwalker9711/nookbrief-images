@@ -1,11 +1,11 @@
-"""Weekly check that the Instagram and Threads tokens still work.
+"""Weekly check that the Instagram, Threads and YouTube tokens still work.
 
 Exits non-zero when a token is rejected, so the run fails and GitHub emails the owner.
 (Tokens last 60 days; a new token has to be pasted into the repo secrets before then.)
 """
 import sys
 
-from common import IG, TH, call, env
+from common import IG, TH, YT, call, env, google_token
 
 
 def main():
@@ -20,6 +20,17 @@ def main():
         except RuntimeError as e:
             print(name, "REJECTED:", e)
             bad = True
+    try:
+        tok = google_token()
+        if not tok:
+            print("YT_REFRESH_TOKEN not set")
+        else:
+            ch = call("GET", f"{YT}/youtube/v3/channels", params={"part": "snippet", "mine": "true"},
+                      headers={"Authorization": f"Bearer {tok}"}).get("items", [])
+            print("YT_REFRESH_TOKEN ok:", ch[0]["snippet"]["title"] if ch else "no channel on this account yet")
+    except RuntimeError as e:
+        print("YT_REFRESH_TOKEN REJECTED:", e)
+        bad = True
     return 1 if bad else 0
 
 

@@ -1,5 +1,5 @@
 name: social-tokens
-# Weekly: check that the Instagram and Threads tokens still work.
+# Weekly: check that the Instagram, Threads and YouTube tokens still work.
 # A failed run makes GitHub email the owner.
 on:
   schedule:
@@ -17,4 +17,7 @@ jobs:
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python check_tokens.py

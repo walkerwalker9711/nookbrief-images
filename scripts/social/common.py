@@ -14,6 +14,7 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "walkerwalker9711/nookbrief-images")
 IG = "https://graph.instagram.com/v23.0"
 TH = "https://graph.threads.net/v1.0"
 PIN = "https://api.pinterest.com/v5"
+YT = "https://www.googleapis.com"
 
 
 def cdn(path, sha=None):
@@ -61,3 +62,12 @@ def wait_until(check, done, failed=(), tries=40, delay=15):
 def env(name):
     v = os.environ.get(name, "").strip()
     return v or None
+
+
+def google_token():
+    """Access token for YouTube from the YT_* refresh token secrets, or None when they are not set."""
+    cid, secret, refresh = env("YT_CLIENT_ID"), env("YT_CLIENT_SECRET"), env("YT_REFRESH_TOKEN")
+    if not (cid and secret and refresh):
+        return None
+    return call("POST", "https://oauth2.googleapis.com/token", data={
+        "client_id": cid, "client_secret": secret, "refresh_token": refresh, "grant_type": "refresh_token"})["access_token"]
