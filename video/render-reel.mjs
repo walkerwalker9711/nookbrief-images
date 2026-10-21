@@ -14,26 +14,27 @@ const pub = path.join(here, 'public');
 fs.rmSync(pub, {recursive: true, force: true});
 fs.mkdirSync(pub, {recursive: true});
 fs.copyFileSync(process.env.NB_FONT || '/usr/share/fonts/opentype/inter/InterDisplay-Black.otf', path.join(pub, 'display.otf'));
+fs.copyFileSync(path.join(here, 'fonts/InstrumentSerif-Regular.ttf'), path.join(pub, 'serif.otf'));
 
 const props = JSON.parse(fs.readFileSync(propsPath, 'utf8'));
 const base = path.dirname(path.resolve(propsPath));
-let scenes = props.scenes.map((s, i) => {
-  if (!s.img) return {...s};
-  const src = path.resolve(base, s.img);
-  const name = `img${i}${path.extname(src)}`;
-  fs.copyFileSync(src, path.join(pub, name));
-  return {...s, img: name};
-});
+const copy = (file, name) => {
+  const src = path.resolve(base, file);
+  fs.copyFileSync(src, path.join(pub, name + path.extname(src)));
+  return name + path.extname(src);
+};
+let scenes = props.scenes.map((s, i) => ({...s, ...(s.img && {img: copy(s.img, `img${i}`)}), ...(s.bg && {bg: copy(s.bg, `bg${i}`)})}));
 const cta = (props.cta || {})[variant];
-if (cta) scenes.push({kind: 'cta', ...cta});
+if (cta) scenes.push({kind: 'cta', ...cta, ...(cta.img && {img: copy(cta.img, 'cta')})});
+const id = props.style === 'soft' ? 'Soft' : 'Reel';
 
 const tmp = path.join(pub, 'scenes.json');
-fs.writeFileSync(tmp, JSON.stringify({scenes}));
+fs.writeFileSync(tmp, JSON.stringify({scenes, speed: props.speed, music_style: props.style === 'soft' ? 'lofi' : 'pop'}));
 const timing = JSON.parse(execFileSync('python3', [path.join(here, 'voice.py'), tmp, pub], {encoding: 'utf8'}).trim().split('\n').pop());
 scenes = scenes.map((s, i) => ({...s, ...timing.scenes[i]}));
 
 const serveUrl = await bundle({entryPoint: path.join(here, 'src/index.jsx'), publicDir: pub});
-const opts = {serveUrl, id: 'Reel', inputProps: {scenes, music: timing.music}, browserExecutable: process.env.CHROME || null,
+const opts = {serveUrl, id, inputProps: {scenes, music: timing.music}, browserExecutable: process.env.CHROME || null,
   chromiumOptions: {gl: 'swiftshader'}};
 const composition = await selectComposition(opts);
 const raw = out.replace(/\.mp4$/, '-raw.mp4');

@@ -112,6 +112,52 @@ def music(seconds, bpm=118):
     return out / (np.abs(out).max() + 1e-9) * 0.8
 
 
+def lofi(seconds, bpm=82):
+    """Mellow lo-fi bed: soft kick, rim, swung hats, electric-piano 7th chords with tremolo, vinyl hiss."""
+    n = int(seconds * SR)
+    t = np.arange(n) / SR
+    beat = 60 / bpm
+    out = np.zeros(n)
+    hz = lambda m: 440 * 2 ** ((m - 69) / 12)
+    chords = [[53, 57, 60, 64], [52, 55, 59, 62], [50, 53, 57, 60], [48, 52, 55, 59]]  # Fmaj7 Em7 Dm7 Cmaj7
+    rng = np.random.default_rng(3)
+
+    def hit(start, wave):
+        i = int(start * SR)
+        if i < n:
+            j = min(n, i + len(wave))
+            out[i:j] += wave[:j - i]
+
+    kt = np.arange(int(0.4 * SR)) / SR
+    kick = np.sin(2 * np.pi * (45 * kt + 60 * (1 - np.exp(-kt * 25)) / 25)) * np.exp(-kt * 7) * 0.8
+    rt = np.arange(int(0.12 * SR)) / SR
+    rim = (np.sin(2 * np.pi * 1700 * rt) * 0.3 + rng.standard_normal(len(rt)) * 0.3) * np.exp(-rt * 45) * 0.25
+    ht = np.arange(int(0.04 * SR)) / SR
+    hat = np.diff(rng.standard_normal(len(ht) + 1)) * np.exp(-ht * 110) * 0.07
+    bar = beat * 4
+    b = 0.0
+    while b < seconds:
+        ch = chords[int(b / bar) % 4]
+        for k, off in enumerate((0, 1.5, 2.5)):
+            hit(b + off * beat, kick * (1 if k == 0 else 0.7))
+        hit(b + beat, rim)
+        hit(b + 3 * beat, rim)
+        for k in range(8):
+            hit(b + k * beat / 2 + (beat * 0.12 if k % 2 else 0), hat)
+        ct = np.arange(int(bar * SR)) / SR
+        keys = sum(np.sin(2 * np.pi * hz(m) * ct) + 0.25 * np.sin(4 * np.pi * hz(m) * ct) for m in ch)
+        keys *= (0.75 + 0.25 * np.sin(2 * np.pi * 4.5 * ct)) * np.exp(-ct * 0.6) * 0.06
+        hit(b, keys)
+        bt = np.arange(int(beat * 2 * SR)) / SR
+        hit(b, np.sin(2 * np.pi * hz(ch[0] - 24) * bt) * np.exp(-bt * 1.5) * 0.35)
+        hit(b + beat * 2, np.sin(2 * np.pi * hz(ch[0] - 24) * bt) * np.exp(-bt * 1.5) * 0.3)
+        b += bar
+    out += rng.standard_normal(n) * 0.004
+    fade = np.minimum(1, np.minimum(t / 0.6, (seconds - t) / 1.5))
+    out *= np.clip(fade, 0, 1)
+    return out / (np.abs(out).max() + 1e-9) * 0.8
+
+
 def main(props_path, out_dir):
     props = json.load(open(props_path, encoding="utf-8"))
     os.makedirs(out_dir, exist_ok=True)
@@ -122,14 +168,15 @@ def main(props_path, out_dir):
             scenes.append({"frames": s.get("frames", 60), "words": []})
             total += scenes[-1]["frames"]
             continue
-        audio, sr = tts.create(s["vo"], voice=s.get("voice", VOICE), speed=s.get("speed", 1.25), lang="en-us")
+        audio, sr = tts.create(s["vo"], voice=s.get("voice", VOICE), speed=s.get("speed", props.get("speed", 1.25)), lang="en-us")
         audio = trim(audio)
         sf.write(os.path.join(out_dir, f"vo{i}.wav"), audio, sr)
         sec = len(audio) / sr
         frames = max(int((sec + PAD + s.get("hold", 1.5 if s.get("kind") == "cta" else 0)) * FPS) + 1, s.get("min_frames", 0))
         scenes.append({"frames": frames, "words": word_times(s["vo"], sec), "vo": f"vo{i}.wav"})
         total += frames
-    sf.write(os.path.join(out_dir, "music.wav"), music(total / FPS + 0.5), SR)
+    bed = lofi if props.get("music_style") == "lofi" else music
+    sf.write(os.path.join(out_dir, "music.wav"), bed(total / FPS + 0.5), SR)
     print(json.dumps({"scenes": scenes, "music": "music.wav", "frames": total}))
 
 
