@@ -1,7 +1,7 @@
 """Send the guide link by DM to people who comment the keyword on a NookBrief Reel.
 
 Uses Instagram Private Replies: one DM per comment, within 7 days of the comment.
-Already-answered comment ids are kept in social/state/dm_sent.json.
+Already-answered comment ids are kept in social/state/dm_sent.json for 90 days (as the privacy policy says).
 """
 import calendar
 import re
@@ -12,6 +12,7 @@ from common import IG, QUEUE, STATE, call, env, load, save, utm
 
 WINDOW = 7 * 24 * 3600 - 3600  # stay inside Meta's 7-day limit
 WATCH = 30 * 24 * 3600  # how long after publishing a Reel we keep checking its comments
+KEEP = 90 * 24 * 3600  # privacy policy: answered comment ids are deleted after 90 days
 
 
 def main():
@@ -51,6 +52,7 @@ def main():
                 count += 1
             except RuntimeError as e:
                 print("dm failed", c["id"], e)
+    sent = {k: v for k, v in sent.items() if now - v.get("at", now) < KEEP}
     save(sent_file, sent)
     print("DMs sent:", count)
     return 0
