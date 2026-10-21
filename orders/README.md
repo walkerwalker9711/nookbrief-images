@@ -16,7 +16,9 @@ work order per post in this folder as `orders/<topic_id>.md`. Claude reviews you
 - Use the built-in image generation tool (GPT Image). NEVER draw an image with code
   (no PIL, SVG, canvas, matplotlib, placeholder files). If the image tool is not available, create no
   files and reply `IMAGE_TOOL_UNAVAILABLE`.
-- Size: landscape 1536x1024 PNG. Pick images (numbers 11 and up): square 1024x1024 PNG.
+- Size: landscape 1536x1024 PNG. Pick images (numbers 11-39): square 1024x1024 PNG.
+  Reel images (numbers 41 and up, role `reel`): vertical 1024x1536 PNG, photographic look allowed
+  (soft natural light, shallow depth of field, warm film tones) but devices stay generic.
 - Pick images: one product alone, centered, filling about 70% of the frame, plain warm off-white
   background #FCFBF7, soft shadow under it, slight three-quarter angle so ports or buttons show.
   No scene, no props, no hands.
@@ -26,7 +28,7 @@ work order per post in this folder as `orders/<topic_id>.md`. Claude reviews you
   product. Devices must look generic. No close-up faces (hands are fine, except in picks).
 
 ## File names and location
-- `incoming/<topic_id>/<topic_id>-<number>-<role>.png`, role = `cover` (01), `body` (02-10) or `pick` (11+).
+- `incoming/<topic_id>/<topic_id>-<number>-<role>.png`, role = `cover` (01), `body` (02-10), `pick` (11-39) or `reel` (41+).
   Example: `incoming/gift-wfh-desk/gift-wfh-desk-13-pick.png`.
 - Redo: same name with `-v2` before `.png`.
 - Append to `incoming/<topic_id>/done.txt` (create it if missing; never delete existing lines), one line per image:
