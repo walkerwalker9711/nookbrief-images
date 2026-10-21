@@ -42,6 +42,11 @@ def main():
             try:
                 info = call("GET", f"{IG}/{media['media_id']}", params={"fields": "comments_count", "access_token": tok})
                 print(item["topic"], "comments_count on the Reel:", info.get("comments_count"))
+                if info.get("comments_count"):  # same data through the media node, in case the edge filters it
+                    nested = call("GET", f"{IG}/{media['media_id']}", params={
+                        "fields": "comments.limit(50){id,text,timestamp,username}", "access_token": tok})
+                    comments = (nested.get("comments") or {}).get("data", [])
+                    print(item["topic"], "comments via media node:", len(comments))
             except RuntimeError as e:
                 print(item["topic"], "comments_count check failed:", e)
         print(item["topic"], "media", media["media_id"], "comments:", len(comments), "keyword hits:", hits)
