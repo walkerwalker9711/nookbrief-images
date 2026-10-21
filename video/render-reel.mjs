@@ -39,8 +39,11 @@ const opts = {serveUrl, id, inputProps: {scenes, music: timing.music}, browserEx
 const composition = await selectComposition(opts);
 const raw = out.replace(/\.mp4$/, '-raw.mp4');
 await renderMedia({...opts, composition, codec: 'h264', audioCodec: 'aac', outputLocation: raw});
-// Social apps play around -14 LUFS; bring the mix up to that so it isn't quiet next to other Reels
-execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'copy', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '192k', out]);
+// Social apps play around -14 LUFS; bring the mix up to that so it isn't quiet next to other Reels.
+// Re-encode to ~8 MB: jsDelivr refuses files over 20 MB, and Meta fetches the video from there.
+execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'libx264', '-preset', 'slow', '-crf', '23',
+  '-maxrate', '4500k', '-bufsize', '9000k', '-pix_fmt', 'yuv420p', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11',
+  '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', out]);
 fs.rmSync(raw);
 const coverFrame = Math.min(composition.durationInFrames - 1, (scenes[0].frames || 60) + 20);
 await renderStill({...opts, composition, frame: coverFrame, imageFormat: 'jpeg', output: out.replace(/\.mp4$/, '-cover.jpg')});
