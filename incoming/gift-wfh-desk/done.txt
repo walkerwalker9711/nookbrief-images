@@ -2,3 +2,4 @@ gift-wfh-desk-12-pick.png | 12 | Square LED panel light on an adjustable clip ar
 gift-wfh-desk-15-pick.png | 15 | Slim wireless mouse with a small scroll wheel.
 gift-wfh-desk-17-pick.png | 17 | Aluminum portable SSD with a USB-C port and short cable.
 gift-wfh-desk-18-pick.png | 18 | Black USB-C to USB-C cable with both connectors visible.
+gift-wfh-desk-11-pick.png | 11 | Silver-grey wall charger with two USB-C ports, one USB-A port and folding prongs.
