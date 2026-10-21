@@ -20,7 +20,8 @@ def main():
     if not tok:
         print("skipped: IG_TOKEN not set")
         return 0
-    me = call("GET", f"{IG}/me", params={"fields": "user_id", "access_token": tok})["user_id"]
+    acct = call("GET", f"{IG}/me", params={"fields": "user_id,username", "access_token": tok})
+    me, my_name = acct["user_id"], acct.get("username")
     sent_file = STATE / "dm_sent.json"
     sent = load(sent_file, {})
     now = time.time()
@@ -36,7 +37,7 @@ def main():
         link = utm(item["post_url"], "instagram", "dm", item["topic"])
         text = ig["dm"].replace("{link}", link)
         comments = call("GET", f"{IG}/{media['media_id']}/comments",
-                        params={"fields": "id,text,timestamp", "limit": 50, "access_token": tok}).get("data", [])
+                        params={"fields": "id,text,timestamp,username", "limit": 50, "access_token": tok}).get("data", [])
         hits = sum(1 for c in comments if pattern.search(c.get("text", "")))
         if not comments:  # tell "no comments yet" apart from "comments we are not allowed to see"
             try:
@@ -51,6 +52,9 @@ def main():
                 print(item["topic"], "comments_count check failed:", e)
         print(item["topic"], "media", media["media_id"], "comments:", len(comments), "keyword hits:", hits)
         for c in comments:
+            if c.get("username") == my_name:  # our own comments never get a DM or a reply
+                print(item["topic"], "own comment seen:", c["id"])
+                continue
             if c["id"] in sent or not pattern.search(c.get("text", "")):
                 continue
             ts = calendar.timegm(time.strptime(c["timestamp"][:19], "%Y-%m-%dT%H:%M:%S"))
