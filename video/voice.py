@@ -126,7 +126,7 @@ def main(props_path, out_dir):
         audio = trim(audio)
         sf.write(os.path.join(out_dir, f"vo{i}.wav"), audio, sr)
         sec = len(audio) / sr
-        frames = max(int((sec + PAD) * FPS) + 1, s.get("min_frames", 0))
+        frames = max(int((sec + PAD + s.get("hold", 1.5 if s.get("kind") == "cta" else 0)) * FPS) + 1, s.get("min_frames", 0))
         scenes.append({"frames": frames, "words": word_times(s["vo"], sec), "vo": f"vo{i}.wav"})
         total += frames
     sf.write(os.path.join(out_dir, "music.wav"), music(total / FPS + 0.5), SR)
