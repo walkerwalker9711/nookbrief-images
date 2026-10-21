@@ -64,6 +64,17 @@ def instagram(item, st):
     return {"media_id": media, "published_at": int(time.time())}
 
 
+def th_publish(tok, me, data):
+    c = call("POST", f"{TH}/{me}/threads", data={**data, "access_token": tok})["id"]
+    try:
+        wait_until(lambda: call("GET", f"{TH}/{c}", params={"fields": "status", "access_token": tok})["status"],
+                   {"FINISHED"}, {"ERROR", "EXPIRED"})
+    except RuntimeError as e:
+        why = call("GET", f"{TH}/{c}", params={"fields": "error_message", "access_token": tok}).get("error_message")
+        raise RuntimeError(f"{e} ({why})") from None
+    return call("POST", f"{TH}/{me}/threads_publish", data={"creation_id": c, "access_token": tok})["id"]
+
+
 def threads(item, st):
     tok = env("THREADS_TOKEN")
     if not tok:
@@ -71,26 +82,28 @@ def threads(item, st):
     me = call("GET", f"{TH}/me", params={"fields": "id", "access_token": tok})["id"]
     link = utm(item["post_url"], "threads", "video", item["topic"])
     th = item["threads"]
-
-    def publish(data):
-        c = call("POST", f"{TH}/{me}/threads", data={**data, "access_token": tok})["id"]
-        try:
-            wait_until(lambda: call("GET", f"{TH}/{c}", params={"fields": "status", "access_token": tok})["status"],
-                       {"FINISHED"}, {"ERROR", "EXPIRED"})
-        except RuntimeError as e:
-            why = call("GET", f"{TH}/{c}", params={"fields": "error_message", "access_token": tok}).get("error_message")
-            raise RuntimeError(f"{e} ({why})") from None
-        return call("POST", f"{TH}/{me}/threads_publish", data={"creation_id": c, "access_token": tok})["id"]
-
     # Main post carries the video and a conversational hook; the link goes in our own first reply,
     # since posts with outbound links tend to get less reach on Threads.
-    post = st.get("threads_post") or publish({"media_type": "VIDEO", "video_url": cdn(item["video"]["link"]),
-                                              "text": th["text"].replace("{link}", link)})
+    post = st.get("threads_post") or th_publish(tok, me, {"media_type": "VIDEO", "video_url": cdn(item["video"]["link"]),
+                                                          "text": th["text"].replace("{link}", link)})
     st["threads_post"] = post
     if not th.get("reply"):
         return {"post_id": post}
-    reply = publish({"media_type": "TEXT", "text": th["reply"].replace("{link}", link), "reply_to_id": post})
+    reply = th_publish(tok, me, {"media_type": "TEXT", "text": th["reply"].replace("{link}", link), "reply_to_id": post})
     return {"post_id": post, "reply_id": reply}
+
+
+def threads_more(item, st):
+    """One extra reply of ours under an already published Threads post (e.g. a link added later)."""
+    tok = env("THREADS_TOKEN")
+    if not tok:
+        return "skipped: THREADS_TOKEN not set"
+    if not st.get("threads_post"):
+        return "skipped: Threads post not published yet"
+    me = call("GET", f"{TH}/me", params={"fields": "id", "access_token": tok})["id"]
+    link = utm(item["post_url"], "threads", "video", item["topic"])
+    text = item["threads_more"]["text"].replace("{link}", link)
+    return {"reply_id": th_publish(tok, me, {"media_type": "TEXT", "text": text, "reply_to_id": st["threads_post"]})}
 
 
 def youtube(item, st):
@@ -120,7 +133,8 @@ def youtube(item, st):
     return {"video_id": v["id"], "privacy": v.get("status", {}).get("privacyStatus")}
 
 
-CHANNELS = {"pinterest": pinterest, "instagram": instagram, "threads": threads, "youtube": youtube}
+CHANNELS = {"pinterest": pinterest, "instagram": instagram, "threads": threads, "threads_more": threads_more,
+            "youtube": youtube}
 
 
 def main(only=None):
