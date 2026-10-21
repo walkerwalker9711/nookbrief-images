@@ -118,7 +118,7 @@ export const Reel = ({scenes, music}) => {
       const from = at; at += s.frames || 60;
       return <Sequence key={i} from={from} durationInFrames={s.frames || 60}><Scene s={s} i={i} /></Sequence>;
     })}
-    {music && <Audio src={staticFile(music)} volume={0.16} />}
+    {music && <Audio src={staticFile(music)} volume={0.34} />}
     <Progress total={total} />
   </AbsoluteFill>;
 };

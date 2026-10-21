@@ -49,7 +49,7 @@ def word_times(text, seconds):
     return out
 
 
-def music(seconds, bpm=112):
+def music(seconds, bpm=118):
     """Upbeat pop loop: Am-F-C-G, four-on-the-floor kick, claps, hats, bass, plucks, pumping pad."""
     n = int(seconds * SR)
     t = np.arange(n) / SR
@@ -67,7 +67,7 @@ def music(seconds, bpm=112):
 
     # kick
     kt = np.arange(int(0.35 * SR)) / SR
-    kick = np.sin(2 * np.pi * (50 * kt + 90 * (1 - np.exp(-kt * 30)) / 30)) * np.exp(-kt * 9) * 0.9
+    kick = np.sin(2 * np.pi * (50 * kt + 90 * (1 - np.exp(-kt * 30)) / 30)) * np.exp(-kt * 8) * 1.3
     # clap and hat from noise
     rng = np.random.default_rng(7)
     ct = np.arange(int(0.2 * SR)) / SR
@@ -88,13 +88,13 @@ def music(seconds, bpm=112):
         for k in range(8):
             bt = np.arange(int(beat / 2 * SR)) / SR
             f = hz(ch[0] - 24)
-            bass = (np.sin(2 * np.pi * f * bt) + 0.3 * np.sin(4 * np.pi * f * bt)) * np.exp(-bt * 5) * 0.28
+            bass = (np.sin(2 * np.pi * f * bt) + 0.3 * np.sin(4 * np.pi * f * bt)) * np.exp(-bt * 4) * 0.42
             hit(b + k * beat / 2, beat / 2, bass)
         # plucks: arpeggio on sixteenths
         for k in range(16):
             pt = np.arange(int(0.25 * SR)) / SR
             f = hz(ch[k % 3] + 12 * (k // 8 % 2) + 12)
-            pl = (np.sin(2 * np.pi * f * pt) + 0.5 * np.sin(4 * np.pi * f * pt)) * np.exp(-pt * 14) * 0.07
+            pl = (np.sin(2 * np.pi * f * pt) + 0.5 * np.sin(4 * np.pi * f * pt)) * np.exp(-pt * 12) * 0.11
             hit(b + k * beat / 4, 0.25, pl)
         b += bar
     # pad, ducked on every beat like a sidechain
@@ -104,7 +104,7 @@ def music(seconds, bpm=112):
         if s >= n:
             break
         seg = t[s:min(e, n)]
-        pad[s:min(e, n)] = sum(np.sin(2 * np.pi * hz(m) * seg + np.sin(2 * np.pi * 0.3 * seg)) for m in ch) * 0.05
+        pad[s:min(e, n)] = sum(np.sin(2 * np.pi * hz(m) * seg + np.sin(2 * np.pi * 0.3 * seg)) for m in ch) * 0.07
     duck = 1 - 0.7 * np.exp(-((t % beat) / beat) * 6)
     out += pad * duck
     fade = np.minimum(1, np.minimum(t / 0.3, (seconds - t) / 1.2))

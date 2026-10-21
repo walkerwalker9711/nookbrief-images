@@ -36,7 +36,11 @@ const serveUrl = await bundle({entryPoint: path.join(here, 'src/index.jsx'), pub
 const opts = {serveUrl, id: 'Reel', inputProps: {scenes, music: timing.music}, browserExecutable: process.env.CHROME || null,
   chromiumOptions: {gl: 'swiftshader'}};
 const composition = await selectComposition(opts);
-await renderMedia({...opts, composition, codec: 'h264', audioCodec: 'aac', outputLocation: out});
+const raw = out.replace(/\.mp4$/, '-raw.mp4');
+await renderMedia({...opts, composition, codec: 'h264', audioCodec: 'aac', outputLocation: raw});
+// Social apps play around -14 LUFS; bring the mix up to that so it isn't quiet next to other Reels
+execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'copy', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '192k', out]);
+fs.rmSync(raw);
 const coverFrame = Math.min(composition.durationInFrames - 1, (scenes[0].frames || 60) + 20);
 await renderStill({...opts, composition, frame: coverFrame, imageFormat: 'jpeg', output: out.replace(/\.mp4$/, '-cover.jpg')});
 console.log('rendered', out, composition.durationInFrames / 30, 's');
