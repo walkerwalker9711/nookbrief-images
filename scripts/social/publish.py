@@ -46,6 +46,23 @@ def pinterest(item, st):
     return {"pin_id": pin["id"]}
 
 
+def brand_tag(caption, tag="#NookBrief", limit=5):
+    """Every Instagram caption carries #NookBrief; keep the total at five hashtags by dropping the last other one."""
+    if tag.lower() in caption.lower():
+        return caption
+    lines = caption.rstrip().split("\n")
+    last = lines[-1].split()
+    if last and all(w.startswith("#") for w in last):
+        tags = [tag] + last
+        others = [t for t in tags if t != tag]
+        while len(tags) > limit and others:
+            tags.remove(others.pop())
+        lines[-1] = " ".join(tags)
+    else:
+        lines.append(tag)
+    return "\n".join(lines)
+
+
 def instagram(item, st):
     tok = env("IG_TOKEN")
     if not tok:
@@ -53,7 +70,7 @@ def instagram(item, st):
     me = call("GET", f"{IG}/me", params={"fields": "user_id", "access_token": tok})["user_id"]
     c = call("POST", f"{IG}/{me}/media", data={
         "media_type": "REELS", "video_url": cdn(item["video"]["ig"]),
-        "caption": item["instagram"]["caption"], "share_to_feed": "true", "access_token": tok})["id"]
+        "caption": brand_tag(item["instagram"]["caption"]), "share_to_feed": "true", "access_token": tok})["id"]
     try:
         wait_until(lambda: call("GET", f"{IG}/{c}", params={"fields": "status_code", "access_token": tok})["status_code"],
                    {"FINISHED"}, {"ERROR", "EXPIRED"})
