@@ -1,5 +1,13 @@
 {
   "pinterest": "skipped: Pinterest secrets not set",
-  "instagram_error": "processing failed: ERROR",
-  "threads_error": "processing failed: ERROR"
+  "instagram": {
+    "media_id": "18136034299567083",
+    "published_at": 1792590086
+  },
+  "threads_post": "18156815002524324",
+  "threads": {
+    "post_id": "18156815002524324",
+    "reply_id": "18172577305416030"
+  },
+  "youtube": "skipped: YouTube secrets not set"
 }
