@@ -1,0 +1,5 @@
+gift-small-tech-11-pick.png | 11 | Slim light-grey power bank with a short USB-C cable folded along its side.
+gift-small-tech-12-pick.png | 12 | Charcoal power bank with a built-in USB-C cable wrapped around the body like a strap.
+gift-small-tech-13-pick.png | 13 | Larger black laptop power bank with a small display window and three ports on the end.
+gift-small-tech-14-pick.png | 14 | Silver-grey wall charger with two USB-C ports, one USB-A port and folding prongs.
+gift-small-tech-15-pick.png | 15 | Black USB-C to USB-C cable with both connectors visible.
