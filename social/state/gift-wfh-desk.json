@@ -4,5 +4,6 @@
     "media_id": "18153533044528454",
     "published_at": 1792638031
   },
-  "threads_error": "threads_publish 400 Media Not Found (run 39714021707)"
+  "threads_error": "POST https://graph.threads.net/v1.0/38978603231787213/threads_publish -> 400: {\"error\":{\"message\":\"The requested resource does not exist\",\"type\":\"OAuthException\",\"code\":24,\"error_subcode\":4279009,\"is_transient\":false,\"error_user_title\":\"Media Not Found\",\"error_user_msg\":\"The media with id 18091335128299871 cannot be found.\",\"fbtrace_id\":\"ARND6BR5egfyZ9mqL2fQHw7\"}}",
+  "threads_post": "18146254564578263"
 }
