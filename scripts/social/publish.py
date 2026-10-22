@@ -178,10 +178,19 @@ def main(only=None):
             print(qf.stem, "waits until", time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(item["not_before"])))
             continue
         st = load(sf, {})
+        now = time.time()
         # a scheduled run starts each approval once: a new post, or a re-post whose "not_before" it has not run yet
-        if scheduled and sf.exists() and st.get("started_for") == item.get("not_before"):
+        fresh = not (scheduled and sf.exists() and st.get("started_for") == item.get("not_before"))
+        # Threads gets its own slot ("threads_not_before", two a day) after the account was flagged for spam
+        # on 2026-10-22; each slot is tried once by the hourly run, retries stay manual
+        tnb = item.get("threads_not_before")
+        th_ok = not (ROOT / "social" / "threads_paused").exists() and (tnb or 0) <= now \
+            and not (scheduled and tnb and st.get("threads_started_for") == tnb)
+        th_new = bool(tnb) and th_ok and st.get("threads_started_for") != tnb
+        if not fresh and not th_new:
             continue
-        st["started_for"] = item.get("not_before")
+        if fresh:
+            st["started_for"] = item.get("not_before")
         item["_video_path"] = {k: str(ROOT / v) for k, v in item["video"].items()}
         for k, v in item["video"].items():  # what Meta/Pinterest will see when they fetch the video (info only)
             try:
@@ -192,8 +201,11 @@ def main(only=None):
         for name, fn in CHANNELS.items():
             if name not in item or isinstance(st.get(name), dict):
                 continue
-            if name.startswith("threads") and (ROOT / "social" / "threads_paused").exists():
-                print(qf.stem, name, "paused (social/threads_paused)")  # Threads flagged the account for spam, 2026-10-22
+            if name.startswith("threads"):
+                if not th_ok:
+                    print(qf.stem, name, "waits", time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(tnb)) if tnb else "")
+                    continue
+            elif not fresh:
                 continue
             try:
                 st[name] = fn(item, st)
@@ -204,6 +216,9 @@ def main(only=None):
                 st.pop(name + "_error", None)
             print(qf.stem, name, st.get(name), st.get(name + "_error", ""))
             save(sf, st)
+        if tnb and th_ok:
+            st["threads_started_for"] = tnb
+        save(sf, st)
     return 1 if failed else 0
 
 

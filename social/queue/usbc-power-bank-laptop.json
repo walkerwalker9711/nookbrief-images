@@ -34,8 +34,9 @@
     ]
   },
   "not_before": 1792659480,
-  "threads_paused": {
-    "text": "mah tells you how long a power bank lasts. it doesn't tell you if it can charge your laptop.\n\nwhat number do you check first? #powerbank",
+  "threads": {
+    "text": "a 20,000mAh bank can still let your laptop die. if no single usb-c port puts out the watts your laptop charger does, it won't keep up.\n\nwhat wattage is your laptop brick? #powerbank",
     "reply": "our pick → https://www.amazon.com/dp/B0CXDMYS8C?tag=nookbrief-20\nfull comparison → {link}\n\nAI voice & visuals · #CommissionsEarned"
-  }
+  },
+  "threads_not_before": 1792711200
 }
