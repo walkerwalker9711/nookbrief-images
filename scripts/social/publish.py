@@ -192,6 +192,9 @@ def main(only=None):
         for name, fn in CHANNELS.items():
             if name not in item or isinstance(st.get(name), dict):
                 continue
+            if name.startswith("threads") and (ROOT / "social" / "threads_paused").exists():
+                print(qf.stem, name, "paused (social/threads_paused)")  # Threads flagged the account for spam, 2026-10-22
+                continue
             try:
                 st[name] = fn(item, st)
             except Exception as e:  # keep going with the other channels
