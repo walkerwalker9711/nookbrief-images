@@ -166,11 +166,19 @@ CHANNELS = {"pinterest": pinterest, "instagram": instagram, "threads": threads, 
 
 def main(only=None):
     failed = False
+    scheduled = os.environ.get("GITHUB_EVENT_NAME") == "schedule"
     for qf in sorted(QUEUE.glob("*.json")):
         item = load(qf)
         if not item.get("approved") or (only and item["topic"] != only):
             continue
         sf = STATE / qf.name
+        # "not_before" spaces posts out (Threads filters link replies posted close together);
+        # the hourly run only starts posts whose time has come, retries stay manual.
+        if item.get("not_before", 0) > time.time():
+            print(qf.stem, "waits until", time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(item["not_before"])))
+            continue
+        if scheduled and sf.exists():
+            continue
         st = load(sf, {})
         item["_video_path"] = {k: str(ROOT / v) for k, v in item["video"].items()}
         for k, v in item["video"].items():  # what Meta/Pinterest will see when they fetch the video (info only)

@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
     paths: ["social/queue/**"]
+  schedule:
+    - cron: "23 * * * *"  # starts approved posts that were given a later "not_before"
   workflow_dispatch:
     inputs:
       topic:
