@@ -25,7 +25,7 @@ const Title = ({s}) => <>
   <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, rgba(0,0,0,.42), rgba(0,0,0,.05) 70%)'}} />
   <div style={{position: 'absolute', top: 760, width: '100%', textAlign: 'center', color: 'white', textShadow: '0 2px 30px rgba(0,0,0,.45)'}}>
     {s.kicker && <Reveal at={4}><div style={{fontFamily: sans, fontSize: 40, letterSpacing: 2, opacity: .9}}>{s.kicker}</div></Reveal>}
-    <Reveal at={12} len={18}><div style={{fontFamily: serif, fontSize: (s.title || '').length > 18 ? 108 : 150, lineHeight: 1.02, marginTop: 10, padding: '0 70px'}}>{s.title}</div></Reveal>
+    <Reveal at={12} len={18}><div style={{fontFamily: serif, fontSize: s.size || ((s.title || '').length > 18 ? 108 : 150), lineHeight: 1.02, marginTop: 10, padding: '0 70px'}}>{s.title}</div></Reveal>
   </div>
 </>;
 
