@@ -132,7 +132,7 @@ def youtube(item, st):
         return "skipped: YouTube secrets not set"
     y = item["youtube"]
     meta = {
-        "snippet": {"title": y["title"][:100], "description": y["description"][:5000],
+        "snippet": {"title": y["title"][:100], "description": y["description"].replace("{link}", item["post_url"])[:5000],
                     "tags": y.get("tags", []), "categoryId": y.get("category", "26")},  # 26 = Howto & Style
         # Photo-like AI stills count as realistic synthetic media, so YouTube wants the label on.
         "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True},
