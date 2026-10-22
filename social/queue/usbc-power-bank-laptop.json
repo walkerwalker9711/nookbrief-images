@@ -22,10 +22,6 @@
     "dm": "Here's the full power bank guide: {link}\n\nOur picks are in the boxes near the end. As an Amazon Associate I earn from qualifying purchases.",
     "public_reply": "Sent! Check your DMs 📬"
   },
-  "threads": {
-    "text": "mah tells you how long a power bank lasts. it doesn't tell you if it can charge your laptop.\n\nwhat number do you check first? #powerbank",
-    "reply": "our pick → https://www.amazon.com/dp/B0CXDMYS8C?tag=nookbrief-20\nfull comparison → {link}\n\nAI voice & visuals · #CommissionsEarned"
-  },
   "youtube": {
     "title": "can a power bank charge your laptop? check this one number #shorts",
     "description": "forget the mAh for a second. flip your laptop charger over and read the watts. if one usb-c port on the power bank matches it, you're good.\n\nfull guide + the two we'd pick: https://nookbrief.blogspot.com/2026/10/can-usb-c-power-bank-charge-your-laptop.html (also linked on the channel page)\n\nAI voice & visuals. As an Amazon Associate I earn from qualifying purchases. #CommissionsEarned",
@@ -37,5 +33,9 @@
       "tech tips"
     ]
   },
-  "not_before": 1792659480
+  "not_before": 1792659480,
+  "threads_paused": {
+    "text": "mah tells you how long a power bank lasts. it doesn't tell you if it can charge your laptop.\n\nwhat number do you check first? #powerbank",
+    "reply": "our pick → https://www.amazon.com/dp/B0CXDMYS8C?tag=nookbrief-20\nfull comparison → {link}\n\nAI voice & visuals · #CommissionsEarned"
+  }
 }
