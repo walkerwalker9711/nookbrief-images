@@ -1,6 +1,6 @@
 {
   "topic": "gift-wfh-desk",
-  "approved": false,
+  "approved": true,
   "post_url": "https://nookbrief.blogspot.com/2026/10/desk-gifts-for-someone-who-works-from.html",
   "video": {
     "ig": "posts/gift-wfh-desk/gift-wfh-desk-short-ig.mp4",
@@ -36,5 +36,6 @@
       "home office",
       "tech gifts"
     ]
-  }
+  },
+  "not_before": 1792666684
 }
