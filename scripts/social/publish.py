@@ -150,7 +150,14 @@ def youtube(item, st):
         raise RuntimeError(f"YouTube upload -> {up.status_code}: {up.text[:300]}")
     v = up.json()
     # Uploads from an API project that has not passed YouTube's audit are locked to private.
-    return {"video_id": v["id"], "privacy": v.get("status", {}).get("privacyStatus")}
+    out = {"video_id": v["id"], "privacy": v.get("status", {}).get("privacyStatus")}
+    thumb = ROOT / item["video"]["ig"].replace(".mp4", "-cover.jpg")  # the titled cover Instagram uses
+    if thumb.exists():  # needs a verified channel; a refusal is noted, the upload still counts
+        t = requests.post(f"{YT}/upload/youtube/v3/thumbnails/set", params={"videoId": v["id"]},
+                          headers={"Authorization": f"Bearer {tok}", "Content-Type": "image/jpeg"},
+                          data=thumb.read_bytes(), timeout=120)
+        out["thumbnail"] = "set" if t.status_code < 300 else f"failed {t.status_code}: {t.text[:200]}"
+    return out
 
 
 CHANNELS = {"pinterest": pinterest, "instagram": instagram, "threads": threads, "threads_more": threads_more,

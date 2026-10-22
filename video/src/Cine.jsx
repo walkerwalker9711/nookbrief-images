@@ -21,11 +21,12 @@ const Reveal = ({at = 0, len = 14, children, style}) => {
   return <div style={{...style, opacity: k, filter: `blur(${(1 - k) * 14}px)`, transform: `translateY(${(1 - k) * 18}px)`}}>{children}</div>;
 };
 
-const Title = ({s}) => <>
+// The opening title is already on screen at frame 0: Threads and YouTube take that frame as the thumbnail
+const Title = ({s, first}) => <>
   <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, rgba(0,0,0,.42), rgba(0,0,0,.05) 70%)'}} />
   <div style={{position: 'absolute', top: 760, width: '100%', textAlign: 'center', color: 'white', textShadow: '0 2px 30px rgba(0,0,0,.45)'}}>
-    {s.kicker && <Reveal at={4}><div style={{fontFamily: sans, fontSize: 40, letterSpacing: 2, opacity: .9}}>{s.kicker}</div></Reveal>}
-    <Reveal at={12} len={18}><div style={{fontFamily: serif, fontSize: s.size || ((s.title || '').length > 18 ? 108 : 150), lineHeight: 1.02, marginTop: 10, padding: '0 70px'}}>{s.title}</div></Reveal>
+    {s.kicker && <Reveal at={first ? -40 : 4}><div style={{fontFamily: sans, fontSize: 40, letterSpacing: 2, opacity: .9}}>{s.kicker}</div></Reveal>}
+    <Reveal at={first ? -40 : 12} len={18}><div style={{fontFamily: serif, fontSize: s.size || ((s.title || '').length > 18 ? 108 : 150), lineHeight: 1.02, marginTop: 10, padding: '0 70px'}}>{s.title}</div></Reveal>
   </div>
 </>;
 
@@ -140,7 +141,7 @@ const Scene = ({s, i, dur}) => {
   const words = s.words && !['card', 'cta'].includes(s.kind) && !s.nocap;
   return <Enter how={i ? s.enter || 'fade' : 'cut'}>
     <AbsoluteFill style={{background: INK}}>
-      {['title', 'hook'].includes(s.kind) && <><Still img={s.img} i={i} /><Title s={s} /></>}
+      {['title', 'hook'].includes(s.kind) && <><Still img={s.img} i={i} /><Title s={s} first={i === 0} /></>}
       {s.kind === 'card' && <CardScene s={s} dur={dur} />}
       {['shot', 'scene'].includes(s.kind) && <Shot s={s} i={i} />}
       {s.kind === 'product' && <><Product s={s} />{s.stamp && <Stamp text={s.stamp} />}</>}
