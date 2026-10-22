@@ -1,9 +1,5 @@
 {
   "pinterest": "skipped: Pinterest secrets not set",
-  "instagram": {
-    "media_id": "18098558015646370",
-    "published_at": 1792646709
-  },
   "threads_post": "18133804726775479",
   "threads": {
     "post_id": "18133804726775479",
@@ -12,5 +8,9 @@
   "youtube": {
     "video_id": "YyBbIDq_CGw",
     "privacy": "public"
+  },
+  "instagram_deleted_no_cover": {
+    "media_id": "18098558015646370",
+    "published_at": 1792646709
   }
 }
