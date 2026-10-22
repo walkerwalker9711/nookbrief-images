@@ -177,9 +177,11 @@ def main(only=None):
         if item.get("not_before", 0) > time.time():
             print(qf.stem, "waits until", time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(item["not_before"])))
             continue
-        if scheduled and sf.exists():
-            continue
         st = load(sf, {})
+        # a scheduled run starts each approval once: a new post, or a re-post whose "not_before" it has not run yet
+        if scheduled and sf.exists() and st.get("started_for") == item.get("not_before"):
+            continue
+        st["started_for"] = item.get("not_before")
         item["_video_path"] = {k: str(ROOT / v) for k, v in item["video"].items()}
         for k, v in item["video"].items():  # what Meta/Pinterest will see when they fetch the video (info only)
             try:

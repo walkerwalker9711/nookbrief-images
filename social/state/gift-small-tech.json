@@ -4,9 +4,9 @@
     "media_id": "17983461737906120",
     "published_at": 1792651919
   },
-  "threads_post": "18141556444623873",
-  "threads": {
+  "threads_deleted_20261022": {
     "post_id": "18141556444623873",
     "reply_id": "18036070034845144"
-  }
+  },
+  "threads_post_deleted_20261022": "18141556444623873"
 }

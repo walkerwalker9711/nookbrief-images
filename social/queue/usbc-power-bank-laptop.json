@@ -1,6 +1,6 @@
 {
   "topic": "usbc-power-bank-laptop",
-  "approved": true,
+  "approved": false,
   "post_url": "https://nookbrief.blogspot.com/2026/10/can-usb-c-power-bank-charge-your-laptop.html",
   "video": {
     "ig": "posts/usbc-power-bank-laptop/usbc-power-bank-laptop-short-ig.mp4",
@@ -25,5 +25,16 @@
   "threads": {
     "text": "mah tells you how long a power bank lasts. it doesn't tell you if it can charge your laptop.\n\nwhat number do you check first? #powerbank",
     "reply": "our pick → https://www.amazon.com/dp/B0CXDMYS8C?tag=nookbrief-20\nfull comparison → {link}\n\nAI voice & visuals · #CommissionsEarned"
+  },
+  "youtube": {
+    "title": "can a power bank charge your laptop? check this one number #shorts",
+    "description": "forget the mAh for a second. flip your laptop charger over and read the watts. if one usb-c port on the power bank matches it, you're good.\n\nfull guide + the two we'd pick: https://nookbrief.blogspot.com/2026/10/can-usb-c-power-bank-charge-your-laptop.html (also linked on the channel page)\n\nAI voice & visuals. As an Amazon Associate I earn from qualifying purchases. #CommissionsEarned",
+    "tags": [
+      "power bank",
+      "laptop power bank",
+      "usb-c power bank",
+      "travel tech",
+      "tech tips"
+    ]
   }
 }
