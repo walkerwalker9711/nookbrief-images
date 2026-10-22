@@ -16,5 +16,16 @@
   "youtube_deleted_20261022": {
     "video_id": "YyBbIDq_CGw",
     "privacy": "public"
+  },
+  "started_for": null,
+  "threads_post": "18114306101026070",
+  "threads": {
+    "post_id": "18114306101026070",
+    "reply_id": "17911774854512702"
+  },
+  "youtube": {
+    "video_id": "NC08R8KsGSc",
+    "privacy": "public",
+    "thumbnail": "set"
   }
 }
