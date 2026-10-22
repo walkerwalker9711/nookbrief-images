@@ -1,24 +1,20 @@
 ### GPT 작업지시
 topic_id: gift-wfh-desk
-post title: Desk Gifts for Someone Who Works From Home (That They'll Actually Use)
-images: 6
-Note: done.txt already exists in this folder. Add your lines to the end of it; do not delete the lines already there.
+post title: Desk Gifts for Someone Who Works From Home (That They'll Actually Use) (Instagram Reel visuals)
+images: 5
+Note: vertical 1024x1536 PNG, role `reel`. Moody, high-end Instagram desk-setup aesthetic: soft natural light, shallow depth of field, warm film tones, calm and tidy. Every device generic. No text, numbers, logos, brand names or people. done.txt already exists in this folder. Add your lines to the end of it; do not delete the lines already there.
 
-01 (cover)
-A cozy home-office desk by a window in early winter light: an open laptop, a small potted plant, a mug, and three small wrapped gift boxes with deep teal ribbon sitting beside the keyboard. Soft warm light, tidy and calm. No readable text, no logos, no people.
+41 (reel - vertical 1024x1536)
+A minimal light-oak home-office desk by a window in early winter light: an open laptop with a blank screen, a small plant, a mug, and two small wrapped gift boxes with deep teal ribbon. Soft striped shadows from window blinds.
 
-02 (body - under "For the person who's on camera all day")
-A laptop on a desk set up for a video call, with a small square light panel clipped above the screen glowing softly toward the empty chair, and a pair of over-ear wireless headphones resting next to the laptop. Evening room, the desk area evenly lit. The laptop screen shows only soft abstract shapes. No faces, no text, no logos.
+42 (reel - vertical 1024x1536)
+Close-up: a small square light panel clipped to the top of a laptop screen, glowing softly, a ribbon bow tied loosely around its clip. Cozy desk in warm bokeh behind.
 
-03 (body - under "For the laptop-at-the-kitchen-table worker")
-A laptop raised on a simple curved aluminum stand on a wooden kitchen table, with a slim compact wireless mouse beside it and a coffee cup nearby. Morning daylight, a small ribbon bow on the corner of the stand to suggest a gift. No text, no logos, no people.
+43 (reel - vertical 1024x1536)
+Overhead flat lay on a sage linen desk mat: a laptop on a curved aluminum stand, a compact wireless mouse, over-ear headphones, a small two-port charger with neat cables, and a sprig of pine. Morning daylight, soft shadows.
 
+44 (reel - vertical 1024x1536)
+Evening desk scene: a slim light bar on top of a plain monitor casting a warm glow onto the desk, a laptop and a phone charging side by side, a warm table lamp, deep teal wall behind. Calm, cinematic.
 
-13 (pick - square 1024x1024 - buy box "Logitech Zone Vibe 100")
-A pair of generic lightweight over-ear wireless headphones in soft grey fabric, cushioned ear cups, no visible boom mic. Product alone, centered, slight three-quarter angle, plain off-white background, soft shadow. No text, numbers or logos.
-
-14 (pick - square 1024x1024 - buy box "Rain Design mStand laptop stand")
-A generic laptop stand made from one curved sheet of brushed aluminum, shaped like a gentle ramp with an open space underneath, shown empty. Product alone, centered, slight three-quarter angle, plain off-white background, soft shadow. No text, numbers or logos.
-
-16 (pick - square 1024x1024 - buy box "BenQ ScreenBar monitor light")
-A generic slim horizontal light bar resting on the top edge of a plain monitor (only the top part of the monitor shown), casting a soft downward glow onto the desk below, not onto the screen. Product focus, plain off-white background. No text, numbers or logos.
+45 (reel - vertical 1024x1536)
+A cozy living-room corner at dusk: a wrapped gift box with deep teal ribbon on a wooden side table next to a mug and a folded knit blanket, warm string-light bokeh in the background. Minimal, festive.
