@@ -68,9 +68,12 @@ def instagram(item, st):
     if not tok:
         return "skipped: IG_TOKEN not set"
     me = call("GET", f"{IG}/me", params={"fields": "user_id", "access_token": tok})["user_id"]
-    c = call("POST", f"{IG}/{me}/media", data={
-        "media_type": "REELS", "video_url": cdn(item["video"]["ig"]),
-        "caption": brand_tag(item["instagram"]["caption"]), "share_to_feed": "true", "access_token": tok})["id"]
+    data = {"media_type": "REELS", "video_url": cdn(item["video"]["ig"]),
+            "caption": brand_tag(item["instagram"]["caption"]), "share_to_feed": "true", "access_token": tok}
+    cover = item["video"]["ig"].replace(".mp4", "-cover.jpg")
+    if (ROOT / cover).exists():  # title cover, so the profile grid shows what each video is about
+        data["cover_url"] = cdn(cover)
+    c = call("POST", f"{IG}/{me}/media", data=data)["id"]
     try:
         wait_until(lambda: call("GET", f"{IG}/{c}", params={"fields": "status_code", "access_token": tok})["status_code"],
                    {"FINISHED"}, {"ERROR", "EXPIRED"})
