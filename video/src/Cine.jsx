@@ -25,7 +25,7 @@ const Title = ({s}) => <>
   <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, rgba(0,0,0,.42), rgba(0,0,0,.05) 70%)'}} />
   <div style={{position: 'absolute', top: 760, width: '100%', textAlign: 'center', color: 'white', textShadow: '0 2px 30px rgba(0,0,0,.45)'}}>
     {s.kicker && <Reveal at={4}><div style={{fontFamily: sans, fontSize: 40, letterSpacing: 2, opacity: .9}}>{s.kicker}</div></Reveal>}
-    <Reveal at={12} len={18}><div style={{fontFamily: serif, fontSize: 150, lineHeight: 1.02, marginTop: 10}}>{s.title}</div></Reveal>
+    <Reveal at={12} len={18}><div style={{fontFamily: serif, fontSize: (s.title || '').length > 18 ? 108 : 150, lineHeight: 1.02, marginTop: 10, padding: '0 70px'}}>{s.title}</div></Reveal>
   </div>
 </>;
 
@@ -140,9 +140,9 @@ const Scene = ({s, i, dur}) => {
   const words = s.words && !['card', 'cta'].includes(s.kind) && !s.nocap;
   return <Enter how={i ? s.enter || 'fade' : 'cut'}>
     <AbsoluteFill style={{background: INK}}>
-      {s.kind === 'title' && <><Still img={s.img} i={i} /><Title s={s} /></>}
+      {['title', 'hook'].includes(s.kind) && <><Still img={s.img} i={i} /><Title s={s} /></>}
       {s.kind === 'card' && <CardScene s={s} dur={dur} />}
-      {s.kind === 'shot' && <Shot s={s} i={i} />}
+      {['shot', 'scene'].includes(s.kind) && <Shot s={s} i={i} />}
       {s.kind === 'product' && <><Product s={s} />{s.stamp && <Stamp text={s.stamp} />}</>}
       {s.kind === 'cta' && <End s={s} dur={dur} />}
       {words && <AbsoluteFill style={{background: 'linear-gradient(rgba(0,0,0,0) 65%, rgba(0,0,0,.45))'}} />}
