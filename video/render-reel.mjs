@@ -23,13 +23,13 @@ const copy = (file, name) => {
   fs.copyFileSync(src, path.join(pub, name + path.extname(src)));
   return name + path.extname(src);
 };
-let scenes = props.scenes.map((s, i) => ({...s, ...(s.img && {img: copy(s.img, `img${i}`)}), ...(s.bg && {bg: copy(s.bg, `bg${i}`)})}));
+let scenes = props.scenes.map((s, i) => ({...s, ...(s.img && {img: copy(s.img, `img${i}`)}), ...(s.bg && {bg: copy(s.bg, `bg${i}`)}), ...(s.thumb && {thumb: copy(s.thumb, `thumb${i}`)})}));
 const cta = (props.cta || {})[variant];
 if (cta) scenes.push({kind: 'cta', ...cta, ...(cta.img && {img: copy(cta.img, 'cta')})});
-const id = props.style === 'soft' ? 'Soft' : 'Reel';
+const id = {soft: 'Soft', motion: 'Motion', cine: 'Cine'}[props.style] || 'Reel';
 
 const tmp = path.join(pub, 'scenes.json');
-fs.writeFileSync(tmp, JSON.stringify({scenes, speed: props.speed, music_style: props.style === 'soft' ? 'lofi' : 'pop'}));
+fs.writeFileSync(tmp, JSON.stringify({scenes, speed: props.speed, music_style: ['soft', 'motion', 'cine'].includes(props.style) ? 'lofi' : 'pop'}));
 const timing = JSON.parse(execFileSync('python3', [path.join(here, 'voice.py'), tmp, pub], {encoding: 'utf8'}).trim().split('\n').pop());
 scenes = scenes.map((s, i) => ({...s, ...timing.scenes[i]}));
 

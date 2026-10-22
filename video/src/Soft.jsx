@@ -8,10 +8,10 @@ const serif = 'NBSerif, Georgia, serif';
 
 export const softDuration = (scenes) => scenes.reduce((n, s) => n + (s.frames || 60), 0) || 30;
 
-const Fonts = () => <style>{`@font-face{font-family:NBSerif;src:url(${staticFile('serif.otf')})}`}</style>;
+export const Fonts = () => <style>{`@font-face{font-family:NBSerif;src:url(${staticFile('serif.otf')})}`}</style>;
 
 // Slow push or pan, alternating direction per scene
-const Still = ({img, i, blur = 0}) => {
+export const Still = ({img, i, blur = 0}) => {
   const f = useCurrentFrame();
   const z = interpolate(f, [0, 180], [1.04, 1.16]);
   const x = interpolate(f, [0, 180], [0, i % 2 ? -40 : 40]);
@@ -20,7 +20,7 @@ const Still = ({img, i, blur = 0}) => {
 };
 
 // Fine animated grain and a soft vignette for the film look
-const Grain = () => {
+export const Grain = () => {
   const f = useCurrentFrame();
   const dots = Array.from({length: 140}, (_, k) => {
     const x = random(`x${k}${f}`) * 1080, y = random(`y${k}${f}`) * 1920;
@@ -40,7 +40,7 @@ const phrases = (words) => {
   return out;
 };
 
-const Caption = ({words, y = 1460}) => {
+export const Caption = ({words, y = 1460}) => {
   const f = useCurrentFrame();
   const p = phrases(words).find((c) => f >= c[0][1] && f < c[c.length - 1][2] + 6);
   if (!p) return null;
@@ -61,7 +61,7 @@ const Kicker = ({text}) => {
 };
 
 // Product card over blurred b-roll: illustration + name + one spec line
-const Product = ({s}) => {
+export const Product = ({s}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   const k = spring({frame: f - 3, fps, config: {damping: 20, stiffness: 90}});
   return <>
