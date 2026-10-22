@@ -21,3 +21,9 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python check_tokens.py
+      - name: Use each Instagram permission once (Meta use case testing)
+        if: always()
+        working-directory: scripts/social
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python ig_review_calls.py
