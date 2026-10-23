@@ -269,3 +269,21 @@ def marimba(seconds, key=0, seed=23, bpm=108):
 
 BEDS = {"lofi": lofi, "chillhop": chillhop, "acoustic": acoustic, "house": house,
         "ambient": ambient, "bossa": bossa, "marimba": marimba}
+
+BPM = {"lofi": 82, "chillhop": 88, "acoustic": 96, "house": 118, "ambient": 70, "bossa": 128, "marimba": 108}
+
+
+def sfx():
+    """Short effects for the Pop style: cuts get a whoosh, stickers and ticks a pop, gadgets a boing."""
+    rng = np.random.default_rng(1)
+    t = env(0.35)
+    # whoosh: noise through a moving resonance, swelling then gone
+    n = rng.standard_normal(len(t))
+    sweep = np.sin(2 * np.pi * np.cumsum(400 + 2600 * t / t[-1]) / SR)
+    whoosh = n * (0.5 + 0.5 * sweep) * np.sin(np.pi * t / t[-1]) ** 2 * 0.35
+    tp = env(0.09)
+    pop = np.sin(2 * np.pi * np.cumsum(900 * np.exp(-tp * 30) + 250) / SR) * np.exp(-tp * 40) * 0.8
+    tb = env(0.45)
+    boing = np.sin(2 * np.pi * np.cumsum(220 + 120 * np.sin(2 * np.pi * 14 * tb) * np.exp(-tb * 5)) / SR) * np.exp(-tb * 6) * 0.6
+    ding = bell(hz(88), 0.9) * 0.5 + bell(hz(95), 0.9) * 0.3
+    return {"whoosh": whoosh, "pop": pop, "boing": boing, "ding": ding}

@@ -17,7 +17,7 @@ import numpy as np
 import soundfile as sf
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from beds import BEDS  # noqa: E402
+from beds import BEDS, BPM, sfx  # noqa: E402
 
 FPS = 30
 SR = 24000
@@ -167,6 +167,8 @@ def main(props_path, out_dir):
     os.makedirs(out_dir, exist_ok=True)
     tts = kokoro()
     scenes, total = [], 0
+    m = props.get("music") or {}
+    beat = FPS * 60 / BPM[m["style"]] if props.get("beat_sync") and m.get("style") in BPM else 0
     for i, s in enumerate(props["scenes"]):
         if not s.get("vo"):
             scenes.append({"frames": s.get("frames", 60), "words": []})
@@ -177,16 +179,22 @@ def main(props_path, out_dir):
         sf.write(os.path.join(out_dir, f"vo{i}.wav"), audio, sr)
         sec = len(audio) / sr
         frames = max(int((sec + PAD + s.get("hold", 1.5 if s.get("kind") == "cta" else 0)) * FPS) + 1, s.get("min_frames", 0))
+        if beat:  # cut on the beat: round each scene up to whole beats of the bed
+            frames = int(np.ceil(frames / beat - 0.15) * beat)
         scenes.append({"frames": frames, "words": word_times(s["vo"], sec), "vo": f"vo{i}.wav"})
         total += frames
     sec = total / FPS + 0.5
-    m = props.get("music") or {}
     if m.get("style") in BEDS:  # chosen per video so the bed changes day to day (owner, 2026-10-23)
         bed = BEDS[m["style"]](sec, key=m.get("key", 0), seed=m.get("seed", 1))
     else:
         bed = lofi(sec) if props.get("music_style") == "lofi" else music(sec)
     sf.write(os.path.join(out_dir, "music.wav"), bed, SR)
-    print(json.dumps({"scenes": scenes, "music": "music.wav", "frames": total}))
+    fx = {}
+    if props.get("sfx"):
+        for name, wave in sfx().items():
+            sf.write(os.path.join(out_dir, f"fx-{name}.wav"), wave, SR)
+            fx[name] = f"fx-{name}.wav"
+    print(json.dumps({"scenes": scenes, "music": "music.wav", "frames": total, "sfx": fx, "beat": beat}))
 
 
 if __name__ == "__main__":

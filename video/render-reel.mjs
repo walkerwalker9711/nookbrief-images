@@ -26,15 +26,15 @@ const copy = (file, name) => {
 let scenes = props.scenes.map((s, i) => ({...s, ...(s.img && {img: copy(s.img, `img${i}`)}), ...(s.bg && {bg: copy(s.bg, `bg${i}`)}), ...(s.thumb && {thumb: copy(s.thumb, `thumb${i}`)}), ...(s.img2 && {img2: copy(s.img2, `imgb${i}`)})}));
 const cta = (props.cta || {})[variant];
 if (cta) scenes.push({kind: 'cta', ...cta, ...(cta.img && {img: copy(cta.img, 'cta')})});
-const id = {soft: 'Soft', motion: 'Motion', cine: 'Cine'}[props.style] || 'Reel';
+const id = {soft: 'Soft', motion: 'Motion', cine: 'Cine', pop: 'Pop'}[props.style] || 'Reel';
 
 const tmp = path.join(pub, 'scenes.json');
-fs.writeFileSync(tmp, JSON.stringify({scenes, speed: props.speed, music: props.music, voice: props.voice, music_style: ['soft', 'motion', 'cine'].includes(props.style) ? 'lofi' : 'pop'}));
+fs.writeFileSync(tmp, JSON.stringify({scenes, speed: props.speed, music: props.music, voice: props.voice, beat_sync: props.style === 'pop', sfx: props.style === 'pop', music_style: ['soft', 'motion', 'cine'].includes(props.style) ? 'lofi' : 'pop'}));
 const timing = JSON.parse(execFileSync('python3', [path.join(here, 'voice.py'), tmp, pub], {encoding: 'utf8'}).trim().split('\n').pop());
 scenes = scenes.map((s, i) => ({...s, ...timing.scenes[i]}));
 
 const serveUrl = await bundle({entryPoint: path.join(here, 'src/index.jsx'), publicDir: pub});
-const opts = {serveUrl, id, inputProps: {scenes, music: timing.music}, browserExecutable: process.env.CHROME || null,
+const opts = {serveUrl, id, inputProps: {scenes, music: timing.music, sfx: timing.sfx || {}, beat: timing.beat || 15}, browserExecutable: process.env.CHROME || null,
   chromiumOptions: {gl: 'swiftshader'}};
 const composition = await selectComposition(opts);
 const raw = out.replace(/\.mp4$/, '-raw.mp4');
@@ -47,6 +47,6 @@ execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'libx264', '-pre
 fs.rmSync(raw);
 const coverFrame = Math.min(composition.durationInFrames - 1, (scenes[0].frames || 60) + 20);
 // cine Instagram covers come from cover.mjs (the title scene), so a re-render must not overwrite them
-if (!(props.style === 'cine' && variant === 'ig'))
+if (!(['cine', 'pop'].includes(props.style) && variant === 'ig'))
   await renderStill({...opts, composition, frame: coverFrame, imageFormat: 'jpeg', output: out.replace(/\.mp4$/, '-cover.jpg')});
 console.log('rendered', out, composition.durationInFrames / 30, 's');
