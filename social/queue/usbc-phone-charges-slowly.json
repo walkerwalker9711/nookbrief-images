@@ -1,7 +1,7 @@
 {
   "topic": "usbc-phone-charges-slowly",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/your-phone-charges-slowly-on-fast.html",
   "video": {
     "ig": "posts/usbc-phone-charges-slowly/usbc-phone-charges-slowly-short-ig.mp4",
     "link": "posts/usbc-phone-charges-slowly/usbc-phone-charges-slowly-short-link.mp4",
@@ -36,5 +36,6 @@
       "charging cable",
       "tech tips"
     ]
-  }
+  },
+  "threads_not_before": 1792858800
 }
