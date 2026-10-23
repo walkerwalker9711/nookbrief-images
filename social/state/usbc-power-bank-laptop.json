@@ -15,6 +15,10 @@
     "privacy": "public",
     "thumbnail": "set"
   },
-  "threads_error": "processing failed: ERROR (UNKNOWN)",
-  "threads_started_for": 1792711200
+  "threads_started_for": 1792711200,
+  "threads_post": "17993717820069739",
+  "threads": {
+    "post_id": "17993717820069739",
+    "reply_id": "18028299983711109"
+  }
 }
