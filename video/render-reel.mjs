@@ -45,8 +45,8 @@ execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'libx264', '-pre
   '-maxrate', '4500k', '-bufsize', '9000k', '-pix_fmt', 'yuv420p', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11',
   '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', out]);
 fs.rmSync(raw);
-const coverFrame = Math.min(composition.durationInFrames - 1, (scenes[0].frames || 60) + 20);
+const coverFrame = props.style === 'pop' ? 12 : Math.min(composition.durationInFrames - 1, (scenes[0].frames || 60) + 20);
 // cine Instagram covers come from cover.mjs (the title scene), so a re-render must not overwrite them
-if (!(['cine', 'pop'].includes(props.style) && variant === 'ig'))
+if (!(props.style === 'cine' && variant === 'ig'))
   await renderStill({...opts, composition, frame: coverFrame, imageFormat: 'jpeg', output: out.replace(/\.mp4$/, '-cover.jpg')});
 console.log('rendered', out, composition.durationInFrames / 30, 's');

@@ -136,6 +136,40 @@ const Brick = ({mood, f, talk, cx = 540, cy = 980}) => <g style={{color: '#E9E4D
   <Mouth x={cx} y={cy + 40} mood={mood} talk={talk} />
 </g>;
 
+const Laptop = ({mood, f, talk, cx = 540, cy = 1000}) => <g style={{color: '#EAF2EE'}}>
+  <rect x={cx - 300} y={cy - 300} width={600} height={400} rx={30} fill={INK} />
+  <rect x={cx - 270} y={cy - 272} width={540} height={344} rx={16} fill="#EAF2EE" />
+  <path d={`M${cx - 360} ${cy + 110} h720 l-40 60 h-640 z`} fill="#9AA39F" stroke={INK} strokeWidth={8} strokeLinejoin="round" />
+  <Eyes x={cx} y={cy - 130} mood={mood} f={f} />
+  <Mouth x={cx} y={cy - 40} mood={mood} talk={talk} />
+  {mood === 'nervous' && <Sweat x={cx + 200} y={cy - 220} f={f} />}
+</g>;
+
+const PowerBank = ({mood, f, talk, pct, cx = 540, cy = 1000}) => {
+  const p = Math.max(0, Math.min(100, pct ?? 80));
+  return <g style={{color: '#FCFBF7'}}>
+    <rect x={cx - 170} y={cy - 280} width={340} height={560} rx={70} fill="#FCFBF7" stroke={INK} strokeWidth={8} />
+    {[0, 1, 2, 3].map((n) => <circle key={n} cx={cx - 66 + n * 44} cy={cy - 200} r={13} fill={n < Math.ceil(p / 25) ? TEAL : '#D9D3C4'} />)}
+    <rect x={cx - 60} y={cy + 240} width={120} height={22} rx={11} fill={INK} />
+    <Eyes x={cx} y={cy - 40} mood={mood} f={f} />
+    <Mouth x={cx} y={cy + 50} mood={mood} talk={talk} />
+    {mood === 'nervous' && <Sweat x={cx + 120} y={cy - 160} f={f} />}
+  </g>;
+};
+
+// Any other product as a soft shape with a face: shape box | jar | bag | bottle, tint, optional label
+const Thing = ({mood, f, talk, shape = 'box', tint = PEACH, label, cx = 540, cy = 1000}) => <g style={{color: tint}}>
+  {shape === 'jar' && <rect x={cx - 190} y={cy - 330} width={380} height={80} rx={20} fill={INK} />}
+  {shape === 'bottle' && <rect x={cx - 70} y={cy - 420} width={140} height={160} rx={30} fill={INK} />}
+  {shape === 'bag' && <path d={`M${cx - 130} ${cy - 260} q0 -170 130 -170 q130 0 130 170`} stroke={INK} strokeWidth={26} fill="none" />}
+  <rect x={cx - (shape === 'bottle' ? 170 : 230)} y={cy - 270} width={shape === 'bottle' ? 340 : 460} height={shape === 'box' ? 500 : 560}
+    rx={shape === 'box' ? 50 : 110} fill={tint} stroke={INK} strokeWidth={8} />
+  <Eyes x={cx} y={cy - 60} mood={mood} f={f} />
+  <Mouth x={cx} y={cy + 30} mood={mood} talk={talk} />
+  {label && <text x={cx} y={cy + 190} textAnchor="middle" fontFamily={display} fontSize={56} fill={INK}>{label}</text>}
+  {mood === 'nervous' && <Sweat x={cx + 150} y={cy - 160} f={f} />}
+</g>;
+
 const Bubble = ({text, at, f, fps, side = 'left', top = 300}) => {
   if (!text || f < at) return null;
   const k = pop(f, at, fps, 9, 220);
@@ -154,9 +188,9 @@ const Toon = ({s, sfx, beat}) => {
   const talking = (s.words || []).some((w) => f >= w[1] && f < w[2]);
   const talk = talking ? (Math.sin(f * 1.6) + 1) / 2 : 0;
   const bob = Math.abs(Math.sin(Math.PI * f / (beat || 15))) * 18;
-  const [a, b] = s.pct || [s.battery || 12, s.battery || 12];
+  const [a, b] = Array.isArray(s.pct) ? s.pct : [s.pct ?? 12, s.pct ?? 12];
   const pct = interpolate(f, [8, (s.frames || 45) - 14], [a, b], {...clamp, easing: (x) => x * x});
-  const C = {phone: Phone, cable: Cable, brick: Brick}[s.who] || Phone;
+  const C = {phone: Phone, cable: Cable, brick: Brick, laptop: Laptop, powerbank: PowerBank, thing: Thing}[s.who] || Phone;
   const shake = s.mood === 'shocked' ? Math.sin(f * 2.4) * 6 * Math.exp(-f / 20) : 0;
   return <>
     <AbsoluteFill style={{background: s.color || (s.mood === 'happy' ? '#DCEFE3' : s.mood === 'nervous' ? '#F6E3D3' : SKY)}} />
@@ -167,7 +201,7 @@ const Toon = ({s, sfx, beat}) => {
     })}
     <svg viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
       <g transform={`translate(${shake} ${(1 - enter) * 700 - bob}) rotate(${(1 - enter) * -8} 540 1000)`}>
-        <g transform={`translate(540 1000) scale(${s.who === 'cable' ? 1.35 : 1.6}) translate(-540 -1000)`}><C mood={s.mood} f={f} talk={talk} pct={pct} /></g></g>
+        <g transform={`translate(540 1000) scale(${s.scale || {cable: 1.35, laptop: 1.5, thing: 1.3}[s.who] || 1.6}) translate(-540 -1000)`}><C mood={s.mood} f={f} talk={talk} pct={pct} shape={s.shape} tint={s.tint} label={s.label} /></g></g>
     </svg>
     {s.tag && <div style={{position: 'absolute', top: 1560, width: '100%', textAlign: 'center'}}>
       <span style={{display: 'inline-block', padding: '12px 30px', borderRadius: 40, background: INK, color: 'white', fontFamily: display, fontSize: 40,
@@ -245,6 +279,39 @@ const End = ({s, sfx}) => {
   </>;
 };
 
+// One giant number or word slammed over the shot, then the caption explains it
+const Big = ({s, sfx}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const k = pop(f, 2, fps, 7, 260);
+  const hit = f > 4 ? Math.exp(-(f - 4) / 4) : 0;
+  return <>
+    <Cam img={s.img} tint={0.45} />
+    <div style={{position: 'absolute', top: 430, width: '100%', textAlign: 'center', transform: `translate(${Math.sin(f * 3) * 20 * hit}px, 0) scale(${0.4 + 0.6 * k}) rotate(${s.tilt ?? -4}deg)`}}>
+      <div style={{fontFamily: display, fontSize: s.size || 300, lineHeight: 1, color: s.color === 'coral' ? CORAL : PEACH, ...outline(14)}}>{s.big}</div>
+      {s.text && <div style={{marginTop: 30, fontFamily: display, fontSize: 64, color: 'white', whiteSpace: 'pre-line', ...outline(8)}}>{s.text}</div>}
+    </div>
+    <Fx sfx={sfx} name="pop" at={3} vol={0.9} />
+  </>;
+};
+
+// "what you think" vs "what's actually happening": two shots, top then bottom on its cue
+const Split = ({s, sfx}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const bAt = cueFrame(s, s.cue, Math.round((s.frames || 60) * .45));
+  const ka = pop(f, 0, fps, 12, 200), kb = pop(f, bAt, fps, 12, 200);
+  const half = (img, label, top, k, col) => <div style={{position: 'absolute', left: 0, right: 0, top, height: 960, overflow: 'hidden',
+    transform: `translateX(${(1 - k) * (top ? 1080 : -1080)}px)`}}>
+    <Cam img={img} />
+    <div style={{position: 'absolute', left: 50, top: 50, padding: '12px 28px', borderRadius: 16, background: col, color: col === 'white' ? INK : 'white',
+      fontFamily: display, fontSize: 48, border: `5px solid ${INK}`, transform: 'rotate(-2deg)'}}>{label}</div>
+  </div>;
+  return <>
+    {half(s.img, s.a, 0, ka, 'white')}
+    {f >= bAt - 1 && half(s.img2 || s.img, s.b, 960, kb, CORAL)}
+    <Fx sfx={sfx} name="whoosh" at={bAt} vol={0.5} />
+  </>;
+};
+
 const Scene = ({s, i, sfx, beat}) => {
   const caption = s.words && s.words.length && !['toon', 'cta'].includes(s.kind) && !s.nocap;
   return <AbsoluteFill style={{background: INK, overflow: 'hidden'}}>
@@ -253,9 +320,11 @@ const Scene = ({s, i, sfx, beat}) => {
     {s.kind === 'shot' && <><Cam img={s.img} />{s.text && <Hook text={s.text} />}</>}
     {s.kind === 'toon' && <Toon s={s} sfx={sfx} beat={beat} />}
     {s.kind === 'notes' && <Notes s={s} sfx={sfx} />}
+    {s.kind === 'big' && <Big s={s} sfx={sfx} />}
+    {s.kind === 'split' && <Split s={s} sfx={sfx} />}
     {s.kind === 'pick' && <Pick s={s} sfx={sfx} />}
     {s.kind === 'cta' && <End s={s} sfx={sfx} />}
-    {caption ? <BigCaption words={s.words} y={s.capY || (s.kind === 'notes' ? 1560 : s.kind === 'pick' ? 1420 : 1240)} /> : null}
+    {caption ? <BigCaption words={s.words} y={s.capY || (s.kind === 'notes' ? 1560 : s.kind === 'pick' ? 1420 : s.kind === 'split' ? 860 : s.kind === 'big' ? 1300 : 1240)} /> : null}
     {i > 0 && <Fx sfx={sfx} name="whoosh" at={0} vol={0.45} />}
     {s.vo && <Audio src={staticFile(s.vo)} />}
   </AbsoluteFill>;
