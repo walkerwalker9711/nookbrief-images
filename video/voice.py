@@ -3,7 +3,8 @@
   python3 voice.py <props.json> <out_dir>
 
 Reads props["scenes"][i]["vo"] (what the narrator says in that scene), writes out_dir/vo<i>.wav
-with Kokoro TTS (Apache-2.0, runs locally), out_dir/music.wav (synthesized here, no licensing),
+with Kokoro TTS (Apache-2.0, runs locally; props["voice"] picks the speaker), out_dir/music.wav
+(synthesized here, no licensing; props["music"] = {"style", "key", "seed"} picks a bed from beds.py),
 and prints JSON {"scenes": [{"frames", "words": [[word, start_frame, end_frame], ...]}], "music": ...}.
 """
 import json
@@ -14,6 +15,9 @@ import urllib.request
 
 import numpy as np
 import soundfile as sf
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from beds import BEDS  # noqa: E402
 
 FPS = 30
 SR = 24000
@@ -168,15 +172,20 @@ def main(props_path, out_dir):
             scenes.append({"frames": s.get("frames", 60), "words": []})
             total += scenes[-1]["frames"]
             continue
-        audio, sr = tts.create(s["vo"], voice=s.get("voice", VOICE), speed=s.get("speed", props.get("speed", 1.25)), lang="en-us")
+        audio, sr = tts.create(s["vo"], voice=s.get("voice", props.get("voice") or VOICE), speed=s.get("speed", props.get("speed", 1.25)), lang="en-us")
         audio = trim(audio)
         sf.write(os.path.join(out_dir, f"vo{i}.wav"), audio, sr)
         sec = len(audio) / sr
         frames = max(int((sec + PAD + s.get("hold", 1.5 if s.get("kind") == "cta" else 0)) * FPS) + 1, s.get("min_frames", 0))
         scenes.append({"frames": frames, "words": word_times(s["vo"], sec), "vo": f"vo{i}.wav"})
         total += frames
-    bed = lofi if props.get("music_style") == "lofi" else music
-    sf.write(os.path.join(out_dir, "music.wav"), bed(total / FPS + 0.5), SR)
+    sec = total / FPS + 0.5
+    m = props.get("music") or {}
+    if m.get("style") in BEDS:  # chosen per video so the bed changes day to day (owner, 2026-10-23)
+        bed = BEDS[m["style"]](sec, key=m.get("key", 0), seed=m.get("seed", 1))
+    else:
+        bed = lofi(sec) if props.get("music_style") == "lofi" else music(sec)
+    sf.write(os.path.join(out_dir, "music.wav"), bed, SR)
     print(json.dumps({"scenes": scenes, "music": "music.wav", "frames": total}))
 
 
