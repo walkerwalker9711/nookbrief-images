@@ -1,7 +1,7 @@
 {
   "topic": "old-60w-or-240w-usbc-cable",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/60w-or-240w-usb-c-cable-which-one-does.html",
   "video": {
     "ig": "posts/old-60w-or-240w-usbc-cable/old-60w-or-240w-usbc-cable-short-ig.mp4",
     "link": "posts/old-60w-or-240w-usbc-cable/old-60w-or-240w-usbc-cable-short-link.mp4",
@@ -36,5 +36,7 @@
       "usb-c",
       "tech tips"
     ]
-  }
+  },
+  "not_before": 1792752512,
+  "threads_not_before": 1792884000
 }
