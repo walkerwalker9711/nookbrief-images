@@ -31,8 +31,9 @@ def main():
         code, its = items(PIN.format(b))
         its = list(its)
         print(b, code, len(its), "pins")
-        for it in its[:6]:
-            print("  ", (it.findtext("pubDate") or "")[:16], "|", (it.findtext("title") or "")[:60], "|", it.findtext("link"))
+        for it in its[:8]:
+            img = re.search(r'src="([^"]+)"', it.findtext("description") or "")
+            print("  ", (it.findtext("pubDate") or "")[:16], "|", (it.findtext("title") or "")[:60], "|", img.group(1)[-60:] if img else "-")
     print("== blog label feeds (what Pinterest reads)")
     for lab in LABELS:
         code, its = items(BLOG.format(lab))
