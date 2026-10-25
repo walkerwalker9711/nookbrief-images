@@ -1,0 +1,6 @@
+gift-stocking-tech-11-pick.png | 11 | Black USB-C to USB-C cable with both connectors visible. (reused from gift-small-tech-15)
+gift-stocking-tech-12-pick.png | 12 | A tiny white cube charger has one USB-C port and folded flat prongs. (reused from usbc-phone-charges-slowly-12)
+gift-stocking-tech-15-pick.png | 15 | Metal USB-A flash drive with a rear keyring loop. (reused from retro-picks-18)
+gift-stocking-tech-16-pick.png | 16 | Four rubber twist ties, with two securing a coiled charging cable. (reused from retro-picks-22)
+gift-stocking-tech-17-pick.png | 17 | Slim light-grey power bank with a short USB-C cable folded along its side. (reused from gift-small-tech-11)
+gift-stocking-tech-18-pick.png | 18 | A compact black car charger has two USB-C ports and a softly illuminated ring. (reused from gift-small-tech-16)
