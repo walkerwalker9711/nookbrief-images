@@ -15,3 +15,5 @@ jobs:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
         run: python list_posts.py
+      - working-directory: scripts/social
+        run: python pin_check.py
