@@ -1,7 +1,12 @@
 name: tts-sample
 # On demand: render voice samples for the senior Shorts channels and commit them to senior/samples.
+# workflow_dispatch only works once this file is on main; until then a push that touches
+# senior/samples/request runs it on this branch.
 on:
   workflow_dispatch:
+  push:
+    branches: [claude/project-thread-9sna6x]
+    paths: [senior/samples/request]
 permissions:
   contents: write
 jobs:
