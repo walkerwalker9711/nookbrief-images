@@ -75,10 +75,13 @@ def native_villain(channel):
     lang = {"kr": "ko", "us": "en"}[channel]
     want = ("intense", "deep", "gruff", "menacing", "dark", "rough", "confident", "serious")
     for age in ("middle_aged", "young", None):
-        params = {"page_size": 40, "gender": "male", "language": lang, "sort": "cloned_by"}
+        params = {"page_size": 40, "gender": "male", "language": lang, "sort": "trending"}
         if age:
             params["age"] = age
         r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
+        if r.status_code == 400:  # the accepted sort names have changed before; fall back to the default order
+            params.pop("sort")
+            r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
         if not r.ok:
             print("shared voices ->", r.status_code, r.text[:200])
             return None
