@@ -1,13 +1,14 @@
 {
   "channel": "kr",
-  "title": "에너지바우처, 모르면 손해 보는 8가지",
-  "description": "에너지바우처 대상·지원액·신청처를 저장해 두세요.\n금액은 올해 총지원액이며, 여름에 사용했다면 남은 금액을 겨울에 씁니다.\n출처: 한국에너지공단 에너지바우처 지원안내 https://www.energyv.or.kr/info/support_info.do\n출처: 한국에너지공단 「에너지바우처로 따뜻한 겨울 준비하세요」(2026.9.30.) https://www.energy.or.kr/front/board/View3.do?boardMngNo=3&boardNo=10025025\nAI 음성·그림",
+  "title": "근로장려금 신청 놓쳤다면, 저장할 8가지",
+  "description": "놓친 근로장려금, 기한 후 신청 확인표를 저장하세요.\n2025년 근로·사업·종교인소득이 있는 가구 대상이며, 부채는 재산에서 빼지 않습니다. 세부 요건 심사 후 지급됩니다.\n출처: 국세청, 2026.4.30. 근로·자녀장려금 정기 신청 보도자료\nhttps://webtv.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&nttSn=1350768\n출처: 국세청, 신청기간 및 방법\nhttps://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=238977&mi=40397\nAI 음성·그림",
   "tags": [
     "한국이장님",
-    "에너지바우처",
-    "2026에너지바우처",
-    "난방비지원",
-    "복지혜택",
+    "근로장려금",
+    "2026근로장려금",
+    "기한후신청",
+    "홈택스",
+    "손택스",
     "부모님혜택"
   ],
   "made_with_ai": true,
