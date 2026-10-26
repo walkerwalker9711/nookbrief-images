@@ -26,8 +26,8 @@ const composition = await selectComposition(opts);
 const raw = out.replace(/\.mp4$/, '-raw.mp4');
 await renderMedia({...opts, composition, codec: 'h264', audioCodec: 'aac', outputLocation: raw});
 // Shorts play around -14 LUFS; keep the file under ~10 MB
-execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'libx264', '-preset', 'slow', '-crf', '23',
-  '-maxrate', '4500k', '-bufsize', '9000k', '-pix_fmt', 'yuv420p', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11',
+execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-c:v', 'libx264', '-preset', 'slow', '-crf', '25',
+  '-maxrate', '2800k', '-bufsize', '5600k', '-pix_fmt', 'yuv420p', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11',
   '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', out]);
 fs.rmSync(raw);
 await renderStill({...opts, composition, frame: 20, imageFormat: 'jpeg', output: path.join(path.dirname(out), 'cover.jpg')});

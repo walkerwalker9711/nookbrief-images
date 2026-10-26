@@ -293,9 +293,37 @@ channel's language, then the sources as plain text, then "AI voice & visuals" (K
 """
     body = {"input": prompt, "tools": [{"type": "web_search"}],
             "text": {"format": {"type": "json_schema", "name": "short_script", "schema": SCHEMA, "strict": True}}}
-    text = responses(body)
-    m = re.search(r"\{.*\}", text, re.S)
-    return json.loads(m.group(0) if m else text)
+    for attempt in range(2):
+        text = responses(body)
+        m = re.search(r"\{.*\}", text, re.S)
+        script = json.loads(m.group(0) if m else text)
+        problems = check_script(script, layout, c)
+        if not problems:
+            return script
+        print("script check failed:", "; ".join(problems))
+        body["input"] = prompt + "\nYour last answer broke the layout: " + "; ".join(problems) + ". Fix it.\n"
+    return script
+
+
+def check_script(script, layout, c):
+    """The model sometimes drops the ending of the drama; catch it before paying for pictures and voice."""
+    kinds = [s["kind"] for s in script["scenes"]]
+    problems = []
+    if layout is LAYOUT_DRAMA:
+        if len(kinds) < 8:
+            problems.append(f"only {len(kinds)} scenes, need 8 to 10")
+        for k in ("hook", "phone", "twist", "steps", "outro"):
+            if k not in kinds:
+                problems.append(f"no {k} scene")
+        if kinds and kinds[-1] != "outro":
+            problems.append("last scene must be the outro")
+        if script["scenes"][0]["speaker"] == "scammer" and script["scenes"][0]["line"].lstrip().startswith("아, 아"):
+            problems.append('the scammer must not open with "아, 아."')
+    if layout is LAYOUT_LIST and kinds != ["list"]:
+        problems.append("need exactly one list scene")
+    if "steps" in kinds and not script["scenes"][kinds.index("steps")]["steps"]:
+        problems.append("the steps scene has no steps")
+    return problems
 
 
 # ---------- pictures ----------

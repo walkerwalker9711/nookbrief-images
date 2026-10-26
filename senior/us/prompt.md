@@ -13,7 +13,7 @@
 - Thu Nostalgia: a "what did it cost in 1975?" quiz. Old price and today's price, both sourced (BLS, EIA, Census).
 - Fri Phone: one iPhone or Android setting, with the real menu path (Settings > Accessibility > ...).
 
-## Script shape
+## Script shape (the Video layout wins when it gives its own scene count or length)
 - About 35 seconds, 6 to 9 sentences, 75 to 95 words.
 - 5 to 7 scenes. Each scene: 1 or 2 spoken sentences, an on-screen caption of 4 words or fewer, an image_prompt.
 - Contractions, mixed sentence length, fragments are fine.
