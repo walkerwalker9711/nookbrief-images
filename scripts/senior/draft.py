@@ -453,6 +453,18 @@ def speak(channel, text, out, role="host", delivery=""):
     return timed, "openai"
 
 
+# Hotlines are written out in the script so the voice reads them right; the captions show them as numbers
+SPOKEN_NUMBERS = {"일일이": "112", "일일팔": "118", "일삼삼이": "1332", "일삼구": "139", "일일구": "119",
+                  "seven-seven-two-six": "7726", "nine-one-one": "911"}
+
+
+def digits(word):
+    for spoken, num in SPOKEN_NUMBERS.items():
+        if word.startswith(spoken):
+            return num + word[len(spoken):]
+    return word
+
+
 def duration(path):
     """Seconds of audio/video, read from ffmpeg itself (the pip ffmpeg build has no ffprobe)."""
     out = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-f", "null", "-"],
@@ -486,7 +498,7 @@ def build_props(channel, script, images, work):
         scenes.append({
             "kind": s["kind"], "speaker": s["speaker"], "img": f"img{i}{img.suffix}", "vo": vo.name, "vo_at": lead, "frames": frames,
             "caption": s["caption"], "hot": s["hot"], "cta": s["cta"],
-            "words": [[w, lead + int(a * FPS), lead + int(b * FPS) + 1] for w, a, b in words],
+            "words": [[digits(w), lead + int(a * FPS), lead + int(b * FPS) + 1] for w, a, b in words],
             **({"phone": s["phone"]} if s["kind"] == "phone" and s["phone"]["app"] != "none" else {}),
             **({"steps": s["steps"]} if s["kind"] == "steps" else {}),
             **({"items": s["items"]} if s["kind"] == "list" else {}),
