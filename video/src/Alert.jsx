@@ -90,6 +90,55 @@ const withLinks = (text, scam) => {
     : <span key={i} style={{color: '#1A73E8', textDecoration: 'underline', background: scam ? 'rgba(227,36,43,.18)' : 'none'}}>{p.link}</span>);
 };
 
+// A settings screen: rows appear, then a finger taps the row marked `me` and a red ring pulses around it
+const Settings = ({phone, start, tapAt}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const rows = phone.messages || [];
+  const target = Math.max(0, rows.findIndex((m) => m.me));
+  const tap = pop(f, tapAt, fps, 14, 160);
+  return <div style={{background: '#F2F2F7', height: '100%'}}>
+    <div style={{fontSize: 64, fontWeight: 900, color: INK, padding: '20px 44px 26px'}}>{phone.sender}</div>
+    <div style={{margin: '0 30px', borderRadius: 28, background: WHITE, overflow: 'hidden'}}>
+      {rows.map((m, i) => {
+        const on = i === target && f >= tapAt;
+        return <div key={i} style={{position: 'relative', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          padding: '34px 36px', borderBottom: i < rows.length - 1 ? '1px solid #E5E5EA' : 'none', fontSize: 46, color: INK,
+          background: on ? '#FFF3B0' : WHITE, opacity: f >= start + 6 + i * 4 ? 1 : 0}}>
+          <span style={{fontWeight: i === target ? 900 : 500}}>{m.text}</span><span style={{color: '#C7C7CC'}}>›</span>
+          {i === target && f >= tapAt - 18 && <div style={{position: 'absolute', inset: 4, border: `8px solid ${RED}`, borderRadius: 20,
+            transform: `scale(${1.15 - 0.15 * tap + 0.03 * Math.sin(f * 0.4)})`}} />}
+          {i === target && f >= tapAt - 18 && <div style={{position: 'absolute', right: 120, top: 40, fontSize: 120,
+            transform: `translate(${(1 - tap) * 160}px, ${(1 - tap) * 220}px) scale(${f >= tapAt && f < tapAt + 5 ? 0.85 : 1})`}}>👆</div>}
+        </div>;
+      })}
+    </div>
+  </div>;
+};
+
+// "모르면 손해 N가지": one saveable card, every row in within two seconds, then it holds
+const ListCard = ({title, items, img}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  return <AbsoluteFill style={{background: '#FFF8E7'}}>
+    <div style={{position: 'absolute', top: 175, left: 40, right: 40, padding: '26px 30px', borderRadius: 26, background: RED,
+      color: WHITE, fontFamily: font, fontWeight: 900, fontSize: 70, lineHeight: 1.15, textAlign: 'center', wordBreak: 'keep-all',
+      transform: `scale(${pop(f, 0, fps, 10, 220)})`}}>{title}</div>
+    <div style={{position: 'absolute', top: 470, left: 40, right: 40, display: 'flex', flexDirection: 'column', gap: 16}}>
+      {items.map((it, i) => {
+        const k = pop(f, 6 + i * 5, fps, 13, 260);
+        return <div key={i} style={{display: 'flex', alignItems: 'center', gap: 22, padding: '18px 26px', borderRadius: 20,
+          background: WHITE, border: `4px solid ${INK}`, transform: `translateX(${(1 - k) * 1100}px)`}}>
+          <span style={{flex: '0 0 auto', width: 66, height: 66, borderRadius: 33, background: INK, color: YEL, fontFamily: font,
+            fontWeight: 900, fontSize: 40, lineHeight: '66px', textAlign: 'center'}}>{i + 1}</span>
+          <span style={{flex: 1, fontFamily: font, fontWeight: 900, fontSize: 44, color: INK, lineHeight: 1.2, wordBreak: 'keep-all'}}>{it.label}</span>
+          {it.value && <span style={{flex: '0 0 auto', fontFamily: font, fontWeight: 900, fontSize: 44, color: RED}}>{it.value}</span>}
+        </div>;
+      })}
+    </div>
+    {img && <Img src={staticFile(img)} style={{position: 'absolute', right: -40, bottom: -60, width: 420, borderRadius: 30,
+      transform: `rotate(${Math.sin(f * 0.15) * 2}deg)`}} />}
+  </AbsoluteFill>;
+};
+
 const Phone = ({phone, lang, start, stampAt, stampText}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   const up = pop(f, start, fps, 14, 120);
@@ -110,7 +159,7 @@ const Phone = ({phone, lang, start, stampAt, stampText}) => {
         <span style={{width: 150, height: 36, borderRadius: 20, background: INK}} />
         <span>▂▄▆ ▮</span>
       </div>
-      {call ? <div style={{textAlign: 'center', color: WHITE, paddingTop: 140}}>
+      {phone.app === 'settings' ? <Settings phone={phone} start={start} tapAt={stampAt} lang={lang} /> : call ? <div style={{textAlign: 'center', color: WHITE, paddingTop: 140}}>
         <div style={{fontSize: 36, opacity: .75}}>{ko ? '수신 전화' : 'incoming call'}</div>
         <div style={{fontSize: 70, fontWeight: 900, marginTop: 20}}>{phone.sender}</div>
         <div style={{fontSize: 34, opacity: .75, marginTop: 12}}>{phone.tag || ''}</div>
@@ -140,7 +189,7 @@ const Phone = ({phone, lang, start, stampAt, stampText}) => {
         </div>
       </>}
     </div>
-    {stamped && <div style={{position: 'absolute', left: 0, right: 0, top: 470, textAlign: 'center'}}>
+    {stamped && stampText && <div style={{position: 'absolute', left: 0, right: 0, top: 470, textAlign: 'center'}}>
       <span style={{display: 'inline-block', padding: '10px 50px', border: `14px solid ${RED}`, borderRadius: 26, color: RED,
         fontFamily: font, fontWeight: 900, fontSize: 150, letterSpacing: 6, background: 'rgba(255,255,255,.82)',
         transform: `rotate(-13deg) scale(${3 - 2 * sk})`, opacity: Math.min(1, sk * 1.5)}}>{stampText}</span>
@@ -214,14 +263,16 @@ const Scene = ({s, i, props}) => {
   const stampAt = Math.round((s.frames || 60) * 0.55);
   const hookRed = (s.kind === 'hook' || s.kind === 'twist') && danger ? 0.6 + 0.4 * Math.abs(Math.sin(f * 0.25)) : 0;
   return <AbsoluteFill>
-    {s.kind === 'steps'
+    {s.kind === 'list' ? <ListCard title={s.caption} items={s.items || []} img={s.img} />
+      : s.kind === 'steps'
       ? <AbsoluteFill style={{background: `radial-gradient(circle at 50% 30%, #23355E, ${NAVY})`}} />
       : <Cam img={s.img} dir={i % 2 ? -1 : 1} dim={s.kind === 'phone' ? 0.45 : s.kind === 'outro' ? 0.25 : 0}
           blur={s.kind === 'phone' ? 6 : 0} red={hookRed} />}
     {s.kind === 'phone' && s.phone && <>
-      <Phone phone={s.phone} lang={lang} start={2} stampAt={stampAt} stampText={s.stamp || (lang === 'ko' ? '사기!' : 'SCAM')} />
-      {(s.phone.messages || []).map((m, n) => <Fx key={n} sfx={sfx} name="notify" at={16 + n * 16} vol={0.55} />)}
-      {s.stamp !== '' && <Fx sfx={sfx} name="stamp" at={stampAt} vol={0.9} />}
+      <Phone phone={s.phone} lang={lang} start={2} stampAt={stampAt}
+        stampText={s.phone.app === 'settings' ? '' : (s.stamp || (lang === 'ko' ? '사기!' : 'SCAM'))} />
+      {s.phone.app === 'sms' && (s.phone.messages || []).map((m, n) => <Fx key={n} sfx={sfx} name="notify" at={16 + n * 16} vol={0.55} />)}
+      <Fx sfx={sfx} name={s.phone.app === 'settings' ? 'pop' : 'stamp'} at={stampAt} vol={0.9} />
     </>}
     {s.kind === 'steps' && <Steps steps={s.steps || []} frames={s.frames || 90} sfx={sfx} />}
     {(s.kind === 'talk' || (s.kind === 'hook' && s.speaker === 'scammer')) && <SpeakerTag speaker={s.speaker} lang={lang} host={props.host} startSec={s.callSec || 0} />}
@@ -231,9 +282,9 @@ const Scene = ({s, i, props}) => {
       <Fx sfx={sfx} name="alarm" at={Math.round((s.frames || 60) * 0.35) + 6} vol={0.35} />
     </>}
     {s.kind === 'outro' && <Outro brand={props.brand} lang={lang} cta={s.cta} />}
-    {!['outro', 'talk'].includes(s.kind) && !(s.kind === 'hook' && s.speaker === 'scammer') && <Headline text={s.caption} big={s.kind === 'hook'} danger={danger && (s.kind === 'hook' || s.kind === 'phone' || s.kind === 'twist')} />}
+    {!['outro', 'talk', 'list'].includes(s.kind) && !(s.kind === 'hook' && s.speaker === 'scammer') && <Headline text={s.caption} big={s.kind === 'hook'} danger={danger && (s.kind === 'hook' || s.kind === 'phone' || s.kind === 'twist')} />}
     {s.kind === 'hook' && s.speaker === 'scammer' && <div style={{position: 'absolute', top: 110, left: 0, right: 0}}><Headline text={s.caption} big danger={danger} /></div>}
-    {s.kind !== 'steps' && <Captions words={s.words} hot={s.hot} y={s.kind === 'phone' ? 1520 : 1330} />}
+    {!['steps', 'list'].includes(s.kind) && <Captions words={s.words} hot={s.hot} y={s.kind === 'phone' ? 1520 : 1330} />}
     {s.kind === 'steps' && <Captions words={s.words} hot={s.hot} y={1560} />}
     {i > 0 && <Fx sfx={sfx} name="whoosh" at={0} vol={0.45} />}
     {s.vo && <Sequence from={s.vo_at || 0}><Audio src={staticFile(s.vo)} /></Sequence>}

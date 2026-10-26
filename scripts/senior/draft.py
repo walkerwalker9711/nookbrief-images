@@ -75,10 +75,10 @@ CHANNELS = {
 PHONE = {
     "type": "object", "additionalProperties": False, "required": ["app", "sender", "time", "messages"],
     "properties": {
-        "app": {"type": "string", "enum": ["sms", "call", "none"]},
+        "app": {"type": "string", "enum": ["sms", "call", "settings", "none"]},
         "sender": {"type": "string", "description": "what the phone shows as the sender, e.g. +1 (844) 555-0193 or [국외발신] 02-1234-5678"},
         "time": {"type": "string", "description": "clock on the phone, e.g. 9:41 or 오후 2:17"},
-        "messages": {"type": "array", "maxItems": 3, "items": {
+        "messages": {"type": "array", "maxItems": 7, "items": {
             "type": "object", "additionalProperties": False, "required": ["text", "me"],
             "properties": {"text": {"type": "string"}, "me": {"type": "boolean"}}}}}}
 
@@ -90,11 +90,11 @@ SCHEMA = {
         "topic": {"type": "string"},
         "title": {"type": "string", "description": "YouTube title, under 60 characters, no clickbait caps"},
         "mood": {"type": "string", "enum": ["alert", "warm"], "description": "alert for scams and dangers, warm for the rest"},
-        "scenes": {"type": "array", "minItems": 5, "maxItems": 7, "items": {
+        "scenes": {"type": "array", "minItems": 1, "maxItems": 10, "items": {
             "type": "object", "additionalProperties": False,
-            "required": ["kind", "speaker", "line", "caption", "hot", "image_prompt", "cast", "phone", "steps", "cta"],
+            "required": ["kind", "speaker", "line", "caption", "hot", "image_prompt", "cast", "phone", "steps", "items", "cta"],
             "properties": {
-                "kind": {"type": "string", "enum": ["hook", "phone", "scene", "talk", "twist", "steps", "outro"]},
+                "kind": {"type": "string", "enum": ["hook", "phone", "scene", "talk", "twist", "steps", "list", "outro"]},
                 "speaker": {"type": "string", "enum": ["host", "scammer"], "description": "who says this line"},
                 "line": {"type": "string", "description": "what the character says in this scene"},
                 "caption": {"type": "string", "description": "headline on screen, very short"},
@@ -107,6 +107,9 @@ SCHEMA = {
                 "steps": {"type": "array", "maxItems": 4, "items": {
                     "type": "object", "additionalProperties": False, "required": ["text", "ok"],
                     "properties": {"text": {"type": "string"}, "ok": {"type": "boolean"}}}},
+                "items": {"type": "array", "maxItems": 8, "items": {
+                    "type": "object", "additionalProperties": False, "required": ["label", "value"],
+                    "properties": {"label": {"type": "string"}, "value": {"type": "string", "description": "amount or rate, or empty"}}}},
                 "cta": {"type": "string", "description": "outro only: one short share line, else empty"}}}},
         "sources": {"type": "array", "minItems": 1, "items": {
             "type": "object", "additionalProperties": False, "required": ["name", "url"],
@@ -129,8 +132,8 @@ Scene kinds, in this order: hook, then a mix of phone / scene / steps, then outr
 - scene: a picture that explains (who is behind it, what they want, what it costs).
 - steps: 2 to 4 short checklist rows, wrong moves with ok false (red X), right moves with ok true (green check).
 - outro: cast host, "cta" is one short share line (send this to mom and dad).
-speaker is host for every scene in this layout. For every kind fill all fields; when a field does not apply use app "none" with no messages, an empty steps
-list and an empty cta.
+speaker is host for every scene in this layout. For every kind fill all fields; when a field does not apply use
+app "none" with no messages, an empty steps list, an empty items list and an empty cta.
 Pictures: vary the shot every scene: close-up of hands holding a phone, over-the-shoulder at a kitchen table,
 a shadowy scammer at a laptop in a dark room, a post office counter, a bank window, a wide street. The host
 appears only when cast says so (hook and outro, at most one more). Keep the same 2D flat cartoon
@@ -154,7 +157,26 @@ The host takes a real scam call or text going around now and turns the tables on
 hot: the giveaway words of the scam (검찰, 안전계좌, gift card). Pictures: the host at his place (village office,
 porch), the scammer at his desk in a dim call center, alternate between them so every cut changes the shot;
 same 2D flat cartoon style throughout. For every kind fill all fields; when a field does not apply use app "none"
-with no messages, an empty steps list and an empty cta.
+with no messages, an empty steps list, an empty items list and an empty cta.
+"""
+
+LAYOUT_LIST = """=== Video layout: one saveable card, "모르면 손해 보는 N가지" (9 to 12 seconds) ===
+Exactly one scene, kind list, speaker host, cast host. caption is the card title, e.g. "65세 넘으면 모르면 손해 보는 7가지"
+(English: "Turning 65? 7 things you're leaving on the table"). items: 6 to 8 rows, label short (under 16 Korean
+characters / 5 English words), value the amount, rate or age when there is one (from this year's official
+announcements only; leave value empty rather than guess). line: one or two short spoken sentences, about 6 seconds,
+telling people to save the card (no numbers in the line, the card carries them). image_prompt: the host pointing
+up at something, waist up. Fill the other fields with app "none", empty messages, steps and cta.
+Benefits are money topics, so the voice only introduces; the card does the explaining.
+"""
+
+LAYOUT_PHONE = """=== Video layout: discovery phone tip ===
+5 to 7 scenes. hook: the result first in the "you'll wish you knew this" style ("이거 알아낸 사람 상줘야 됩니다" energy,
+but in the host's own voice, no copied phrases). Then one phone scene per screen on the menu path with app "settings":
+sender is the screen title (설정, 접근성, ...), messages are the rows on that screen in their real order (4 to 6
+rows, real menu names for Galaxy One UI / iPhone iOS of this year), and exactly the row to tap has me true. Then a
+scene showing the result, steps if useful, outro with cta. speaker is host for every scene. cast host on hook and
+outro only. Fill unused fields with empty values (app "none", empty steps, items and cta).
 """
 
 
@@ -238,7 +260,9 @@ def responses(body):
 def write_script(channel, date, topic):
     c = CHANNELS[channel]
     pillar = c["pillars"][date.weekday()] if date.weekday() < 5 else c["pillars"][0]
-    drama = pillar == c["pillars"][0]  # scam days are 참교육 dramas (owner 2026-10-26: plain warnings don't spread)
+    # owner 2026-10-26: plain warnings don't spread, so each day gets the format that is working on Shorts now
+    day = c["pillars"].index(pillar)
+    layout = {0: LAYOUT_DRAMA, 1: LAYOUT_LIST, 4: LAYOUT_PHONE}.get(day, LAYOUT)
     rules = (SENIOR / "SHARED_RULES.md").read_text(encoding="utf-8")
     own = (SENIOR / channel / "prompt.md").read_text(encoding="utf-8")
     extra = (SENIOR / "SNS_글쓰기_규칙_영어.md").read_text(encoding="utf-8") if channel == "us" else ""
@@ -256,7 +280,7 @@ Do not repeat these recent topics or opening lines:
 What is getting views this week for this pillar (YouTube search, last 7 days):
 {trend_lines(c['region'], pillar_keywords(c['region'], pillar))}
 
-{LAYOUT_DRAMA if drama else LAYOUT}
+{layout}
 === Channel prompt ===
 {own}
 
@@ -392,6 +416,8 @@ def build_props(channel, script, images, work):
             frames = max(frames, 30 + 22 * len(s["steps"]))
         if s["kind"] == "outro":
             frames += 15
+        if s["kind"] == "list":
+            frames = max(frames, 10 * FPS)
         shutil.copy(img, Path(work) / f"img{i}{img.suffix}")
         scenes.append({
             "kind": s["kind"], "speaker": s["speaker"], "img": f"img{i}{img.suffix}", "vo": vo.name, "vo_at": lead, "frames": frames,
@@ -399,6 +425,7 @@ def build_props(channel, script, images, work):
             "words": [[w, lead + int(a * FPS), lead + int(b * FPS) + 1] for w, a, b in words],
             **({"phone": s["phone"]} if s["kind"] == "phone" and s["phone"]["app"] != "none" else {}),
             **({"steps": s["steps"]} if s["kind"] == "steps" else {}),
+            **({"items": s["items"]} if s["kind"] == "list" else {}),
         })
         total += frames
     seed = int(dt.date.today().strftime("%j"))
