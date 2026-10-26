@@ -72,7 +72,14 @@ def sfx():
     # mic feedback "삐-" for the village chief opening
     tm = env(0.45)
     mic = np.sin(2 * np.pi * 1150 * tm) * np.minimum(1, tm / 0.02) * np.minimum(1, (tm[-1] - tm) / 0.08) * 0.3
-    return {"alarm": alarm, "stamp": stamp, "notify": notify, "whoosh": whoosh, "pop": pop, "buzz": buzz, "mic": mic}
+    # two slow heartbeats under the scammer's threats
+    th = env(0.16)
+    lub = np.sin(2 * np.pi * np.cumsum(70 * np.exp(-th * 18) + 38) / SR) * np.exp(-th * 22)
+    beat = np.zeros(int(SR * 0.85))
+    beat[:len(lub)] += lub
+    beat[int(SR * 0.22):int(SR * 0.22) + len(lub)] += lub * 0.7
+    heart = np.concatenate([beat, beat]) * 0.9
+    return {"heart": heart, "alarm": alarm, "stamp": stamp, "notify": notify, "whoosh": whoosh, "pop": pop, "buzz": buzz, "mic": mic}
 
 
 def write(path, x):

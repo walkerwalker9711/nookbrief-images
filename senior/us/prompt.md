@@ -28,3 +28,12 @@ delve, dive into, unlock, elevate, seamless, game-changer, robust, navigate, in 
 
 ## ko_review
 Write the whole script again in natural Korean (so the owner can check it), one line per scene.
+
+## Drama dialogue bar (owner 10-26: "no tension, sounds AI-written, the scammer is too nice")
+- Real spoken American English, the way a scam call actually sounds. No written-English sentences.
+- The scammer is aggressive: threats, deadlines, insults when stalled ("Listen to me.", "You got ten minutes.",
+  "Don't you hang up on me."). Every scammer line carries pressure.
+- Pops plays slow and folksy to stall ("Hold on, let me find my glasses"), which sets up the twist.
+- Example bar (grandkid-in-jail scam): Scammer: "Grandpa? It's me. I'm in jail, I need bail, don't tell Mom."
+  Pops: "Which grandkid? I got eleven." Scammer: "Doesn't matter! Lawyer needs five grand in gift cards. Now."
+  Pops: "Funny. Tommy's right here eating my pie. And the sheriff's been on speaker this whole time. Nice try, pal."

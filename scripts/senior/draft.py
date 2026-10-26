@@ -318,12 +318,58 @@ channel's language, then the sources as plain text, then "AI voice & visuals" (K
         text = responses(body)
         m = re.search(r"\{.*\}", text, re.S)
         script = json.loads(m.group(0) if m else text)
+        if layout is LAYOUT_DRAMA:
+            script = punch_up(channel, script, own)
         problems = check_script(script, layout, c)
         if not problems:
             return script
         print("script check failed:", "; ".join(problems))
         body["input"] = prompt + "\nYour last answer broke the layout: " + "; ".join(problems) + ". Fix it.\n"
     return script
+
+
+def punch_up(channel, script, own):
+    """Second pass, owner 10-26: the first drafts read like translated, written text and the scammer was too
+    polite. A dialogue writer rewrites only what is said; facts, sources, scene order and phone data stay."""
+    c = CHANNELS[channel]
+    prompt = f"""You are the dialogue writer for "{c['name']}", short {c['lang']} cartoon dramas where a scammer gets outplayed.
+Below is a finished script as JSON. Rewrite ONLY each scene's "line", "caption", "delivery" and "hot" so that:
+- it sounds like real people on a real phone call in {c['lang']}, spoken and natural, never written or translated;
+- the situation is exactly how this scam really happens in that country (keep the facts; change nothing in
+  "sources", "fact_notes", "phone", "steps", "kind", "speaker", "cast", "image_prompt");
+- the scammer is menacing and pushy, every scammer line adds a threat or a deadline; tension climbs scene by scene;
+- the host stalls in character, and the twist line pays off an earlier line and lands hard;
+- "delivery" tags are strong and specific for the voice actor (e.g. [low, menacing], [shouting, furious],
+  [fake-sweet then cold], [stalling, playing dumb], [deadpan], [triumphant]);
+- "hot" stays one or two words copied exactly from the new line;
+- lines stay short: one or two sentences, so the whole video stays 40 to 55 seconds.
+Keep the steps scene and the outro line plain and useful. Update "ko_review" to match the new lines.
+Return the whole script JSON with the same schema.
+
+=== Channel rules (follow the dialogue bar exactly) ===
+{own}
+
+=== Script ===
+{json.dumps(script, ensure_ascii=False)}
+"""
+    body = {"input": prompt,
+            "text": {"format": {"type": "json_schema", "name": "short_script", "schema": SCHEMA, "strict": True}}}
+    try:
+        text = responses(body)
+        m = re.search(r"\{.*\}", text, re.S)
+        new = json.loads(m.group(0) if m else text)
+    except (SystemExit, ValueError) as e:
+        print("punch-up skipped:", e)
+        return script
+    if [x["kind"] for x in new["scenes"]] != [x["kind"] for x in script["scenes"]]:
+        print("punch-up changed the scene order; keeping the first draft")
+        return script
+    for old, sc in zip(script["scenes"], new["scenes"]):
+        for k in ("phone", "steps", "speaker", "cast", "image_prompt", "items"):
+            sc[k] = old[k]
+    new["sources"], new["fact_notes"] = script["sources"], script["fact_notes"]
+    print("punch-up done")
+    return new
 
 
 def check_script(script, layout, c):

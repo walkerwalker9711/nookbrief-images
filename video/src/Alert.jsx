@@ -11,7 +11,7 @@ const stroke = (w) => ({WebkitTextStroke: `${w}px ${INK}`, paintOrder: 'stroke f
 
 export const alertDuration = (scenes) => scenes.reduce((n, s) => n + (s.frames || 60), 0) || 30;
 
-const Fx = ({sfx, name, at, vol = 0.7}) => sfx && sfx[name] ? <Sequence from={Math.max(0, Math.round(at))} durationInFrames={45}>
+const Fx = ({sfx, name, at, vol = 0.7}) => sfx && sfx[name] ? <Sequence from={Math.max(0, Math.round(at))} durationInFrames={60}>
   <Audio src={staticFile(sfx[name])} volume={vol} /></Sequence> : null;
 
 // Handheld camera. The picture sits whole under the headline zone (top 300px) so faces are never cut by the
@@ -291,6 +291,7 @@ const Scene = ({s, i, props}) => {
     {!['steps', 'list'].includes(s.kind) && <Captions words={s.words} hot={s.hot} y={s.kind === 'phone' ? 1520 : 1330} />}
     {s.kind === 'steps' && <Captions words={s.words} hot={s.hot} y={1560} />}
     {i > 0 && <Fx sfx={sfx} name="whoosh" at={0} vol={0.18} />}
+    {danger && s.speaker === 'scammer' && ['talk', 'hook'].includes(s.kind) && <Fx sfx={sfx} name="heart" at={4} vol={0.5} />}
     {s.vo && <Sequence from={s.vo_at || 0}><Audio src={staticFile(s.vo)} /></Sequence>}
     <AbsoluteFill style={{background: WHITE, opacity: i > 0 ? flash : 0, pointerEvents: 'none'}} />
   </AbsoluteFill>;
@@ -313,6 +314,6 @@ export const Alert = (props) => {
         fontSize: 30}}>{source}</span></div>}
     {mic && <Fx sfx={sfx} name="mic" at={0} vol={0.22} />}
     {mood === 'alert' && <Fx sfx={sfx} name="alarm" at={mic ? 12 : 0} vol={0.2} />}
-    {music && <Audio src={staticFile(music)} volume={(fr) => interpolate(fr, [0, 15, total - 20, total], [0.32, 0.13, 0.13, 0.3], clamp)} />}
+    {music && <Audio src={staticFile(music)} volume={(fr) => interpolate(fr, [0, 15, total - 20, total], [0.32, 0.16, 0.16, 0.3], clamp)} />}
   </AbsoluteFill>;
 };

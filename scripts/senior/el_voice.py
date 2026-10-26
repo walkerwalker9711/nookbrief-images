@@ -69,11 +69,49 @@ SCAMMER_PREFS = ["Callum", "Clyde", "Liam", "Harry", "Adam", "Josh"]
 _scammer = None
 
 
+def native_villain(channel):
+    """A native-speaker scammer voice from the ElevenLabs voice library (owner 10-26: the English premade voice
+    reading Korean sounded soft and foreign). Added to the account once and saved in voices.json."""
+    lang = {"kr": "ko", "us": "en"}[channel]
+    want = ("intense", "deep", "gruff", "menacing", "dark", "rough", "confident", "serious")
+    for age in ("middle_aged", "young", None):
+        params = {"page_size": 40, "gender": "male", "language": lang, "sort": "usage_character_count_7d"}
+        if age:
+            params["age"] = age
+        r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
+        if not r.ok:
+            print("shared voices ->", r.status_code, r.text[:200])
+            return None
+        host = cfg(channel)["voice_id"]
+        voices = [v for v in r.json().get("voices", []) if v.get("voice_id") != host]
+        pick = next((v for v in voices if any(w in (v.get("descriptive", "") + " " + v.get("description", "")).lower()
+                                              for w in want)), None)
+        if pick:
+            break
+    else:
+        return None
+    r = requests.post(f"{API}/voices/add/{pick['public_owner_id']}/{pick['voice_id']}", headers=headers(), timeout=30,
+                      json={"new_name": f"{channel} scammer - {pick['name']}"[:60]})
+    if not r.ok:
+        print("adding voice ->", r.status_code, r.text[:200])
+        return None
+    vid = r.json().get("voice_id") or pick["voice_id"]
+    path = ROOT / "senior" / "voices.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    data[channel].update({"scammer_voice_id": vid, "scammer_voice_name": pick["name"],
+                          "scammer_chosen": "picked automatically from the voice library, 2026-10-26"})
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print("scammer voice (library)", pick["name"], "-", pick.get("descriptive"), pick.get("accent"))
+    return vid
+
+
 def scammer_voice(channel):
     global _scammer
     c = json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel]
     if c.get("scammer_voice_id"):
         return c["scammer_voice_id"]
+    if _scammer is None:
+        _scammer = native_villain(channel)
     if _scammer is None:
         r = requests.get(f"{API}/voices", headers=headers(), timeout=30)
         voices = r.json().get("voices", []) if r.ok else []

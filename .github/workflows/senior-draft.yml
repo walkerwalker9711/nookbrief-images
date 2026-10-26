@@ -95,6 +95,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A senior/drafts senior/kr senior/us
+          git add -A senior/drafts senior/kr senior/us senior/voices.json
           git commit -m "senior: ${{ matrix.job.channel }} draft [skip ci]" || exit 0
           for i in 1 2 3; do git pull --rebase -X theirs origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
