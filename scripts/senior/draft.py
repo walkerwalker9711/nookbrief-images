@@ -29,9 +29,14 @@ OPENAI = "https://api.openai.com/v1"
 KST = dt.timezone(dt.timedelta(hours=9))
 W, H = 1080, 1920
 
-# Tried in order; the first one the account can use wins. Override with OPENAI_TEXT_MODEL / OPENAI_IMAGE_MODEL.
+# Newest models the account lists come first (see models()); these are the fallbacks after them.
+# Override with OPENAI_TEXT_MODEL / OPENAI_IMAGE_MODEL.
 TEXT_MODELS = ["gpt-5.1", "gpt-5", "gpt-4.1"]
 IMAGE_MODELS = ["gpt-image-1.5", "gpt-image-1"]
+# Text-model ids with these words are special-purpose (or the pricey top tier) and are skipped.
+NOT_TEXT = ("mini", "nano", "audio", "realtime", "search", "transcribe", "tts", "image", "codex", "chat-latest",
+            "instruct", "preview", "astra", "pro", "ultrafast")
+_listed = None
 
 CHANNELS = {
     "kr": {
@@ -87,8 +92,27 @@ def key():
     return {"Authorization": f"Bearer {k}"}
 
 
+def version(model_id):
+    m = re.search(r"(\d+(?:\.\d+)?)", model_id)
+    return float(m.group(1)) if m else 0.0
+
+
 def models(env, defaults):
-    return [os.environ[env]] if os.environ.get(env) else defaults
+    """Override from env, else the newest suitable models this key can see, then the fallbacks."""
+    global _listed
+    if os.environ.get(env):
+        return [os.environ[env]]
+    if _listed is None:
+        r = requests.get(f"{OPENAI}/models", headers=key(), timeout=60)
+        _listed = [m["id"] for m in r.json().get("data", [])] if r.ok else []
+        if r.status_code == 401:
+            sys.exit("OPENAI_API_KEY was refused")
+    if env == "OPENAI_IMAGE_MODEL":
+        found = [m for m in _listed if m.startswith("gpt-image") and not re.search(r"\d{4}-\d{2}-\d{2}|mini", m)]
+    else:
+        found = [m for m in _listed if re.fullmatch(r"gpt-\d+(\.\d+)?(-[a-z]+)?", m) and not any(w in m for w in NOT_TEXT)]
+    found.sort(key=lambda m: (version(m), "sol" in m), reverse=True)
+    return list(dict.fromkeys(found[:3] + defaults))
 
 
 # ---------- script ----------
