@@ -1,0 +1,55 @@
+{
+  "pillar": "사기·안전",
+  "topic": "아이 울음소리를 조작해 오십만 원을 요구하는 납치 사칭 보이스피싱",
+  "title": "아이 풀어줄 테니 50만 원? 먼저 전화 끊으세요",
+  "scenes": [
+    {
+      "line": "아, 아. 오십만 원 보내면 아이를 풀어준다는 전화, 먼저 끊으세요.",
+      "caption": "50만 원 요구",
+      "image_prompt": "2D flat cartoon, warm Korean village community hall, the village chief character centered holding a megaphone beside a smartphone with an anonymous caller silhouette and a blank speech bubble, concerned but composed mood, vertical composition, bottom third empty for subtitles, no text, no numbers, no logos."
+    },
+    {
+      "line": "아이 우는 목소리도 인공지능으로 꾸민 납치 사기일 수 있습니다.",
+      "caption": "울음소리도 가짜",
+      "image_prompt": "2D flat cartoon, smartphone centered above a wooden bench in a warm Korean village, an abstract crying voice waveform transforming into a small robot silhouette, symbolic scam warning without depicting an actual kidnapping, vertical composition, bottom third empty for subtitles, no text, no numbers, no logos."
+    },
+    {
+      "line": "이름과 학원까지 안다고 진짜는 아닙니다.",
+      "caption": "이름 알아도 의심",
+      "image_prompt": "2D flat cartoon, warm Korean neighborhood alley near a small tutoring classroom with a blank signboard, the village chief character centered pointing toward a smartphone showing anonymous profile and building icons only, vertical composition, bottom third empty for subtitles, no text, no numbers, no logos."
+    },
+    {
+      "line": "통화를 끝내고, 자녀에게 직접 전화해 안전을 확인하세요.",
+      "caption": "끊고 직접 확인",
+      "image_prompt": "2D flat cartoon, close view of a centered hand pressing a red end-call icon on a smartphone, a separate small vignette showing a parent directly calling their child in a peaceful Korean village setting, blank interface with icons only, vertical composition, bottom third empty for subtitles, no text, no numbers, no logos."
+    },
+    {
+      "line": "이미 돈을 보냈다면 경찰 일일이에 신고하고 지급정지를 요청하세요.",
+      "caption": "112·지급정지",
+      "image_prompt": "2D flat cartoon, the village chief character centered beside a smartphone with a generic police officer icon and a paused transfer symbol, warm Korean community hall background, calm practical mood, vertical composition, bottom third empty for subtitles, no text, no numbers, no logos."
+    },
+    {
+      "line": "오늘 부모님께 이 말부터 전해주세요, 우는 목소리만 믿고 돈 보내지 마시라고요.",
+      "caption": "부모님께 전하세요",
+      "image_prompt": "2D flat cartoon, adult child centered talking gently with elderly parents on a bench outside a warm Korean village community hall, smartphone resting unused between them, village loudspeaker in the background, vertical composition, bottom third empty for subtitles, no text, no numbers, no logos."
+    }
+  ],
+  "sources": [
+    {
+      "name": "금융감독원, 「울면서 ‘엄마’ 부르는 아이 목소리… 알고보니 AI 보이스피싱」, 2026-02-02 보도자료 원문 PDF — 토스증권 게시본",
+      "url": "https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf"
+    }
+  ],
+  "description": "아이 울음소리를 들려주며 돈을 요구해도, 먼저 끊고 직접 확인하세요.\n이미 송금했다면 112에 신고하고 지급정지를 요청하세요.\n출처: 금융감독원, 2026.02.02 보도자료 「울면서 ‘엄마’ 부르는 아이 목소리… 알고보니 AI 보이스피싱」\nhttps://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf\nAI 음성·그림",
+  "tags": [
+    "한국이장님",
+    "보이스피싱",
+    "납치사칭",
+    "AI목소리사기",
+    "부모님안전",
+    "사기예방",
+    "112"
+  ],
+  "ko_review": "아, 아. 오십만 원 보내면 아이를 풀어준다는 전화, 먼저 끊으세요. 아이 우는 목소리도 인공지능으로 꾸민 납치 사기일 수 있습니다. 이름과 학원까지 안다고 진짜는 아닙니다. 통화를 끝내고, 자녀에게 직접 전화해 안전을 확인하세요. 이미 돈을 보냈다면 경찰 일일이에 신고하고 지급정지를 요청하세요. 오늘 부모님께 이 말부터 전해주세요, 우는 목소리만 믿고 돈 보내지 마시라고요.",
+  "fact_notes": "주제 선정은 사용자가 제공한 최근 7일 보이스피싱 조회 동향을 근거로 했습니다. 이 세부 수법 자체가 이번 주 급증했다는 주장은 하지 않습니다. 출처는 금융감독원이 작성한 2026년 2월 2일 보도자료 원문이며, 토스증권 서버에 게시된 PDF로 확인했습니다. 장면 1의 ‘50만 원’은 자료 2쪽의 요구 금액 및 5쪽 실제 녹취록에 나오는 사례 금액으로, 평균 피해액이 아닙니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf)) 장면 2의 AI 조작 울음소리는 1~2쪽에 명시되어 있습니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf)) 장면 3의 자녀 이름·학원명 활용은 2쪽과 4쪽에서 확인됩니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf)) 장면 4의 통화 종료 후 자녀에게 직접 전화하여 위치와 안전을 확인하는 행동은 3쪽 대응요령입니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf)) 장면 5의 신고번호 ‘112’와 송금 후 지급정지 요청은 3쪽에 명시되어 있습니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf)) 장면 6은 앞선 예방 행동을 가족에게 전달하자는 편집상 권유입니다. 통계 수치나 확인되지 않은 피해 규모는 넣지 않았습니다. 모든 장면의 하단 출처 자막은 편집 단계에서 ‘출처: 금융감독원 2026.02.02’로 별도 삽입하고, 그림에는 글자를 생성하지 않습니다."
+}
