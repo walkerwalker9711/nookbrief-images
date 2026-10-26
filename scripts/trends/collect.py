@@ -3,7 +3,7 @@
   python collect.py            (needs the YT_* secrets; writes trends/latest.json and trends/history/<date>.json)
 
 Per region: the mostPopular chart filtered to Shorts (<= 3 min), the top Shorts of the last 7 days for each
-seed keyword (search.list, order=viewCount), and YouTube search autocomplete for the same keywords.
+pillar keyword (search.list, order=viewCount), and YouTube search autocomplete for the same keywords.
 Plus the top #shorts of the last 3 days, per-category charts and recurring hashtags across all of them.
 Quota: about 100 units per search, so ~2,800 of the 10,000 daily units.
 """
@@ -19,12 +19,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "social"))
 from common import ROOT, YT, call, google_token, save  # noqa: E402
 
 REGIONS = {
-    "KR": {"lang": "ko", "overall_q": ["쇼츠", "#shorts"], "keywords": [
-        "스미싱", "보이스피싱", "스마트폰 사용법", "카톡 꿀팁", "갤럭시 설정", "아이폰 꿀팁",
-        "국민연금", "건강보험", "노후 준비", "5060", "치매 예방", "무릎 운동"]},
-    "US": {"lang": "en", "overall_q": ["#shorts", "shorts"], "keywords": [
-        "scam text", "phone tips for seniors", "iphone tips", "android tips", "seniors",
-        "grandparents", "medicare", "retirement", "social security", "gifts for grandparents"]},
+    "KR": {"lang": "ko", "overall_q": ["쇼츠", "#shorts"], "pillars": {
+        "사기·안전": ["스미싱", "보이스피싱", "택배 문자 사기"],
+        "혜택·서류": ["경로우대", "기초연금 신청", "정부 지원금"],
+        "생활 꿀팁": ["난방비 절약", "살림 꿀팁", "생활 꿀팁"],
+        "추억·옛날": ["옛날 물가", "7080 추억", "옛날 사진"],
+        "폰·카톡": ["카톡 꿀팁", "스마트폰 사용법", "갤럭시 설정"]}},
+    "US": {"lang": "en", "overall_q": ["#shorts", "shorts"], "pillars": {
+        "Scam": ["scam text", "phone scam"],
+        "Benefits": ["senior discounts", "medicare", "social security"],
+        "Home tips": ["life hacks", "save money tips"],
+        "Nostalgia": ["nostalgia", "back in the day", "70s 80s"],
+        "Phone": ["iphone tips", "phone tips for seniors"]}},
 }
 MAX_SHORT = 180  # seconds; Shorts can run up to 3 minutes
 CATEGORIES = {"24": "엔터테인먼트", "23": "코미디", "22": "인물·블로그", "26": "노하우·스타일", "27": "교육",
@@ -137,7 +143,7 @@ def main():
             if vids:
                 categories[name] = sorted(vids, key=lambda v: -v["views_per_hour"])[:8]
         keywords = {}
-        for kw in cfg["keywords"]:
+        for kw in (k for ks in cfg["pillars"].values() for k in ks):
             found = call("GET", f"{YT}/youtube/v3/search", headers=headers, params={
                 "part": "id", "q": kw, "type": "video", "videoDuration": "short", "order": "viewCount",
                 "publishedAfter": week_ago, "regionCode": region, "relevanceLanguage": cfg["lang"],
@@ -148,7 +154,8 @@ def main():
         pool = {v["id"]: v for v in overall + popular + [v for c in categories.values() for v in c]}
         data["regions"][region] = {"popular": sorted(popular, key=lambda v: -v["views_per_hour"]),
                                    "overall": overall, "categories": categories,
-                                   "hot_words": hot_words(list(pool.values())), "keywords": keywords}
+                                   "hot_words": hot_words(list(pool.values())), "keywords": keywords,
+                                   "pillars": cfg["pillars"]}
     save(ROOT / "trends" / "latest.json", data)
     slim = {"generated": data["generated"], "regions": {
         r: {"popular": [{k: v[k] for k in ("id", "title", "views", "views_per_hour")} for v in d["popular"]],

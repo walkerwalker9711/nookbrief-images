@@ -41,15 +41,17 @@ def row(v, now, rank=None):
 
 def region_html(code, d, now):
     pop = "".join(row(v, now, i + 1) for i, v in enumerate(d["popular"][:20])) or '<li class="empty">오늘 인기 차트에 쇼츠가 없습니다.</li>'
-    kws = []
-    for kw, kd in d["keywords"].items():
+    def kw_html(kw, opened):
+        kd = d["keywords"].get(kw, {"videos": [], "suggest": []})
         vids = "".join(row(v, now) for v in kd["videos"][:5]) or '<li class="empty">최근 7일 쇼츠 없음</li>'
         sug = "".join(f'<span class="chip">{esc(s)}</span>' for s in kd["suggest"][:8])
         top = kd["videos"][0]["views"] if kd["videos"] else 0
-        kws.append(f'<details class="kw"{" open" if len(kws) < 3 else ""}><summary><span class="kwn">{esc(kw)}</span>'
-                   f'<span class="kwv">최고 {count(top)}회</span></summary>'
-                   f'{f"<div class=chips><span class=lab>사람들이 같이 검색한 말</span>{sug}</div>" if sug else ""}'
-                   f'<ol class="list">{vids}</ol></details>')
+        return (f'<details class="kw"{" open" if opened else ""}><summary><span class="kwn">{esc(kw)}</span>'
+                f'<span class="kwv">최고 {count(top)}회</span></summary>'
+                f'{f"<div class=chips><span class=lab>사람들이 같이 검색한 말</span>{sug}</div>" if sug else ""}'
+                f'<ol class="list">{vids}</ol></details>')
+    pillars = d.get("pillars") or {"키워드": list(d["keywords"])}
+    kws = [f'<h3>{esc(p)}</h3>' + "".join(kw_html(k, i == 0) for i, k in enumerate(ks)) for p, ks in pillars.items()]
     overall = "".join(row(v, now, i + 1) for i, v in enumerate(d.get("overall", [])[:20])) or '<li class="empty">수집된 쇼츠가 없습니다.</li>'
     words = "".join(f'<span class="chip hotw">#{esc(w["word"])}<small>{count(w["views"])}</small></span>' for w in d.get("hot_words", []))
     cats = "".join(f'<details class="kw"><summary><span class="kwn">{esc(name)}</span><span class="kwv">{len(vs)}편</span></summary>'
@@ -62,7 +64,7 @@ def region_html(code, d, now):
             f'<h2>{REGION_NAMES[code]} 인기 차트 속 쇼츠</h2><p class="sub">유튜브 인기 차트 중 3분 이하 영상, 올라온 뒤 시간당 조회수 순</p>'
             f'<ol class="list">{pop}</ol>'
             f'<h2>카테고리별 인기 쇼츠</h2><p class="sub">카테고리별 인기 차트 중 3분 이하 영상</p>{cats}'
-            f'<h2>{REGION_NAMES[code]} 시니어 관련 키워드</h2><p class="sub">키워드별 최근 7일 조회수 상위 쇼츠와 유튜브 검색 자동완성</p>'
+            f'<h2>{REGION_NAMES[code]} 주제 기둥별 키워드</h2><p class="sub">기둥마다 최근 7일 조회수 상위 쇼츠와 유튜브 검색 자동완성</p>'
             f'{"".join(kws)}</section>')
 
 
@@ -93,6 +95,7 @@ h1{font-size:24px;font-weight:800;margin:0;text-wrap:balance}
 .tabs button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .tabs button:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--hot);outline-offset:2px}
 h2{font-size:18px;font-weight:800;margin:28px 0 2px}
+h3{font-size:15px;font-weight:800;margin:18px 0 0;color:var(--hot)}
 .sub{color:var(--mute);font-size:13px;margin:0 0 10px}
 .list{list-style:none;margin:0;padding:0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
 .vid{display:grid;grid-template-columns:auto 96px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-top:1px solid var(--line)}
