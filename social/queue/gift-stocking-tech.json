@@ -1,7 +1,7 @@
 {
   "topic": "gift-stocking-tech",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/tech-stocking-stuffers-that-arent-junk.html",
   "video": {
     "ig": "posts/gift-stocking-tech/gift-stocking-tech-short-ig.mp4",
     "link": "posts/gift-stocking-tech/gift-stocking-tech-short-link.mp4",
@@ -36,5 +36,6 @@
       "usb-c cable",
       "christmas gifts"
     ]
-  }
+  },
+  "threads_not_before": 1793031600
 }
