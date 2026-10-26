@@ -47,6 +47,62 @@ def speak(channel, text, out):
     sys.exit("ElevenLabs refused every model")
 
 
+# Second voice for the scammer in the 참교육 dramas: voices.json "scammer_voice_id", else the first of these
+# ElevenLabs premade voices the account has.
+SCAMMER_PREFS = ["Callum", "Clyde", "Liam", "Harry", "Adam", "Josh"]
+_scammer = None
+
+
+def scammer_voice(channel):
+    global _scammer
+    c = json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel]
+    if c.get("scammer_voice_id"):
+        return c["scammer_voice_id"]
+    if _scammer is None:
+        r = requests.get(f"{API}/voices", headers=headers(), timeout=30)
+        voices = r.json().get("voices", []) if r.ok else []
+        by_name = {v["name"].split(" ")[0]: v["voice_id"] for v in voices if v.get("category") == "premade"}
+        _scammer = next((by_name[n] for n in SCAMMER_PREFS if n in by_name), None)
+        if not _scammer:
+            sys.exit("no premade voice for the scammer")
+        print("scammer voice", next(n for n in SCAMMER_PREFS if n in by_name))
+    return _scammer
+
+
+def speak_timed(channel, text, out, role="host"):
+    """Like speak(), but also returns word timings [(word, start_sec, end_sec)] from ElevenLabs' alignment.
+    role "scammer" reads with the second voice."""
+    import base64
+    c = cfg(channel) if role == "host" else {**json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel],
+                                             "voice_id": scammer_voice(channel), "speed": 1.05}
+    for model in (c["model_id"], FALLBACK_MODEL):
+        r = requests.post(f"{API}/text-to-speech/{c['voice_id']}/with-timestamps", headers=headers(), timeout=120,
+                          params={"output_format": "mp3_44100_128"},
+                          json={"text": text, "model_id": model,
+                                "voice_settings": {"speed": c.get("speed", 1.0)}})
+        if r.status_code == 200:
+            data = r.json()
+            Path(out).write_bytes(base64.b64decode(data["audio_base64"]))
+            a = data.get("alignment") or data.get("normalized_alignment") or {}
+            words, cur, start, end = [], "", None, None
+            for ch, s, e in zip(a.get("characters", []), a.get("character_start_times_seconds", []),
+                                a.get("character_end_times_seconds", [])):
+                if ch.isspace():
+                    if cur:
+                        words.append((cur, start, end))
+                    cur, start = "", None
+                    continue
+                if start is None:
+                    start = s
+                cur, end = cur + ch, e
+            if cur:
+                words.append((cur, start, end))
+            print("ok", channel, model, out, len(words), "words")
+            return words
+        print("model", model, "->", r.status_code, r.text[:300])
+    sys.exit("ElevenLabs refused every model")
+
+
 def check(channel):
     c = cfg(channel)
     r = requests.get(f"{API}/voices/{c['voice_id']}", headers=headers(), timeout=30)

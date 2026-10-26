@@ -5,6 +5,7 @@ import {Soft, softDuration} from './Soft';
 import {Motion, motionDuration} from './Motion';
 import {Cine, cineDuration} from './Cine';
 import {Pop, popDuration} from './Pop';
+import {Alert, alertDuration} from './Alert';
 
 const Root = () => (
   <>
@@ -26,6 +27,9 @@ const Root = () => (
     <Composition id="Pop" component={Pop} fps={30} width={1080} height={1920}
       durationInFrames={450} defaultProps={{scenes: [], music: null, sfx: {}, beat: 15}}
       calculateMetadata={({props}) => ({durationInFrames: popDuration(props.scenes)})} />
+    <Composition id="Alert" component={Alert} fps={30} width={1080} height={1920}
+      durationInFrames={450} defaultProps={{scenes: [], music: null, sfx: {}}}
+      calculateMetadata={({props}) => ({durationInFrames: alertDuration(props.scenes)})} />
   </>
 );
 registerRoot(Root);
