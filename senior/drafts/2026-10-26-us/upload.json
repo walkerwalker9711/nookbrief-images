@@ -1,13 +1,13 @@
 {
   "channel": "us",
-  "title": "That loan text wants you to reply NO. Don't.",
-  "description": "A loan you never applied for? Don't reply, not even NO.\nForward the text to 7726, then delete it. Report it at ReportFraud.ftc.gov.\nSources:\nFTC BCP Staff, January 20, 2026: https://www.militaryconsumer.gov/blog/can-you-spot-fake-loan-text-scam\nAI voice & visuals",
+  "title": "The 'Hi Dad' Text That Isn't From Your Kid",
+  "description": "A fake kid, a broken phone, and an urgent bill. Pops checks the old number.\nDramatized exchange based on police warnings, not a real intercepted conversation. Don't reply: verify independently.\nSources:\nAvon and Somerset Police: https://www.avonandsomerset.police.uk/news/2022/03/phone-users-urged-to-be-aware-of-fake-whatsapp-message-scam/\nPolice Scotland: https://www.scotland.police.uk/advice/scams-and-frauds/phishing/\nFTC: https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages\nAI voice & visuals",
   "tags": [
-    "text scam",
-    "loan text scam",
-    "reply NO scam",
-    "scam prevention",
-    "Pops Knows"
+    "Pops Knows",
+    "scam text",
+    "Hi Dad scam",
+    "family impersonation",
+    "text scams"
   ],
   "made_with_ai": true,
   "video": "video.mp4",
