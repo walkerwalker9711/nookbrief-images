@@ -75,7 +75,7 @@ def native_villain(channel):
     lang = {"kr": "ko", "us": "en"}[channel]
     want = ("intense", "deep", "gruff", "menacing", "dark", "rough", "confident", "serious")
     for age in ("middle_aged", "young", None):
-        params = {"page_size": 40, "gender": "male", "language": lang, "sort": "usage_character_count_7d"}
+        params = {"page_size": 40, "gender": "male", "language": lang, "sort": "cloned_by"}
         if age:
             params["age"] = age
         r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)

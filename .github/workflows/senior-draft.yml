@@ -35,15 +35,15 @@ jobs:
           if ev == "push":
               rows = [l.split(None, 1) for l in open("senior/drafts/request", encoding="utf-8").read().splitlines() if l.strip() and not l.startswith("#")]
               # "kr", "kr 과태료 문자", or "kr @2026-10-27 ..." to make the draft for another day's format;
-              # "kr rerender" redoes only voice and video of today's draft (script and pictures are kept)
+              # "kr rerender" / "kr @2026-10-26 rerender" redo only voice and video of that day's draft (script and pictures are kept)
               jobs = []
               for r in rows:
                   rest = r[1] if len(r) > 1 else ""
-                  if rest == "rerender":
-                      jobs.append({"channel": r[0], "date": "", "topic": "", "rerender": "--rerender"})
-                      continue
+                  rerender = "--rerender" if rest.split()[-1:] == ["rerender"] else ""
+                  rest = rest[:-len("rerender")].strip() if rerender else rest
                   date = rest.split()[0][1:] if rest.startswith("@") else ""
-                  jobs.append({"channel": r[0], "date": date, "topic": rest.split(None, 1)[1] if date and len(rest.split()) > 1 else ("" if date else rest)})
+                  jobs.append({"channel": r[0], "date": date, "rerender": rerender,
+                               "topic": rest.split(None, 1)[1] if date and len(rest.split()) > 1 else ("" if date else rest)})
           elif ev == "workflow_dispatch":
               ch = os.environ["IN_CHANNEL"] or "both"
               jobs = [{"channel": c, "date": "", "topic": os.environ["IN_TOPIC"]} for c in (["kr", "us"] if ch == "both" else [ch])]
