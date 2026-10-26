@@ -25,15 +25,33 @@ def items(url):
     return 200, root.iter("item")
 
 
+def jpeg_size(url):
+    """Pin thumbnail width x height from the JPEG header (236 wide; a 2:3 pin is about 354 tall)."""
+    try:
+        b = requests.get(url, headers=UA, timeout=30).content
+    except requests.RequestException:
+        return "?"
+    i = 2
+    while i < len(b) - 9:
+        if b[i] != 0xFF:
+            return "?"
+        mk, ln = b[i + 1], int.from_bytes(b[i + 2:i + 4], "big")
+        if 0xC0 <= mk <= 0xCF and mk not in (0xC4, 0xC8, 0xCC):
+            return f"{int.from_bytes(b[i + 7:i + 9], 'big')}x{int.from_bytes(b[i + 5:i + 7], 'big')}"
+        i += 2 + ln
+    return "?"
+
+
 def main():
     print("== pinterest public feeds")
     for b in BOARDS:
         code, its = items(PIN.format(b))
         its = list(its)
         print(b, code, len(its), "pins")
-        for it in its[:8]:
+        for it in its[:12 if b == "feed.rss" else 8]:
             img = re.search(r'src="([^"]+)"', it.findtext("description") or "")
-            print("  ", (it.findtext("pubDate") or "")[:16], "|", (it.findtext("title") or "")[:60], "|", img.group(1)[-60:] if img else "-")
+            size = jpeg_size(img.group(1)) if img and b == "feed.rss" else ""
+            print("  ", (it.findtext("pubDate") or "")[:16], "|", (it.findtext("title") or "")[:60], "|", img.group(1)[-60:] if img else "-", size)
     print("== blog label feeds (what Pinterest reads)")
     for lab in LABELS:
         code, its = items(BLOG.format(lab))
