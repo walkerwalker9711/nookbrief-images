@@ -1,16 +1,16 @@
 {
   "channel": "kr",
-  "title": "비밀번호 안 묻는다던 수사관, 잔액은 왜 물어요?",
-  "description": "비밀번호 안 묻는다고 진짜 수사관은 아닙니다. 공식 경고를 바탕으로 구성한 예방 상황극입니다.\n수상하면 끊고 공식 번호로 확인하세요. 송금했다면 112에 신고하고 지급정지를 요청하세요.\n출처: 금융감독원·국립과학수사연구원, 2026.4.2. 「보이스피싱 사기범의 실제 목소리를 공개합니다!」 https://image.kebhana.com/cont/download/menu/menu08/notice_1524911.pdf\n출처: 금융감독원, 2026.2.2. 자녀 납치 빙자 보이스피싱 소비자경보 https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf\nAI 음성·그림",
+  "title": "택배 주소가 틀렸다더니, 이장님 주소부터 틀렸다",
+  "description": "택배 주소 확인하라는 문자, 앱 설치까지 요구한다면 멈추세요.\n공식 경고 사례를 바탕으로 만든 예방 상황극입니다. 실제로는 답장하지 마세요.\n출처: 대전자치경찰위원회 — https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=\n출처: 과학기술정보통신부 관계부처 합동 예방 안내 — https://www.kcc.go.kr/download.do%3Bjsessionid%3DdX_W0_W-mWM7fiwkgsbZPWRWFsi3sww3gqxBenUe.servlet-aihgcldhome20?fileSeq=60276\n출처: 정책브리핑 스미싱 예방 안내(2026.04.23) — https://www.korea.kr/news/policyFocusView.do?newsId=148963131&pWise=main&pWiseMain=F3&pkgId=49500834\n출처: KISA 스미싱·큐싱 대응 — https://www.kisa.or.kr/1020601\nAI 음성·그림",
   "tags": [
     "한국이장님",
-    "보이스피싱",
-    "검찰사칭",
-    "기관사칭",
-    "사기예방",
-    "부모님안전",
-    "참교육",
-    "쇼츠"
+    "스미싱",
+    "택배사칭",
+    "사기문자",
+    "스미싱예방",
+    "부모님휴대폰",
+    "118",
+    "상황극"
   ],
   "made_with_ai": true,
   "video": "video.mp4",

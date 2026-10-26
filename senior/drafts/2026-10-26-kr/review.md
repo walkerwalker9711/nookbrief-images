@@ -1,34 +1,45 @@
 # 한국이장님 초안 2026-10-26
 
-- 기둥: 사기·안전 / 주제: 비밀번호는 묻지 않는다며 안심시킨 뒤 잔액을 캐묻는 검찰 사칭 전화
-- 제목: 비밀번호 안 묻는다던 수사관, 잔액은 왜 물어요?
+- 기둥: 사기·안전 / 주제: 택배 주소 불일치 문자로 악성 앱 설치를 유도하는 스미싱
+- 제목: 택배 주소가 틀렸다더니, 이장님 주소부터 틀렸다
 - 목소리: elevenlabs
 
 ## 대본
-1. [hook] 아, 아. 서울 남부지검의 강지원 수사관이라고 합니다.  ·  화면 글자: 가짜 수사관 등장
-2. [phone] 개인정보 유출사건 때문에 몇 가지 조사할 게 있어서 전화드렸습니다.  ·  화면 글자: 개인정보 유출?
-3. [talk] 아이고, 조사요? 통장 비밀번호부터 드려야 합니까?  ·  화면 글자: 비밀번호부터?
-4. [talk] 비밀번호는 말씀하지 마세요. 어느 은행에 얼마 있는지만 알려주세요.  ·  화면 글자: 잔액만 알려달라?
-5. [talk] 비밀번호는 비밀이고, 잔액은 공개예요? 소속부터 확인하겠습니다.  ·  화면 글자: 잔액은 공개예요?
-6. [talk] 지금 녹취 조사 중입니다. 다른 사람 없는 조용한 곳으로 가세요.  ·  화면 글자: 혼자 있으라고?
-7. [twist] 잔액 묻고 혼자 있으라는 그 수법이네요. 어디서! 제가 먼저 끊겠습니다.  ·  화면 글자: 종료 버튼이 참교육
+1. [hook] 주소 불일치로 물품 보관중입니다.  ·  화면 글자: 택배 사칭범 등장
+2. [phone] 문자로 보낸 링크에서 주소 확인하세요.  ·  화면 글자: 주소 확인하라며?
+   - 폰 화면 (택배 사칭 문자·재현): [대한] 송장번호[5069******21] 주소 불일치로 물품 보관중입니다. [확인 링크]
+3. [talk] 주소가 틀렸다고요? 어느 집으로 보내셨는데요?  ·  화면 글자: 어느 집인데요?
+4. [talk] 링크 누르고 앱부터 설치하셔야 조회됩니다.  ·  화면 글자: 갑자기 앱 설치
+5. [talk] 물건 주소 찾는데, 제 폰에 이사부터 오시려고요?  ·  화면 글자: 폰에 입주하시게?
+6. [talk] 아니, 설치부터 하시라니까요!  ·  화면 글자: 주소는 대답 못 함
+7. [twist] 누르긴요. 보호나라에 확인부터 할 겁니다. 어디서!  ·  화면 글자: 배송지는 보호나라
+8. [steps] 실제로는 답장도 마세요. 링크는 누르지 말고, 의심 문자는 국번 없이 일일팔로 상담하세요.  ·  화면 글자: 답장 말고 118
+   - X 의심 문자에 답장하기
+   - O 문자 속 링크 누르지 않기
+   - O 스미싱 의심 상담 118
+9. [outro] 부모님께 보내드리세요. 택배 주소 고치려다 사기꾼 들이지 마시라고요.  ·  화면 글자: 부모님께 보내세요
 
 ## 숫자 출처
-주제 선정: 사용자가 제공한 최근 7일 트렌드 목록의 보이스피싱·참교육 흐름을 반영했습니다. 해당 세부 수법이 이번 주 급증했다는 주장은 하지 않습니다.
-장면 1~2: 금융감독원·국립과학수사연구원 2026.4.2. 보도자료 3쪽의 실제 사기범 멘트를 짧게 발췌했습니다. 첫머리 '아, 아.'는 채널 형식용 창작 첨가이며 실제 녹취 인용에 포함되지 않습니다. 두 문장은 서로 다른 실제 멘트에서 가져왔으며 하나의 실제 통화를 재현한 것은 아닙니다. ([image.kebhana.com](https://image.kebhana.com/cont/download/menu/menu08/notice_1524911.pdf))
-장면 4: 같은 자료 5쪽은 비밀번호·계좌번호를 요구하지 않는다고 안심시킨 뒤 거래 은행과 대략적인 잔액을 묻는 수법을 설명합니다. 장면 6: 같은 자료 4쪽은 녹취를 핑계로 제삼자의 목소리를 차단하고 혼자 있도록 유도하는 수법을 설명합니다. 두 장면의 대사는 해당 수법을 의역한 창작입니다. ([image.kebhana.com](https://image.kebhana.com/cont/download/menu/menu08/notice_1524911.pdf))
-장면 3·5·7 및 반응 연출은 예방교육용 창작 상황극이며 실제 피해담이나 검거 사례가 아닙니다. 실제 대응은 사기범과 대화를 이어가는 것이 아니라 의심 즉시 통화를 종료하는 것입니다. 같은 자료 6쪽은 통화 종료와 해당 기관 공식 연락처를 통한 직접 확인을 권고합니다. ([image.kebhana.com](https://image.kebhana.com/cont/download/menu/menu08/notice_1524911.pdf))
-장면 8 및 설명란의 112: 금융감독원 2026.2.2. 보도자료 3쪽은 송금 피해 시 112 신고와 해당 계좌 지급정지 요청을 안내합니다. 통계·피해액·발생 건수 등 검증 부담이 있는 수치는 대본에 사용하지 않았습니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf))
-제작: 장면 1~7에는 출처 자막 '금감원·국과수 2026.4.2.'를 별도 레이어로 표기하세요. 장면 8에는 '금감원 2026.2.2.·4.2.'를 표기하세요. 발신번호는 실제 범죄 번호가 아닌 마스킹된 연출용 표시입니다. 참교육 드라마 형식의 9장면·40~55초 지시를 일반 채널 틀보다 우선합니다.
+주제 선정: 사용자가 제공한 최근 7일 트렌드의 스미싱 검색 주제를 반영했습니다. 이 특정 문구가 2026년 10월 넷째 주에 새로 확산했다는 근거는 확보하지 못했으므로 '이번 주 신종 수법'이라고 표현하지 않았습니다.
+첫마디·문자: 대전자치경찰위원회가 2024년 7월 2일 게시한 대전경찰청 자료의 택배 사칭 예시에서 '주소 불일치로 물품 보관중입니다.'를 그대로 사용했습니다. 송장번호도 해당 자료의 마스킹된 예시이며 올해 피해 통계가 아닙니다. 위험한 실제 URL은 재현하지 않았습니다. ([daejeon.go.kr](https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=&utm_source=openai))
+앱 설치 유도: 같은 경찰 자료는 미끼문자에서 악성 앱 설치로 이어지는 범행 과정을 설명합니다. 첫마디 외 사기범 대사와 이장님의 응수·퇴장은 이를 바탕으로 창작한 상황극이며 실제 대화 인용이 아닙니다. ([daejeon.go.kr](https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=&utm_source=openai))
+대화 중단: 2025년 1월 1일 관계부처 합동 안내는 의심 문자 발신자와 전화·문자로 대화를 이어가지 말라고 권고합니다. 그래서 장면 8에서 실제 행동은 답장 중단이라고 명확히 구분했습니다. ([kcc.go.kr](https://www.kcc.go.kr/download.do%3Bjsessionid%3DdX_W0_W-mWM7fiwkgsbZPWRWFsi3sww3gqxBenUe.servlet-aihgcldhome20?fileSeq=60276&utm_source=openai))
+링크 미클릭: 2026년 4월 23일 정책브리핑 예방 안내에서 출처 불명 링크를 클릭하지 말 것을 확인했습니다. 해당 기사의 특정 지원금에 관한 '링크는 모두 사기' 주장을 일반 택배 문자로 확대하지 않았습니다. ([korea.kr](https://www.korea.kr/news/policyFocusView.do?newsId=148963131&pWise=main&pWiseMain=F3&pkgId=49500834&utm_source=openai))
+보호나라·118: KISA 공식 사업 안내에 카카오톡 보호나라 채널 및 국번 없는 118이 스미싱 상담·신고 경로로 명시돼 있습니다. 2026년 4월 23일 안내에서도 보호나라 확인과 118 상담을 재확인했습니다. 118은 피해액이나 발생 건수가 아닌 상담번호입니다. 검증하지 못한 2026년 피해액·증가율·발생 건수는 넣지 않았습니다. ([kisa.or.kr](https://www.kisa.or.kr/1020601?utm_source=openai))
+출처 띠: 장면 1~6 '출처: 대전경찰청·대전자치경찰위원회', 장면 7 '출처: KISA', 장면 8 '출처: 과기정통부·KISA·정책브리핑'. 농담과 가족 공유 요청은 사실 주장에 해당하지 않습니다.
 
-- 금융감독원: https://image.kebhana.com/cont/download/menu/menu08/notice_1524911.pdf
-- 금융감독원: https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf
+- 대전자치경찰위원회: https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=
+- 과학기술정보통신부: https://www.kcc.go.kr/download.do%3Bjsessionid%3DdX_W0_W-mWM7fiwkgsbZPWRWFsi3sww3gqxBenUe.servlet-aihgcldhome20?fileSeq=60276
+- 정책브리핑: https://www.korea.kr/news/policyFocusView.do?newsId=148963131&pWise=main&pWiseMain=F3&pkgId=49500834
+- KISA: https://www.kisa.or.kr/1020601
 
 ## 설명란
-비밀번호 안 묻는다고 진짜 수사관은 아닙니다. 공식 경고를 바탕으로 구성한 예방 상황극입니다.
-수상하면 끊고 공식 번호로 확인하세요. 송금했다면 112에 신고하고 지급정지를 요청하세요.
-출처: 금융감독원·국립과학수사연구원, 2026.4.2. 「보이스피싱 사기범의 실제 목소리를 공개합니다!」 https://image.kebhana.com/cont/download/menu/menu08/notice_1524911.pdf
-출처: 금융감독원, 2026.2.2. 자녀 납치 빙자 보이스피싱 소비자경보 https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf
+택배 주소 확인하라는 문자, 앱 설치까지 요구한다면 멈추세요.
+공식 경고 사례를 바탕으로 만든 예방 상황극입니다. 실제로는 답장하지 마세요.
+출처: 대전자치경찰위원회 — https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=
+출처: 과학기술정보통신부 관계부처 합동 예방 안내 — https://www.kcc.go.kr/download.do%3Bjsessionid%3DdX_W0_W-mWM7fiwkgsbZPWRWFsi3sww3gqxBenUe.servlet-aihgcldhome20?fileSeq=60276
+출처: 정책브리핑 스미싱 예방 안내(2026.04.23) — https://www.korea.kr/news/policyFocusView.do?newsId=148963131&pWise=main&pWiseMain=F3&pkgId=49500834
+출처: KISA 스미싱·큐싱 대응 — https://www.kisa.or.kr/1020601
 AI 음성·그림
 
-태그: 한국이장님, 보이스피싱, 검찰사칭, 기관사칭, 사기예방, 부모님안전, 참교육, 쇼츠
+태그: 한국이장님, 스미싱, 택배사칭, 사기문자, 스미싱예방, 부모님휴대폰, 118, 상황극
