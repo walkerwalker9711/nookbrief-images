@@ -1,0 +1,84 @@
+{
+  "pillar": "혜택·서류",
+  "topic": "2026 에너지바우처 대상·세대별 총지원액·신청",
+  "title": "에너지바우처, 모르면 손해 보는 8가지",
+  "mood": "warm",
+  "scenes": [
+    {
+      "kind": "list",
+      "speaker": "host",
+      "line": "아, 아. 난방비 지원표, 저장해 두세요. 부모님 댁도 해당되는지 같이 봐드리세요.",
+      "delivery": "[warm, clear]",
+      "caption": "에너지바우처\n모르면 손해 보는 8가지",
+      "hot": [
+        "난방비",
+        "저장해"
+      ],
+      "image_prompt": "2D flat cartoon, warm Korean village community hall atmosphere, the village chief character centered, waist-up, pointing upward toward an empty area reserved for an information card, a village loudspeaker in the background, vertical composition, keep the bottom third clear for subtitles, no text, no numbers, no logos.",
+      "cast": "host",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [
+        {
+          "label": "생계·의료·주거·교육수급",
+          "value": ""
+        },
+        {
+          "label": "노인 등 세대특성도 필수",
+          "value": ""
+        },
+        {
+          "label": "1인 세대 올해 총액",
+          "value": "295,200원"
+        },
+        {
+          "label": "2인 세대 올해 총액",
+          "value": "407,500원"
+        },
+        {
+          "label": "3인 세대 올해 총액",
+          "value": "532,700원"
+        },
+        {
+          "label": "4인 이상 올해 총액",
+          "value": "701,300원"
+        },
+        {
+          "label": "신청은 12월 31일까지",
+          "value": ""
+        },
+        {
+          "label": "주민센터·복지로 신청",
+          "value": ""
+        }
+      ],
+      "cta": ""
+    }
+  ],
+  "sources": [
+    {
+      "name": "한국에너지공단",
+      "url": "https://www.energyv.or.kr/info/support_info.do"
+    },
+    {
+      "name": "한국에너지공단",
+      "url": "https://www.energy.or.kr/front/board/View3.do?boardMngNo=3&boardNo=10025025"
+    }
+  ],
+  "description": "에너지바우처 대상·지원액·신청처를 저장해 두세요.\n금액은 올해 총지원액이며, 여름에 사용했다면 남은 금액을 겨울에 씁니다.\n출처: 한국에너지공단 에너지바우처 지원안내 https://www.energyv.or.kr/info/support_info.do\n출처: 한국에너지공단 「에너지바우처로 따뜻한 겨울 준비하세요」(2026.9.30.) https://www.energy.or.kr/front/board/View3.do?boardMngNo=3&boardNo=10025025\nAI 음성·그림",
+  "tags": [
+    "한국이장님",
+    "에너지바우처",
+    "2026에너지바우처",
+    "난방비지원",
+    "복지혜택",
+    "부모님혜택"
+  ],
+  "ko_review": "단일 카드 장면을 11초 유지합니다. 음성은 도입·저장 안내만 하고 금액은 읽지 않습니다.\n대사: 아, 아. 난방비 지원표, 저장해 두세요. 부모님 댁도 해당되는지 같이 봐드리세요.\n카드 제목: 에너지바우처 / 모르면 손해 보는 8가지\n카드 내용: 생계·의료·주거·교육수급 / 노인 등 세대특성도 필수 / 1인 세대 올해 총액 295,200원 / 2인 세대 올해 총액 407,500원 / 3인 세대 올해 총액 532,700원 / 4인 이상 올해 총액 701,300원 / 신청은 12월 31일까지 / 주민센터·복지로 신청.\n출처는 카드 제목에 넣지 않고 별도 하단 출처 영역에 표시합니다.",
+  "fact_notes": "대상: 생계·의료·주거·교육급여 중 하나 이상 수급하면서 노인·장애인 등 세대원 특성기준도 충족해야 합니다. 카드 첫 두 행은 함께 충족하는 조건입니다. ([energy.or.kr](https://www.energy.or.kr/front/board/View3.do?boardMngNo=3&boardNo=10025025))\n1인 세대 295,200원은 한국에너지공단의 2026년도 총지원액입니다. ([energyv.or.kr](https://www.energyv.or.kr/info/support_info.do))\n2인 세대 407,500원은 같은 공식 지원금액표로 확인했습니다. ([energyv.or.kr](https://www.energyv.or.kr/info/support_info.do))\n3인 세대 532,700원은 같은 공식 지원금액표로 확인했습니다. ([energyv.or.kr](https://www.energyv.or.kr/info/support_info.do))\n4인 이상 세대 701,300원은 같은 공식 지원금액표로 확인했습니다. 월 지급액이나 겨울철 추가 지급액이 아니므로 모든 금액 행에 '올해 총액'을 명시했습니다. ([energyv.or.kr](https://www.energyv.or.kr/info/support_info.do))\n신청 마감은 2026년 12월 31일이며, 주민등록상 읍·면·동 행정복지센터 또는 복지로에서 신청합니다. 하절기 사용분이 있으면 동절기에는 잔액을 사용합니다. ([energy.or.kr](https://www.energy.or.kr/front/board/View3.do?boardMngNo=3&boardNo=10025025))\n보장시설 수급 세대 제외 및 다른 동절기 연료비 지원과의 중복 제한이 있으므로 개별 수급 여부는 신청처에서 확인해야 합니다. ([energyv.or.kr](https://www.energyv.or.kr/info/support_info.do))\n주간 검색량 자료는 제공되지 않았고 별도로 확인하지 못했으므로 '이번 주 검색 급증'으로 표현하지 않았습니다. 동절기 사용 개시를 다룬 올해 공식 발표를 바탕으로 계절성 주제를 선정했습니다. ([energy.or.kr](https://www.energy.or.kr/front/board/View3.do?boardMngNo=3&boardNo=10025025))"
+}
