@@ -92,11 +92,14 @@ SCHEMA = {
         "mood": {"type": "string", "enum": ["alert", "warm"], "description": "alert for scams and dangers, warm for the rest"},
         "scenes": {"type": "array", "minItems": 1, "maxItems": 10, "items": {
             "type": "object", "additionalProperties": False,
-            "required": ["kind", "speaker", "line", "caption", "hot", "image_prompt", "cast", "phone", "steps", "items", "cta"],
+            "required": ["kind", "speaker", "line", "delivery", "caption", "hot", "image_prompt", "cast", "phone", "steps", "items", "cta"],
             "properties": {
                 "kind": {"type": "string", "enum": ["hook", "phone", "scene", "talk", "twist", "steps", "list", "outro"]},
                 "speaker": {"type": "string", "enum": ["host", "scammer"], "description": "who says this line"},
                 "line": {"type": "string", "description": "what the character says in this scene"},
+                "delivery": {"type": "string", "description": "how the line is acted, as one voice-actor tag in English "
+                             "square brackets, e.g. [smooth, fake-polite] [pushy, fast] [innocent] [sarcastic] [shouting] "
+                             "[panicked] [warm]; never the same tag on two scenes in a row"},
                 "caption": {"type": "string", "description": "headline on screen, very short"},
                 "hot": {"type": "array", "maxItems": 2, "items": {"type": "string"},
                         "description": "one or two words copied exactly from line that get a red box"},
@@ -141,17 +144,33 @@ style in every picture. Phone scenes: a background that suits the moment (a livi
 """
 
 LAYOUT_DRAMA = """=== Video layout: 참교육 drama (the scammer gets outplayed) ===
-This is a short cartoon story, not a lecture. 8 to 10 scenes, 40 to 55 seconds of speech in total.
+This is a short cartoon story, not a lecture. 9 to 10 scenes, 40 to 55 seconds of speech in total.
 The host takes a real scam call or text going around now and turns the tables on the scammer.
-- hook (speaker scammer, cast scammer): the scammer's opening line, word for word how these scams really open
-  (from police / FSS / FTC warnings). caption: what is happening in 6 words, e.g. "검찰 사칭범이 이장님한테 걸렸다".
+- hook (speaker scammer, cast scammer): the scammer's opening line, built on how these scams really open
+  (police / FSS / FTC warnings), but complete enough that a viewer who hears only this line knows the situation in
+  two seconds: who he pretends to be, that he is talking to the victim, and what the "problem" is.
+  Bad: "주소 불일치로 물품 보관중입니다." Good: "고객님, 택배 기사인데요. 주소 불일치로 물품이 보관 중입니다."
+  Bad: "Your package is on hold." Good: "Hi, this is USPS. Your package is on hold, the address didn't match."
+  caption: what is happening in 6 words, e.g. "검찰 사칭범이 이장님한테 걸렸다".
 - phone (speaker scammer): the real-looking text or the incoming call screen ("call" with the number shown).
 - talk scenes, alternating speaker host / scammer, one or two short sentences each. The scammer pushes with the
   real tricks (urgency, fake authority, secrecy, a link or an app, gift cards or a safe account). The host plays
-  along, asks innocent questions that expose the lie. cast follows the speaker. Keep it funny and quick.
-- twist (speaker host, cast both): the turn. The host reveals he knew all along, the scammer panics and hangs up.
-  Only lawful, believable moves (he already called 112 / the bank, the "account" is the police station's).
-  caption: a punchline. Korean host may say "어디서!" here.
+  along, asks innocent questions that expose the lie. One of the host's early lines must plant the clue the twist
+  pays off (he asks for the scammer's name, number, "office", account, or keeps him talking). cast follows the speaker.
+- twist (speaker host, cast both): the payoff, the moment viewers wait for. Hard rules:
+  1. It flips the scammer's own trick back on him, using the exact detail he gave (his link, his "office", his
+     "safe account", his number). Setup earlier, payoff here.
+  2. The consequence for the scammer has ALREADY happened, in past tense: the call has been on speaker with the
+     police listening, the number was already reported to 118 / 7726 and is being blocked, the "account" he gave
+     is the police station's, the address he asked for is the police box. Lawful and believable only.
+  3. Two short sentences at most, ending on a hard line (Korean host: "어디서!"; Pops: "Nice try, pal.").
+  4. Banned weak twists: future intentions or plain advice ("확인해 볼게요", "확인부터 할 겁니다", "신고할 거예요",
+     "I'm going to report you", "I'll check first").
+  Bad: "누르긴요. 보호나라에 확인부터 할 겁니다. 어디서!"
+  Good: "그 링크요? 아까 118에 벌써 넘겼어요. 지금 이 통화, 경찰관이 옆에서 다 듣고 있습니다. 어디서!"
+  caption: a punchline, not a summary.
+- busted (kind talk, speaker scammer, cast scammer): the scammer's panicked 2 to 5 word reaction before he hangs up
+  ("어, 어... 뚝." / "Wait, what? *click*"). Funny, short.
 - steps (speaker host): 2 to 3 real moves for viewers, wrong ones ok false, right ones ok true (official numbers).
 - outro (speaker host, cast host): one line to the viewer's kids or parents, cta is a short share line.
 hot: the giveaway words of the scam (검찰, 안전계좌, gift card). Pictures: the host at his place (village office,
@@ -310,13 +329,21 @@ def check_script(script, layout, c):
     kinds = [s["kind"] for s in script["scenes"]]
     problems = []
     if layout is LAYOUT_DRAMA:
-        if len(kinds) < 8:
-            problems.append(f"only {len(kinds)} scenes, need 8 to 10")
+        if len(kinds) < 9:
+            problems.append(f"only {len(kinds)} scenes, need 9 to 10")
         for k in ("hook", "phone", "twist", "steps", "outro"):
             if k not in kinds:
                 problems.append(f"no {k} scene")
         if kinds and kinds[-1] != "outro":
             problems.append("last scene must be the outro")
+        if "twist" in kinds:
+            t = kinds.index("twist")
+            after = script["scenes"][t + 1] if t + 1 < len(kinds) else None
+            if not after or after["kind"] != "talk" or after["speaker"] != "scammer":
+                problems.append("the twist must be followed by the scammer's busted reaction (talk, speaker scammer)")
+            weak = ("할 겁니다", "할게요", "볼게요", "할 거예요", "I'll ", "I'm going to")
+            if any(w in script["scenes"][t]["line"] for w in weak):
+                problems.append("the twist uses a future intention; the consequence must already have happened")
         if script["scenes"][0]["speaker"] == "scammer" and script["scenes"][0]["line"].lstrip().startswith("아, 아"):
             problems.append('the scammer must not open with "아, 아."')
     if layout is LAYOUT_LIST and kinds != ["list"]:
@@ -351,7 +378,9 @@ def character_ref(channel, who="host"):
 
 
 STYLE = ("2D flat cartoon, thick clean outlines, warm flat colors, simple shading, a little exaggerated like a "
-         "newspaper cartoon. Vertical 2:3 picture, subject centered, calm bottom third. Absolutely no text, letters, "
+         "newspaper cartoon. Vertical 2:3 picture. Frame people from the chest or waist up with the whole head inside "
+         "the picture and some empty space above it; faces in the upper-middle of the frame, never touching the top edge. "
+         "Calm bottom third. Absolutely no text, letters, "
          "numbers, logos or brand names anywhere; phone screens show blank bubbles only.")
 
 
@@ -400,10 +429,10 @@ def openai_tts(channel, text, out, role="host"):
     Path(out).write_bytes(r.content)
 
 
-def speak(channel, text, out, role="host"):
+def speak(channel, text, out, role="host", delivery=""):
     """ElevenLabs voice with word timings; OpenAI voice (timings spread by length) when that is not possible."""
     try:
-        return el_voice.speak_timed(channel, text, out, role), "elevenlabs"
+        return el_voice.speak_timed(channel, text, out, role, delivery), "elevenlabs"
     except SystemExit as e:
         print("ElevenLabs not used:", e)
     openai_tts(channel, text, out, role)
@@ -437,7 +466,7 @@ def build_props(channel, script, images, work):
     scenes, engine, total = [], None, 0
     for i, (s, img) in enumerate(zip(script["scenes"], images)):
         vo = Path(work) / f"vo{i}.mp3"
-        words, engine = speak(channel, s["line"], vo, s["speaker"])
+        words, engine = speak(channel, s["line"], vo, s["speaker"], s.get("delivery", ""))
         lead = MIC if (i == 0 and c["mic"] and s["speaker"] == "host") else 0
         frames = int((duration(vo) + 0.35) * FPS) + lead
         if s["kind"] == "steps":

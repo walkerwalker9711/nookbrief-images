@@ -8,6 +8,7 @@ and the fallback is printed so the config can be fixed.
 """
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -69,24 +70,38 @@ def scammer_voice(channel):
     return _scammer
 
 
-def speak_timed(channel, text, out, role="host"):
+def speak_timed(channel, text, out, role="host", delivery=""):
     """Like speak(), but also returns word timings [(word, start_sec, end_sec)] from ElevenLabs' alignment.
-    role "scammer" reads with the second voice."""
+    role "scammer" reads with the second voice. delivery is an acting tag like "[sarcastic]": the v3/v4 models
+    act it out (and it is cut from the timings); older models would read it aloud, so they never get it."""
     import base64
     c = cfg(channel) if role == "host" else {**json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel],
                                              "voice_id": scammer_voice(channel), "speed": 1.05}
+    tag = delivery.strip() if delivery.strip().startswith("[") and delivery.strip().endswith("]") else ""
     for model in (c["model_id"], FALLBACK_MODEL):
-        r = requests.post(f"{API}/text-to-speech/{c['voice_id']}/with-timestamps", headers=headers(), timeout=120,
-                          params={"output_format": "mp3_44100_128"},
-                          json={"text": text, "model_id": model,
-                                "voice_settings": {"speed": c.get("speed", 1.0)}})
+        acted = tag and re.match(r"eleven_v[3-9]", model)
+        # owner 10-26: the first drafts sounded flat, so the expressive models run at the "creative" end
+        for settings in ({"speed": c.get("speed", 1.0), "stability": 0.0 if role == "scammer" else 0.5},
+                         {"speed": c.get("speed", 1.0)}):
+            r = requests.post(f"{API}/text-to-speech/{c['voice_id']}/with-timestamps", headers=headers(), timeout=120,
+                              params={"output_format": "mp3_44100_128"},
+                              json={"text": f"{tag} {text}" if acted else text, "model_id": model,
+                                    "voice_settings": settings})
+            if r.status_code != 422 and r.status_code != 400:
+                break
+            print("settings", settings, "->", r.status_code, r.text[:200])
         if r.status_code == 200:
             data = r.json()
             Path(out).write_bytes(base64.b64decode(data["audio_base64"]))
             a = data.get("alignment") or data.get("normalized_alignment") or {}
-            words, cur, start, end = [], "", None, None
+            words, cur, start, end, depth = [], "", None, None, 0
             for ch, s, e in zip(a.get("characters", []), a.get("character_start_times_seconds", []),
                                 a.get("character_end_times_seconds", [])):
+                if ch in "[]":
+                    depth += 1 if ch == "[" else -1
+                    continue
+                if depth > 0:
+                    continue
                 if ch.isspace():
                     if cur:
                         words.append((cur, start, end))
@@ -97,7 +112,7 @@ def speak_timed(channel, text, out, role="host"):
                 cur, end = cur + ch, e
             if cur:
                 words.append((cur, start, end))
-            print("ok", channel, model, out, len(words), "words")
+            print("ok", channel, model, out, len(words), "words", tag if acted else "")
             return words
         print("model", model, "->", r.status_code, r.text[:300])
     sys.exit("ElevenLabs refused every model")

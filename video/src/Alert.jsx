@@ -14,15 +14,19 @@ export const alertDuration = (scenes) => scenes.reduce((n, s) => n + (s.frames |
 const Fx = ({sfx, name, at, vol = 0.7}) => sfx && sfx[name] ? <Sequence from={Math.max(0, Math.round(at))} durationInFrames={45}>
   <Audio src={staticFile(sfx[name])} volume={vol} /></Sequence> : null;
 
-// Handheld camera: punch in on the cut, then drift; `dir` alternates the drift per scene
+// Handheld camera. The picture sits whole under the headline zone (top 300px) so faces are never cut by the
+// ribbon or the titles; a blurred copy fills the space above. Gentle push-in, drift alternates per scene.
 const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0}) => {
   const f = useCurrentFrame();
-  const z = interpolate(f, [0, 7], [1.22, 1.1], clamp) + f * 0.0011;
-  const x = Math.sin(f * 0.29) * 6 + dir * f * 0.35, y = Math.cos(f * 0.23) * 5;
+  const z = interpolate(f, [0, 7], [1.07, 1.02], clamp) + f * 0.0004;
+  const x = Math.sin(f * 0.29) * 4 + dir * f * 0.15, y = Math.cos(f * 0.23) * 3;
   return <AbsoluteFill style={{overflow: 'hidden', background: INK}}>
     <Img src={staticFile(img)} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover',
-      transform: `translate(${x}px, ${y}px) scale(${z}) rotate(${Math.sin(f * 0.17) * 0.4}deg)`,
-      filter: `saturate(1.1) contrast(1.06)${blur ? ` blur(${blur}px)` : ''}`}} />
+      filter: 'blur(28px) brightness(0.55)', transform: 'scale(1.15)'}} />
+    <Img src={staticFile(img)} style={{position: 'absolute', left: 0, top: 300, width: 1080, height: 1620, objectFit: 'cover',
+      transformOrigin: '50% 30%', transform: `translate(${x}px, ${y}px) scale(${z}) rotate(${Math.sin(f * 0.17) * 0.3}deg)`,
+      filter: `saturate(1.1) contrast(1.06)${blur ? ` blur(${blur}px)` : ''}`,
+      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, black 60px)'}} />
     {dim ? <AbsoluteFill style={{background: `rgba(10,12,16,${dim})`}} /> : null}
     {red ? <AbsoluteFill style={{boxShadow: `inset 0 0 ${260 * red}px ${90 * red}px rgba(227,36,43,${0.55 * red})`}} /> : null}
   </AbsoluteFill>;
@@ -206,7 +210,7 @@ const Steps = ({steps, frames, sfx}) => {
       const at = 10 + i * gap;
       const k = pop(f, at, fps, 12, 220);
       return <div key={i}>
-        <Fx sfx={sfx} name={s.ok ? 'pop' : 'buzz'} at={at} vol={0.6} />
+        <Fx sfx={sfx} name={s.ok ? 'pop' : 'buzz'} at={at} vol={0.3} />
         {f >= at && <div style={{position: 'absolute', left: 70, right: 70, top: 420 + i * 200, display: 'flex', alignItems: 'center', gap: 34,
           padding: '26px 34px', borderRadius: 30, background: 'rgba(255,255,255,.96)', transform: `translateX(${(1 - k) * -900}px)`,
           boxShadow: '0 10px 0 rgba(0,0,0,.3)'}}>
@@ -248,9 +252,9 @@ const Busted = ({text, at}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   if (f < at) return null;
   const k = pop(f, at, fps, 8, 260);
-  return <div style={{position: 'absolute', left: 0, right: 0, top: 640, textAlign: 'center'}}>
+  return <div style={{position: 'absolute', left: 0, right: 0, top: 1060, textAlign: 'center'}}>
     <span style={{display: 'inline-block', padding: '14px 46px', border: `16px solid ${RED}`, borderRadius: 28, color: RED,
-      fontFamily: font, fontWeight: 900, fontSize: 130, background: 'rgba(255,255,255,.88)', whiteSpace: 'nowrap',
+      fontFamily: font, fontWeight: 900, fontSize: 112, background: 'rgba(255,255,255,.88)', whiteSpace: 'nowrap',
       transform: `rotate(-10deg) scale(${3 - 2 * k})`, opacity: Math.min(1, k * 1.5)}}>{text}</span>
   </div>;
 };
@@ -271,22 +275,22 @@ const Scene = ({s, i, props}) => {
     {s.kind === 'phone' && s.phone && <>
       <Phone phone={s.phone} lang={lang} start={2} stampAt={stampAt}
         stampText={s.phone.app === 'settings' ? '' : (s.stamp || (lang === 'ko' ? '사기!' : 'SCAM'))} />
-      {s.phone.app === 'sms' && (s.phone.messages || []).map((m, n) => <Fx key={n} sfx={sfx} name="notify" at={16 + n * 16} vol={0.55} />)}
-      <Fx sfx={sfx} name={s.phone.app === 'settings' ? 'pop' : 'stamp'} at={stampAt} vol={0.9} />
+      {s.phone.app === 'sms' && (s.phone.messages || []).map((m, n) => <Fx key={n} sfx={sfx} name="notify" at={16 + n * 16} vol={0.28} />)}
+      <Fx sfx={sfx} name={s.phone.app === 'settings' ? 'pop' : 'stamp'} at={stampAt} vol={0.45} />
     </>}
     {s.kind === 'steps' && <Steps steps={s.steps || []} frames={s.frames || 90} sfx={sfx} />}
     {(s.kind === 'talk' || (s.kind === 'hook' && s.speaker === 'scammer')) && <SpeakerTag speaker={s.speaker} lang={lang} host={props.host} startSec={s.callSec || 0} onCall={s.onCall} />}
     {s.kind === 'twist' && <>
       <Busted text={lang === 'ko' ? '참교육 완료' : 'BUSTED'} at={Math.round((s.frames || 60) * 0.35)} />
-      <Fx sfx={sfx} name="stamp" at={Math.round((s.frames || 60) * 0.35)} vol={0.95} />
-      <Fx sfx={sfx} name="alarm" at={Math.round((s.frames || 60) * 0.35) + 6} vol={0.35} />
+      <Fx sfx={sfx} name="stamp" at={Math.round((s.frames || 60) * 0.35)} vol={0.5} />
+      <Fx sfx={sfx} name="alarm" at={Math.round((s.frames || 60) * 0.35) + 6} vol={0.15} />
     </>}
     {s.kind === 'outro' && <Outro brand={props.brand} lang={lang} cta={s.cta} />}
     {!['outro', 'talk', 'list'].includes(s.kind) && !(s.kind === 'hook' && s.speaker === 'scammer') && <Headline text={s.caption} big={s.kind === 'hook'} danger={danger && (s.kind === 'hook' || s.kind === 'phone' || s.kind === 'twist')} />}
     {s.kind === 'hook' && s.speaker === 'scammer' && <div style={{position: 'absolute', top: 110, left: 0, right: 0}}><Headline text={s.caption} big danger={danger} /></div>}
     {!['steps', 'list'].includes(s.kind) && <Captions words={s.words} hot={s.hot} y={s.kind === 'phone' ? 1520 : 1330} />}
     {s.kind === 'steps' && <Captions words={s.words} hot={s.hot} y={1560} />}
-    {i > 0 && <Fx sfx={sfx} name="whoosh" at={0} vol={0.45} />}
+    {i > 0 && <Fx sfx={sfx} name="whoosh" at={0} vol={0.18} />}
     {s.vo && <Sequence from={s.vo_at || 0}><Audio src={staticFile(s.vo)} /></Sequence>}
     <AbsoluteFill style={{background: WHITE, opacity: i > 0 ? flash : 0, pointerEvents: 'none'}} />
   </AbsoluteFill>;
@@ -307,8 +311,8 @@ export const Alert = (props) => {
     {source && <div style={{position: 'absolute', bottom: 60, left: 0, right: 0, textAlign: 'center'}}>
       <span style={{padding: '6px 18px', borderRadius: 10, background: 'rgba(0,0,0,.55)', color: WHITE, fontFamily: font,
         fontSize: 30}}>{source}</span></div>}
-    {mic && <Fx sfx={sfx} name="mic" at={0} vol={0.5} />}
-    {mood === 'alert' && <Fx sfx={sfx} name="alarm" at={mic ? 12 : 0} vol={0.5} />}
+    {mic && <Fx sfx={sfx} name="mic" at={0} vol={0.22} />}
+    {mood === 'alert' && <Fx sfx={sfx} name="alarm" at={mic ? 12 : 0} vol={0.2} />}
     {music && <Audio src={staticFile(music)} volume={(fr) => interpolate(fr, [0, 15, total - 20, total], [0.32, 0.13, 0.13, 0.3], clamp)} />}
   </AbsoluteFill>;
 };
