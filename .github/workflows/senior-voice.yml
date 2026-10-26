@@ -1,0 +1,30 @@
+name: senior-voice
+# Check the ElevenLabs key/voice and read 한국이장님 episode 1 into senior/samples/kr_ep1.mp3.
+# workflow_dispatch works once this file is on main; until then a push touching senior/samples/el_request runs it.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/project-thread-9sna6x]
+    paths: [senior/samples/el_request]
+permissions:
+  contents: write
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install requests==2.32.3
+      - env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          mkdir -p senior/samples
+          python scripts/senior/el_voice.py kr --check
+          python scripts/senior/el_voice.py kr "아, 아. 과태료 미납 문자 받으신 분, 누르지 마세요. 요즘 오는 사기 문자 절반 넘게가 이렇게 관공서 흉내입니다. 링크는 건드리지 말고, 문자를 꾹 눌러서 차단하고 신고. 그걸로 끝입니다. 진짜 벌금이 있는지는 이파인에 직접 들어가 보세요. 거기 없으면 없는 겁니다. 오늘 부모님 폰에도 하나 와 있을지 몰라요. 한번 열어봐 드리세요." senior/samples/kr_ep1.mp3
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add senior/samples
+          git commit -m "senior: 한국이장님 episode 1 voice [skip ci]" || exit 0
+          for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
