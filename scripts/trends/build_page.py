@@ -50,9 +50,18 @@ def region_html(code, d, now):
                    f'<span class="kwv">최고 {count(top)}회</span></summary>'
                    f'{f"<div class=chips><span class=lab>사람들이 같이 검색한 말</span>{sug}</div>" if sug else ""}'
                    f'<ol class="list">{vids}</ol></details>')
+    overall = "".join(row(v, now, i + 1) for i, v in enumerate(d.get("overall", [])[:20])) or '<li class="empty">수집된 쇼츠가 없습니다.</li>'
+    words = "".join(f'<span class="chip hotw">#{esc(w["word"])}<small>{count(w["views"])}</small></span>' for w in d.get("hot_words", []))
+    cats = "".join(f'<details class="kw"><summary><span class="kwn">{esc(name)}</span><span class="kwv">{len(vs)}편</span></summary>'
+                   f'<ol class="list">{"".join(row(v, now) for v in vs)}</ol></details>' for name, vs in d.get("categories", {}).items())
     return (f'<section class="region" id="{code.lower()}" data-region="{code}">'
-            f'<h2>{REGION_NAMES[code]} 오늘 터지는 쇼츠</h2><p class="sub">유튜브 인기 차트 중 3분 이하 영상, 올라온 뒤 시간당 조회수 순</p>'
+            f'<h2>{REGION_NAMES[code]} 전체 쇼츠 TOP 20</h2><p class="sub">최근 3일 올라온 쇼츠 전체 중 조회수 순</p>'
+            f'<ol class="list">{overall}</ol>'
+            f'<h2>지금 많이 붙는 해시태그</h2><p class="sub">오늘 수집한 인기 쇼츠 제목·태그에 2번 이상 나온 말, 조회수 합 순</p>'
+            f'<div class="chips big">{words or "<span class=lab>아직 없음</span>"}</div>'
+            f'<h2>{REGION_NAMES[code]} 인기 차트 속 쇼츠</h2><p class="sub">유튜브 인기 차트 중 3분 이하 영상, 올라온 뒤 시간당 조회수 순</p>'
             f'<ol class="list">{pop}</ol>'
+            f'<h2>카테고리별 인기 쇼츠</h2><p class="sub">카테고리별 인기 차트 중 3분 이하 영상</p>{cats}'
             f'<h2>{REGION_NAMES[code]} 시니어 관련 키워드</h2><p class="sub">키워드별 최근 7일 조회수 상위 쇼츠와 유튜브 검색 자동완성</p>'
             f'{"".join(kws)}</section>')
 
@@ -102,6 +111,7 @@ summary{cursor:pointer;display:flex;justify-content:space-between;gap:12px;paddi
 .kwv{font-family:var(--mono);font-size:12px;color:var(--mute)}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
 .chip{background:var(--chip);border-radius:999px;padding:3px 10px;font-size:13px}
+.chips.big{margin-bottom:4px}.hotw small{font-family:var(--mono);color:var(--mute);margin-left:6px;font-size:11px}
 .lab{font-size:12px;color:var(--mute);width:100%}
 .empty{padding:14px;color:var(--mute)}
 @media (max-width:480px){.vid{grid-template-columns:auto 72px 1fr}.kw .vid{grid-template-columns:72px 1fr}.th img,.noimg{width:72px;height:54px}.num{grid-column:-2/-1;flex-direction:row;gap:8px;justify-content:flex-end}}

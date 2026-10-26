@@ -4,7 +4,8 @@
 
 Per region: the mostPopular chart filtered to Shorts (<= 3 min), the top Shorts of the last 7 days for each
 seed keyword (search.list, order=viewCount), and YouTube search autocomplete for the same keywords.
-Quota: about 100 units per keyword search, so ~2,500 of the 10,000 daily units.
+Plus the top #shorts of the last 3 days, per-category charts and recurring hashtags across all of them.
+Quota: about 100 units per search, so ~2,800 of the 10,000 daily units.
 """
 import base64
 import datetime as dt
@@ -26,6 +27,8 @@ REGIONS = {
         "grandparents", "medicare", "retirement", "social security", "gifts for grandparents"]},
 }
 MAX_SHORT = 180  # seconds; Shorts can run up to 3 minutes
+CATEGORIES = {"24": "엔터테인먼트", "23": "코미디", "22": "인물·블로그", "26": "노하우·스타일", "27": "교육",
+              "28": "과학기술", "17": "스포츠", "20": "게임", "10": "음악", "25": "뉴스·정치", "19": "여행", "15": "동물"}
 
 
 def seconds(iso):
@@ -69,6 +72,18 @@ def details(ids, headers, now):
     return out
 
 
+def hot_words(videos, top=40):
+    """Hashtags and tags that recur across today's top Shorts, weighted by views."""
+    score, seen = {}, {}
+    for v in videos:
+        words = {w.lower() for w in re.findall(r"#(\w+)", v["title"])} | {t.lower() for t in v["tags"]}
+        for w in words - {"shorts", "short", "쇼츠", "youtubeshorts", "viral", "fyp", "trending"}:
+            score[w] = score.get(w, 0) + v["views"]
+            seen[w] = seen.get(w, 0) + 1
+    ranked = sorted((w for w in score if seen[w] >= 2), key=lambda w: -score[w])[:top]
+    return [{"word": w, "videos": seen[w], "views": score[w]} for w in ranked]
+
+
 def suggest(q, lang, region):
     try:
         r = requests.get("https://suggestqueries.google.com/complete/search", timeout=20, params={
@@ -90,6 +105,22 @@ def main():
         chart = call("GET", f"{YT}/youtube/v3/videos", headers=headers, params={
             "part": "id", "chart": "mostPopular", "regionCode": region, "maxResults": 50})
         popular = details([v["id"] for v in chart.get("items", [])], headers, now)
+        found = call("GET", f"{YT}/youtube/v3/search", headers=headers, params={
+            "part": "id", "q": "#shorts", "type": "video", "videoDuration": "short", "order": "viewCount",
+            "publishedAfter": (now - dt.timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "regionCode": region, "relevanceLanguage": cfg["lang"], "maxResults": 50})
+        overall = sorted(details([i["id"]["videoId"] for i in found.get("items", [])], headers, now),
+                         key=lambda v: -v["views"])
+        categories = {}
+        for cid, name in CATEGORIES.items():
+            try:
+                res = call("GET", f"{YT}/youtube/v3/videos", headers=headers, params={
+                    "part": "id", "chart": "mostPopular", "regionCode": region, "videoCategoryId": cid, "maxResults": 50})
+            except RuntimeError:  # not every category has a chart in every region
+                continue
+            vids = details([v["id"] for v in res.get("items", [])], headers, now)
+            if vids:
+                categories[name] = sorted(vids, key=lambda v: -v["views_per_hour"])[:8]
         keywords = {}
         for kw in cfg["keywords"]:
             found = call("GET", f"{YT}/youtube/v3/search", headers=headers, params={
@@ -99,11 +130,15 @@ def main():
             vids = details([i["id"]["videoId"] for i in found.get("items", [])], headers, now)
             keywords[kw] = {"videos": sorted(vids, key=lambda v: -v["views"]),
                             "suggest": suggest(kw, cfg["lang"], region)}
+        pool = {v["id"]: v for v in overall + popular + [v for c in categories.values() for v in c]}
         data["regions"][region] = {"popular": sorted(popular, key=lambda v: -v["views_per_hour"]),
-                                   "keywords": keywords}
+                                   "overall": overall, "categories": categories,
+                                   "hot_words": hot_words(list(pool.values())), "keywords": keywords}
     save(ROOT / "trends" / "latest.json", data)
     slim = {"generated": data["generated"], "regions": {
         r: {"popular": [{k: v[k] for k in ("id", "title", "views", "views_per_hour")} for v in d["popular"]],
+            "overall": [{k: v[k] for k in ("id", "title", "views")} for v in d["overall"]],
+            "hot_words": d["hot_words"],
             "keywords": {k: [{x: v[x] for x in ("id", "title", "views")} for v in kd["videos"]]
                          for k, kd in d["keywords"].items()}}
         for r, d in data["regions"].items()}}
