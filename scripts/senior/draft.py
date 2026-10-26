@@ -307,6 +307,8 @@ What is getting views this week for this pillar (YouTube search, last 7 days):
 {rules}
 {('=== English writing rules ===' + chr(10) + extra) if extra else ''}
 
+Captions are on-screen words only: never put a source or agency name in a caption (the video shows sources
+in its own footer). Use sources from the viewer's own country.
 Return JSON only, matching the schema. "description" is the YouTube description: two short lines in the
 channel's language, then the sources as plain text, then "AI voice & visuals" (Korean channel: "AI 음성·그림").
 """
@@ -348,6 +350,11 @@ def check_script(script, layout, c):
             problems.append('the scammer must not open with "아, 아."')
     if layout is LAYOUT_LIST and kinds != ["list"]:
         problems.append("need exactly one list scene")
+    for sc in script["scenes"]:
+        if "·" in sc["caption"] or re.search(r"\b(FTC|FBI|FCC|ACMA|USPS|SSA)\b|금감원|경찰청|출처", sc["caption"]):
+            problems.append(f'caption "{sc["caption"]}" names a source; sources go only in "sources"')
+    if c["region"] == "US" and any("ACMA" in x["name"] or "gov.au" in x["url"] or ".uk" in x["url"] for x in script["sources"]):
+        problems.append("US viewers: use US sources only (FTC, FBI, FCC, USPS, carriers), not Australian or UK ones")
     if "steps" in kinds and not script["scenes"][kinds.index("steps")]["steps"]:
         problems.append("the steps scene has no steps")
     return problems

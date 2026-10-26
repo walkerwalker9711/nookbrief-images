@@ -19,10 +19,25 @@ API = "https://api.elevenlabs.io/v1"
 FALLBACK_MODEL = "eleven_multilingual_v2"
 
 
+# Stand-in host voices (premade, older male) until the owner picks one in voices.json
+HOST_PREFS = {"us": ["Bill", "George", "Brian"]}
+
+
+def premade(names):
+    r = requests.get(f"{API}/voices", headers=headers(), timeout=30)
+    voices = r.json().get("voices", []) if r.ok else []
+    by_name = {v["name"].split(" ")[0]: v["voice_id"] for v in voices if v.get("category") == "premade"}
+    return next(((n, by_name[n]) for n in names if n in by_name), (None, None))
+
+
 def cfg(channel):
     c = json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel]
     if not c.get("voice_id"):
-        sys.exit(f"no voice chosen for {channel} yet")
+        name, vid = premade(HOST_PREFS.get(channel, []))
+        if not vid:
+            sys.exit(f"no voice chosen for {channel} yet")
+        print("stand-in host voice", name)
+        c = {**c, "voice_id": vid}
     return c
 
 
