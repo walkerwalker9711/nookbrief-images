@@ -103,6 +103,17 @@ def hot_words(videos, top=40):
     return [{"word": w, "videos": len(chans[w]), "views": score[w]} for w in ranked]
 
 
+def search(headers, **params):
+    """search.list ids, or none when the daily search quota is spent (the rest of the board still builds)."""
+    try:
+        found = call("GET", f"{YT}/youtube/v3/search", headers=headers, params={
+            "part": "id", "type": "video", "videoDuration": "short", "order": "viewCount", **params})
+    except RuntimeError as e:
+        print("search skipped:", params.get("q"), str(e)[:120])
+        return []
+    return [i["id"]["videoId"] for i in found.get("items", [])]
+
+
 def suggest(q, lang, region):
     try:
         r = requests.get("https://suggestqueries.google.com/complete/search", timeout=20, params={
@@ -126,11 +137,9 @@ def main():
         popular = [v for v in details([v["id"] for v in chart.get("items", [])], headers, now) if local(v, region)]
         ids = []
         for q in cfg["overall_q"]:
-            found = call("GET", f"{YT}/youtube/v3/search", headers=headers, params={
-                "part": "id", "q": q, "type": "video", "videoDuration": "short", "order": "viewCount",
-                "publishedAfter": (now - dt.timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                "regionCode": region, "relevanceLanguage": cfg["lang"], "maxResults": 50})
-            ids += [i["id"]["videoId"] for i in found.get("items", []) if i["id"]["videoId"] not in ids]
+            found = search(headers, q=q, publishedAfter=(now - dt.timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                           regionCode=region, relevanceLanguage=cfg["lang"], maxResults=50)
+            ids += [i for i in found if i not in ids]
         overall = sorted((v for v in details(ids, headers, now) if local(v, region)), key=lambda v: -v["views"])
         categories = {}
         for cid, name in CATEGORIES.items():
@@ -144,11 +153,8 @@ def main():
                 categories[name] = sorted(vids, key=lambda v: -v["views_per_hour"])[:8]
         keywords = {}
         for kw in (k for ks in cfg["pillars"].values() for k in ks):
-            found = call("GET", f"{YT}/youtube/v3/search", headers=headers, params={
-                "part": "id", "q": kw, "type": "video", "videoDuration": "short", "order": "viewCount",
-                "publishedAfter": week_ago, "regionCode": region, "relevanceLanguage": cfg["lang"],
-                "maxResults": 8})
-            vids = details([i["id"]["videoId"] for i in found.get("items", [])], headers, now)
+            vids = details(search(headers, q=kw, publishedAfter=week_ago, regionCode=region,
+                                  relevanceLanguage=cfg["lang"], maxResults=8), headers, now)
             keywords[kw] = {"videos": sorted(vids, key=lambda v: -v["views"]),
                             "suggest": suggest(kw, cfg["lang"], region)}
         pool = {v["id"]: v for v in overall + popular + [v for c in categories.values() for v in c]}
