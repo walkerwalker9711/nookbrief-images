@@ -1,7 +1,7 @@
 {
   "topic": "old-laptop-says-slow-charger-on",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/laptop-says-slow-charger-on-usb-c-check.html",
   "video": {
     "ig": "posts/old-laptop-says-slow-charger-on/old-laptop-says-slow-charger-on-short-ig.mp4",
     "link": "posts/old-laptop-says-slow-charger-on/old-laptop-says-slow-charger-on-short-link.mp4",
@@ -36,5 +36,7 @@
       "usb-c cable",
       "tech tips"
     ]
-  }
+  },
+  "not_before": 1792995903,
+  "threads_not_before": 1793056800
 }
