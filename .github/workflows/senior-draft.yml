@@ -1,0 +1,74 @@
+name: senior-draft
+# Weekday drafts for 한국이장님 (kr) and Pops Knows (us): script, pictures, voice and video in
+# senior/drafts/<date>-<channel>/. Nothing is uploaded.
+# The schedule and workflow_dispatch work once this file is on main; until then a push that changes
+# senior/drafts/request runs it (one line per draft: "kr" or "kr 과태료 문자").
+on:
+  schedule:
+    - cron: "0 22 * * 0-4"   # 07:00 KST Mon-Fri, after the 06:00 trend collection
+  workflow_dispatch:
+    inputs:
+      channel: {description: "kr, us or both", default: both}
+      topic: {description: "optional topic", default: ""}
+  push:
+    branches: [claude/project-thread-9sna6x]
+    paths: [senior/drafts/request]
+permissions:
+  contents: write
+concurrency: {group: senior-draft, cancel-in-progress: false}
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      jobs: ${{ steps.p.outputs.jobs }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        env:
+          EVENT: ${{ github.event_name }}
+          IN_CHANNEL: ${{ github.event.inputs.channel }}
+          IN_TOPIC: ${{ github.event.inputs.topic }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          ev = os.environ["EVENT"]
+          if ev == "push":
+              rows = [l.split(None, 1) for l in open("senior/drafts/request", encoding="utf-8").read().splitlines() if l.strip()]
+              jobs = [{"channel": r[0], "topic": r[1] if len(r) > 1 else ""} for r in rows]
+          elif ev == "workflow_dispatch":
+              ch = os.environ["IN_CHANNEL"] or "both"
+              jobs = [{"channel": c, "topic": os.environ["IN_TOPIC"]} for c in (["kr", "us"] if ch == "both" else [ch])]
+          else:
+              jobs = [{"channel": "kr", "topic": ""}, {"channel": "us", "topic": ""}]
+          print("jobs=" + json.dumps(jobs, ensure_ascii=False))
+          PY
+  draft:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        job: ${{ fromJson(needs.plan.outputs.jobs) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fonts-noto-cjk
+          pip install requests==2.32.3
+      - env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          CHANNEL: ${{ matrix.job.channel }}
+          TOPIC: ${{ matrix.job.topic }}
+        run: python scripts/senior/draft.py "$CHANNEL" --topic "$TOPIC"
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add senior/drafts senior/kr/character.png senior/us/character.png 2>/dev/null || true
+          git commit -m "senior: ${{ matrix.job.channel }} draft [skip ci]" || exit 0
+          for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done

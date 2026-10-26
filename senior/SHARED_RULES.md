@@ -13,7 +13,7 @@
 ## 콘텐츠 원칙
 - 글·대본·자막은 AI 티 금지. 영어는 SNS_글쓰기_규칙_영어.md 점검표 통과. 한국어도 같은 기준(상투어, 셋씩 나열, 같은 구조 반복 금지).
 - 문장마다 출처(공식 기관·제조사 도움말). 출처 자막을 화면에 넣는다. 지어낸 사연·가짜 사례 금지.
-- AI 사람 진행자 금지. 캐릭터는 누가 봐도 만화인 말하는 폰.
+- 실사 AI 사람 진행자 금지. 캐릭터는 누가 봐도 2D 만화(한국이장님, Pops).
 - 건강·금융(연금, 보험, Medicare)은 AI 목소리로 설명하지 않는다(2026-07 유튜브 비진정성 정책). 다룰 때는 주인님 실제 목소리 + 공식 발표 화면.
 - 직전 3편과 첫 장면·형식·음악·끝맺음이 겹치지 않게(반복 콘텐츠 판정 방지).
 - AI 생성 표시는 업로드 때 자동으로 켠다.
@@ -28,3 +28,4 @@
 - 트렌드 보드: https://claude.ai/artifact/FrJHbKGdG76a2Z4jYSXDNU (scripts/trends, 매일 06:00 KST 수집)
 - 영상 틀: video/ (Remotion Pop/Cine), 음성 video/voice.py(지금은 영어 Kokoro만, 한국어 엔진 추가 예정), 음악 video/beds.py
 - 게시: scripts/social + .github/workflows/social-publish.yml (채널별 토큰 이름은 YT_REFRESH_TOKEN_KR / _US로 추가 예정)
+- 초안 자동화(10-26): scripts/senior/draft.py + .github/workflows/senior-draft.yml. 평일 07:00 KST에 채널별 대본(OpenAI, 웹 검색으로 출처 확인) → 장면 그림(OpenAI 이미지, senior/<채널>/character.png 기준) → 음성(ElevenLabs, 안 되면 OpenAI 음성) → 자막 영상(ffmpeg) → senior/drafts/<날짜>-<채널>/. 업로드는 안 함(주인님 확인 후). 대본 규칙은 senior/kr|us/prompt.md. 병합 전에는 senior/drafts/request 파일(한 줄에 "kr" 또는 "kr 주제") push로 실행.
