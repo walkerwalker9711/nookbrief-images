@@ -1,13 +1,13 @@
 {
   "channel": "us",
-  "title": "The 'Hi Dad' Text That Isn't From Your Kid",
-  "description": "A fake kid, a broken phone, and an urgent bill. Pops checks the old number.\nDramatized exchange based on police warnings, not a real intercepted conversation. Don't reply: verify independently.\nSources:\nAvon and Somerset Police: https://www.avonandsomerset.police.uk/news/2022/03/phone-users-urged-to-be-aware-of-fake-whatsapp-message-scam/\nPolice Scotland: https://www.scotland.police.uk/advice/scams-and-frauds/phishing/\nFTC: https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages\nAI voice & visuals",
+  "title": "The fake FTC picked the wrong grandpa",
+  "description": "A fake FTC caller threatens Pops's phone number. Pops spots the setup.\nDramatized from an FTC warning, not a recording. Hang up and report the call.\nSources: FTC, The FTC is not calling to deactivate your phone number\nhttps://consumer.ftc.gov/consumer-alerts/2026/10/ftc-not-calling-deactivate-your-phone-number\nReport calls: https://reportfraud.ftc.gov\nAI voice & visuals",
   "tags": [
-    "Pops Knows",
+    "scam alert",
+    "FTC impersonation",
+    "phone scam",
     "scam text",
-    "Hi Dad scam",
-    "family impersonation",
-    "text scams"
+    "Pops Knows"
   ],
   "made_with_ai": true,
   "video": "video.mp4",
