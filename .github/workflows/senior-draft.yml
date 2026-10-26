@@ -57,10 +57,13 @@ jobs:
         with: {python-version: "3.12"}
       - timeout-minutes: 20
         run: |
-          # apt's man-db trigger can hang the runner for 10+ minutes, so skip apt unless ffmpeg is missing
+          # Some runner images lack ffmpeg. The Azure apt mirror has been crawling (20 KB/s on 10-26),
+          # so switch to the main Ubuntu archive and skip the slow man-db trigger.
           if ! command -v ffmpeg; then
             sudo rm -f /var/lib/man-db/auto-update
-            sudo apt-get install -y -q -o Acquire::Retries=3 --no-install-recommends ffmpeg || (sudo apt-get update -q && sudo apt-get install -y -q -o Acquire::Retries=3 --no-install-recommends ffmpeg)
+            sudo sed -i 's|http://azure.archive.ubuntu.com|http://archive.ubuntu.com|g' /etc/apt/sources.list.d/*.sources /etc/apt/sources.list 2>/dev/null || true
+            sudo apt-get update -q
+            sudo apt-get install -y -q -o Acquire::Retries=3 --no-install-recommends ffmpeg
           fi
           mkdir -p ~/.fonts
           curl -fsSL -o ~/.fonts/NotoSansCJKkr-Bold.otf https://github.com/notofonts/noto-cjk/raw/main/Sans/OTF/Korean/NotoSansCJKkr-Bold.otf
