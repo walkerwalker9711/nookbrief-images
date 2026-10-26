@@ -5,7 +5,10 @@
     "voice_id": "TKUGUd5JWceSqSPVPjha",
     "model_id": "eleven_v4",
     "speed": 1.1,
-    "chosen": "2026-10-26 by the owner, ElevenLabs Starter plan (commercial use)"
+    "chosen": "2026-10-26 by the owner, ElevenLabs Starter plan (commercial use)",
+    "scammer_voice_id": "hjCvGtSCRPyjYwe2lDf1",
+    "scammer_voice_name": "Juan - Deep, Clear, Edu & Corporate",
+    "scammer_chosen": "picked automatically from the voice library, 2026-10-26"
   },
   "us": {
     "provider": "elevenlabs",
