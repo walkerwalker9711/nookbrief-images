@@ -33,7 +33,7 @@ jobs:
           import json, os
           ev = os.environ["EVENT"]
           if ev == "push":
-              rows = [l.split(None, 1) for l in open("senior/drafts/request", encoding="utf-8").read().splitlines() if l.strip()]
+              rows = [l.split(None, 1) for l in open("senior/drafts/request", encoding="utf-8").read().splitlines() if l.strip() and not l.startswith("#")]
               jobs = [{"channel": r[0], "topic": r[1] if len(r) > 1 else ""} for r in rows]
           elif ev == "workflow_dispatch":
               ch = os.environ["IN_CHANNEL"] or "both"
