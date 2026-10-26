@@ -1,16 +1,16 @@
 {
   "channel": "kr",
-  "title": "택배 주소가 틀렸다더니, 이장님 주소부터 틀렸다",
-  "description": "택배 주소 확인하라는 문자, 앱 설치까지 요구한다면 멈추세요.\n공식 경고 사례를 바탕으로 만든 예방 상황극입니다. 실제로는 답장하지 마세요.\n출처: 대전자치경찰위원회 — https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=\n출처: 과학기술정보통신부 관계부처 합동 예방 안내 — https://www.kcc.go.kr/download.do%3Bjsessionid%3DdX_W0_W-mWM7fiwkgsbZPWRWFsi3sww3gqxBenUe.servlet-aihgcldhome20?fileSeq=60276\n출처: 정책브리핑 스미싱 예방 안내(2026.04.23) — https://www.korea.kr/news/policyFocusView.do?newsId=148963131&pWise=main&pWiseMain=F3&pkgId=49500834\n출처: KISA 스미싱·큐싱 대응 — https://www.kisa.or.kr/1020601\nAI 음성·그림",
+  "title": "아이 가뒀다는 사기범, 이장님이 번호를 묻자",
+  "description": "아이를 차에 가뒀다며 수리비를 요구한다면? 끊고 자녀나 학원에 직접 확인하세요.\n금융감독원 공개 수법을 바탕으로 구성한 예방 상황극입니다. 실제 검거·신고 사례 영상이 아닙니다.\n출처: 금융감독원 소비자경보 2026-4호, 2026.1.30. 배포(토스증권 게시 원문)\nhttps://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf\nAI 음성·그림",
   "tags": [
     "한국이장님",
-    "스미싱",
-    "택배사칭",
-    "사기문자",
-    "스미싱예방",
-    "부모님휴대폰",
-    "118",
-    "상황극"
+    "보이스피싱",
+    "납치빙자",
+    "자녀사칭",
+    "사기예방",
+    "부모님안전",
+    "참교육상황극",
+    "쇼츠"
   ],
   "made_with_ai": true,
   "video": "video.mp4",

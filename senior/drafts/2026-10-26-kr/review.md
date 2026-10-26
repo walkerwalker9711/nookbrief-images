@@ -1,45 +1,41 @@
 # 한국이장님 초안 2026-10-26
 
-- 기둥: 사기·안전 / 주제: 택배 주소 불일치 문자로 악성 앱 설치를 유도하는 스미싱
-- 제목: 택배 주소가 틀렸다더니, 이장님 주소부터 틀렸다
+- 기둥: 사기·안전 / 주제: 자녀를 차에 가뒀다며 휴대폰 수리비를 요구하는 납치 빙자 보이스피싱
+- 제목: 아이 가뒀다는 사기범, 이장님이 번호를 묻자
 - 목소리: elevenlabs
 
 ## 대본
-1. [hook] 주소 불일치로 물품 보관중입니다.  ·  화면 글자: 택배 사칭범 등장
-2. [phone] 문자로 보낸 링크에서 주소 확인하세요.  ·  화면 글자: 주소 확인하라며?
-   - 폰 화면 (택배 사칭 문자·재현): [대한] 송장번호[5069******21] 주소 불일치로 물품 보관중입니다. [확인 링크]
-3. [talk] 주소가 틀렸다고요? 어느 집으로 보내셨는데요?  ·  화면 글자: 어느 집인데요?
-4. [talk] 링크 누르고 앱부터 설치하셔야 조회됩니다.  ·  화면 글자: 갑자기 앱 설치
-5. [talk] 물건 주소 찾는데, 제 폰에 이사부터 오시려고요?  ·  화면 글자: 폰에 입주하시게?
-6. [talk] 아니, 설치부터 하시라니까요!  ·  화면 글자: 주소는 대답 못 함
-7. [twist] 누르긴요. 보호나라에 확인부터 할 겁니다. 어디서!  ·  화면 글자: 배송지는 보호나라
-8. [steps] 실제로는 답장도 마세요. 링크는 누르지 말고, 의심 문자는 국번 없이 일일팔로 상담하세요.  ·  화면 글자: 답장 말고 118
-   - X 의심 문자에 답장하기
-   - O 문자 속 링크 누르지 않기
-   - O 스미싱 의심 상담 118
-9. [outro] 부모님께 보내드리세요. 택배 주소 고치려다 사기꾼 들이지 마시라고요.  ·  화면 글자: 부모님께 보내세요
+1. [hook] 아이 보호자시죠? 애가 제 휴대폰을 부숴서 차에 가뒀어요.  ·  화면 글자: 납치범인 척 걸었다
+2. [phone] 수리비만 보내면 내려줄게요. 지금 통화하면서 보내세요.  ·  화면 글자: 끊지 말고 보내라?
+3. [talk] 지금 화면에 뜬 번호가 선생님 번호입니까? 적어두려고요.  ·  화면 글자: 번호부터 적습니다
+4. [talk] 맞아요, 그 번호! 딴 데 전화하지 말고 돈부터 보내요.  ·  화면 글자: 딴 데 전화 금지?
+5. [talk] 아이고, 잠깐만요. 제가 손이 좀 느립니다.  ·  화면 글자: 손만 느린 겁니다
+6. [talk] 끊지 마세요! 통화하면서 이체할 수 있잖아요!  ·  화면 글자: 확인할 틈을 막는다
+7. [twist] 그 번호, 다른 전화로 경찰에 이미 신고했습니다. 어디서!  ·  화면 글자: 돈 대신 신고 완료
+8. [talk] 다른 전화요? 어… 뚝.  ·  화면 글자: 끊지 말라더니?
+9. [steps] 실제로는 바로 끊고 자녀나 학원에 확인하세요. 돈을 보냈다면 일일이에 신고하고 지급정지를 요청하세요.  ·  화면 글자: 끊고 직접 확인
+   - O 통화 끊기
+   - O 자녀·학원에 직접 확인
+   - O 송금했다면 112 신고·지급정지 요청
+10. [outro] 부모님께 전해주세요. 아이 가뒀다는 전화, 혼자 듣지 마시라고요.  ·  화면 글자: 혼자 듣지 마세요
 
 ## 숫자 출처
-주제 선정: 사용자가 제공한 최근 7일 트렌드의 스미싱 검색 주제를 반영했습니다. 이 특정 문구가 2026년 10월 넷째 주에 새로 확산했다는 근거는 확보하지 못했으므로 '이번 주 신종 수법'이라고 표현하지 않았습니다.
-첫마디·문자: 대전자치경찰위원회가 2024년 7월 2일 게시한 대전경찰청 자료의 택배 사칭 예시에서 '주소 불일치로 물품 보관중입니다.'를 그대로 사용했습니다. 송장번호도 해당 자료의 마스킹된 예시이며 올해 피해 통계가 아닙니다. 위험한 실제 URL은 재현하지 않았습니다. ([daejeon.go.kr](https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=&utm_source=openai))
-앱 설치 유도: 같은 경찰 자료는 미끼문자에서 악성 앱 설치로 이어지는 범행 과정을 설명합니다. 첫마디 외 사기범 대사와 이장님의 응수·퇴장은 이를 바탕으로 창작한 상황극이며 실제 대화 인용이 아닙니다. ([daejeon.go.kr](https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=&utm_source=openai))
-대화 중단: 2025년 1월 1일 관계부처 합동 안내는 의심 문자 발신자와 전화·문자로 대화를 이어가지 말라고 권고합니다. 그래서 장면 8에서 실제 행동은 답장 중단이라고 명확히 구분했습니다. ([kcc.go.kr](https://www.kcc.go.kr/download.do%3Bjsessionid%3DdX_W0_W-mWM7fiwkgsbZPWRWFsi3sww3gqxBenUe.servlet-aihgcldhome20?fileSeq=60276&utm_source=openai))
-링크 미클릭: 2026년 4월 23일 정책브리핑 예방 안내에서 출처 불명 링크를 클릭하지 말 것을 확인했습니다. 해당 기사의 특정 지원금에 관한 '링크는 모두 사기' 주장을 일반 택배 문자로 확대하지 않았습니다. ([korea.kr](https://www.korea.kr/news/policyFocusView.do?newsId=148963131&pWise=main&pWiseMain=F3&pkgId=49500834&utm_source=openai))
-보호나라·118: KISA 공식 사업 안내에 카카오톡 보호나라 채널 및 국번 없는 118이 스미싱 상담·신고 경로로 명시돼 있습니다. 2026년 4월 23일 안내에서도 보호나라 확인과 118 상담을 재확인했습니다. 118은 피해액이나 발생 건수가 아닌 상담번호입니다. 검증하지 못한 2026년 피해액·증가율·발생 건수는 넣지 않았습니다. ([kisa.or.kr](https://www.kisa.or.kr/1020601?utm_source=openai))
-출처 띠: 장면 1~6 '출처: 대전경찰청·대전자치경찰위원회', 장면 7 '출처: KISA', 장면 8 '출처: 과기정통부·KISA·정책브리핑'. 농담과 가족 공유 요청은 사실 주장에 해당하지 않습니다.
+주제 선택: 사용자가 제공한 최근 7일 트렌드의 ‘납치 보이스피싱 참교육’을 채택했습니다. 이 세부 수법의 이번 주 검색량이나 증가율을 별도로 확인한 것은 아니므로 그런 주장은 넣지 않았습니다.
+공식 근거는 금융감독원이 작성하고 토스증권이 게시한 2026.1.30. 배포 소비자경보 원문입니다. 장면 1의 보호자 접근은 원문 2·5쪽의 실제 첫마디를 성별·개인정보 없이 각색했습니다. 휴대폰 파손과 차량 감금 주장은 같은 원문에 있습니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf))
+장면 2의 수리비 요구는 원문 2·5쪽의 실제 수법에 근거합니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf))
+장면 4·6의 다른 곳에 확인하지 못하게 하고 통화 중 이체를 강요하는 수법은 원문 3·5쪽에 근거합니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf))
+장면 9의 통화 종료 후 자녀·학원에 직접 확인하는 행동은 원문 3쪽에 근거합니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf))
+대본의 유일한 실제 전화번호 112와 송금 피해 시 신고·지급정지 요청은 원문 3쪽에 명시되어 있습니다. 통계·피해액·차단 소요시간은 사용하지 않았습니다. ([home-files.tossinvest.com](https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf))
+장면 3·5·7·8은 반전을 위한 창작 대화입니다. 두 번째 전화로 화면의 발신번호와 협박 내용을 이미 신고한 설정이며, 실제 신고 완료·검거 사례라고 주장하지 않습니다. 발신번호가 실제 범인의 신원을 보장하거나 신고 즉시 차단·검거된다고 표현하지 않습니다. 전화 화면의 010-XXXX-XXXX는 비식별 연출 표기이고 오후 5:20은 연출 시각입니다.
+제작 시 전 장면 상단에 ‘공식 수법 기반 상황극’, 장면 1·2·4·6에 ‘출처: 금융감독원 2026.1.30. 2·5쪽’, 장면 9에 ‘출처: 금융감독원 2026.1.30. 3쪽’을 별도 오버레이로 넣으세요. 장면 7에는 ‘상황극 연출’을 유지하세요. 첫 대사가 사기범이므로 ‘아, 아.’는 사용하지 않았습니다.
 
-- 대전자치경찰위원회: https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=
-- 과학기술정보통신부: https://www.kcc.go.kr/download.do%3Bjsessionid%3DdX_W0_W-mWM7fiwkgsbZPWRWFsi3sww3gqxBenUe.servlet-aihgcldhome20?fileSeq=60276
-- 정책브리핑: https://www.korea.kr/news/policyFocusView.do?newsId=148963131&pWise=main&pWiseMain=F3&pkgId=49500834
-- KISA: https://www.kisa.or.kr/1020601
+- 금융감독원: https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf
 
 ## 설명란
-택배 주소 확인하라는 문자, 앱 설치까지 요구한다면 멈추세요.
-공식 경고 사례를 바탕으로 만든 예방 상황극입니다. 실제로는 답장하지 마세요.
-출처: 대전자치경찰위원회 — https://www.daejeon.go.kr/djpol/PolCardGalleryView.do?boardId=djPol_0011&categorySeq=1&menuSeq=6909&ntatcSeq=1459702023&pageIndex=1&searchCondition=&searchKeyword=
-출처: 과학기술정보통신부 관계부처 합동 예방 안내 — https://www.kcc.go.kr/download.do%3Bjsessionid%3DdX_W0_W-mWM7fiwkgsbZPWRWFsi3sww3gqxBenUe.servlet-aihgcldhome20?fileSeq=60276
-출처: 정책브리핑 스미싱 예방 안내(2026.04.23) — https://www.korea.kr/news/policyFocusView.do?newsId=148963131&pWise=main&pWiseMain=F3&pkgId=49500834
-출처: KISA 스미싱·큐싱 대응 — https://www.kisa.or.kr/1020601
+아이를 차에 가뒀다며 수리비를 요구한다면? 끊고 자녀나 학원에 직접 확인하세요.
+금융감독원 공개 수법을 바탕으로 구성한 예방 상황극입니다. 실제 검거·신고 사례 영상이 아닙니다.
+출처: 금융감독원 소비자경보 2026-4호, 2026.1.30. 배포(토스증권 게시 원문)
+https://home-files.tossinvest.com/files/fraud-prevention/dc5e67aa-eb5c-4663-a444-a14175d1dc1c.pdf
 AI 음성·그림
 
-태그: 한국이장님, 스미싱, 택배사칭, 사기문자, 스미싱예방, 부모님휴대폰, 118, 상황극
+태그: 한국이장님, 보이스피싱, 납치빙자, 자녀사칭, 사기예방, 부모님안전, 참교육상황극, 쇼츠
