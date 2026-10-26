@@ -19,10 +19,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "social"))
 from common import ROOT, YT, call, google_token, save  # noqa: E402
 
 REGIONS = {
-    "KR": {"lang": "ko", "keywords": [
+    "KR": {"lang": "ko", "overall_q": ["쇼츠", "#shorts"], "keywords": [
         "스미싱", "보이스피싱", "스마트폰 사용법", "카톡 꿀팁", "갤럭시 설정", "아이폰 꿀팁",
         "국민연금", "건강보험", "노후 준비", "5060", "치매 예방", "무릎 운동"]},
-    "US": {"lang": "en", "keywords": [
+    "US": {"lang": "en", "overall_q": ["#shorts", "shorts"], "keywords": [
         "scam text", "phone tips for seniors", "iphone tips", "android tips", "seniors",
         "grandparents", "medicare", "retirement", "social security", "gifts for grandparents"]},
 }
@@ -67,21 +67,34 @@ def details(ids, headers, now):
                 "published": sn["publishedAt"], "seconds": secs, "views": views,
                 "likes": int(st.get("likeCount", 0)), "comments": int(st.get("commentCount", 0)),
                 "views_per_hour": round(views / hours), "tags": sn.get("tags", [])[:8],
+                "lang": (sn.get("defaultAudioLanguage") or sn.get("defaultLanguage") or "").lower(),
                 "thumb": thumb(sn["thumbnails"].get("default", {}).get("url", "")),
             })
     return out
 
 
+NOISE = {"shorts", "short", "쇼츠", "숏츠", "youtubeshorts", "shortsfeed", "shortsvideo", "viral", "viralvideo",
+         "fyp", "foryou", "foryoupage", "trending", "trend", "youtube", "subscribe", "explore", "reels"}
+
+
+def local(v, region):
+    """Keep videos made for this region's language: Hangul titles for KR, English audio or Latin titles for US."""
+    if region == "KR":
+        return v["lang"].startswith("ko") or bool(re.search(r"[가-힣]", v["title"]))
+    if v["lang"]:
+        return v["lang"].startswith("en")
+    return not re.search(r"[^\x00-\x7F\u2000-\u2BFF\U0001F000-\U0001FFFF]", v["title"])
+
+
 def hot_words(videos, top=40):
-    """Hashtags and tags that recur across today's top Shorts, weighted by views."""
-    score, seen = {}, {}
+    """Title hashtags that recur across different channels in today's top Shorts, weighted by views."""
+    score, chans = {}, {}
     for v in videos:
-        words = {w.lower() for w in re.findall(r"#(\w+)", v["title"])} | {t.lower() for t in v["tags"]}
-        for w in words - {"shorts", "short", "쇼츠", "youtubeshorts", "viral", "fyp", "trending"}:
+        for w in {w.lower() for w in re.findall(r"#(\w+)", v["title"])} - NOISE:
             score[w] = score.get(w, 0) + v["views"]
-            seen[w] = seen.get(w, 0) + 1
-    ranked = sorted((w for w in score if seen[w] >= 2), key=lambda w: -score[w])[:top]
-    return [{"word": w, "videos": seen[w], "views": score[w]} for w in ranked]
+            chans.setdefault(w, set()).add(v["channel"])
+    ranked = sorted((w for w in score if len(chans[w]) >= 2), key=lambda w: -score[w])[:top]
+    return [{"word": w, "videos": len(chans[w]), "views": score[w]} for w in ranked]
 
 
 def suggest(q, lang, region):
@@ -104,13 +117,15 @@ def main():
     for region, cfg in REGIONS.items():
         chart = call("GET", f"{YT}/youtube/v3/videos", headers=headers, params={
             "part": "id", "chart": "mostPopular", "regionCode": region, "maxResults": 50})
-        popular = details([v["id"] for v in chart.get("items", [])], headers, now)
-        found = call("GET", f"{YT}/youtube/v3/search", headers=headers, params={
-            "part": "id", "q": "#shorts", "type": "video", "videoDuration": "short", "order": "viewCount",
-            "publishedAfter": (now - dt.timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "regionCode": region, "relevanceLanguage": cfg["lang"], "maxResults": 50})
-        overall = sorted(details([i["id"]["videoId"] for i in found.get("items", [])], headers, now),
-                         key=lambda v: -v["views"])
+        popular = [v for v in details([v["id"] for v in chart.get("items", [])], headers, now) if local(v, region)]
+        ids = []
+        for q in cfg["overall_q"]:
+            found = call("GET", f"{YT}/youtube/v3/search", headers=headers, params={
+                "part": "id", "q": q, "type": "video", "videoDuration": "short", "order": "viewCount",
+                "publishedAfter": (now - dt.timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "regionCode": region, "relevanceLanguage": cfg["lang"], "maxResults": 50})
+            ids += [i["id"]["videoId"] for i in found.get("items", []) if i["id"]["videoId"] not in ids]
+        overall = sorted((v for v in details(ids, headers, now) if local(v, region)), key=lambda v: -v["views"])
         categories = {}
         for cid, name in CATEGORIES.items():
             try:
@@ -118,7 +133,7 @@ def main():
                     "part": "id", "chart": "mostPopular", "regionCode": region, "videoCategoryId": cid, "maxResults": 50})
             except RuntimeError:  # not every category has a chart in every region
                 continue
-            vids = details([v["id"] for v in res.get("items", [])], headers, now)
+            vids = [v for v in details([v["id"] for v in res.get("items", [])], headers, now) if local(v, region)]
             if vids:
                 categories[name] = sorted(vids, key=lambda v: -v["views_per_hour"])[:8]
         keywords = {}
