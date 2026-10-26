@@ -76,7 +76,8 @@ SCHEMA = {
                 "image_prompt": {"type": "string", "description": "English picture description, no text in the picture"}}}},
         "sources": {"type": "array", "minItems": 1, "items": {
             "type": "object", "additionalProperties": False, "required": ["name", "url"],
-            "properties": {"name": {"type": "string"}, "url": {"type": "string"}}}},
+            "properties": {"name": {"type": "string", "description": "publisher only, short (FTC, 경찰청, 복지로)"},
+                           "url": {"type": "string"}}}},
         "description": {"type": "string"},
         "tags": {"type": "array", "items": {"type": "string"}, "maxItems": 8},
         "ko_review": {"type": "string", "description": "the script in Korean for the owner's review"},
@@ -301,7 +302,7 @@ WrapStyle: 0
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Say,{font},92,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,60,60,430,1
-Style: Big,{font},118,&H0000E1FF,&H0000E1FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,10,4,8,50,50,170,1
+Style: Big,{font},112,&H0000E1FF,&H0000E1FF,&H50000000,&H00000000,-1,0,0,0,100,100,0,0,3,16,0,8,50,50,120,1
 Style: Src,{font},34,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,0,0,0,0,100,100,0,0,3,2,0,2,40,40,70,1
 
 [Events]
