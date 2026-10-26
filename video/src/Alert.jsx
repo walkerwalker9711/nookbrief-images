@@ -229,8 +229,8 @@ const Outro = ({brand, lang, cta}) => {
   </div>;
 };
 
-// Who is talking: the host in navy, the scammer in red with a running call timer
-const SpeakerTag = ({speaker, lang, host, startSec}) => {
+// Who is talking: the host in navy, the scammer in red; a running timer only when the scam is a phone call
+const SpeakerTag = ({speaker, lang, host, startSec, onCall}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   const k = pop(f, 0, fps, 12, 240);
   const scam = speaker === 'scammer';
@@ -238,9 +238,9 @@ const SpeakerTag = ({speaker, lang, host, startSec}) => {
   return <div style={{position: 'absolute', top: 175, left: 40, display: 'flex', gap: 14, alignItems: 'center',
     transform: `translateX(${(1 - k) * -500}px)`}}>
     <span style={{padding: '10px 26px', borderRadius: 40, background: scam ? RED : NAVY, color: WHITE, fontFamily: font,
-      fontWeight: 900, fontSize: 50, boxShadow: '0 6px 0 rgba(0,0,0,.35)'}}>{scam ? (lang === 'ko' ? '📞 사기꾼' : '📞 SCAMMER') : `🎙 ${host}`}</span>
-    <span style={{padding: '8px 18px', borderRadius: 30, background: 'rgba(0,0,0,.6)', color: '#7CFC9A', fontFamily: font,
-      fontWeight: 700, fontSize: 36}}>{lang === 'ko' ? '통화 중' : 'on call'} {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')}</span>
+      fontWeight: 900, fontSize: 50, boxShadow: '0 6px 0 rgba(0,0,0,.35)'}}>{scam ? (onCall ? '📞 ' : '💬 ') + (lang === 'ko' ? '사기꾼' : 'SCAMMER') : `🎙 ${host}`}</span>
+    {onCall && <span style={{padding: '8px 18px', borderRadius: 30, background: 'rgba(0,0,0,.6)', color: '#7CFC9A', fontFamily: font,
+      fontWeight: 700, fontSize: 36}}>{lang === 'ko' ? '통화 중' : 'on call'} {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')}</span>}
   </div>;
 };
 
@@ -275,7 +275,7 @@ const Scene = ({s, i, props}) => {
       <Fx sfx={sfx} name={s.phone.app === 'settings' ? 'pop' : 'stamp'} at={stampAt} vol={0.9} />
     </>}
     {s.kind === 'steps' && <Steps steps={s.steps || []} frames={s.frames || 90} sfx={sfx} />}
-    {(s.kind === 'talk' || (s.kind === 'hook' && s.speaker === 'scammer')) && <SpeakerTag speaker={s.speaker} lang={lang} host={props.host} startSec={s.callSec || 0} />}
+    {(s.kind === 'talk' || (s.kind === 'hook' && s.speaker === 'scammer')) && <SpeakerTag speaker={s.speaker} lang={lang} host={props.host} startSec={s.callSec || 0} onCall={s.onCall} />}
     {s.kind === 'twist' && <>
       <Busted text={lang === 'ko' ? '참교육 완료' : 'BUSTED'} at={Math.round((s.frames || 60) * 0.35)} />
       <Fx sfx={sfx} name="stamp" at={Math.round((s.frames || 60) * 0.35)} vol={0.95} />
@@ -301,7 +301,7 @@ export const Alert = (props) => {
   return <AbsoluteFill style={{background: INK, transform: `translateX(${shakeHook}px)`}}>
     {scenes.map((s, i) => {
       const from = at; at += s.frames || 60;
-      return <Sequence key={i} from={from} durationInFrames={s.frames || 60}><Scene s={{...s, callSec: from / 30}} i={i} props={props} /></Sequence>;
+      return <Sequence key={i} from={from} durationInFrames={s.frames || 60}><Scene s={{...s, callSec: from / 30, onCall: scenes.some((x) => x.phone && x.phone.app === 'call')}} i={i} props={props} /></Sequence>;
     })}
     <Ribbon label={label} calm={mood !== 'alert'} />
     {source && <div style={{position: 'absolute', bottom: 60, left: 0, right: 0, textAlign: 'center'}}>
