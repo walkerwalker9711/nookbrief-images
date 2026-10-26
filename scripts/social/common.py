@@ -64,9 +64,9 @@ def env(name):
     return v or None
 
 
-def google_token():
-    """Access token for YouTube from the YT_* refresh token secrets, or None when they are not set."""
-    cid, secret, refresh = env("YT_CLIENT_ID"), env("YT_CLIENT_SECRET"), env("YT_REFRESH_TOKEN")
+def google_token(refresh_name="YT_REFRESH_TOKEN"):
+    """Access token for YouTube from the YT_* client secrets and the named refresh token, or None when not set."""
+    cid, secret, refresh = env("YT_CLIENT_ID"), env("YT_CLIENT_SECRET"), env(refresh_name)
     if not (cid and secret and refresh):
         return None
     return call("POST", "https://oauth2.googleapis.com/token", data={
