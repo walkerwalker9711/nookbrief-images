@@ -138,7 +138,7 @@ const ListCard = ({title, items, img}) => {
         </div>;
       })}
     </div>
-    {img && <Img src={staticFile(img)} style={{position: 'absolute', right: -40, bottom: -60, width: 420, borderRadius: 30,
+    {img && <Img src={staticFile(img)} style={{position: 'absolute', right: -30, bottom: -130, width: 340, borderRadius: 30,
       transform: `rotate(${Math.sin(f * 0.15) * 2}deg)`}} />}
   </AbsoluteFill>;
 };
