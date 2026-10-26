@@ -1,13 +1,13 @@
 {
   "channel": "us",
-  "title": "The “Dad, My Phone Broke” Text Meets Pops",
-  "description": "“Dad, my phone broke” can be a scam. Call the family number you already know before sending money.\nCartoon dramatization of official scam warnings, not a recorded case. Don't copy Pops's replies; verify separately.\nSources:\nACMA: https://www.acma.gov.au/articles/2024-01/scam-alert-re-emergence-hi-mum-scam\nFTC: https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages\nAI voice & visuals",
+  "title": "Pops Sends the Delivery Scam to the Wrong Inbox",
+  "description": "A cartoon dramatization of a fake delivery text, not a real exchange.\nKid, don't reply or tap. Send this to your folks.\nSources:\nUSPIS: https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams\nFTC: https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages?trk=public_post-text\nCensys: https://censys.com/blog/following-a-usps-smishing-kit-through-censys-dns-data/\nAI voice & visuals",
   "tags": [
     "Pops Knows",
-    "text scam",
-    "family impersonation scam",
-    "hi mom scam",
-    "scam prevention"
+    "scam text",
+    "USPS text scam",
+    "delivery scam",
+    "smishing"
   ],
   "made_with_ai": true,
   "video": "video.mp4",
