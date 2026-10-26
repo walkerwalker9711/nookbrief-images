@@ -1,13 +1,13 @@
 {
   "channel": "us",
-  "title": "The fake FTC picked the wrong grandpa",
-  "description": "A fake FTC caller threatens Pops's phone number. Pops spots the setup.\nDramatized from an FTC warning, not a recording. Hang up and report the call.\nSources: FTC, The FTC is not calling to deactivate your phone number\nhttps://consumer.ftc.gov/consumer-alerts/2026/10/ftc-not-calling-deactivate-your-phone-number\nReport calls: https://reportfraud.ftc.gov\nAI voice & visuals",
+  "title": "The “Dad, My Phone Broke” Text Meets Pops",
+  "description": "“Dad, my phone broke” can be a scam. Call the family number you already know before sending money.\nCartoon dramatization of official scam warnings, not a recorded case. Don't copy Pops's replies; verify separately.\nSources:\nACMA: https://www.acma.gov.au/articles/2024-01/scam-alert-re-emergence-hi-mum-scam\nFTC: https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages\nAI voice & visuals",
   "tags": [
-    "scam alert",
-    "FTC impersonation",
-    "phone scam",
-    "scam text",
-    "Pops Knows"
+    "Pops Knows",
+    "text scam",
+    "family impersonation scam",
+    "hi mom scam",
+    "scam prevention"
   ],
   "made_with_ai": true,
   "video": "video.mp4",
