@@ -194,7 +194,8 @@ never invent details or quotes that were not reported. If the report quotes the 
 - phone (cast none): the actual text or call as reported, on the phone screen. line: the host reads or describes it.
 - scene x3 to x4 (cast none, or host when he comments): how it unfolded, step by step, each scene one turn of the
   trick (the link, the app, the "safe account", the deadline). Tension builds; each line ends pulling into the next.
-- scene (the turning point): the one moment it could have been stopped, said plainly.
+- scene (the turning point): the one moment it could have been stopped, told as part of the story (what
+  happened), not as advice. Advice belongs only in the steps scene. Every picture shows this case's people and places.
 - steps: 2 to 3 real moves (wrong ones ok false, right ones ok true, official numbers).
 - outro (cast host): one quiet closing line that stays with the viewer. cta empty. No share requests.
 Narration voice: short spoken sentences, past tense for the story, present for the advice; no lecture, no jokes,
