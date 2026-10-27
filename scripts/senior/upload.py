@@ -1,0 +1,62 @@
+"""Upload an approved senior Shorts draft to its channel (owner approves each one in the thread).
+
+  python upload.py senior/drafts/2026-10-26-kr      (needs YT_CLIENT_ID, YT_CLIENT_SECRET, KR_/US_YT_REFRESH_TOKEN)
+
+Reads upload.json in the draft folder, uploads video.mp4 public with the AI label on, sets thumb.jpg when the
+channel is allowed custom thumbnails, and writes upload_result.json next to it. An uploaded draft is never sent twice.
+"""
+import json
+import os
+import sys
+from pathlib import Path
+
+import requests
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "social"))
+from common import YT, google_token  # noqa: E402
+
+ROOT = Path(__file__).resolve().parents[2]
+TOKENS = {"kr": "KR_YT_REFRESH_TOKEN", "us": "US_YT_REFRESH_TOKEN"}
+
+
+def main(folder):
+    d = ROOT / folder
+    meta = json.loads((d / "upload.json").read_text(encoding="utf-8"))
+    done = d / "upload_result.json"
+    if done.exists() and json.loads(done.read_text(encoding="utf-8")).get("video_id"):
+        print("already uploaded:", done.read_text(encoding="utf-8"))
+        return
+    tok = google_token(TOKENS[meta["channel"]])
+    if not tok:
+        sys.exit(f"{TOKENS[meta['channel']]} is not set")
+    body = {
+        "snippet": {"title": meta["title"][:100], "description": meta["description"][:5000], "tags": meta.get("tags", []),
+                    "categoryId": meta.get("category", "25"), "defaultLanguage": "ko" if meta["channel"] == "kr" else "en"},
+        "status": {"privacyStatus": meta.get("privacy", "public"), "selfDeclaredMadeForKids": False,
+                   "containsSyntheticMedia": bool(meta.get("made_with_ai", True))},
+    }
+    video = d / meta.get("video", "video.mp4")
+    r = requests.post(f"{YT}/upload/youtube/v3/videos", params={"uploadType": "resumable", "part": "snippet,status"},
+                      headers={"Authorization": f"Bearer {tok}", "X-Upload-Content-Type": "video/mp4",
+                               "X-Upload-Content-Length": str(video.stat().st_size)}, json=body, timeout=60)
+    if r.status_code >= 300:
+        sys.exit(f"upload start -> {r.status_code}: {r.text[:300]}")
+    with open(video, "rb") as f:
+        up = requests.put(r.headers["Location"], data=f, headers={"Content-Type": "video/mp4"}, timeout=900)
+    if up.status_code >= 300:
+        sys.exit(f"upload -> {up.status_code}: {up.text[:300]}")
+    v = up.json()
+    out = {"video_id": v["id"], "url": f"https://youtube.com/shorts/{v['id']}", "privacy": v.get("status", {}).get("privacyStatus")}
+    thumb = d / meta.get("thumbnail", "thumb.jpg")
+    if thumb.exists():  # custom thumbnails need a phone-verified channel; a refusal is noted, the upload stands
+        t = requests.post(f"{YT}/upload/youtube/v3/thumbnails/set", params={"videoId": v["id"]},
+                          headers={"Authorization": f"Bearer {tok}", "Content-Type": "image/jpeg"},
+                          data=thumb.read_bytes(), timeout=120)
+        out["thumbnail"] = "set" if t.status_code < 300 else f"failed {t.status_code}: {t.text[:200]}"
+    done.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(out, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    for folder in sys.argv[1:]:
+        main(folder)
