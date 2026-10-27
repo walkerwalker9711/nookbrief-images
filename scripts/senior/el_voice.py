@@ -108,6 +108,35 @@ def native_villain(channel):
     return vid
 
 
+def extra_voice(channel):
+    """A third voice for a short reenacted line by someone else in a true story (owner 10-27: the bank clerk asks
+    again). A native female voice from the library, added once and saved in voices.json as extra_voice_id."""
+    path = ROOT / "senior" / "voices.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data[channel].get("extra_voice_id"):
+        return data[channel]["extra_voice_id"]
+    lang = {"kr": "ko", "us": "en"}[channel]
+    want = ("calm", "professional", "friendly", "clear", "natural", "warm")
+    params = {"page_size": 40, "gender": "female", "language": lang, "sort": "trending"}
+    r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
+    if r.status_code == 400:
+        params.pop("sort")
+        r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
+    voices = r.json().get("voices", []) if r.ok else []
+    pick = next((v for v in voices if any(w in (v.get("descriptive", "") + " " + v.get("description", "")).lower()
+                                          for w in want)), voices[0] if voices else None)
+    if not pick:
+        sys.exit("no library voice for the extra role")
+    r = requests.post(f"{API}/voices/add/{pick['public_owner_id']}/{pick['voice_id']}", headers=headers(), timeout=30,
+                      json={"new_name": f"{channel} extra - {pick['name']}"[:60]})
+    vid = (r.json().get("voice_id") if r.ok else None) or pick["voice_id"]
+    data[channel].update({"extra_voice_id": vid, "extra_voice_name": pick["name"],
+                          "extra_chosen": "picked automatically from the voice library, 2026-10-27"})
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print("extra voice (library)", pick["name"], "-", pick.get("descriptive"), pick.get("accent"))
+    return vid
+
+
 def scammer_voice(channel):
     global _scammer
     c = json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel]
@@ -132,7 +161,8 @@ def speak_timed(channel, text, out, role="host", delivery=""):
     act it out (and it is cut from the timings); older models would read it aloud, so they never get it."""
     import base64
     c = cfg(channel) if role == "host" else {**json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel],
-                                             "voice_id": scammer_voice(channel), "speed": 1.05}
+                                             "voice_id": extra_voice(channel) if role == "extra" else scammer_voice(channel),
+                                             "speed": 1.0 if role == "extra" else 1.05}
     tag = delivery.strip() if delivery.strip().startswith("[") and delivery.strip().endswith("]") else ""
     for model in (c["model_id"], FALLBACK_MODEL):
         acted = tag and re.match(r"eleven_v[3-9]", model)

@@ -377,6 +377,8 @@ storyteller on a phone screen. Below is a finished script as JSON. Rewrite ONLY 
 - cause and effect: read the lines in order as a viewer who knows nothing. Every action of the victim (taps a link,
   installs an app, calls a number, moves money) must follow from what the scammer said or sent just before, with who,
   how and the excuse; if a line jumps ("보내온 링크를 눌렀습니다" right after a call with no link), fix it using only the facts;
+- one or two short reenacted lines make it a scene, not a report: write them inside the line as {직원: ...} or
+  {사기범: ...} (another voice reads them); each only puts into words something the facts say happened, no new facts;
 - link the sentences the way a person tells a story: connectors and motives ("하지만", "이에", "잠시 후", "~하기 위해",
   "이상한 낌새를 느낀 지점장이"); bare fact-after-fact sentences sound machine-written. Follow the channel's 기준 예시;
 - the tension is real: name the pressure the victim felt (the threat, the deadline, being told to tell no one), as reported;
@@ -588,6 +590,42 @@ def speak(channel, text, out, role="host", delivery=""):
     return timed, "openai"
 
 
+# A reenacted line inside a story scene: {직원: 다시 한번 설명해 주시겠어요?}. The narrator reads the rest; the
+# quote is read by a second voice (사기범/범인 → the scammer voice, anyone else → the extra voice).
+QUOTE = re.compile(r"\{\s*([^{}:|]+?)\s*[:|]\s*([^{}]+?)\s*\}")
+
+
+def speak_line(channel, line, out, speaker="host", delivery=""):
+    parts, last = [], 0
+    for m in QUOTE.finditer(line):
+        if line[last:m.start()].strip():
+            parts.append((speaker, line[last:m.start()].strip(), delivery))
+        who = m.group(1)
+        role = "scammer" if re.search(r"사기|범인|scammer|caller", who, re.I) else "extra"
+        parts.append((role, m.group(2), "[calm, polite, a little puzzled]" if role == "extra" else "[low, menacing]"))
+        last = m.end()
+    if not parts:
+        return speak(channel, line, out, speaker, delivery)
+    if line[last:].strip():
+        parts.append((speaker, line[last:].strip(), delivery))
+    words, files, t, engine = [], [], 0.0, None
+    gap = 0.3
+    for n, (role, text, dl) in enumerate(parts):
+        f = Path(out).with_name(f"{Path(out).stem}_{n}.mp3")
+        ws, engine = speak(channel, text, f, role, dl)
+        if role != speaker and ws:  # quote marks on the reenacted line in the captions
+            ws = [(("“" if k == 0 else "") + w + ("”" if k == len(ws) - 1 else ""), a, b) for k, (w, a, b) in enumerate(ws)]
+        words += [(w, a + t, b + t) for w, a, b in ws]
+        t += duration(f) + gap
+        files.append(f)
+    inputs = sum((["-i", str(f)] for f in files), [])
+    pads = "".join(f"[{k}:a]apad=pad_dur={gap}[a{k}];" for k in range(len(files)))
+    subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex",
+                    pads + "".join(f"[a{k}]" for k in range(len(files))) + f"concat=n={len(files)}:v=0:a=1[o]",
+                    "-map", "[o]", "-ar", "44100", "-b:a", "128k", str(out)], check=True)
+    return words, engine
+
+
 def level(path):
     """Same loudness for every line, so the host is never quieter than the scammer (owner 10-27: "too weak")."""
     tmp = str(path) + ".lv.mp3"
@@ -628,7 +666,7 @@ def build_props(channel, script, images, work):
     scenes, engine, total = [], None, 0
     for i, (s, img) in enumerate(zip(script["scenes"], images)):
         vo = Path(work) / f"vo{i}.mp3"
-        words, engine = speak(channel, s["line"], vo, s["speaker"], s.get("delivery", ""))
+        words, engine = speak_line(channel, s["line"], vo, s["speaker"], s.get("delivery", ""))
         lead = MIC if (i == 0 and c["mic"] and s["speaker"] == "host" and script.get("format") != "story") else 0
         frames = int((duration(vo) + 0.35) * FPS) + lead
         if s["kind"] == "steps":
