@@ -37,7 +37,7 @@ const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0}) => {
 // turns yellow, flagged words red
 const groups = (words) => {
   const out = []; let cur = [];
-  words.forEach((w) => { cur.push(w); if (/[.?!]$/.test(w[0]) || cur.length >= 9) { out.push(cur); cur = []; } });
+  words.forEach((w) => { cur.push(w); if (/[.?!][”"’]?$/.test(w[0]) || cur.length >= 9) { out.push(cur); cur = []; } });
   if (cur.length) out.push(cur);
   return out;
 };
