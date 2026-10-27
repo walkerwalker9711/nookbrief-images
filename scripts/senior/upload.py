@@ -3,7 +3,8 @@
   python upload.py senior/drafts/2026-10-26-kr      (needs YT_CLIENT_ID, YT_CLIENT_SECRET, KR_/US_YT_REFRESH_TOKEN)
 
 Reads upload.json in the draft folder, uploads video.mp4 public with the AI label on, sets thumb.jpg when the
-channel is allowed custom thumbnails, and writes upload_result.json next to it. An uploaded draft is never sent twice.
+channel is allowed custom thumbnails, and writes upload_result.json next to it. An uploaded draft is never sent twice:
+running it again only updates the title, description and tags (and retries the thumbnail).
 """
 import json
 import os
@@ -23,15 +24,29 @@ def main(folder):
     d = ROOT / folder
     meta = json.loads((d / "upload.json").read_text(encoding="utf-8"))
     done = d / "upload_result.json"
-    if done.exists() and json.loads(done.read_text(encoding="utf-8")).get("video_id"):
-        print("already uploaded:", done.read_text(encoding="utf-8"))
-        return
     tok = google_token(TOKENS[meta["channel"]])
     if not tok:
         sys.exit(f"{TOKENS[meta['channel']]} is not set")
+    snippet = {"title": meta["title"][:100], "description": meta["description"][:5000], "tags": meta.get("tags", []),
+               "categoryId": meta.get("category", "25"), "defaultLanguage": "ko" if meta["channel"] == "kr" else "en"}
+    prev = json.loads(done.read_text(encoding="utf-8")) if done.exists() else {}
+    if prev.get("video_id"):  # already up: never upload twice, only bring title, description and tags up to date
+        r = requests.put(f"{YT}/youtube/v3/videos", params={"part": "snippet"}, timeout=60,
+                         headers={"Authorization": f"Bearer {tok}"}, json={"id": prev["video_id"], "snippet": snippet})
+        if r.status_code >= 300:
+            sys.exit(f"update -> {r.status_code}: {r.text[:300]}")
+        prev["title"] = r.json()["snippet"]["title"]
+        thumb = d / meta.get("thumbnail", "thumb.jpg")
+        if thumb.exists() and prev.get("thumbnail") != "set":
+            t = requests.post(f"{YT}/upload/youtube/v3/thumbnails/set", params={"videoId": prev["video_id"]},
+                              headers={"Authorization": f"Bearer {tok}", "Content-Type": "image/jpeg"},
+                              data=thumb.read_bytes(), timeout=120)
+            prev["thumbnail"] = "set" if t.status_code < 300 else f"failed {t.status_code}: {t.text[:200]}"
+        done.write_text(json.dumps(prev, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print("updated", json.dumps(prev, ensure_ascii=False))
+        return
     body = {
-        "snippet": {"title": meta["title"][:100], "description": meta["description"][:5000], "tags": meta.get("tags", []),
-                    "categoryId": meta.get("category", "25"), "defaultLanguage": "ko" if meta["channel"] == "kr" else "en"},
+        "snippet": snippet,
         "status": {"privacyStatus": meta.get("privacy", "public"), "selfDeclaredMadeForKids": False,
                    "containsSyntheticMedia": bool(meta.get("made_with_ai", True))},
     }
