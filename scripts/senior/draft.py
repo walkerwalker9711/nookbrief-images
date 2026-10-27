@@ -346,8 +346,12 @@ What is getting views this week for this pillar (YouTube search, last 7 days):
 
 Captions are on-screen words only: never put a source or agency name in a caption (the video shows sources
 in its own footer). Use sources from the viewer's own country.
-Return JSON only, matching the schema. "description" is the YouTube description: two short lines in the
-channel's language, then the sources as plain text, then "AI voice & visuals" (Korean channel: "AI 음성·그림").
+Return JSON only, matching the schema. "description" is the YouTube description, easy to scan on a phone
+(owner 10-27), in the channel's language, in this order with blank lines between blocks:
+3 hashtags on the first line (they show above the title) / a one-line hook in quotes, then one line of setup /
+3 to 4 lines starting with "▶ " that walk through what happened (no ending given away) / one line starting
+with "✅ " with the one rule / the hashtag line (channel name first, 4 to 6 tags) / "📰 출처" (English: "📰 Sources")
+then one "name (date) url" per line / last line only "※ AI 음성·그림으로 재구성" (English: "※ Recreated with AI voice & art").
 """
     body = {"input": prompt, "tools": [{"type": "web_search"}],
             "text": {"format": {"type": "json_schema", "name": "short_script", "schema": SCHEMA, "strict": True}}}
