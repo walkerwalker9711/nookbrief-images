@@ -156,7 +156,10 @@ const CallScreen = ({phone, ko, stampAt}) => {
   const num = isNum ? raw : (ko ? '010-●●●●-●●●●' : '(●●●) ●●●-●●●●');
   const msgs = phone.messages || [];
   const hasLink = (t) => new RegExp(LINK.source, 'i').test(t);
-  const said = msgs.filter((m) => !m.me && !hasLink(m.text));
+  // a bare title ("금융감독원 과장") is who the caller claimed to be, not something said: show it under the number
+  const spoken = (t) => t.length > 14 || /[다요까죠네][.!?…]*$|[.!?…"”]$/.test(t.trim());
+  const claim = msgs.find((m) => !m.me && !hasLink(m.text) && !spoken(m.text));
+  const said = msgs.filter((m) => !m.me && !hasLink(m.text) && spoken(m.text));
   const sms = msgs.find((m) => hasLink(m.text));
   const sec = Math.max(0, Math.floor((f - ans) / fps));
   const on = interpolate(f, [ans, ans + 8], [0, 1], clamp);
@@ -196,6 +199,7 @@ const CallScreen = ({phone, ko, stampAt}) => {
         flex: '0 0 auto'}}><Ico d={ICON.person} size={78} color="#C9CED6" /></div>
       <div style={{minWidth: 0}}>
         <div style={{fontSize: 50, fontWeight: 900, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{name}</div>
+        {claim && <div style={{fontSize: 36, color: '#FFB4B4', marginTop: 4, fontWeight: 700}}>{ko ? `자칭 ${claim.text}` : `claims: ${claim.text}`}</div>}
         <div style={{fontSize: 34, color: '#7BE0A7', marginTop: 4}}>{lie && <span style={{padding: '2px 12px', marginRight: 14, background: RED,
           color: WHITE, fontWeight: 900}}>{ko ? '사칭 전화' : 'FAKE CALL'}</span>}{ko ? '통화 중' : 'On call'} {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')}</div>
       </div>
