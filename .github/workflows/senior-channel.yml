@@ -1,0 +1,33 @@
+name: senior-channel
+# Channel art for the senior channels. Until this file is on main, a push that changes senior/channel/request runs it:
+# one line, "kr bg" (make the banner background) or "kr apply" (upload the banner and set the channel description).
+on:
+  push:
+    branches: [claude/project-thread-9sna6x]
+    paths: [senior/channel/request]
+permissions:
+  contents: write
+concurrency: {group: senior-channel, cancel-in-progress: false}
+jobs:
+  art:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install requests==2.32.3
+      - name: Run
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          KR_YT_REFRESH_TOKEN: ${{ secrets.KR_YT_REFRESH_TOKEN }}
+          US_YT_REFRESH_TOKEN: ${{ secrets.US_YT_REFRESH_TOKEN }}
+        run: |
+          grep -v '^#' senior/channel/request | grep -v '^\s*$' | while read ch step; do python scripts/senior/channel_art.py "$step" "$ch"; done
+      - name: Save
+        run: |
+          git config user.name "nookbrief-bot"
+          git config user.email "nookbrief-bot@users.noreply.github.com"
+          git add senior/*/brand/banner_bg.png 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "senior: channel art [skip ci]" && git pull --rebase && git push)
