@@ -350,8 +350,8 @@ Return JSON only, matching the schema. "description" is the YouTube description,
 (owner 10-27), in the channel's language, in this order with blank lines between blocks:
 3 hashtags on the first line (they show above the title) / a one-line hook in quotes, then one line of setup /
 3 to 4 lines starting with "▶ " that walk through what happened (no ending given away) / one line starting
-with "✅ " with the one rule / the hashtag line (channel name first, 4 to 6 tags) / "📰 출처" (English: "📰 Sources")
-then one "name (date) url" per line / last line only "※ AI 음성·그림으로 재구성" (English: "※ Recreated with AI voice & art").
+with "✅ " with the one rule / the hashtag line (channel name first, 4 to 6 tags) / one line "📰 출처: " (English: "📰 Sources: ") with the
+publisher names only, comma separated, never a link or address (owner 10-27) / last line only "※ AI 음성·그림으로 재구성" (English: "※ Recreated with AI voice & art").
 """
     body = {"input": prompt, "tools": [{"type": "web_search"}],
             "text": {"format": {"type": "json_schema", "name": "short_script", "schema": SCHEMA, "strict": True}}}
