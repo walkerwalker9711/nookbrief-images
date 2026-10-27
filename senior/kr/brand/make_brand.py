@@ -157,10 +157,66 @@ def banner(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg"):
     print("banner", out, img.size)
 
 
+DISPLAY = HERE / "fonts" / "BlackHanSans-Regular.ttf"  # OFL, fonts/OFL.txt
+
+
+def banner2(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg", face=(0.74, 0.19)):
+    """v2 after looking at the channels trending now: one poster picture (host big on the right, dark left), a heavy
+    yellow title, one red tag and one line of promise. Text sits in the 1235x338 band every device shows."""
+    W, H = 2048, 1152
+    sx0, sy0 = (W - 1235) // 2, (H - 338) // 2
+    # phones show only the middle band: size and place the picture so his head and shoulders sit inside it, right side
+    pic = Image.open(bg).convert("RGB")
+    s = 0.80
+    pic = pic.resize((round(1536 * s), round(1024 * s)), Image.LANCZOS)
+    fx, fy = face
+    ox, oy = sx0 + 1235 - 190 - int(pic.width * fx), H // 2 + 10 - int(pic.height * fy)
+    # backdrop for the wide desktop/TV view: the same night street, enlarged, blurred and darkened
+    back = Image.open(bg).convert("RGB")
+    back = back.crop((int(back.width * 0.30), int(back.height * 0.30), int(back.width * 0.62), int(back.height * 0.62)))
+    back = back.resize((W, H), Image.LANCZOS)  # the street lights only, no second copy of him
+    back = back.filter(ImageFilter.GaussianBlur(26))
+    img = Image.blend(Image.new("RGB", (W, H), (5, 8, 18)), back, 0.55)
+    fade = Image.new("L", pic.size, 255)
+    fd = ImageDraw.Draw(fade)
+    for i in range(160):  # soft left, top and right edges
+        a = int(255 * i / 160)
+        fd.line([(i, 0), (i, pic.height)], fill=a)
+        fd.line([(pic.width - 1 - i, 0), (pic.width - 1 - i, pic.height)], fill=a)
+    top = Image.new("L", pic.size, 255)
+    td = ImageDraw.Draw(top)
+    for i in range(140):
+        td.line([(0, i), (pic.width, i)], fill=int(255 * i / 140))
+    fade = Image.fromarray(__import__("numpy").minimum(__import__("numpy").array(fade), __import__("numpy").array(top)))
+    img.paste(pic, (ox, oy), fade)
+    # deepen the left so the title owns it
+    shade = Image.new("L", (W, H))
+    sd = ImageDraw.Draw(shade)
+    for x in range(W):
+        sd.line([(x, 0), (x, H)], fill=int(max(0, min(200, 230 - x * 0.19))))
+    img = Image.composite(Image.new("RGB", (W, H), (4, 7, 16)), img, shade)
+    d = ImageDraw.Draw(img)
+    x = sx0 + 10
+    tag, ft = "실제 사건 파일", font(40)
+    tw = text_w(d, tag, ft)
+    d.rectangle((x, sy0 + 2, x + tw + 40, sy0 + 58), fill=RED)
+    d.text((x + 20, sy0 + 3), tag, font=ft, fill=WHITE)
+    title = ImageFont.truetype(str(DISPLAY), 168)
+    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).text((x + 6, sy0 + 62 + 8), "한국이장님", font=title, fill=(0, 0, 0, 200))
+    img.paste(shadow.filter(ImageFilter.GaussianBlur(8)), (0, 0), shadow.filter(ImageFilter.GaussianBlur(8)))
+    d = ImageDraw.Draw(img)
+    d.text((x, sy0 + 62), "한국이장님", font=title, fill=YEL)
+    d.text((x + 4, sy0 + 238), "보이스피싱, 당하기 전에 먼저 알려드립니다", font=font(44), fill=WHITE)
+    d.text((x + 4, sy0 + 296), "실화 사연  |  받을 돈  |  폰 꿀팁", font=font(32), fill=(176, 186, 204))
+    img.save(out, quality=94)
+    print("banner", out, img.size)
+
+
 if __name__ == "__main__":
     if sys.argv[1] == "profile":
         profile()
     elif sys.argv[1] == "banner":
-        banner()
+        banner2()
     else:
         thumb(*sys.argv[2:8])
