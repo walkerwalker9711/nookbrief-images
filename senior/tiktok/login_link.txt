@@ -1,0 +1,1 @@
+https://www.tiktok.com/v2/auth/authorize/?client_key=sbaw0qigv3bn31xj2t&scope=user.info.basic%2Cvideo.upload&response_type=code&redirect_uri=https%3A%2F%2Fwalkerwalker9711.github.io%2Fnookbrief-images%2Fcallback.html&state=c4e9f5ac3a180118
