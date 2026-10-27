@@ -8,7 +8,10 @@
     "chosen": "2026-10-26 by the owner, ElevenLabs Starter plan (commercial use)",
     "scammer_voice_id": "hjCvGtSCRPyjYwe2lDf1",
     "scammer_voice_name": "Juan - Deep, Clear, Edu & Corporate",
-    "scammer_chosen": "picked automatically from the voice library, 2026-10-26"
+    "scammer_chosen": "picked automatically from the voice library, 2026-10-26",
+    "extra_voice_id": "AW5wrnG1jVizOYY7R1Oo",
+    "extra_voice_name": "Jiyoung - Warm and Clear",
+    "extra_chosen": "picked automatically from the voice library, 2026-10-27"
   },
   "us": {
     "provider": "elevenlabs",
