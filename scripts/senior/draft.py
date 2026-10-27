@@ -555,7 +555,7 @@ def build_props(channel, script, images, work):
         if s["kind"] == "steps":
             frames = max(frames, 30 + 22 * len(s["steps"]))
         if s["kind"] == "outro":
-            frames += 15
+            frames += 60  # hold the closing card ~2 s and fade out (owner 10-27: the end cut off too fast)
         if s["kind"] == "list":
             frames = max(frames, 10 * FPS)
         shutil.copy(img, Path(work) / f"img{i}{img.suffix}")

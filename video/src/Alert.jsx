@@ -32,19 +32,6 @@ const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0}) => {
   </AbsoluteFill>;
 };
 
-// Yellow-black hazard ribbon with a blinking label, on top for the whole video
-const Ribbon = ({label, calm}) => {
-  const f = useCurrentFrame();
-  const on = calm || Math.floor(f / 12) % 2 === 0;
-  const bg = calm ? NAVY : `repeating-linear-gradient(-45deg, ${YEL} 0 34px, ${INK} 34px 68px)`;
-  return <div style={{position: 'absolute', top: 0, left: 0, right: 0, height: 150, background: bg,
-    backgroundPosition: `${f * 3}px 0`, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 14}}>
-    <div style={{padding: '8px 34px', borderRadius: 12, background: calm ? YEL : RED, color: calm ? INK : WHITE,
-      fontFamily: font, fontWeight: 900, fontSize: 54, letterSpacing: 2, opacity: on ? 1 : 0.55,
-      boxShadow: '0 6px 0 rgba(0,0,0,.35)'}}>{label}</div>
-  </div>;
-};
-
 // Spoken captions: groups of up to three words, the word being said turns yellow, flagged words get a red box
 const groups = (words) => {
   const out = []; let cur = [];
@@ -223,14 +210,14 @@ const Steps = ({steps, frames, sfx}) => {
   </>;
 };
 
-const Outro = ({brand, lang, cta}) => {
+// Closing card: the one line to remember, big, while the picture holds (owner 10-27: no brand name, no share ask)
+const Outro = ({text}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   const k = pop(f, 4, fps, 10, 180);
-  return <div style={{position: 'absolute', left: 60, right: 60, top: 260, textAlign: 'center', transform: `scale(${k})`}}>
-    <div style={{display: 'inline-block', padding: '16px 40px', borderRadius: 24, background: INK, color: YEL, fontFamily: font,
-      fontWeight: 900, fontSize: 84}}>{brand}</div>
-    {cta && <div style={{marginTop: 26, fontFamily: font, fontWeight: 900, fontSize: 62, color: WHITE, ...stroke(10)}}>{cta}</div>}
-  </div>;
+  return text ? <div style={{position: 'absolute', left: 50, right: 50, top: 230, textAlign: 'center', transform: `scale(${k})`}}>
+    <span style={{display: 'inline-block', padding: '20px 40px', borderRadius: 26, background: INK, color: YEL, fontFamily: font,
+      fontWeight: 900, fontSize: 78, lineHeight: 1.2, wordBreak: 'keep-all', boxShadow: '0 8px 0 rgba(0,0,0,.35)'}}>{text}</span>
+  </div> : null;
 };
 
 // Who is talking: the host in navy, the scammer in red; a running timer only when the scam is a phone call
@@ -245,17 +232,6 @@ const SpeakerTag = ({speaker, lang, host, startSec, onCall}) => {
       fontWeight: 900, fontSize: 50, boxShadow: '0 6px 0 rgba(0,0,0,.35)'}}>{scam ? (onCall ? '📞 ' : '💬 ') + (lang === 'ko' ? '사기꾼' : 'SCAMMER') : `🎙 ${host}`}</span>
     {onCall && <span style={{padding: '8px 18px', borderRadius: 30, background: 'rgba(0,0,0,.6)', color: '#7CFC9A', fontFamily: font,
       fontWeight: 700, fontSize: 36}}>{lang === 'ko' ? '통화 중' : 'on call'} {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')}</span>}
-  </div>;
-};
-
-const Busted = ({text, at}) => {
-  const f = useCurrentFrame(); const {fps} = useVideoConfig();
-  if (f < at) return null;
-  const k = pop(f, at, fps, 8, 260);
-  return <div style={{position: 'absolute', left: 0, right: 0, top: 1060, textAlign: 'center'}}>
-    <span style={{display: 'inline-block', padding: '14px 46px', border: `16px solid ${RED}`, borderRadius: 28, color: RED,
-      fontFamily: font, fontWeight: 900, fontSize: 112, background: 'rgba(255,255,255,.88)', whiteSpace: 'nowrap',
-      transform: `rotate(-10deg) scale(${3 - 2 * k})`, opacity: Math.min(1, k * 1.5)}}>{text}</span>
   </div>;
 };
 
@@ -281,11 +257,9 @@ const Scene = ({s, i, props}) => {
     {s.kind === 'steps' && <Steps steps={s.steps || []} frames={s.frames || 90} sfx={sfx} />}
     {(s.kind === 'talk' || (s.kind === 'hook' && s.speaker === 'scammer')) && <SpeakerTag speaker={s.speaker} lang={lang} host={props.host} startSec={s.callSec || 0} onCall={s.onCall} />}
     {s.kind === 'twist' && <>
-      <Busted text={lang === 'ko' ? '참교육 완료' : 'BUSTED'} at={Math.round((s.frames || 60) * 0.35)} />
-      <Fx sfx={sfx} name="stamp" at={Math.round((s.frames || 60) * 0.35)} vol={0.5} />
-      <Fx sfx={sfx} name="alarm" at={Math.round((s.frames || 60) * 0.35) + 6} vol={0.15} />
+      <Fx sfx={sfx} name="stamp" at={Math.round((s.frames || 60) * 0.35)} vol={0.4} />
     </>}
-    {s.kind === 'outro' && <Outro brand={props.brand} lang={lang} cta={s.cta} />}
+    {s.kind === 'outro' && <Outro text={s.caption} />}
     {!['outro', 'talk', 'list'].includes(s.kind) && !(s.kind === 'hook' && s.speaker === 'scammer') && <Headline text={s.caption} big={s.kind === 'hook'} danger={danger && (s.kind === 'hook' || s.kind === 'phone' || s.kind === 'twist')} />}
     {s.kind === 'hook' && s.speaker === 'scammer' && <div style={{position: 'absolute', top: 110, left: 0, right: 0}}><Headline text={s.caption} big danger={danger} /></div>}
     {!['steps', 'list'].includes(s.kind) && <Captions words={s.words} hot={s.hot} y={s.kind === 'phone' ? 1520 : 1330} />}
@@ -298,7 +272,7 @@ const Scene = ({s, i, props}) => {
 };
 
 export const Alert = (props) => {
-  const {scenes = [], music, sfx, label, mood, source, mic} = props;
+  const {scenes = [], music, sfx, mood, source, mic} = props;
   const f = useCurrentFrame();
   let at = 0;
   const total = alertDuration(scenes);
@@ -308,12 +282,12 @@ export const Alert = (props) => {
       const from = at; at += s.frames || 60;
       return <Sequence key={i} from={from} durationInFrames={s.frames || 60}><Scene s={{...s, callSec: from / 30, onCall: scenes.some((x) => x.phone && x.phone.app === 'call')}} i={i} props={props} /></Sequence>;
     })}
-    <Ribbon label={label} calm={mood !== 'alert'} />
     {source && <div style={{position: 'absolute', bottom: 60, left: 0, right: 0, textAlign: 'center'}}>
       <span style={{padding: '6px 18px', borderRadius: 10, background: 'rgba(0,0,0,.55)', color: WHITE, fontFamily: font,
         fontSize: 30}}>{source}</span></div>}
+    <AbsoluteFill style={{background: '#000', opacity: interpolate(f, [total - 36, total - 2], [0, 1], clamp), pointerEvents: 'none'}} />
     {mic && <Fx sfx={sfx} name="mic" at={0} vol={0.22} />}
     {mood === 'alert' && <Fx sfx={sfx} name="alarm" at={mic ? 12 : 0} vol={0.2} />}
-    {music && <Audio src={staticFile(music)} volume={(fr) => interpolate(fr, [0, 15, total - 20, total], [0.7, 0.55, 0.55, 0.7], clamp)} />}
+    {music && <Audio src={staticFile(music)} volume={(fr) => interpolate(fr, [0, 15, total - 20, total], [0.7, 0.55, 0.55, 0], clamp)} />}
   </AbsoluteFill>;
 };
