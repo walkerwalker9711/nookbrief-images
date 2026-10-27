@@ -98,8 +98,69 @@ def thumb(scene, l1, l2, small, tag, out):
     print("thumb", out)
 
 
+def cutout():
+    """The full character with the grey studio background removed (flood from the edges)."""
+    im = Image.open(CHAR).convert("RGB")
+    W, H = im.size
+    key = im.copy()
+    seeds = [(x, 0) for x in range(0, W, 32)] + [(0, y) for y in range(0, H, 32)] + [(W - 1, y) for y in range(0, H, 32)] \
+        + [(x, H - 1) for x in range(0, W, 32)]
+    for seed in seeds:
+        r, g, b = key.getpixel(seed)
+        if abs(r - g) < 14 and abs(g - b) < 16 and r > 120:
+            ImageDraw.floodfill(key, seed, (255, 0, 255), thresh=34)
+    mask = Image.new("L", (W, H), 255)
+    mp, kp = mask.load(), key.load()
+    for y in range(H):
+        for x in range(W):
+            if kp[x, y] == (255, 0, 255):
+                mp[x, y] = 0
+    out = im.convert("RGBA")
+    out.putalpha(mask.filter(ImageFilter.GaussianBlur(1.2)))
+    return out.crop(out.getbbox())
+
+
+def banner(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg"):
+    """2048x1152 YouTube banner. Everything that matters sits in the 1235x338 centre band every device shows."""
+    W, H = 2048, 1152
+    sx0, sy0, sx1, sy1 = (W - 1235) // 2, (H - 338) // 2, (W + 1235) // 2, (H + 338) // 2
+    img = Image.open(bg).convert("RGB")
+    scale = max(W / img.width, H / img.height)
+    img = img.resize((int(img.width * scale) + 1, int(img.height * scale) + 1), Image.LANCZOS)
+    img = img.crop(((img.width - W) // 2, (img.height - H) // 2, (img.width - W) // 2 + W, (img.height - H) // 2 + H))
+    # darken behind the text so it reads on any picture
+    shade = Image.new("L", (W, H), 0)
+    sd = ImageDraw.Draw(shade)
+    for x in range(W):
+        t = abs(x - (sx0 + 430)) / 900
+        sd.line([(x, sy0 - 120), (x, sy1 + 120)], fill=int(max(0, 170 * (1 - t))))
+    shade = shade.filter(ImageFilter.GaussianBlur(60))
+    img = Image.composite(Image.new("RGB", (W, H), (6, 10, 22)), img, shade)
+    d = ImageDraw.Draw(img)
+    # the 이장님 on the right of the safe band, from the knees up so the face is big enough on phones
+    ch = cutout()
+    ch = ch.crop((0, 0, ch.width, int(ch.height * 0.62)))
+    ch = ch.resize((int(ch.width * (sy1 - sy0 + 60) / ch.height), sy1 - sy0 + 60), Image.LANCZOS)
+    glow = Image.new("RGBA", ch.size, (255, 212, 0, 0))
+    glow.putalpha(ch.getchannel("A").filter(ImageFilter.GaussianBlur(18)).point(lambda v: int(v * 0.55)))
+    cx = sx1 - ch.width + 10
+    img.paste(glow, (cx, sy1 - ch.height + 20), glow)
+    img.paste(ch, (cx, sy1 - ch.height + 20), ch)
+    # name, one line of what the channel is, and the format line
+    x = sx0 + 20
+    d.text((x, sy0 + 6), "한국이장님", font=font(150), fill=WHITE, stroke_width=10, stroke_fill=INK)
+    tw = text_w(d, "한국이장님", font(150))
+    d.rectangle((x, sy0 + 196, x + tw, sy0 + 206), fill=YEL)
+    d.text((x, sy0 + 222), "실제 사건으로 보는 사기 수법", font=font(58), fill=YEL, stroke_width=6, stroke_fill=INK)
+    d.text((x, sy0 + 292), "보이스피싱 · 스미싱 · 받을 돈 · 폰 꿀팁", font=font(36), fill=(225, 230, 240), stroke_width=4, stroke_fill=INK)
+    img.save(out, quality=93)
+    print("banner", out, img.size)
+
+
 if __name__ == "__main__":
     if sys.argv[1] == "profile":
         profile()
+    elif sys.argv[1] == "banner":
+        banner()
     else:
         thumb(*sys.argv[2:8])
