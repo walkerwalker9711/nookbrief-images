@@ -1,16 +1,16 @@
 {
   "channel": "kr",
-  "title": "주소 틀렸다는 택배 문자, 이장님이 보낸 곳",
-  "description": "주소가 틀렸다는 택배 문자, 링크부터 누르지 마세요.\n공식 경고의 수법을 재구성한 예방 상황극이며 실제 통화 기록이 아닙니다.\n출처: 개인정보보호위원회 https://www.korea.kr/multi/visualNewsView.do?newsId=148971632\n출처: 금융위원회 https://fsc.go.kr/po010104/87779?curPage=8&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=\n출처: 한국인터넷진흥원 https://www.kisa.or.kr/1020601\nAI 음성·그림",
+  "title": "확인하려고 건 전화도 사기범에게…9억 원 지킨 사연",
+  "description": "주민센터라는 전화 뒤, 확인 전화까지 사기범에게 연결됐습니다.\n노후자금 약 9억 원의 피해를 막은 실제 사례와 대응법입니다.\n출처: 뉴시스, 2026.09.25, 「노후자금 9억 날릴 뻔한 70대…경찰 끈질긴 대응 피해 막아」 https://nwww.newsis.com/view/NISX20260923_0003802361\n출처: 유안타증권, 2026.10.20, 「금융권 개인정보 유출사고에 따른 금융사기 피해예방 안내」 https://www.myasset.com/myasset/customer/notice/CU_0201000_P2.cmd?SEQ=202610200936160000000004&gubun=norNotice\n출처: 경찰청 피싱안심SOS, 피싱 시나리오 https://www.counterscam112.go.kr/bbs009/board/boardList.do\nAI 음성·그림",
   "tags": [
     "한국이장님",
-    "스미싱",
-    "택배문자",
-    "택배사칭",
-    "사기예방",
-    "118",
-    "참교육",
-    "쇼츠"
+    "보이스피싱",
+    "주민센터사칭",
+    "기관사칭",
+    "악성앱",
+    "보이스피싱예방",
+    "실제사례",
+    "시니어안전"
   ],
   "made_with_ai": true,
   "video": "video.mp4",
