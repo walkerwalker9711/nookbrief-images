@@ -1,15 +1,15 @@
 {
   "channel": "kr",
-  "title": "카드 신청 안 했는데 배송? 고객센터 번호의 함정",
-  "description": "안 시킨 카드가 배송된다며 알려주는 고객센터 번호, 그대로 믿지 마세요.\n공식 경고 수법을 바탕으로 구성한 예방 상황극이며, 실제 피해 사례나 통화 녹취가 아닙니다.\n출처: 금융감독원 카드배송 사칭 소비자경보(2025-02-13, 삼성화재 게시 원문) https://www.samsungfire.co.kr/download/consumer/ca_d84.pdf\n출처: 서울 혜화경찰서 카드배송 사칭 예방 안내 https://www.smpa.go.kr/home/homeIndex.do?menuCode=hh\n출처: 방송미디어통신위원회·경찰청 사기·스미싱 주의 안내(2026-02-11) https://www.kmcc.go.kr/download.do?fileSeq=62682\nAI 음성·그림",
+  "title": "주소 틀렸다는 택배 문자, 이장님이 보낸 곳",
+  "description": "주소가 틀렸다는 택배 문자, 링크부터 누르지 마세요.\n공식 경고의 수법을 재구성한 예방 상황극이며 실제 통화 기록이 아닙니다.\n출처: 개인정보보호위원회 https://www.korea.kr/multi/visualNewsView.do?newsId=148971632\n출처: 금융위원회 https://fsc.go.kr/po010104/87779?curPage=8&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=\n출처: 한국인터넷진흥원 https://www.kisa.or.kr/1020601\nAI 음성·그림",
   "tags": [
     "한국이장님",
-    "보이스피싱",
-    "카드배송사칭",
-    "가짜고객센터",
-    "부모님사기예방",
+    "스미싱",
+    "택배문자",
+    "택배사칭",
     "사기예방",
-    "상황극",
+    "118",
+    "참교육",
     "쇼츠"
   ],
   "made_with_ai": true,

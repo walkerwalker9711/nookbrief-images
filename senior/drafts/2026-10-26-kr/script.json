@@ -1,19 +1,20 @@
 {
   "pillar": "사기·안전",
-  "topic": "신청하지 않은 카드 배송 전화로 가짜 고객센터 연결을 유도하는 보이스피싱",
-  "title": "카드 신청 안 했는데 배송? 고객센터 번호의 함정",
+  "topic": "배송 주소 오류를 핑계로 링크를 누르게 하는 택배 사칭 스미싱",
+  "title": "주소 틀렸다는 택배 문자, 이장님이 보낸 곳",
   "mood": "alert",
   "scenes": [
     {
       "kind": "hook",
       "speaker": "scammer",
-      "line": "카드 배송인데요. 지금 안 받으시면 반송합니다.",
-      "delivery": "[brisk, fake-polite, impatient]",
-      "caption": "안 시킨 카드 배송",
+      "line": "택배 기사인데요, 주소가 틀려서요. 지금 확인 안 하시면 반송됩니다.",
+      "delivery": "[fake-polite, clipped warning]",
+      "caption": "주소 틀리면 반송?",
       "hot": [
-        "반송합니다"
+        "지금",
+        "확인"
       ],
-      "image_prompt": "2D flat cartoon, vertical composition, the scammer wearing a headset at a desk in a dim call center, pretending to be a delivery worker, impatient finger tapping a blank card envelope, centered subject, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical composition, a scammer at a desk in a dim call center pretending to be a delivery driver while recording a message, parcel icon on a blank monitor, centered character, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "scammer",
       "phone": {
         "app": "none",
@@ -28,20 +29,25 @@
     {
       "kind": "phone",
       "speaker": "scammer",
-      "line": "신청 안 하셨어요? 그럼 지금 고객센터로 취소 전화 하세요.",
-      "delivery": "[fake-helpful, clipped, pressing]",
-      "caption": "지금 취소하라고?",
+      "line": "문자 갔죠? 지금 링크 눌러서 주소 고치세요.",
+      "delivery": "[insistent, fast, controlling]",
+      "caption": "지금 누르세요",
       "hot": [
         "지금",
-        "고객센터로"
+        "링크"
       ],
-      "image_prompt": "2D flat cartoon, vertical close-up of a smartphone on a wooden village office desk beside a loudspeaker microphone, incoming call interface represented only by blank shapes and icons, warm daylight, lower third empty, no text, numbers or logos.",
-      "cast": "none",
+      "image_prompt": "2D flat cartoon, vertical composition, over-the-shoulder close-up of the village chief character examining an elderly resident's phone inside a warm village office, phone screen containing only blank message bubbles and simple icons, leave the bottom third empty, no text, no numbers, no logos.",
+      "cast": "host",
       "phone": {
-        "app": "call",
-        "sender": "010-XXXX-XXXX",
+        "app": "sms",
+        "sender": "알 수 없는 발신자",
         "time": "오후 2:17",
-        "messages": []
+        "messages": [
+          {
+            "text": "[택배 배송 안내] 주소 오류로 배송이 지연되었습니다. 배송지 확인: [재구성·링크 비활성]",
+            "me": false
+          }
+        ]
       },
       "steps": [],
       "items": [],
@@ -50,14 +56,13 @@
     {
       "kind": "talk",
       "speaker": "host",
-      "line": "아이고, 눈이 침침해서요. 번호 좀 문자로 주세요.",
-      "delivery": "[stalling, playing frail, unhurried]",
-      "caption": "눈이 침침해서요",
+      "line": "주소요? 잠깐만요, 문자 좀 옮겨 놓고요.",
+      "delivery": "[confident, cheeky, deliberately stalling]",
+      "caption": "문자부터 옮기고요",
       "hot": [
-        "침침해서요",
-        "번호"
+        "문자"
       ],
-      "image_prompt": "2D flat cartoon, vertical medium shot of the village chief character seated at a village office desk, holding a phone and reaching for a pencil with an apparently confused expression, warm neighborhood atmosphere, centered subject, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical composition, the village chief character seated beside a village office loudspeaker, holding a phone at arm's length with a knowingly innocent expression, medium frontal shot, warm neighborhood colors, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "host",
       "phone": {
         "app": "none",
@@ -72,14 +77,14 @@
     {
       "kind": "talk",
       "speaker": "scammer",
-      "line": "문자 보냈으니까 바로 전화하세요. 늦으면 취소 못 해요.",
-      "delivery": "[cold, forceful, stressing the deadline]",
-      "caption": "늦으면 취소 못 해",
+      "line": "옮기긴 뭘 옮겨요! 지금 안 누르면 오늘 택배 못 받아요.",
+      "delivery": "[raised voice, impatient, threatening]",
+      "caption": "오늘 못 받아요",
       "hot": [
-        "바로",
-        "늦으면"
+        "지금",
+        "택배"
       ],
-      "image_prompt": "2D flat cartoon, vertical side close-up of the scammer at a dim call center desk pressing send on a phone, smug expression and tense shoulders, blank screen with simple message icons, centered subject, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical composition, medium side shot of the scammer leaning toward a headset at a desk in a dim call center, impatient finger tapping beside a blank monitor, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "scammer",
       "phone": {
         "app": "none",
@@ -94,13 +99,13 @@
     {
       "kind": "talk",
       "speaker": "host",
-      "line": "잠깐만요, 옆에 계신 분한테 좀 보여드릴게요.",
-      "delivery": "[innocent, deliberately slow, quietly amused]",
-      "caption": "옆 사람한테 잠깐",
+      "line": "아직 안 눌렀어요. 이 문자 보낼 데가 있어서요.",
+      "delivery": "[bold, amused, pointedly unhurried]",
+      "caption": "보낼 데가 있습니다",
       "hot": [
-        "잠깐만요"
+        "문자"
       ],
-      "image_prompt": "2D flat cartoon, vertical over-the-shoulder shot of the village chief character at the village office desk quietly sliding his phone toward a visitor just outside the frame, microphone and village speaker equipment nearby, centered composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical composition, close side view of the village chief character calmly using a second phone at the village office desk while keeping the first phone untouched on a stand, blank screens with simple icons only, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "host",
       "phone": {
         "app": "none",
@@ -115,14 +120,14 @@
     {
       "kind": "talk",
       "speaker": "scammer",
-      "line": "누구한테 보여줘요! 지금 전화 안 하면 취소 안 됩니다!",
-      "delivery": "[shouting, furious, losing control]",
-      "caption": "남한테 보여주지 마",
+      "line": "다른 데 보내지 말라니까! 지금 안 고치면 바로 반송시킵니다!",
+      "delivery": "[shouting, furious, barking orders]",
+      "caption": "당장 안 하면 반송",
       "hot": [
         "지금",
-        "취소"
+        "바로"
       ],
-      "image_prompt": "2D flat cartoon, vertical tight frontal shot of the scammer leaning toward his headset at the dim call center desk, irritated face and raised hand, dramatic angular lighting, centered subject, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical composition, tight frontal close-up of the scammer at a dim call center desk, raised eyebrows and clenched hand as the polite mask slips, dramatic flat shadows, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "scammer",
       "phone": {
         "app": "none",
@@ -137,14 +142,14 @@
     {
       "kind": "twist",
       "speaker": "host",
-      "line": "눈은 침침해도 번호는 옆에 경찰관께 잘 드렸습니다. 어디서!",
-      "delivery": "[deadpan then booming, triumphant]",
-      "caption": "경찰관께 드렸지요",
+      "line": "문자 보낼 데 찾았어요, 일일팔에 신고했습니다. 어디서!",
+      "delivery": "[booming, triumphant, sharp final shout]",
+      "caption": "보낼 곳은 118",
       "hot": [
-        "경찰관께",
-        "어디서"
+        "문자",
+        "일일팔에"
       ],
-      "image_prompt": "2D flat cartoon, vertical split composition, the village chief character at the village office desk revealing a visiting police officer beside him examining the phone, the scammer recoiling at his dim call center desk in the other half, matching flat cartoon style, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical split composition, the village chief character confidently holding a phone in the warm village office on the left, the scammer recoiling at a dim call center desk on the right, blank phone screens, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "both",
       "phone": {
         "app": "none",
@@ -159,13 +164,14 @@
     {
       "kind": "talk",
       "speaker": "scammer",
-      "line": "경찰이요? 당장 끊어요!",
-      "delivery": "[panicked, voice cracking, abrupt]",
-      "caption": "급해진 건 사기범",
+      "line": "신고 취소해요, 당장! 택배 그냥 반송시켜 버릴 거야!",
+      "delivery": "[panicked, cracking voice, desperate bluster]",
+      "caption": "끝까지 반송 타령",
       "hot": [
-        "당장"
+        "신고",
+        "택배"
       ],
-      "image_prompt": "2D flat cartoon, vertical close-up of the scammer at his dim call center desk frantically pulling off his headset and ending the call, startled expression, centered subject, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical composition, the scammer alone in a dim call center abruptly pulling off a headset with a startled expression, exaggerated comedic pose, medium wide shot, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "scammer",
       "phone": {
         "app": "none",
@@ -180,14 +186,14 @@
     {
       "kind": "steps",
       "speaker": "host",
-      "line": "이런 전화는 끊고 카드사 공식 앱에서 확인하세요. 의심되면 일일이로 신고하세요.",
-      "delivery": "[steady, clear, reassuring]",
-      "caption": "끊고 공식 앱 확인",
+      "line": "수상한 링크는 누르지 마세요. 의심 문자는 일일팔로 상담하거나 신고하세요.",
+      "delivery": "[confident, clear, firm projection]",
+      "caption": "누르지 말고 신고",
       "hot": [
-        "공식",
-        "일일이로"
+        "링크는",
+        "일일팔로"
       ],
-      "image_prompt": "2D flat cartoon, vertical medium shot of the village chief character at the village office desk setting down his phone beside a loudspeaker microphone, calm expression, simple blank checkmark cards floating beside him for later overlay, centered subject, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical composition, close-up of the village chief character's hands placing a suspicious phone aside and reaching for a separate safe phone at a warm village office desk, simple blank screen icons, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "host",
       "phone": {
         "app": "none",
@@ -197,15 +203,11 @@
       },
       "steps": [
         {
-          "text": "통화 끊기",
-          "ok": true
+          "text": "출처 불명 링크 누르기",
+          "ok": false
         },
         {
-          "text": "카드사 공식 앱에서 확인",
-          "ok": true
-        },
-        {
-          "text": "의심되면 112 신고",
+          "text": "의심 문자는 118 상담·신고",
           "ok": true
         }
       ],
@@ -215,13 +217,14 @@
     {
       "kind": "outro",
       "speaker": "host",
-      "line": "부모님께 이 영상 보내드리고, 모르는 번호로 온 문자도 같이 봐드리세요.",
-      "delivery": "[warm, matter-of-fact, gently inviting]",
-      "caption": "부모님 문자도 함께",
+      "line": "주소 틀렸다는 문자 와도, 링크부터 누르지 마세요.",
+      "delivery": "[strong, steady, decisive]",
+      "caption": "주소 오류? 링크 금지",
       "hot": [
-        "부모님께"
+        "문자",
+        "링크부터"
       ],
-      "image_prompt": "2D flat cartoon, vertical wide shot of the village chief character standing on the village office porch beside a village loudspeaker, holding a phone outward with a friendly knowing expression, warm village lane in the background, centered subject, lower third empty, no text, numbers or logos.",
+      "image_prompt": "2D flat cartoon, vertical composition, wide shot of the village chief character standing on the sunny village office porch beside a loudspeaker, calmly lowering a phone while an elderly resident looks relieved, warm neighborhood atmosphere, leave the bottom third empty, no text, no numbers, no logos.",
       "cast": "host",
       "phone": {
         "app": "none",
@@ -231,34 +234,34 @@
       },
       "steps": [],
       "items": [],
-      "cta": "부모님께 이 영상 보내드리세요."
+      "cta": ""
     }
   ],
   "sources": [
     {
-      "name": "금융감독원",
-      "url": "https://www.samsungfire.co.kr/download/consumer/ca_d84.pdf"
+      "name": "개인정보보호위원회",
+      "url": "https://www.korea.kr/multi/visualNewsView.do?newsId=148971632"
     },
     {
-      "name": "경찰청",
-      "url": "https://www.smpa.go.kr/home/homeIndex.do?menuCode=hh"
+      "name": "금융위원회",
+      "url": "https://fsc.go.kr/po010104/87779?curPage=8&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText="
     },
     {
-      "name": "방송미디어통신위원회",
-      "url": "https://www.kmcc.go.kr/download.do?fileSeq=62682"
+      "name": "한국인터넷진흥원",
+      "url": "https://www.kisa.or.kr/1020601"
     }
   ],
-  "description": "안 시킨 카드가 배송된다며 알려주는 고객센터 번호, 그대로 믿지 마세요.\n공식 경고 수법을 바탕으로 구성한 예방 상황극이며, 실제 피해 사례나 통화 녹취가 아닙니다.\n출처: 금융감독원 카드배송 사칭 소비자경보(2025-02-13, 삼성화재 게시 원문) https://www.samsungfire.co.kr/download/consumer/ca_d84.pdf\n출처: 서울 혜화경찰서 카드배송 사칭 예방 안내 https://www.smpa.go.kr/home/homeIndex.do?menuCode=hh\n출처: 방송미디어통신위원회·경찰청 사기·스미싱 주의 안내(2026-02-11) https://www.kmcc.go.kr/download.do?fileSeq=62682\nAI 음성·그림",
+  "description": "주소가 틀렸다는 택배 문자, 링크부터 누르지 마세요.\n공식 경고의 수법을 재구성한 예방 상황극이며 실제 통화 기록이 아닙니다.\n출처: 개인정보보호위원회 https://www.korea.kr/multi/visualNewsView.do?newsId=148971632\n출처: 금융위원회 https://fsc.go.kr/po010104/87779?curPage=8&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=\n출처: 한국인터넷진흥원 https://www.kisa.or.kr/1020601\nAI 음성·그림",
   "tags": [
     "한국이장님",
-    "보이스피싱",
-    "카드배송사칭",
-    "가짜고객센터",
-    "부모님사기예방",
+    "스미싱",
+    "택배문자",
+    "택배사칭",
     "사기예방",
-    "상황극",
+    "118",
+    "참교육",
     "쇼츠"
   ],
-  "ko_review": "예상 발화 약 45~55초, 10장면. 공식 수법을 바탕으로 구성한 예방 상황극이며 실제 통화의 직접 인용이 아닙니다.\n1. 사기범: 카드 배송인데요. 지금 안 받으시면 반송합니다.\n2. 사기범: 신청 안 하셨어요? 그럼 지금 고객센터로 취소 전화 하세요.\n3. 이장님: 아이고, 눈이 침침해서요. 번호 좀 문자로 주세요.\n4. 사기범: 문자 보냈으니까 바로 전화하세요. 늦으면 취소 못 해요.\n5. 이장님: 잠깐만요, 옆에 계신 분한테 좀 보여드릴게요.\n6. 사기범: 누구한테 보여줘요! 지금 전화 안 하면 취소 안 됩니다!\n7. 이장님: 눈은 침침해도 번호는 옆에 경찰관께 잘 드렸습니다. 어디서!\n8. 사기범: 경찰이요? 당장 끊어요!\n9. 이장님: 이런 전화는 끊고 카드사 공식 앱에서 확인하세요. 의심되면 일일이로 신고하세요.\n10. 이장님: 부모님께 이 영상 보내드리고, 모르는 번호로 온 문자도 같이 봐드리세요.",
-  "fact_notes": "선정 근거: 사용자가 제공한 최근 7일 보이스피싱 상황극 트렌드에 맞췄습니다. 이 세부 수법의 이번 주 검색량은 별도로 확인하지 못했으므로 급증·유행 수치나 순위를 주장하지 않습니다.\n장면 1~4·6의 사실 기반: 금융감독원 2025-02-13 소비자경보 원문은 배송기사 사칭, 신청하지 않은 카드, 반송처리를 빙자한 가짜 고객센터 번호 전달을 설명합니다. 공식 수법 설명을 대화로 각색했으며 실제 범인의 발언을 그대로 인용한 것은 아닙니다. 오래된 피해 통계는 사용하지 않았습니다. ([samsungfire.co.kr](https://www.samsungfire.co.kr/download/consumer/ca_d84.pdf?utm_source=openai))\n현재 안내 확인: 서울 혜화경찰서 공식 홈페이지에서 카드배송 사칭 보이스피싱 예방 안내가 게시 중임을 확인했습니다. 다만 게시 화면만으로 이번 주 발생 빈도를 판단하지 않았습니다. ([smpa.go.kr](https://www.smpa.go.kr/home/homeIndex.do?menuCode=hh&utm_source=openai))\n장면 9의 확인 경로: 금융감독원 원문은 배송직원이 알려준 번호 대신 카드사 홈페이지·앱·공식 콜센터로 경위를 확인하도록 안내합니다. 의심되는 경우 112 상담·신고도 안내합니다. ([samsungfire.co.kr](https://www.samsungfire.co.kr/download/consumer/ca_d84.pdf?utm_source=openai))\n올해 번호 검증: 2026-02-11 방송미디어통신위원회·경찰청 공식 안내에서 피싱·스미싱 의심 시 112 상담을 재확인했습니다. 대사의 '일일이'와 화면의 '112'는 같은 신고번호입니다. 피해액·피해율·건수 등 올해 수치를 확인하지 못한 숫자는 대본에 넣지 않았습니다. ([kmcc.go.kr](https://www.kmcc.go.kr/download.do?fileSeq=62682&utm_source=openai))\n장면 5·7·8은 상황극의 극적 구성입니다. 방문 경찰관에게 이미 번호를 전달했다는 설정이며, 실제 검거·신고 사례나 즉시 차단 완료를 주장하지 않습니다. 발신번호 010-XXXX-XXXX와 시각은 화면 연출용입니다. 장면별 출처는 별도 푸터에 표시하고 caption에는 넣지 않습니다."
+  "ko_review": "사기범: 택배 기사인데요, 주소가 틀려서요. 지금 확인 안 하시면 반송됩니다.\n사기범: 문자 갔죠? 지금 링크 눌러서 주소 고치세요.\n이장님: 주소요? 잠깐만요, 문자 좀 옮겨 놓고요.\n사기범: 옮기긴 뭘 옮겨요! 지금 안 누르면 오늘 택배 못 받아요.\n이장님: 아직 안 눌렀어요. 이 문자 보낼 데가 있어서요.\n사기범: 다른 데 보내지 말라니까! 지금 안 고치면 바로 반송시킵니다!\n이장님: 문자 보낼 데 찾았어요, 일일팔에 신고했습니다. 어디서!\n사기범: 신고 취소해요, 당장! 택배 그냥 반송시켜 버릴 거야!\n이장님: 수상한 링크는 누르지 마세요. 의심 문자는 일일팔로 상담하거나 신고하세요.\n이장님: 주소 틀렸다는 문자 와도, 링크부터 누르지 마세요.\n\n연출: 총 10장면, 낭독 약 45~55초 목표. 공식 경고 수법을 바탕으로 재구성한 상황극입니다. 실제 피해자 사례나 실제 신고 완료 사례로 소개하지 않습니다. 출처는 캡션이 아닌 별도 하단 출처 영역에 표시합니다.",
+  "fact_notes": "주제 선정: 사용자가 제공한 최근 7일 트렌드의 스미싱 관심도를 반영했습니다. 이 특정 수법이 이번 주 급증했다는 공식 통계는 확인하지 못해 대본에 넣지 않았습니다.\n장면 1~6의 수법 근거: 개인정보보호위원회 2026년 9월 11일 자료는 택배 배송을 사칭해 가짜 인터넷 주소 접속을 유도하는 스미싱을 경고합니다. 대사는 수법 재구성이며 공식 자료의 직접 인용이나 실제 통화 녹취가 아닙니다. ([korea.kr](https://www.korea.kr/multi/visualNewsView.do?newsId=148971632))\n장면 9~10의 예방 행동: 금융위원회 2026년 9월 18일 안내는 택배 배송 사칭 스미싱을 경고하고 출처 불명 인터넷주소를 클릭하지 말라고 안내합니다. ([fsc.go.kr](https://fsc.go.kr/po010104/87779?curPage=8&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=&utm_source=openai))\n장면 7·9의 번호 118: 한국인터넷진흥원의 현재 사업 안내는 국번 없이 118을 스미싱·큐싱 상담 및 신고방법으로 명시합니다. 신고 완료는 상황극 속 설정이며, 신고 즉시 차단되거나 범인이 검거됐다는 주장은 하지 않습니다. ([kisa.or.kr](https://www.kisa.or.kr/1020601?utm_source=openai))\n금액·피해 건수·비율 등 확인되지 않은 수치는 사용하지 않았습니다. 휴대전화 시각은 화면 연출용입니다."
 }
