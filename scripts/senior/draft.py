@@ -45,28 +45,27 @@ CHANNELS = {
     "kr": {
         "name": "한국이장님", "region": "KR", "lang": "Korean",
         "pillars": ["사기·안전", "혜택·서류", "생활 꿀팁", "추억·옛날", "폰·카톡"],
-        "character": "A young Korean village chief in his early 30s, 2D flat cartoon. Neat short black hair, "
-                     "confident grin, sharp friendly eyes, a navy padded vest over a light blue shirt, a white handheld "
-                     "megaphone. Thick clean outlines, warm flat colors, simple shading. Full body, standing, "
-                     "plain warm off-white background.",
+        "character": "A young Korean village chief in his early 30s. Korean webtoon (manhwa) style digital illustration, semi-realistic proportions, clean fine line art, cinematic lighting, muted colors. Neat short black hair, "
+                     "calm confident expression, sharp eyes, a navy padded vest over a light blue shirt, a white handheld "
+                     "megaphone. Full body, standing, plain soft grey background. Clearly an illustration, not a photo.",
         "tts_fallback": {"voice": "onyx", "instructions": "시원시원하고 힘 있는 30대 한국 남자 청년 이장. 동네 방송처럼 또박또박, 조금 빠르게."},
-        "scammer": "A shifty Korean scammer in his 30s, 2D flat cartoon. Slicked-back hair, thin mustache, cheap shiny "
-                    "suit, a call-center headset, narrow eyes, sly grin. Thick clean outlines, warm flat colors. "
-                    "Upper body at a cluttered desk in a dim call-center room.",
+        "scammer": "A Korean phone scammer in his 30s. Korean webtoon (manhwa) style digital illustration, semi-realistic proportions, clean fine line art, cinematic lighting, muted colors. Short dark hair, cold "
+                    "calculating eyes, dark jacket over a black shirt, a call-center headset. No mustache, not a "
+                    "caricature. Upper body at a desk in a dim, blue-lit call-center room. Clearly an illustration, not a photo.",
         "scammer_tts": {"voice": "echo", "instructions": "빠르고 능글맞은 30대 남자 사기꾼. 공손한 척하지만 급하게 몰아붙이는 말투."},
         "mic": True, "source": "출처", "host": "이장님", "labels": {"alert": "⚠ 사기 경보", "warm": "이장님 알림"},
     },
     "us": {
         "name": "Pops Knows", "region": "US", "lang": "American English",
         "pillars": ["Scam", "Benefits", "Home tips", "Nostalgia", "Phone"],
-        "character": "A warm American grandpa in his 70s, 2D flat cartoon. White hair, bushy white mustache, "
+        "character": "A sharp American grandpa in his 70s. Graphic-novel style digital illustration, semi-realistic "
+                     "proportions, clean fine line art, cinematic lighting, muted colors. White hair, white mustache, "
                      "round glasses, a red flannel shirt under tan suspenders, sitting in a wooden porch rocking "
-                     "chair. Thick clean outlines, warm flat colors, simple shading. Full body, plain warm "
-                     "off-white background.",
+                     "chair. Full body, plain soft grey background. Clearly an illustration, not a photo.",
         "tts_fallback": {"voice": "ash", "instructions": "A warm, slightly gravelly American grandpa in his 70s. Dry humor, unhurried, friendly."},
-        "scammer": "A shifty scammer in his 30s, 2D flat cartoon. Slicked-back hair, thin mustache, cheap shiny suit, "
-                   "a call-center headset, sly grin. Thick clean outlines, warm flat colors. Upper body at a cluttered "
-                   "desk in a dim call-center room.",
+        "scammer": "A phone scammer in his 30s. Graphic-novel style digital illustration, semi-realistic proportions, "
+                   "cinematic lighting, muted colors. Short dark hair, cold eyes, dark jacket, a call-center headset. "
+                   "Not a caricature. Upper body at a desk in a dim, blue-lit call-center room. Clearly an illustration.",
         "scammer_tts": {"voice": "echo", "instructions": "A fast-talking, fake-polite scammer in his 30s who keeps pushing."},
         "mic": False, "source": "Source", "host": "Pops", "labels": {"alert": "⚠ SCAM ALERT", "warm": "POPS KNOWS"},
     },
@@ -167,14 +166,14 @@ The host takes a real scam call or text going around now and turns the tables on
   2. The consequence for the scammer has ALREADY happened, in past tense: the call has been on speaker with the
      police listening, the number was already reported to 118 / 7726 and is being blocked, the "account" he gave
      is the police station's, the address he asked for is the police box. Lawful and believable only.
-  3. Two short sentences at most, ending on a hard line (Korean host: "어디서!"; Pops: "Nice try, pal.").
+  3. Two short sentences at most, said calmly and coldly, like the last line of a crime drama. No catchphrase, no gag.
   4. Banned weak twists: future intentions or plain advice ("확인해 볼게요", "확인부터 할 겁니다", "신고할 거예요",
      "I'm going to report you", "I'll check first").
-  Bad: "누르긴요. 보호나라에 확인부터 할 겁니다. 어디서!"
-  Good: "그 링크요? 아까 118에 벌써 넘겼어요. 지금 이 통화, 경찰관이 옆에서 다 듣고 있습니다. 어디서!"
+  Bad: "누르긴요. 보호나라에 확인부터 할 겁니다."
+  Good: "그 링크요, 아까 118에 넘겼어요. 지금 이 통화, 경찰관이 옆에서 다 듣고 있습니다."
   caption: a punchline, not a summary.
 - busted (kind talk, speaker scammer, cast scammer): the scammer's panicked 2 to 5 word reaction before he hangs up
-  ("어, 어... 뚝." / "Wait, what? *click*"). Funny, short.
+  ("…뭐?" then the line goes dead / "Wait—" *click*). Short, real, not slapstick.
 - steps (speaker host): 2 to 3 real moves for viewers, wrong ones ok false, right ones ok true (official numbers).
 - outro (speaker host, cast host): one punchy closing line, the one rule to remember or a callback to the hook.
   cta empty. Never "send this video to your parents" or any share request (owner 10-27).
@@ -438,8 +437,10 @@ def character_ref(channel, who="host"):
     sys.exit("OpenAI refused every image model")
 
 
-STYLE = ("2D flat cartoon, thick clean outlines, warm flat colors, simple shading, a little exaggerated like a "
-         "newspaper cartoon. Vertical 2:3 picture. Frame people from the chest or waist up with the whole head inside "
+# owner 10-27: the thick-outline cartoon looked childish; webtoon drama look instead (still clearly drawn, never photoreal)
+STYLE = ("Korean webtoon drama style digital illustration: semi-realistic proportions, clean fine line art, cinematic "
+         "lighting with deep shadows, muted desaturated colors, serious tense mood, film-still composition. Clearly an "
+         "illustration, never photorealistic. Vertical 2:3 picture. Frame people from the chest or waist up with the whole head inside "
          "the picture and some empty space above it; faces in the upper-middle of the frame, never touching the top edge. "
          "Calm bottom third. Absolutely no text, letters, "
          "numbers, logos or brand names anywhere; phone screens show blank bubbles only.")

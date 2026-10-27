@@ -18,17 +18,18 @@ const Fx = ({sfx, name, at, vol = 0.7}) => sfx && sfx[name] ? <Sequence from={Ma
 // ribbon or the titles; a blurred copy fills the space above. Gentle push-in, drift alternates per scene.
 const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0}) => {
   const f = useCurrentFrame();
-  const z = interpolate(f, [0, 7], [1.07, 1.02], clamp) + f * 0.0004;
-  const x = Math.sin(f * 0.29) * 4 + dir * f * 0.15, y = Math.cos(f * 0.23) * 3;
+  const z = 1.06 - f * 0.0006;
+  const x = dir * f * 0.12, y = 0;
   return <AbsoluteFill style={{overflow: 'hidden', background: INK}}>
     <Img src={staticFile(img)} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover',
       filter: 'blur(28px) brightness(0.55)', transform: 'scale(1.15)'}} />
     <Img src={staticFile(img)} style={{position: 'absolute', left: 0, top: 300, width: 1080, height: 1620, objectFit: 'cover',
-      transformOrigin: '50% 30%', transform: `translate(${x}px, ${y}px) scale(${z}) rotate(${Math.sin(f * 0.17) * 0.3}deg)`,
-      filter: `saturate(1.1) contrast(1.06)${blur ? ` blur(${blur}px)` : ''}`,
+      transformOrigin: '50% 30%', transform: `translate(${x}px, ${y}px) scale(${z})`,
+      filter: `saturate(0.88) contrast(1.08) brightness(0.96)${blur ? ` blur(${blur}px)` : ''}`,
       WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, black 60px)'}} />
+    <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0,0,0,.55) 100%)'}} />
     {dim ? <AbsoluteFill style={{background: `rgba(10,12,16,${dim})`}} /> : null}
-    {red ? <AbsoluteFill style={{boxShadow: `inset 0 0 ${260 * red}px ${90 * red}px rgba(227,36,43,${0.55 * red})`}} /> : null}
+    {red ? <AbsoluteFill style={{boxShadow: `inset 0 0 ${260 * red}px ${90 * red}px rgba(160,20,24,${0.35 * red})`}} /> : null}
   </AbsoluteFill>;
 };
 
@@ -45,28 +46,26 @@ const Captions = ({words, hot = [], y = 1330}) => {
   if (!g) return null;
   const k = pop(f, g[0][1] - 1, fps, 12, 280);
   const isHot = (w) => hot.some((h) => h && w.replace(/[.,!?:'"]/g, '').includes(h));
-  return <div style={{position: 'absolute', top: y, left: 40, right: 40, textAlign: 'center', transform: `scale(${0.85 + 0.15 * k})`}}>
+  return <div style={{position: 'absolute', top: y, left: 40, right: 40, textAlign: 'center', opacity: Math.min(1, 0.4 + k)}}>
     {g.map((w, n) => {
       const on = f >= w[1] && f < w[2] + 2;
       const h = isHot(w[0]);
-      return <span key={n} style={{display: 'inline-block', margin: '6px 10px', padding: h ? '0 14px' : 0, borderRadius: 10,
-        background: h ? RED : 'transparent', fontFamily: font, fontWeight: 900, fontSize: 92, lineHeight: 1.15,
-        color: on && !h ? YEL : WHITE, ...stroke(h ? 0 : 12), transform: on ? 'scale(1.07) rotate(-1.5deg)' : 'none'}}>
+      return <span key={n} style={{display: 'inline-block', margin: '4px 9px', fontFamily: font, fontWeight: 800, fontSize: 78,
+        lineHeight: 1.2, color: h ? '#FF5A4E' : on ? '#FFE27A' : WHITE, ...stroke(10)}}>
         {w[0].replace(/[.,]+$/, '')}</span>;
     })}
   </div>;
 };
 
-// Headline for the scene, slammed in under the ribbon
+// Scene title: a quiet bar like a drama's chapter title, fades in
 const Headline = ({text, big, danger}) => {
-  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const f = useCurrentFrame();
   if (!text) return null;
-  const k = pop(f, 2, fps, 9, 240);
-  return <div style={{position: 'absolute', top: 190, left: 50, right: 50, textAlign: 'center'}}>
-    <span style={{display: 'inline-block', padding: big ? '18px 34px' : '12px 28px', borderRadius: 18,
-      background: danger ? RED : YEL, color: danger ? WHITE : INK, fontFamily: font, fontWeight: 900,
-      fontSize: big ? 104 : 76, lineHeight: 1.1, transform: `scale(${0.4 + 0.6 * k}) rotate(${danger ? -3 : -1.5}deg)`,
-      boxShadow: '0 10px 0 rgba(0,0,0,.35)'}}>{text}</span>
+  const a = interpolate(f, [2, 10], [0, 1], clamp);
+  return <div style={{position: 'absolute', top: 190, left: 50, right: 50, textAlign: 'center', opacity: a}}>
+    <span style={{display: 'inline-block', padding: big ? '14px 30px' : '10px 24px', background: 'rgba(8,10,14,.72)',
+      borderLeft: `8px solid ${danger ? RED : YEL}`, color: WHITE, fontFamily: font, fontWeight: 900,
+      fontSize: big ? 80 : 64, lineHeight: 1.15, wordBreak: 'keep-all'}}>{text}</span>
   </div>;
 };
 
@@ -136,7 +135,7 @@ const Phone = ({phone, lang, start, stampAt, stampText}) => {
   const msgs = phone.messages || [];
   const stamped = f >= stampAt;
   const sk = pop(f, stampAt, fps, 8, 260);
-  const shake = stamped ? Math.sin((f - stampAt) * 2.2) * 14 * Math.exp(-(f - stampAt) / 6) : 0;
+  const shake = 0;
   const ko = lang === 'ko';
   const call = phone.app === 'call';
   return <div style={{position: 'absolute', left: 110, top: 290, width: 860, height: 1200,
@@ -180,10 +179,10 @@ const Phone = ({phone, lang, start, stampAt, stampText}) => {
         </div>
       </>}
     </div>
-    {stamped && stampText && <div style={{position: 'absolute', left: 0, right: 0, top: 470, textAlign: 'center'}}>
-      <span style={{display: 'inline-block', padding: '10px 50px', border: `14px solid ${RED}`, borderRadius: 26, color: RED,
-        fontFamily: font, fontWeight: 900, fontSize: 150, letterSpacing: 6, background: 'rgba(255,255,255,.82)',
-        transform: `rotate(-13deg) scale(${3 - 2 * sk})`, opacity: Math.min(1, sk * 1.5)}}>{stampText}</span>
+    {stamped && stampText && <div style={{position: 'absolute', left: 0, right: 0, top: 300, textAlign: 'center',
+      opacity: Math.min(1, sk * 1.5)}}>
+      <span style={{display: 'inline-block', padding: '10px 26px', background: RED, color: WHITE, fontFamily: font,
+        fontWeight: 900, fontSize: 56, letterSpacing: 2}}>{stampText}</span>
     </div>}
   </div>;
 };
@@ -223,15 +222,14 @@ const Outro = ({text}) => {
 // Who is talking: the host in navy, the scammer in red; a running timer only when the scam is a phone call
 const SpeakerTag = ({speaker, lang, host, startSec, onCall}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
-  const k = pop(f, 0, fps, 12, 240);
+  const k = interpolate(f, [0, 8], [0, 1], clamp);
   const scam = speaker === 'scammer';
   const sec = Math.floor(startSec + f / fps);
-  return <div style={{position: 'absolute', top: 175, left: 40, display: 'flex', gap: 14, alignItems: 'center',
-    transform: `translateX(${(1 - k) * -500}px)`}}>
-    <span style={{padding: '10px 26px', borderRadius: 40, background: scam ? RED : NAVY, color: WHITE, fontFamily: font,
-      fontWeight: 900, fontSize: 50, boxShadow: '0 6px 0 rgba(0,0,0,.35)'}}>{scam ? (onCall ? '📞 ' : '💬 ') + (lang === 'ko' ? '사기꾼' : 'SCAMMER') : `🎙 ${host}`}</span>
-    {onCall && <span style={{padding: '8px 18px', borderRadius: 30, background: 'rgba(0,0,0,.6)', color: '#7CFC9A', fontFamily: font,
-      fontWeight: 700, fontSize: 36}}>{lang === 'ko' ? '통화 중' : 'on call'} {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')}</span>}
+  return <div style={{position: 'absolute', top: 70, left: 40, display: 'flex', gap: 14, alignItems: 'center', opacity: k}}>
+    <span style={{padding: '8px 20px', background: 'rgba(8,10,14,.72)', borderLeft: `6px solid ${scam ? RED : '#5B8DEF'}`,
+      color: WHITE, fontFamily: font, fontWeight: 800, fontSize: 40}}>{scam ? (lang === 'ko' ? '사기범' : 'SCAMMER') : host}</span>
+    {onCall && <span style={{padding: '8px 16px', background: 'rgba(8,10,14,.6)', color: '#9FE3B0', fontFamily: font,
+      fontWeight: 700, fontSize: 32}}>{lang === 'ko' ? '통화 중' : 'on call'} {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')}</span>}
   </div>;
 };
 
@@ -239,7 +237,7 @@ const Scene = ({s, i, props}) => {
   const f = useCurrentFrame();
   const {sfx, lang} = props;
   const danger = props.mood === 'alert';
-  const flash = interpolate(f, [0, 4], [0.7, 0], clamp);
+  const flash = interpolate(f, [0, 5], [0.85, 0], clamp);
   const stampAt = Math.round((s.frames || 60) * 0.55);
   const hookRed = (s.kind === 'hook' || s.kind === 'twist') && danger ? 0.6 + 0.4 * Math.abs(Math.sin(f * 0.25)) : 0;
   return <AbsoluteFill>
@@ -250,7 +248,7 @@ const Scene = ({s, i, props}) => {
           blur={s.kind === 'phone' ? 6 : 0} red={hookRed} />}
     {s.kind === 'phone' && s.phone && <>
       <Phone phone={s.phone} lang={lang} start={2} stampAt={stampAt}
-        stampText={s.phone.app === 'settings' ? '' : (s.stamp || (lang === 'ko' ? '사기!' : 'SCAM'))} />
+        stampText={s.phone.app === 'settings' ? '' : (s.stamp || (lang === 'ko' ? '사기 수법' : 'SCAM'))} />
       {s.phone.app === 'sms' && (s.phone.messages || []).map((m, n) => <Fx key={n} sfx={sfx} name="notify" at={16 + n * 16} vol={0.28} />)}
       <Fx sfx={sfx} name={s.phone.app === 'settings' ? 'pop' : 'stamp'} at={stampAt} vol={0.45} />
     </>}
@@ -267,7 +265,7 @@ const Scene = ({s, i, props}) => {
     {i > 0 && <Fx sfx={sfx} name="whoosh" at={0} vol={0.18} />}
     {danger && s.speaker === 'scammer' && ['talk', 'hook'].includes(s.kind) && <Fx sfx={sfx} name="heart" at={4} vol={0.5} />}
     {s.vo && <Sequence from={s.vo_at || 0}><Audio src={staticFile(s.vo)} /></Sequence>}
-    <AbsoluteFill style={{background: WHITE, opacity: i > 0 ? flash : 0, pointerEvents: 'none'}} />
+    <AbsoluteFill style={{background: '#000', opacity: i > 0 ? flash : 0, pointerEvents: 'none'}} />
   </AbsoluteFill>;
 };
 
@@ -276,7 +274,7 @@ export const Alert = (props) => {
   const f = useCurrentFrame();
   let at = 0;
   const total = alertDuration(scenes);
-  const shakeHook = mood === 'alert' && f < 12 ? Math.sin(f * 2.5) * 10 * (1 - f / 12) : 0;
+  const shakeHook = 0;
   return <AbsoluteFill style={{background: INK, transform: `translateX(${shakeHook}px)`}}>
     {scenes.map((s, i) => {
       const from = at; at += s.frames || 60;

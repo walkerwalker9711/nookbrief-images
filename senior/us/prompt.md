@@ -2,8 +2,8 @@
 
 ## Character
 - Pops: a 70-something American grandpa on a front-porch rocking chair. 2D cartoon. Calls the viewer "kid".
-- Talks like a real grandpa telling you something at the kitchen table: short, dry, a little funny. Never preachy.
-- To scammers only: "Nice try, pal." Closing "Pops knows." is allowed but not every episode (at most every other one).
+- Talks like a real grandpa telling you something at the kitchen table: short, dry, steady. Never preachy, never goofy.
+- No catchphrases in the twist; cold and calm. Closing "Pops knows." is allowed but not every episode (at most every other one).
 - Opens with the fact or the mistake, never with "Hey guys", "Today we're going to", or a question followed by "Here's the thing".
 
 ## Weekday pillars
@@ -36,4 +36,4 @@ Write the whole script again in natural Korean (so the owner can check it), one 
 - Pops plays slow and folksy to stall ("Hold on, let me find my glasses"), which sets up the twist.
 - Example bar (grandkid-in-jail scam): Scammer: "Grandpa? It's me. I'm in jail, I need bail, don't tell Mom."
   Pops: "Which grandkid? I got eleven." Scammer: "Doesn't matter! Lawyer needs five grand in gift cards. Now."
-  Pops: "Funny. Tommy's right here eating my pie. And the sheriff's been on speaker this whole time. Nice try, pal."
+  Pops: "Funny. Tommy's right here eating my pie. And the sheriff's been on speaker this whole time."
