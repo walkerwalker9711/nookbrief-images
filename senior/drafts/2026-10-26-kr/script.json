@@ -1,19 +1,20 @@
 {
   "pillar": "사기·안전",
-  "topic": "주민센터 사칭 전화와 악성앱으로 노후자금 약 9억 원을 잃을 뻔한 70대 남성의 실제 사례",
-  "title": "확인하려고 건 전화도 사기범에게…9억 원 지킨 사연",
+  "topic": "금감원을 사칭해 보험금 수령 사실까지 알고 접근한 목포 보이스피싱 실제 사례",
+  "title": "보험금 받은 것까지 알던 전화, 2600만 원의 행방",
   "mood": "alert",
+  "case_tag": "실제 사건 · 2026년 10월 20일 보도 · 전남 목포",
   "scenes": [
     {
       "kind": "hook",
       "speaker": "host",
-      "line": "노후자금 약 구억 원을 잃을 뻔했습니다. 지난 9월, 남양주의 70대 남성에게 생긴 일입니다.",
+      "line": "목포의 팔십 대 여성이 이천육백만 원을 잃을 뻔했습니다. 시작은 전화 한 통이었습니다.",
       "delivery": "[low, grave]",
-      "caption": "9억 잃을 뻔",
+      "caption": "2600만 원을 잃을 뻔",
       "hot": [
-        "구억"
+        "이천육백만"
       ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, an unnamed elderly Korean man seen from behind holding a phone beside closed savings passbooks, face not visible, tense domestic atmosphere, centered vertical composition, bottom third empty, no text, numbers or logos.",
+      "image_prompt": "Vertical Korean 2D webtoon crime drama, muted colors and restrained cinematic shadows. An elderly Korean woman seen from behind beside apartment mailboxes in Mokpo, a closed envelope emphasized as a symbolic reconstruction, not a completed handover. Face obscured, centered composition, bottom third empty, no text, numbers or logos.",
       "cast": "none",
       "phone": {
         "app": "none",
@@ -28,21 +29,22 @@
     {
       "kind": "phone",
       "speaker": "host",
-      "line": "처음엔 주민센터라며 전화가 왔습니다. 대포통장 사건에 연루됐다는 겁니다.",
+      "line": "금융감독원 과장이라는 사람이었는데요. 이름도, 최근 보험금 받은 것도 알고 있었습니다.",
       "delivery": "[quiet, tense]",
-      "caption": "주민센터라던 전화",
+      "caption": "보험금까지 알았다",
       "hot": [
-        "대포통장"
+        "이름도",
+        "보험금"
       ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, close-up of an elderly man's hand holding a smartphone with a blank incoming call interface, anonymous caller suggested only by a dark silhouette reflection, centered vertical composition, bottom third empty, no text, numbers or logos.",
+      "image_prompt": "Vertical Korean 2D webtoon crime drama, same muted palette. Close-up of the same elderly woman's hand holding a phone with a blank incoming-call interface, her face outside the frame. Blank icons only, centered composition, bottom third empty, no text, numbers or logos.",
       "cast": "none",
       "phone": {
         "app": "call",
-        "sender": "",
+        "sender": "02-●●●-●●●●",
         "time": "",
         "messages": [
           {
-            "text": "대포통장 사건에 연루됐다",
+            "text": "금융감독원 과장",
             "me": false
           }
         ]
@@ -54,13 +56,14 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "보내온 링크를 눌렀습니다. 그 뒤 휴대폰에 악성앱이 깔렸습니다.",
+      "line": "그 사람은 현금을 아파트 우편함에 놓으라고 했습니다. 여성은 돈을 찾으러 은행에 갔습니다.",
       "delivery": "[measured]",
-      "caption": "링크 누른 뒤",
+      "caption": "우편함에 놓으라",
       "hot": [
-        "악성앱"
+        "현금을",
+        "우편함에"
       ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, close-up of the same elderly man's hand near a smartphone, abstract dark app shapes spreading behind blank interface panels, illustrative metaphor rather than a literal screen, centered vertical composition, bottom third empty, no text, numbers or logos.",
+      "image_prompt": "Vertical Korean 2D webtoon crime drama, same elderly Korean woman and consistent clothing, seen from behind entering a neighborhood credit-union branch in Mokpo. Restrained daylight, tense atmosphere, centered composition, bottom third empty, no readable documents, text, numbers or logos.",
       "cast": "none",
       "phone": {
         "app": "none",
@@ -75,13 +78,13 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "확인하려고 기관에 전화를 걸었는데, 그 전화마저 사기범에게 연결됐습니다.",
-      "delivery": "[low, tense]",
-      "caption": "확인 전화마저",
+      "line": "빌린 돈을 갚겠다는 여성의 말에, 직원이 다시 물었습니다. 설명이 석연치 않았습니다.",
+      "delivery": "[quiet, deliberate]",
+      "caption": "직원이 다시 물었다",
       "hot": [
-        "사기범에게"
+        "다시"
       ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, the same elderly man seen from behind making a call, a thin abstract connection line leads toward an anonymous shadow behind a desk instead of a distant public office, centered vertical composition, bottom third empty, no text, numbers or logos.",
+      "image_prompt": "Vertical Korean 2D webtoon crime drama, same elderly woman seated at a credit-union counter, viewed over her shoulder. A bank employee listens carefully across the desk, blank withdrawal slip, no cash handed over. Muted palette, centered composition, bottom third empty, no text, numbers or logos.",
       "cast": "none",
       "phone": {
         "app": "none",
@@ -96,13 +99,13 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "위험을 알아챈 경찰이 연락했습니다. 그런데 남성은 경찰까지 의심했습니다.",
+      "line": "지점장이 신고했습니다. 출동한 경찰이 확인해 보니 사기였습니다.",
       "delivery": "[heavy pause]",
-      "caption": "경찰도 못 믿었다",
+      "caption": "경찰이 확인한 사기",
       "hot": [
-        "경찰까지"
+        "사기였습니다"
       ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, the same elderly man hesitating over a ringing phone while an officer is shown separately at a police station desk, faces not emphasized, centered vertical composition, bottom third empty, no text, numbers or logos.",
+      "image_prompt": "Vertical Korean 2D webtoon crime drama, same credit-union branch and elderly woman. A branch manager speaking on a desk phone while a police officer approaches the seated woman, calm intervention rather than confrontation. Centered composition, bottom third empty, no text, numbers or logos.",
       "cast": "none",
       "phone": {
         "app": "none",
@@ -117,34 +120,14 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "악성앱이 의심되면, 확인은 다른 전화로 해야 합니다.",
-      "delivery": "[measured, grave]",
-      "caption": "확인은 다른 전화",
+      "line": "경찰이 우편함에 가짜 돈봉투를 놓았습니다. 그걸 가져가던 수거책이 붙잡혔습니다.",
+      "delivery": "[low, steady]",
+      "caption": "가짜 봉투를 가져갔다",
       "hot": [
-        "다른"
+        "가짜",
+        "붙잡혔습니다"
       ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, explanatory still life of a suspicious smartphone set aside and a separate landline telephone in clear warm light, no implication of an additional reported event, centered vertical composition, bottom third empty, no text, numbers or logos.",
-      "cast": "none",
-      "phone": {
-        "app": "none",
-        "sender": "",
-        "time": "",
-        "messages": []
-      },
-      "steps": [],
-      "items": [],
-      "cta": ""
-    },
-    {
-      "kind": "scene",
-      "speaker": "host",
-      "line": "결국 경찰이 직접 만났습니다. 앱을 지우고 계좌 지급정지도 신청해, 피해를 막았습니다.",
-      "delivery": "[quiet, steady]",
-      "caption": "직접 만나 막았다",
-      "hot": [
-        "지급정지도"
-      ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, the same elderly man seated beside a police officer examining his phone, faces out of focus, tension easing without celebration, centered vertical composition, bottom third empty, no text, numbers or logos.",
+      "image_prompt": "Vertical Korean 2D webtoon crime drama, apartment mailboxes in Mokpo matching the opening. A faceless cash collector seen from behind reaching for a closed decoy envelope while plainclothes officers move in. No violence, muted cinematic shadows, centered composition, bottom third empty, no text, numbers or logos.",
       "cast": "none",
       "phone": {
         "app": "none",
@@ -159,13 +142,14 @@
     {
       "kind": "steps",
       "speaker": "host",
-      "line": "의심스러운 전화는 끊으세요. 다른 전화로 일일이에 신고하세요.",
-      "delivery": "[measured]",
-      "caption": "끊고 다른 전화로",
+      "line": "현금을 건네라는 전화라면, 끊고 일일이에 신고하세요.",
+      "delivery": "[measured, firm]",
+      "caption": "전화 끊고 112",
       "hot": [
-        "끊으세요"
+        "끊고",
+        "일일이에"
       ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, simple visual sequence of a hand ending a suspicious smartphone call and another hand using a separate telephone, blank interfaces and generic icons only, centered vertical composition, bottom third empty, no text, numbers or logos.",
+      "image_prompt": "Vertical Korean 2D webtoon crime drama, close-up of the same elderly woman's hand lowering her phone at the credit-union desk, a police officer softly visible in the background. Blank phone icons only, consistent muted palette, centered composition, bottom third empty, no text, numbers or logos.",
       "cast": "none",
       "phone": {
         "app": "none",
@@ -175,11 +159,11 @@
       },
       "steps": [
         {
-          "text": "의심 전화 끊기",
+          "text": "전화로 요구한 현금 전달은 중단",
           "ok": true
         },
         {
-          "text": "다른 전화로 112 신고",
+          "text": "통화 종료 후 112 신고",
           "ok": true
         }
       ],
@@ -189,13 +173,13 @@
     {
       "kind": "outro",
       "speaker": "host",
-      "line": "확인하려던 전화도, 사기범에게 닿았습니다.",
-      "delivery": "[low, grave]",
-      "caption": "믿으려던 전화도",
+      "line": "내 사정을 안다고, 내 편인 건 아니었습니다.",
+      "delivery": "[quiet, reflective]",
+      "caption": "알아도 내 편은 아니다",
       "hot": [
-        "확인하려던"
+        "사정을"
       ],
-      "image_prompt": "2D Korean webtoon drama, restrained flat colors, the village chief character beside a village hall telephone with a village loudspeaker in the background, quiet protective mood, centered vertical composition, bottom third empty, no text, numbers or logos.",
+      "image_prompt": "Vertical Korean 2D webtoon drama, the village chief character standing quietly outside the Mokpo credit-union branch from this case, with the apartment mailboxes subtly echoed in the background composition. Restrained warm light within the same muted palette, centered composition, bottom third empty, no text, numbers or logos.",
       "cast": "host",
       "phone": {
         "app": "none",
@@ -210,30 +194,30 @@
   ],
   "sources": [
     {
-      "name": "뉴시스",
-      "url": "https://www.newsis.com/view/NISX20260923_0003802361"
-    },
-    {
-      "name": "유안타증권",
-      "url": "https://www.myasset.com/myasset/customer/notice/CU_0201000_P2.cmd?SEQ=202610200936160000000004&gubun=norNotice"
+      "name": "광주MBC",
+      "url": "https://kjmbc.co.kr/NewsArticle/1541941"
     },
     {
       "name": "경찰청",
-      "url": "https://www.counterscam112.go.kr/bbs009/board/boardList.do"
+      "url": "https://www.police.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1007&q_bbscttSn=20260520094732676"
+    },
+    {
+      "name": "유안타증권",
+      "url": "https://bank.myasset.com/myasset/customer/notice/CU_0201000_P2.cmd?SEQ=202609140837290000000004&gubun=norNotice"
     }
   ],
-  "description": "주민센터라는 전화 뒤, 확인 전화까지 사기범에게 연결됐습니다.\n노후자금 약 9억 원의 피해를 막은 실제 사례와 대응법입니다.\n출처: 뉴시스, 2026.09.25, 「노후자금 9억 날릴 뻔한 70대…경찰 끈질긴 대응 피해 막아」 https://www.newsis.com/view/NISX20260923_0003802361\n출처: 유안타증권, 2026.10.20, 「금융권 개인정보 유출사고에 따른 금융사기 피해예방 안내」 https://www.myasset.com/myasset/customer/notice/CU_0201000_P2.cmd?SEQ=202610200936160000000004&gubun=norNotice\n출처: 경찰청 피싱안심SOS, 피싱 시나리오 https://www.counterscam112.go.kr/bbs009/board/boardList.do\nAI 음성·그림",
+  "description": "보험금 받은 사실까지 알던 전화, 목포의 80대 여성은 현금 2600만 원을 찾으려 했습니다.\n피해자와 은행 관계자 인터뷰가 담긴 실제 취재 보도를 바탕으로 재구성했습니다.\n출처: 광주MBC https://kjmbc.co.kr/NewsArticle/1541941\n출처: 경찰청 https://www.police.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1007&q_bbscttSn=20260520094732676\n출처: 유안타증권 https://bank.myasset.com/myasset/customer/notice/CU_0201000_P2.cmd?SEQ=202609140837290000000004&gubun=norNotice\nAI 음성·그림",
   "tags": [
     "한국이장님",
     "보이스피싱",
-    "주민센터사칭",
+    "금감원사칭",
     "기관사칭",
-    "악성앱",
-    "보이스피싱예방",
-    "실제사례",
-    "시니어안전"
+    "보이스피싱실제사례",
+    "현금수거책",
+    "사기예방",
+    "목포"
   ],
-  "ko_review": "노후자금 약 구억 원을 잃을 뻔했습니다. 지난 9월, 남양주의 70대 남성에게 생긴 일입니다.\n처음엔 주민센터라며 전화가 왔습니다. 대포통장 사건에 연루됐다는 겁니다.\n보내온 링크를 눌렀습니다. 그 뒤 휴대폰에 악성앱이 깔렸습니다.\n확인하려고 기관에 전화를 걸었는데, 그 전화마저 사기범에게 연결됐습니다.\n위험을 알아챈 경찰이 연락했습니다. 그런데 남성은 경찰까지 의심했습니다.\n악성앱이 의심되면, 확인은 다른 전화로 해야 합니다.\n결국 경찰이 직접 만났습니다. 앱을 지우고 계좌 지급정지도 신청해, 피해를 막았습니다.\n의심스러운 전화는 끊으세요. 다른 전화로 일일이에 신고하세요.\n확인하려던 전화도, 사기범에게 닿았습니다.",
-  "fact_notes": "사례 출처는 경기북부경찰청 설명과 관계자 발언을 직접 전한 뉴시스의 2026년 9월 25일 원보도입니다. 경찰 원문 보도자료를 확보한 것은 아니며, 사용자가 실화 사례에 허용한 주요 언론 보도에 해당합니다. 1장면: 사건은 2026년 9월 남양주시의 70대 남성 사례입니다. 약 9억 원은 실제 잃은 금액이 아니라 계좌에 있던 노후자금 규모이며, 금전 피해가 예방된 사건이므로 반드시 ‘잃을 뻔’으로 유지합니다. ([nwww.newsis.com](https://www.newsis.com/view/NISX20260923_0003802361)) 2장면: 주민센터 사칭 및 ‘대포통장 사건에 연루됐다’는 실제 보도 문구를 사용했습니다. 발신번호·통화 시각은 확인되지 않아 비웠습니다. ([nwww.newsis.com](https://www.newsis.com/view/NISX20260923_0003802361)) 3~4장면: 링크 접속 뒤 악성앱 설치, 한국신용정보원으로 건 줄 알았던 전화가 범죄조직에 연결된 사실이 보도됐습니다. ([nwww.newsis.com](https://www.newsis.com/view/NISX20260923_0003802361)) 5·7장면: 통합대응단의 위험 감지, 경찰 연락을 의심한 피해자, 대면 확인 뒤 앱 삭제와 계좌 지급정지 신청이 보도됐습니다. 중간의 휴대전화 변경 과정은 분량상 생략했으며 원보도의 유심 관련 인과 설명은 대본에 사용하지 않았습니다. ([nwww.newsis.com](https://www.newsis.com/view/NISX20260923_0003802361)) 6·8·9장면: 실제 피해자의 추가 행동이 아니라 제작자의 예방 해설입니다. 유안타증권의 2026년 10월 20일 공식 안내는 악성앱 의심 시 다른 전화로 신고하고 백신 점검 또는 초기화하도록 하며, 경찰 신고번호로 1394 또는 112를 명시합니다. 대본은 112만 사용합니다. ([myasset.com](https://www.myasset.com/myasset/customer/notice/CU_0201000_P2.cmd?SEQ=202610200936160000000004&gubun=norNotice)) 주제 선정: 제공된 최근 7일 보이스피싱 검색 목록을 기준으로 선정했습니다. 경찰청 피싱안심SOS에서도 2026년 10월 7일 행정복지센터 사칭 실제사례 기반 자료가 게시된 사실을 확인했습니다. 별도의 이번 주 검색량 수치는 주장하지 않습니다. ([counterscam112.go.kr](https://www.counterscam112.go.kr/bbs009/board/boardList.do)) 그림은 재연용이며 실제 피해자 외모나 사건 장소의 구체적 모습을 주장하지 않습니다. 총 9장면, 차분한 낭독과 짧은 쉼을 포함해 약 50~55초 목표입니다.",
+  "ko_review": "목포의 팔십 대 여성이 이천육백만 원을 잃을 뻔했습니다. 시작은 전화 한 통이었습니다.\n금융감독원 과장이라는 사람이었는데요. 이름도, 최근 보험금 받은 것도 알고 있었습니다.\n그 사람은 현금을 아파트 우편함에 놓으라고 했습니다. 여성은 돈을 찾으러 은행에 갔습니다.\n빌린 돈을 갚겠다는 여성의 말에, 직원이 다시 물었습니다. 설명이 석연치 않았습니다.\n지점장이 신고했습니다. 출동한 경찰이 확인해 보니 사기였습니다.\n경찰이 우편함에 가짜 돈봉투를 놓았습니다. 그걸 가져가던 수거책이 붙잡혔습니다.\n현금을 건네라는 전화라면, 끊고 일일이에 신고하세요.\n내 사정을 안다고, 내 편인 건 아니었습니다.",
+  "fact_notes": "기준일: 제작 요청일은 2026-10-26이며, 검색 검증 기준일은 2026-10-27이다. 본편에는 상대 날짜 대신 보도일을 명시했다. 주제는 제공된 이번 주 보이스피싱 검색 동향에서 선정했으며, 별도의 검색량이나 조회수는 주장하지 않는다.\n사례 출처: 광주MBC의 2026-10-20 직접 취재 보도에는 피해자와 해당 지점장 인터뷰가 포함되어 있어 사건의 1차 취재 자료로 사용했다. 사건 발생일은 기사에 명시되지 않아 case_tag에는 '2026년 10월 20일 보도'라고 구분했다. ([kjmbc.co.kr](https://kjmbc.co.kr/NewsArticle/1541941))\n장면 1: 전남 목포, 80대 여성, 현금 2600만 원 인출 시도는 해당 보도로 확인했다. 실제 현금 피해가 발생했다고 말하지 않고 '갈 뻔했다'고 표현했다. ([kjmbc.co.kr](https://kjmbc.co.kr/NewsArticle/1541941?utm_source=openai))\n장면 2~3: 금융감독원 과장 사칭, 피해자 이름 및 최근 보험금 수령 사실을 알고 접근한 내용은 피해자 인터뷰와 기자의 확인 내용이다. 전화 화면의 '금융감독원 과장'은 보도된 사칭 직함만 발췌한 것이며 완전한 통화 녹취를 재현한 대사가 아니다. 발신번호는 미공개이므로 마스킹했고 통화 시각은 비웠다. ([kjmbc.co.kr](https://kjmbc.co.kr/NewsArticle/1541941))\n장면 4~5: 빌린 돈을 갚겠다며 현금을 요청한 사실, 직원의 재확인, 지점장의 신고, 경찰 출동과 사기 확인은 보도 내용이다. 사기범이 은행에서 어떤 거짓말을 하라고 지시했는지는 확인되지 않아 그런 인과관계는 추가하지 않았다. ([kjmbc.co.kr](https://kjmbc.co.kr/NewsArticle/1541941?utm_source=openai))\n장면 6: 사기범이 요구한 전달 장소는 피해자 아파트 우편함이었다. 경찰이 가짜 돈봉투를 이용했고 이를 가져가던 수거책을 검거한 사실이 보도됐다. 피해 여성이 실제 돈봉투를 놓았다고 서술하지 않았다. ([kjmbc.co.kr](https://kjmbc.co.kr/NewsArticle/1541941))\n장면 7: 기관 사칭 후 현금 인출·전달을 요구하는 수법과 공식 연락처로 직접 확인하는 대응은 유안타증권의 2026-09-14 소비자보호 공지에 근거한다. 112 신고·상담 번호는 경찰청의 2026-05-20 공식 안내로 확인했다. ([bank.myasset.com](https://bank.myasset.com/myasset/customer/notice/CU_0201000_P2.cmd?SEQ=202609140837290000000004&gubun=norNotice&utm_source=openai))\n장면 8은 사건에 대한 진행자의 해석이다. 인물의 이름과 확인되지 않은 나이·손실액·앱 설치·추가 사칭 기관은 넣지 않았다. 그림은 보도 내용을 설명하는 웹툰 재구성이며 실제 현장 사진이 아니다. 낭독은 약 50~55초를 목표로 한다.",
   "format": "story"
 }
