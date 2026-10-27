@@ -183,6 +183,27 @@ same 2D flat cartoon style throughout. For every kind fill all fields; when a fi
 with no messages, an empty steps list, an empty items list and an empty cta.
 """
 
+LAYOUT_STORY = """=== Video layout: true-story narration (owner 10-27, replaces the 참교육 drama) ===
+One real scam case, told by the host as a calm, gripping storyteller over webtoon-style pictures. 7 to 9 scenes,
+40 to 55 seconds of speech. speaker is host in every scene; there is no dialogue between characters.
+The case: one real victim case reported in the last 12 months by the police, a financial regulator or a major news
+outlet, with its source in "sources". Keep what was reported (age group, region, amount, how it unfolded); no names;
+never invent details or quotes that were not reported. If the report quotes the scam text or call, use those words.
+- hook (cast none): the loss or the moment it went wrong, in one or two short sentences with the real number
+  ("지난달 경기도의 70대 여성이, 택배 문자 하나로 4천만 원을 잃었습니다."). caption: the case in 8 words or fewer.
+- phone (cast none): the actual text or call as reported, on the phone screen. line: the host reads or describes it.
+- scene x3 to x4 (cast none, or host when he comments): how it unfolded, step by step, each scene one turn of the
+  trick (the link, the app, the "safe account", the deadline). Tension builds; each line ends pulling into the next.
+- scene (the turning point): the one moment it could have been stopped, said plainly.
+- steps: 2 to 3 real moves (wrong ones ok false, right ones ok true, official numbers).
+- outro (cast host): one quiet closing line that stays with the viewer. cta empty. No share requests.
+Narration voice: short spoken sentences, past tense for the story, present for the advice; no lecture, no jokes,
+no catchphrases, no "여러분". delivery tags: [low, grave], [quiet, tense], [measured], [heavy pause] and the like.
+Pictures: the victim (an older person, never named, face not the focus), the phone, the bank, the street at night;
+scammers only as shadows or from behind. Same webtoon drama style throughout. Fill unused fields with empty values
+(app "none", empty steps, items and cta).
+"""
+
 LAYOUT_LIST = """=== Video layout: one saveable card, "모르면 손해 보는 N가지" (9 to 12 seconds) ===
 Exactly one scene, kind list, speaker host, cast host. caption is the card title, e.g. "65세 넘으면 모르면 손해 보는 7가지"
 (English: "Turning 65? 7 things you're leaving on the table"). items: 6 to 8 rows, label short (under 16 Korean
@@ -285,7 +306,7 @@ def write_script(channel, date, topic):
     pillar = c["pillars"][date.weekday()] if date.weekday() < 5 else c["pillars"][0]
     # owner 2026-10-26: plain warnings don't spread, so each day gets the format that is working on Shorts now
     day = c["pillars"].index(pillar)
-    layout = {0: LAYOUT_DRAMA, 1: LAYOUT_LIST, 4: LAYOUT_PHONE}.get(day, LAYOUT)
+    layout = {0: LAYOUT_STORY, 1: LAYOUT_LIST, 4: LAYOUT_PHONE}.get(day, LAYOUT)
     rules = (SENIOR / "SHARED_RULES.md").read_text(encoding="utf-8")
     own = (SENIOR / channel / "prompt.md").read_text(encoding="utf-8")
     extra = (SENIOR / "SNS_글쓰기_규칙_영어.md").read_text(encoding="utf-8") if channel == "us" else ""
@@ -322,9 +343,10 @@ channel's language, then the sources as plain text, then "AI voice & visuals" (K
         text = responses(body)
         m = re.search(r"\{.*\}", text, re.S)
         script = json.loads(m.group(0) if m else text)
-        if layout is LAYOUT_DRAMA:
-            script = punch_up(channel, script, own)
+        if layout in (LAYOUT_DRAMA, LAYOUT_STORY):
+            script = punch_up(channel, script, own, story=layout is LAYOUT_STORY)
         problems = check_script(script, layout, c)
+        script["format"] = "story" if layout is LAYOUT_STORY else ""
         if not problems:
             return script
         print("script check failed:", "; ".join(problems))
@@ -332,10 +354,36 @@ channel's language, then the sources as plain text, then "AI voice & visuals" (K
     return script
 
 
-def punch_up(channel, script, own):
+def narrate(channel, script, own):
+    """Second pass for the true-story narration: a storyteller rewrites the spoken lines; facts stay."""
+    c = CHANNELS[channel]
+    prompt = f"""You narrate true scam stories for "{c['name']}" in {c['lang']}, like a calm, gripping true-crime
+storyteller on a phone screen. Below is a finished script as JSON. Rewrite ONLY each scene's "line", "caption",
+"delivery" and "hot" so that:
+- it is natural spoken {c['lang']}: short sentences, plain words, never written, translated or AI-sounding;
+- the story pulls forward: each line leaves a small question the next scene answers; tension rises to the turning point;
+- facts stay exactly as reported (change nothing in "sources", "fact_notes", "phone", "steps", "kind", "speaker",
+  "cast", "image_prompt"); add no detail that is not in the facts;
+- no jokes, catchphrases, lecturing or share requests; the outro is one quiet line that stays with the viewer;
+- "delivery" tags fit a grave storyteller ([low, grave], [quiet, tense], [measured], [heavy pause]);
+- "hot" stays one or two words copied exactly from the new line; the whole video stays 40 to 55 seconds.
+Update "ko_review" to match. Return the whole script JSON with the same schema.
+
+=== Channel rules ===
+{own}
+
+=== Script ===
+{json.dumps(script, ensure_ascii=False)}
+"""
+    return rewrite(script, prompt, "narration")
+
+
+def punch_up(channel, script, own, story=False):
     """Second pass, owner 10-26: the first drafts read like translated, written text and the scammer was too
     polite. A dialogue writer rewrites only what is said; facts, sources, scene order and phone data stay."""
     c = CHANNELS[channel]
+    if story:
+        return narrate(channel, script, own)
     prompt = f"""You are the dialogue writer for "{c['name']}", short {c['lang']} cartoon dramas where a scammer gets outplayed.
 Below is a finished script as JSON. Rewrite ONLY each scene's "line", "caption", "delivery" and "hot" so that:
 - it sounds like real people on a real phone call in {c['lang']}, spoken and natural, never written or translated;
@@ -357,6 +405,10 @@ Return the whole script JSON with the same schema.
 === Script ===
 {json.dumps(script, ensure_ascii=False)}
 """
+    return rewrite(script, prompt, "punch-up")
+
+
+def rewrite(script, prompt, name):
     body = {"input": prompt,
             "text": {"format": {"type": "json_schema", "name": "short_script", "schema": SCHEMA, "strict": True}}}
     try:
@@ -364,16 +416,16 @@ Return the whole script JSON with the same schema.
         m = re.search(r"\{.*\}", text, re.S)
         new = json.loads(m.group(0) if m else text)
     except (SystemExit, ValueError) as e:
-        print("punch-up skipped:", e)
+        print(name, "skipped:", e)
         return script
     if [x["kind"] for x in new["scenes"]] != [x["kind"] for x in script["scenes"]]:
-        print("punch-up changed the scene order; keeping the first draft")
+        print(name, "changed the scene order; keeping the first draft")
         return script
     for old, sc in zip(script["scenes"], new["scenes"]):
         for k in ("phone", "steps", "speaker", "cast", "image_prompt", "items"):
             sc[k] = old[k]
     new["sources"], new["fact_notes"] = script["sources"], script["fact_notes"]
-    print("punch-up done")
+    print(name, "done")
     return new
 
 
@@ -401,6 +453,14 @@ def check_script(script, layout, c):
                 problems.append("the twist uses a future intention; the consequence must already have happened")
         if script["scenes"][0]["speaker"] == "scammer" and script["scenes"][0]["line"].lstrip().startswith("아, 아"):
             problems.append('the scammer must not open with "아, 아."')
+    if layout is LAYOUT_STORY:
+        if not 7 <= len(kinds) <= 9:
+            problems.append(f"{len(kinds)} scenes, need 7 to 9")
+        for k in ("hook", "phone", "steps", "outro"):
+            if k not in kinds:
+                problems.append(f"no {k} scene")
+        if any(x["speaker"] != "host" for x in script["scenes"]):
+            problems.append("narration: speaker must be host in every scene")
     if layout is LAYOUT_LIST and kinds != ["list"]:
         problems.append("need exactly one list scene")
     for sc in script["scenes"]:
@@ -551,7 +611,7 @@ def build_props(channel, script, images, work):
     for i, (s, img) in enumerate(zip(script["scenes"], images)):
         vo = Path(work) / f"vo{i}.mp3"
         words, engine = speak(channel, s["line"], vo, s["speaker"], s.get("delivery", ""))
-        lead = MIC if (i == 0 and c["mic"] and s["speaker"] == "host") else 0
+        lead = MIC if (i == 0 and c["mic"] and s["speaker"] == "host" and script.get("format") != "story") else 0
         frames = int((duration(vo) + 0.35) * FPS) + lead
         if s["kind"] == "steps":
             frames = max(frames, 30 + 22 * len(s["steps"]))
