@@ -102,19 +102,19 @@ def cutout():
     """The full character with the grey studio background removed (flood from the edges)."""
     im = Image.open(CHAR).convert("RGB")
     W, H = im.size
-    key = im.copy()
-    seeds = [(x, 0) for x in range(0, W, 32)] + [(0, y) for y in range(0, H, 32)] + [(W - 1, y) for y in range(0, H, 32)] \
-        + [(x, H - 1) for x in range(0, W, 32)]
-    for seed in seeds:
-        r, g, b = key.getpixel(seed)
-        if abs(r - g) < 14 and abs(g - b) < 16 and r > 120:
-            ImageDraw.floodfill(key, seed, (255, 0, 255), thresh=34)
-    mask = Image.new("L", (W, H), 255)
-    mp, kp = mask.load(), key.load()
+    # neutral grey pixels (the studio backdrop, lighter behind him) that connect to the picture edge
+    grey = Image.new("L", (W, H), 0)
+    gp, ip = grey.load(), im.load()
     for y in range(H):
         for x in range(W):
-            if kp[x, y] == (255, 0, 255):
-                mp[x, y] = 0
+            r, g, b = ip[x, y]
+            if abs(r - g) < 10 and abs(g - b) < 12 and 120 < r < 236:
+                gp[x, y] = 255
+    for seed in [(x, 0) for x in range(0, W, 16)] + [(0, y) for y in range(0, H, 16)] + [(W - 1, y) for y in range(0, H, 16)] \
+            + [(x, H - 1) for x in range(0, W, 16)]:
+        if grey.getpixel(seed) == 255:
+            ImageDraw.floodfill(grey, seed, 128)
+    mask = grey.point(lambda v: 0 if v == 128 else 255).filter(ImageFilter.MinFilter(3))
     out = im.convert("RGBA")
     out.putalpha(mask.filter(ImageFilter.GaussianBlur(1.2)))
     return out.crop(out.getbbox())
@@ -140,7 +140,7 @@ def banner(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg"):
     # the 이장님 on the right of the safe band, from the knees up so the face is big enough on phones
     ch = cutout()
     ch = ch.crop((0, 0, ch.width, int(ch.height * 0.62)))
-    ch = ch.resize((int(ch.width * (sy1 - sy0 + 60) / ch.height), sy1 - sy0 + 60), Image.LANCZOS)
+    ch = ch.resize((int(ch.width * (sy1 - sy0 + 20) / ch.height), sy1 - sy0 + 20), Image.LANCZOS)
     glow = Image.new("RGBA", ch.size, (255, 212, 0, 0))
     glow.putalpha(ch.getchannel("A").filter(ImageFilter.GaussianBlur(18)).point(lambda v: int(v * 0.55)))
     cx = sx1 - ch.width + 10
@@ -148,11 +148,11 @@ def banner(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg"):
     img.paste(ch, (cx, sy1 - ch.height + 20), ch)
     # name, one line of what the channel is, and the format line
     x = sx0 + 20
-    d.text((x, sy0 + 6), "한국이장님", font=font(150), fill=WHITE, stroke_width=10, stroke_fill=INK)
-    tw = text_w(d, "한국이장님", font(150))
-    d.rectangle((x, sy0 + 196, x + tw, sy0 + 206), fill=YEL)
-    d.text((x, sy0 + 222), "실제 사건으로 보는 사기 수법", font=font(58), fill=YEL, stroke_width=6, stroke_fill=INK)
-    d.text((x, sy0 + 292), "보이스피싱 · 스미싱 · 받을 돈 · 폰 꿀팁", font=font(36), fill=(225, 230, 240), stroke_width=4, stroke_fill=INK)
+    d.text((x, sy0 - 12), "한국이장님", font=font(140), fill=WHITE, stroke_width=10, stroke_fill=INK)
+    tw = text_w(d, "한국이장님", font(140))
+    d.rectangle((x, sy0 + 176, x + tw, sy0 + 185), fill=YEL)
+    d.text((x, sy0 + 196), "실제 사건으로 보는 사기 수법", font=font(58), fill=YEL, stroke_width=6, stroke_fill=INK)
+    d.text((x, sy0 + 270), "보이스피싱 · 스미싱 · 받을 돈 · 폰 꿀팁", font=font(42), fill=(225, 230, 240), stroke_width=4, stroke_fill=INK)
     img.save(out, quality=93)
     print("banner", out, img.size)
 
