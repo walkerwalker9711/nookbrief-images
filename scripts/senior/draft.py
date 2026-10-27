@@ -45,11 +45,11 @@ CHANNELS = {
     "kr": {
         "name": "한국이장님", "region": "KR", "lang": "Korean",
         "pillars": ["사기·안전", "혜택·서류", "생활 꿀팁", "추억·옛날", "폰·카톡"],
-        "character": "A friendly Korean village chief in his 60s, 2D flat cartoon. Short grey hair, round face, "
-                     "kind eyes with smile lines, a navy padded vest over a light blue shirt, a white handheld "
+        "character": "A young Korean village chief in his early 30s, 2D flat cartoon. Neat short black hair, "
+                     "confident grin, sharp friendly eyes, a navy padded vest over a light blue shirt, a white handheld "
                      "megaphone. Thick clean outlines, warm flat colors, simple shading. Full body, standing, "
                      "plain warm off-white background.",
-        "tts_fallback": {"voice": "onyx", "instructions": "따뜻하고 차분한 60대 한국 남자 마을 이장. 동네 방송처럼 또박또박, 조금 빠르게."},
+        "tts_fallback": {"voice": "onyx", "instructions": "시원시원하고 힘 있는 30대 한국 남자 청년 이장. 동네 방송처럼 또박또박, 조금 빠르게."},
         "scammer": "A shifty Korean scammer in his 30s, 2D flat cartoon. Slicked-back hair, thin mustache, cheap shiny "
                     "suit, a call-center headset, narrow eyes, sly grin. Thick clean outlines, warm flat colors. "
                     "Upper body at a cluttered desk in a dim call-center room.",
@@ -113,7 +113,7 @@ SCHEMA = {
                 "items": {"type": "array", "maxItems": 8, "items": {
                     "type": "object", "additionalProperties": False, "required": ["label", "value"],
                     "properties": {"label": {"type": "string"}, "value": {"type": "string", "description": "amount or rate, or empty"}}}},
-                "cta": {"type": "string", "description": "outro only: one short share line, else empty"}}}},
+                "cta": {"type": "string", "description": "always empty (no share requests)"}}}},
         "sources": {"type": "array", "minItems": 1, "items": {
             "type": "object", "additionalProperties": False, "required": ["name", "url"],
             "properties": {"name": {"type": "string", "description": "publisher only, short (FTC, 경찰청, 복지로)"},
@@ -134,7 +134,8 @@ Scene kinds, in this order: hook, then a mix of phone / scene / steps, then outr
   number); never a real company's actual phone number or a working link. For a call use app "call".
 - scene: a picture that explains (who is behind it, what they want, what it costs).
 - steps: 2 to 4 short checklist rows, wrong moves with ok false (red X), right moves with ok true (green check).
-- outro: cast host, "cta" is one short share line (send this to mom and dad).
+- outro: cast host, one punchy closing line (the one rule to remember, or a callback to the hook). cta empty.
+  Never "send this video to your parents" or any share request (owner 10-27).
 speaker is host for every scene in this layout. For every kind fill all fields; when a field does not apply use
 app "none" with no messages, an empty steps list, an empty items list and an empty cta.
 Pictures: vary the shot every scene: close-up of hands holding a phone, over-the-shoulder at a kitchen table,
@@ -172,7 +173,8 @@ The host takes a real scam call or text going around now and turns the tables on
 - busted (kind talk, speaker scammer, cast scammer): the scammer's panicked 2 to 5 word reaction before he hangs up
   ("어, 어... 뚝." / "Wait, what? *click*"). Funny, short.
 - steps (speaker host): 2 to 3 real moves for viewers, wrong ones ok false, right ones ok true (official numbers).
-- outro (speaker host, cast host): one line to the viewer's kids or parents, cta is a short share line.
+- outro (speaker host, cast host): one punchy closing line, the one rule to remember or a callback to the hook.
+  cta empty. Never "send this video to your parents" or any share request (owner 10-27).
 hot: the giveaway words of the scam (검찰, 안전계좌, gift card). Pictures: the host at his place (village office,
 porch), the scammer at his desk in a dim call center, alternate between them so every cut changes the shot;
 same 2D flat cartoon style throughout. For every kind fill all fields; when a field does not apply use app "none"
@@ -194,7 +196,7 @@ LAYOUT_PHONE = """=== Video layout: discovery phone tip ===
 but in the host's own voice, no copied phrases). Then one phone scene per screen on the menu path with app "settings":
 sender is the screen title (설정, 접근성, ...), messages are the rows on that screen in their real order (4 to 6
 rows, real menu names for Galaxy One UI / iPhone iOS of this year), and exactly the row to tap has me true. Then a
-scene showing the result, steps if useful, outro with cta. speaker is host for every scene. cast host on hook and
+scene showing the result, steps if useful, outro with a closing line (cta empty). speaker is host for every scene. cast host on hook and
 outro only. Fill unused fields with empty values (app "none", empty steps, items and cta).
 """
 
@@ -339,6 +341,7 @@ Below is a finished script as JSON. Rewrite ONLY each scene's "line", "caption",
   "sources", "fact_notes", "phone", "steps", "kind", "speaker", "cast", "image_prompt");
 - the scammer is menacing and pushy, every scammer line adds a threat or a deadline; tension climbs scene by scene;
 - the host stalls in character, and the twist line pays off an earlier line and lands hard;
+- the host never sounds soft or weak: his tags carry energy ([confident, loud], [sharp, cheeky], [booming]);
 - "delivery" tags are strong and specific for the voice actor (e.g. [low, menacing], [shouting, furious],
   [fake-sweet then cold], [stalling, playing dumb], [deadpan], [triumphant]);
 - "hot" stays one or two words copied exactly from the new line;
@@ -384,6 +387,8 @@ def check_script(script, layout, c):
                 problems.append(f"no {k} scene")
         if kinds and kinds[-1] != "outro":
             problems.append("last scene must be the outro")
+        if "outro" in kinds and re.search(r"보내드리|보내 드리|공유|send this|share this", script["scenes"][kinds.index("outro")]["line"] + script["scenes"][kinds.index("outro")]["cta"], re.I):
+            problems.append("the outro asks viewers to send or share the video; end on a closing line instead")
         if "twist" in kinds:
             t = kinds.index("twist")
             after = script["scenes"][t + 1] if t + 1 < len(kinds) else None
@@ -485,7 +490,9 @@ def openai_tts(channel, text, out, role="host"):
 def speak(channel, text, out, role="host", delivery=""):
     """ElevenLabs voice with word timings; OpenAI voice (timings spread by length) when that is not possible."""
     try:
-        return el_voice.speak_timed(channel, text, out, role, delivery), "elevenlabs"
+        words = el_voice.speak_timed(channel, text, out, role, delivery)
+        level(out)
+        return words, "elevenlabs"
     except SystemExit as e:
         print("ElevenLabs not used:", e)
     openai_tts(channel, text, out, role)
@@ -497,6 +504,14 @@ def speak(channel, text, out, role="host", delivery=""):
         timed.append((w, t, t + step))
         t += step
     return timed, "openai"
+
+
+def level(path):
+    """Same loudness for every line, so the host is never quieter than the scammer (owner 10-27: "too weak")."""
+    tmp = str(path) + ".lv.mp3"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(path), "-af", "loudnorm=I=-15:TP=-1.5:LRA=7",
+                    "-ar", "44100", "-b:a", "128k", tmp], check=True)
+    os.replace(tmp, path)
 
 
 # Hotlines are written out in the script so the voice reads them right; the captions show them as numbers

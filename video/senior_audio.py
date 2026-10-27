@@ -17,27 +17,38 @@ from beds import BEDS, Track, bass, bell, env, hz, kick, noise_hit, pad  # noqa:
 SR = 24000
 
 
-def alert(seconds, seed=7, bpm=100):
-    """Tension under a warning: minor drone, pulsing eighth-note bass, clock tick, a low hit every two bars."""
+def saw(f, sec, decay=18.0, harmonics=8):
+    """Bowed-string stab: a band-limited saw that cuts through on phone speakers."""
+    t = env(sec)
+    x = sum(np.sin(2 * np.pi * f * k * t) / k for k in range(1, harmonics + 1))
+    return x * np.exp(-t * decay) * np.minimum(1, t / 0.004)
+
+
+def alert(seconds, seed=7, bpm=118):
+    """Thriller bed for the scam dramas (owner 10-27: the old low drone was inaudible on phones): staccato
+    string ostinato in the mid range, taiko hits on 1 and 3, a high tremolo, a riser into every fourth bar."""
     tr, rng = Track(seconds), np.random.default_rng(seed)
     beat = 60 / bpm
-    bar = beat * 4
-    roots = [45, 45, 41, 43] if seed % 2 else [45, 41, 46, 44]  # Am drone, moving under it
-    tick = (np.sin(2 * np.pi * 3200 * env(0.03)) * np.exp(-env(0.03) * 160)) * 0.6
+    bar, six = beat * 4, beat / 4
+    roots = [57, 57, 53, 55] if seed % 2 else [57, 53, 58, 56]  # A3 based, minor moves
+    figure = [0, 0, 3, 0, 7, 0, 3, 0, 0, 0, 3, 0, 8, 7, 3, 0]
     b, i = 0.0, 0
     while b < seconds:
         r = roots[i % 4]
-        tr.hit(b, pad(hz(r + 12), bar, 0.15), 0.05)
-        tr.hit(b, pad(hz(r + 15), bar, 0.15), 0.035)
+        for k, step in enumerate(figure):
+            tr.hit(b + k * six, saw(hz(r + step), six * 0.9), 0.16 if k % 4 == 0 else 0.11)
         for k in range(8):
-            tr.hit(b + k * beat / 2, bass(hz(r - 12), beat / 2 * 0.9, 6), 0.33 if k % 2 == 0 else 0.22)
-        for k in range(4):
-            tr.hit(b + k * beat, tick, 0.18 if k % 2 else 0.1)
-        if i % 2 == 0:
-            tr.hit(b, kick(1.3, 0.9), 0.55)
-            tr.hit(b, noise_hit(rng, 0.6, 7, hp=False), 0.06)
+            tr.hit(b + k * beat / 2, bass(hz(r - 24), beat / 2 * 0.9, 6), 0.22)
+        for k in (0, 2):
+            tr.hit(b + k * beat, kick(1.6, 0.5), 0.6)
+            tr.hit(b + k * beat, noise_hit(rng, 0.25, 18, hp=False), 0.12)
+        tr.hit(b + 3.5 * beat, noise_hit(rng, 0.12, 30), 0.1)
+        t = env(bar)
+        trem = np.sin(2 * np.pi * hz(r + 24) * t) * (0.6 + 0.4 * np.sin(2 * np.pi * 12 * t))
+        tr.hit(b, trem * np.minimum(1, t / 0.3) * np.minimum(1, (bar - t) / 0.3), 0.035)
+        if i % 4 == 3:
+            tr.hit(b + bar - 1.2, noise_hit(rng, 1.2, 0.1, hp=True) * np.linspace(0, 1, int(1.2 * 24000)) ** 3, 0.08)
         b, i = b + bar, i + 1
-    tr.out += rng.standard_normal(tr.n) * 0.002
     return tr.done(0.3, 1.2)
 
 

@@ -314,6 +314,6 @@ export const Alert = (props) => {
         fontSize: 30}}>{source}</span></div>}
     {mic && <Fx sfx={sfx} name="mic" at={0} vol={0.22} />}
     {mood === 'alert' && <Fx sfx={sfx} name="alarm" at={mic ? 12 : 0} vol={0.2} />}
-    {music && <Audio src={staticFile(music)} volume={(fr) => interpolate(fr, [0, 15, total - 20, total], [0.32, 0.16, 0.16, 0.3], clamp)} />}
+    {music && <Audio src={staticFile(music)} volume={(fr) => interpolate(fr, [0, 15, total - 20, total], [0.7, 0.55, 0.55, 0.7], clamp)} />}
   </AbsoluteFill>;
 };
