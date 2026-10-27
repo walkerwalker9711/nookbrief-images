@@ -25,6 +25,36 @@ BG = {"kr": ("Wide cinematic establishing shot of a quiet Korean hillside neighb
              "on it. Absolutely no text, letters, signs with writing, numbers or logos.")}
 
 
+# v2 (owner 10-27 "구데기, 요즘 채널 트렌드 확인"): the trending channels use one strong poster picture with the host
+# big on one side and a clean dark side for the title (ai방송국, 노후 복지번역기, 김소형채널H), not a busy scenery
+POSTER = {"kr": ("Cinematic YouTube channel banner artwork, wide 3:2, in Korean webtoon drama style (semi-realistic, clean fine "
+                 "line art, cinematic rim lighting). The young village chief from the reference picture, exactly the same face, "
+                 "hair, navy padded vest and light blue shirt, shown from the chest up on the RIGHT side of the picture (his face "
+                 "about 72% from the left edge and exactly at the vertical centre), turned three-quarters toward the left, calm "
+                 "and serious, holding the white megaphone low at his shoulder. Behind him a Korean residential street at night "
+                 "with soft out-of-focus red and blue police lights and a warm street lamp, light haze. The LEFT 55% of the picture "
+                 "is a clean dark navy-to-black gradient with only faint bokeh, empty, for a title. Strong contrast, premium "
+                 "movie-poster look. Absolutely no text, letters, numbers, signs with writing or logos.")}
+
+
+def poster(ch):
+    import os
+    key = {"Authorization": f"Bearer {os.environ['OPENAI_API_KEY'].strip()}"}
+    ref = ROOT / "senior" / ch / "character.png"
+    out = ROOT / "senior" / ch / "brand" / "banner_bg.png"
+    for model in ("gpt-image-1.5", "gpt-image-1"):
+        with open(ref, "rb") as f:
+            r = requests.post("https://api.openai.com/v1/images/edits", headers=key, timeout=400,
+                              files=[("image[]", (ref.name, f, "image/png"))],
+                              data={"model": model, "prompt": POSTER[ch], "size": "1536x1024", "quality": "high"})
+        if r.ok:
+            out.write_bytes(base64.b64decode(r.json()["data"][0]["b64_json"]))
+            print("poster", out, "with", model)
+            return
+        print(model, "->", r.status_code, r.text[:300])
+    sys.exit("no image model worked")
+
+
 def bg(ch):
     import os
     key = {"Authorization": f"Bearer {os.environ['OPENAI_API_KEY'].strip()}"}
@@ -66,4 +96,4 @@ def apply(ch):
 
 
 if __name__ == "__main__":
-    {"bg": bg, "apply": apply}[sys.argv[1]](sys.argv[2])
+    {"bg": bg, "poster": poster, "apply": apply}[sys.argv[1]](sys.argv[2])
