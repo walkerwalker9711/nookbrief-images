@@ -18,6 +18,7 @@ const base = path.dirname(path.resolve(propsPath));
 const copy = (file) => { if (file) fs.copyFileSync(path.join(base, file), path.join(pub, path.basename(file))); return file && path.basename(file); };
 props.scenes = props.scenes.map((s) => ({...s, img: copy(s.img), vo: copy(s.vo)}));
 props.music = copy(props.music);
+props.logo = copy(props.logo);
 props.sfx = Object.fromEntries(Object.entries(props.sfx || {}).map(([k, v]) => [k, copy(v)]));
 
 const serveUrl = await bundle({entryPoint: path.join(here, 'src/index.jsx'), publicDir: pub});

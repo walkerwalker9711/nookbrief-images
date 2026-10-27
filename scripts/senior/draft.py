@@ -83,12 +83,14 @@ PHONE = {
 
 SCHEMA = {
     "type": "object", "additionalProperties": False,
-    "required": ["pillar", "topic", "title", "mood", "scenes", "sources", "description", "tags", "ko_review", "fact_notes"],
+    "required": ["pillar", "topic", "title", "mood", "case_tag", "scenes", "sources", "description", "tags", "ko_review", "fact_notes"],
     "properties": {
         "pillar": {"type": "string"},
         "topic": {"type": "string"},
         "title": {"type": "string", "description": "YouTube title, under 60 characters, no clickbait caps"},
         "mood": {"type": "string", "enum": ["alert", "warm"], "description": "alert for scams and dangers, warm for the rest"},
+        "case_tag": {"type": "string", "description": "true-story videos only: '실제 사건 · 2026년 9월 · 경기 남양주' "
+                     "(English: 'TRUE CASE · Sept 2026 · Ohio'), from the report; else empty"},
         "scenes": {"type": "array", "minItems": 1, "maxItems": 10, "items": {
             "type": "object", "additionalProperties": False,
             "required": ["kind", "speaker", "line", "delivery", "caption", "hot", "image_prompt", "cast", "phone", "steps", "items", "cta"],
@@ -184,7 +186,8 @@ with no messages, an empty steps list, an empty items list and an empty cta.
 """
 
 LAYOUT_STORY = """=== Video layout: true-story narration (owner 10-27, replaces the 참교육 drama) ===
-One real scam case, told by the host as a calm, gripping storyteller over webtoon-style pictures. 7 to 9 scenes,
+One real scam case, told by the host as a calm, gripping storyteller over webtoon-style pictures. Fill "case_tag"
+with when and where it happened, as reported. 7 to 9 scenes,
 40 to 55 seconds of speech. speaker is host in every scene; there is no dialogue between characters.
 The case: one real victim case reported in the last 12 months by the police, a financial regulator or a major news
 outlet, with its source in "sources". Keep what was reported (age group, region, amount, how it unfolded); no names;
@@ -192,8 +195,16 @@ never invent details or quotes that were not reported. If the report quotes the 
 - hook (cast none): the loss or the moment it went wrong, in one or two short sentences with the real number
   ("지난달 경기도의 70대 여성이, 택배 문자 하나로 4천만 원을 잃었습니다."). caption: the case in 8 words or fewer.
 - phone (cast none): the actual text or call as reported, on the phone screen. line: the host reads or describes it.
+  For a call: app "call", sender = what the caller ID showed as reported, else a masked number like "02-●●●-●●●●"
+  (never a real number); messages = 1 to 3 short things the caller said, in the caller's own words (me false), and,
+  if a link was sent during or right after the call, that text with its fake look-alike link as the last message.
 - scene x3 to x4 (cast none, or host when he comments): how it unfolded, step by step, each scene one turn of the
   trick (the link, the app, the "safe account", the deadline). Tension builds; each line ends pulling into the next.
+  Cause and effect, every time (owner 10-27: "a call from the 주민센터, then suddenly he taps a link" made no
+  sense): before the victim does anything, the viewer must already know who asked him, how it reached him (call,
+  text, app) and the excuse they gave ("사건을 조회하라며, 통화 중에 문자로 링크를 보냈습니다"). Name the impersonated
+  side as it changed (주민센터 → 검찰 → 금감원). If the report skips a link in the chain, say only what is known
+  plainly rather than jump; never invent the missing step.
 - scene (the turning point): the one moment it could have been stopped, told as part of the story (what
   happened), not as advice. Advice belongs only in the steps scene. Every picture shows this case's people and places.
 - steps: 2 to 3 real moves (wrong ones ok false, right ones ok true, official numbers).
@@ -363,6 +374,10 @@ storyteller on a phone screen. Below is a finished script as JSON. Rewrite ONLY 
 "delivery" and "hot" so that:
 - it is natural spoken {c['lang']}: short sentences, plain words, never written, translated or AI-sounding;
 - the story pulls forward: each line leaves a small question the next scene answers; tension rises to the turning point;
+- cause and effect: read the lines in order as a viewer who knows nothing. Every action of the victim (taps a link,
+  installs an app, calls a number, moves money) must follow from what the scammer said or sent just before, with who,
+  how and the excuse; if a line jumps ("보내온 링크를 눌렀습니다" right after a call with no link), fix it using only the facts;
+- the tension is real: name the pressure the victim felt (the threat, the deadline, being told to tell no one), as reported;
 - facts stay exactly as reported (change nothing in "sources", "fact_notes", "phone", "steps", "kind", "speaker",
   "cast", "image_prompt"); add no detail that is not in the facts;
 - no jokes, catchphrases, lecturing or share requests; the outro is one quiet line that stays with the viewer;
@@ -425,7 +440,7 @@ def rewrite(script, prompt, name):
     for old, sc in zip(script["scenes"], new["scenes"]):
         for k in ("phone", "steps", "speaker", "cast", "image_prompt", "items"):
             sc[k] = old[k]
-    new["sources"], new["fact_notes"] = script["sources"], script["fact_notes"]
+    new["sources"], new["fact_notes"], new["case_tag"] = script["sources"], script["fact_notes"], script["case_tag"]
     print(name, "done")
     return new
 
@@ -634,7 +649,11 @@ def build_props(channel, script, images, work):
     audio = json.loads(subprocess.check_output(
         [sys.executable, str(ROOT / "video" / "senior_audio.py"), str(work), str(total / FPS + 1), script["mood"], str(seed)],
         text=True).strip().splitlines()[-1])
-    props = {"lang": "ko" if channel == "kr" else "en", "mood": script["mood"], "label": c["labels"][script["mood"]],
+    logo = SENIOR / channel / "character.png"
+    if logo.exists():
+        shutil.copy(logo, Path(work) / "logo.png")
+    props = {"lang": "ko" if channel == "kr" else "en", "logo": "logo.png" if logo.exists() else None,
+             "case": script.get("case_tag", "") if script.get("format") == "story" else "", "mood": script["mood"], "label": c["labels"][script["mood"]],
              "brand": c["name"], "host": c["host"], "mic": bool(scenes[0]["vo_at"]), "scenes": scenes, **audio,
              "source": f"{c['source']}: " + ", ".join(dict.fromkeys(s["name"] for s in script["sources"][:2]))}
     path = Path(work) / "props.json"

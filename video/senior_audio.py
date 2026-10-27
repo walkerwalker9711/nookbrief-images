@@ -90,7 +90,12 @@ def sfx():
     beat[:len(lub)] += lub
     beat[int(SR * 0.22):int(SR * 0.22) + len(lub)] += lub * 0.7
     heart = np.concatenate([beat, beat]) * 0.9
-    return {"heart": heart, "alarm": alarm, "stamp": stamp, "notify": notify, "whoosh": whoosh, "pop": pop, "buzz": buzz, "mic": mic}
+    # phone ringing: two short bursts of a 440+480 Hz ring
+    tr_ = env(0.4)
+    burst = (np.sin(2 * np.pi * 440 * tr_) + np.sin(2 * np.pi * 480 * tr_)) * 0.2 * np.minimum(1, tr_ / 0.01) * np.minimum(1, (tr_[-1] - tr_) / 0.02)
+    gap = np.zeros(int(SR * 0.2))
+    ring = np.concatenate([burst, gap, burst])
+    return {"ring": ring, "heart": heart, "alarm": alarm, "stamp": stamp, "notify": notify, "whoosh": whoosh, "pop": pop, "buzz": buzz, "mic": mic}
 
 
 def write(path, x):

@@ -18,7 +18,7 @@ const Fx = ({sfx, name, at, vol = 0.7}) => sfx && sfx[name] ? <Sequence from={Ma
 // ribbon or the titles; a blurred copy fills the space above. Gentle push-in, drift alternates per scene.
 const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0}) => {
   const f = useCurrentFrame();
-  const z = 1.06 - f * 0.0006;
+  const z = 1.1 - Math.min(f, 240) * 0.0004;
   const x = dir * f * 0.12, y = 0;
   return <AbsoluteFill style={{overflow: 'hidden', background: INK}}>
     <Img src={staticFile(img)} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover',
@@ -33,24 +33,26 @@ const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0}) => {
   </AbsoluteFill>;
 };
 
-// Spoken captions: groups of up to three words, the word being said turns yellow, flagged words get a red box
+// Spoken captions: a whole sentence at a time (owner 10-27: 3-word chunks felt choppy); the word being said
+// turns yellow, flagged words red
 const groups = (words) => {
   const out = []; let cur = [];
-  words.forEach((w) => { cur.push(w); if (/[.,?!:]$/.test(w[0]) || cur.length === 3) { out.push(cur); cur = []; } });
+  words.forEach((w) => { cur.push(w); if (/[.?!]$/.test(w[0]) || cur.length >= 9) { out.push(cur); cur = []; } });
   if (cur.length) out.push(cur);
   return out;
 };
 const Captions = ({words, hot = [], y = 1330}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
-  const g = groups(words || []).find((c) => f >= c[0][1] - 1 && f < c[c.length - 1][2] + 3);
+  const all = groups(words || []);
+  const g = all.find((c, n) => f >= c[0][1] - 1 && f < (all[n + 1] ? all[n + 1][0][1] - 1 : c[c.length - 1][2] + 12));
   if (!g) return null;
-  const k = pop(f, g[0][1] - 1, fps, 12, 280);
+  const k = interpolate(f, [g[0][1] - 1, g[0][1] + 4], [0, 1], clamp);
   const isHot = (w) => hot.some((h) => h && w.replace(/[.,!?:'"]/g, '').includes(h));
-  return <div style={{position: 'absolute', top: y, left: 40, right: 40, textAlign: 'center', opacity: Math.min(1, 0.4 + k)}}>
+  return <div style={{position: 'absolute', top: y, left: 50, right: 50, textAlign: 'center', opacity: k, wordBreak: 'keep-all'}}>
     {g.map((w, n) => {
       const on = f >= w[1] && f < w[2] + 2;
       const h = isHot(w[0]);
-      return <span key={n} style={{display: 'inline-block', margin: '4px 9px', fontFamily: font, fontWeight: 800, fontSize: 78,
+      return <span key={n} style={{display: 'inline-block', margin: '4px 8px', fontFamily: font, fontWeight: 800, fontSize: 68,
         lineHeight: 1.2, color: h ? '#FF5A4E' : on ? '#FFE27A' : WHITE, ...stroke(10)}}>
         {w[0].replace(/[.,]+$/, '')}</span>;
     })}
@@ -129,6 +131,106 @@ const ListCard = ({title, items, img}) => {
   </AbsoluteFill>;
 };
 
+// ---------- a real incoming call (owner 10-27: the old screen was two coloured dots and no caller) ----------
+const ICON = {
+  call: 'M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z',
+  person: 'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z',
+  mic: 'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+  speaker: 'M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z',
+  record: 'M12 7a5 5 0 100 10 5 5 0 000-10zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z',
+  video: 'M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z',
+  bt: 'M17.71 7.71L12 2h-1v7.59L6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 11 14.41V22h1l5.71-5.71-4.3-4.29 4.3-4.29zM13 5.83l1.88 1.88L13 9.59V5.83zm1.88 10.46L13 18.17v-3.76l1.88 1.88z',
+  pad: 'M12 19c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 1c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12-8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-6 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z',
+};
+const Ico = ({d, size = 48, color = WHITE, rot = 0}) => <svg width={size} height={size} viewBox="0 0 24 24"
+  style={{transform: `rotate(${rot}deg)`, display: 'block'}}><path d={d} fill={color} /></svg>;
+
+// Rings for ~1.2 s, the green button is swiped, then the in-call screen: caller, running timer, what the caller
+// says as live transcript bubbles, a text with the link dropping in mid-call, and the real button grid.
+const CallScreen = ({phone, ko, stampAt}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const ans = 36;
+  const raw = (phone.sender || '').trim();
+  const isNum = raw && !/[\p{L}]/u.test(raw.replace(/국외발신|발신/g, ''));
+  const name = raw && !isNum ? raw : (ko ? '저장되지 않은 번호' : 'Unknown caller');
+  const num = isNum ? raw : (ko ? '010-●●●●-●●●●' : '(●●●) ●●●-●●●●');
+  const msgs = phone.messages || [];
+  const hasLink = (t) => new RegExp(LINK.source, 'i').test(t);
+  const said = msgs.filter((m) => !m.me && !hasLink(m.text));
+  const sms = msgs.find((m) => hasLink(m.text));
+  const sec = Math.max(0, Math.floor((f - ans) / fps));
+  const on = interpolate(f, [ans, ans + 8], [0, 1], clamp);
+  const smsAt = ans + 22 + said.length * 18;
+  const smsK = pop(f, smsAt, fps, 14, 180);
+  const lie = f >= stampAt;
+  if (f < ans) {
+    const ring = (f % 24) / 24;
+    const swipe = interpolate(f, [ans - 10, ans], [0, 1], clamp);
+    return <div style={{textAlign: 'center', color: WHITE, paddingTop: 70}}>
+      <div style={{fontSize: 34, opacity: .7}}>{ko ? '수신 전화' : 'Incoming call'}</div>
+      <div style={{width: 190, height: 190, borderRadius: 95, background: '#4A515C', margin: '40px auto 0',
+        display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Ico d={ICON.person} size={130} color="#C9CED6" /></div>
+      <div style={{fontSize: 62, fontWeight: 900, marginTop: 34, wordBreak: 'keep-all', padding: '0 40px'}}>{name}</div>
+      <div style={{fontSize: 38, opacity: .75, marginTop: 10}}>{num}</div>
+      <div style={{position: 'absolute', left: 0, right: 0, bottom: 150, display: 'flex', justifyContent: 'space-around'}}>
+        <div style={{textAlign: 'center'}}>
+          <div style={{width: 150, height: 150, borderRadius: 75, background: RED, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <Ico d={ICON.call} size={74} rot={135} /></div>
+          <div style={{fontSize: 32, marginTop: 14, opacity: .8}}>{ko ? '거절' : 'Decline'}</div></div>
+        <div style={{textAlign: 'center', position: 'relative', transform: `translateX(${-swipe * 120}px)`}}>
+          <div style={{position: 'absolute', left: 75 - 75 * (1 + ring), top: 75 - 75 * (1 + ring), width: 150 * (1 + ring), height: 150 * (1 + ring),
+            borderRadius: '50%', border: `4px solid ${GREEN}`, opacity: 1 - ring}} />
+          <div style={{width: 150, height: 150, borderRadius: 75, background: GREEN, display: 'flex', alignItems: 'center', justifyContent: 'center',
+            transform: `rotate(${Math.sin(f * 1.2) * 12}deg)`}}><Ico d={ICON.call} size={74} /></div>
+          <div style={{fontSize: 32, marginTop: 14, opacity: .8}}>{ko ? '받기' : 'Accept'}</div></div>
+      </div>
+    </div>;
+  }
+  const btns = ko ? [['record', '녹음'], ['video', '영상통화'], ['bt', '블루투스'], ['speaker', '스피커'], ['mic', '음소거'], ['pad', '키패드']]
+    : [['record', 'Record'], ['video', 'Video'], ['bt', 'Bluetooth'], ['speaker', 'Speaker'], ['mic', 'Mute'], ['pad', 'Keypad']];
+  const push = sms && f >= smsAt ? smsK * 196 : 0;  // the text banner drops in at the top and pushes the call down
+  return <div style={{color: WHITE, opacity: on, height: 'calc(100% - 70px)', position: 'relative'}}>
+    <div style={{transform: `translateY(${push}px)`}}>
+    <div style={{display: 'flex', alignItems: 'center', gap: 26, padding: '26px 48px 0'}}>
+      <div style={{width: 112, height: 112, borderRadius: 56, background: '#4A515C', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        flex: '0 0 auto'}}><Ico d={ICON.person} size={78} color="#C9CED6" /></div>
+      <div style={{minWidth: 0}}>
+        <div style={{fontSize: 50, fontWeight: 900, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{name}</div>
+        <div style={{fontSize: 34, color: '#7BE0A7', marginTop: 4}}>{lie && <span style={{padding: '2px 12px', marginRight: 14, background: RED,
+          color: WHITE, fontWeight: 900}}>{ko ? '사칭 전화' : 'FAKE CALL'}</span>}{ko ? '통화 중' : 'On call'} {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')}</div>
+      </div>
+    </div>
+    <div style={{padding: '30px 40px 0', display: 'flex', flexDirection: 'column', gap: 16}}>
+      {said.slice(sms ? -2 : -3).map((m, i) => {
+        const at = ans + 10 + i * 18;
+        if (f < at) return null;
+        const k = pop(f, at, fps, 13, 200);
+        return <div key={i} style={{alignSelf: 'flex-start', maxWidth: '88%', transform: `scale(${k})`, transformOrigin: 'left top'}}>
+          <div style={{fontSize: 26, color: '#9AA3AF', margin: '0 0 6px 8px'}}>{ko ? '상대방' : 'Caller'}</div>
+          <div style={{padding: '18px 26px', borderRadius: 30, background: '#343A44', fontSize: 44, lineHeight: 1.3, wordBreak: 'keep-all',
+            outline: lie ? `5px solid ${RED}` : 'none'}}>“{m.text}”</div>
+        </div>;
+      })}
+    </div>
+    </div>
+    <div style={{position: 'absolute', left: 50, right: 50, bottom: 200, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', rowGap: 26}}>
+      {btns.map(([k, t]) => <div key={k} style={{textAlign: 'center'}}>
+        <div style={{width: 100, height: 100, borderRadius: 50, background: '#2E333B', margin: '0 auto', display: 'flex', alignItems: 'center',
+          justifyContent: 'center'}}><Ico d={ICON[k]} size={50} color={k === 'record' ? '#FF6B6B' : WHITE} /></div>
+        <div style={{fontSize: 28, marginTop: 8, opacity: .8}}>{t}</div></div>)}
+    </div>
+    <div style={{position: 'absolute', left: 0, right: 0, bottom: 34, display: 'flex', justifyContent: 'center'}}>
+      <div style={{width: 140, height: 140, borderRadius: 70, background: RED, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <Ico d={ICON.call} size={70} rot={135} /></div>
+    </div>
+    {sms && f >= smsAt && <div style={{position: 'absolute', left: 24, right: 24, top: 12, padding: '20px 26px', borderRadius: 30, background: 'rgba(250,250,252,.97)',
+      color: INK, boxShadow: '0 12px 30px rgba(0,0,0,.45)', transform: `translateY(${(1 - smsK) * -260}px)`}}>
+      <div style={{fontSize: 28, color: '#6B7280', fontWeight: 700}}>{ko ? '메시지 · 지금' : 'Messages · now'}</div>
+      <div style={{fontSize: 40, lineHeight: 1.3, marginTop: 6, wordBreak: 'keep-all'}}>{withLinks(sms.text, lie)}</div>
+    </div>}
+  </div>;
+};
+
 const Phone = ({phone, lang, start, stampAt, stampText}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   const up = pop(f, start, fps, 14, 120);
@@ -149,15 +251,7 @@ const Phone = ({phone, lang, start, stampAt, stampText}) => {
         <span style={{width: 150, height: 36, borderRadius: 20, background: INK}} />
         <span>▂▄▆ ▮</span>
       </div>
-      {phone.app === 'settings' ? <Settings phone={phone} start={start} tapAt={stampAt} lang={lang} /> : call ? <div style={{textAlign: 'center', color: WHITE, paddingTop: 140}}>
-        <div style={{fontSize: 36, opacity: .75}}>{ko ? '수신 전화' : 'incoming call'}</div>
-        <div style={{fontSize: 70, fontWeight: 900, marginTop: 20}}>{phone.sender}</div>
-        <div style={{fontSize: 34, opacity: .75, marginTop: 12}}>{phone.tag || ''}</div>
-        <div style={{display: 'flex', justifyContent: 'space-around', marginTop: 520}}>
-          <div style={{width: 150, height: 150, borderRadius: 75, background: RED}} />
-          <div style={{width: 150, height: 150, borderRadius: 75, background: GREEN, transform: `scale(${1 + 0.06 * Math.sin(f * 0.5)})`}} />
-        </div>
-      </div> : <>
+      {phone.app === 'settings' ? <Settings phone={phone} start={start} tapAt={stampAt} lang={lang} /> : call ? <CallScreen phone={phone} ko={ko} stampAt={stampAt} /> : <>
         {/* thread header */}
         <div style={{textAlign: 'center', padding: '8px 0 18px', borderBottom: '1px solid #D1D1D6', background: '#F9F9FB'}}>
           <div style={{width: 92, height: 92, borderRadius: 46, background: '#A7AEB8', margin: '0 auto', color: WHITE,
@@ -179,7 +273,7 @@ const Phone = ({phone, lang, start, stampAt, stampText}) => {
         </div>
       </>}
     </div>
-    {stamped && stampText && <div style={{position: 'absolute', left: 0, right: 0, top: 300, textAlign: 'center',
+    {stamped && stampText && !call && <div style={{position: 'absolute', left: 0, right: 0, top: 300, textAlign: 'center',
       opacity: Math.min(1, sk * 1.5)}}>
       <span style={{display: 'inline-block', padding: '10px 26px', background: RED, color: WHITE, fontFamily: font,
         fontWeight: 900, fontSize: 56, letterSpacing: 2}}>{stampText}</span>
@@ -261,13 +355,33 @@ const Scene = ({s, i, props}) => {
     {!['outro', 'talk', 'list'].includes(s.kind) && !(s.kind === 'hook' && s.speaker === 'scammer') && <Headline text={s.caption} big={s.kind === 'hook'} danger={danger && (s.kind === 'hook' || s.kind === 'phone' || s.kind === 'twist')} />}
     {s.kind === 'hook' && s.speaker === 'scammer' && <div style={{position: 'absolute', top: 110, left: 0, right: 0}}><Headline text={s.caption} big danger={danger} /></div>}
     {!['steps', 'list'].includes(s.kind) && <Captions words={s.words} hot={s.hot} y={s.kind === 'phone' ? 1520 : 1330} />}
-    {s.kind === 'steps' && <Captions words={s.words} hot={s.hot} y={1560} />}
+    {s.kind === 'steps' && <Captions words={s.words} hot={s.hot} y={1500} />}
     {i > 0 && <Fx sfx={sfx} name="whoosh" at={0} vol={0.18} />}
-    {danger && s.speaker === 'scammer' && ['talk', 'hook'].includes(s.kind) && <Fx sfx={sfx} name="heart" at={4} vol={0.5} />}
+    {danger && (s.speaker === 'scammer' || props.case) && ['talk', 'hook', 'scene', 'phone'].includes(s.kind) && <Fx sfx={sfx} name="heart" at={4} vol={props.case ? 0.35 : 0.5} />}
+    {s.kind === 'phone' && s.phone && s.phone.app === 'call' && <Fx sfx={sfx} name="ring" at={2} vol={0.35} />}
+    {s.kind === 'phone' && s.phone && s.phone.app === 'call' && (s.phone.messages || []).some((m) => /https?:|www\.|\.(com|kr|net|ly|top|xyz)\b/i.test(m.text)) &&
+      <Fx sfx={sfx} name="notify" at={58 + (s.phone.messages || []).length * 18} vol={0.3} />}
     {s.vo && <Sequence from={s.vo_at || 0}><Audio src={staticFile(s.vo)} /></Sequence>}
     <AbsoluteFill style={{background: '#000', opacity: i > 0 ? flash : 0, pointerEvents: 'none'}} />
   </AbsoluteFill>;
 };
+
+// Documentary touch for true stories: a blinking red dot with "실제 사건 · when · where", top left, whole video
+const CaseTag = ({text}) => {
+  const f = useCurrentFrame();
+  return <div style={{position: 'absolute', top: 64, left: 40, display: 'flex', alignItems: 'center', gap: 12,
+    padding: '8px 18px', background: 'rgba(8,10,14,.7)', fontFamily: font, fontWeight: 800, fontSize: 34, color: WHITE}}>
+    <span style={{width: 18, height: 18, borderRadius: 9, background: RED, opacity: Math.floor(f / 18) % 2 ? 0.25 : 1}} />{text}
+  </div>;
+};
+
+// Channel mark at the bottom for the whole video: round character badge and the name (owner 10-27)
+const Brand = ({name, logo}) => <div style={{position: 'absolute', bottom: 92, left: 0, right: 0, display: 'flex',
+  justifyContent: 'center', alignItems: 'center', gap: 14}}>
+  {logo && <Img src={staticFile(logo)} style={{width: 78, height: 78, borderRadius: 39, objectFit: 'cover',
+    objectPosition: '50% 8%', border: `4px solid ${YEL}`, background: '#ddd'}} />}
+  <span style={{fontFamily: font, fontWeight: 900, fontSize: 46, color: WHITE, ...stroke(8)}}>{name}</span>
+</div>;
 
 export const Alert = (props) => {
   const {scenes = [], music, sfx, mood, source, mic} = props;
@@ -280,7 +394,9 @@ export const Alert = (props) => {
       const from = at; at += s.frames || 60;
       return <Sequence key={i} from={from} durationInFrames={s.frames || 60}><Scene s={{...s, callSec: from / 30, onCall: scenes.some((x) => x.phone && x.phone.app === 'call')}} i={i} props={props} /></Sequence>;
     })}
-    {source && <div style={{position: 'absolute', bottom: 60, left: 0, right: 0, textAlign: 'center'}}>
+    {props.case && <CaseTag text={props.case} />}
+    {props.brand && <Brand name={props.brand} logo={props.logo} />}
+    {source && <div style={{position: 'absolute', bottom: 40, left: 0, right: 0, textAlign: 'center'}}>
       <span style={{padding: '6px 18px', borderRadius: 10, background: 'rgba(0,0,0,.55)', color: WHITE, fontFamily: font,
         fontSize: 30}}>{source}</span></div>}
     <AbsoluteFill style={{background: '#000', opacity: interpolate(f, [total - 36, total - 2], [0, 1], clamp), pointerEvents: 'none'}} />
