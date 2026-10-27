@@ -154,6 +154,9 @@ The host takes a real scam call or text going around now and turns the tables on
   Bad: "Your package is on hold." Good: "Hi, this is USPS. Your package is on hold, the address didn't match."
   caption: what is happening in 6 words, e.g. "검찰 사칭범이 이장님한테 걸렸다".
 - phone (speaker scammer): the real-looking text or the incoming call screen ("call" with the number shown).
+  Pick ONE channel and keep it: a scam that comes as a call uses app "call" and the hook is the caller's voice;
+  a scam that starts as a text uses app "sms", the hook line reads out that text, and the talk scenes are the
+  host calling the number back. Never a spoken "this is the delivery driver" hook followed by a text screen.
 - talk scenes, alternating speaker host / scammer, one or two short sentences each. The scammer pushes with the
   real tricks (urgency, fake authority, secrecy, a link or an app, gift cards or a safe account). The host plays
   along, asks innocent questions that expose the lie. One of the host's early lines must plant the clue the twist
