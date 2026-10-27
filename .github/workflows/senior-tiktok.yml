@@ -29,7 +29,7 @@ jobs:
         run: |
           git config user.name "nookbrief-bot"
           git config user.email "nookbrief-bot@users.noreply.github.com"
-          git add senior/tiktok/login_link.txt senior/tiktok/token.enc senior/drafts/*/tiktok_result.json 2>/dev/null || true
+          for f in senior/tiktok/login_link.txt senior/tiktok/token.enc senior/drafts/*/tiktok_result.json; do [ -e "$f" ] && git add "$f"; done; true
           git diff --cached --quiet && exit 0
           git commit -m "senior: tiktok result [skip ci]"
           for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i * 5)); done; exit 1

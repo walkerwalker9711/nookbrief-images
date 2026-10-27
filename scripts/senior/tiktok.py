@@ -27,14 +27,14 @@ SCOPES = "user.info.basic,video.upload"
 
 
 def env(name):
-    v = os.environ.get(name)
+    v = (os.environ.get(name) or "").strip()  # pasted secrets can carry a stray newline
     if not v:
         sys.exit(f"{name} is not set")
     return v
 
 
 def crypt(data, decrypt=False):
-    args = ["openssl", "enc", "-aes-256-cbc", "-pbkdf2", "-a", "-A", "-pass", "env:TIKTOK_CLIENT_SECRET"]
+    args = ["openssl", "enc", "-aes-256-cbc", "-pbkdf2", "-a", "-A", "-pass", "pass:" + env("TIKTOK_CLIENT_SECRET")]
     return subprocess.run(args + (["-d"] if decrypt else []), input=data, capture_output=True, check=True).stdout
 
 
