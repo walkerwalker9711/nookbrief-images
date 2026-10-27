@@ -195,20 +195,36 @@ def banner2(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg", face=(0.74, 0.19
     for x in range(W):
         sd.line([(x, 0), (x, H)], fill=int(max(0, min(200, 230 - x * 0.19))))
     img = Image.composite(Image.new("RGB", (W, H), (4, 7, 16)), img, shade)
-    d = ImageDraw.Draw(img)
-    x = sx0 + 10
-    tag, ft = "실제 사건 파일", font(40)
+    # desktop shows the full width but only ~330px of height around the middle: every line sits in y 428..716
+    x, y0 = sx0 + 10, 428
+    d = ImageDraw.Draw(img, "RGBA")
+    # tag: glowing red pill with a "recording" dot, short and loud
+    ft = ImageFont.truetype(str(DISPLAY), 34)
+    tag = "REAL CASE  실화 사건 파일"
     tw = text_w(d, tag, ft)
-    d.rectangle((x, sy0 + 2, x + tw + 40, sy0 + 58), fill=RED)
-    d.text((x + 20, sy0 + 3), tag, font=ft, fill=WHITE)
-    title = ImageFont.truetype(str(DISPLAY), 168)
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(glow).rounded_rectangle((x - 6, y0 - 6, x + tw + 82, y0 + 54), 30, fill=(255, 40, 60, 150))
+    img.paste(glow.filter(ImageFilter.GaussianBlur(14)), (0, 0), glow.filter(ImageFilter.GaussianBlur(14)))
+    d = ImageDraw.Draw(img, "RGBA")
+    d.rounded_rectangle((x, y0, x + tw + 76, y0 + 48), 24, fill=(232, 28, 48))
+    d.ellipse((x + 20, y0 + 16, x + 36, y0 + 32), fill=WHITE)
+    d.text((x + 50, y0 + 5), tag, font=ft, fill=WHITE)
+    title = ImageFont.truetype(str(DISPLAY), 140)
+    ty = y0 + 50
     shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ImageDraw.Draw(shadow).text((x + 6, sy0 + 62 + 8), "한국이장님", font=title, fill=(0, 0, 0, 200))
+    ImageDraw.Draw(shadow).text((x + 6, ty + 8), "한국이장님", font=title, fill=(0, 0, 0, 210))
     img.paste(shadow.filter(ImageFilter.GaussianBlur(8)), (0, 0), shadow.filter(ImageFilter.GaussianBlur(8)))
-    d = ImageDraw.Draw(img)
-    d.text((x, sy0 + 62), "한국이장님", font=title, fill=YEL)
-    d.text((x + 4, sy0 + 238), "보이스피싱, 당하기 전에 먼저 알려드립니다", font=font(44), fill=WHITE)
-    d.text((x + 4, sy0 + 296), "실화 사연  |  받을 돈  |  폰 꿀팁", font=font(32), fill=(176, 186, 204))
+    d = ImageDraw.Draw(img, "RGBA")
+    d.text((x, ty), "한국이장님", font=title, fill=YEL)
+    d.text((x + 4, ty + 146), "보이스피싱, 당하기 전에 먼저 알려드립니다", font=font(38), fill=WHITE)
+    # hashtag chips instead of the old "a | b | c" line
+    cx, cy, fc = x + 4, ty + 204, font(25)
+    for chip in ("#실화사연", "#사기수법", "#받을돈", "#폰꿀팁"):
+        cw = text_w(d, chip, fc)
+        d.rounded_rectangle((cx, cy, cx + cw + 32, cy + 38), 19, fill=(255, 255, 255, 26), outline=(255, 212, 0, 200), width=2)
+        d.text((cx + 16, cy + 2), chip, font=fc, fill=(255, 236, 160))
+        cx += cw + 44
+    img = img.convert("RGB")
     img.save(out, quality=94)
     print("banner", out, img.size)
 
