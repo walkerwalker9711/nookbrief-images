@@ -1,6 +1,6 @@
 name: senior-channel
 # Channel art for the senior channels. Until this file is on main, a push that changes senior/channel/request runs it:
-# one line, "kr video <id>" (study a Short the owner points at), "kr research" (fetch banners of the channels trending now), "kr bg" (make the banner background) or "kr apply" (upload the banner and set the channel description).
+# one line, "kr video <id>" (study a Short the owner points at), "kr fetch <url> ..." (save news article text), "kr research" (fetch banners of the channels trending now), "kr bg" (make the banner background) or "kr apply" (upload the banner and set the channel description).
 on:
   push:
     branches: [claude/project-thread-9sna6x]
@@ -28,6 +28,7 @@ jobs:
           grep -v '^#' senior/channel/request | grep -v '^\s*$' | while read ch step; do
             if [ "$step" = research ]; then python scripts/senior/banner_research.py
             elif [ "${step%% *}" = video ]; then python scripts/senior/video_study.py "${step#video }"
+            elif [ "${step%% *}" = fetch ]; then python scripts/senior/fetch_article.py ${step#fetch }
             else python scripts/senior/channel_art.py "$step" "$ch"; fi
           done
       - name: Save
