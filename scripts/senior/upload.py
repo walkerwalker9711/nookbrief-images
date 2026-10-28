@@ -8,6 +8,8 @@ running it again only updates the title, description and tags (and retries the t
 """
 import json
 import os
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -18,6 +20,24 @@ from common import YT, google_token  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 TOKENS = {"kr": "KR_YT_REFRESH_TOKEN", "us": "US_YT_REFRESH_TOKEN"}
+
+
+def with_cover(video, thumb):
+    """Shorts shelves show a frame of the video, not the custom thumbnail (owner 10-28), and the app's thumbnail
+    picker only offers frames. So the thumbnail goes in as the first 0.1 s; the owner picks the first frame."""
+    if not thumb.exists() or not shutil.which("ffmpeg"):
+        return video
+    out = video.with_name("video_cover.mp4")
+    cmd = ["ffmpeg", "-v", "error", "-y", "-loop", "1", "-t", "0.1", "-framerate", "30", "-i", str(thumb), "-i", str(video),
+           "-f", "lavfi", "-t", "0.1", "-i", "anullsrc=r=48000:cl=stereo", "-filter_complex",
+           "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30,format=yuv420p[c];"
+           "[1:v]scale=1080:1920,setsar=1,fps=30,format=yuv420p[m];[1:a]aresample=48000[ma];"
+           "[c][2:a][m][ma]concat=n=2:v=1:a=1[v][a]", "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "slow",
+           "-crf", "24", "-maxrate", "3500k", "-bufsize", "7000k", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", str(out)]
+    if subprocess.run(cmd).returncode != 0:
+        print("cover frame not added; uploading the video as it is")
+        return video
+    return out
 
 
 def main(folder):
@@ -50,7 +70,7 @@ def main(folder):
         "status": {"privacyStatus": meta.get("privacy", "public"), "selfDeclaredMadeForKids": False,
                    "containsSyntheticMedia": bool(meta.get("made_with_ai", True))},
     }
-    video = d / meta.get("video", "video.mp4")
+    video = with_cover(d / meta.get("video", "video.mp4"), d / meta.get("thumbnail", "thumb.jpg"))
     r = requests.post(f"{YT}/upload/youtube/v3/videos", params={"uploadType": "resumable", "part": "snippet,status"},
                       headers={"Authorization": f"Bearer {tok}", "X-Upload-Content-Type": "video/mp4",
                                "X-Upload-Content-Length": str(video.stat().st_size)}, json=body, timeout=60)
