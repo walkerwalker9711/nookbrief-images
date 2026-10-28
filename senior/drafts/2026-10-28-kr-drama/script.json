@@ -237,11 +237,11 @@
     {
       "kind": "talk",
       "speaker": "scammer",
-      "line": "검정색 비닐봉투입니다. 이거 담아서, 테이프로 다섯 번, 여섯 번 감으시라고요.",
+      "line": "검정색 비닐봉투에 테이프로 다여섯 번 감으시고, 우편함에 놓으시면 됩니다.",
       "delivery": "[cold, commanding]",
       "caption": "",
       "hot": [
-        "테이프로"
+        "우편함에"
       ],
       "image_prompt": "Korean webtoon drama, low-angle close-up of 사기범 in a dim blue-lit room, phone pressed to his ear, holding a roll of packing tape, face half in shadow",
       "cast": "사기범",
@@ -259,11 +259,11 @@
     {
       "kind": "talk",
       "speaker": "host",
-      "line": "이거 감아서 어쩌라고…",
+      "line": "이걸 준비해서 뭐 하려고…",
       "delivery": "[whispering, under her breath]",
       "caption": "",
       "hot": [
-        "어쩌라고"
+        "뭐"
       ],
       "image_prompt": "Korean 2D flat webtoon drama, extreme close-up of 할머니 holding a black plastic bag beside packing tape, tense apartment interior, vertical composition, central subject, lower third empty, no text, numbers or logos.",
       "cast": "할머니",
@@ -281,10 +281,12 @@
     {
       "kind": "talk",
       "speaker": "host",
-      "line": "예, 알았어.",
+      "line": "예, 알았어. 우편함에 놓으면 되지?",
       "delivery": "[calm, playing along]",
       "caption": "",
-      "hot": [],
+      "hot": [
+        "우편함에"
+      ],
       "image_prompt": "Korean 2D flat webtoon drama, overhead detail shot of 할머니 holding the taped black bag with a phone near her ear while 경찰관 records the exchange, tense cooperation, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "할머니,경찰관",
       "phone": {
@@ -299,73 +301,9 @@
       "role": "할머니"
     },
     {
-      "kind": "talk",
-      "speaker": "scammer",
-      "line": "새마을금고에서 체포된 남자 직원이, 어머니한테 나쁜 돈을 드렸다고 다 사실대로 얘기했어요.",
-      "delivery": "[low, menacing]",
-      "caption": "",
-      "hot": [
-        "나쁜"
-      ],
-      "image_prompt": "Korean 2D flat webtoon drama, medium close-up of 사기범 speaking into a phone in a dim room, face half in shadow, blank call interface inset with icon shapes only, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "사기범",
-      "phone": {
-        "app": "none",
-        "sender": "",
-        "time": "",
-        "messages": []
-      },
-      "steps": [],
-      "items": [],
-      "cta": "",
-      "role": "사기범"
-    },
-    {
-      "kind": "talk",
-      "speaker": "host",
-      "line": "다 감았어요.",
-      "delivery": "[flat, steady]",
-      "caption": "",
-      "hot": [],
-      "image_prompt": "Korean webtoon drama, close-up of 할머니's hands holding a black plastic bag wrapped in packing tape, phone on speaker on the table, 경찰관 recording with a phone in the background",
-      "cast": "할머니,경찰관",
-      "phone": {
-        "app": "none",
-        "sender": "",
-        "time": "",
-        "messages": []
-      },
-      "steps": [],
-      "items": [],
-      "cta": "",
-      "role": "할머니"
-    },
-    {
-      "kind": "talk",
-      "speaker": "scammer",
-      "line": "아파트 맞은편 CCTV로 지문 인식이 연결돼 있어요. 우편함에 조용히 내려가서, 십 분에서 십오 분만 넣어 두세요.",
-      "delivery": "[smooth, then urgent]",
-      "caption": "",
-      "hot": [
-        "우편함에"
-      ],
-      "image_prompt": "Korean webtoon drama, extreme close-up of 사기범's eyes and mouth near a phone in a dark room, cold smirk, blue monitor glow",
-      "cast": "사기범",
-      "phone": {
-        "app": "none",
-        "sender": "",
-        "time": "",
-        "messages": []
-      },
-      "steps": [],
-      "items": [],
-      "cta": "",
-      "role": "사기범"
-    },
-    {
       "kind": "scene",
       "speaker": "host",
-      "line": "말도 안 되는 거짓말이었습니다. 할머니는 형사들과 함께 아파트 현관으로 내려가, 우편함에 봉투를 넣었습니다.",
+      "line": "할머니는 형사들과 함께 아파트 현관으로 내려가, 우편함에 봉투를 넣었습니다.",
       "delivery": "[measured]",
       "caption": "우편함에 넣은 봉투",
       "hot": [
@@ -383,6 +321,28 @@
       "items": [],
       "cta": "",
       "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "테이프로 감아서 우편함에 놨어요.",
+      "delivery": "[flat, steady]",
+      "caption": "",
+      "hot": [
+        "놨어요"
+      ],
+      "image_prompt": "Korean webtoon drama, close-up of 할머니's hands holding a black plastic bag wrapped in packing tape, phone on speaker on the table, 경찰관 recording with a phone in the background",
+      "cast": "할머니,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할머니"
     },
     {
       "kind": "talk",
@@ -553,7 +513,7 @@
     "우편함사기"
   ],
   "ko_review": "천삼백만 원을 검은 봉투에 담아, 테이프로 감으라는 전화였습니다.\n\n사기범: 검정색 비닐봉투입니다. 이거 담아서 테이프로 다섯 번, 여섯 번 감으시라고요.\n\n앞서 이 남자는 공무원이라고 했습니다. 명의 도용 사건에 얽혔다며 통장 돈을 찾으라고 했고, 어르신은 돈을 찾았습니다.\n하지만 돈을 찾아 돌아가는 길에 뭔가 이상했습니다. 그래서 어르신은 집 대신 지구대로 갔습니다.\n\n할머니: 전화 받고 돈을 찾았는데… 좀 이상해서요.\n\n경찰이 확인해 보니 보이스피싱이었습니다. 이에 어르신은 경찰과 함께 수거책을 잡기 위해, 속는 척 전화를 받았습니다.\n\n할머니: 예, 알았어.\n사기범: 맞은편 CCTV로 지문 인식이 연결돼 있어요. 우편함에 십 분에서 십오 분만 넣으세요.\n할머니: 다 감았어요.\n\n물론 지문을 확인한다는 말은 거짓말이었습니다. 하지만 어르신은 범인을 잡기 위해 경찰과 내려가, 우편함에 봉투를 넣었습니다.\n\n경찰관: 저희가 저쪽에 있을게요.\n\n잠시 후 수거책이 봉투를 꺼냈습니다. 뒤에는 형사가 있었습니다.\n그 자리에서 수거책이 현행범으로 붙잡혔고, 어르신의 천삼백만 원도 지킬 수 있었습니다.\n\n전화로 현금을 요구하면 끊으세요. 돈은 건네지 말고, 일일이에 신고하세요.\n그날 어르신은 집 대신 지구대로 가셨습니다.",
-  "fact_notes": "근거: 뉴시스 2026-09-23 기사(경찰청 유튜브 영상 인용) 전문과 정책브리핑 경찰청 영상 소개글.\n- 보도 그대로: 공무원 사칭, '명의 도용 사건에 연쇄적으로 얽혀 계좌 속 돈을 인출해야 한다', 70대 여성, 1,300만 원 인출, 귀가 중 수상함→인근 지구대 도움 요청, 경찰과 검거 작전, 경찰관이 옆에서 녹화.\n- 대사 원문 그대로(뉴시스): 11 '검정색 비닐봉투입니다, 이거 담아서 테이프로 다섯 번, 여섯 번 감으시라고요' / 13 '예, 알았어' / 15 '다 감았어요' / 14 '새마을금고에서 체포된 남자 직원이 어머니한테 정확히 나쁜 돈을 드렸다고 다 사실대로 얘기했다' / 16 'CCTV 카메라로 불법사 지문 인식이 연결돼 있으니 우편함에 조용히 내려가셔서 10분에서 15분 동안만 넣으라' / 18 '저희가 저쪽에 있을게요'.\n- 12 '이거 감아서 어쩌라고'는 경찰청 영상 소개글 첫 줄.\n- 보도된 일을 말로 옮긴 재구성 대사: 2·3·4(사칭 전화와 인출 지시), 6(수상함을 느낌), 8·9(지구대 도움 요청, 보이스피싱 확인 후 공조), 21(미란다 원칙 고지 후 현행범 체포).\n- 19 '현관 주변을 서성이며 누군가와 계속 문자를 주고받던 남성', 20 '꺼내는 순간 바로 뒤에서 잠복 중이던 형사가 포착'은 보도 그대로.\n- 사건 지역·날짜는 공개되지 않아 '2026년 9월 경찰청 공개'로 표기.",
+  "fact_notes": "근거: 뉴시스 2026-09-23 기사(경찰청 유튜브 영상 인용) 전문과 정책브리핑 경찰청 영상 소개글.\n- 보도 그대로: 공무원 사칭, '명의 도용 사건에 연쇄적으로 얽혀 계좌 속 돈을 인출해야 한다', 70대 여성, 1,300만 원 인출, 귀가 중 수상함→인근 지구대, 경찰과 검거 작전, 경찰관이 옆에서 녹화, 검정 비닐봉투에 담아 테이프로 다섯·여섯 번 감으라는 지시, 우편함에 넣으라는 지시, 형사들과 현관으로 내려가 우편함에 넣음, '저희가 저쪽에 있을게요', 서성이며 문자 주고받던 남성, 꺼내는 순간 뒤에서 형사가 체포, 미란다 원칙 고지 후 현행범 체포.\n- 대사 11·12·13·15는 주인님이 고친 문장(10-28). 보도된 지시와 대답('예, 알았어', '다 감았어요')을 상황에 맞게 다듬은 재구성.\n- 기사 속 '새마을금고 체포 직원' 'CCTV 지문 인식' 대사는 흐름에 맞지 않아 뺌(주인님 10-28).\n- 사건 지역·날짜 비공개 → '2026년 9월 경찰청 공개'.",
   "characters": [
     {
       "id": "할머니",
