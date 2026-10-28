@@ -382,8 +382,8 @@ storyteller on a phone screen. Below is a finished script as JSON. Rewrite ONLY 
 - cause and effect: read the lines in order as a viewer who knows nothing. Every action of the victim (taps a link,
   installs an app, calls a number, moves money) must follow from what the scammer said or sent just before, with who,
   how and the excuse; if a line jumps ("보내온 링크를 눌렀습니다" right after a call with no link), fix it using only the facts;
-- one or two short reenacted lines make it a scene, not a report: write them inside the line as {직원: ...} or
-  {사기범: ...} (another voice reads them); each only puts into words something the facts say happened, no new facts;
+- one or two short reenacted lines make it a scene, not a report: write them inside the line as {{직원: ...}} or
+  {{사기범: ...}} (another voice reads them); each only puts into words something the facts say happened, no new facts;
 - link the sentences the way a person tells a story: connectors and motives ("하지만", "이에", "잠시 후", "~하기 위해",
   "이상한 낌새를 느낀 지점장이"); bare fact-after-fact sentences sound machine-written. Follow the channel's 기준 예시;
 - the tension is real: name the pressure the victim felt (the threat, the deadline, being told to tell no one), as reported;
