@@ -15,9 +15,9 @@
     "extra_m_voice_id": "J3IV02ZzZmojOIQbmpu0",
     "extra_m_voice_name": "Gun Woong - Deep & Trustworthy",
     "extra_m_chosen": "picked automatically from the voice library",
-    "extra_old_voice_id": "ZjAPD4f11zlnEnZpKDgo",
-    "extra_old_voice_name": "Haemi",
-    "extra_old_chosen": "picked automatically from the voice library"
+    "extra_old_voice_id": "uEV8xT6DWhCGem6FwhS2",
+    "extra_old_voice_name": "designed 4 (Voice Design, 70대 시골 할머니)",
+    "extra_old_chosen": "tentative 10-28, owner picks from senior/samples/audition"
   },
   "us": {
     "provider": "elevenlabs",
