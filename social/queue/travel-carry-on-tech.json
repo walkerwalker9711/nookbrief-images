@@ -1,7 +1,7 @@
 {
   "topic": "travel-carry-on-tech",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/carry-on-tech-for-holiday-travel-whats.html",
   "video": {
     "ig": "posts/travel-carry-on-tech/travel-carry-on-tech-short-ig.mp4",
     "link": "posts/travel-carry-on-tech/travel-carry-on-tech-short-link.mp4",
@@ -36,5 +36,6 @@
       "power bank",
       "holiday travel"
     ]
-  }
+  },
+  "threads_not_before": 1793290800
 }
