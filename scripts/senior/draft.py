@@ -318,7 +318,8 @@ def write_script(channel, date, topic):
     pillar = c["pillars"][date.weekday()] if date.weekday() < 5 else c["pillars"][0]
     # owner 2026-10-26: plain warnings don't spread, so each day gets the format that is working on Shorts now
     day = c["pillars"].index(pillar)
-    layout = {0: LAYOUT_STORY, 1: LAYOUT_LIST, 4: LAYOUT_PHONE}.get(day, LAYOUT)
+    # owner 10-27 "실제상황이나 이슈 스토리텔링으로": Wednesday tells a real case from the pillar as a story too
+    layout = {0: LAYOUT_STORY, 1: LAYOUT_LIST, 2: LAYOUT_STORY, 4: LAYOUT_PHONE}.get(day, LAYOUT)
     rules = (SENIOR / "SHARED_RULES.md").read_text(encoding="utf-8")
     own = (SENIOR / channel / "prompt.md").read_text(encoding="utf-8")
     extra = (SENIOR / "SNS_글쓰기_규칙_영어.md").read_text(encoding="utf-8") if channel == "us" else ""
