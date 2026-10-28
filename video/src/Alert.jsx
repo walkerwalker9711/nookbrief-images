@@ -16,10 +16,17 @@ const Fx = ({sfx, name, at, vol = 0.7}) => sfx && sfx[name] ? <Sequence from={Ma
 
 // Handheld camera. The picture sits whole under the headline zone (top 300px) so faces are never cut by the
 // ribbon or the titles; a blurred copy fills the space above. Gentle push-in, drift alternates per scene.
-const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0}) => {
-  const f = useCurrentFrame();
-  const z = 1.1 - Math.min(f, 240) * 0.0004;
-  const x = dir * f * 0.12, y = 0;
+const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0, move = -1, shake = 0, punch = 0}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  let z = 1.1 - Math.min(f, 240) * 0.0004;
+  let x = dir * f * 0.12, y = 0;
+  // webtoon drama (owner 10-28, free motion only): every cut gets its own camera move
+  if (move === 0) z = 1.04 + Math.min(f, 150) * 0.0012;            // push in on a face
+  if (move === 1) z = 1.22 - Math.min(f, 150) * 0.0011;            // pull back to show the room
+  if (move === 2 || move === 3) { z = 1.16; x = (move === 2 ? 1 : -1) * (60 - Math.min(f, 150) * 0.8); }  // pan
+  if (move === 4) { z = 1.14; y = 50 - Math.min(f, 150) * 0.6; }   // tilt up
+  if (punch) z += 0.18 * (1 - pop(f, 0, fps, 12, 240));             // impact zoom on the twist
+  if (shake) { const a = shake * (punch ? Math.max(0.25, 1 - f / 24) : 0.5); x += Math.sin(f * 2.1) * 7 * a; y += Math.cos(f * 1.7) * 6 * a; }
   return <AbsoluteFill style={{overflow: 'hidden', background: INK}}>
     <Img src={staticFile(img)} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover',
       filter: 'blur(28px) brightness(0.55)', transform: 'scale(1.15)'}} />
@@ -41,21 +48,42 @@ const groups = (words) => {
   if (cur.length) out.push(cur);
   return out;
 };
-const Captions = ({words, hot = [], y = 1330}) => {
+const Captions = ({words, hot = [], y = 1330, bubble = ''}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   const all = groups(words || []);
   const g = all.find((c, n) => f >= c[0][1] - 1 && f < (all[n + 1] ? all[n + 1][0][1] - 1 : c[c.length - 1][2] + 12));
   if (!g) return null;
   const k = interpolate(f, [g[0][1] - 1, g[0][1] + 4], [0, 1], clamp);
   const isHot = (w) => hot.some((h) => h && w.replace(/[.,!?:'"]/g, '').includes(h));
+  const spans = g.map((w, n) => {
+    const on = f >= w[1] && f < w[2] + 2;
+    const h = isHot(w[0]);
+    const txt = bubble ? w[0].replace(/^“|”$/g, '') : w[0];
+    if (bubble) {
+      const dark = bubble === 'scammer';
+      return <span key={n} style={{display: 'inline-block', margin: '2px 7px', fontFamily: font, fontWeight: 900, fontSize: 60,
+        lineHeight: 1.22, color: h ? RED : on ? (dark ? YEL : '#1D4ED8') : (dark ? WHITE : INK)}}>{txt.replace(/[.,]+$/, '')}</span>;
+    }
+    return <span key={n} style={{display: 'inline-block', margin: '4px 8px', fontFamily: font, fontWeight: 800, fontSize: 68,
+      lineHeight: 1.2, color: h ? '#FF5A4E' : on ? '#FFE27A' : WHITE, ...stroke(10)}}>
+      {txt.replace(/[.,]+$/, '')}</span>;
+  });
+  if (bubble) {
+    // webtoon speech balloon: white for people, black with a red edge for the scammer; tail points up at the speaker
+    const dark = bubble === 'scammer';
+    const s0 = pop(f, all[0][0][1] - 1, fps, 12, 260);
+    return <div style={{position: 'absolute', top: y - 40, left: 46, right: 46, display: 'flex', justifyContent: 'center',
+      transform: `scale(${0.85 + 0.15 * s0})`, transformOrigin: '50% 0'}}>
+      <div style={{position: 'relative', padding: '26px 34px', borderRadius: 54, background: dark ? '#15171C' : WHITE,
+        border: `6px solid ${dark ? RED : INK}`, textAlign: 'center', wordBreak: 'keep-all', boxShadow: '0 12px 0 rgba(0,0,0,.35)'}}>
+        <div style={{position: 'absolute', top: -38, left: '50%', marginLeft: -26, width: 0, height: 0, borderLeft: '26px solid transparent',
+          borderRight: '26px solid transparent', borderBottom: `40px solid ${dark ? RED : INK}`}} />
+        {spans}
+      </div>
+    </div>;
+  }
   return <div style={{position: 'absolute', top: y, left: 50, right: 50, textAlign: 'center', opacity: k, wordBreak: 'keep-all'}}>
-    {g.map((w, n) => {
-      const on = f >= w[1] && f < w[2] + 2;
-      const h = isHot(w[0]);
-      return <span key={n} style={{display: 'inline-block', margin: '4px 8px', fontFamily: font, fontWeight: 800, fontSize: 68,
-        lineHeight: 1.2, color: h ? '#FF5A4E' : on ? '#FFE27A' : WHITE, ...stroke(10)}}>
-        {w[0].replace(/[.,]+$/, '')}</span>;
-    })}
+    {spans}
   </div>;
 };
 
@@ -334,19 +362,34 @@ const SpeakerTag = ({speaker, lang, host, startSec, onCall}) => {
   </div>;
 };
 
+// Drama: who is talking, as a webtoon name plate over the balloon (scammer red, older people warm, others blue)
+const NameTag = ({who, voice, y}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  if (!who) return null;
+  const k = pop(f, 0, fps, 12, 240);
+  const col = voice === 'scammer' ? RED : /old/.test(voice || '') ? '#F59E0B' : '#3B82F6';
+  return <div style={{position: 'absolute', top: y, left: 70, transform: `translateX(${(1 - k) * -400}px)`}}>
+    <span style={{display: 'inline-block', padding: '8px 24px', borderRadius: 14, background: col, color: WHITE, fontFamily: font,
+      fontWeight: 900, fontSize: 42, boxShadow: '0 6px 0 rgba(0,0,0,.35)'}}>{who}</span>
+  </div>;
+};
+
 const Scene = ({s, i, props}) => {
   const f = useCurrentFrame();
   const {sfx, lang} = props;
   const danger = props.mood === 'alert';
   const flash = interpolate(f, [0, 5], [0.85, 0], clamp);
   const stampAt = Math.round((s.frames || 60) * 0.55);
+  const drama = !!props.drama;
+  const talk = drama && s.kind === 'talk';
   const hookRed = (s.kind === 'hook' || s.kind === 'twist') && danger ? 0.6 + 0.4 * Math.abs(Math.sin(f * 0.25)) : 0;
   return <AbsoluteFill>
     {s.kind === 'list' ? <ListCard title={s.caption} items={s.items || []} img={s.img} />
       : s.kind === 'steps'
       ? <AbsoluteFill style={{background: `radial-gradient(circle at 50% 30%, #23355E, ${NAVY})`}} />
       : <Cam img={s.img} dir={i % 2 ? -1 : 1} dim={s.kind === 'phone' ? 0.45 : s.kind === 'outro' ? 0.25 : 0}
-          blur={s.kind === 'phone' ? 6 : 0} red={hookRed} />}
+          blur={s.kind === 'phone' ? 6 : 0} red={hookRed} move={drama ? (s.kind === 'twist' ? 0 : (i * 3) % 5) : -1}
+          shake={drama && (s.voice === 'scammer' || s.kind === 'twist') ? 1 : 0} punch={drama && s.kind === 'twist'} />}
     {s.kind === 'phone' && s.phone && <>
       <Phone phone={s.phone} lang={lang} start={2} stampAt={stampAt}
         stampText={s.phone.app === 'settings' ? '' : (s.stamp || (lang === 'ko' ? '사기 수법' : 'SCAM'))} />
@@ -354,17 +397,19 @@ const Scene = ({s, i, props}) => {
       <Fx sfx={sfx} name={s.phone.app === 'settings' ? 'pop' : 'stamp'} at={stampAt} vol={0.45} />
     </>}
     {s.kind === 'steps' && <Steps steps={s.steps || []} frames={s.frames || 90} sfx={sfx} />}
-    {(s.kind === 'talk' || (s.kind === 'hook' && s.speaker === 'scammer')) && <SpeakerTag speaker={s.speaker} lang={lang} host={props.host} startSec={s.callSec || 0} onCall={s.onCall} />}
+    {talk && <NameTag who={s.who} voice={s.voice} y={1190} />}
+    {!drama && (s.kind === 'talk' || (s.kind === 'hook' && s.speaker === 'scammer')) && <SpeakerTag speaker={s.speaker} lang={lang} host={props.host} startSec={s.callSec || 0} onCall={s.onCall} />}
     {s.kind === 'twist' && <>
       <Fx sfx={sfx} name="stamp" at={Math.round((s.frames || 60) * 0.35)} vol={0.4} />
     </>}
     {s.kind === 'outro' && <Outro text={s.caption} />}
     {!['outro', 'talk', 'list'].includes(s.kind) && !(s.kind === 'hook' && s.speaker === 'scammer') && <Headline text={s.caption} big={s.kind === 'hook'} danger={danger && (s.kind === 'hook' || s.kind === 'phone' || s.kind === 'twist')} />}
     {s.kind === 'hook' && s.speaker === 'scammer' && <div style={{position: 'absolute', top: 110, left: 0, right: 0}}><Headline text={s.caption} big danger={danger} /></div>}
-    {!['steps', 'list'].includes(s.kind) && <Captions words={s.words} hot={s.hot} y={s.kind === 'phone' ? 1520 : 1330} />}
+    {!['steps', 'list'].includes(s.kind) && <Captions words={s.words} hot={s.hot} y={s.kind === 'phone' ? 1520 : 1330}
+      bubble={talk ? (s.voice === 'scammer' ? 'scammer' : 'person') : ''} />}
     {s.kind === 'steps' && <Captions words={s.words} hot={s.hot} y={1500} />}
     {i > 0 && <Fx sfx={sfx} name="whoosh" at={0} vol={0.18} />}
-    {danger && (s.speaker === 'scammer' || props.case) && ['talk', 'hook', 'scene', 'phone'].includes(s.kind) && <Fx sfx={sfx} name="heart" at={4} vol={props.case ? 0.35 : 0.5} />}
+    {danger && (drama ? s.voice === 'scammer' || s.kind === 'twist' : s.speaker === 'scammer' || props.case) && ['talk', 'hook', 'scene', 'phone', 'twist'].includes(s.kind) && <Fx sfx={sfx} name="heart" at={4} vol={props.case ? 0.35 : 0.5} />}
     {s.kind === 'phone' && s.phone && s.phone.app === 'call' && <Fx sfx={sfx} name="ring" at={2} vol={0.35} />}
     {s.kind === 'phone' && s.phone && s.phone.app === 'call' && (s.phone.messages || []).some((m) => /https?:|www\.|\.(com|kr|net|ly|top|xyz)\b/i.test(m.text)) &&
       <Fx sfx={sfx} name="notify" at={58 + (s.phone.messages || []).length * 18} vol={0.3} />}

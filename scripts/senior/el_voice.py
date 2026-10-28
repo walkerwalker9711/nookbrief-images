@@ -108,24 +108,29 @@ def native_villain(channel):
     return vid
 
 
-def extra_voice(channel, gender="female"):
+def extra_voice(channel, gender="female", old=False):
     """A third voice for a short reenacted line by someone else in a true story (owner 10-27: the bank clerk asks
     again). A native library voice, added once and saved in voices.json: extra_voice_id (female) or extra_m_voice_id
-    (male, owner 10-28: the shop manager on screen is a man, so his line needs a man's voice)."""
+    (male, owner 10-28: the shop manager on screen is a man, so his line needs a man's voice). old=True picks an
+    older voice for the grandma / grandpa of the webtoon drama: extra_old_voice_id / extra_old_m_voice_id."""
     path = ROOT / "senior" / "voices.json"
     data = json.loads(path.read_text(encoding="utf-8"))
-    key = "extra_voice" if gender == "female" else "extra_m_voice"
+    key = "extra" + ("_old" if old else "") + ("" if gender == "female" else "_m") + "_voice"
     if data[channel].get(f"{key}_id"):
         return data[channel][f"{key}_id"]
-    taken = {data[channel].get("voice_id"), data[channel].get("scammer_voice_id")}
+    taken = {v for k, v in data[channel].items() if k.endswith("voice_id")}
     lang = {"kr": "ko", "us": "en"}[channel]
-    want = ("calm", "professional", "friendly", "clear", "natural", "warm")
-    params = {"page_size": 40, "gender": gender, "language": lang, "sort": "trending"}
+    want = ("grandm", "grandp", "elder", "old", "aged", "warm") if old else ("calm", "professional", "friendly", "clear", "natural", "warm")
+    params = {"page_size": 40, "gender": gender, "language": lang, "sort": "trending", **({"age": "old"} if old else {})}
     r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
     if r.status_code == 400:
         params.pop("sort")
         r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
     voices = [v for v in (r.json().get("voices", []) if r.ok else []) if v["voice_id"] not in taken]
+    if not voices and old:  # no "old" Korean voice listed: take the closest by description
+        params.pop("age")
+        r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
+        voices = [v for v in (r.json().get("voices", []) if r.ok else []) if v["voice_id"] not in taken]
     pick = next((v for v in voices if any(w in (v.get("descriptive", "") + " " + v.get("description", "")).lower()
                                           for w in want)), voices[0] if voices else None)
     if not pick:
@@ -164,7 +169,8 @@ def speak_timed(channel, text, out, role="host", delivery=""):
     act it out (and it is cut from the timings); older models would read it aloud, so they never get it."""
     import base64
     c = cfg(channel) if role == "host" else {**json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel],
-                                             "voice_id": extra_voice(channel, "male" if role == "extra_m" else "female")
+                                             "voice_id": extra_voice(channel, "male" if role.endswith("_m") else "female",
+                                                                     "_old" in role)
                                              if role.startswith("extra") else scammer_voice(channel),
                                              "speed": 1.0 if role.startswith("extra") else 1.05}
     tag = delivery.strip() if delivery.strip().startswith("[") and delivery.strip().endswith("]") else ""

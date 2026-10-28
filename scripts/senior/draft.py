@@ -11,6 +11,7 @@ Nothing is uploaded; upload.json is what the uploader will use once the owner ap
 """
 import argparse
 import base64
+import copy
 import datetime as dt
 import json
 import os
@@ -236,6 +237,58 @@ outro only. Fill unused fields with empty values (app "none", empty steps, items
 """
 
 
+# owner 10-28: a 2-minute webtoon drama like 참교육TV ("시골 할머니 상대 보이스피싱 참교육", 250k views), free
+# motion only (no paid video AI). Unlike their 각색, every scene is a real reported case: dialogue only voices what
+# the report says happened.
+DRAMA_SCHEMA = copy.deepcopy(SCHEMA)
+DRAMA_SCHEMA["required"].append("characters")
+DRAMA_SCHEMA["properties"]["characters"] = {"type": "array", "minItems": 2, "maxItems": 4, "items": {
+    "type": "object", "additionalProperties": False, "required": ["id", "label", "voice", "look"],
+    "properties": {
+        "id": {"type": "string", "description": "short Korean name used in scenes, e.g. 할머니, 사기범, 은행직원, 택시기사"},
+        "label": {"type": "string", "description": "name tag on screen, e.g. 할머니 (70대), 은행 창구 직원"},
+        "voice": {"type": "string", "enum": ["old_f", "old_m", "adult_f", "adult_m", "scammer"]},
+        "look": {"type": "string", "description": "English look for the picture: age, hair, clothes, colors (one sentence, same every scene)"}}}}
+_sc = DRAMA_SCHEMA["properties"]["scenes"]
+_sc["minItems"], _sc["maxItems"] = 12, 18
+_sc["items"]["required"].append("role")
+_sc["items"]["properties"]["role"] = {"type": "string", "description": "who says this scene's line: a character id, or 내레이션"}
+_sc["items"]["properties"]["cast"] = {"type": "string", "description": "character ids in the picture, comma separated, or none"}
+
+LAYOUT_REENACT = """=== Video layout: webtoon drama, a real case reenacted (owner 10-28) ===
+A 70 to 110 second drama in Korean webtoon style, built like the 참교육 Shorts seniors binge, but true: one real case
+reported in the last 12 months by the police, a court or a major news outlet, with its source in "sources". Prefer a
+case where the scam was stopped (the victim, a bank clerk, a taxi driver or the police noticed, a 수거책 was caught),
+because the payoff is what viewers wait for; tell the payoff only as reported. Fill "case_tag" like
+"실제 사건 재구성 · 2026년 9월 · 전북 군산".
+characters: 2 to 4 people of the case (victim, scammer, the person who noticed), each with a short id, a name tag,
+a voice (old_f / old_m for people 60+, adult_f / adult_m, scammer for the caller or 수거책) and one fixed look.
+No names: 할머니, 지점장, 수거책 and the like.
+Scenes, 12 to 18, one line each (one or two short spoken sentences), in this order:
+- hook (role 내레이션, cast the victim): the moment it went wrong or the result, with the real number, in 2 seconds.
+- phone (role 사기범 or the caller's id): the call or text as reported, on the phone screen; the line is the caller's
+  opening words as reported. For a call app "call", sender masked like "02-●●●-●●●●" unless the report shows it.
+- talk scenes: the drama itself. role is a character id, cast the people in the picture. The scammer pushes with
+  the tricks the report describes (urgency, threats, secrecy, a safe account, an app); the victim answers like a
+  real older Korean person (짧은 입말, 사투리 조금은 괜찮음). Every odd instruction has its reason as reported
+  ("대출 받으려면 유심을 빼야 돼요"), never a reason you made up. Dialogue may put into words only what the report
+  says was said or done; no new facts, amounts, places or people.
+- scene (role 내레이션) x2 to x4 between talks: short bridges that keep cause and effect clear (who, how, why),
+  with connectors ("하지만", "이에", "잠시 후", "~하기 위해").
+- twist (role: the person who noticed, or 내레이션): the turning point as reported (the clerk's question, the
+  police arriving, the 수거책 caught). It lands hard: short, then a beat.
+- one talk after the twist with the scammer's or 수거책's reaction only if the report gives one; else a 내레이션 scene
+  with what happened to them (arrested, 송치), as reported.
+- steps (role 내레이션): 2 to 3 real moves (wrong ok false, right ok true, official numbers 112, 1332).
+- outro (role 내레이션, cast none): one quiet line that stays with the viewer. cta empty.
+speaker: scammer when the role's voice is scammer, else host. delivery tags act the line ([trembling, confused],
+[cold, threatening], [fast, pushy], [firm, kind], [shocked whisper], [low, grave]); never the same twice in a row.
+Pictures (image_prompt): name the people only by their ids in cast; describe the place, the shot and the emotion
+(close-up of trembling hands with the phone, the clerk leaning in over the counter, the 수거책 grabbed by police
+at night). Vary the shot every scene. The scammer on the phone is a shadowed figure in a dim room, face half in
+shadow. Fill unused fields with empty values (app "none", empty steps, items and cta).
+"""
+
 def key():
     k = os.environ.get("OPENAI_API_KEY", "").strip()
     if not k:
@@ -313,13 +366,16 @@ def responses(body):
     sys.exit("OpenAI refused every text model")
 
 
-def write_script(channel, date, topic):
+def write_script(channel, date, topic, fmt=""):
     c = CHANNELS[channel]
     pillar = c["pillars"][date.weekday()] if date.weekday() < 5 else c["pillars"][0]
     # owner 2026-10-26: plain warnings don't spread, so each day gets the format that is working on Shorts now
     day = c["pillars"].index(pillar)
     # owner 10-27 "실제상황이나 이슈 스토리텔링으로": Wednesday tells a real case from the pillar as a story too
     layout = {0: LAYOUT_STORY, 1: LAYOUT_LIST, 2: LAYOUT_STORY, 4: LAYOUT_PHONE}.get(day, LAYOUT)
+    if fmt == "drama":
+        layout, pillar = LAYOUT_REENACT, c["pillars"][0]
+    schema = DRAMA_SCHEMA if layout is LAYOUT_REENACT else SCHEMA
     rules = (SENIOR / "SHARED_RULES.md").read_text(encoding="utf-8")
     own = (SENIOR / channel / "prompt.md").read_text(encoding="utf-8")
     extra = (SENIOR / "SNS_글쓰기_규칙_영어.md").read_text(encoding="utf-8") if channel == "us" else ""
@@ -355,15 +411,17 @@ with "✅ " with the one rule / the hashtag line (channel name first, 4 to 6 tag
 publisher names only, comma separated, never a link or address (owner 10-27) / last line only "※ AI 음성·그림으로 재구성" (English: "※ Recreated with AI voice & art").
 """
     body = {"input": prompt, "tools": [{"type": "web_search"}],
-            "text": {"format": {"type": "json_schema", "name": "short_script", "schema": SCHEMA, "strict": True}}}
+            "text": {"format": {"type": "json_schema", "name": "short_script", "schema": schema, "strict": True}}}
     for attempt in range(2):
         text = responses(body)
         m = re.search(r"\{.*\}", text, re.S)
         script = json.loads(m.group(0) if m else text)
         if layout in (LAYOUT_DRAMA, LAYOUT_STORY):
             script = punch_up(channel, script, own, story=layout is LAYOUT_STORY)
+        if layout is LAYOUT_REENACT:
+            script = dramatize(channel, script, own)
         problems = check_script(script, layout, c)
-        script["format"] = "story" if layout is LAYOUT_STORY else ""
+        script["format"] = "story" if layout is LAYOUT_STORY else "drama" if layout is LAYOUT_REENACT else ""
         if not problems:
             return script
         print("script check failed:", "; ".join(problems))
@@ -436,9 +494,37 @@ Return the whole script JSON with the same schema.
     return rewrite(script, prompt, "punch-up")
 
 
-def rewrite(script, prompt, name):
+def dramatize(channel, script, own):
+    """Second pass for the webtoon drama: a drama writer makes the lines sound like real people; facts stay."""
+    c = CHANNELS[channel]
+    prompt = f"""You write dialogue for short Korean webtoon dramas that reenact real scam cases for "{c['name']}".
+Below is a finished script as JSON. Rewrite ONLY each scene's "line", "caption", "delivery" and "hot" so that:
+- every talk line sounds like that person really talking in Korean: an older victim speaks in short, plain 입말 with
+  a little hesitation ("아이고, 그게 무슨 소리래요?"), the scammer is smooth then cold and pushy, a clerk or police
+  officer is calm and firm. Never written, translated or AI-sounding. No 문어체 connectors in dialogue;
+- the drama climbs: each scammer line adds pressure (a deadline, a threat, "아무한테도 말하지 마세요") as reported;
+- cause and effect: read it in order as a viewer who knows nothing; every action follows from what came just before,
+  and every odd instruction carries the reason the scammer gave as reported (never invent one);
+- narration lines (role 내레이션) are short bridges told by a calm storyteller, past tense, with connectors;
+- the twist is short and lands; the outro is one quiet line;
+- facts stay exactly as reported: change nothing in "sources", "fact_notes", "phone", "steps", "kind", "speaker",
+  "role", "cast", "image_prompt", "characters"; add no detail, number or quote that is not in the facts;
+- no jokes, catchphrases, lecturing or share requests; "hot" stays one or two words copied exactly from the new line;
+- the whole video stays 70 to 110 seconds of speech. Update "ko_review" to match.
+Return the whole script JSON with the same schema.
+
+=== Channel rules ===
+{own}
+
+=== Script ===
+{json.dumps(script, ensure_ascii=False)}
+"""
+    return rewrite(script, prompt, "dramatize", DRAMA_SCHEMA)
+
+
+def rewrite(script, prompt, name, schema=SCHEMA):
     body = {"input": prompt,
-            "text": {"format": {"type": "json_schema", "name": "short_script", "schema": SCHEMA, "strict": True}}}
+            "text": {"format": {"type": "json_schema", "name": "short_script", "schema": schema, "strict": True}}}
     try:
         text = responses(body)
         m = re.search(r"\{.*\}", text, re.S)
@@ -450,9 +536,12 @@ def rewrite(script, prompt, name):
         print(name, "changed the scene order; keeping the first draft")
         return script
     for old, sc in zip(script["scenes"], new["scenes"]):
-        for k in ("phone", "steps", "speaker", "cast", "image_prompt", "items"):
-            sc[k] = old[k]
+        for k in ("phone", "steps", "speaker", "cast", "image_prompt", "items", "role"):
+            if k in old:
+                sc[k] = old[k]
     new["sources"], new["fact_notes"], new["case_tag"] = script["sources"], script["fact_notes"], script["case_tag"]
+    if "characters" in script:
+        new["characters"] = script["characters"]
     print(name, "done")
     return new
 
@@ -489,6 +578,18 @@ def check_script(script, layout, c):
                 problems.append(f"no {k} scene")
         if any(x["speaker"] != "host" for x in script["scenes"]):
             problems.append("narration: speaker must be host in every scene")
+    if layout is LAYOUT_REENACT:
+        if not 12 <= len(kinds) <= 18:
+            problems.append(f"{len(kinds)} scenes, need 12 to 18")
+        for k in ("hook", "talk", "twist", "steps", "outro"):
+            if k not in kinds:
+                problems.append(f"no {k} scene")
+        ids = {ch["id"] for ch in script.get("characters", [])}
+        for sc in script["scenes"]:
+            if sc["role"] != "내레이션" and sc["role"] not in ids:
+                problems.append(f'role "{sc["role"]}" is not one of the characters {sorted(ids)} or 내레이션')
+        if sum(k == "talk" for k in kinds) < 5:
+            problems.append("a drama needs at least 5 talk scenes")
     if layout is LAYOUT_LIST and kinds != ["list"]:
         problems.append("need exactly one list scene")
     for sc in script["scenes"]:
@@ -567,6 +668,40 @@ def scene_image(channel, scene, out):
     sys.exit("OpenAI refused every image model")
 
 
+def drama_image(channel, script, scene, out, folder):
+    """Webtoon drama picture: each person of the case gets a reference picture once (char_<n>.png in the draft
+    folder), and every scene they appear in is drawn from those, so the grandma looks the same all video."""
+    chars = {ch["id"]: (n, ch) for n, ch in enumerate(script["characters"])}
+    cast = [x.strip() for x in scene["cast"].split(",") if x.strip() in chars]
+    refs, looks = [], []
+    for cid in cast[:3]:
+        n, ch = chars[cid]
+        ref = folder / f"char_{n}.png"
+        if not ref.exists():
+            for model in models("OPENAI_IMAGE_MODEL", IMAGE_MODELS):
+                r = image_call(model, f"Character sheet of one person: {ch['look']} Full upper body, facing slightly "
+                               f"to the side, plain soft grey background. Style: {STYLE}", [])
+                if r.ok:
+                    save_b64(r.json(), ref)
+                    break
+                print("image model", model, "->", r.status_code, r.text[:300])
+        if ref.exists():
+            refs.append(ref)
+            looks.append(f"{cid}: {ch['look']}")
+    if refs:
+        prompt = (f"{scene['image_prompt']}\n\nThe people, drawn exactly like the reference pictures (same face, hair, "
+                  f"clothes, colors), in this order: {' / '.join(looks)}. Style: {STYLE}")
+    else:
+        prompt = f"{scene['image_prompt']}\n\nAny people are background figures or shadows. Style: {STYLE}"
+    for model in models("OPENAI_IMAGE_MODEL", IMAGE_MODELS):
+        r = image_call(model, prompt, refs)
+        if r.ok:
+            save_b64(r.json(), out)
+            return
+        print("image model", model, "->", r.status_code, r.text[:300])
+    sys.exit("OpenAI refused every image model")
+
+
 # ---------- voice ----------
 
 def openai_tts(channel, text, out, role="host"):
@@ -636,6 +771,15 @@ def speak_line(channel, line, out, speaker="host", delivery=""):
     return words, engine
 
 
+# drama: the character's voice field → the voice role el_voice reads with (내레이션 = the host)
+DRAMA_VOICE = {"old_f": "extra_old", "old_m": "extra_old_m", "adult_f": "extra", "adult_m": "extra_m", "scammer": "scammer"}
+
+
+def drama_role(script, scene):
+    ch = next((x for x in script.get("characters", []) if x["id"] == scene["role"]), None)
+    return DRAMA_VOICE.get(ch["voice"], "extra") if ch else "host"
+
+
 def level(path):
     """Same loudness for every line, so the host is never quieter than the scammer (owner 10-27: "too weak")."""
     tmp = str(path) + ".lv.mp3"
@@ -676,8 +820,10 @@ def build_props(channel, script, images, work):
     scenes, engine, total = [], None, 0
     for i, (s, img) in enumerate(zip(script["scenes"], images)):
         vo = Path(work) / f"vo{i}.mp3"
-        words, engine = speak_line(channel, s["line"], vo, s["speaker"], s.get("delivery", ""))
-        lead = MIC if (i == 0 and c["mic"] and s["speaker"] == "host" and script.get("format") != "story") else 0
+        drama = script.get("format") == "drama"
+        voice = drama_role(script, s) if drama else s["speaker"]
+        words, engine = speak_line(channel, s["line"], vo, voice, s.get("delivery", ""))
+        lead = MIC if (i == 0 and c["mic"] and s["speaker"] == "host" and script.get("format") not in ("story", "drama")) else 0
         frames = int((duration(vo) + 0.35) * FPS) + lead
         if s["kind"] == "steps":
             frames = max(frames, 30 + 22 * len(s["steps"]))
@@ -689,6 +835,8 @@ def build_props(channel, script, images, work):
         scenes.append({
             "kind": s["kind"], "speaker": s["speaker"], "img": f"img{i}{img.suffix}", "vo": vo.name, "vo_at": lead, "frames": frames,
             "caption": s["caption"], "hot": s["hot"], "cta": s["cta"],
+            **({"voice": voice, "who": next((x["label"] for x in script["characters"] if x["id"] == s["role"]), "")}
+               if drama else {}),
             "words": [[digits(w), lead + int(a * FPS), lead + int(b * FPS) + 1] for w, a, b in words],
             **({"phone": s["phone"]} if s["kind"] == "phone" and s["phone"]["app"] != "none" else {}),
             **({"steps": s["steps"]} if s["kind"] == "steps" else {}),
@@ -703,7 +851,8 @@ def build_props(channel, script, images, work):
     if logo.exists():
         shutil.copy(logo, Path(work) / "logo.png")
     props = {"lang": "ko" if channel == "kr" else "en", "logo": "logo.png" if logo.exists() else None,
-             "case": script.get("case_tag", "") if script.get("format") == "story" else "", "mood": script["mood"], "label": c["labels"][script["mood"]],
+             "case": script.get("case_tag", "") if script.get("format") in ("story", "drama") else "",
+             "drama": script.get("format") == "drama", "mood": script["mood"], "label": c["labels"][script["mood"]],
              "brand": c["name"], "host": c["host"], "mic": bool(scenes[0]["vo_at"]), "scenes": scenes, **audio,
              "source": f"{c['source']}: " + ", ".join(dict.fromkeys(s["name"] for s in script["sources"][:2]))}
     path = Path(work) / "props.json"
@@ -721,13 +870,16 @@ def review_md(channel, script, engine, folder):
              f"- 기둥: {script['pillar']} / 주제: {script['topic']}",
              f"- 제목: {script['title']}", f"- 목소리: {engine}", "", "## 대본"]
     for i, s in enumerate(script["scenes"], 1):
-        lines.append(f"{i}. [{s['kind']}] {s['line']}  ·  화면 글자: {s['caption']}")
+        who = f"{s['role']}: " if s.get("role") and s["role"] != "내레이션" else ""
+        lines.append(f"{i}. [{s['kind']}] {who}{s['line']}  ·  화면 글자: {s['caption']}")
         if s["kind"] == "phone" and s["phone"]["app"] != "none":
             lines += [f"   - 폰 화면 ({s['phone']['sender']}): {m['text']}" for m in s["phone"]["messages"]]
         if s["kind"] == "steps":
             lines += [f"   - {'O' if x['ok'] else 'X'} {x['text']}" for x in s["steps"]]
     if channel == "us":
         lines += ["", "## 한국어 검토본", script["ko_review"]]
+    if script.get("characters"):
+        lines += ["", "## 등장인물"] + [f"- {x['label']} ({x['voice']})" for x in script["characters"]]
     lines += ["", "## 숫자 출처", script["fact_notes"], ""] + [f"- {s['name']}: {s['url']}" for s in script["sources"]]
     lines += ["", "## 설명란", script["description"], "", "태그: " + ", ".join(script["tags"])]
     (folder / "review.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -739,9 +891,10 @@ def main():
     ap.add_argument("--topic", default="")
     ap.add_argument("--date", default="")
     ap.add_argument("--rerender", action="store_true")
+    ap.add_argument("--format", default="", choices=["", "drama"])
     a = ap.parse_args()
     date = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(KST).date()
-    folder = SENIOR / "drafts" / f"{date:%Y-%m-%d}-{a.channel}"
+    folder = SENIOR / "drafts" / f"{date:%Y-%m-%d}-{a.channel}{'-' + a.format if a.format else ''}"
     folder.mkdir(parents=True, exist_ok=True)
 
     # --rerender keeps today's script and pictures (already paid for) and only redoes voice and video
@@ -750,9 +903,9 @@ def main():
     if keep:
         script = json.loads(old.read_text(encoding="utf-8"))
     else:
-        for f in folder.glob("scene*.*"):
+        for f in [*folder.glob("scene*.*"), *folder.glob("char_*.*")]:
             f.unlink()
-        script = write_script(a.channel, date, a.topic)
+        script = write_script(a.channel, date, a.topic, a.format)
         old.write_text(json.dumps(script, ensure_ascii=False, indent=2), encoding="utf-8")
     print("script:", script["title"], "(kept)" if keep else "")
 
@@ -762,7 +915,10 @@ def main():
         if img.with_suffix(".jpg").exists():
             img = img.with_suffix(".jpg")
         elif not img.exists():
-            scene_image(a.channel, s, img)
+            if script.get("format") == "drama":
+                drama_image(a.channel, script, s, img, folder)
+            else:
+                scene_image(a.channel, s, img)
         images.append(img)
     with tempfile.TemporaryDirectory() as work:
         props, engine = build_props(a.channel, script, images, work)
