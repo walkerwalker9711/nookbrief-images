@@ -20,6 +20,11 @@ jobs:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: |
           mkdir -p senior/samples
+          # a line "audition <channel> <role> <text>" makes candidate voices for a drama role instead (owner 10-28)
+          if grep -q '^audition ' senior/samples/el_request; then
+            grep '^audition ' senior/samples/el_request | while read _ ch role text; do python scripts/senior/voice_audition.py "$ch" "$role" "$text"; done
+            exit 0
+          fi
           python scripts/senior/el_voice.py kr --check
           python scripts/senior/el_voice.py kr "아, 아. 과태료 미납 문자 받으신 분, 누르지 마세요. 요즘 오는 사기 문자 절반 넘게가 이렇게 관공서 흉내입니다. 링크는 건드리지 말고, 문자를 꾹 눌러서 차단하고 신고. 그걸로 끝입니다. 진짜 벌금이 있는지는 이파인에 직접 들어가 보세요. 거기 없으면 없는 겁니다. 오늘 부모님 폰에도 하나 와 있을지 몰라요. 한번 열어봐 드리세요." senior/samples/kr_ep1.mp3
       - run: |
