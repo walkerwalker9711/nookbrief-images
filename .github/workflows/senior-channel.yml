@@ -1,6 +1,6 @@
 name: senior-channel
 # Channel art for the senior channels. Until this file is on main, a push that changes senior/channel/request runs it:
-# one line, "kr research" (fetch banners of the channels trending now), "kr bg" (make the banner background) or "kr apply" (upload the banner and set the channel description).
+# one line, "kr video <id>" (study a Short the owner points at), "kr research" (fetch banners of the channels trending now), "kr bg" (make the banner background) or "kr apply" (upload the banner and set the channel description).
 on:
   push:
     branches: [claude/project-thread-9sna6x]
@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: pip install requests==2.32.3
+      - run: pip install requests==2.32.3 yt-dlp
       - name: Run
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -26,7 +26,9 @@ jobs:
           US_YT_REFRESH_TOKEN: ${{ secrets.US_YT_REFRESH_TOKEN }}
         run: |
           grep -v '^#' senior/channel/request | grep -v '^\s*$' | while read ch step; do
-            if [ "$step" = research ]; then python scripts/senior/banner_research.py; else python scripts/senior/channel_art.py "$step" "$ch"; fi
+            if [ "$step" = research ]; then python scripts/senior/banner_research.py
+            elif [ "${step%% *}" = video ]; then python scripts/senior/video_study.py "${step#video }"
+            else python scripts/senior/channel_art.py "$step" "$ch"; fi
           done
       - name: Save
         run: |
