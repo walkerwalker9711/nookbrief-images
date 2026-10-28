@@ -18,4 +18,4 @@ jobs:
       - working-directory: scripts/social
         run: python pin_check.py
       - working-directory: scripts/social
-        run: python site_check.py
+        run: python redirect_check.py
