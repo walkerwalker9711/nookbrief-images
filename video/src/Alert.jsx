@@ -151,9 +151,12 @@ const CallScreen = ({phone, ko, stampAt}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   const ans = 36;
   const raw = (phone.sender || '').trim();
-  const isNum = raw && !/[\p{L}]/u.test(raw.replace(/국외발신|발신/g, ''));
-  const name = raw && !isNum ? raw : (ko ? '저장되지 않은 번호' : 'Unknown caller');
-  const num = isNum ? raw : (ko ? '010-●●●●-●●●●' : '(●●●) ●●●-●●●●');
+  // "번호 미공개 · 010-●●●●-●●●●": split the number off so it is not shown twice, and "number withheld" is no name
+  const numPart = (raw.match(/[+(\d●][\d●\-\s()]{6,}/) || [''])[0].trim();
+  const rest = raw.replace(numPart, '').replace(/[·•|,\s]+$|^[·•|,\s]+/g, '').trim();
+  const isNum = !rest || !/[\p{L}]/u.test(rest.replace(/국외발신|발신/g, '')) || /번호\s*미공개|발신번호\s*표시\s*제한|unknown|withheld/i.test(rest);
+  const name = !isNum ? rest : (ko ? '저장되지 않은 번호' : 'Unknown caller');
+  const num = numPart || (isNum && /\d/.test(raw) ? raw : (ko ? '010-●●●●-●●●●' : '(●●●) ●●●-●●●●'));
   const msgs = phone.messages || [];
   const hasLink = (t) => new RegExp(LINK.source, 'i').test(t);
   // a bare title ("금융감독원 과장") is who the caller claimed to be, not something said: show it under the number

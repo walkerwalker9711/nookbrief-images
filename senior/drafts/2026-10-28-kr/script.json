@@ -43,6 +43,10 @@
         "time": "",
         "messages": [
           {
+            "text": "은행 직원",
+            "me": false
+          },
+          {
             "text": "저금리 대환대출이 가능하다",
             "me": false
           }
