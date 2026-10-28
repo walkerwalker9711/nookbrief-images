@@ -250,7 +250,7 @@ DRAMA_SCHEMA["properties"]["characters"] = {"type": "array", "minItems": 2, "max
         "voice": {"type": "string", "enum": ["old_f", "old_m", "adult_f", "adult_m", "scammer"]},
         "look": {"type": "string", "description": "English look for the picture: age, hair, clothes, colors (one sentence, same every scene)"}}}}
 _sc = DRAMA_SCHEMA["properties"]["scenes"]
-_sc["minItems"], _sc["maxItems"] = 12, 18
+_sc["minItems"], _sc["maxItems"] = 18, 24
 _sc["items"]["required"].append("role")
 _sc["items"]["properties"]["role"] = {"type": "string", "description": "who says this scene's line: a character id, or 내레이션"}
 _sc["items"]["properties"]["cast"] = {"type": "string", "description": "character ids in the picture, comma separated, or none"}
@@ -264,8 +264,11 @@ because the payoff is what viewers wait for; tell the payoff only as reported. F
 characters: 2 to 4 people of the case (victim, scammer, the person who noticed), each with a short id, a name tag,
 a voice (old_f / old_m for people 60+, adult_f / adult_m, scammer for the caller or 수거책) and one fixed look.
 No names: 할머니, 지점장, 수거책 and the like.
-Scenes, 12 to 18, one line each (one or two short spoken sentences), in this order:
-- hook (role 내레이션, cast the victim): the moment it went wrong or the result, with the real number, in 2 seconds.
+Scenes, 18 to 24, one line each (one or two short spoken sentences), told strictly in time order (owner 10-28:
+"opening with the result left out who called and why"). At least 60% of the scenes are talk. Build it from the
+full article text, not a search summary, and use every line the report quotes word for word.
+- hook (role 내레이션, cast the victim): the setup, who called whom pretending to be what
+  ("어느 날, 70대 할머니에게 공무원이라는 남자의 전화가 걸려 왔습니다."). Never the result first.
 - phone (role 사기범 or the caller's id): the call or text as reported, on the phone screen; the line is the caller's
   opening words as reported. For a call app "call", sender masked like "02-●●●-●●●●" unless the report shows it.
 - talk scenes: the drama itself. role is a character id, cast the people in the picture. The scammer pushes with
@@ -579,8 +582,8 @@ def check_script(script, layout, c):
         if any(x["speaker"] != "host" for x in script["scenes"]):
             problems.append("narration: speaker must be host in every scene")
     if layout is LAYOUT_REENACT:
-        if not 12 <= len(kinds) <= 18:
-            problems.append(f"{len(kinds)} scenes, need 12 to 18")
+        if not 18 <= len(kinds) <= 24:
+            problems.append(f"{len(kinds)} scenes, need 18 to 24")
         for k in ("hook", "talk", "twist", "steps", "outro"):
             if k not in kinds:
                 problems.append(f"no {k} scene")
@@ -588,8 +591,8 @@ def check_script(script, layout, c):
         for sc in script["scenes"]:
             if sc["role"] != "내레이션" and sc["role"] not in ids:
                 problems.append(f'role "{sc["role"]}" is not one of the characters {sorted(ids)} or 내레이션')
-        if sum(k == "talk" for k in kinds) < 5:
-            problems.append("a drama needs at least 5 talk scenes")
+        if sum(k == "talk" for k in kinds) < 0.6 * len(kinds) - 1:
+            problems.append("a drama is mostly dialogue: make at least 60% of the scenes talk")
     if layout is LAYOUT_LIST and kinds != ["list"]:
         problems.append("need exactly one list scene")
     for sc in script["scenes"]:
