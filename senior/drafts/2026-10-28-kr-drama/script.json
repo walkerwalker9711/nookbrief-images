@@ -1,0 +1,405 @@
+{
+  "pillar": "사기·안전",
+  "topic": "검은 봉투와 테이프를 요구한 보이스피싱을 알아채 경찰과 공조한 70대 여성",
+  "title": "“테이프로 감으세요” 그 말을 들은 할머니의 선택",
+  "mood": "alert",
+  "case_tag": "실제 사건 재구성 · 2026년 9월 공개 · 지역 미공개",
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "천삼백만 원을 검은 봉투에 담아, 테이프로 감으라는 전화였습니다.",
+      "delivery": "[quiet, grave]",
+      "caption": "1,300만 원을 싸라",
+      "hot": [
+        "천삼백만"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, extreme close-up of 할머니 holding a black plastic bag beside packing tape, tense apartment interior, vertical composition, central subject, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "scammer",
+      "line": "검정색 비닐봉투입니다. 이거 담아서 테이프로 다섯 번, 여섯 번 감으시라고요.",
+      "delivery": "[controlled, insistent]",
+      "caption": "다섯 번, 여섯 번",
+      "hot": [
+        "테이프로"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, medium close-up of 사기범 speaking into a phone in a dim room, face half in shadow, blank call interface inset with icon shapes only, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사기범",
+      "phone": {
+        "app": "call",
+        "sender": "번호 미공개",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "앞서 이 남자는 공무원이라고 했습니다. 명의 도용 사건에 얽혔다며 통장 돈을 찾으라고 했고, 어르신은 돈을 찾았습니다.",
+      "delivery": "[steady, measured]",
+      "caption": "공무원이라더니",
+      "hot": [
+        "공무원이라고"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, high-angle shot of 할머니 at a bank counter holding a cash envelope and phone, anxious posture, no other visible people, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "하지만 돈을 찾아 돌아가는 길에 뭔가 이상했습니다. 그래서 어르신은 집 대신 지구대로 갔습니다.",
+      "delivery": "[calm, reflective]",
+      "caption": "집 대신 지구대",
+      "hot": [
+        "지구대로"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, wide rear tracking shot of 할머니 entering a neighborhood police office with her handbag, determined but worried, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "전화 받고 돈을 찾았는데… 좀 이상해서요.",
+      "delivery": "[hesitant, worried]",
+      "caption": "좀 이상해서요",
+      "hot": [
+        "이상해서요"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, eye-level two-shot of 할머니 showing her phone to 경찰관 across a police office desk, attentive listening and concern, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할머니"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "경찰이 확인해 보니 보이스피싱이었습니다. 이에 어르신은 경찰과 함께 수거책을 잡기 위해, 속는 척 전화를 받았습니다.",
+      "delivery": "[low, deliberate]",
+      "caption": "속는 척 받았다",
+      "hot": [
+        "보이스피싱이었습니다"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, over-the-shoulder shot behind 경찰관 listening beside 할머니 and her phone, focused police office atmosphere, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "예, 알았어.",
+      "delivery": "[plain, playing along]",
+      "caption": "예, 알았어",
+      "hot": [
+        "알았어"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, tight profile shot of 할머니 calmly answering her phone in an apartment interior while 경찰관 records beside her, controlled tension, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할머니"
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "맞은편 CCTV로 지문 인식이 연결돼 있어요. 우편함에 십 분에서 십오 분만 넣으세요.",
+      "delivery": "[cold, commanding]",
+      "caption": "우편함에 넣으라",
+      "hot": [
+        "우편함에"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, low-angle close-up of 사기범 gripping a phone in a dim room, face half in shadow, manipulative expression, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사기범",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "다 감았어요.",
+      "delivery": "[matter-of-fact, restrained]",
+      "caption": "경찰 곁에서",
+      "hot": [
+        "감았어요"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, overhead detail shot of 할머니 holding the taped black bag with a phone near her ear while 경찰관 records the exchange, tense cooperation, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할머니"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "물론 지문을 확인한다는 말은 거짓말이었습니다. 하지만 어르신은 범인을 잡기 위해 경찰과 내려가, 우편함에 봉투를 넣었습니다.",
+      "delivery": "[steady, serious]",
+      "caption": "지문 확인은 거짓",
+      "hot": [
+        "거짓말이었습니다"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, side-view wide shot of 할머니 placing a taped black bag into an apartment mailbox while 경찰관 stays nearby, suspenseful lobby, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "저희가 저쪽에 있을게요.",
+      "delivery": "[hushed, firm]",
+      "caption": "저쪽에 있을게요",
+      "hot": [
+        "저쪽에"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, medium shot of 경찰관 quietly speaking to 할머니 beside the apartment entrance before moving out of sight, reassuring eye contact, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "twist",
+      "speaker": "host",
+      "line": "잠시 후 수거책이 봉투를 꺼냈습니다. 뒤에는 형사가 있었습니다.",
+      "delivery": "[low, pointed]",
+      "caption": "바로 뒤에 형사",
+      "hot": [
+        "형사가"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, dynamic diagonal shot of 수거책 reaching into the mailbox as 경찰관 steps in directly behind him, abrupt reversal and shock, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "수거책,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그 자리에서 수거책이 현행범으로 붙잡혔고, 어르신의 천삼백만 원도 지킬 수 있었습니다.",
+      "delivery": "[measured, relieved]",
+      "caption": "1,300만 원 지켰다",
+      "hot": [
+        "붙잡혔고"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, eye-level medium-wide shot of 경찰관 securing 수거책 beside the mailbox with the black bag visible, restrained realistic arrest without violence, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,수거책",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "steps",
+      "speaker": "host",
+      "line": "전화로 현금을 요구하면 끊으세요. 돈은 건네지 말고, 일일이에 신고하세요.",
+      "delivery": "[calm, clear]",
+      "caption": "끊고 112 신고",
+      "hot": [
+        "끊으세요"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, clean symbolic close-up of a smartphone beside an untouched cash envelope, blank call icons only, calm neutral background, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "none",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [
+        {
+          "text": "전화 지시대로 현금 전달",
+          "ok": false
+        },
+        {
+          "text": "의심 전화 끊기",
+          "ok": true
+        },
+        {
+          "text": "112 신고",
+          "ok": true
+        }
+      ],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "그날 어르신은 집 대신 지구대로 가셨습니다.",
+      "delivery": "[quiet, warm]",
+      "caption": "집 대신 지구대로",
+      "hot": [
+        "지구대로"
+      ],
+      "image_prompt": "Korean 2D flat webtoon drama, quiet wide shot of a neighborhood street branching toward a police office entrance, gentle afternoon light and a reassuring atmosphere, no people, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "none",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "sources": [
+    {
+      "name": "경찰청",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148972492"
+    },
+    {
+      "name": "뉴시스",
+      "url": "https://mobile.newsis.com/view/NISX20260923_0003801789"
+    },
+    {
+      "name": "포항남부경찰서",
+      "url": "https://www.gbpolice.go.kr/bbs/view.do?bbsId=5&pageNum=1&sid=phnb&wr_id=27828"
+    }
+  ],
+  "description": "#보이스피싱 #사기예방 #실제사건\n\n“검은 봉투를 테이프로 감으세요.”\n수상한 지시를 받은 70대 어르신이 집 대신 지구대로 향했습니다.\n\n▶ 공무원을 사칭하며 명의 도용 사건을 들먹인 전화\n▶ 현금을 찾은 뒤에도 이어진 이상한 지시\n▶ 경찰 곁에서 다시 받은 사기범의 전화\n▶ 봉투를 넣은 우편함 앞에서 시작된 잠복\n\n✅ 전화로 현금을 요구하면 끊고, 건네기 전에 112에 신고하세요.\n\n#한국이장님 #보이스피싱 #사기예방 #현금수거책 #실화재구성\n\n📰 출처: 경찰청, 뉴시스, 포항남부경찰서\n※ AI 음성·그림으로 재구성",
+  "tags": [
+    "한국이장님",
+    "보이스피싱",
+    "사기예방",
+    "현금수거책",
+    "70대",
+    "실제사건",
+    "우편함사기"
+  ],
+  "ko_review": "천삼백만 원을 검은 봉투에 담아, 테이프로 감으라는 전화였습니다.\n\n사기범: 검정색 비닐봉투입니다. 이거 담아서 테이프로 다섯 번, 여섯 번 감으시라고요.\n\n앞서 이 남자는 공무원이라고 했습니다. 명의 도용 사건에 얽혔다며 통장 돈을 찾으라고 했고, 어르신은 돈을 찾았습니다.\n하지만 돈을 찾아 돌아가는 길에 뭔가 이상했습니다. 그래서 어르신은 집 대신 지구대로 갔습니다.\n\n할머니: 전화 받고 돈을 찾았는데… 좀 이상해서요.\n\n경찰이 확인해 보니 보이스피싱이었습니다. 이에 어르신은 경찰과 함께 수거책을 잡기 위해, 속는 척 전화를 받았습니다.\n\n할머니: 예, 알았어.\n사기범: 맞은편 CCTV로 지문 인식이 연결돼 있어요. 우편함에 십 분에서 십오 분만 넣으세요.\n할머니: 다 감았어요.\n\n물론 지문을 확인한다는 말은 거짓말이었습니다. 하지만 어르신은 범인을 잡기 위해 경찰과 내려가, 우편함에 봉투를 넣었습니다.\n\n경찰관: 저희가 저쪽에 있을게요.\n\n잠시 후 수거책이 봉투를 꺼냈습니다. 뒤에는 형사가 있었습니다.\n그 자리에서 수거책이 현행범으로 붙잡혔고, 어르신의 천삼백만 원도 지킬 수 있었습니다.\n\n전화로 현금을 요구하면 끊으세요. 돈은 건네지 말고, 일일이에 신고하세요.\n그날 어르신은 집 대신 지구대로 가셨습니다.",
+  "fact_notes": "선정 근거: 사용자가 제공한 최근 7일 트렌드의 고령층 보이스피싱 대응·검거 실화 수요에 맞췄다. 이 개별 사건이 이번 주 검색량 상위라는 별도 수치는 확인하지 못해 넣지 않았다.\n경찰청이 2026년 9월 23일 공개한 공식 게시물에서 70대 어르신의 현금 인출, 귀가 중 의심, 지구대 방문, 경찰과의 검거 공조를 확인했다. 실제 발생 월과 지역은 확인되지 않아 case_tag는 공개 시점과 지역 미공개로 표기했다. ([korea.kr](https://www.korea.kr/news/policyNewsView.do?newsId=148972492&utm_source=openai))\n1,300만 원, 피해자의 성별, 테이프를 다섯 번·여섯 번 감으라는 녹취, CCTV·지문 인식 주장, 10~15분 우편함 보관 지시, 피해자의 응답, 경찰의 잠복 발언과 현행범 체포는 경찰청 현장 영상을 직접 취재·인용한 뉴시스의 2026년 9월 23일 보도가 근거다. 통계나 전년도 피해액은 사용하지 않았다. ([mobile.newsis.com](https://mobile.newsis.com/view/NISX20260923_0003801789?utm_source=openai))\n장면 2는 최초 접근 전화의 첫마디가 아니라 보도에 공개된 통화 구간이다. 최초 통화 첫마디는 확인되지 않아 만들어 넣지 않았다. 장면 5는 도움 요청 사실을 입말로 재구성했으며 직접 녹취가 아니다. 장면 8은 보도된 사기범 주장을 축약한 재구성이다. 지문 인식 설명은 실제 기술이나 공적 절차가 아닌 사기범의 거짓 주장으로 명시했다. ([korea.kr](https://www.korea.kr/news/policyNewsView.do?newsId=148972492&utm_source=openai))\n전화로 금전을 요구하면 끊고 112로 신고하라는 예방 행동과 신고번호는 포항남부경찰서의 2026년 8월 19일 공식 안내가 근거다. 범인 검거 장면은 당시 경찰 공조 상황이며, 일반 시청자에게 잠복·유인·직접 검거를 권하지 않는다. ([gbpolice.go.kr](https://www.gbpolice.go.kr/bbs/view.do?bbsId=5&pageNum=1&sid=phnb&wr_id=27828&utm_source=openai))\n인물 외형은 신원 재현이 아닌 익명화된 그림 설정이다. 통화 번호와 시각은 미공개라 임의 숫자를 넣지 않았다. 느린 낭독과 반전 직전 정지를 포함해 약 90~105초를 목표로 한다.",
+  "characters": [
+    {
+      "id": "할머니",
+      "label": "할머니 · 70대",
+      "voice": "old_f",
+      "look": "A Korean woman in her seventies with short softly curled gray hair, a muted lavender cardigan, charcoal trousers, and a small brown handbag."
+    },
+    {
+      "id": "사기범",
+      "label": "공무원 사칭 전화",
+      "voice": "scammer",
+      "look": "An anonymous adult male figure with short dark hair and a charcoal jacket, always shown in a dim room with half his face concealed in shadow."
+    },
+    {
+      "id": "경찰관",
+      "label": "경찰관 · 현장 공조",
+      "voice": "adult_m",
+      "look": "An adult Korean male police officer with short black hair, a light blue uniform shirt, navy trousers, and a dark utility belt without readable insignia."
+    },
+    {
+      "id": "수거책",
+      "label": "현금 수거책",
+      "voice": "scammer",
+      "look": "An anonymous adult man with short black hair, a plain dark gray jacket, black trousers, and unmarked sneakers."
+    }
+  ],
+  "format": "drama"
+}
