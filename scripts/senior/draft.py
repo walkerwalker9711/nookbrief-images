@@ -269,8 +269,11 @@ Scenes, 18 to 24, one line each (one or two short spoken sentences), told strict
 full article text, not a search summary, and use every line the report quotes word for word.
 - hook (role 내레이션, cast the victim): the setup, who called whom pretending to be what
   ("어느 날, 70대 할머니에게 공무원이라는 남자의 전화가 걸려 왔습니다."). Never the result first.
-- phone (role 사기범 or the caller's id): the call or text as reported, on the phone screen; the line is the caller's
-  opening words as reported. For a call app "call", sender masked like "02-●●●-●●●●" unless the report shows it.
+- Shape the drama to how THIS case really happened (owner 10-28: "real cases are not always phone calls, no fixed
+  template"): a call, a text, a messenger chat, a fake app, a face-to-face meeting, a visit to the house, a romance or
+  investment chat, a fake job, a letter. Use a phone scene only when the case started on the phone: app "call" for a
+  call (sender masked like "02-●●●-●●●●" unless the report shows it), "sms" for a text or messenger; otherwise leave
+  out the phone scene and play the scene where it happened (a café, the doorstep, a bank, a car).
 - talk scenes: the drama itself. role is a character id, cast the people in the picture. The scammer pushes with
   the tricks the report describes (urgency, threats, secrecy, a safe account, an app); the victim answers like a
   real older Korean person (짧은 입말, 사투리 조금은 괜찮음). Every odd instruction has its reason as reported
@@ -586,7 +589,7 @@ def check_script(script, layout, c):
     if layout is LAYOUT_REENACT:
         if not 18 <= len(kinds) <= 24:
             problems.append(f"{len(kinds)} scenes, need 18 to 24")
-        for k in ("hook", "talk", "twist", "steps", "outro"):
+        for k in ("hook", "talk", "steps", "outro"):
             if k not in kinds:
                 problems.append(f"no {k} scene")
         ids = {ch["id"] for ch in script.get("characters", [])}
