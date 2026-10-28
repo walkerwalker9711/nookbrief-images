@@ -382,6 +382,9 @@ storyteller on a phone screen. Below is a finished script as JSON. Rewrite ONLY 
 - cause and effect: read the lines in order as a viewer who knows nothing. Every action of the victim (taps a link,
   installs an app, calls a number, moves money) must follow from what the scammer said or sent just before, with who,
   how and the excuse; if a line jumps ("보내온 링크를 눌렀습니다" right after a call with no link), fix it using only the facts;
+- every odd instruction the scammer gives (remove the USIM, install an app, send an ID) needs its "why" in the
+  story: the pretext he gave if a source reports it ("대출을 진행하려면 유심을 빼야 한다고"), and what the gang was
+  really after if police said it ("유심을 손에 넣어 금융정보를 빼내려던 것"); never invent a pretext (owner 10-28);
 - one or two short reenacted lines make it a scene, not a report: write them inside the line as {{직원(여): ...}}, {{점장(남): ...}} or
   {{사기범: ...}} (mark (남) or (여) to match the person drawn in that scene) (another voice reads them); each only puts into words something the facts say happened, no new facts;
 - link the sentences the way a person tells a story: connectors and motives ("하지만", "이에", "잠시 후", "~하기 위해",
