@@ -1,5 +1,6 @@
 name: trends
-# Daily, read-only YouTube collection for the senior Shorts trend board (scripts/trends).
+# Daily, read-only YouTube collection for the senior Shorts trend board (scripts/trends). The schedule only runs from
+# main; until PR #4 is merged a push touching this file runs it (last manual run 2026-10-28).
 on:
   schedule:
     - cron: "0 21 * * *"  # 06:00 KST
