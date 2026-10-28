@@ -59,11 +59,11 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "그 말을 믿었는데, 상담사는 유심도 빼라고 했습니다. 그래서 통신사 매장을 찾았습니다.",
+      "line": "그런데 이 상담사는 대출을 진행하려면 유심을 빼야 한다고 했습니다. 이에 어르신은 유심을 빼러 통신사 매장을 찾았습니다.",
       "delivery": "[measured]",
-      "caption": "유심도 빼라",
+      "caption": "대출하려면 유심을 빼라?",
       "hot": [
-        "유심도"
+        "유심을"
       ],
       "image_prompt": "Vertical 2D Korean webtoon drama, rear view of the same older customer entering a neighborhood mobile phone shop in Jeju carrying one smartphone, face not emphasized, no text or logos, lower third empty.",
       "cast": "none",
@@ -80,7 +80,7 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "하지만 점장이 물었습니다. {점장(남): 유심은 왜 빼시려고요?} 대출 상담사가 시켰다는 답이 돌아왔습니다.",
+      "line": "매장 점장이 어르신에게 물었습니다. {점장(남): 유심은 왜 빼시려고요?} 대출 상담사가 시켰다는 답이 돌아왔습니다.",
       "delivery": "[quiet, probing]",
       "caption": "왜 빼시려고요",
       "hot": [
@@ -101,11 +101,11 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "사기를 의심한 점장은 대화를 확인하고, 비행기 모드로 연락부터 끊었습니다.",
+      "line": "사기를 의심한 점장은 휴대전화부터 비행기 모드로 바꾸고 살펴봤습니다. 그러자 은행을 사칭한 앱과 사기범과 나눈 대화가 나왔습니다.",
       "delivery": "[firm, restrained]",
-      "caption": "연락부터 끊었다",
+      "caption": "은행 사칭 앱 발견",
       "hot": [
-        "비행기 모드로"
+        "사칭"
       ],
       "image_prompt": "Vertical 2D Korean webtoon drama, close-up of the shop manager's hand enabling an airplane-shaped icon on the same older customer's smartphone with permission, blank interface shapes only, no text, numbers or logos, lower third empty.",
       "cast": "none",
@@ -122,12 +122,11 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "이미 신분증과 인증번호가 넘어가 있었고, 배우자 폰엔 악성 앱도 있었습니다.",
+      "line": "범인들은 유심을 손에 넣어 금융정보를 빼내고, 돈을 빼돌릴 계획이었습니다. 배우자 휴대전화에도 같은 악성 앱이 깔려 있었습니다.",
       "delivery": "[low, tense]",
-      "caption": "이미 넘어간 정보",
+      "caption": "유심을 노린 이유",
       "hot": [
-        "인증번호가",
-        "악성 앱도"
+        "금융정보"
       ],
       "image_prompt": "Vertical 2D Korean webtoon drama, the same older customer now seated beside their older spouse at the same shop counter, two smartphones before the manager, screens with blank icon shapes, faces not emphasized, no text or logos, lower third empty.",
       "cast": "none",
@@ -144,7 +143,7 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "이에 점장이 경찰을 불렀고, 함께 설명한 끝에 고객도 사기인 걸 알았습니다.",
+      "line": "이에 점장은 곧바로 경찰에 신고했고, 함께 설명한 끝에 어르신도 사기라는 걸 알았습니다.",
       "delivery": "[measured, solemn]",
       "caption": "경찰과 함께 설득",
       "hot": [
