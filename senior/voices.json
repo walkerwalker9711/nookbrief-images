@@ -11,7 +11,10 @@
     "scammer_chosen": "picked automatically from the voice library, 2026-10-26",
     "extra_voice_id": "AW5wrnG1jVizOYY7R1Oo",
     "extra_voice_name": "Jiyoung - Warm and Clear",
-    "extra_chosen": "picked automatically from the voice library, 2026-10-27"
+    "extra_chosen": "picked automatically from the voice library, 2026-10-27",
+    "extra_m_voice_id": "J3IV02ZzZmojOIQbmpu0",
+    "extra_m_voice_name": "Gun Woong - Deep & Trustworthy",
+    "extra_m_chosen": "picked automatically from the voice library"
   },
   "us": {
     "provider": "elevenlabs",
