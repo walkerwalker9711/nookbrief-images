@@ -193,7 +193,7 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "할머니는 집 대신, 근처 지구대로 발길을 돌렸습니다.",
+      "line": "이상한 낌새를 느낀 할머니께서는 근처 지구대로 발길을 돌렸습니다.",
       "delivery": "[low, firm]",
       "caption": "집 대신 지구대로",
       "hot": [
@@ -281,7 +281,7 @@
     {
       "kind": "talk",
       "speaker": "scammer",
-      "line": "검정색 비닐봉투에 테이프로 다여섯 번 감으시고, 우편함에 놓으시면 됩니다.",
+      "line": "돈을 검정색 비닐봉투에 담아 테이프로 다여섯 번 감으시고, 우편함에 놓으시면 됩니다.",
       "delivery": "[cold, commanding]",
       "caption": "",
       "hot": [
