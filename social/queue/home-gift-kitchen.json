@@ -1,7 +1,7 @@
 {
   "topic": "home-gift-kitchen",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/kitchen-gifts-for-someone-who-cooks.html",
   "video": {
     "ig": "posts/home-gift-kitchen/home-gift-kitchen-short-ig.mp4",
     "link": "posts/home-gift-kitchen/home-gift-kitchen-short-link.mp4",
@@ -36,5 +36,6 @@
       "christmas gifts",
       "cooking"
     ]
-  }
+  },
+  "threads_not_before": 1793204400
 }
