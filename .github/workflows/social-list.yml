@@ -17,3 +17,5 @@ jobs:
         run: python list_posts.py
       - working-directory: scripts/social
         run: python pin_check.py
+      - working-directory: scripts/social
+        run: python site_check.py
