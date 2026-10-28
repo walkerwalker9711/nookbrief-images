@@ -1,7 +1,7 @@
 {
   "topic": "old-wired-usb-or-bluetooth-headset",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/blog-post_181.html",
   "video": {
     "ig": "posts/old-wired-usb-or-bluetooth-headset/old-wired-usb-or-bluetooth-headset-short-ig.mp4",
     "link": "posts/old-wired-usb-or-bluetooth-headset/old-wired-usb-or-bluetooth-headset-short-link.mp4",
@@ -36,5 +36,7 @@
       "usb headset",
       "video calls"
     ]
-  }
+  },
+  "not_before": 1793196473,
+  "threads_not_before": 1793316000
 }
