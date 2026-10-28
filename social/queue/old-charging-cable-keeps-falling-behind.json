@@ -1,7 +1,7 @@
 {
   "topic": "old-charging-cable-keeps-falling-behind",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/charging-cable-falls-behind-desk-surface-fit-reach.html",
   "video": {
     "ig": "posts/old-charging-cable-keeps-falling-behind/old-charging-cable-keeps-falling-behind-short-ig.mp4",
     "link": "posts/old-charging-cable-keeps-falling-behind/old-charging-cable-keeps-falling-behind-short-link.mp4",
@@ -36,5 +36,7 @@
       "desk organization",
       "wfh"
     ]
-  }
+  },
+  "not_before": 1793172209,
+  "threads_not_before": 1793229600
 }
