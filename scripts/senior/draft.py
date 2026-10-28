@@ -509,6 +509,8 @@ Below is a finished script as JSON. Rewrite ONLY each scene's "line", "caption",
 - cause and effect: read it in order as a viewer who knows nothing; every action follows from what came just before,
   and every odd instruction carries the reason the scammer gave as reported (never invent one);
 - narration lines (role 내레이션) are short bridges told by a calm storyteller, past tense, with connectors;
+- it reads like a human screenwriter and director wrote it (owner 10-28): clean 기승전결, everything connects;
+  every line the article quotes stays in, placed where it explains what comes next; follow the channel's 웹툰 드라마 편 기준 대본;
 - the twist is short and lands; the outro is one quiet line;
 - facts stay exactly as reported: change nothing in "sources", "fact_notes", "phone", "steps", "kind", "speaker",
   "role", "cast", "image_prompt", "characters"; add no detail, number or quote that is not in the facts;
