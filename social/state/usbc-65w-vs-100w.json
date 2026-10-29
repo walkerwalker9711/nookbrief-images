@@ -1,0 +1,31 @@
+{
+  "pinterest": "skipped: Pinterest secrets not set",
+  "instagram_deleted_no_cover": {
+    "media_id": "18098558015646370",
+    "published_at": 1792646709
+  },
+  "instagram": {
+    "media_id": "18015578912950882",
+    "published_at": 1792653895
+  },
+  "threads_deleted_20261022": {
+    "post_id": "18133804726775479",
+    "reply_id": "17974072596169968"
+  },
+  "threads_post_deleted_20261022": "18133804726775479",
+  "youtube_deleted_20261022": {
+    "video_id": "YyBbIDq_CGw",
+    "privacy": "public"
+  },
+  "started_for": null,
+  "threads_post": "18114306101026070",
+  "threads": {
+    "post_id": "18114306101026070",
+    "reply_id": "17911774854512702"
+  },
+  "youtube": {
+    "video_id": "NC08R8KsGSc",
+    "privacy": "public",
+    "thumbnail": "set"
+  }
+}

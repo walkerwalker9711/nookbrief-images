@@ -1,0 +1,2 @@
+kb-wrong-symbols-11-pick.png | 11 | A full-size blank-key wired keyboard includes a number pad and a single USB-A cable.
+kb-wrong-symbols-12-pick.png | 12 | A slim compact wireless keyboard has round blank keys and no number pad.

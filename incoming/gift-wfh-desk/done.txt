@@ -1,0 +1,16 @@
+gift-wfh-desk-12-pick.png | 12 | Square LED panel light on an adjustable clip arm.
+gift-wfh-desk-15-pick.png | 15 | Slim wireless mouse with a small scroll wheel.
+gift-wfh-desk-17-pick.png | 17 | Aluminum portable SSD with a USB-C port and short cable.
+gift-wfh-desk-18-pick.png | 18 | Black USB-C to USB-C cable with both connectors visible.
+gift-wfh-desk-11-pick.png | 11 | Silver-grey wall charger with two USB-C ports, one USB-A port and folding prongs.
+gift-wfh-desk-01-cover.png | 01 | A winter home-office desk holds a laptop and three teal-ribbon gift boxes.
+gift-wfh-desk-02-body.png | 02 | A video-call desk pairs a laptop with a clipped light panel and wireless headphones.
+gift-wfh-desk-03-body.png | 03 | A laptop sits on an aluminum stand with a gift bow beside a mouse and coffee.
+gift-wfh-desk-13-pick.png | 13 | Soft grey wireless over-ear headphones stand alone on a warm off-white background.
+gift-wfh-desk-14-pick.png | 14 | An empty curved aluminum laptop stand rests on a warm off-white background.
+gift-wfh-desk-16-pick.png | 16 | A slim monitor light bar casts a soft downward glow onto the surface below.
+gift-wfh-desk-41-reel.png | 41 | A winter home-office desk holds a blank-screen laptop, plant, mug and two teal-ribbon gifts.
+gift-wfh-desk-42-reel.png | 42 | A softly glowing square light panel clips onto a laptop with a loose ribbon bow.
+gift-wfh-desk-43-reel.png | 43 | A sage desk mat holds a laptop stand, mouse, headphones, charger and pine sprig.
+gift-wfh-desk-44-reel.png | 44 | A monitor light bar illuminates an evening desk with charging devices and a warm lamp.
+gift-wfh-desk-45-reel.png | 45 | A teal-ribbon gift rests beside a mug and folded blanket amid warm string-light bokeh.

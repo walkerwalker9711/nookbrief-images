@@ -1,0 +1,12 @@
+usbc-power-bank-laptop-14-pick.png | 14 | Black USB-C to USB-C cable with both connectors visible.
+usbc-power-bank-laptop-01-cover.png | 01 | A laptop charges from a generic power bank on a sunny cafe table beside coffee and a map.
+usbc-power-bank-laptop-02-body.png | 02 | A power bank shares power between a laptop and phone through differently glowing USB-C cables.
+usbc-power-bank-laptop-03-body.png | 03 | An open carry-on backpack holds a laptop and power bank on an airport seat.
+usbc-power-bank-laptop-11-pick.png | 11 | A slim light grey power bank has a folded built-in USB-C cable and four status dots.
+usbc-power-bank-laptop-12-pick.png | 12 | A charcoal power bank has a wraparound USB-C cable and two top-edge USB-C ports.
+usbc-power-bank-laptop-13-pick.png | 13 | A thick black laptop power bank has a blank display and two USB-C ports plus one USB-A port.
+usbc-power-bank-laptop-41-reel.png | 41 | A laptop charges from a charcoal power bank on a golden-hour cafe table beside coffee.
+usbc-power-bank-laptop-42-reel.png | 42 | A USB-C plug rests before a charcoal power bank port beside a glowing white status light.
+usbc-power-bank-laptop-43-reel.png | 43 | A laptop and phone connect to a central power bank on linen beside an unmarked travel wallet.
+usbc-power-bank-laptop-44-reel.png | 44 | A laptop charges from a power bank on a hotel desk with warm light and teal curtains.
+usbc-power-bank-laptop-45-reel.png | 45 | A backpack pocket holds a power bank and coiled cable on an airport seat.

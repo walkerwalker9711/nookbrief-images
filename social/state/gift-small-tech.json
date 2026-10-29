@@ -1,0 +1,18 @@
+{
+  "pinterest": "skipped: Pinterest secrets not set",
+  "instagram": {
+    "media_id": "17983461737906120",
+    "published_at": 1792651919
+  },
+  "threads_deleted_20261022": {
+    "post_id": "18141556444623873",
+    "reply_id": "18036070034845144"
+  },
+  "threads_post_deleted_20261022": "18141556444623873",
+  "started_for": 1792663082,
+  "youtube": {
+    "video_id": "t0pGPnik208",
+    "privacy": "public",
+    "thumbnail": "set"
+  }
+}

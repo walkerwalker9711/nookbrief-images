@@ -1,0 +1,29 @@
+name: social-tokens
+# Weekly: check that the Instagram, Threads and YouTube tokens still work.
+# A failed run makes GitHub email the owner.
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install requests==2.32.3
+      - working-directory: scripts/social
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python check_tokens.py
+      - name: Use each Instagram permission once (Meta use case testing)
+        if: always()
+        working-directory: scripts/social
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python ig_review_calls.py
