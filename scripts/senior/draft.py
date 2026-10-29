@@ -55,7 +55,7 @@ CHANNELS = {
                     "calculating eyes, dark jacket over a black shirt, a call-center headset. No mustache, not a "
                     "caricature. Upper body at a desk in a dim, blue-lit call-center room. Clearly an illustration, not a photo.",
         "scammer_tts": {"voice": "echo", "instructions": "빠르고 능글맞은 30대 남자 사기꾼. 공손한 척하지만 급하게 몰아붙이는 말투."},
-        "mic": True, "source": "출처", "host": "이장님", "labels": {"alert": "⚠ 사기 경보", "touching": "훈훈 실화", "warm": "이장님 알림"},
+        "mic": True, "source": "출처", "host": "이장님", "labels": {"alert": "⚠ 사기 경보", "touching": "감동 실화", "warm": "이장님 알림"},
     },
     "us": {
         "name": "Pops Knows", "region": "US", "lang": "American English",
