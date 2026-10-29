@@ -3,12 +3,48 @@
   "mood": "alert",
   "situation": "협박 전화 긴장"
  },
+ "alert-mystery": {
+  "mood": "alert",
+  "situation": "미스터리 저음"
+ },
+ "alert-pressure": {
+  "mood": "alert",
+  "situation": "시간 압박"
+ },
  "alert-chase": {
   "mood": "alert",
   "situation": "검거·추격 클라이맥스"
  },
+ "alert-aftermath": {
+  "mood": "alert",
+  "situation": "반전 직후"
+ },
+ "alert-explain": {
+  "mood": "alert",
+  "situation": "차분한 해설"
+ },
  "touching-piano": {
   "mood": "touching",
   "situation": "따뜻한 피아노"
+ },
+ "touching-strings": {
+  "mood": "touching",
+  "situation": "현악 고조"
+ },
+ "touching-guitar": {
+  "mood": "touching",
+  "situation": "어쿠스틱 기타 일상"
+ },
+ "touching-hope": {
+  "mood": "touching",
+  "situation": "슬픔에서 희망으로"
+ },
+ "touching-family": {
+  "mood": "touching",
+  "situation": "가족·추억"
+ },
+ "touching-ending": {
+  "mood": "touching",
+  "situation": "잔잔한 엔딩"
  }
 }
