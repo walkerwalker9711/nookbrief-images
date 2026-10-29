@@ -12,6 +12,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 import requests
@@ -60,8 +61,13 @@ def make(ids):
         if out.exists():
             print("have", tid)
             continue
-        r = requests.post(f"{API}/music", headers=headers(), timeout=600,
-                          json={"prompt": f"{prompt} {COMMON}", "music_length_ms": SECONDS * 1000, "model_id": "music_v1"})
+        for wait in (0, 20, 60, 120, 240):  # 429 "system_busy" comes and goes (10-29)
+            time.sleep(wait)
+            r = requests.post(f"{API}/music", headers=headers(), timeout=600,
+                              json={"prompt": f"{prompt} {COMMON}", "music_length_ms": SECONDS * 1000, "model_id": "music_v1"})
+            if r.status_code != 429:
+                break
+            print(tid, "busy, retrying")
         if r.status_code != 200:
             sys.exit(f"{tid}: {r.status_code} {r.text[:400]}")
         raw = out.with_suffix(".raw.mp3")
