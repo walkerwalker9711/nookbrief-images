@@ -1,0 +1,14 @@
+{
+ "alert-threat": {
+  "mood": "alert",
+  "situation": "협박 전화 긴장"
+ },
+ "alert-chase": {
+  "mood": "alert",
+  "situation": "검거·추격 클라이맥스"
+ },
+ "touching-piano": {
+  "mood": "touching",
+  "situation": "따뜻한 피아노"
+ }
+}
