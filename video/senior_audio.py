@@ -1,7 +1,8 @@
 """Music beds and effects for the senior warning Shorts (한국이장님 / Pops Knows), synthesized here.
 
   python senior_audio.py <out_dir> <seconds> <mood> [seed]
-mood: alert (scam weeks: low pulse, ticking clock, minor drone) or warm (tips, benefits, nostalgia).
+mood: alert (scam dramas: string ostinato, taiko), touching (heartwarming true stories: slow piano and strings)
+or warm (tips, benefits, nostalgia).
 Writes music.wav plus fx-*.wav and prints {"music": ..., "sfx": {...}} as JSON.
 """
 import json
@@ -58,6 +59,38 @@ def warm(seconds, seed=11):
     return BEDS[name](seconds, key=[0, 2, -3, 5][seed % 4], seed=seed)
 
 
+def piano(f, sec):
+    """Soft felt piano: a few decaying partials with a quick hammer attack."""
+    t = env(sec)
+    w = sum(np.sin(2 * np.pi * f * k * t) * (0.55 ** k) * np.exp(-t * (1.1 + 0.9 * k)) for k in range(1, 6))
+    return w * np.minimum(1, t / 0.006)
+
+
+def touching(seconds, seed=5, bpm=68):
+    """Bed for the heartwarming true-story dramas (owner 10-29: alternate with the scam dramas): slow piano
+    arpeggios over I-V-vi-IV, a string pad that only comes in for the second half and swells to the end."""
+    tr, rng = Track(seconds), np.random.default_rng(seed)
+    beat = 60 / bpm
+    bar = beat * 4
+    key = [0, 2, -3, 5][seed % 4]
+    prog = [[60, 64, 67], [55, 59, 62], [57, 60, 64], [53, 57, 60]]
+    b, i = 0.0, 0
+    while b < seconds:
+        ch = [m + key for m in prog[i % 4]]
+        tr.hit(b, piano(hz(ch[0] - 12), bar * 1.2), 0.22)
+        line = [ch[0], ch[1], ch[2], ch[1] + 12, ch[2], ch[1], ch[0] + 12, ch[2]]
+        for k, m in enumerate(line):
+            tr.hit(b + k * beat / 2 + 0.01 * rng.random(), piano(hz(m), beat * 2.5), 0.11 if k % 2 else 0.14)
+        if b > seconds * 0.4:
+            lift = min(1, (b - seconds * 0.4) / (seconds * 0.4))
+            for m in ch:
+                tr.hit(b, pad(hz(m), bar + 0.8, 0.25), 0.03 + 0.04 * lift)
+        b, i = b + bar, i + 1
+    k = int(0.31 * SR)
+    tr.out[k:] += tr.out[:-k].copy() * 0.25
+    return tr.done(1.0, 2.0)
+
+
 def sfx():
     rng = np.random.default_rng(3)
     # two-tone alarm, three quick pairs
@@ -109,7 +142,7 @@ def write(path, x):
 
 def main(out_dir, seconds, mood, seed=7):
     os.makedirs(out_dir, exist_ok=True)
-    write(os.path.join(out_dir, "music.wav"), (alert if mood == "alert" else warm)(seconds, seed=seed))
+    write(os.path.join(out_dir, "music.wav"), {"alert": alert, "touching": touching}.get(mood, warm)(seconds, seed=seed))
     fx = {}
     for name, x in sfx().items():
         write(os.path.join(out_dir, f"fx-{name}.wav"), x)

@@ -55,7 +55,7 @@ CHANNELS = {
                     "calculating eyes, dark jacket over a black shirt, a call-center headset. No mustache, not a "
                     "caricature. Upper body at a desk in a dim, blue-lit call-center room. Clearly an illustration, not a photo.",
         "scammer_tts": {"voice": "echo", "instructions": "빠르고 능글맞은 30대 남자 사기꾼. 공손한 척하지만 급하게 몰아붙이는 말투."},
-        "mic": True, "source": "출처", "host": "이장님", "labels": {"alert": "⚠ 사기 경보", "warm": "이장님 알림"},
+        "mic": True, "source": "출처", "host": "이장님", "labels": {"alert": "⚠ 사기 경보", "touching": "이장님 실화", "warm": "이장님 알림"},
     },
     "us": {
         "name": "Pops Knows", "region": "US", "lang": "American English",
@@ -69,7 +69,7 @@ CHANNELS = {
                    "cinematic lighting, muted colors. Short dark hair, cold eyes, dark jacket, a call-center headset. "
                    "Not a caricature. Upper body at a desk in a dim, blue-lit call-center room. Clearly an illustration.",
         "scammer_tts": {"voice": "echo", "instructions": "A fast-talking, fake-polite scammer in his 30s who keeps pushing."},
-        "mic": False, "source": "Source", "host": "Pops", "labels": {"alert": "⚠ SCAM ALERT", "warm": "POPS KNOWS"},
+        "mic": False, "source": "Source", "host": "Pops", "labels": {"alert": "⚠ SCAM ALERT", "touching": "TRUE STORY", "warm": "POPS KNOWS"},
     },
 }
 
@@ -90,7 +90,7 @@ SCHEMA = {
         "pillar": {"type": "string"},
         "topic": {"type": "string"},
         "title": {"type": "string", "description": "YouTube title, under 60 characters, no clickbait caps"},
-        "mood": {"type": "string", "enum": ["alert", "warm"], "description": "alert for scams and dangers, warm for the rest"},
+        "mood": {"type": "string", "enum": ["alert", "touching", "warm"], "description": "alert for scams and dangers, touching for heartwarming true stories, warm for the rest"},
         "case_tag": {"type": "string", "description": "true-story videos only: '실제 사건 · 2026년 9월 · 경기 남양주' "
                      "(English: 'TRUE CASE · Sept 2026 · Ohio'), from the report; else empty"},
         "scenes": {"type": "array", "minItems": 1, "maxItems": 10, "items": {
