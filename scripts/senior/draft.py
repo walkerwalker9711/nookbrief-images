@@ -904,6 +904,14 @@ def build_props(channel, script, images, work, folder=None):
     audio = json.loads(subprocess.check_output(
         [sys.executable, str(ROOT / "video" / "senior_audio.py"), str(work), str(total / FPS + 1), script["mood"], str(seed)],
         text=True).strip().splitlines()[-1])
+    # a recorded track from the music library when there is one for this mood (owner 10-29), else the synth bed
+    sys.path.insert(0, str(Path(__file__).parent))
+    import music_library
+    track = music_library.pick(script["mood"], script.get("music", ""))
+    if track:
+        music_library.bed(track, total / FPS + 1, Path(work) / "music.wav")
+        script["music"] = track
+        print("music", track)
     logo = SENIOR / channel / "character.png"
     if logo.exists():
         shutil.copy(logo, Path(work) / "logo.png")

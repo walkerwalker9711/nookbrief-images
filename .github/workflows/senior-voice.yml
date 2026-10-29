@@ -16,10 +16,25 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: pip install requests==2.32.3
+      - run: command -v ffmpeg || (pip install imageio-ffmpeg==0.6.0 && mkdir -p ~/bin && ln -sf "$(python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" ~/bin/ffmpeg && echo ~/bin >> "$GITHUB_PATH")
       - env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: |
           mkdir -p senior/samples
+          # "music check" / "music make <id> ..." build the background music library (owner 10-29); the
+          # make step stops before spending when fewer than 1,500 credits per track are left
+          if grep -q '^music ' senior/samples/el_request; then
+            python scripts/senior/music_library.py check | tee /tmp/credits.txt
+            ids=$(grep '^music make' senior/samples/el_request | sed 's/^music make//')
+            if [ -n "$ids" ]; then
+              left=$(sed -n 's/.* left \([0-9-]*\).*/\1/p' /tmp/credits.txt)
+              n=$(echo $ids | wc -w)
+              if [ "${left:-0}" -lt $((n * 1500)) ]; then echo "not enough credits: $left for $n tracks" | tee senior/samples/music_credits.txt
+              else python scripts/senior/music_library.py make $ids; mkdir -p docs/preview/music; cp video/music_lib/*.mp3 docs/preview/music/; fi
+            fi
+            cp /tmp/credits.txt senior/samples/music_credits_check.txt
+            exit 0
+          fi
           # a line "audition <channel> <role> <text>" makes candidate voices for a drama role instead (owner 10-28)
           if grep -q '^audition ' senior/samples/el_request; then
             grep '^audition ' senior/samples/el_request | while read _ ch role text; do python scripts/senior/voice_audition.py "$ch" "$role" "$text"; done
@@ -30,6 +45,6 @@ jobs:
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add senior/samples
+          git add senior/samples video/music_lib docs/preview/music 2>/dev/null || git add senior/samples
           git commit -m "senior: 한국이장님 episode 1 voice [skip ci]" || exit 0
           for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
