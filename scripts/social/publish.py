@@ -201,6 +201,9 @@ def main(only=None):
         for name, fn in CHANNELS.items():
             if name not in item or isinstance(st.get(name), dict):
                 continue
+            if name == "instagram" and (ROOT / "social" / "instagram_paused").exists():
+                print(qf.stem, "instagram paused (social/instagram_paused)")
+                continue
             if name.startswith("threads"):
                 if not th_ok:
                     print(qf.stem, name, "waits", time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(tnb)) if tnb else "")
