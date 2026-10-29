@@ -160,7 +160,10 @@ def banner(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg"):
 DISPLAY = HERE / "fonts" / "BlackHanSans-Regular.ttf"  # OFL, fonts/OFL.txt
 
 
-def banner2(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg", face=(0.74, 0.19)):
+def banner2(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg", face=(0.74, 0.19),
+            tags=(("사기 실화", (232, 28, 48)), ("감동 실화", (236, 140, 30))),
+            line="진짜 있었던 이야기, 웹툰 드라마로 들려드립니다",
+            chips=("#실제보도사건", "#웹툰드라마", "#매일새이야기"), warm=True):
     """v2 after looking at the channels trending now: one poster picture (host big on the right, dark left), a heavy
     yellow title, one red tag and one line of promise. Text sits in the 1235x338 band every device shows."""
     W, H = 2048, 1152
@@ -198,17 +201,28 @@ def banner2(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg", face=(0.74, 0.19
     # desktop shows the full width but only ~330px of height around the middle: every line sits in y 428..716
     x, y0 = sx0 + 10, 428
     d = ImageDraw.Draw(img, "RGBA")
-    # tag: glowing red pill with a "recording" dot, short and loud
-    ft = ImageFont.truetype(str(DISPLAY), 34)
-    tag = "REAL CASE  실화 사건 파일"
-    tw = text_w(d, tag, ft)
-    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ImageDraw.Draw(glow).rounded_rectangle((x - 6, y0 - 6, x + tw + 82, y0 + 54), 30, fill=(255, 40, 60, 150))
-    img.paste(glow.filter(ImageFilter.GaussianBlur(14)), (0, 0), glow.filter(ImageFilter.GaussianBlur(14)))
+    if warm:  # two genres: a warm lamp glow low on the left answers the police lights on the right
+        np = __import__("numpy")
+        yy, xx = np.mgrid[0:H, 0:W]
+        r = np.sqrt(((xx - 260) / 1.25) ** 2 + (yy - 980) ** 2) / 820
+        a = (np.clip(1 - r, 0, 1) ** 2 * 95).astype("uint8")
+        img = Image.composite(Image.new("RGB", (W, H), (255, 156, 60)), img, Image.fromarray(a))
     d = ImageDraw.Draw(img, "RGBA")
-    d.rounded_rectangle((x, y0, x + tw + 76, y0 + 48), 24, fill=(232, 28, 48))
-    d.ellipse((x + 20, y0 + 16, x + 36, y0 + 32), fill=WHITE)
-    d.text((x + 50, y0 + 5), tag, font=ft, fill=WHITE)
+    # tags: one pill per genre, the first carries the "recording" dot
+    ft = ImageFont.truetype(str(DISPLAY), 34)
+    tx = x
+    for i, (tag, col) in enumerate(tags):
+        tw = text_w(d, tag, ft)
+        pad = 50 if i == 0 else 22
+        glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ImageDraw.Draw(glow).rounded_rectangle((tx - 6, y0 - 6, tx + tw + pad + 28, y0 + 54), 30, fill=col + (150,))
+        img.paste(glow.filter(ImageFilter.GaussianBlur(14)), (0, 0), glow.filter(ImageFilter.GaussianBlur(14)))
+        d = ImageDraw.Draw(img, "RGBA")
+        d.rounded_rectangle((tx, y0, tx + tw + pad + 22, y0 + 48), 24, fill=col)
+        if i == 0:
+            d.ellipse((tx + 20, y0 + 16, tx + 36, y0 + 32), fill=WHITE)
+        d.text((tx + pad, y0 + 5), tag, font=ft, fill=WHITE)
+        tx += tw + pad + 22 + 14
     title = ImageFont.truetype(str(DISPLAY), 140)
     ty = y0 + 50
     shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -216,10 +230,10 @@ def banner2(bg=HERE / "banner_bg.png", out=HERE / "banner.jpg", face=(0.74, 0.19
     img.paste(shadow.filter(ImageFilter.GaussianBlur(8)), (0, 0), shadow.filter(ImageFilter.GaussianBlur(8)))
     d = ImageDraw.Draw(img, "RGBA")
     d.text((x, ty), "한국이장님", font=title, fill=YEL)
-    d.text((x + 4, ty + 146), "보이스피싱, 당하기 전에 먼저 알려드립니다", font=font(38), fill=WHITE)
+    d.text((x + 4, ty + 146), line, font=font(38), fill=WHITE)
     # hashtag chips instead of the old "a | b | c" line
     cx, cy, fc = x + 4, ty + 204, font(25)
-    for chip in ("#실화사연", "#사기수법", "#받을돈", "#폰꿀팁"):
+    for chip in chips:
         cw = text_w(d, chip, fc)
         d.rounded_rectangle((cx, cy, cx + cw + 32, cy + 38), 19, fill=(255, 255, 255, 26), outline=(255, 212, 0, 200), width=2)
         d.text((cx + 16, cy + 2), chip, font=fc, fill=(255, 236, 160))
