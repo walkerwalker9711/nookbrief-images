@@ -16,18 +16,26 @@ from common import YT, google_token  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "senior" / "research" / "banners"
+# "drama": channels of the story/drama Shorts (owner 10-29: the channel is now scam and heartwarming true-story dramas)
+DRAMA = re.compile(r"드라마|사연|실화|참교육|썰|감동|반전")
 KEYWORDS = ["보이스피싱", "스미싱", "5060", "노후 준비", "국민연금", "건강보험", "치매 예방", "카톡 꿀팁", "스마트폰 사용법"]
 
 
-def main():
+def main(mode=""):
+    global OUT
+    if mode == "drama":
+        OUT = OUT.with_name("banners_drama")
     tok = google_token("YT_REFRESH_TOKEN")
     auth = {"Authorization": f"Bearer {tok}"}
     kr = json.loads((ROOT / "trends" / "latest.json").read_text(encoding="utf-8"))["regions"]["KR"]
     best = {}
-    for k in KEYWORDS:
-        for v in kr["keywords"].get(k, {}).get("videos", []):
-            if v["views_per_hour"] > best.get(v["channel"], (0, ""))[0]:
-                best[v["channel"]] = (v["views_per_hour"], v["id"])
+    pool = [v for k in KEYWORDS for v in kr["keywords"].get(k, {}).get("videos", [])]
+    if mode == "drama":
+        pool = [v for v in pool + kr.get("overall", []) + [x for c in kr.get("categories", {}).values() for x in c]
+                if DRAMA.search(v["title"] + " " + " ".join(v.get("tags", [])))]
+    for v in pool:
+        if v["views_per_hour"] > best.get(v["channel"], (0, ""))[0]:
+            best[v["channel"]] = (v["views_per_hour"], v["id"])
     ids = [vid for _, (_, vid) in sorted(best.items(), key=lambda i: -i[1][0])[:30]]
     chan_ids = []
     for i in range(0, len(ids), 50):
@@ -61,4 +69,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else "")
