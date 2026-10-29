@@ -13,6 +13,7 @@ import argparse
 import base64
 import copy
 import datetime as dt
+import hashlib
 import json
 import os
 import re
@@ -823,15 +824,49 @@ FPS = 30
 MIC = 14  # frames of the "삐-" before 이장님 speaks
 
 
-def build_props(channel, script, images, work):
-    """Voice per scene, music and effects into `work`, and the props.json the Remotion renderer reads."""
+def voiced(channel, s, voice, vo, folder):
+    """speak_line, but a line already voiced for this draft (same text, voice and acting tag) is reused from
+    <folder>/voice/, so a rerender after a few edits only pays for the changed lines (owner 10-28: token waste)."""
+    key = {"line": s["line"], "voice": voice, "delivery": s.get("delivery", ""), "v": 2}
+    cache = Path(folder) / "voice" if folder else None
+    if cache:
+        name = hashlib.sha1(json.dumps(key, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:16]
+        mp3, meta = cache / f"{name}.mp3", cache / f"{name}.json"
+        if mp3.exists() and meta.exists():
+            shutil.copy(mp3, vo)
+            m = json.loads(meta.read_text(encoding="utf-8"))
+            print("voice reused", vo.name)
+            return [tuple(w) for w in m["words"]], m["engine"]
+    words, engine = speak_line(channel, s["line"], vo, voice, s.get("delivery", ""))
+    if cache:
+        cache.mkdir(exist_ok=True)
+        shutil.copy(vo, mp3)
+        meta.write_text(json.dumps({**key, "words": words, "engine": engine}, ensure_ascii=False), encoding="utf-8")
+    return words, engine
+
+
+def tempo(vo, words, speed):
+    """Faster speech without touching the music (owner 10-29: speed the voices, not the whole video)."""
+    if speed == 1:
+        return words
+    tmp = str(vo) + ".t.mp3"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(vo), "-filter:a", f"atempo={speed}", "-b:a", "128k", tmp], check=True)
+    os.replace(tmp, vo)
+    return [(w, a / speed, b / speed) for w, a, b in words]
+
+
+def build_props(channel, script, images, work, folder=None):
+    """Voice per scene, music and effects into `work`, and the props.json the Remotion renderer reads.
+    script["voice_tempo"] (e.g. 1.2) speeds up every voice line; the music and effects keep their speed."""
     c = CHANNELS[channel]
     scenes, engine, total = [], None, 0
+    speed = float(script.get("voice_tempo", 1))
     for i, (s, img) in enumerate(zip(script["scenes"], images)):
         vo = Path(work) / f"vo{i}.mp3"
         drama = script.get("format") == "drama"
         voice = drama_role(script, s) if drama else s["speaker"]
-        words, engine = speak_line(channel, s["line"], vo, voice, s.get("delivery", ""))
+        words, engine = voiced(channel, s, voice, vo, folder)
+        words = tempo(vo, words, speed)
         lead = MIC if (i == 0 and c["mic"] and s["speaker"] == "host" and script.get("format") not in ("story", "drama")) else 0
         frames = int((duration(vo) + 0.35) * FPS) + lead
         if s["kind"] == "steps":
@@ -930,7 +965,7 @@ def main():
                 scene_image(a.channel, s, img)
         images.append(img)
     with tempfile.TemporaryDirectory() as work:
-        props, engine = build_props(a.channel, script, images, work)
+        props, engine = build_props(a.channel, script, images, work, folder)
         render(props, folder / "video.mp4")
         shutil.copy(props, folder / "props.json")
 

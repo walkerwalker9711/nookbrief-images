@@ -176,8 +176,9 @@ def speak_timed(channel, text, out, role="host", delivery=""):
     tag = delivery.strip() if delivery.strip().startswith("[") and delivery.strip().endswith("]") else ""
     for model in (c["model_id"], FALLBACK_MODEL):
         acted = tag and re.match(r"eleven_v[3-9]", model)
-        # owner 10-26/27: flat and weak voices, so both voices run at the expressive "creative" end
-        for settings in ({"speed": c.get("speed", 1.0), "stability": 0.0},
+        # owner 10-26/27: flat and weak voices, so the host and scammer run at the expressive "creative" end.
+        # Drama people run at "natural": at 0.0 one man's line came out as another person (owner 10-29)
+        for settings in ({"speed": c.get("speed", 1.0), "stability": 0.5 if role.startswith("extra") else 0.0},
                          {"speed": c.get("speed", 1.0)}):
             r = requests.post(f"{API}/text-to-speech/{c['voice_id']}/with-timestamps", headers=headers(), timeout=120,
                               params={"output_format": "mp3_44100_128"},
