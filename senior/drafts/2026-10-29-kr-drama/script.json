@@ -1,0 +1,619 @@
+{
+  "pillar": "사기·안전",
+  "topic": "가짜 검사에 속아 모텔에 사흘간 셀프 감금된 30대를 경찰이 설득해 구조",
+  "title": "“체포되기 전에 숨으세요” 가짜 검사 말에 모텔에 갇힌 30대, 사흘 만에 구조 #실화",
+  "mood": "alert",
+  "case_tag": "실제 사건 재구성 · 2026년 10월 경기북부경찰청 발표",
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "지난 20일, 경기북부의 한 회사. 30대 직장인 A씨에게 자신을 공소청 검사라고 소개하는 전화가 걸려 왔습니다.",
+      "delivery": "[low, grave]",
+      "caption": "공소청 검사라는 전화",
+      "hot": [
+        "공소청"
+      ],
+      "image_prompt": "Medium shot of A씨 at his office desk with a monitor and paperwork, answering a phone call, colleagues as faint background silhouettes, daytime office light. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "scammer",
+      "line": "공소청 검사입니다. 선생님 명의가 도용된 계좌가 범죄에 쓰여서, 구속영장이 발부됐습니다.",
+      "delivery": "[cold, official, fake-formal]",
+      "caption": "구속영장이 발부됐다?",
+      "hot": [
+        "구속영장이"
+      ],
+      "image_prompt": "Close-up of A씨 holding a phone to his ear at his office desk, face frozen in shock. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "call",
+        "sender": "",
+        "time": "",
+        "messages": [
+          {
+            "text": "공소청 검사",
+            "me": false
+          },
+          {
+            "text": "명의가 도용된 계좌가 범죄에 쓰여 구속영장이 발부됐습니다.",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "네? 구속영장이요? 저는 아무것도 한 게 없는데요…",
+      "delivery": "[stunned, shaky]",
+      "caption": "",
+      "hot": [
+        "구속영장이요"
+      ],
+      "image_prompt": "Close-up of A씨 in the office, phone to his ear, eyes wide, other hand gripping the desk edge. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "A씨"
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "대출 서류가 조작돼 있어요. 체포되기 전에 당장 숨으세요. 수사 중인 사건이라, 주변 사람들한테 알리시면 절대 안 됩니다.",
+      "delivery": "[low, menacing, urgent]",
+      "caption": "",
+      "hot": [
+        "숨으세요"
+      ],
+      "image_prompt": "Medium close-up of 사기범 speaking into a phone in a dim room, face half in shadow, cold blue light. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사기범",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "그럼… 저 이제 어떻게 해야 되는데요?",
+      "delivery": "[whispering, panicked]",
+      "caption": "",
+      "hot": [
+        "어떻게"
+      ],
+      "image_prompt": "A씨 turned away from his colleagues toward the office window, hunched over the phone, whispering. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "A씨"
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "구치소 들어가시는 대신, 약식 조사 받으시게 편의를 봐 드릴게요. 지금 말씀드리는 모텔로 가세요.",
+      "delivery": "[smooth, falsely kind]",
+      "caption": "",
+      "hot": [
+        "모텔로"
+      ],
+      "image_prompt": "Medium close-up of 사기범 in the dim room, leaning toward the phone with a thin smile, half of his face in shadow. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사기범",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "겁이 난 A씨는 회사에 연차를 내고, 서울 강동구의 한 모텔로 향했습니다. 그곳에서 새 휴대전화를 사, 그들이 보낸 앱을 깔았습니다. 휴대전화를 마음대로 조종하는 원격제어 앱이었습니다.",
+      "delivery": "[measured, ominous]",
+      "caption": "원격제어 앱",
+      "hot": [
+        "원격제어"
+      ],
+      "image_prompt": "A씨 sitting on the edge of a bed in a small plain motel room, a new phone in its open box beside him, a blank phone screen glowing in his hand, curtains drawn. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "앞으로 휴대전화 번호로 연락하는 경찰은 다 가짜예요. 경찰이든 검사든, 저 말고는 아무도 믿지 마세요.",
+      "delivery": "[cold, controlling]",
+      "caption": "",
+      "hot": [
+        "가짜예요"
+      ],
+      "image_prompt": "Close-up of 사기범 in the dark room, finger raised as if giving an order, half of his face in shadow. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사기범",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "여보세요, 금융감독원이죠? 검사한테 전화를 받았는데, 이게 진짜인지 확인 좀 하려고요.",
+      "delivery": "[hopeful, anxious]",
+      "caption": "",
+      "hot": [
+        "금융감독원이죠"
+      ],
+      "image_prompt": "A씨 in the motel room standing by the drawn curtains, dialing on the new phone, a little hope on his face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "A씨"
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "네, 확인됐습니다. 담당 검사님 지시대로 하시면 됩니다.",
+      "delivery": "[calm, fake-official]",
+      "caption": "",
+      "hot": [
+        "확인됐습니다"
+      ],
+      "image_prompt": "사기범 in the dark room speaking calmly into a second phone, a row of phones on the desk in front of him, face half in shadow. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사기범",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "하지만 그 전화를 받은 사람도 조직원이었습니다. 원격제어 앱이 A씨의 전화를 가로챈 겁니다.",
+      "delivery": "[low, grave]",
+      "caption": "그 전화도 조직원",
+      "hot": [
+        "조직원이었습니다"
+      ],
+      "image_prompt": "Split composition: A씨 in the motel room on one side with the phone at his ear, and 사기범 in the dark room on the other side answering, a thin line joining the two phones. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨,사기범",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "구속 피하시려면 반성문 쓰셔야 돼요. 쓰시는 대로 바로바로 저한테 보내세요.",
+      "delivery": "[cold, commanding]",
+      "caption": "",
+      "hot": [
+        "반성문"
+      ],
+      "image_prompt": "Medium close-up of 사기범 in the dark room reading a glowing phone screen, expression cold. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사기범",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "A씨는 사흘 동안 모텔 방에서, 휴대전화 메모장에 에이포 용지 사십오 장 분량의 반성문을 썼습니다.",
+      "delivery": "[slow, heavy]",
+      "caption": "A4 45장 분량의 반성문",
+      "hot": [
+        "반성문을"
+      ],
+      "image_prompt": "A씨 hunched on the motel bed typing on the phone late at night, tired eyes, takeout containers and an empty water bottle on the side table, only a dim lamp on. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "이제 계좌 추적 조사 들어갑니다. 모바일로 대출 받으셔서, 제가 불러 드리는 계좌로 보내세요.",
+      "delivery": "[fast, pushy]",
+      "caption": "",
+      "hot": [
+        "대출"
+      ],
+      "image_prompt": "Close-up of 사기범 in the dark room, leaning in to the phone, urgent, face half in shadow. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사기범",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사기범"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그렇게 삼천백만 원이 넘어갔습니다. 그들은 사천이백만 원 대출 심사를 또 받게 했습니다. 그 무렵, 경찰이 받은 명단 하나. 악성 앱이 깔린 것으로 의심되는데 연락이 닿지 않는 사람들. 거기 A씨가 있었습니다.",
+      "delivery": "[measured, then tense]",
+      "caption": "3100만 원이 넘어갔다",
+      "hot": [
+        "삼천백만"
+      ],
+      "image_prompt": "Police station office: 경찰관 at a desk looking at a printed list of names, one line marked with a highlighter, a desk phone beside her. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "선생님, 경기북부경찰청 경찰관입니다. 혹시 지금 누군가의 지시를 받고 계신 건 아닌지 확인차 연락드렸습니다.",
+      "delivery": "[calm, polite, firm]",
+      "caption": "경찰의 전화",
+      "hot": [
+        "경찰관입니다"
+      ],
+      "image_prompt": "Close-up of 경찰관 at the police station desk holding a phone to her ear, serious and attentive. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "call",
+        "sender": "",
+        "time": "",
+        "messages": [
+          {
+            "text": "경기북부경찰청",
+            "me": false
+          },
+          {
+            "text": "누군가의 지시를 받고 계신 건 아닌지 확인차 연락드렸습니다.",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "…바쁘니까, 다음에 만나죠.",
+      "delivery": "[flat, nervous, hurried]",
+      "caption": "",
+      "hot": [
+        "바쁘니까"
+      ],
+      "image_prompt": "A씨 in the motel room glancing at the door, phone to his ear, avoiding eye contact, about to hang up. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "A씨"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "A씨는 휴대전화 번호로 연락하는 경찰은 가짜라는 그 말을 믿고 있었습니다. 하지만 경찰관은 그 목소리에서 불안을 느꼈고, 몇 번이고 다시 전화를 걸었습니다.",
+      "delivery": "[measured]",
+      "caption": "몇 번이고 다시",
+      "hot": [
+        "다시"
+      ],
+      "image_prompt": "경찰관 at the police station redialing on the desk phone, determined look, the list of names beside her. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "선생님, 최근 공소청을 사칭한 보이스피싱이 급증하고 있습니다. 지금 겪고 계신 일은 실제 수사가 아니라, 범죄 조직의 범행입니다.",
+      "delivery": "[calm, earnest, formal]",
+      "caption": "",
+      "hot": [
+        "범죄"
+      ],
+      "image_prompt": "Medium close-up of 경찰관 speaking into the phone with steady eyes, leaning forward. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "지금 들리시는 건 저희 무전 소리입니다. 저희는 실제 경찰관이니 안심하시고, 가까운 파출소 앞에서 직접 만나 뵙겠습니다.",
+      "delivery": "[reassuring, formal]",
+      "caption": "",
+      "hot": [
+        "무전"
+      ],
+      "image_prompt": "경찰관 holding a police radio up next to the phone receiver so it can be heard, reassuring expression. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "사실 지금… 강동구 모텔에 있어요. 대출 하나를 더 기다리고 있고요.",
+      "delivery": "[breaking, relieved]",
+      "caption": "",
+      "hot": [
+        "모텔에"
+      ],
+      "image_prompt": "A씨 sitting on the motel floor against the bed, phone to his ear, eyes wet, shoulders finally loosening. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "A씨"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "A씨는 에이아이에게도 자기 상황을 물었고, 보이스피싱일 수 있다는 답을 받았습니다. 경찰은 서울로 달려가면서, 대출을 심사하던 금융사 두 곳에 전화해 승인을 멈춰 세웠습니다.",
+      "delivery": "[faster, tense]",
+      "caption": "대출 승인 중단",
+      "hot": [
+        "멈춰"
+      ],
+      "image_prompt": "Inside a moving police patrol car at dusk, 경찰관 in the passenger seat talking on a phone urgently, city lights streaking past the window. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "steps",
+      "speaker": "host",
+      "line": "22일, 경찰은 모텔에서 A씨를 구조했습니다. 사천이백만 원은 지켰지만, 먼저 넘어간 삼천백만 원은 이미 빠져나간 뒤였습니다. 수사기관은 전화로 대출이나 송금, 어디서 기다리라는 요구를 하지 않습니다. 이런 전화는 끊고 일일이에 신고하세요.",
+      "delivery": "[firm, kind]",
+      "caption": "끊고 112 신고",
+      "hot": [
+        "일일이에"
+      ],
+      "image_prompt": "Motel corridor: 경찰관 at an open motel room door, gently helping A씨 step out, warm corridor light. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,A씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [
+        {
+          "text": "숨어라·연락 끊어라",
+          "ok": false
+        },
+        {
+          "text": "수사 핑계로 대출·송금",
+          "ok": false
+        },
+        {
+          "text": "끊고 112 신고",
+          "ok": true
+        }
+      ],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "숨으라는 그 전화. 수사가 아니라, 감금이었습니다.",
+      "delivery": "[low, quiet]",
+      "caption": "수사가 아니라 감금",
+      "hot": [
+        "감금이었습니다"
+      ],
+      "image_prompt": "Empty motel room seen from the doorway, unmade bed, a phone lying face-down on the sheets, light from the corridor falling in. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "sources": [
+    {
+      "name": "경향신문",
+      "url": "https://www.khan.co.kr/article/202610281126001/"
+    },
+    {
+      "name": "파이낸셜뉴스",
+      "url": "https://www.fnnews.com/news/202610281130177596"
+    },
+    {
+      "name": "인천일보",
+      "url": "https://www.incheonilbo.com/news/articleView.html?idxno=1335301"
+    },
+    {
+      "name": "일간경기",
+      "url": "https://www.1gan.co.kr/news/articleView.html?idxno=414508"
+    }
+  ],
+  "description": "#보이스피싱 #검사사칭 #실제사건\n\n“체포되기 전에 당장 숨으세요.”\n가짜 검사의 이 한마디에, 30대 직장인이 모텔에 사흘을 갇혀 지냈습니다.\n\n▶ 명의 도용·구속영장을 들먹인 공소청 검사 사칭 전화\n▶ 새 휴대전화와 원격제어 앱, 금감원 확인 전화까지 가로챈 조직\n▶ 반성문 45장, 대출 3100만 원\n▶ 끊지 않고 다시 건 경찰의 전화\n\n✅ 수사기관은 전화로 대출·송금이나 특정 장소 대기를 요구하지 않습니다. 끊고 112에 신고하세요.\n\n#한국이장님 #보이스피싱 #사기예방 #셀프감금 #실화재구성\n\n📰 출처: 경기북부경찰청 발표(경향신문, 파이낸셜뉴스, 인천일보, 일간경기)\n※ AI 음성·그림으로 재구성",
+  "tags": [
+    "한국이장님",
+    "보이스피싱",
+    "검사사칭",
+    "셀프감금",
+    "사기예방",
+    "실제사건",
+    "원격제어앱"
+  ],
+  "ko_review": "내레이션: 지난 20일, 경기북부의 한 회사. 30대 직장인 A씨에게 자신을 공소청 검사라고 소개하는 전화가 걸려 왔습니다.\n사기범: 공소청 검사입니다. 선생님 명의가 도용된 계좌가 범죄에 쓰여서, 구속영장이 발부됐습니다.\nA씨: 네? 구속영장이요? 저는 아무것도 한 게 없는데요…\n사기범: 대출 서류가 조작돼 있어요. 체포되기 전에 당장 숨으세요. 수사 중인 사건이라, 주변 사람들한테 알리시면 절대 안 됩니다.\nA씨: 그럼… 저 이제 어떻게 해야 되는데요?\n사기범: 구치소 들어가시는 대신, 약식 조사 받으시게 편의를 봐 드릴게요. 지금 말씀드리는 모텔로 가세요.\n내레이션: 겁이 난 A씨는 회사에 연차를 내고, 서울 강동구의 한 모텔로 향했습니다. 그곳에서 새 휴대전화를 사, 그들이 보낸 앱을 깔았습니다. 휴대전화를 마음대로 조종하는 원격제어 앱이었습니다.\n사기범: 앞으로 휴대전화 번호로 연락하는 경찰은 다 가짜예요. 경찰이든 검사든, 저 말고는 아무도 믿지 마세요.\nA씨: 여보세요, 금융감독원이죠? 검사한테 전화를 받았는데, 이게 진짜인지 확인 좀 하려고요.\n사기범: 네, 확인됐습니다. 담당 검사님 지시대로 하시면 됩니다.\n내레이션: 하지만 그 전화를 받은 사람도 조직원이었습니다. 원격제어 앱이 A씨의 전화를 가로챈 겁니다.\n사기범: 구속 피하시려면 반성문 쓰셔야 돼요. 쓰시는 대로 바로바로 저한테 보내세요.\n내레이션: A씨는 사흘 동안 모텔 방에서, 휴대전화 메모장에 에이포 용지 사십오 장 분량의 반성문을 썼습니다.\n사기범: 이제 계좌 추적 조사 들어갑니다. 모바일로 대출 받으셔서, 제가 불러 드리는 계좌로 보내세요.\n내레이션: 그렇게 삼천백만 원이 넘어갔습니다. 그들은 사천이백만 원 대출 심사를 또 받게 했습니다. 그 무렵, 경찰이 받은 명단 하나. 악성 앱이 깔린 것으로 의심되는데 연락이 닿지 않는 사람들. 거기 A씨가 있었습니다.\n경찰관: 선생님, 경기북부경찰청 경찰관입니다. 혹시 지금 누군가의 지시를 받고 계신 건 아닌지 확인차 연락드렸습니다.\nA씨: …바쁘니까, 다음에 만나죠.\n내레이션: A씨는 휴대전화 번호로 연락하는 경찰은 가짜라는 그 말을 믿고 있었습니다. 하지만 경찰관은 그 목소리에서 불안을 느꼈고, 몇 번이고 다시 전화를 걸었습니다.\n경찰관: 선생님, 최근 공소청을 사칭한 보이스피싱이 급증하고 있습니다. 지금 겪고 계신 일은 실제 수사가 아니라, 범죄 조직의 범행입니다.\n경찰관: 지금 들리시는 건 저희 무전 소리입니다. 저희는 실제 경찰관이니 안심하시고, 가까운 파출소 앞에서 직접 만나 뵙겠습니다.\nA씨: 사실 지금… 강동구 모텔에 있어요. 대출 하나를 더 기다리고 있고요.\n내레이션: A씨는 에이아이에게도 자기 상황을 물었고, 보이스피싱일 수 있다는 답을 받았습니다. 경찰은 서울로 달려가면서, 대출을 심사하던 금융사 두 곳에 전화해 승인을 멈춰 세웠습니다.\n내레이션: 22일, 경찰은 모텔에서 A씨를 구조했습니다. 사천이백만 원은 지켰지만, 먼저 넘어간 삼천백만 원은 이미 빠져나간 뒤였습니다. 수사기관은 전화로 대출이나 송금, 어디서 기다리라는 요구를 하지 않습니다. 이런 전화는 끊고 일일이에 신고하세요.\n내레이션: 숨으라는 그 전화. 수사가 아니라, 감금이었습니다.",
+  "fact_notes": "근거: 경기북부경찰청 10-28 발표를 다룬 경향신문·파이낸셜뉴스·인천일보·일간경기 기사 전문(senior/research/articles).\n- 보도 그대로: 10월 20일 경기북부 직장에서 받은 전화, 공소청 검사 사칭(인천일보만 대검찰청), 명의 도용 계좌·구속영장, 대출 서류 조작, '체포되기 전에 당장 숨어라', 주변에 알리지 말라, 구치소 대신 약식 조사 편의, 연차, 서울 강동구 모텔, 새 휴대전화 구매·원격제어 악성 앱, '휴대전화 번호로 연락하는 경찰은 가짜'(경찰·검사 모두 가짜라고 반복 주입), 금감원 확인 전화를 조직원이 받음, 구속을 피하려면 반성문, 수시로 보내게 함, 메모장 A4 약 45장(인천일보는 자필 41장), 계좌 추적 조사를 핑계로 모바일 대출 3100만 원 송금, 저축은행 4200만 원 추가 대출 심사, 통합대응단 명단(악성 앱 의심·연락 두절), '바쁘니까 다음에 만나자', 경찰관이 불안을 감지해 수차례 통화, 공소청 사칭 급증 설명·범죄조직의 범행이라고 설득, 무전기 소리, 파출소 인근에서 만나자는 제안, AI에 물어 보이스피싱 가능성 답을 받음, 모텔 체류·대출 상황 파악, 서울청 공조, 금융사 2곳 승인 중단, 22일 구조, 3100만 원은 이미 출금, 4200만 원 피해 예방, 112 당부.\n- 말로 옮긴 것: 10번(조직원이 금감원인 척 '확인됐다'고 답함, 기사엔 '조직원이 대신 응답'), 16번(경찰 첫 전화 문장), 21번(모텔·대출 상황을 털어놓는 말투). 경찰관 대사는 주인님 지시로 존칭(10-29), 20번 문장은 주인님이 고친 것.\n- 경찰관 성별은 보도에 없음 → A씨와 목소리가 겹치지 않게 여성으로 그림.\n- 성범죄 연루 압박(인천일보)은 생략.",
+  "characters": [
+    {
+      "id": "A씨",
+      "label": "A씨 · 30대 직장인",
+      "voice": "adult_m",
+      "look": "A Korean man in his early thirties with short neat black hair, a light gray dress shirt with sleeves rolled up, dark navy trousers, and a plain wristwatch."
+    },
+    {
+      "id": "사기범",
+      "label": "검사 사칭범",
+      "voice": "scammer",
+      "look": "An anonymous adult male figure with short dark hair and a charcoal jacket, always shown in a dim room with half his face concealed in shadow."
+    },
+    {
+      "id": "경찰관",
+      "label": "경찰관",
+      "voice": "adult_f",
+      "look": "An adult Korean female police officer in her thirties with black hair tied back, a light blue uniform shirt, navy trousers, and a dark utility belt without readable insignia."
+    }
+  ],
+  "format": "drama"
+}
