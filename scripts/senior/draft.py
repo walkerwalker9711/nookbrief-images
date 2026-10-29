@@ -250,6 +250,13 @@ DRAMA_SCHEMA["properties"]["characters"] = {"type": "array", "minItems": 2, "max
         "label": {"type": "string", "description": "name tag on screen, e.g. 할머니 (70대), 은행 창구 직원"},
         "voice": {"type": "string", "enum": ["old_f", "old_m", "adult_f", "adult_m", "scammer"]},
         "look": {"type": "string", "description": "English look for the picture: age, hair, clothes, colors (one sentence, same every scene)"}}}}
+for _s in (SCHEMA, DRAMA_SCHEMA):
+    _s["required"].append("caption_words")
+    _s["properties"]["caption_words"] = {
+        "type": "array", "description": "numbers the lines spell out for the voice, with the form the captions show",
+        "items": {"type": "object", "additionalProperties": False, "required": ["spoken", "written"],
+                  "properties": {"spoken": {"type": "string", "description": "as in the line, e.g. 삼천백만, 사십오장"},
+                                 "written": {"type": "string", "description": "e.g. 3100만, 45장"}}}}
 _sc = DRAMA_SCHEMA["properties"]["scenes"]
 _sc["minItems"], _sc["maxItems"] = 18, 24
 _sc["items"]["required"].append("role")
@@ -520,6 +527,8 @@ Below is a finished script as JSON. Rewrite ONLY each scene's "line", "caption",
 - facts stay exactly as reported: change nothing in "sources", "fact_notes", "phone", "steps", "kind", "speaker",
   "role", "cast", "image_prompt", "characters"; add no detail, number or quote that is not in the facts;
 - no jokes, catchphrases, lecturing or share requests; "hot" stays one or two words copied exactly from the new line;
+- numbers in a line are written the way they are read (삼천백만 원, 에이포 사십오장) and each one is added to
+  "caption_words" with its written form (spoken 삼천백만 → written 3100만, 사십오장 → 45장) so the captions show digits;
 - the whole video stays 70 to 110 seconds of speech. Update "ko_review" to match.
 Return the whole script JSON with the same schema.
 
@@ -799,12 +808,16 @@ def level(path):
 
 
 # Hotlines are written out in the script so the voice reads them right; the captions show them as numbers
-SPOKEN_NUMBERS = {"일일이": "112", "일일팔": "118", "일삼삼이": "1332", "일삼구": "139", "일일구": "119",
+SPOKEN_NUMBERS = {"에이포": "A4", "에이아이": "AI", "일일이": "112", "일일팔": "118", "일삼삼이": "1332", "일삼구": "139", "일일구": "119",
                   "seven-seven-two-six": "7726", "nine-one-one": "911"}
 
 
-def digits(word):
-    for spoken, num in SPOKEN_NUMBERS.items():
+def digits(word, extra=None):
+    """Caption form of a spoken word. extra is the script's own "caption_words" ({"사십오장": "45장",
+    "삼천백만": "3100만"}): the voice reads Korean numbers, the captions show digits (owner 10-29)."""
+    if isinstance(extra, list):
+        extra = {x["spoken"]: x["written"] for x in extra}
+    for spoken, num in sorted({**SPOKEN_NUMBERS, **(extra or {})}.items(), key=lambda kv: -len(kv[0])):
         if word.startswith(spoken):
             return num + word[len(spoken):]
     return word
@@ -881,7 +894,7 @@ def build_props(channel, script, images, work, folder=None):
             "caption": s["caption"], "hot": s["hot"], "cta": s["cta"],
             **({"voice": voice, "who": next((x["label"] for x in script["characters"] if x["id"] == s["role"]), "")}
                if drama else {}),
-            "words": [[digits(w), lead + int(a * FPS), lead + int(b * FPS) + 1] for w, a, b in words],
+            "words": [[digits(w, script.get("caption_words")), lead + int(a * FPS), lead + int(b * FPS) + 1] for w, a, b in words],
             **({"phone": s["phone"]} if s["kind"] == "phone" and s["phone"]["app"] != "none" else {}),
             **({"steps": s["steps"]} if s["kind"] == "steps" else {}),
             **({"items": s["items"]} if s["kind"] == "list" else {}),

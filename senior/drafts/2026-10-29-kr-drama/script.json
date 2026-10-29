@@ -281,7 +281,7 @@
     {
       "kind": "scene",
       "speaker": "host",
-      "line": "A씨는 사흘 동안 모텔 방에서 에이포 용지 사십오 장 분량의 반성문을 썼습니다.",
+      "line": "A씨는 사흘 동안 모텔 방에서 에이포 용지 사십오장 분량의 반성문을 썼습니다.",
       "delivery": "[slow, heavy]",
       "caption": "A4 45장 분량의 반성문",
       "hot": [
@@ -616,5 +616,19 @@
     }
   ],
   "format": "drama",
-  "voice_tempo": 1.22
+  "voice_tempo": 1.22,
+  "caption_words": [
+    {
+      "spoken": "사십오장",
+      "written": "45장"
+    },
+    {
+      "spoken": "삼천백만",
+      "written": "3100만"
+    },
+    {
+      "spoken": "사천이백만",
+      "written": "4200만"
+    }
+  ]
 }
