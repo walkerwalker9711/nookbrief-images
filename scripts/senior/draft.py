@@ -507,7 +507,8 @@ def dramatize(channel, script, own):
 Below is a finished script as JSON. Rewrite ONLY each scene's "line", "caption", "delivery" and "hot" so that:
 - every talk line sounds like that person really talking in Korean: an older victim speaks in short, plain 입말 with
   a little hesitation ("아이고, 그게 무슨 소리래요?"), the scammer is smooth then cold and pushy, a clerk or police
-  officer is calm and firm. Never written, translated or AI-sounding. No 문어체 connectors in dialogue;
+  officer is calm and firm, and police, bank staff and other officials always speak in formal honorifics
+  ("선생님, 경기북부경찰청 경찰관입니다", "직접 만나 뵙겠습니다"; never "만나요" or casual 해요체, owner 10-29). Never written, translated or AI-sounding. No 문어체 connectors in dialogue;
 - the drama climbs: each scammer line adds pressure (a deadline, a threat, "아무한테도 말하지 마세요") as reported;
 - cause and effect: read it in order as a viewer who knows nothing; every action follows from what came just before,
   and every odd instruction carries the reason the scammer gave as reported (never invent one);
