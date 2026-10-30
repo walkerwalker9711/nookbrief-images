@@ -23,6 +23,11 @@ DESIGN = {
               "rasp, warm but worried, speaks slowly in natural Korean.",
               "An elderly Korean woman around 80, frail and breathy, a bit hoarse, gentle countryside accent, "
               "talks slowly and hesitantly."],
+    # mid_m: a worn-out man in his late 50s (owner 10-30: the 57-year-old sounded like a young man)
+    "mid_m": ["A Korean man aged 57, worn out by years of hardship. Low, husky, slightly hoarse middle-aged voice with "
+              "audible age and fatigue, speaks slowly and emotionally in natural Korean, never youthful.",
+              "A weathered Korean man in his late fifties, rough tired voice with a gravelly texture, quiet and "
+              "choked with emotion, clearly middle-aged, natural Korean."],
     "old_m": ["A Korean grandfather in his late 70s. Low, rough, aged voice, a little hoarse, speaks slowly in natural Korean."],
 }
 # Voice Design needs at least 100 characters of sample text
