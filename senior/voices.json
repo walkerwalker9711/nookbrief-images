@@ -20,7 +20,10 @@
     "extra_old_chosen": "owner picked no. 4 of the audition, 2026-10-28",
     "extra_m2_voice_id": "hjCvGtSCRPyjYwe2lDf1",
     "extra_m2_voice_name": "Juan - Deep, Clear, Edu & Corporate",
-    "extra_m2_chosen": "2026-10-30: second man in a drama (same voice as the scammer, shown as an ordinary person)"
+    "extra_m2_chosen": "2026-10-30: second man in a drama (same voice as the scammer, shown as an ordinary person)",
+    "extra_old_m_voice_id": "nw7o9nqXCkQKoAs59z99",
+    "extra_old_m_voice_name": "Rei - Deep, Rich, Drama ",
+    "extra_old_m_chosen": "picked automatically from the voice library"
   },
   "us": {
     "provider": "elevenlabs",
