@@ -379,7 +379,8 @@ const Scene = ({s, i, props}) => {
   const {sfx, lang} = props;
   const danger = props.mood === 'alert';
   const flash = interpolate(f, [0, 5], [0.85, 0], clamp);
-  const stampAt = Math.round((s.frames || 60) * 0.55);
+  // touching (true kindness) stories: no '사기 수법' stamp or '사칭 전화' tag on a real call (10-30)
+  const stampAt = danger || props.mood === 'warm' ? Math.round((s.frames || 60) * 0.55) : 1e9;
   const drama = !!props.drama;
   const talk = drama && s.kind === 'talk';
   const hookRed = (s.kind === 'hook' || s.kind === 'twist') && danger ? 0.6 + 0.4 * Math.abs(Math.sin(f * 0.25)) : 0;
@@ -394,7 +395,7 @@ const Scene = ({s, i, props}) => {
       <Phone phone={s.phone} lang={lang} start={2} stampAt={stampAt}
         stampText={s.phone.app === 'settings' ? '' : (s.stamp || (lang === 'ko' ? '사기 수법' : 'SCAM'))} />
       {s.phone.app === 'sms' && (s.phone.messages || []).map((m, n) => <Fx key={n} sfx={sfx} name="notify" at={16 + n * 16} vol={0.28} />)}
-      <Fx sfx={sfx} name={s.phone.app === 'settings' ? 'pop' : 'stamp'} at={stampAt} vol={0.45} />
+      {stampAt < 1e9 && <Fx sfx={sfx} name={s.phone.app === 'settings' ? 'pop' : 'stamp'} at={stampAt} vol={0.45} />}
     </>}
     {s.kind === 'steps' && <Steps steps={s.steps || []} frames={s.frames || 90} sfx={sfx} />}
     {talk && <NameTag who={s.who} voice={s.voice} y={1190} />}

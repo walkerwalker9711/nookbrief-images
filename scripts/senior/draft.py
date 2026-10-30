@@ -824,6 +824,27 @@ def digits(word, extra=None):
     return word
 
 
+def caption_words(words, extra=None):
+    """digits() for each timed word, plus spoken numbers that span words ("팔월 육일" -> "8월 6일", "일곱 시 삼십육 분"
+    -> "7시 36분"): the matching run of words becomes one caption word (owner 10-30: captions read 팔월 육일)."""
+    pairs = extra if isinstance(extra, list) else [{"spoken": k, "written": v} for k, v in (extra or {}).items()]
+    multi = sorted((x for x in pairs if " " in x["spoken"]), key=lambda x: -len(x["spoken"].split()))
+    out, i = [], 0
+    while i < len(words):
+        for x in multi:
+            n = len(x["spoken"].split())
+            run = words[i:i + n]
+            if len(run) == n and " ".join(w for w, _, _ in run).startswith(x["spoken"]):
+                tail = " ".join(w for w, _, _ in run)[len(x["spoken"]):]
+                out.append((x["written"] + tail, run[0][1], run[-1][2]))
+                i += n
+                break
+        else:
+            out.append((digits(words[i][0], extra), words[i][1], words[i][2]))
+            i += 1
+    return out
+
+
 def duration(path):
     """Seconds of audio/video, read from ffmpeg itself (the pip ffmpeg build has no ffprobe)."""
     out = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-f", "null", "-"],
@@ -895,7 +916,7 @@ def build_props(channel, script, images, work, folder=None):
             "caption": s["caption"], "hot": s["hot"], "cta": s["cta"],
             **({"voice": voice, "who": next((x["label"] for x in script["characters"] if x["id"] == s["role"]), "")}
                if drama else {}),
-            "words": [[digits(w, script.get("caption_words")), lead + int(a * FPS), lead + int(b * FPS) + 1] for w, a, b in words],
+            "words": [[w, lead + int(a * FPS), lead + int(b * FPS) + 1] for w, a, b in caption_words(words, script.get("caption_words"))],
             **({"phone": s["phone"]} if s["kind"] == "phone" and s["phone"]["app"] != "none" else {}),
             **({"steps": s["steps"]} if s["kind"] == "steps" else {}),
             **({"items": s["items"]} if s["kind"] == "list" else {}),
