@@ -871,13 +871,28 @@ def voiced(channel, s, voice, vo, folder):
             shutil.copy(mp3, vo)
             m = json.loads(meta.read_text(encoding="utf-8"))
             print("voice reused", vo.name)
+            pitch(channel, vo, voice)
             return [tuple(w) for w in m["words"]], m["engine"]
     words, engine = speak_line(channel, s["line"], vo, voice, s.get("delivery", ""))
     if cache:
         cache.mkdir(exist_ok=True)
         shutil.copy(vo, mp3)
         meta.write_text(json.dumps({**key, "words": words, "engine": engine}, ensure_ascii=False), encoding="utf-8")
+    pitch(channel, vo, voice)
     return words, engine
+
+
+def pitch(channel, vo, voice):
+    """voices.json "<role>_pitch" (semitones, length kept) on top of the cached raw voice, so retuning a voice
+    costs no credits (owner 10-30: the 60s brother sounded 40s → deeper, the 57-year-old a bit lighter)."""
+    semis = json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel].get(f"{voice}_pitch", 0)
+    if not semis:
+        return
+    f = 2 ** (semis / 12)
+    tmp = str(vo) + ".p.mp3"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(vo), "-filter:a",
+                    f"asetrate={44100 * f:.0f},aresample=44100,atempo={1 / f:.5f}", "-b:a", "128k", tmp], check=True)
+    os.replace(tmp, vo)
 
 
 def tempo(vo, words, speed):
