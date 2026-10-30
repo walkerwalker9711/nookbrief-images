@@ -1,0 +1,40 @@
+{
+  "topic": "usbc-travel-charger-one-brick",
+  "approved": false,
+  "post_url": null,
+  "video": {
+    "ig": "posts/usbc-travel-charger-one-brick/usbc-travel-charger-one-brick-short-ig.mp4",
+    "link": "posts/usbc-travel-charger-one-brick/usbc-travel-charger-one-brick-short-link.mp4",
+    "blog": "posts/usbc-travel-charger-one-brick/usbc-travel-charger-one-brick-short-blog.mp4",
+    "yt": "posts/usbc-travel-charger-one-brick/usbc-travel-charger-one-brick-short-yt.mp4"
+  },
+  "pinterest": {
+    "board": "USB-C Charging Tips",
+    "title": "65W Is Enough for Most Laptop-and-Phone Trips. Here's When It Isn't",
+    "description": "Check your laptop's own charger, then read the two-port split. 65W for a MacBook Air, 100W for 65W laptops. AI voice & visuals · #CommissionsEarned"
+  },
+  "instagram": {
+    "caption": "one charger for laptop + phone: how many watts? check what your laptop's own charger says first.\n\n30-45W laptop (macbook air, most ultrabooks): a 65W two-port brick. 65W or more: go 100W, because the brick splits its power when the phone plugs in.\n\nfull table + our picks: link in bio.\n\nsend this to whoever packs three chargers.\n\nAI voice & visuals · #CommissionsEarned #traveltech #usbc #NookBrief",
+    "keywords": [
+      "GUIDE",
+      "LINK"
+    ],
+    "dm": "Here's the one-charger guide: {link}\n\nOur picks are in the boxes. As an Amazon Associate I earn from qualifying purchases.",
+    "public_reply": "Sent! Check your DMs 📬"
+  },
+  "threads": {
+    "text": "a 100W charger doesn't give 100W to each port. with a phone in the second one, the laptop usually gets 65.\n\ndoes yours say the split on the box? #usbc",
+    "reply": "our pick → https://www.amazon.com/dp/B09C5RG6KV?tag=nookbrief-20\nfull table → {link}\n\nAI voice & visuals · #CommissionsEarned"
+  },
+  "youtube": {
+    "title": "one charger for laptop + phone: how many watts? #shorts",
+    "description": "a two-port charger splits its power. anker lists the 735 at 45W + 20W and the prime 100W at 65W + 35W with both usb-c ports in use. laptop came with 45W or less: 65W is enough. 65W or more: go 100W.\n\nfull table: {link} (also linked on the channel page)\n\nAI voice & visuals. As an Amazon Associate I earn from qualifying purchases. #CommissionsEarned",
+    "tags": [
+      "usb-c charger",
+      "travel charger",
+      "macbook charger",
+      "laptop charger",
+      "gan charger"
+    ]
+  }
+}
