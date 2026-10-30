@@ -17,7 +17,10 @@
     "extra_m_chosen": "picked automatically from the voice library",
     "extra_old_voice_id": "nxnPRUkfyaCGREc2Uj4f",
     "extra_old_voice_name": "designed 6 (Voice Design, 80세 전후 시골 할머니)",
-    "extra_old_chosen": "owner picked no. 4 of the audition, 2026-10-28"
+    "extra_old_chosen": "owner picked no. 4 of the audition, 2026-10-28",
+    "extra_m2_voice_id": "hjCvGtSCRPyjYwe2lDf1",
+    "extra_m2_voice_name": "Juan - Deep, Clear, Edu & Corporate",
+    "extra_m2_chosen": "2026-10-30: second man in a drama (same voice as the scammer, shown as an ordinary person)"
   },
   "us": {
     "provider": "elevenlabs",

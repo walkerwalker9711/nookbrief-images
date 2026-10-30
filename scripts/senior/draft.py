@@ -248,7 +248,7 @@ DRAMA_SCHEMA["properties"]["characters"] = {"type": "array", "minItems": 2, "max
     "properties": {
         "id": {"type": "string", "description": "short Korean name used in scenes, e.g. 할머니, 사기범, 은행직원, 택시기사"},
         "label": {"type": "string", "description": "name tag on screen, e.g. 할머니 (70대), 은행 창구 직원"},
-        "voice": {"type": "string", "enum": ["old_f", "old_m", "adult_f", "adult_m", "scammer"]},
+        "voice": {"type": "string", "enum": ["old_f", "old_m", "adult_f", "adult_m", "adult_m2", "scammer"]},
         "look": {"type": "string", "description": "English look for the picture: age, hair, clothes, colors (one sentence, same every scene)"}}}}
 for _s in (SCHEMA, DRAMA_SCHEMA):
     _s["required"].append("caption_words")
@@ -791,7 +791,8 @@ def speak_line(channel, line, out, speaker="host", delivery=""):
 
 
 # drama: the character's voice field → the voice role el_voice reads with (내레이션 = the host)
-DRAMA_VOICE = {"old_f": "extra_old", "old_m": "extra_old_m", "adult_f": "extra", "adult_m": "extra_m", "scammer": "scammer"}
+DRAMA_VOICE = {"old_f": "extra_old", "old_m": "extra_old_m", "adult_f": "extra", "adult_m": "extra_m", "adult_m2": "extra_m2",
+               "scammer": "scammer"}  # adult_m2: a second man in the same story (10-30: officer and the man he helps)
 
 
 def drama_role(script, scene):

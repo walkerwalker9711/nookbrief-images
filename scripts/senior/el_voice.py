@@ -168,9 +168,13 @@ def speak_timed(channel, text, out, role="host", delivery=""):
     role "scammer" reads with the second voice. delivery is an acting tag like "[sarcastic]": the v3/v4 models
     act it out (and it is cut from the timings); older models would read it aloud, so they never get it."""
     import base64
-    c = cfg(channel) if role == "host" else {**json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel],
-                                             "voice_id": extra_voice(channel, "male" if role.endswith("_m") else "female",
-                                                                     "_old" in role)
+    saved = json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel]
+    c = cfg(channel) if role == "host" else {**saved,
+                                             # extra_m2: second man in one drama, voices.json extra_m2_voice_id
+                                             "voice_id": (saved.get("extra_m2_voice_id") or scammer_voice(channel))
+                                             if role == "extra_m2" else
+                                             extra_voice(channel, "male" if role.endswith("_m") else "female",
+                                                         "_old" in role)
                                              if role.startswith("extra") else scammer_voice(channel),
                                              "speed": 1.0 if role.startswith("extra") else 1.05}
     tag = delivery.strip() if delivery.strip().startswith("[") and delivery.strip().endswith("]") else ""
