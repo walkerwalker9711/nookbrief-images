@@ -29,6 +29,7 @@ jobs:
             if [ "${step%% *}" = research ]; then python scripts/senior/banner_research.py ${step#research}
             elif [ "${step%% *}" = video ]; then python scripts/senior/video_study.py "${step#video }"
             elif [ "${step%% *}" = shorts ]; then python scripts/senior/shorts_search.py ${step#shorts }
+            elif [ "${step%% *}" = stats ]; then python scripts/senior/my_stats.py "$ch"
             elif [ "${step%% *}" = fetch ]; then python scripts/senior/fetch_article.py ${step#fetch }
             else python scripts/senior/channel_art.py "$step" "$ch"; fi
           done
