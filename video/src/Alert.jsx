@@ -44,17 +44,26 @@ const Cam = ({img, dir = 1, dim = 0, blur = 0, red = 0, move = -1, shake = 0, pu
 // this size, cut at a sentence end, at a comma or pause once a line's worth is said, never mid-word. Not 3-word
 // chunks (owner 10-27: choppy). The word being said turns yellow, flagged words red
 const MAX_CHARS = 28;
-const groups = (words) => {
+const len = (ws) => ws.reduce((a, w) => a + w[0].length, 0) + Math.max(ws.length - 1, 0);
+// a sentence longer than two lines is cut into even parts (no one-word tail), at a comma or pause when one is near
+const split = (ws) => {
+  if (len(ws) <= MAX_CHARS) return [ws];
+  const k = Math.ceil(len(ws) / MAX_CHARS); const target = len(ws) / k;
   const out = []; let cur = [];
-  const len = (ws) => ws.reduce((a, w) => a + w[0].length, 0) + Math.max(ws.length - 1, 0);
-  words.forEach((w, i) => {
+  ws.forEach((w, i) => {
     cur.push(w);
-    const next = words[i + 1];
-    if (/[.?!][”"’]?$/.test(w[0]) || (/[,…]$/.test(w[0]) && len(cur) >= 12)
-        || (next && len([...cur, next]) > MAX_CHARS)) { out.push(cur); cur = []; }
+    if (i < ws.length - 1 && out.length < k - 1 && (len(cur) >= target || (/[,…]$/.test(w[0]) && len(cur) >= target * 0.6))) {
+      out.push(cur); cur = [];
+    }
   });
   if (cur.length) out.push(cur);
   return out;
+};
+const groups = (words) => {
+  const sentences = []; let cur = [];
+  words.forEach((w) => { cur.push(w); if (/[.?!][”"’]?$/.test(w[0])) { sentences.push(cur); cur = []; } });
+  if (cur.length) sentences.push(cur);
+  return sentences.flatMap(split);
 };
 const Captions = ({words, hot = [], y = 1330, bubble = ''}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
