@@ -1,0 +1,42 @@
+{
+  "kr": {
+    "provider": "elevenlabs",
+    "voice_name": "DaeBuHo - Calm & Friendly",
+    "voice_id": "TKUGUd5JWceSqSPVPjha",
+    "model_id": "eleven_v4",
+    "speed": 1.1,
+    "chosen": "2026-10-26 by the owner, ElevenLabs Starter plan (commercial use)",
+    "scammer_voice_id": "hjCvGtSCRPyjYwe2lDf1",
+    "scammer_voice_name": "Juan - Deep, Clear, Edu & Corporate",
+    "scammer_chosen": "picked automatically from the voice library, 2026-10-26",
+    "extra_voice_id": "AW5wrnG1jVizOYY7R1Oo",
+    "extra_voice_name": "Jiyoung - Warm and Clear",
+    "extra_chosen": "picked automatically from the voice library, 2026-10-27",
+    "extra_m_voice_id": "J3IV02ZzZmojOIQbmpu0",
+    "extra_m_voice_name": "Gun Woong - Deep & Trustworthy",
+    "extra_m_chosen": "picked automatically from the voice library",
+    "extra_old_voice_id": "nxnPRUkfyaCGREc2Uj4f",
+    "extra_old_voice_name": "designed 6 (Voice Design, 80세 전후 시골 할머니)",
+    "extra_old_chosen": "owner picked no. 4 of the audition, 2026-10-28",
+    "extra_m2_voice_id": "2baru8J0e15nxuG3bzXy",
+    "extra_m2_voice_name": "Cornelius - Wise & Heartwarming Old Man",
+    "extra_m2_chosen": "2026-10-30: the 57-year-old man sounded young with Juan (owner); audition mid_m no. 1, aged native voice",
+    "extra_old_m_voice_id": "nw7o9nqXCkQKoAs59z99",
+    "extra_old_m_voice_name": "Rei - Deep, Rich, Drama ",
+    "extra_old_m_chosen": "picked automatically from the voice library",
+    "extra_old_m_pitch": -3,
+    "extra_m2_pitch": 1,
+    "extra_mid_f_voice_id": "nsoYB6P4tvhyadqdPLQU",
+    "extra_mid_f_voice_name": "designed 5 (Voice Design, 62세 엄마)",
+    "extra_mid_f_chosen": "2026-10-31: old_f grandma voice far too old for a 63-year-old mother (owner); audition mid_f no. 5, steady low alto (~155 Hz), clearly apart from the daughter's Jiyoung (~225 Hz)",
+    "extra_old_pitch": 1
+  },
+  "us": {
+    "provider": "elevenlabs",
+    "voice_name": null,
+    "voice_id": null,
+    "model_id": "eleven_v4",
+    "speed": 1.0,
+    "chosen": null
+  }
+}

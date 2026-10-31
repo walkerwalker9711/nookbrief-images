@@ -1,0 +1,618 @@
+{
+  "pillar": "감동 실화",
+  "topic": "35년 전 길 잃고 사망 선고까지 받은 딸, 양어머니가 떠난 뒤 친엄마를 찾아 DNA로 상봉",
+  "title": "사망 선고 받은 5살 딸, 35년 만에 엄마를 찾아온 이유 #실화",
+  "mood": "touching",
+  "music": "touching-hope",
+  "case_tag": "실제 사건 재구성 · 2024년 9월 진해경찰서",
+  "sources": [
+    {
+      "name": "경남도민일보",
+      "url": "https://www.idomin.com/news/articleView.html?idxno=920853"
+    },
+    {
+      "name": "이데일리",
+      "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02617446639022088"
+    }
+  ],
+  "description": "#감동실화 #가족 #실제사건\n\n35년 전 부산 거리에서 길을 잃은 5살 딸.\n엄마가 찾아 나섰을 땐, 딸은 이미 법원에서 사망 선고를 받은 상태였습니다.\n\n▶ 서류 속에서 '죽은 사람'이 된 딸\n▶ 길러 준 양어머니가 세상을 떠난 뒤 내린 결심\n▶ 유전자 하나로 이어진 35년 만의 만남\n\n#한국이장님 #감동실화 #모녀상봉 #실화재구성\n\n📰 출처: 진해경찰서(경남도민일보, 이데일리)",
+  "tags": [
+    "한국이장님",
+    "감동실화",
+    "모녀상봉",
+    "실제사건",
+    "35년만의재회",
+    "유전자상봉"
+  ],
+  "fact_notes": "경남도민일보·이데일리 2024-09-20: 9/19 진해경찰서 상봉. 어머니 ㄱ(63, 창원 진해구) 딸 ㄴ(40, 경기 안산). 35년 전 딸 5살 무렵 부산 한 거리에서 혼자 집을 나섰다가 길 잃음, 실종 당시 아버지와 살았음(부모 이혼), 부모 못 찾고 양부모에 입양, 30여 년 양어머니 밑에서 성장. 어머니는 한참 뒤 전남편에게 들음, 새 가정이 있어 곧바로 찾지 못함, 2022년 진해경찰서에 유전자 등록, 얼마 안 가 딸이 사망 선고(부산가정법원) 받은 사실 확인·망연자실. 딸은 최근 양어머니가 세상을 떠나 친어머니 찾기로 결심, 6월 경찰서에서 실종신고·DNA 채취, 9월 초 아동권리보장원이 국과수 DB에 같은 유전자 있다는 공문을 진해경찰서에 보냄, 경찰 곧바로 만남 추진. 아들 셋과 함께 참석. 환갑 막 넘긴 노모가 한눈에 핏줄을 알아봄. 살아온 이야기 주고받음. 인용: 엄마 '드라마 같은 일이 생겼다, 추석에 큰 선물을 받은 것 같다', 딸 '얼마 전 돌아가신 양어머니께서 큰 선물을 주신 것만 같아 감사하고 뜻깊다'. 대사 7·9·13·16·17은 '들었다/등록했다/망연자실/결심/만남 추진'을 말로 옮긴 것. 공문 발신은 아동권리보장원(내레이션에서 '공문 한 장'으로).",
+  "characters": [
+    {
+      "id": "엄마",
+      "label": "엄마 · 63세",
+      "voice": "mid_f",
+      "look": "A Korean woman in her early sixties with short permed graying hair, a gentle lined face, a beige cardigan over a floral blouse."
+    },
+    {
+      "id": "젊은 엄마",
+      "label": "35년 전 엄마",
+      "voice": "adult_f",
+      "look": "A Korean woman in her late twenties in the late 1980s with long straight black hair, a gentle face and a simple cream blouse."
+    },
+    {
+      "id": "딸",
+      "label": "딸 · 40세",
+      "voice": "adult_f",
+      "look": "A Korean woman around forty with shoulder-length black hair tied back, a round kind face, a navy coat over a white sweater."
+    },
+    {
+      "id": "어린 딸",
+      "label": "5살 딸",
+      "voice": "adult_f",
+      "look": "A small five-year-old Korean girl with a bob haircut and bangs, a red knitted cardigan and a white collar, late 1980s."
+    },
+    {
+      "id": "양어머니",
+      "label": "양어머니",
+      "voice": "old_f",
+      "look": "A kind Korean woman with permed hair and a soft round face, an apron over a blouse; in later years white-haired."
+    },
+    {
+      "id": "경찰관",
+      "label": "경찰관",
+      "voice": "adult_m",
+      "look": "A Korean male police officer in his late thirties with short black hair, a navy police uniform jacket without readable insignia."
+    },
+    {
+      "id": "아들들",
+      "label": "딸의 세 아들",
+      "voice": "adult_m",
+      "look": "Three Korean brothers always drawn together and the same way: a tall teenage boy with short black hair in a grey hoodie, a middle-school boy with a bowl cut in a navy sweatshirt, and a small boy of about eight with round cheeks in a green sweater."
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.12,
+  "caption_words": [
+    {
+      "spoken": "삼십오 년",
+      "written": "35년"
+    },
+    {
+      "spoken": "다섯 살",
+      "written": "5살"
+    },
+    {
+      "spoken": "이천이십이 년",
+      "written": "2022년"
+    },
+    {
+      "spoken": "마흔 살",
+      "written": "40살"
+    },
+    {
+      "spoken": "이천이십사 년 유월",
+      "written": "2024년 6월"
+    },
+    {
+      "spoken": "구월 초",
+      "written": "9월 초"
+    },
+    {
+      "spoken": "구월 십구일",
+      "written": "9월 19일"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "법원에서 사망 선고까지 받은 딸이, 삼십오 년 만에 경찰서 문을 열고 들어왔습니다.",
+      "delivery": "[low, intriguing, slow]",
+      "caption": "사망 선고 받은 딸, 35년 만에",
+      "hot": [
+        "사망 선고"
+      ],
+      "image_prompt": "Inside a police station: the doorway, warm light spilling in, ONE woman around forty (the daughter) standing in the doorway holding the hands of her three sons; across the room the mother in her early sixties rising from a chair, hand over her mouth. The daughter appears only once in the picture. Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,엄마,아들들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "삼십오 년 전, 부산의 한 거리. 다섯 살 여자아이가 혼자 집을 나섰다가 길을 잃었습니다.",
+      "delivery": "[slow, heavy]",
+      "caption": "35년 전 부산, 길 잃은 5살",
+      "hot": [
+        "길을 잃었습니다"
+      ],
+      "image_prompt": "Late-1980s Busan street market, crowded and busy, a small five-year-old Korean girl in a red cardigan and bobbed hair standing alone among adults, looking around, about to cry. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "어린 딸",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "부모가 이혼한 뒤, 아빠와 살던 아이였습니다. 아이는 끝내 집을 찾지 못했고, 양부모에게 입양됐습니다.",
+      "delivery": "[gentle, sad]",
+      "caption": "결국 입양",
+      "hot": [
+        "입양됐습니다"
+      ],
+      "image_prompt": "A warm 1980s Korean home, a kind Korean woman in her thirties (양어머니: permed hair, apron) kneeling to hug the small five-year-old girl in a red cardigan, the girl hesitant but holding on. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "양어머니,어린 딸",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "친엄마가 그 소식을 들은 건 한참이 지난 뒤였습니다. 헤어진 남편이 전해 준 말. 딸을 잃어버렸다는 겁니다.",
+      "delivery": "[slow, heavy]",
+      "caption": "한참 뒤에야 들은 소식",
+      "hot": [
+        "한참이"
+      ],
+      "image_prompt": "A Korean woman in her late twenties (the mother when young: long black hair, simple blouse) holding an old landline phone receiver, frozen, eyes wide, tears welling, in a dim 1980s living room. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "젊은 엄마",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "하지만 그때 엄마는 이미 새 가정을 꾸린 뒤였습니다. 곧바로 딸을 찾아 나설 수 없었습니다. 그렇게 세월이 흘렀습니다.",
+      "delivery": "[sad, slow]",
+      "caption": "찾아 나설 수 없었던 세월",
+      "hot": [
+        "세월이"
+      ],
+      "image_prompt": "ONE single full-frame picture, not a grid or comic panels: a Korean woman in her forties sitting alone by a window at night, looking at the full moon, an old photo of a little girl in a red cardigan on the windowsill, autumn leaves falling outside. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "none",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "이천이십이 년, 엄마는 마침내 진해경찰서를 찾아가 자신의 유전자를 등록했습니다.",
+      "delivery": "[determined, gentle]",
+      "caption": "2022년, 경찰서에 유전자 등록",
+      "hot": [
+        "유전자를"
+      ],
+      "image_prompt": "Inside a Korean police station, the mother in her early sixties sitting at a desk while a male police officer gently takes a cheek swab sample with a cotton swab. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "제 딸… 꼭 좀 찾아 주세요.",
+      "delivery": "[pleading, tearful]",
+      "caption": "",
+      "hot": [
+        "꼭"
+      ],
+      "image_prompt": "The mother in her early sixties holding the police officer's hands across the desk, eyes wet, pleading. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "엄마"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그런데 얼마 지나지 않아, 청천벽력 같은 사실을 알게 됐습니다. 딸이 이미 법원에서 사망 선고를 받았다는 겁니다.",
+      "delivery": "[grave, slow]",
+      "caption": "딸은 이미 사망 선고",
+      "hot": [
+        "사망 선고를"
+      ],
+      "image_prompt": "The mother in her early sixties sitting alone at her kitchen table holding an official document, face drained, the paper trembling in her hands, grey light. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "죽었다고요… 우리 딸이…",
+      "delivery": "[broken, sobbing quietly]",
+      "caption": "",
+      "hot": [
+        "죽었다고요"
+      ],
+      "image_prompt": "Close-up of the mother in her early sixties covering her mouth, tears streaming, document fallen on the table. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "엄마"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "실종된 뒤 가족을 찾지 못한 아이는, 서류 속에서 이미 세상을 떠난 사람이 되어 있었습니다.",
+      "delivery": "[sad, low]",
+      "caption": "서류 속에서는 '사망'",
+      "hot": [
+        "서류 속에서"
+      ],
+      "image_prompt": "A dusty government file cabinet drawer half open, an old file with a child's faded photo of a five-year-old girl in a red cardigan, dim light. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "어린 딸",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "하지만 딸은 살아 있었습니다. 경기도 안산에서, 아들 셋을 둔 마흔 살 엄마로.",
+      "delivery": "[soft, turning hopeful]",
+      "caption": "딸은 살아 있었다",
+      "hot": [
+        "살아 있었습니다"
+      ],
+      "image_prompt": "A bright Ansan apartment living room, the daughter around forty laughing with her three sons around a dinner table. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,아들들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그러다 딸을 키워 준 양어머니가 세상을 떠났습니다.",
+      "delivery": "[slow, tender, sad]",
+      "caption": "길러 준 엄마를 떠나보내다",
+      "hot": [
+        "양어머니가"
+      ],
+      "image_prompt": "The daughter around forty in black mourning clothes standing before a funeral portrait of an elderly Korean woman with permed white hair (the adoptive mother, now old), white chrysanthemums, head bowed. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,양어머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "이제는… 낳아 주신 엄마를 찾아야겠어요.",
+      "delivery": "[quiet, resolved, tearful]",
+      "caption": "",
+      "hot": [
+        "찾아야겠어요"
+      ],
+      "image_prompt": "The daughter around forty sitting alone at night holding an old childhood photo of herself as a small girl in a red cardigan, determined eyes. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,어린 딸",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "딸"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "이천이십사 년 유월, 딸은 경찰서를 찾아가 실종 신고를 하고 유전자를 채취했습니다.",
+      "delivery": "[determined]",
+      "caption": "2024년 6월, 딸도 유전자 등록",
+      "hot": [
+        "유전자를"
+      ],
+      "image_prompt": "The daughter around forty at a police station counter filling out a form, a police officer beside her holding a DNA sample kit. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그리고 구월 초, 진해경찰서로 공문 한 장이 날아왔습니다. 국립과학수사연구원 데이터베이스에, 똑같은 유전자가 있다는 소식이었습니다.",
+      "delivery": "[building, hopeful]",
+      "caption": "같은 유전자가 있었다",
+      "hot": [
+        "똑같은 유전자"
+      ],
+      "image_prompt": "A male police officer at his desk in the Jinhae police station reading an official letter, eyes widening, a DNA match chart on his monitor without readable text. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "어머님, 진해경찰서입니다. 따님을 찾았습니다.",
+      "delivery": "[warm, respectful, moved]",
+      "caption": "",
+      "hot": [
+        "따님을 찾았습니다"
+      ],
+      "image_prompt": "The police officer on the phone at his desk, smiling with emotion. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "call",
+        "sender": "진해경찰서",
+        "time": "",
+        "messages": [
+          {
+            "text": "따님을 찾았습니다",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "네? 우리 딸이… 살아 있다고요?",
+      "delivery": "[stunned, voice breaking, crying]",
+      "caption": "",
+      "hot": [
+        "살아 있다고요"
+      ],
+      "image_prompt": "The mother in her early sixties at home holding a mobile phone to her ear with both hands, sinking to her knees, crying. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "엄마"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "구월 십구일, 진해경찰서. 딸은 세 아들의 손을 잡고 문을 열고 들어왔습니다.",
+      "delivery": "[slow, emotional]",
+      "caption": "9월 19일, 35년 만의 만남",
+      "hot": [
+        "문을 열고"
+      ],
+      "image_prompt": "The daughter around forty walking into a police station meeting room holding the hands of her three sons, the mother in her early sixties standing up across the room, both frozen. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,엄마,아들들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "환갑을 막 넘긴 엄마는, 한눈에 핏줄을 알아봤습니다. 다섯 살 꼬마가, 마흔 살 엄마가 되어 돌아온 겁니다.",
+      "delivery": "[tearful, swelling]",
+      "caption": "5살 꼬마가 40살 엄마로",
+      "hot": [
+        "한눈에"
+      ],
+      "image_prompt": "The mother in her early sixties and the daughter around forty embracing tightly, both sobbing, the three sons watching, police officers in the background wiping eyes. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마,딸,아들들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "두 사람은 삼십오 년 동안 살아온 이야기를, 하나하나 주고받았습니다.",
+      "delivery": "[warm, gentle]",
+      "caption": "35년의 이야기",
+      "hot": [
+        "이야기를"
+      ],
+      "image_prompt": "The mother and daughter sitting side by side holding hands, the mother touching the daughter's face, both smiling through tears. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마,딸",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "드라마 같은 일이 생겼네요. 추석에 큰 선물을 받은 것 같아요.",
+      "delivery": "[tearful, grateful, smiling]",
+      "caption": "",
+      "hot": [
+        "큰 선물"
+      ],
+      "image_prompt": "The mother in her early sixties speaking to a police officer, holding her daughter's hand, smiling with tears. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마,딸,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "엄마"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "얼마 전 돌아가신 양어머니께서… 큰 선물을 주신 것만 같아요.",
+      "delivery": "[soft, tearful, grateful]",
+      "caption": "",
+      "hot": [
+        "양어머니께서"
+      ],
+      "image_prompt": "The daughter around forty smiling softly with tears, holding her birth mother's hand, a faint warm light behind her. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,엄마",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "딸"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "길러 준 엄마를 떠나보낸 딸이, 낳아 준 엄마를 찾았습니다. 양어머니가 남긴 마지막 선물이었습니다.",
+      "delivery": "[warm, resonant, slow]",
+      "caption": "",
+      "hot": [
+        "마지막 선물"
+      ],
+      "image_prompt": "Golden autumn evening outside the Jinhae police station, the mother, the daughter and the three boys walking together seen from behind, the mother and daughter holding hands. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마,딸,아들들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "ko_review": "내레이션: 법원에서 사망 선고까지 받은 딸이, 삼십오 년 만에 경찰서 문을 열고 들어왔습니다.\n내레이션: 삼십오 년 전, 부산의 한 거리. 다섯 살 여자아이가 혼자 집을 나섰다가 길을 잃었습니다.\n내레이션: 부모가 이혼한 뒤, 아빠와 살던 아이였습니다. 아이는 끝내 집을 찾지 못했고, 양부모에게 입양됐습니다.\n내레이션: 친엄마가 그 소식을 들은 건 한참이 지난 뒤였습니다. 헤어진 남편이 전해 준 말. 딸을 잃어버렸다는 겁니다.\n내레이션: 하지만 그때 엄마는 이미 새 가정을 꾸린 뒤였습니다. 곧바로 딸을 찾아 나설 수 없었습니다. 그렇게 세월이 흘렀습니다.\n내레이션: 이천이십이 년, 엄마는 마침내 진해경찰서를 찾아가 자신의 유전자를 등록했습니다.\n엄마: 제 딸… 꼭 좀 찾아 주세요.\n내레이션: 그런데 얼마 지나지 않아, 청천벽력 같은 사실을 알게 됐습니다. 딸이 이미 법원에서 사망 선고를 받았다는 겁니다.\n엄마: 죽었다고요… 우리 딸이…\n내레이션: 실종된 뒤 가족을 찾지 못한 아이는, 서류 속에서 이미 세상을 떠난 사람이 되어 있었습니다.\n내레이션: 하지만 딸은 살아 있었습니다. 경기도 안산에서, 아들 셋을 둔 마흔 살 엄마로.\n내레이션: 그러다 딸을 키워 준 양어머니가 세상을 떠났습니다.\n딸: 이제는… 낳아 주신 엄마를 찾아야겠어요.\n내레이션: 이천이십사 년 유월, 딸은 경찰서를 찾아가 실종 신고를 하고 유전자를 채취했습니다.\n내레이션: 그리고 구월 초, 진해경찰서로 공문 한 장이 날아왔습니다. 국립과학수사연구원 데이터베이스에, 똑같은 유전자가 있다는 소식이었습니다.\n경찰관: 어머님, 진해경찰서입니다. 따님을 찾았습니다.\n엄마: 네? 우리 딸이… 살아 있다고요?\n내레이션: 구월 십구일, 진해경찰서. 딸은 세 아들의 손을 잡고 문을 열고 들어왔습니다.\n내레이션: 환갑을 막 넘긴 엄마는, 한눈에 핏줄을 알아봤습니다. 다섯 살 꼬마가, 마흔 살 엄마가 되어 돌아온 겁니다.\n내레이션: 두 사람은 삼십오 년 동안 살아온 이야기를, 하나하나 주고받았습니다.\n엄마: 드라마 같은 일이 생겼네요. 추석에 큰 선물을 받은 것 같아요.\n딸: 얼마 전 돌아가신 양어머니께서… 큰 선물을 주신 것만 같아요.\n내레이션: 길러 준 엄마를 떠나보낸 딸이, 낳아 준 엄마를 찾았습니다. 양어머니가 남긴 마지막 선물이었습니다."
+}
