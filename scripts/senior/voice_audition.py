@@ -28,6 +28,11 @@ DESIGN = {
               "audible age and fatigue, speaks slowly and emotionally in natural Korean, never youthful.",
               "A weathered Korean man in his late fifties, rough tired voice with a gravelly texture, quiet and "
               "choked with emotion, clearly middle-aged, natural Korean."],
+    # mid_f: a mother in her early 60s (owner 10-31: the 80-year-old grandma voice was far too old for a 63-year-old)
+    "mid_f": ["A Korean woman aged 62, a warm mother's voice, mature and gentle, clearly in her early sixties but "
+              "not frail or elderly, steady breath, speaks softly and emotionally in natural Korean.",
+              "A Korean mother in her early sixties, soft warm alto with a little maturity in the tone, healthy and "
+              "clear, not shaky, natural standard Korean, emotional and tender."],
     "old_m": ["A Korean grandfather in his late 70s. Low, rough, aged voice, a little hoarse, speaks slowly in natural Korean."],
 }
 # Voice Design needs at least 100 characters of sample text
@@ -36,11 +41,11 @@ LONG = {"ko": "아이고, 내가 무슨 잘못을 했다고 그래요. 나는 �
 WANT = ("grandm", "grandp", "elder", "old", "aged", "senior", "할머니", "할아버지", "노인")
 
 
-def library(lang, gender, n):
-    params = {"page_size": 100, "language": lang, "gender": gender, "age": "old"}
+def library(lang, gender, n, age="old"):
+    params = {"page_size": 100, "language": lang, "gender": gender, "age": age}
     r = requests.get(f"{API}/shared-voices", headers=headers(), params=params, timeout=30)
     vs = r.json().get("voices", []) if r.ok else []
-    print("library old", gender, lang, len(vs), r.status_code)
+    print("library", age, gender, lang, len(vs), r.status_code)
     # native speakers first (the first run picked Somali and African American voices that also list Korean)
     native = lambda v: 3 * (str(v.get("locale", "")).lower().startswith(lang) or any(
         k in (v.get("accent", "") or "").lower() for k in ("korean", "seoul", "standard", "gyeong", "jeolla", "busan")))
@@ -79,7 +84,7 @@ def main(channel, role, text):
     lang = {"kr": "ko", "us": "en"}[channel]
     gender = "male" if role.endswith("_m") else "female"
     found, n = [], 0
-    for v in library(lang, gender, 3):
+    for v in library(lang, gender, 3, "middle_aged" if role.startswith("mid") else "old"):
         r = requests.post(f"{API}/voices/add/{v['public_owner_id']}/{v['voice_id']}", headers=headers(), timeout=30,
                           json={"new_name": f"{channel} {role} - {v['name']}"[:60]})
         vid = (r.json().get("voice_id") if r.ok else None) or v["voice_id"]

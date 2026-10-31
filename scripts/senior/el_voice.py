@@ -170,9 +170,10 @@ def speak_timed(channel, text, out, role="host", delivery=""):
     import base64
     saved = json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel]
     c = cfg(channel) if role == "host" else {**saved,
-                                             # extra_m2: second man in one drama, voices.json extra_m2_voice_id
-                                             "voice_id": (saved.get("extra_m2_voice_id") or scammer_voice(channel))
-                                             if role == "extra_m2" else
+                                             # extra_m2: second man in one drama; extra_mid_f: a woman in her 60s
+                                             # (owner 10-31); both read voices.json <role>_voice_id
+                                             "voice_id": (saved.get(f"{role}_voice_id") or scammer_voice(channel))
+                                             if role in ("extra_m2", "extra_mid_f") else
                                              extra_voice(channel, "male" if role.endswith("_m") else "female",
                                                          "_old" in role)
                                              if role.startswith("extra") else scammer_voice(channel),
