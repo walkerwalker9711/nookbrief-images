@@ -61,6 +61,12 @@
       "label": "경찰관",
       "voice": "adult_m",
       "look": "A Korean male police officer in his late thirties with short black hair, a navy police uniform jacket without readable insignia."
+    },
+    {
+      "id": "아들들",
+      "label": "딸의 세 아들",
+      "voice": "adult_m",
+      "look": "Three Korean brothers always drawn together and the same way: a tall teenage boy with short black hair in a grey hoodie, a middle-school boy with a bowl cut in a navy sweatshirt, and a small boy of about eight with round cheeks in a green sweater."
     }
   ],
   "format": "drama",
@@ -105,8 +111,8 @@
       "hot": [
         "사망 선고"
       ],
-      "image_prompt": "A police station front door opening, warm light spilling in, the silhouette of a woman around forty standing in the doorway holding the hands of three boys, an older woman inside rising from a chair, hand over her mouth. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "딸,엄마",
+      "image_prompt": "Inside a police station: the doorway, warm light spilling in, ONE woman around forty (the daughter) standing in the doorway holding the hands of her three sons; across the room the mother in her early sixties rising from a chair, hand over her mouth. The daughter appears only once in the picture. Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,엄마,아들들",
       "phone": {
         "app": "none",
         "sender": "",
@@ -193,8 +199,8 @@
       "hot": [
         "세월이"
       ],
-      "image_prompt": "Montage feel: the same woman aging from her thirties to her sixties, sitting by a window at night looking at the moon, seasons changing outside the window. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "엄마",
+      "image_prompt": "ONE single full-frame picture, not a grid or comic panels: a Korean woman in her forties sitting alone by a window at night, looking at the full moon, an old photo of a little girl in a red cardigan on the windowsill, autumn leaves falling outside. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "none",
       "phone": {
         "app": "none",
         "sender": "",
@@ -325,8 +331,8 @@
       "hot": [
         "살아 있었습니다"
       ],
-      "image_prompt": "A bright Ansan apartment living room, the daughter around forty laughing with her three sons of different ages around a dinner table. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "딸",
+      "image_prompt": "A bright Ansan apartment living room, the daughter around forty laughing with her three sons around a dinner table. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,아들들",
       "phone": {
         "app": "none",
         "sender": "",
@@ -484,8 +490,8 @@
       "hot": [
         "문을 열고"
       ],
-      "image_prompt": "The daughter around forty walking into a police station meeting room holding the hands of her three sons, the mother in her early sixties standing up across the room, both frozen. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "딸,엄마",
+      "image_prompt": "The daughter around forty walking into a police station meeting room holding the hands of her three sons, the mother in her early sixties standing up across the room, both frozen. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "딸,엄마,아들들",
       "phone": {
         "app": "none",
         "sender": "",
@@ -506,8 +512,8 @@
       "hot": [
         "한눈에"
       ],
-      "image_prompt": "The mother in her early sixties and the daughter around forty embracing tightly, both sobbing, the three sons watching, police officers in the background wiping eyes. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "엄마,딸",
+      "image_prompt": "The mother in her early sixties and the daughter around forty embracing tightly, both sobbing, the three sons watching, police officers in the background wiping eyes. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마,딸,아들들",
       "phone": {
         "app": "none",
         "sender": "",
@@ -594,8 +600,8 @@
       "hot": [
         "마지막 선물"
       ],
-      "image_prompt": "Golden autumn evening outside the Jinhae police station, the mother, the daughter and the three boys walking together seen from behind, the mother and daughter holding hands. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "엄마,딸",
+      "image_prompt": "Golden autumn evening outside the Jinhae police station, the mother, the daughter and the three boys walking together seen from behind, the mother and daughter holding hands. The mother is always the same Korean woman in her early sixties (엄마: short permed graying hair, gentle lined face, cardigan), never young. The daughter is always the same Korean woman around forty (딸: shoulder-length black hair tied back, round kind face, navy coat). Her three sons are always the same three brothers (아들들: tall teen in grey hoodie, middle-schooler with bowl cut in navy sweatshirt, small boy about eight in green sweater), never adult men. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "엄마,딸,아들들",
       "phone": {
         "app": "none",
         "sender": "",
