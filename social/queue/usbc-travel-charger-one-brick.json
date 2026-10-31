@@ -1,7 +1,7 @@
 {
   "topic": "usbc-travel-charger-one-brick",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/65w-is-enough-for-most-laptop-and-phone.html",
   "video": {
     "ig": "posts/usbc-travel-charger-one-brick/usbc-travel-charger-one-brick-short-ig.mp4",
     "link": "posts/usbc-travel-charger-one-brick/usbc-travel-charger-one-brick-short-link.mp4",
@@ -36,5 +36,6 @@
       "laptop charger",
       "gan charger"
     ]
-  }
+  },
+  "threads_not_before": 1793463600
 }
