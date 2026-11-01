@@ -10,7 +10,8 @@ from pathlib import Path
 import requests
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = os.environ.get("IMAGE_MODEL", "gpt-image-1")
+# first model the account can use wins (gpt-image-1 was gone from the API by 2026-11)
+MODELS = [m for m in [os.environ.get("IMAGE_MODEL"), "gpt-image-2", "gpt-image-1.5", "gpt-image-1-mini", "gpt-image-1"] if m]
 QUALITY = os.environ.get("IMAGE_QUALITY", "medium")
 
 COMMON = ("Clean flat editorial illustration with soft shadows. Palette: warm off-white #F4F1E8, deep teal #1B6453, "
@@ -47,17 +48,23 @@ def parse(text):
 def draw(prompt, role):
     size = {"pick": "1024x1024", "reel": "1024x1536"}.get(role, "1536x1024")
     style = {"pick": PICK, "reel": REEL}.get(role, COMMON)
-    for attempt in range(3):
+    attempt = 0
+    while MODELS and attempt < 3:
         r = requests.post("https://api.openai.com/v1/images/generations", timeout=300,
                           headers={"Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"},
-                          json={"model": MODEL, "prompt": f"{prompt}\n\n{style}", "size": size,
+                          json={"model": MODELS[0], "prompt": f"{prompt}\n\n{style}", "size": size,
                                 "quality": QUALITY, "n": 1})
         if r.status_code == 200:
             return base64.b64decode(r.json()["data"][0]["b64_json"])
-        print("  API", r.status_code, r.text[:300])
-        if r.status_code in (400, 401, 403):
+        print("  API", MODELS[0], r.status_code, r.text[:300])
+        if r.status_code in (400, 403, 404) and ("model" in r.text and ("does not exist" in r.text or "verif" in r.text
+                                                                         or "access" in r.text)):
+            MODELS.pop(0)  # this account can't use it; try the next model
+            continue
+        if r.status_code in (400, 401):
             break
-        time.sleep(20 * (attempt + 1))
+        attempt += 1
+        time.sleep(20 * attempt)
     return None
 
 
