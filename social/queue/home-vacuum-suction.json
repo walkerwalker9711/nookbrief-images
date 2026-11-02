@@ -1,7 +1,7 @@
 {
   "topic": "home-vacuum-suction",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/vacuum-lost-suction-its-usually-filter.html",
   "video": {
     "ig": "posts/home-vacuum-suction/home-vacuum-suction-short-ig.mp4",
     "link": "posts/home-vacuum-suction/home-vacuum-suction-short-link.mp4",
@@ -36,5 +36,7 @@
       "vacuum repair",
       "brush roll"
     ]
-  }
+  },
+  "not_before": 1793605037,
+  "threads_not_before": 1793661600
 }
