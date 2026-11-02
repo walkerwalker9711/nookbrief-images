@@ -1,7 +1,7 @@
 {
   "topic": "old-wireless-mouse-stuttering-test-the",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/09/wireless-mouse-stutter-receiver-position.html",
   "video": {
     "ig": "posts/old-wireless-mouse-stuttering-test-the/old-wireless-mouse-stuttering-test-the-short-ig.mp4",
     "link": "posts/old-wireless-mouse-stuttering-test-the/old-wireless-mouse-stuttering-test-the-short-link.mp4",
@@ -36,5 +36,7 @@
       "desk setup",
       "tech tips"
     ]
-  }
+  },
+  "not_before": 1793612239,
+  "threads_not_before": 1793722800
 }
