@@ -1,7 +1,7 @@
 {
   "topic": "old-meeting-audio-coming-from-the",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/blog-post_04.html",
   "video": {
     "ig": "posts/old-meeting-audio-coming-from-the/old-meeting-audio-coming-from-the-short-ig.mp4",
     "link": "posts/old-meeting-audio-coming-from-the/old-meeting-audio-coming-from-the-short-link.mp4",
@@ -36,5 +36,7 @@
       "windows sound",
       "work from home"
     ]
-  }
+  },
+  "not_before": 1793626644,
+  "threads_not_before": 1793809200
 }
