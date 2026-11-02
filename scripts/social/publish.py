@@ -167,7 +167,10 @@ CHANNELS = {"pinterest": pinterest, "instagram": instagram, "threads": threads, 
 def main(only=None):
     failed = False
     scheduled = os.environ.get("GITHUB_EVENT_NAME") == "schedule"
-    for qf in sorted(QUEUE.glob("*.json")):
+    # GitHub often skips hourly cron runs; on 2026-11-02 four delayed posts piled up and went out within
+    # three minutes. So a run starts at most one delayed ("not_before") post, earliest first.
+    delayed_started = False
+    for qf in sorted(QUEUE.glob("*.json"), key=lambda f: (load(f).get("not_before") or 0, f.name)):
         item = load(qf)
         if not item.get("approved") or (only and item["topic"] != only):
             continue
@@ -187,6 +190,13 @@ def main(only=None):
         th_ok = not (ROOT / "social" / "threads_paused").exists() and (tnb or 0) <= now \
             and not (scheduled and tnb and st.get("threads_started_for") == tnb)
         th_new = bool(tnb) and th_ok and st.get("threads_started_for") != tnb
+        todo = [n for n in CHANNELS if n in item and not n.startswith("threads") and not isinstance(st.get(n), dict)]
+        if fresh and item.get("not_before") and todo and not only:
+            if delayed_started:
+                print(qf.stem, "due, but one delayed post per run; next run")
+                fresh = False
+            else:
+                delayed_started = True
         if not fresh and not th_new:
             continue
         if fresh:
