@@ -1,7 +1,7 @@
 {
   "topic": "old-usb-drive-wont-eject-finish",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/10/blog-post.html",
   "video": {
     "ig": "posts/old-usb-drive-wont-eject-finish/old-usb-drive-wont-eject-finish-short-ig.mp4",
     "link": "posts/old-usb-drive-wont-eject-finish/old-usb-drive-wont-eject-finish-short-link.mp4",
@@ -36,5 +36,7 @@
       "mac tips",
       "windows tips"
     ]
-  }
+  },
+  "not_before": 1793619441,
+  "threads_not_before": 1793748000
 }
