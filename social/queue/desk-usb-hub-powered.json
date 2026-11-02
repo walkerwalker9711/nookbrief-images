@@ -1,0 +1,40 @@
+{
+  "topic": "desk-usb-hub-powered",
+  "approved": false,
+  "post_url": null,
+  "video": {
+    "ig": "posts/desk-usb-hub-powered/desk-usb-hub-powered-short-ig.mp4",
+    "link": "posts/desk-usb-hub-powered/desk-usb-hub-powered-short-link.mp4",
+    "blog": "posts/desk-usb-hub-powered/desk-usb-hub-powered-short-blog.mp4",
+    "yt": "posts/desk-usb-hub-powered/desk-usb-hub-powered-short-yt.mp4"
+  },
+  "pinterest": {
+    "board": "Desk Setup Ideas",
+    "title": "Powered vs Bus-Powered USB Hub: Which One Your Desk Actually Needs",
+    "description": "A bus-powered hub shares about 900mA from one USB 3.0 port. A hard drive wants a powered hub. AI voice & visuals · #CommissionsEarned"
+  },
+  "instagram": {
+    "caption": "powered or bus-powered usb hub? a bus-powered one splits about 900mA from one usb 3.0 port across every port.\n\nmouse + keyboard: fine. a hard drive: that's when drives start dropping off. get a hub with its own adapter.\n\nfull table + our picks: link in bio.\n\nAI voice & visuals · #CommissionsEarned #desksetup #usbhub #NookBrief",
+    "keywords": [
+      "GUIDE",
+      "LINK"
+    ],
+    "dm": "Here's the USB hub guide: {link}\n\nOur picks are in the boxes. As an Amazon Associate I earn from qualifying purchases.",
+    "public_reply": "Sent! Check your DMs 📬"
+  },
+  "threads": {
+    "text": "external drive keeps disconnecting from your usb hub? check if the hub has its own power plug.\n\nno plug means four ports share one port's power. #desksetup",
+    "reply": "our pick → https://www.amazon.com/dp/B00TPMEOYM?tag=nookbrief-20\nfull table → {link}\n\nAI voice & visuals · #CommissionsEarned"
+  },
+  "youtube": {
+    "title": "powered or bus-powered usb hub? #shorts",
+    "description": "a bus-powered hub splits about 900mA (usb 3.0) across every port. mouse and keyboard are fine. a hard drive is when you want a hub with its own adapter.\n\nfull guide: {link} (also linked on the channel page)\n\nAI voice & visuals. As an Amazon Associate I earn from qualifying purchases. #CommissionsEarned",
+    "tags": [
+      "usb hub",
+      "powered usb hub",
+      "desk setup",
+      "external hard drive",
+      "laptop accessories"
+    ]
+  }
+}
