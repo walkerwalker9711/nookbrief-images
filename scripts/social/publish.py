@@ -190,7 +190,7 @@ def main(only=None):
         th_ok = not (ROOT / "social" / "threads_paused").exists() and (tnb or 0) <= now \
             and not (scheduled and tnb and st.get("threads_started_for") == tnb)
         th_new = bool(tnb) and th_ok and st.get("threads_started_for") != tnb
-        todo = [n for n in CHANNELS if n in item and not n.startswith("threads") and not isinstance(st.get(n), dict)]
+        todo = [n for n in CHANNELS if n in item and not n.startswith("threads") and st.get(n) is None]
         if fresh and item.get("not_before") and todo and not only:
             if delayed_started:
                 print(qf.stem, "due, but one delayed post per run; next run")
