@@ -1,7 +1,7 @@
 {
   "topic": "desk-usb-hub-powered",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/11/powered-vs-bus-powered-usb-hub-which.html",
   "video": {
     "ig": "posts/desk-usb-hub-powered/desk-usb-hub-powered-short-ig.mp4",
     "link": "posts/desk-usb-hub-powered/desk-usb-hub-powered-short-link.mp4",
@@ -36,5 +36,6 @@
       "external hard drive",
       "laptop accessories"
     ]
-  }
+  },
+  "threads_not_before": 1793636400
 }
