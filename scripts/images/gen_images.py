@@ -4,7 +4,7 @@ Reads every orders/<topic>.md (not README, not done/), draws each numbered promp
 incoming/<topic>/ yet, and leaves the files in incoming/ for the workflow to push on a codex/api-* branch,
 so nb_codex.py fetch picks them up exactly like Codex output. Rules mirror orders/README.md.
 """
-import base64, os, re, sys, time
+import base64, os, re, subprocess, sys, time
 from pathlib import Path
 
 import requests
@@ -22,7 +22,7 @@ PICK = ("One product alone, centered, filling about 70% of the frame, plain warm
         "No readable text, numbers, logos or brand names. Generic design.")
 REEL = ("Vertical photo-like image: soft natural light, shallow depth of field, warm film tones, calm and tidy. "
         "Devices are generic with no brand. No text, numbers, logos, brand names or people.")
-HEAD = re.compile(r"^(\d{2})\s*\((cover|body|pick|reel)\b[^)]*\)\s*$")
+HEAD = re.compile(r"^(\d{2}(?:-v\d)?)\s*\((cover|body|pick|reel)\b[^)]*\)\s*$")  # "02-v2 (body)" = redraw
 
 
 def parse(text):
@@ -68,11 +68,29 @@ def draw(prompt, role):
     return None
 
 
+def on_branches():
+    """File names already drawn on any origin/codex/* branch (not fetched to main yet), so a second run
+    started before nb_codex.py fetch does not pay to draw them again."""
+    try:
+        refs = subprocess.run(["git", "-C", str(ROOT), "for-each-ref", "--format=%(refname)", "refs/remotes/origin/codex"],
+                              capture_output=True, text=True, check=True).stdout.split()
+        names = set()
+        for ref in refs:
+            out = subprocess.run(["git", "-C", str(ROOT), "ls-tree", "-r", "--name-only", ref, "incoming"],
+                                 capture_output=True, text=True, check=True).stdout
+            names.update(Path(x).name for x in out.split())
+        return names
+    except Exception as e:
+        print("could not list codex branches:", e)
+        return set()
+
+
 def main():
     if not os.environ.get("OPENAI_API_KEY"):
         print("OPENAI_API_KEY secret is not set; nothing drawn.")
         return 1
     made, failed = 0, 0
+    drawn = on_branches()
     for f in sorted((ROOT / "orders").glob("*.md")):
         if f.name == "README.md":
             continue
@@ -81,14 +99,16 @@ def main():
         out.mkdir(parents=True, exist_ok=True)
         done = out / "done.txt"
         for n, role, prompt in items:
-            if n in skip or list(out.glob(f"{topic}-{n}-*.png")):
+            num, _, ver = n.partition("-")
+            name = f"{topic}-{num}-{role}{'-' + ver if ver else ''}.png"
+            have = [x.name for x in out.glob(f"{topic}-{num}-*.png")] + [x for x in drawn if x.startswith(f"{topic}-{num}-")]
+            if (not ver and (num in skip or have)) or (ver and name in have):
                 continue
             print(topic, n, role)
             png = draw(prompt, role)
             if not png:
                 failed += 1
                 continue
-            name = f"{topic}-{n}-{role}.png"
             (out / name).write_bytes(png)
             with done.open("a", encoding="utf-8") as fh:
                 fh.write(f"{name} | {n} | {prompt[:120]}\n")
