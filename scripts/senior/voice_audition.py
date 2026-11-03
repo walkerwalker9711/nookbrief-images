@@ -109,7 +109,30 @@ def clean():
             print("deleted", v["voice_id"], v.get("name"), r.status_code)
 
 
+def clone(channel, text):
+    """'audition kr clone elder_m 6': save the picked candidate as our own voice from its sample (instant voice
+    clone). Designed previews were never saved when the slots were full (11-03), so the sample is all we have.
+    The new id goes into <role>.json as "saved_voice_id"; Claude copies it to voices.json."""
+    role, n = text.split()[:2]
+    mp3 = OUT / f"{role}_{n}.mp3"
+    with open(mp3, "rb") as f:
+        r = requests.post(f"{API}/voices/add", headers={k: v for k, v in headers().items() if k.lower() != "content-type"},
+                          data={"name": f"{channel} {role} {n} (picked)", "remove_background_noise": "false",
+                                "description": "owner pick 2026-11-03, cloned from the audition sample"},
+                          files={"files": (mp3.name, f, "audio/mpeg")}, timeout=120)
+    print("clone", r.status_code, r.text[:300])
+    if r.ok:
+        js = OUT / f"{role}.json"
+        found = json.loads(js.read_text(encoding="utf-8"))
+        for c in found:
+            if str(c["n"]) == n:
+                c["saved_voice_id"] = r.json()["voice_id"]
+        js.write_text(json.dumps(found, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 def main(channel, role, text):
+    if role == "clone":
+        return clone(channel, text)
     if role == "list":
         return list_voices()
     if role == "clean":
