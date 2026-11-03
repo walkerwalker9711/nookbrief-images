@@ -85,7 +85,23 @@ def design(desc, text):
     return []
 
 
+def list_voices():
+    """'audition kr list x': our saved voices and which ones voices.json uses (voice slots run out on the plan)."""
+    used = json.dumps(json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8")))
+    r = requests.get(f"{API}/voices", headers=headers(), timeout=30)
+    vs = r.json().get("voices", [])
+    print("voices", r.status_code, len(vs))
+    for v in vs:
+        print(v.get("category"), v["voice_id"], "USED" if v["voice_id"] in used else "-", v.get("name"))
+    r = requests.get(f"{API}/user/subscription", headers=headers(), timeout=30)
+    if r.ok:
+        j = r.json()
+        print("slots", j.get("voice_slots_used"), "/", j.get("voice_limit"), "professional", j.get("professional_voice_slots_used"))
+
+
 def main(channel, role, text):
+    if role == "list":
+        return list_voices()
     OUT.mkdir(parents=True, exist_ok=True)
     lang = {"kr": "ko", "us": "en"}[channel]
     gender = "male" if role.endswith("_m") else "female"
@@ -111,7 +127,7 @@ def main(channel, role, text):
                                   json={"voice_name": f"{channel} {role} designed {n}", "voice_description": desc,
                                         "generated_voice_id": p["generated_voice_id"]})
             vid = r.json().get("voice_id") if r.ok else None
-            print("saved designed voice", n, r.status_code, vid)
+            print("saved designed voice", n, r.status_code, vid, "" if r.ok else r.text[:300])
             found.append({"n": n, "name": f"designed {n}", "source": "voice design", "voice_id": vid, "about": desc})
     (OUT / f"{role}.json").write_text(json.dumps(found, ensure_ascii=False, indent=2), encoding="utf-8")
     print(len(found), "candidates")
