@@ -1,0 +1,561 @@
+{
+  "pillar": "감동 실화",
+  "topic": "4·3으로 출생신고 전 아버지를 잃고 77년간 작은아버지 딸로 산 고계순 할머니, 국가 결정으로 친아버지 딸이 되고 추념식에서 아버지를 부르다",
+  "title": "얼굴도 모르는 아버지를 77년 만에 처음 부른 할머니 #실화",
+  "mood": "touching",
+  "music": "touching-strings",
+  "case_tag": "실제 사연 재구성 · 2026년 제주",
+  "sources": [
+    {
+      "name": "서울신문",
+      "url": "https://m.seoul.co.kr/news/2026/04/03/20260403500207"
+    },
+    {
+      "name": "서울신문",
+      "url": "https://m.seoul.co.kr/news/2026/02/13/20260213500306"
+    },
+    {
+      "name": "제이누리",
+      "url": "https://www.jnuri.net/mobile/article.html?no=67177"
+    }
+  ],
+  "description": "#감동실화 #가족 #실제사연\n\n1948년 제주에서 태어난 딸.\n출생신고도 하기 전, 아버지는 4·3으로 세상을 떠났습니다.\n\n▶ 77년 동안 '작은아버지의 딸'로 살아야 했던 이유\n▶ 집으로 찾아온 결정서 한 장\n▶ 벚꽃 아래 추념식, 처음 불러 본 \"아버지\"\n\n#한국이장님 #감동실화 #제주 #실화재구성\n\n📰 출처: 서울신문, 제이누리",
+  "tags": [
+    "한국이장님",
+    "감동실화",
+    "실제사연",
+    "가족",
+    "제주",
+    "아버지"
+  ],
+  "fact_notes": "서울신문 2026-02-13·04-03, 제이누리 2026-02-13. 고계순(77→78) 1948년 6월생, 출생신고 전 같은 해 12월 아버지 고석보 4·3 희생. 가족이 희생자 자녀 불이익 우려해 작은아버지 자녀로 호적. 77년 작은아버지 딸로. 생부 행방불명·사망 시 유전자 검사 불가로 친자 인정 어려움 → 2021년 4·3특별법 개정 특례. 2026-02-13 오영훈 지사가 자택 방문해 4·3위원회 결정서 전달(첫 결정, 4명). 결정서 '고계순은 희생자 망 고석보의 친생자임을 인지한다'. 지사 '너무 늦었지만 … 이제라도 아픈 기억을 내려놓고 편안하길 바란다'. 고씨 '한시도 아버지를 잊은 적이 없었는데, 이제야 한을 풀 수 있게 됐습니다'. 결정서를 아버지 묘소에 올림. 04-03 제78주년 추념식(4·3평화공원, 벚꽃), 배우가 사연 낭독(대사 3줄은 낭독문 그대로, 일부 줄임), 고씨 '아버지… 아버지 보고 싶어요. 얼굴 한번 못 보고 돌아가셔서 어떻게 생겼는지도 모르는데…', 식장 눈물바다, 훌쩍이는 소리. 정치인 이름·노래 가사는 넣지 않음. 장면7 '그 이름을 한 번도 잊은 적 없었다'는 본인 말('한시도 아버지를 잊은 적이 없었는데')을 옮긴 것. 아버지 얼굴은 그리지 않음(본인이 모름).",
+  "characters": [
+    {
+      "id": "계순 할머니",
+      "label": "고계순 할머니 · 78세",
+      "voice": "old_f",
+      "look": "short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse"
+    },
+    {
+      "id": "어린 계순",
+      "label": "어린 계순",
+      "voice": "adult_f",
+      "look": "bob haircut with bangs, a faded plain jeogori top and dark skirt"
+    },
+    {
+      "id": "아버지",
+      "label": "아버지 고석보",
+      "voice": "adult_m",
+      "look": "lean build, short black hair, plain off-white cotton work clothes; face never visible, back view only"
+    },
+    {
+      "id": "도지사",
+      "label": "제주도지사",
+      "voice": "adult_m",
+      "look": "neat short gray-black hair, rimless glasses, dark navy suit, white shirt, no tie"
+    },
+    {
+      "id": "배우",
+      "label": "사연 낭독 배우",
+      "voice": "mid_f",
+      "look": "elegant shoulder-length black hair, a pale jade-green hanbok"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.08,
+  "caption_words": [
+    {
+      "spoken": "일흔여덟 살",
+      "written": "78살"
+    },
+    {
+      "spoken": "천구백사십팔 년 유월",
+      "written": "1948년 6월"
+    },
+    {
+      "spoken": "십이월",
+      "written": "12월"
+    },
+    {
+      "spoken": "사삼 특별법",
+      "written": "4·3 특별법"
+    },
+    {
+      "spoken": "사삼 평화공원",
+      "written": "4·3 평화공원"
+    },
+    {
+      "spoken": "사삼",
+      "written": "4·3"
+    },
+    {
+      "spoken": "칠십칠 년",
+      "written": "77년"
+    },
+    {
+      "spoken": "이천이십일 년",
+      "written": "2021년"
+    },
+    {
+      "spoken": "이월 십삼일",
+      "written": "2월 13일"
+    },
+    {
+      "spoken": "사월 삼일",
+      "written": "4월 3일"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "일흔여덟 살 할머니가, 얼굴도 모르는 아버지를 처음으로 불렀습니다.",
+      "delivery": "[low, moving, slow]",
+      "caption": "78세, 처음 불러 본 아버지",
+      "hot": [
+        "처음으로"
+      ],
+      "image_prompt": "Under blooming white cherry blossoms at an outdoor memorial ceremony in Jeju, ONE elderly woman seated in the front row, both hands pressed to her chest, tears streaming, looking up at the sky. The grandmother appears only once in the picture. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "천구백사십팔 년 유월, 제주. 한 집에 딸아이가 태어났습니다.",
+      "delivery": "[gentle, warm, slow]",
+      "caption": "1948년 6월, 제주",
+      "hot": [
+        "딸아이가"
+      ],
+      "image_prompt": "A 1948 Jeju thatched-roof stone house in early summer, black basalt stone walls, inside on the floor a tiny newborn baby wrapped in white cloth in a woven basket; in the doorway a young man stands with his back to us, looking toward the baby. ONE single full-frame picture, not a grid. The father is always the same young Korean man of 1948 (아버지: lean build, short black hair, plain off-white cotton work clothes) and is shown ONLY from behind or with his face hidden in shadow; his face is never visible. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "하지만 그해 십이월, 아버지는 사삼으로 세상을 떠났습니다. 딸의 출생신고도 하기 전이었습니다.",
+      "delivery": "[slow, heavy]",
+      "caption": "그해 12월, 아버지를 잃다",
+      "hot": [
+        "출생신고도"
+      ],
+      "image_prompt": "Winter in the same 1948 Jeju village, gray sky, cold wind over black stone walls, the thatched house doorway now empty, a man's worn straw sandals left alone on the stone step, the baby's basket visible inside. No people. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "남은 가족들은 걱정했습니다. 사삼 희생자의 자식이라는 꼬리표가, 이 아이의 앞길을 막을까 봐.",
+      "delivery": "[quiet, worried]",
+      "caption": "희생자의 자식이라는 꼬리표",
+      "hot": [
+        "꼬리표가"
+      ],
+      "image_prompt": "Night inside the 1948 Jeju house, an oil lamp, family elders seen as dark silhouettes from behind sitting around the sleeping baby, heads bowed in worry. No faces visible. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그래서 아이는, 작은아버지의 딸로 호적에 올랐습니다.",
+      "delivery": "[slow, sad]",
+      "caption": "작은아버지의 딸로",
+      "hot": [
+        "작은아버지의 딸로"
+      ],
+      "image_prompt": "Close-up of an old yellowed Korean family register book lying open on a low wooden table, only blank ruled lines, an elderly hand holding a brush pen over it, the oil lamp glow. No readable writing. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "아이 이름은 계순. 그렇게 칠십칠 년을, 작은아버지의 딸로 살았습니다.",
+      "delivery": "[slow, heavy]",
+      "caption": "77년을 작은아버지의 딸로",
+      "hot": [
+        "칠십칠 년을"
+      ],
+      "image_prompt": "1950s Jeju coast, a small girl sitting alone on a black basalt stone wall looking out at the gray sea, wind in her hair, seen from the side. The girl is always the same seven-year-old Korean girl of the 1950s (어린 계순: bob haircut with bangs, a faded plain jeogori top and dark skirt). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "어린 계순",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "아버지가 어떻게 생겼는지도 몰랐습니다. 그래도 할머니는, 그 이름을 한 번도 잊은 적이 없었습니다.",
+      "delivery": "[soft, aching]",
+      "caption": "얼굴도 모르는 아버지",
+      "hot": [
+        "한 번도"
+      ],
+      "image_prompt": "Present day, a small modest Jeju home, the elderly woman sitting alone by a window in soft afternoon light, gently tracing a finger over a faded empty envelope on her lap, eyes moist. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "친딸이라는 걸 밝히고 싶어도 방법이 없었습니다. 아버지가 돌아가신 뒤라, 유전자 검사조차 할 수 없었습니다.",
+      "delivery": "[low, frustrated sadness]",
+      "caption": "증명할 방법이 없었다",
+      "hot": [
+        "유전자 검사조차"
+      ],
+      "image_prompt": "The elderly woman at her low table at night, papers and folders spread before her, holding her forehead with one hand, tired and helpless, a single lamp. ONE single full-frame picture, not a grid. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그러다 이천이십일 년, 사삼 특별법이 바뀌었습니다. 뒤틀린 가족관계를, 국가가 조사해 바로잡을 수 있게 된 겁니다.",
+      "delivery": "[hopeful, building]",
+      "caption": "2021년, 법이 바뀌다",
+      "hot": [
+        "바로잡을 수"
+      ],
+      "image_prompt": "A bright government hearing room seen from the back, a long table with a committee of officials reviewing thick case folders, warm daylight through tall windows, a sense of hope. No faces in focus. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그리고 올해 이월 십삼일. 제주도지사가 직접 할머니의 집을 찾아왔습니다.",
+      "delivery": "[warm, rising]",
+      "caption": "2월 13일, 도지사가 찾아오다",
+      "hot": [
+        "직접"
+      ],
+      "image_prompt": "Daytime at the front door of the elderly woman's modest Jeju home, the door open, the elderly woman in the doorway looking surprised; the governor in a dark suit standing at the step holding a document folder with both hands, bowing slightly. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. The governor is always the same Korean man in his early sixties (도지사: neat short gray-black hair, rimless glasses, dark navy suit, white shirt, no tie). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니,도지사",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "건네받은 결정서에는 이렇게 적혀 있었습니다. 고계순은, 희생자 고석보의 친생자임을 인지한다.",
+      "delivery": "[slow, solemn, moving]",
+      "caption": "\"고석보의 친생자임을 인지한다\"",
+      "hot": [
+        "친생자임을"
+      ],
+      "image_prompt": "Inside her home, the elderly woman holding an official document in both trembling hands, reading it, mouth open, tears forming; the governor sitting beside her respectfully. The paper shows only blank lines and a red seal shape, no readable text. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. The governor is always the same Korean man in his early sixties (도지사: neat short gray-black hair, rimless glasses, dark navy suit, white shirt, no tie). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니,도지사",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "너무 늦었지만, 이제라도 아픈 기억 내려놓으시고 편안하시길 바랍니다.",
+      "delivery": "[respectful, gentle, sincere]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The governor leaning toward the elderly woman with a respectful bow of the head, speaking gently, her hands still holding the document. The governor is always the same Korean man in his early sixties (도지사: neat short gray-black hair, rimless glasses, dark navy suit, white shirt, no tie). The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "도지사,계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "도지사"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "한시도 아버지를 잊은 적이 없었는데… 이제야 한을 풀 수 있게 됐습니다.",
+      "delivery": "[trembling, tearful, slow]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of the elderly woman crying with a relieved smile, pressing the document to her chest. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "계순 할머니"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "할머니는 그 결정서를, 아버지의 묘소에 올렸습니다.",
+      "delivery": "[quiet, tender]",
+      "caption": "아버지 묘소에 올린 결정서",
+      "hot": [
+        "묘소에"
+      ],
+      "image_prompt": "A Jeju grave mound surrounded by a low square black stone wall in a green field, the elderly woman kneeling before it, gently placing the document on the grave, wind moving the grass. Seen slightly from behind and the side. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그리고 사월 삼일, 벚꽃이 흐드러진 제주 사삼 평화공원. 추념식에서 한 배우가, 할머니의 사연을 읽어 내려갔습니다.",
+      "delivery": "[slow, building]",
+      "caption": "4월 3일, 추념식",
+      "hot": [
+        "사연을"
+      ],
+      "image_prompt": "A large outdoor memorial ceremony at a Jeju peace park, white cherry blossoms everywhere, rows of mourners in dark clothes; at a microphone stand the reader in a pale jade hanbok reading from a paper; the elderly woman seated in the front row. ONE single full-frame picture, not a grid. The reader is always the same Korean woman in her early sixties (배우: elegant shoulder-length black hair, a pale jade-green hanbok). The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "배우,계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "우리 아버지. 갓난쟁이 아기 두고 가려니, 얼마나 가슴이 미어지셨을까.",
+      "delivery": "[soft, aching, slow]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The reader in the jade hanbok at the microphone, eyes glistening, reading slowly, cherry petals drifting. The reader is always the same Korean woman in her early sixties (배우: elegant shoulder-length black hair, a pale jade-green hanbok). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "배우",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "배우"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "끝내 올리지 못한 딸 이름 석 자. 하지만 오늘 보고 계시죠. 당당히 아버지 딸로 앉아 있는 계순이를.",
+      "delivery": "[tender, breaking]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The reader stepping away from the microphone toward the front row, holding the paper, looking down at the elderly woman with deep compassion. The reader is always the same Korean woman in her early sixties (배우: elegant shoulder-length black hair, a pale jade-green hanbok). The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "배우,계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "배우"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "평생 가슴에만 묻어 둔 이름. 하영 속았수다. 이제 당당히 불러 보십서.",
+      "delivery": "[warm, Jeju dialect, tearful]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The reader gently embracing the elderly woman in the front row, the elderly woman's face crumpling into tears, cherry blossoms above. The reader is always the same Korean woman in her early sixties (배우: elegant shoulder-length black hair, a pale jade-green hanbok). The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "배우,계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "배우"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "아버지… 아버지 보고 싶어요. 얼굴 한번 못 보고 돌아가셔서… 어떻게 생기셨는지도 모르는데….",
+      "delivery": "[sobbing, like a child, broken]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of the elderly woman sobbing like a child, looking up, hand reaching slightly forward toward the sky, white petals falling around her. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "계순 할머니"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "추념식장은 눈물바다가 됐습니다. 객석 곳곳에서, 훌쩍이는 소리가 이어졌습니다.",
+      "delivery": "[slow, moved]",
+      "caption": "눈물바다가 된 추념식장",
+      "hot": [
+        "눈물바다가"
+      ],
+      "image_prompt": "Wide shot of the ceremony audience under cherry trees, many people of all ages wiping their eyes with handkerchiefs, petals swirling in the wind. No one in focus. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "칠십칠 년 만에 되찾은 이름. 이제 할머니는, 아버지의 딸 고계순입니다.",
+      "delivery": "[warm, resonant, slow]",
+      "caption": "",
+      "hot": [
+        "아버지의 딸"
+      ],
+      "image_prompt": "Golden late afternoon at the Jeju grave with its square stone wall, the elderly woman sitting quietly beside the grave mound, at peace, a faint gentle smile; beside her a young man's silhouette seen only from behind, translucent like a memory, sitting with her. ONE single full-frame picture, not a grid. The grandmother is always the same Korean woman of seventy-eight (계순 할머니: short white permed hair, deeply lined gentle face, small frame, a lavender knit cardigan over a white blouse), never young. The father is always the same young Korean man of 1948 (아버지: lean build, short black hair, plain off-white cotton work clothes) and is shown ONLY from behind or with his face hidden in shadow; his face is never visible. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "계순 할머니,아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "ko_review": "내레이션: 일흔여덟 살 할머니가, 얼굴도 모르는 아버지를 처음으로 불렀습니다.\n내레이션: 천구백사십팔 년 유월, 제주. 한 집에 딸아이가 태어났습니다.\n내레이션: 하지만 그해 십이월, 아버지는 사삼으로 세상을 떠났습니다. 딸의 출생신고도 하기 전이었습니다.\n내레이션: 남은 가족들은 걱정했습니다. 사삼 희생자의 자식이라는 꼬리표가, 이 아이의 앞길을 막을까 봐.\n내레이션: 그래서 아이는, 작은아버지의 딸로 호적에 올랐습니다.\n내레이션: 아이 이름은 계순. 그렇게 칠십칠 년을, 작은아버지의 딸로 살았습니다.\n내레이션: 아버지가 어떻게 생겼는지도 몰랐습니다. 그래도 할머니는, 그 이름을 한 번도 잊은 적이 없었습니다.\n내레이션: 친딸이라는 걸 밝히고 싶어도 방법이 없었습니다. 아버지가 돌아가신 뒤라, 유전자 검사조차 할 수 없었습니다.\n내레이션: 그러다 이천이십일 년, 사삼 특별법이 바뀌었습니다. 뒤틀린 가족관계를, 국가가 조사해 바로잡을 수 있게 된 겁니다.\n내레이션: 그리고 올해 이월 십삼일. 제주도지사가 직접 할머니의 집을 찾아왔습니다.\n내레이션: 건네받은 결정서에는 이렇게 적혀 있었습니다. 고계순은, 희생자 고석보의 친생자임을 인지한다.\n도지사: 너무 늦었지만, 이제라도 아픈 기억 내려놓으시고 편안하시길 바랍니다.\n계순 할머니: 한시도 아버지를 잊은 적이 없었는데… 이제야 한을 풀 수 있게 됐습니다.\n내레이션: 할머니는 그 결정서를, 아버지의 묘소에 올렸습니다.\n내레이션: 그리고 사월 삼일, 벚꽃이 흐드러진 제주 사삼 평화공원. 추념식에서 한 배우가, 할머니의 사연을 읽어 내려갔습니다.\n배우: 우리 아버지. 갓난쟁이 아기 두고 가려니, 얼마나 가슴이 미어지셨을까.\n배우: 끝내 올리지 못한 딸 이름 석 자. 하지만 오늘 보고 계시죠. 당당히 아버지 딸로 앉아 있는 계순이를.\n배우: 평생 가슴에만 묻어 둔 이름. 하영 속았수다. 이제 당당히 불러 보십서.\n계순 할머니: 아버지… 아버지 보고 싶어요. 얼굴 한번 못 보고 돌아가셔서… 어떻게 생기셨는지도 모르는데….\n내레이션: 추념식장은 눈물바다가 됐습니다. 객석 곳곳에서, 훌쩍이는 소리가 이어졌습니다.\n내레이션: 칠십칠 년 만에 되찾은 이름. 이제 할머니는, 아버지의 딸 고계순입니다."
+}
