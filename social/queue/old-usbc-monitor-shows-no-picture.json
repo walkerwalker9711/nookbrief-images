@@ -1,7 +1,7 @@
 {
   "topic": "old-usbc-monitor-shows-no-picture",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/09/blog-post.html",
   "video": {
     "ig": "posts/old-usbc-monitor-shows-no-picture/old-usbc-monitor-shows-no-picture-short-ig.mp4",
     "link": "posts/old-usbc-monitor-shows-no-picture/old-usbc-monitor-shows-no-picture-short-link.mp4",
@@ -36,5 +36,7 @@
       "usb-c cable",
       "desk setup"
     ]
-  }
+  },
+  "not_before": 1793676549,
+  "threads_not_before": 1793895600
 }
