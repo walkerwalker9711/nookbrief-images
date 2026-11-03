@@ -211,8 +211,8 @@
       "delivery": "[warm, cheerful]",
       "caption": "",
       "hot": [],
-      "image_prompt": "The owner smiling and waving her hand no, across the manicure table. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "사장",
+      "image_prompt": "Over-the-shoulder view from behind the grandfather's white-haired head and charcoal jacket (he sits on the left foreground), across the manicure table the owner smiling and waving her hand no. Only these two people; nobody else in the shop. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사장,할아버지",
       "phone": {
         "app": "none",
         "sender": "",
@@ -295,7 +295,7 @@
       "hot": [
         "구십사만 번"
       ],
-      "image_prompt": "A smartphone lying on the manicure table, its screen showing a video player with a grandfather's hands and many heart icons floating up, no readable text or numbers.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "Close-up of a smartphone lying alone on a white manicure table next to nail polish bottles, its screen showing a video player of an old man's hands with many pink heart icons floating up. No people anywhere in the picture, no faces. No readable text or numbers. ONE single full-frame picture, not a grid. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "",
       "phone": {
         "app": "none",
@@ -485,8 +485,8 @@
       "hot": [
         "나라를 지킨 손"
       ],
-      "image_prompt": "Close-up of the grandfather's old wrinkled hand with neatly trimmed nails resting in the owner's young hands on the manicure table, his navy veteran's cap lying beside them, warm golden lamp light. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
-      "cast": "",
+      "image_prompt": "Close-up of the manicure table under warm golden lamp light: the grandfather's old wrinkled hand with neatly trimmed nails resting in the owner's young hands, his navy blue veteran's cap lying beside them; the frame shows only hands, sleeves (his charcoal-gray padded jacket sleeve, her cream sweater sleeve) and the cap, no faces. ONE single full-frame picture, not a grid. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
       "phone": {
         "app": "none",
         "sender": "",
