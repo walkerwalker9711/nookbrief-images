@@ -99,14 +99,29 @@ def list_voices():
         print("slots", j.get("voice_slots_used"), "/", j.get("voice_limit"), "professional", j.get("professional_voice_slots_used"))
 
 
+def clean():
+    """'audition kr clean x': delete our designed (generated) voices that voices.json does not use. They are rejected
+    audition candidates and they hold the plan's 10 voice slots (11-03: elder_m designs could not be saved)."""
+    used = json.dumps(json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8")))
+    for v in requests.get(f"{API}/voices", headers=headers(), timeout=30).json().get("voices", []):
+        if v.get("category") == "generated" and v["voice_id"] not in used and str(v.get("name", "")).startswith(("kr ", "us ")):
+            r = requests.delete(f"{API}/voices/{v['voice_id']}", headers=headers(), timeout=30)
+            print("deleted", v["voice_id"], v.get("name"), r.status_code)
+
+
 def main(channel, role, text):
     if role == "list":
         return list_voices()
+    if role == "clean":
+        clean()
+        return list_voices()
+    design_only = role.endswith("!")  # "elder_m!": only new designed voices (library samples already made)
+    role = role.rstrip("!")
     OUT.mkdir(parents=True, exist_ok=True)
     lang = {"kr": "ko", "us": "en"}[channel]
     gender = "male" if role.endswith("_m") else "female"
-    found, n = [], 0
-    for v in library(lang, gender, 3, "middle_aged" if role.startswith("mid") else "old"):
+    found, n = [], (3 if design_only else 0)
+    for v in ([] if design_only else library(lang, gender, 3, "middle_aged" if role.startswith("mid") else "old")):
         r = requests.post(f"{API}/voices/add/{v['public_owner_id']}/{v['voice_id']}", headers=headers(), timeout=30,
                           json={"new_name": f"{channel} {role} - {v['name']}"[:60]})
         vid = (r.json().get("voice_id") if r.ok else None) or v["voice_id"]
