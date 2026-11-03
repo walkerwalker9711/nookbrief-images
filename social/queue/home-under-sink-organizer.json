@@ -1,7 +1,7 @@
 {
   "topic": "home-under-sink-organizer",
-  "approved": false,
-  "post_url": null,
+  "approved": true,
+  "post_url": "https://nookbrief.blogspot.com/2026/11/4-numbers-that-decide-whether-under.html",
   "video": {
     "ig": "posts/home-under-sink-organizer/home-under-sink-organizer-short-ig.mp4",
     "link": "posts/home-under-sink-organizer/home-under-sink-organizer-short-link.mp4",
@@ -36,5 +36,6 @@
       "sink cabinet",
       "home organization"
     ]
-  }
+  },
+  "threads_not_before": 1793834400
 }
