@@ -871,21 +871,26 @@ def voiced(channel, s, voice, vo, folder):
             shutil.copy(mp3, vo)
             m = json.loads(meta.read_text(encoding="utf-8"))
             print("voice reused", vo.name)
-            pitch(channel, vo, voice)
+            pitch(channel, vo, voice, folder)
             return [tuple(w) for w in m["words"]], m["engine"]
     words, engine = speak_line(channel, s["line"], vo, voice, s.get("delivery", ""))
     if cache:
         cache.mkdir(exist_ok=True)
         shutil.copy(vo, mp3)
         meta.write_text(json.dumps({**key, "words": words, "engine": engine}, ensure_ascii=False), encoding="utf-8")
-    pitch(channel, vo, voice)
+    pitch(channel, vo, voice, folder)
     return words, engine
 
 
-def pitch(channel, vo, voice):
+def pitch(channel, vo, voice, folder=None):
     """voices.json "<role>_pitch" (semitones, length kept) on top of the cached raw voice, so retuning a voice
-    costs no credits (owner 10-30: the 60s brother sounded 40s → deeper, the 57-year-old a bit lighter)."""
+    costs no credits (owner 10-30: the 60s brother sounded 40s → deeper, the 57-year-old a bit lighter).
+    A draft's script.json "voice_pitch": {"<role>": n} overrides it for that episode only
+    (owner 11-03: the 93-year-old sounded like a giant with the 60s brother's deep setting)."""
     semis = json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8"))[channel].get(f"{voice}_pitch", 0)
+    sj = Path(folder) / "script.json" if folder else None
+    if sj and sj.exists():
+        semis = json.loads(sj.read_text(encoding="utf-8")).get("voice_pitch", {}).get(voice, semis)
     if not semis:
         return
     f = 2 ** (semis / 12)
