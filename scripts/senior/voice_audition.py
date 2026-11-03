@@ -33,6 +33,12 @@ DESIGN = {
               "not frail or elderly, steady breath, speaks softly and emotionally in natural Korean.",
               "A Korean mother in her early sixties, soft warm alto with a little maturity in the tone, healthy and "
               "clear, not shaky, natural standard Korean, emotional and tender."],
+    # elder_m: a man in his 90s (owner 11-03: the deep Rei voice was "최홍만", pitched up it was "too young")
+    "elder_m": ["A very old Korean grandfather aged 93. Thin, frail, breathy voice with a dry rasp and a slight tremble, "
+                "weak air support, words come out slowly and a little slurred, warm and gentle, natural Korean, "
+                "clearly in his nineties, never deep or booming, never young.",
+                "A Korean man in his early nineties, small and frail. Light, papery, wavering old voice, a little "
+                "wheezy and hoarse, soft chuckles, speaks slowly with pauses, kind and humble, natural standard Korean."],
     "old_m": ["A Korean grandfather in his late 70s. Low, rough, aged voice, a little hoarse, speaks slowly in natural Korean."],
 }
 # Voice Design needs at least 100 characters of sample text
