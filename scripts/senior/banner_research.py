@@ -25,6 +25,8 @@ def main(mode=""):
     global OUT
     if mode == "drama":
         OUT = OUT.with_name("banners_drama")
+    if mode == "us":  # 11-04 US channel "Mayor of Main St.": true-story / kindness story channels in the US
+        OUT = OUT.with_name("banners_us")
     tok = google_token("YT_REFRESH_TOKEN")
     auth = {"Authorization": f"Bearer {tok}"}
     kr = json.loads((ROOT / "trends" / "latest.json").read_text(encoding="utf-8"))["regions"]["KR"]
@@ -33,6 +35,19 @@ def main(mode=""):
     if mode == "drama":
         pool = [v for v in pool + kr.get("overall", []) + [x for c in kr.get("categories", {}).values() for x in c]
                 if DRAMA.search(v["title"] + " " + " ".join(v.get("tags", [])))]
+    if mode == "us":
+        us = json.loads((ROOT / "trends" / "latest.json").read_text(encoding="utf-8"))["regions"]["US"]
+        story = re.compile(r"true story|real story|kindness|heartwarming|inspiring|wholesome|animated stor|story", re.I)
+        pool = [v for v in us.get("overall", []) + [x for c in us.get("categories", {}).values() for x in c]
+                if story.search(v["title"] + " " + " ".join(v.get("tags", [])))]
+        for q in ("heartwarming true story", "true story animated shorts", "kindness true story elderly"):
+            r = requests.get(f"{YT}/youtube/v3/search", headers=auth, timeout=60,
+                             params={"part": "snippet", "q": q, "type": "video", "videoDuration": "short", "order": "viewCount",
+                                     "publishedAfter": "2026-08-01T00:00:00Z", "regionCode": "US", "relevanceLanguage": "en", "maxResults": 25})
+            items = r.json().get("items", [])
+            print("search", q, r.status_code, len(items))
+            pool += [{"channel": it["snippet"]["channelTitle"], "id": it["id"]["videoId"], "views_per_hour": 25 - k}
+                     for k, it in enumerate(items)]
     for v in pool:
         if v["views_per_hour"] > best.get(v["channel"], (0, ""))[0]:
             best[v["channel"]] = (v["views_per_hour"], v["id"])
