@@ -654,6 +654,14 @@ STYLE = ("Korean webtoon drama style digital illustration: semi-realistic propor
          "numbers, logos or brand names anywhere; phone screens show blank bubbles only.")
 
 
+# US (Pops Knows, 11-04): same webtoon drama look, American people and places
+STYLE_US = STYLE.replace("Korean webtoon drama style", "Webtoon drama style (American people, small-town American setting)")
+
+
+def style(channel):
+    return STYLE_US if channel == "us" else STYLE
+
+
 def image_call(model, prompt, refs):
     if not refs:
         return requests.post(f"{OPENAI}/images/generations", headers=key(), timeout=300,
@@ -699,7 +707,7 @@ def drama_image(channel, script, scene, out, folder):
         if not ref.exists():
             for model in models("OPENAI_IMAGE_MODEL", IMAGE_MODELS):
                 r = image_call(model, f"Character sheet of one person: {ch['look']} Full upper body, facing slightly "
-                               f"to the side, plain soft grey background. Style: {STYLE}", [])
+                               f"to the side, plain soft grey background. Style: {style(channel)}", [])
                 if r.ok:
                     save_b64(r.json(), ref)
                     break
@@ -709,9 +717,9 @@ def drama_image(channel, script, scene, out, folder):
             looks.append(f"{cid}: {ch['look']}")
     if refs:
         prompt = (f"{scene['image_prompt']}\n\nThe people, drawn exactly like the reference pictures (same face, hair, "
-                  f"clothes, colors), in this order: {' / '.join(looks)}. Style: {STYLE}")
+                  f"clothes, colors), in this order: {' / '.join(looks)}. Style: {style(channel)}")
     else:
-        prompt = f"{scene['image_prompt']}\n\nAny people are background figures or shadows. Style: {STYLE}"
+        prompt = f"{scene['image_prompt']}\n\nAny people are background figures or shadows. Style: {style(channel)}"
     for model in models("OPENAI_IMAGE_MODEL", IMAGE_MODELS):
         r = image_call(model, prompt, refs)
         if r.ok:
