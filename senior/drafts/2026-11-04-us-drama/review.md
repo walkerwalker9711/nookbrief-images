@@ -48,7 +48,7 @@ FOX 13 (2018-07): Gregory Johnson, Kroger (Indianapolis area; CBS: Greenwood, In
 
 A dozen roses, a birthday cake, and a man in a wheelchair at the deli. His wife passed five years ago, and he still buys her a cake every birthday. A stranger skipped the All-Star Game to sit at his table.
 
-#popsknows #truestory #kindness
+#mayorofmainst #truestory #kindness
 
 Source: FOX 13, CBS News (July 2018), Gregory Johnson's Facebook post
 
