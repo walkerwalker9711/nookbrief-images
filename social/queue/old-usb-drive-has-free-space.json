@@ -1,0 +1,40 @@
+{
+  "topic": "old-usb-drive-has-free-space",
+  "approved": false,
+  "post_url": null,
+  "video": {
+    "ig": "posts/old-usb-drive-has-free-space/old-usb-drive-has-free-space-short-ig.mp4",
+    "link": "posts/old-usb-drive-has-free-space/old-usb-drive-has-free-space-short-link.mp4",
+    "blog": "posts/old-usb-drive-has-free-space/old-usb-drive-has-free-space-short-blog.mp4",
+    "yt": "posts/old-usb-drive-has-free-space/old-usb-drive-has-free-space-short-yt.mp4"
+  },
+  "pinterest": {
+    "board": "Cable & USB Fixes",
+    "title": "USB Drive Says File Too Large With Free Space? Check the Format",
+    "description": "FAT32 caps a single file at just under 4GB, no matter how empty the drive is. Check the format and back up before switching to exFAT. AI voice & visuals · #CommissionsEarned"
+  },
+  "instagram": {
+    "caption": "usb drive says \"file too large\" with tons of space left? FAT32 caps a single file at just under 4GB. free space doesn't change that.\n\ncheck the drive's format, back it up, then go exFAT if the tv or car reading it supports it.\n\nthe 4 checks: link in bio.\n\nAI voice & visuals · #CommissionsEarned #usbdrive #techtips #NookBrief",
+    "keywords": [
+      "GUIDE",
+      "LINK"
+    ],
+    "dm": "Here's the \"file too large\" fix: {link}\n\nAs an Amazon Associate I earn from qualifying purchases.",
+    "public_reply": "Sent! Check your DMs 📬"
+  },
+  "threads": {
+    "text": "usb drive, tons of space free, still says file too large. it's FAT32, which caps one file at just under 4GB. #techtips",
+    "reply": "our budget pick → https://www.amazon.com/dp/B07BPG9YX9?tag=nookbrief-20\nthe checks → {link}\n\nAI voice & visuals · #CommissionsEarned"
+  },
+  "youtube": {
+    "title": "usb drive says file too large? it's FAT32, not space #shorts",
+    "description": "FAT32 can't hold a single file of 4GB or more, even on an empty drive. check the format in Properties (Windows) or Disk Utility (Mac), back up, then use exFAT if the device that reads it supports it.\n\nfull guide: {link} (also linked on the channel page)\n\nAI voice & visuals. As an Amazon Associate I earn from qualifying purchases. #CommissionsEarned",
+    "tags": [
+      "usb drive",
+      "file too large",
+      "fat32",
+      "exfat",
+      "flash drive"
+    ]
+  }
+}
