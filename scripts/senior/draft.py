@@ -58,18 +58,20 @@ CHANNELS = {
         "mic": True, "source": "출처", "host": "이장님", "labels": {"alert": "⚠ 사기 경보", "touching": "감동 실화", "warm": "이장님 알림"},
     },
     "us": {
-        "name": "Pops Knows", "region": "US", "lang": "American English",
+        "name": "Mayor of Main St.", "region": "US", "lang": "American English",
         "pillars": ["Scam", "Benefits", "Home tips", "Nostalgia", "Phone"],
-        "character": "A sharp American grandpa in his 70s. Graphic-novel style digital illustration, semi-realistic "
-                     "proportions, clean fine line art, cinematic lighting, muted colors. White hair, white mustache, "
-                     "round glasses, a red flannel shirt under tan suspenders, sitting in a wooden porch rocking "
-                     "chair. Full body, plain soft grey background. Clearly an illustration, not a photo.",
+        # 11-04: renamed from Pops Knows (name taken); the host is the small-town mayor everybody knows (the US 이장님)
+        "character": "A friendly American man in his early thirties from a small Midwestern town. Webtoon drama style "
+                     "digital illustration, semi-realistic proportions, clean fine line art, cinematic warm lighting. "
+                     "Tousled medium-brown hair, short neat stubble beard, warm hazel eyes, an easy lopsided grin, a "
+                     "light-wash denim jacket over a cream crewneck sweater, a small round brass pin on the collar, a "
+                     "white diner coffee mug. Clearly an illustration, not a photo.",
         "tts_fallback": {"voice": "ash", "instructions": "A warm, slightly gravelly American grandpa in his 70s. Dry humor, unhurried, friendly."},
         "scammer": "A phone scammer in his 30s. Graphic-novel style digital illustration, semi-realistic proportions, "
                    "cinematic lighting, muted colors. Short dark hair, cold eyes, dark jacket, a call-center headset. "
                    "Not a caricature. Upper body at a desk in a dim, blue-lit call-center room. Clearly an illustration.",
         "scammer_tts": {"voice": "echo", "instructions": "A fast-talking, fake-polite scammer in his 30s who keeps pushing."},
-        "mic": False, "source": "Source", "host": "Pops", "labels": {"alert": "⚠ SCAM ALERT", "touching": "TRUE STORY", "warm": "POPS KNOWS"},
+        "mic": False, "source": "Source", "host": "Mayor", "labels": {"alert": "⚠ SCAM ALERT", "touching": "TRUE STORY", "warm": "MAYOR OF MAIN ST."},
     },
 }
 

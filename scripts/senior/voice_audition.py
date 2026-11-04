@@ -46,6 +46,13 @@ DESIGN = {
                   "English, clearly older but still strong.",
                   "An American man around 72, a small-town storyteller with a deep warm voice and a light rasp, calm "
                   "and steady pace, folksy Midwestern accent, sincere, never theatrical."],
+    # the host of "Mayor of Main St." (11-04): a man in his early thirties, the friend everybody in town knows
+    "us_mayor_m": ["A friendly American man in his early thirties from a small Midwestern town, telling a true story to "
+                   "a friend over coffee. Warm, clear, relaxed baritone with an easy smile in the voice, natural "
+                   "conversational American English, sincere and grounded, never announcer-like or salesy.",
+                   "A likable small-town American guy around thirty-two, the one everybody in town knows. Smooth medium-low "
+                   "voice, a little husky, unhurried storytelling pace with natural pauses, quietly emotional on the sad "
+                   "parts, plain Midwestern accent."],
     "us_elder_m": ["A frail American widower in his mid eighties from Indiana. Soft, thin, slightly shaky old voice, a "
                    "little hoarse, speaks slowly, holding back tears, natural Midwestern American English, clearly very old.",
                    "An elderly American man around 86, gentle and lonely, light papery wavering voice with a dry rasp, "
