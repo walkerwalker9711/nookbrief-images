@@ -37,3 +37,12 @@ Write the whole script again in natural Korean (so the owner can check it), one 
 - Example bar (grandkid-in-jail scam): Scammer: "Grandpa? It's me. I'm in jail, I need bail, don't tell Mom."
   Pops: "Which grandkid? I got eleven." Scammer: "Doesn't matter! Lawyer needs five grand in gift cards. Now."
   Pops: "Funny. Tommy's right here eating my pie. And the sheriff's been on speaker this whole time."
+
+## Two checks before every script goes to the owner (owner 2026-11-04, permanent)
+1. AI-tone check: none of the banned words or patterns above.
+2. Native American English check: read every line out loud as a real American would say it at a diner.
+   - No written-English inversions ("In the line sat an old man") or stiff phrasing ("The game was about to commence").
+   - Use the words Americans actually use for the thing (Indiana high-school basketball: "won sectionals"; "older guy", not "old man").
+   - Spoken glue: "guess who showed up", "stuck around", "why don't you come by", contractions, 'cause.
+   - Keep a real person's reported wording when it exists (it already sounds human).
+   - In the review file, list what was changed for naturalness, line by line.
