@@ -39,11 +39,32 @@ DESIGN = {
                 "clearly in his nineties, never deep or booming, never young.",
                 "A Korean man in his early nineties, small and frail. Light, papery, wavering old voice, a little "
                 "wheezy and hoarse, soft chuckles, speaks slowly with pauses, kind and humble, natural standard Korean."],
+    # US (Pops Knows) roles, 11-04. Designed only and NOT saved (voice slots): the pick is saved later with
+    # "audition us save <role> <n>".
+    "us_narr_m": ["A warm American grandfather in his early seventies from a small Midwestern town, telling a true story "
+                  "at the kitchen table. Gravelly but clear, unhurried, a little dry humor, gentle, natural American "
+                  "English, clearly older but still strong.",
+                  "An American man around 72, a small-town storyteller with a deep warm voice and a light rasp, calm "
+                  "and steady pace, folksy Midwestern accent, sincere, never theatrical."],
+    "us_elder_m": ["A frail American widower in his mid eighties from Indiana. Soft, thin, slightly shaky old voice, a "
+                   "little hoarse, speaks slowly, holding back tears, natural Midwestern American English, clearly very old.",
+                   "An elderly American man around 86, gentle and lonely, light papery wavering voice with a dry rasp, "
+                   "slow with pauses, kind small-town Indiana accent, never deep or booming."],
+    "us_adult_m": ["An American man around sixty from Indiana, friendly everyday Midwestern voice, warm and sincere, "
+                   "medium-low pitch with a bit of gravel, natural conversational American English, not a narrator.",
+                   "A regular guy in his early sixties from the Indianapolis suburbs, easygoing and kind, a little "
+                   "choked up, plain Midwestern accent, relaxed conversational pace."],
+    "us_teen_f": ["A feisty seventeen-year-old American high school cheerleader, sharp and sassy, quick confident "
+                  "talk with attitude, bright youthful voice, natural American English.",
+                  "A spirited American teenage girl around seventeen, a firecracker who tells a boy off, crisp and "
+                  "fast, clear young voice, playful but annoyed, natural American accent."],
     "old_m": ["A Korean grandfather in his late 70s. Low, rough, aged voice, a little hoarse, speaks slowly in natural Korean."],
 }
 # Voice Design needs at least 100 characters of sample text
 LONG = {"ko": "아이고, 내가 무슨 잘못을 했다고 그래요. 나는 통장에 돈 넣어 놓고 그냥 산 것밖에 없는데. 은행 가서 돈을 찾아 오라고요? "
-              "그게 무슨 소리예요, 공무원이라면서. 가만있어 봐요, 우리 아들한테 먼저 전화 좀 해 보고."}
+              "그게 무슨 소리예요, 공무원이라면서. 가만있어 봐요, 우리 아들한테 먼저 전화 좀 해 보고.",
+        "en": "Well, I'll tell you what. We built that first house with our own two hands, and she picked out every "
+              "single curtain. Those were good years. Real good years."}
 WANT = ("grandm", "grandp", "elder", "old", "aged", "senior", "할머니", "할아버지", "노인")
 
 
@@ -130,7 +151,27 @@ def clone(channel, text):
         js.write_text(json.dumps(found, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def save(channel, text):
+    """'audition us save us_elder_m 2': save one unsaved designed candidate (from its preview, else clone the sample)."""
+    role, n = text.split()[:2]
+    js = OUT / f"{role}.json"
+    found = json.loads(js.read_text(encoding="utf-8"))
+    for c in found:
+        if str(c["n"]) == n:
+            r = requests.post(f"{API}/text-to-voice", headers=headers(), timeout=60,
+                              json={"voice_name": f"{channel} {role} {n} (picked)", "voice_description": c["about"][:500],
+                                    "generated_voice_id": c.get("generated_voice_id", "")})
+            print("save", r.status_code, r.text[:300])
+            if r.ok and r.json().get("voice_id"):
+                c["saved_voice_id"] = r.json()["voice_id"]
+                js.write_text(json.dumps(found, ensure_ascii=False, indent=2), encoding="utf-8")
+                return
+    return clone(channel, text)
+
+
 def main(channel, role, text):
+    if role == "save":
+        return save(channel, text)
     if role == "clone":
         return clone(channel, text)
     if role == "list":
@@ -138,12 +179,12 @@ def main(channel, role, text):
     if role == "clean":
         clean()
         return list_voices()
-    design_only = role.endswith("!")  # "elder_m!": only new designed voices (library samples already made)
+    design_only = role.endswith("!") or channel == "us"  # "elder_m!": only new designed voices (library samples already made)
     role = role.rstrip("!")
     OUT.mkdir(parents=True, exist_ok=True)
     lang = {"kr": "ko", "us": "en"}[channel]
     gender = "male" if role.endswith("_m") else "female"
-    found, n = [], (3 if design_only else 0)
+    found, n = [], (0 if channel == "us" else 3 if design_only else 0)
     for v in ([] if design_only else library(lang, gender, 3, "middle_aged" if role.startswith("mid") else "old")):
         r = requests.post(f"{API}/voices/add/{v['public_owner_id']}/{v['voice_id']}", headers=headers(), timeout=30,
                           json={"new_name": f"{channel} {role} - {v['name']}"[:60]})
@@ -157,6 +198,10 @@ def main(channel, role, text):
         for p in design(desc, long)[:2]:
             n += 1
             (OUT / f"{role}_{n}.mp3").write_bytes(base64.b64decode(p.get("audio_base_64") or p.get("audio_base64")))
+            if channel == "us":  # keep slots free: save only the owner's pick later
+                found.append({"n": n, "name": f"designed {n}", "source": "voice design (unsaved)", "voice_id": None,
+                              "generated_voice_id": p["generated_voice_id"], "about": desc})
+                continue
             r = requests.post(f"{API}/text-to-voice", headers=headers(), timeout=60,
                               json={"voice_name": f"{channel} {role} designed {n}", "voice_description": desc,
                                     "generated_voice_id": p["generated_voice_id"]})
