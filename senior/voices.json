@@ -35,10 +35,16 @@
   },
   "us": {
     "provider": "elevenlabs",
-    "voice_name": null,
-    "voice_id": null,
+    "voice_name": "us mayor 1 (designed, owner pick 11-04)",
+    "voice_id": "rns7LXWBZ3RFXg9MK2qN",
     "model_id": "eleven_v4",
     "speed": 1.0,
-    "chosen": null
+    "chosen": "2026-11-04",
+    "extra_elder_m_voice_id": "tOWaVtO86FWbDVV8QujG",
+    "extra_elder_m_voice_name": "us elder_m 3 (Jim, owner pick 11-04)",
+    "extra_m_voice_id": "NVtQlVkE69FZqtsQLVmQ",
+    "extra_m_voice_name": "us adult_m 3 (60s man, owner pick 11-04)",
+    "extra_voice_id": "FRB1d0nCNJRjxjH3RsyZ",
+    "extra_voice_name": "us teen_f 1 (teen girl, owner pick 11-04)"
   }
 }
