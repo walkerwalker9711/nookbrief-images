@@ -34,7 +34,37 @@ POSTER = {"kr": ("Cinematic YouTube channel banner artwork, wide 3:2, in Korean 
                  "and serious, holding the white megaphone low at his shoulder. Behind him a Korean residential street at night "
                  "with soft out-of-focus red and blue police lights and a warm street lamp, light haze. The LEFT 55% of the picture "
                  "is a clean dark navy-to-black gradient with only faint bokeh, empty, for a title. Strong contrast, premium "
-                 "movie-poster look. Absolutely no text, letters, numbers, signs with writing or logos.")}
+                 "movie-poster look. Absolutely no text, letters, numbers, signs with writing or logos."),
+          # US (11-04): trending US story channels use one warm, simple, uncluttered banner; ours is a small-town Main
+          # Street at golden hour, the Mayor big on the right, a calm warm left side for the title
+          "us": ("Cinematic YouTube channel banner artwork, wide 3:2, webtoon drama style (semi-realistic, clean fine line "
+                 "art, warm cinematic rim lighting). The man from the reference picture, exactly the same face, hair, stubble, "
+                 "denim jacket, cream sweater and white coffee mug, shown from the chest up on the RIGHT side of the picture "
+                 "(his face about 72% from the left edge and exactly at the vertical centre), turned three-quarters toward the "
+                 "left with a warm friendly grin. Behind him a small-town American Main Street at golden hour, soft out-of-focus: "
+                 "red-brick storefronts, a diner with a glowing neon-style shape (no letters), striped awnings, string lights, a "
+                 "vintage pickup truck. The LEFT 55% of the picture fades into a calm warm deep-brown-to-burgundy gradient with "
+                 "faint warm bokeh, empty, for a title. Inviting, nostalgic, premium. Absolutely no text, letters, numbers, signs "
+                 "with writing or logos.")}
+
+
+# 11-04 US channel "Mayor of Main St.": the host, the small-town mayor everybody knows (the US 이장님)
+CHARACTER = {"us": 'The Mayor: a friendly American man in his early thirties from a small Midwestern town. Webtoon drama style digital illustration, semi-realistic proportions, clean fine line art, cinematic warm lighting. Tousled medium-brown hair, short neat stubble beard, warm hazel eyes, an easy lopsided grin that feels like an old friend, a light-wash denim jacket over a cream crewneck sweater, a small round brass pin on the jacket collar, holding a white diner coffee mug. Upper body, facing slightly to the side, plain soft warm-grey background. Clearly an illustration, never a photo. No text, letters or logos.'}
+
+
+def character(ch):
+    import os
+    key = {"Authorization": f"Bearer {os.environ['OPENAI_API_KEY'].strip()}"}
+    out = ROOT / "senior" / ch / "character.png"
+    for model in ("gpt-image-1.5", "gpt-image-1"):
+        r = requests.post("https://api.openai.com/v1/images/generations", headers=key, timeout=400,
+                          json={"model": model, "prompt": CHARACTER[ch], "size": "1024x1536", "quality": "high"})
+        if r.ok:
+            out.write_bytes(base64.b64decode(r.json()["data"][0]["b64_json"]))
+            print("character", out, "with", model)
+            return
+        print(model, "->", r.status_code, r.text[:300])
+    sys.exit("no image model worked")
 
 
 def poster(ch):
@@ -42,6 +72,7 @@ def poster(ch):
     key = {"Authorization": f"Bearer {os.environ['OPENAI_API_KEY'].strip()}"}
     ref = ROOT / "senior" / ch / "character.png"
     out = ROOT / "senior" / ch / "brand" / "banner_bg.png"
+    out.parent.mkdir(exist_ok=True)
     for model in ("gpt-image-1.5", "gpt-image-1"):
         with open(ref, "rb") as f:
             r = requests.post("https://api.openai.com/v1/images/edits", headers=key, timeout=400,
@@ -96,4 +127,4 @@ def apply(ch):
 
 
 if __name__ == "__main__":
-    {"bg": bg, "poster": poster, "apply": apply}[sys.argv[1]](sys.argv[2])
+    {"bg": bg, "poster": poster, "apply": apply, "character": character}[sys.argv[1]](sys.argv[2])

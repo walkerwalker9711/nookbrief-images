@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "nookbrief-bot"
           git config user.email "nookbrief-bot@users.noreply.github.com"
-          git add senior/*/brand/banner_bg.png senior/research 2>/dev/null || true
+          git add senior/*/brand/banner_bg.png senior/*/character.png senior/research 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git commit -m "senior: channel art [skip ci]"
           # other runs push to this branch too: retry the rebase and push a few times
