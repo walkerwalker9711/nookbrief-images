@@ -2,9 +2,11 @@
 
   python upload.py senior/drafts/2026-10-26-kr      (needs YT_CLIENT_ID, YT_CLIENT_SECRET, KR_/US_YT_REFRESH_TOKEN)
 
-Reads upload.json in the draft folder, uploads video.mp4 public with the AI label on, sets thumb.jpg when the
+Reads upload.json in the draft folder, uploads video.mp4 public with the AI label on (or, with "publish_at" set to an
+RFC 3339 time, private and scheduled to go public then: the daily routine's review window, owner 11-05), sets thumb.jpg when the
 channel is allowed custom thumbnails, and writes upload_result.json next to it. An uploaded draft is never sent twice:
-running it again only updates the title, description and tags (and retries the thumbnail).
+running it again only updates the title, description and tags (and retries the thumbnail). Running it again with
+"privacy": "private" in upload.json also takes the video private and drops its schedule (the owner said 취소/내려).
 """
 import json
 import os
@@ -56,6 +58,15 @@ def main(folder):
         if r.status_code >= 300:
             sys.exit(f"update -> {r.status_code}: {r.text[:300]}")
         prev["title"] = r.json()["snippet"]["title"]
+        if meta.get("privacy") == "private" and (prev.get("privacy") != "private" or prev.get("publish_at")):  # cancel a scheduled or public video
+            s = requests.put(f"{YT}/youtube/v3/videos", params={"part": "status"}, timeout=60,
+                             headers={"Authorization": f"Bearer {tok}"},
+                             json={"id": prev["video_id"], "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False,
+                                                                      "containsSyntheticMedia": bool(meta.get("made_with_ai", True))}})
+            if s.status_code >= 300:
+                sys.exit(f"make private -> {s.status_code}: {s.text[:300]}")
+            prev["privacy"] = "private"
+            prev.pop("publish_at", None)
         thumb = d / meta.get("thumbnail", "thumb.jpg")
         if thumb.exists() and prev.get("thumbnail") != "set":
             t = requests.post(f"{YT}/upload/youtube/v3/thumbnails/set", params={"videoId": prev["video_id"]},
@@ -70,6 +81,8 @@ def main(folder):
         "status": {"privacyStatus": meta.get("privacy", "public"), "selfDeclaredMadeForKids": False,
                    "containsSyntheticMedia": bool(meta.get("made_with_ai", True))},
     }
+    if meta.get("publish_at") and meta.get("privacy", "public") != "private":  # YouTube needs private + publishAt
+        body["status"].update(privacyStatus="private", publishAt=meta["publish_at"])
     video = with_cover(d / meta.get("video", "video.mp4"), d / meta.get("thumbnail", "thumb.jpg"))
     r = requests.post(f"{YT}/upload/youtube/v3/videos", params={"uploadType": "resumable", "part": "snippet,status"},
                       headers={"Authorization": f"Bearer {tok}", "X-Upload-Content-Type": "video/mp4",
@@ -82,6 +95,8 @@ def main(folder):
         sys.exit(f"upload -> {up.status_code}: {up.text[:300]}")
     v = up.json()
     out = {"video_id": v["id"], "url": f"https://youtube.com/shorts/{v['id']}", "privacy": v.get("status", {}).get("privacyStatus")}
+    if v.get("status", {}).get("publishAt"):
+        out["publish_at"] = v["status"]["publishAt"]
     thumb = d / meta.get("thumbnail", "thumb.jpg")
     if thumb.exists():  # custom thumbnails need a phone-verified channel; a refusal is noted, the upload stands
         t = requests.post(f"{YT}/upload/youtube/v3/thumbnails/set", params={"videoId": v["id"]},
