@@ -1,0 +1,463 @@
+{
+  "pillar": "감동 실화",
+  "topic": "부산 덕천지구대 앞에 폐지 판 돈과 라면·바람막이를 두고 간 '세 아이 아빠', 석 달 뒤 못 산 과자를 채워 다시 온 사연",
+  "title": "폐지 판 돈 3만 5천 원 두고 간 아빠, 편지엔 \"죄송합니다\" #실화",
+  "mood": "touching",
+  "music": "touching-piano",
+  "case_tag": "실제 사연 재구성 · 2025년 부산 북구",
+  "sources": [
+    {
+      "name": "데일리안",
+      "url": "https://m.dailian.co.kr/news/view/1493839"
+    },
+    {
+      "name": "헤럴드경제",
+      "url": "https://www.heraldk.com/article/2025081522342600934"
+    },
+    {
+      "name": "트윅",
+      "url": "https://www.twig24.com/news/local_bs/2025/08/15/20250815500084"
+    }
+  ],
+  "description": "#감동실화 #기부 #실제사연\n\n폐지 판 돈 3만 5천 원을 지구대 앞에 두고 간 '세 아이 아빠'.\n편지에는 고맙다는 말보다 미안하다는 말이 더 많았습니다.\n\n▶ 과자를 못 사서 마음에 걸린다던 편지\n▶ 어린이날·크리스마스마다, 벌써 12번째\n▶ 석 달 뒤 다시 놓인 과자 상자, 그리고 그 이유\n\n#한국이장님 #감동실화 #세아이아빠 #실화재구성\n\n📰 출처: 데일리안, 헤럴드경제, 트윅(2025년 5월·8월)\n※ AI 음성·그림으로 재구성",
+  "tags": [
+    "한국이장님",
+    "감동실화",
+    "기부",
+    "세아이아빠",
+    "실제사연",
+    "부산"
+  ],
+  "fact_notes": "데일리안 2025-05-05: 5월 3일 오전 10시30분께 덕천지구대 앞 남성이 종이상자 두고 감, CCTV에 포착. 손편지·라면 한 박스·1000원 지폐 35매·어린이용 바람막이. '세 아이 아빠', 첫째 장애 3급, 기초수급자. 편지 '한 달 동안 열심히 폐지를 모아 마련한 돈', '금액이 많지 않아 정말 미안하고 죄송하다', '과자를 사려고 하니 금액이 모자라 라면 한 박스와 아기 바람막이 옷을 샀고 남은 금액은 얼마 안 되지만 맛있는 치킨이라도 사 먹었으면', '과자를 못 사 마음에 걸린다', '바람막이 옷 입고 밖에 나가 뛰어놀고 웃었으면'. 매년 어린이날·크리스마스 같은 방식 12번째. 경찰은 편지대로 덕천2동 행정복지센터에 전달 예정. 헤럴드경제·트윅 2025-08-15: 8월 13일 같은 지구대 앞 상자, 라면·여러 과자·1000원 30장·손편지. 트윅 '어머니의 두 번째 기일을 뜻있게 보내고 싶어 폐지를 팔아 조금씩 모은 돈으로 기부', '올해 어린이날에 돈이 부족해 아이들 친구에게 과자를 사서 주지 못한 게 마음에서 지워지지 않았습니다. 과자 선물을 받고 아이들 마음이 풀렸으면 하네요. 그땐 아저씨가 미안했어'. 헤럴드 '그때는 아저씨가 정말 미안해. 미안했어.' 장면4 경찰관 대사는 상자를 열어 편지를 발견한 상황을 말로 옮긴 것. 아빠 나이·옷·얼굴(가림), 경찰관 외모, 공원 아이는 그림용 추정.",
+  "characters": [
+    {
+      "id": "아빠",
+      "label": "세 아이 아빠",
+      "voice": "adult_m",
+      "look": "a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt"
+    },
+    {
+      "id": "경찰관",
+      "label": "덕천지구대 경찰관",
+      "voice": "adult_m2",
+      "look": "short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.1,
+  "caption_words": [
+    {
+      "spoken": "서른다섯 장",
+      "written": "35장"
+    },
+    {
+      "spoken": "서른 장",
+      "written": "30장"
+    },
+    {
+      "spoken": "열두 번째",
+      "written": "12번째"
+    },
+    {
+      "spoken": "팔월",
+      "written": "8월"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "폐지를 팔아 모은 돈, 천 원짜리 서른다섯 장. 그 돈을 기부하면서, 이 아빠는 오히려 사과를 했습니다.",
+      "delivery": "[warm, intriguing, slow]",
+      "caption": "폐지 판 돈 3만 5천 원",
+      "hot": [
+        "오히려 사과를"
+      ],
+      "image_prompt": "In early morning light, a cardboard box left on the steps of the police box, a folded handwritten letter tucked on top; far down the street the father walks away, seen from behind. A small Korean neighborhood police box (지구대) on a Busan hillside street: a low two-story building with blue and white trim, glass doors, a few steps, potted plants. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "작년 어린이날을 이틀 앞둔 아침, 부산 북구의 덕천지구대.",
+      "delivery": "[gentle, storytelling]",
+      "caption": "2025년 5월, 부산 덕천지구대",
+      "hot": [],
+      "image_prompt": "Wide establishing shot of the police box on a quiet spring morning, May sunshine, a few people passing, apartment blocks on the hill behind. ONE single full-frame picture, not a grid. A small Korean neighborhood police box (지구대) on a Busan hillside street: a low two-story building with blue and white trim, glass doors, a few steps, potted plants. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "한 남성이 커다란 종이 상자를 들고 오더니, 지구대 앞에 조용히 내려놓고 그대로 떠났습니다. 지구대 CCTV에 찍힌 모습이었습니다.",
+      "delivery": "[gentle, curious]",
+      "caption": "상자를 두고 떠난 남성",
+      "hot": [
+        "조용히"
+      ],
+      "image_prompt": "Slightly high-angle view like a security camera: the father bending to set a big cardboard box down on the police box steps, shown from behind and the side, cap hiding his face. A small Korean neighborhood police box (지구대) on a Busan hillside street: a low two-story building with blue and white trim, glass doors, a few steps, potted plants. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "이게 뭐지… 안에 편지가 들어 있네요.",
+      "delivery": "[curious, softly surprised]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The officer crouching on the steps, lifting the flap of the cardboard box and finding a folded letter on top. The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). A small Korean neighborhood police box (지구대) on a Busan hillside street: a low two-story building with blue and white trim, glass doors, a few steps, potted plants. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "상자 안에는 라면 한 박스와 아이용 바람막이 점퍼, 그리고 천 원짜리 지폐 서른다섯 장이 들어 있었습니다.",
+      "delivery": "[gentle, warm]",
+      "caption": "라면, 아이 바람막이, 천 원 35장",
+      "hot": [
+        "천 원짜리"
+      ],
+      "image_prompt": "Close view inside the open cardboard box: a case of instant ramen, a small folded child's windbreaker jacket in bright yellow, and a neat stack of pale blue Korean 1000-won notes held with a rubber band (notes drawn plain, no readable print). ONE single full-frame picture, not a grid. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "편지를 쓴 사람은 자신을 '세 아이 아빠'라고 소개했습니다. 첫째는 장애 3급, 기초생활수급자 가정이라고 했습니다.",
+      "delivery": "[soft, moved]",
+      "caption": "\"세 아이 아빠\"",
+      "hot": [
+        "세 아이 아빠"
+      ],
+      "image_prompt": "Inside the police box at a desk, the officer unfolding a handwritten letter on lined paper (lines drawn as squiggles, no readable text), his expression turning gentle. The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "한 달 동안 열심히 폐지를 모아서 마련한 돈입니다. 힘들게 모았는데, 금액이 많지 않아서 정말 미안하고 죄송합니다.",
+      "delivery": "[humble, quiet, sincere]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Flashback at dusk: the father pulling a hand cart stacked high with flattened cardboard up a steep narrow Busan alley, leaning into the weight, shown from the side with his cap shading his face. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "아빠"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "과자를 사려고 했는데, 돈이 모자랐습니다. 그래서 라면 한 박스랑 아기 바람막이 옷을 샀습니다.",
+      "delivery": "[humble, a little ashamed]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "In a small neighborhood supermarket, the father holding a case of ramen under one arm and a small yellow child's windbreaker in the other hand, glancing back at a colorful snack shelf he is walking away from. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "아빠"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "남은 돈은 얼마 안 되지만, 맛있는 치킨이라도 사 먹었으면 합니다.",
+      "delivery": "[warm, gentle]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "At night in a tiny room lit by a desk lamp, the father sitting at a low folding table, smoothing out a small pile of 1000-won notes beside a sheet of letter paper and a pen, seen from the side, cap brim low. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "아빠"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "과자를 못 사서, 마음에 걸립니다. 그래도 바람막이 입고 밖에 나가서, 뛰어놀고 웃었으면 좋겠습니다.",
+      "delivery": "[tender, hopeful]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "A bright spring day in a small Korean neighborhood park: a little child in a bright yellow windbreaker running and laughing, arms out, other children playing in the background. ONE single full-frame picture, not a grid. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "아빠"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "이 아빠가 지구대 앞에 상자를 두고 간 건 처음이 아니었습니다. 해마다 어린이날과 크리스마스면 찾아왔고, 이번이 벌써 열두 번째였습니다.",
+      "delivery": "[gentle, building]",
+      "caption": "어린이날·크리스마스마다, 12번째",
+      "hot": [
+        "열두 번째"
+      ],
+      "image_prompt": "A winter night at the police box decorated with small warm Christmas string lights; the father, seen from behind, setting another cardboard box on the steps, his breath visible in the cold air. A small Korean neighborhood police box (지구대) on a Busan hillside street: a low two-story building with blue and white trim, glass doors, a few steps, potted plants. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "경찰은 편지에 적힌 부탁대로, 상자를 행정복지센터로 보내 형편이 어려운 가정에 전하기로 했습니다.",
+      "delivery": "[warm, steady]",
+      "caption": "어려운 가정에 전달",
+      "hot": [],
+      "image_prompt": "At the counter of a Korean community service center, the officer handing the cardboard box to a smiling staff member in a cardigan. The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그리고 석 달 뒤, 광복절 연휴를 앞둔 팔월. 같은 지구대 앞에, 상자 하나가 또 놓였습니다.",
+      "delivery": "[slow, intriguing]",
+      "caption": "석 달 뒤, 8월",
+      "hot": [
+        "또"
+      ],
+      "image_prompt": "Hot August afternoon at the same police box, Korean national flags hung along the street lamps, bright green trees, a cardboard box sitting alone on the steps. ONE single full-frame picture, not a grid. A small Korean neighborhood police box (지구대) on a Busan hillside street: a low two-story building with blue and white trim, glass doors, a few steps, potted plants. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "이번엔 라면과 함께, 여러 가지 과자가 상자 가득 들어 있었습니다. 천 원짜리 서른 장도요.",
+      "delivery": "[warm, gently surprised]",
+      "caption": "과자 가득, 천 원 30장",
+      "hot": [
+        "과자"
+      ],
+      "image_prompt": "The officer opening the box on a desk, his eyebrows lifting: it is packed with many colorful bags of snacks and chips, a case of ramen, and a small stack of pale blue 1000-won notes (plain, no readable print). The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "어린이날에 돈이 부족해서 과자를 못 사 준 게, 자꾸 마음에 남아서 지워지지 않았습니다.",
+      "delivery": "[quiet, heavy-hearted]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Flashback to May in the small supermarket: the father standing in the snack aisle holding a bag of snacks, then slowly putting it back on the shelf, shoulders slumped, cap shading his face. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "아빠"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "과자 선물 받고, 아이들 마음이 조금이라도 풀렸으면 좋겠습니다. 그때는 아저씨가, 정말 미안했어.",
+      "delivery": "[tender, choked up]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "At night under a desk lamp, the father bent over the folding table writing a letter by hand, a box of snacks beside him, seen from the side. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "아빠"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "편지 끝에는, 이번 상자를 보낸 이유가 적혀 있었습니다.",
+      "delivery": "[slow, hushed]",
+      "caption": "편지 끝에 적힌 이유",
+      "hot": [],
+      "image_prompt": "The officer at his desk holding the letter close, reading the last lines, his face softening and eyes glistening. The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "어머니의 두 번째 기일을, 뜻있게 보내고 싶었습니다. 폐지를 팔아서 조금씩 모은 돈입니다.",
+      "delivery": "[quiet, sincere, moved]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "In the father's small home, a low table with a framed photo of a gentle elderly Korean woman smiling (his late mother), a small bowl of fruit in front of it; the father kneeling before it with head bowed, seen from behind. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "아빠"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "석 달 내내 마음에 걸렸던 과자 한 봉지. 아빠는 그걸, 끝내 갚으러 왔습니다.",
+      "delivery": "[warm, resonant, slow]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Evening golden light: the father walking down the hillside alley pulling an empty hand cart, seen from behind, the police box small in the distance with its lights on. The father is always the same Korean man in his forties (아빠: a black baseball cap pulled low so his face stays mostly shaded, short black hair, a faded gray work jacket over a dark t-shirt, work gloves tucked in his pocket), never shown with a clear full face. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "아빠",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "ko_review": "내레이션: 폐지를 팔아 모은 돈, 천 원짜리 서른다섯 장. 그 돈을 기부하면서, 이 아빠는 오히려 사과를 했습니다.\n내레이션: 작년 어린이날을 이틀 앞둔 아침, 부산 북구의 덕천지구대.\n내레이션: 한 남성이 커다란 종이 상자를 들고 오더니, 지구대 앞에 조용히 내려놓고 그대로 떠났습니다. 지구대 CCTV에 찍힌 모습이었습니다.\n경찰관: 이게 뭐지… 안에 편지가 들어 있네요.\n내레이션: 상자 안에는 라면 한 박스와 아이용 바람막이 점퍼, 그리고 천 원짜리 지폐 서른다섯 장이 들어 있었습니다.\n내레이션: 편지를 쓴 사람은 자신을 '세 아이 아빠'라고 소개했습니다. 첫째는 장애 3급, 기초생활수급자 가정이라고 했습니다.\n아빠: 한 달 동안 열심히 폐지를 모아서 마련한 돈입니다. 힘들게 모았는데, 금액이 많지 않아서 정말 미안하고 죄송합니다.\n아빠: 과자를 사려고 했는데, 돈이 모자랐습니다. 그래서 라면 한 박스랑 아기 바람막이 옷을 샀습니다.\n아빠: 남은 돈은 얼마 안 되지만, 맛있는 치킨이라도 사 먹었으면 합니다.\n아빠: 과자를 못 사서, 마음에 걸립니다. 그래도 바람막이 입고 밖에 나가서, 뛰어놀고 웃었으면 좋겠습니다.\n내레이션: 이 아빠가 지구대 앞에 상자를 두고 간 건 처음이 아니었습니다. 해마다 어린이날과 크리스마스면 찾아왔고, 이번이 벌써 열두 번째였습니다.\n내레이션: 경찰은 편지에 적힌 부탁대로, 상자를 행정복지센터로 보내 형편이 어려운 가정에 전하기로 했습니다.\n내레이션: 그리고 석 달 뒤, 광복절 연휴를 앞둔 팔월. 같은 지구대 앞에, 상자 하나가 또 놓였습니다.\n내레이션: 이번엔 라면과 함께, 여러 가지 과자가 상자 가득 들어 있었습니다. 천 원짜리 서른 장도요.\n아빠: 어린이날에 돈이 부족해서 과자를 못 사 준 게, 자꾸 마음에 남아서 지워지지 않았습니다.\n아빠: 과자 선물 받고, 아이들 마음이 조금이라도 풀렸으면 좋겠습니다. 그때는 아저씨가, 정말 미안했어.\n내레이션: 편지 끝에는, 이번 상자를 보낸 이유가 적혀 있었습니다.\n아빠: 어머니의 두 번째 기일을, 뜻있게 보내고 싶었습니다. 폐지를 팔아서 조금씩 모은 돈입니다.\n내레이션: 석 달 내내 마음에 걸렸던 과자 한 봉지. 아빠는 그걸, 끝내 갚으러 왔습니다."
+}
