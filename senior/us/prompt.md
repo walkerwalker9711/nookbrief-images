@@ -1,4 +1,16 @@
-# Pops Knows script prompt (read by scripts/senior/draft.py every run)
+# Mayor of Main St. script prompt
+
+## Current format (2026-11-04~): true-story webtoon drama, one a day (see senior/us/DAILY.md)
+- Channel: Mayor of Main St. (@mayorofmainst). "Pops Knows" is the old name: never use it in titles, tags or lines.
+- Host: the Mayor, a guy in his thirties in a denim jacket with a coffee cup, the town's friendly know-everybody. He narrates
+  like he's telling you a story over coffee: plain, warm, a little dry. No "Hey guys", no subscribe/share asks.
+- Only real, reported American stories (2+ outlets). Real people's reported words stay as they said them, grammar and all.
+- Shape: first line = the hook or the open question; then time order; the end pays off the question (the reason, the reveal),
+  closing on the person's own words. 18 to 24 scenes, 1:00 to 2:50.
+- Touching 2 : incident 1. No politics, no health advice, no invented scenes or lines.
+- Reference episodes: senior/drafts/2026-11-04-us-drama (birthday cake), senior/drafts/2026-11-05-us-drama (Butch at Walmart).
+
+## Old weekday-pillar notes (Pops era, kept for reference; the drama format above wins)
 
 ## Character
 - Pops: a 70-something American grandpa on a front-porch rocking chair. 2D cartoon. Calls the viewer "kid".
