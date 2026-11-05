@@ -3,7 +3,7 @@ name: senior-channel
 # one line, "kr video <id>" (study a Short the owner points at), "kr fetch <url> ..." (save news article text), "kr research" (fetch banners of the channels trending now), "kr bg" (make the banner background) or "kr apply" (upload the banner and set the channel description).
 on:
   push:
-    branches: [claude/project-thread-9sna6x]
+    branches: [claude/project-thread-9sna6x, claude/project-thread-loj7pm]
     paths: [senior/channel/request]
 permissions:
   contents: write

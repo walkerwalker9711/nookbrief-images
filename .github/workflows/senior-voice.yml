@@ -4,7 +4,7 @@ name: senior-voice
 on:
   workflow_dispatch:
   push:
-    branches: [claude/project-thread-9sna6x]
+    branches: [claude/project-thread-9sna6x, claude/project-thread-loj7pm]
     paths: [senior/samples/el_request]
 permissions:
   contents: write
