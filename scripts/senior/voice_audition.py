@@ -65,6 +65,13 @@ DESIGN = {
                   "talk with attitude, bright youthful voice, natural American English.",
                   "A spirited American teenage girl around seventeen, a firecracker who tells a boy off, crisp and "
                   "fast, clear young voice, playful but annoyed, natural American accent."],
+    # Mayor ep 3 (11-06): a sharp 73-year-old grandma from Long Island, a retired 911 dispatcher
+    "us_old_f": ["A 73-year-old American grandmother from Long Island, New York, a retired 911 dispatcher. Sharp, quick "
+                 "and confident with a dry sense of humor, a light Long Island accent, a little raspy with age but full of "
+                 "energy, natural conversational American English, clearly in her seventies, never frail.",
+                 "A feisty American woman in her early seventies from a New York suburb. Warm, slightly husky older "
+                 "voice, street-smart and amused, talks fast when she's on a roll, natural New York accent, clearly a "
+                 "grandmother but strong and lively."],
     "old_m": ["A Korean grandfather in his late 70s. Low, rough, aged voice, a little hoarse, speaks slowly in natural Korean."],
 }
 # Voice Design needs at least 100 characters of sample text
