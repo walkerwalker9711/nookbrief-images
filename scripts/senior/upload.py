@@ -67,6 +67,15 @@ def main(folder):
                 sys.exit(f"make private -> {s.status_code}: {s.text[:300]}")
             prev["privacy"] = "private"
             prev.pop("publish_at", None)
+        if meta.get("privacy") == "public" and (prev.get("privacy") != "public" or prev.get("publish_at")):  # publish now (owner 11-05 "바로 올리라고")
+            s = requests.put(f"{YT}/youtube/v3/videos", params={"part": "status"}, timeout=60,
+                             headers={"Authorization": f"Bearer {tok}"},
+                             json={"id": prev["video_id"], "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
+                                                                      "containsSyntheticMedia": bool(meta.get("made_with_ai", True))}})
+            if s.status_code >= 300:
+                sys.exit(f"make public -> {s.status_code}: {s.text[:300]}")
+            prev["privacy"] = "public"
+            prev.pop("publish_at", None)
         thumb = d / meta.get("thumbnail", "thumb.jpg")
         if thumb.exists() and prev.get("thumbnail") != "set":
             t = requests.post(f"{YT}/upload/youtube/v3/thumbnails/set", params={"videoId": prev["video_id"]},
