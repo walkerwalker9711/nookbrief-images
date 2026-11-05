@@ -53,11 +53,15 @@ push 전에 꼭 `git pull --rebase origin claude/project-thread-loj7pm`.
   걸린 장면은 scene<N>.jpg 지우고 image_prompt 고쳐 다시 rerender(바뀐 것만, 목소리 캐시).
 - 길이 3분 이하, props.json 장면별 voice.
 - 썸네일: `python3 senior/us/brand/thumb.py <scene> "<줄1>" "<줄2>" "<빨간 띠>" "<태그>" senior/drafts/<오늘>-us-drama/thumb.jpg`.
-- 미리보기: `ffmpeg -i video.mp4 -vf scale=540:-2 -crf 30 -c:a aac -b:a 96k senior/drafts/<오늘>-us-drama/preview.mp4` → push.
-  링크 https://github.com/walkerwalker9711/nookbrief-images/raw/claude/project-thread-loj7pm/senior/drafts/<오늘>-us-drama/preview.mp4
+- 미리보기(주인님 11-05 "다운받지 말고 브라우저에서 보게"): `ffmpeg -i video.mp4 -vf scale=540:-2 -crf 30 -c:a aac -b:a 96k senior/drafts/<오늘>-us-drama/preview.mp4`.
+  GitHub Pages는 9sna6x 브랜치 docs/에서만 나가므로, 미리보기·썸네일만 그 브랜치에 올린다:
+  `git fetch origin claude/project-thread-9sna6x && git worktree add <스크래치>/wt origin/claude/project-thread-9sna6x`,
+  `docs/preview/us-<MMDD>.mp4`, `docs/preview/us-<MMDD>-thumb.jpg` 복사 → commit → `git pull --rebase origin claude/project-thread-9sna6x` → `git push origin HEAD:claude/project-thread-9sna6x`(docs/preview 말고는 건드리지 않음).
+  1~2분 뒤 열림: https://walkerwalker9711.github.io/nookbrief-images/preview/us-<MMDD>.mp4 , …/preview/us-<MMDD>-thumb.jpg
+  주인님께는 raw 다운로드 링크 대신 이 github.io 링크만 보낸다.
 
 ## 7. 예약 업로드
-- 업로드 방식은 주인님 선택을 따른다(11-05 카드 "자동 업로드, 보류만 말하기" / "미리보기 보고 올려" / "대본·영상 둘 다 확인"). 선택 전이거나 "올려" 방식이면 미리보기를 보내고 주인님 "올려"를 받은 뒤에만 uploads/request를 push한다.
+- 11-05 주인님 "2편 바로 올리라고": "올려"는 예약이 아니라 즉시 공개. 업로드 방식은 주인님 선택을 따른다(11-05 카드 "자동 업로드, 보류만 말하기" / "미리보기 보고 올려" / "대본·영상 둘 다 확인"). 선택 전이거나 "올려" 방식이면 미리보기를 보내고 주인님 "올려"를 받은 뒤에만 uploads/request를 push한다.
 - upload.json에 `"publish_at"` = 미국 동부 저녁 7시 = 오늘 09:00 KST(`<오늘 KST 날짜>T00:00:00Z`, 서머타임 기간 3~11월 초엔 08:00 KST `T23:00:00Z` 전날). 그 시각이 이미 지났거나 30분도 안 남았으면 다음 날 같은 시각. tags 확인.
 - `senior/uploads/request`에 폴더 → push. 비공개로 올라가고 그 시각에 자동 공개.
 - upload_result.json 확인 → episodes.csv 오늘 줄(status scheduled) → push.
