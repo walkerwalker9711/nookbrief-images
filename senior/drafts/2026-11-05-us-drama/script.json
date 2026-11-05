@@ -408,7 +408,7 @@
       "delivery": "[humble, warm, slow]",
       "caption": "",
       "hot": [],
-      "image_prompt": "Butch sitting at his small kitchen table at home, holding a framed photo of his wife, smiling with wet eyes, morning light through a window. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "image_prompt": "Butch is retired here: he wears a soft blue plaid flannel shirt under a beige cardigan, NOT his store vest, no name tag. Butch sitting at his small kitchen table at home, holding a framed photo of his wife, smiling with wet eyes, morning light through a window. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a soft blue plaid flannel shirt under a beige cardigan ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
       "cast": "Butch",
       "phone": {
         "app": "none",
@@ -428,7 +428,7 @@
       "delivery": "[light, grateful, a little laugh]",
       "caption": "Florida, to see his kids",
       "hot": [],
-      "image_prompt": "Butch outdoors on a sunny Florida porch, palm trees behind, hugging his grown son and daughter (both in their fifties, shown from the waist up), all laughing. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "image_prompt": "Butch is retired here: he wears a soft blue plaid flannel shirt under a beige cardigan, NOT his store vest, no name tag. Butch outdoors on a sunny Florida porch, palm trees behind, hugging his grown son and daughter (both in their fifties, shown from the waist up), all laughing. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a soft blue plaid flannel shirt under a beige cardigan ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
       "cast": "Butch",
       "phone": {
         "app": "none",
@@ -490,7 +490,7 @@
       "delivery": "[quiet, moved, slow]",
       "caption": "A beautiful experience",
       "hot": [],
-      "image_prompt": "Butch on his own front porch in late afternoon light, looking out at a quiet small-town street, a peaceful smile, a coffee mug in his hands. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "image_prompt": "Butch is retired here: he wears a soft blue plaid flannel shirt under a beige cardigan, NOT his store vest, no name tag. Butch on his own front porch in late afternoon light, looking out at a quiet small-town street, a peaceful smile, a coffee mug in his hands. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a soft blue plaid flannel shirt under a beige cardigan ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
       "cast": "Butch",
       "phone": {
         "app": "none",
@@ -503,5 +503,6 @@
       "cta": "",
       "role": "Butch"
     }
-  ]
+  ],
+  "ko_review": "(see /mnt/project-files/시니어쇼츠/미국_2편_대본_20261105.md)"
 }
