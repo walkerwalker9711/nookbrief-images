@@ -68,5 +68,5 @@ push 전에 꼭 `git pull --rebase origin claude/project-thread-loj7pm`.
 - 취소: upload.json `"privacy": "private"` → uploads/request 다시 push. 수정: 고쳐 다시 렌더 → 기존 private, 새 폴더 <오늘>-us-drama2로 다시.
 - 주인님 지적은 그날 `senior/us/prompt.md`나 이 파일에 규칙으로.
 
-## 9. 매주 월요일
+## 9. 격주 월요일 (주인님께 2주마다 장르별 조회수 보고 약속, 11-05)
 - `senior/channel/request`에 `us stats` → 장르별 조회수 → 비율 한 줄 보고.
