@@ -54,7 +54,7 @@
 - 장면 그림 전부를 한 장으로 펼쳐(PIL) Read로 본다: 얼굴·나이·옷 일관성, 팔다리·손 빠짐, 한 장면에 같은 인물 두 번, 여러 칸 만화, 글자.
   걸린 장면은 scene<N>.jpg를 지우고 image_prompt를 고쳐 다시 `kr drama @<오늘> rerender`(바뀐 것만 다시 그림, 목소리는 캐시).
 - 영상 길이(3분 이하), 자막 프레임 몇 장, props.json 장면별 voice 역할 확인.
-- 썸네일: `python3 senior/kr/brand/make_brand.py thumb <얼굴이 잘 보이는 scene> "<줄1>" "<줄2>" "<작은 줄>" "<태그>" senior/drafts/<오늘>-kr-drama/thumb.jpg`
+- 썸네일(한글 폰트 없으면 먼저 `apt-get install -y fonts-noto-cjk`): `python3 senior/kr/brand/make_brand.py thumb <얼굴이 잘 보이는 scene> "<줄1>" "<줄2>" "<작은 줄>" "<태그>" senior/drafts/<오늘>-kr-drama/thumb.jpg`
   (빨간 띠 y≈620이 얼굴을 가리지 않는 장면).
 - 미리보기: `ffmpeg -i video.mp4 -vf scale=540:-2 -crf 30 -c:a aac -b:a 96k docs/preview/<MMDD>-drama.mp4` → push
   (https://walkerwalker9711.github.io/nookbrief-images/preview/<MMDD>-drama.mp4).
