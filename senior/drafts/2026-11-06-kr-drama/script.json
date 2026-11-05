@@ -1,0 +1,455 @@
+{
+  "pillar": "감동 실화",
+  "topic": "서울→양산 고속버스에서 용변 실수를 한 몸 불편한 승객을 휴게소에서 직접 씻기고 자리를 정리한 기사님과, 바지를 사 와 함께 도운 카페 사장님",
+  "title": "고속버스 안 승객의 실수, 기사님은 망설이지 않았다 #실화",
+  "mood": "touching",
+  "music": "touching-strings",
+  "case_tag": "실제 사연 재구성 · 2026년 8월 서울→양산",
+  "sources": [
+    {
+      "name": "위키트리",
+      "url": "https://www.wikitree.co.kr/articles/1153020"
+    },
+    {
+      "name": "트윅",
+      "url": "https://twig24.com/news/world/2026/08/18/20260818500092"
+    }
+  ],
+  "description": "#감동실화 #고속버스 #실제사연\n\n서울에서 양산으로 가던 고속버스, 몸이 불편한 승객이 자리에서 실수를 했습니다.\n휴게소에 서자마자, 기사님은 망설이지 않았습니다.\n\n▶ 직접 승객을 씻긴 기사님\n▶ 새 바지를 사 온 옆자리 카페 사장님\n▶ 30분 늦은 버스, 아무도 탓하지 않았던 이유\n\n#한국이장님 #감동실화 #고속버스기사 #실화재구성\n\n📰 출처: 위키트리, 트윅(2026년 8월)\n※ AI 음성·그림으로 재구성",
+  "tags": [
+    "한국이장님",
+    "감동실화",
+    "고속버스",
+    "버스기사",
+    "실제사연",
+    "미담"
+  ],
+  "fact_notes": "트윅 2026-08-18·위키트리: 양산 카페 운영 A씨 16일 스레드 글. 14일 친누나 결혼식으로 서울, 16일 오전 7시 서울→양산 고속버스, 가족과 동승. 50~60대로 보이는 하체가 불편해 지팡이 없이는 거동 어려운 승객. 용변 오래 참다 자리에서 실수. 휴게소 도착하자마자 기사가 직접 씻김, '혼자서는 힘드실 것 같아 저도 함께 도와드렸다', 바지 사 옴, '기사님과 함께 몸에 묻은 것을 씻겨 드린 뒤 새 바지를 입혀드렸다', 지팡이·비 맞지 않게 우산 씌워 재탑승. '끝까지 싫은 내색 한 번 하지 않으시고 직접 씻겨 드리고 자리까지 정리한 뒤 방석도 깔아주셨다'. '기사님께서 제가 산 바짓값을 주겠다고 하셨지만 받지 않았다', '저도 누군가에게 조금이나마 도움이 될 수 있어 뜻깊은 시간', 카페 오픈 30분 지체, '이 기사님 진짜 좋은 분이시다'. 누리꾼 카페 주소 공유하며 방문 예고(돈쭐). 위키트리 '자칫 승객에게 큰 수치심으로 남을 수 있었던 순간', 도착 약 30분 늦어짐. 장면14 기사 대사는 '바짓값을 주겠다고 하셨다'를 말로 옮긴 것. 승객 대사 없음(보도 없음). 장관 SNS 언급은 정치인 등장이라 뺌. 승객 나이(60대 초반으로 그림)·옷, 기사 나이·제복, 사장 외모는 그림용 추정.",
+  "characters": [
+    {
+      "id": "기사님",
+      "label": "고속버스 기사님",
+      "voice": "adult_m2",
+      "look": "mid fifties, short neat graying hair, calm kind lined face, white short-sleeved uniform shirt with navy tie"
+    },
+    {
+      "id": "카페 사장",
+      "label": "양산 카페 사장님",
+      "voice": "adult_m",
+      "look": "early thirties, short wavy black hair, beige cotton jacket over a white t-shirt, jeans"
+    },
+    {
+      "id": "승객",
+      "label": "몸이 불편한 승객",
+      "voice": "old_m",
+      "look": "early sixties, thinning gray hair, brown windbreaker over a checked shirt, wooden walking cane"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.1,
+  "caption_words": [
+    {
+      "spoken": "팔월",
+      "written": "8월"
+    },
+    {
+      "spoken": "일곱 시",
+      "written": "7시"
+    },
+    {
+      "spoken": "삼십 분",
+      "written": "30분"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "가족도 선뜻 하기 힘든 일을, 처음 본 승객에게 해 준 고속버스 기사님이 있습니다.",
+      "delivery": "[warm, intriguing, slow]",
+      "caption": "처음 본 승객을 위해",
+      "hot": [
+        "고속버스 기사님"
+      ],
+      "image_prompt": "At the rest area in the rain, seen from behind: the driver and the passenger with his cane walking slowly side by side toward a parked express bus, the cafe owner holding a big umbrella over the passenger. ONE single full-frame picture, not a grid. A Korean highway rest area (휴게소) on a rainy summer morning: wet pavement, parked express buses, a low building with a convenience store and restrooms under a canopy. The driver is always the same Korean express bus driver in his mid fifties (기사님: short neat graying hair, calm kind lined face, a white short-sleeved uniform shirt with a navy tie and navy trousers). The passenger is always the same Korean man in his early sixties (승객: thinning gray hair, gentle tired face, a brown windbreaker over a checked shirt, gray trousers, a wooden walking cane), shown with dignity, never anything messy or dirty in the picture. The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "기사님,승객,카페 사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "올해 팔월, 아침 일곱 시. 서울에서 경남 양산으로 가는 고속버스였습니다.",
+      "delivery": "[gentle, storytelling]",
+      "caption": "2026년 8월, 서울→양산 고속버스",
+      "hot": [],
+      "image_prompt": "A white express bus driving down a Korean highway in early morning summer rain, mountains in soft mist, headlights on. ONE single full-frame picture, not a grid. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "이 버스에는, 누나 결혼식에 다녀오던 양산의 한 카페 사장님이 가족과 함께 타고 있었습니다.",
+      "delivery": "[gentle, warm]",
+      "caption": "양산의 카페 사장님",
+      "hot": [],
+      "image_prompt": "Inside a Korean express intercity bus: wide reclining blue seats in rows, curtains at the windows, rain streaking the glass. The cafe owner sitting by the window looking out at the rain, a couple of family members asleep in the seats beside and ahead of him, seen only from behind. The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "카페 사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그리고 지팡이 없이는 걷기 힘든, 몸이 불편한 승객 한 분도 함께였습니다.",
+      "delivery": "[soft, gentle]",
+      "caption": "지팡이 없이는 걷기 힘든 승객",
+      "hot": [],
+      "image_prompt": "Inside a Korean express intercity bus: wide reclining blue seats in rows, curtains at the windows, rain streaking the glass. The passenger sitting alone in his seat a few rows back, both hands resting on the top of his wooden cane, looking a little uneasy. The passenger is always the same Korean man in his early sixties (승객: thinning gray hair, gentle tired face, a brown windbreaker over a checked shirt, gray trousers, a wooden walking cane), shown with dignity, never anything messy or dirty in the picture. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그런데 가는 도중, 그 승객이 화장실을 오래 참다가, 끝내 자리에서 실수를 하고 말았습니다.",
+      "delivery": "[slow, hushed]",
+      "caption": "끝내 자리에서",
+      "hot": [],
+      "image_prompt": "Inside a Korean express intercity bus: wide reclining blue seats in rows, curtains at the windows, rain streaking the glass. The passenger in his seat with his head bowed low and his eyes shut tight in embarrassment, gripping his cane, shoulders hunched; only his upper body from the chest up is shown. The passenger is always the same Korean man in his early sixties (승객: thinning gray hair, gentle tired face, a brown windbreaker over a checked shirt, gray trousers, a wooden walking cane), shown with dignity, never anything messy or dirty in the picture. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "몸이 불편해, 제때 화장실에 가지 못한 탓이었습니다. 자칫하면 평생 부끄러운 기억으로 남을 수 있는 순간이었습니다.",
+      "delivery": "[soft, heavy]",
+      "caption": "제때 가지 못한 화장실",
+      "hot": [],
+      "image_prompt": "Close view of the passenger's hands trembling on the handle of his wooden cane, rain on the bus window behind, quiet and sad mood. The passenger is always the same Korean man in his early sixties (승객: thinning gray hair, gentle tired face, a brown windbreaker over a checked shirt, gray trousers, a wooden walking cane), shown with dignity, never anything messy or dirty in the picture. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "버스가 휴게소에 서자, 기사님은 망설이지 않았습니다. 승객을 부축해, 직접 씻겨 드리기 시작했습니다.",
+      "delivery": "[warm, steady]",
+      "caption": "망설이지 않은 기사님",
+      "hot": [
+        "망설이지 않았습니다"
+      ],
+      "image_prompt": "A Korean highway rest area (휴게소) on a rainy summer morning: wet pavement, parked express buses, a low building with a convenience store and restrooms under a canopy. The driver stepping down from the bus door holding the passenger firmly by the arm to support him, the passenger leaning on his cane, both heading toward the restroom building. The driver is always the same Korean express bus driver in his mid fifties (기사님: short neat graying hair, calm kind lined face, a white short-sleeved uniform shirt with a navy tie and navy trousers). The passenger is always the same Korean man in his early sixties (승객: thinning gray hair, gentle tired face, a brown windbreaker over a checked shirt, gray trousers, a wooden walking cane), shown with dignity, never anything messy or dirty in the picture. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "기사님,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "기사님 혼자서는 힘드실 것 같았어요. 그래서 저도 같이 도와드렸습니다.",
+      "delivery": "[sincere, warm, casual]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "A Korean highway rest area (휴게소) on a rainy summer morning: wet pavement, parked express buses, a low building with a convenience store and restrooms under a canopy. The cafe owner hurrying out of the bus behind them, pulling on his jacket, determined. The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "카페 사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "카페 사장"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "사장님은 휴게소 매장으로 달려가, 승객이 갈아입을 바지를 사 왔습니다.",
+      "delivery": "[warm, a little brisk]",
+      "caption": "휴게소에서 사 온 새 바지",
+      "hot": [],
+      "image_prompt": "Inside a rest area convenience store, the cafe owner at the counter holding up a pair of folded gray trousers, paying quickly. The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "카페 사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "기사님이랑 같이 몸에 묻은 걸 씻겨 드리고, 새 바지를 입혀 드렸어요.",
+      "delivery": "[gentle, matter-of-fact]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Outside a rest area restroom door under the canopy, the driver and the cafe owner standing on either side of the passenger, who now wears clean gray trousers; the driver gently straightening the passenger's windbreaker. Nothing messy shown. The driver is always the same Korean express bus driver in his mid fifties (기사님: short neat graying hair, calm kind lined face, a white short-sleeved uniform shirt with a navy tie and navy trousers). The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). The passenger is always the same Korean man in his early sixties (승객: thinning gray hair, gentle tired face, a brown windbreaker over a checked shirt, gray trousers, a wooden walking cane), shown with dignity, never anything messy or dirty in the picture. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "기사님,카페 사장,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "카페 사장"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "밖에는 비가 내리고 있었습니다. 사장님은 지팡이를 챙겨 드리고, 비를 맞지 않도록 우산을 씌워 버스까지 모셨습니다.",
+      "delivery": "[tender, slow]",
+      "caption": "비 맞지 않게, 우산을",
+      "hot": [
+        "우산을"
+      ],
+      "image_prompt": "A Korean highway rest area (휴게소) on a rainy summer morning: wet pavement, parked express buses, a low building with a convenience store and restrooms under a canopy. The cafe owner holding a large umbrella over the passenger as he walks back to the bus with his cane, the cafe owner's own shoulder getting wet in the rain. The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). The passenger is always the same Korean man in his early sixties (승객: thinning gray hair, gentle tired face, a brown windbreaker over a checked shirt, gray trousers, a wooden walking cane), shown with dignity, never anything messy or dirty in the picture. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "카페 사장,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "기사님의 일은 거기서 끝나지 않았습니다. 자리를 깨끗이 정리하고, 그 위에 방석까지 깔아 드렸습니다.",
+      "delivery": "[warm, building]",
+      "caption": "방석까지 깔아 드린 기사님",
+      "hot": [
+        "방석까지"
+      ],
+      "image_prompt": "Inside a Korean express intercity bus: wide reclining blue seats in rows, curtains at the windows, rain streaking the glass. The driver bending over a bus seat placing a soft square cushion on it neatly, a cleaning cloth folded over his arm. The driver is always the same Korean express bus driver in his mid fifties (기사님: short neat graying hair, calm kind lined face, a white short-sleeved uniform shirt with a navy tie and navy trousers). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "기사님",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "기사님은 처음부터 끝까지, 싫은 내색을 한 번도 안 하셨어요.",
+      "delivery": "[admiring, quiet]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Inside a Korean express intercity bus: wide reclining blue seats in rows, curtains at the windows, rain streaking the glass. The cafe owner in his seat watching the driver from behind with a moved, admiring look. The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "카페 사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "카페 사장"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "바짓값은 제가 드릴게요.",
+      "delivery": "[gentle, sincere, polite]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "At the front of the bus by the driver's seat, the driver holding out some folded bills toward the cafe owner with a grateful smile. The driver is always the same Korean express bus driver in his mid fifties (기사님: short neat graying hair, calm kind lined face, a white short-sleeved uniform shirt with a navy tie and navy trousers). The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "기사님,카페 사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "기사님"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "아니에요, 기사님. 저도 누군가한테 조금이나마 도움이 될 수 있어서, 뜻깊었습니다.",
+      "delivery": "[warm, humble, smiling]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The cafe owner gently pushing the driver's hand with the bills back toward him, both smiling at each other, at the front of the bus. The driver is always the same Korean express bus driver in his mid fifties (기사님: short neat graying hair, calm kind lined face, a white short-sleeved uniform shirt with a navy tie and navy trousers). The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "카페 사장,기사님",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "카페 사장"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "이 일로 버스는 삼십 분쯤 늦게 도착했습니다. 사장님의 카페도, 그날은 늦게 문을 열었습니다.",
+      "delivery": "[warm, light]",
+      "caption": "30분 늦게 연 카페",
+      "hot": [],
+      "image_prompt": "A small cozy cafe on a Korean street in Yangsan late morning after the rain, the cafe owner unlocking the glass door and flipping the sign, smiling. The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "카페 사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "사장님이 이 일을 SNS에 올리자, 사람들은 카페 주소를 나누며 꼭 한번 들르겠다고 했습니다.",
+      "delivery": "[upbeat, warm]",
+      "caption": "\"꼭 한번 들를게요\"",
+      "hot": [],
+      "image_prompt": "The cafe owner behind his counter looking at his smartphone with a surprised, touched smile; the phone screen shows only blank speech bubbles and heart icons. The cafe owner is always the same Korean man in his early thirties (카페 사장: short wavy black hair, friendly face, a beige cotton jacket over a white t-shirt, jeans). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "카페 사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "이 기사님, 진짜 좋은 분이세요.",
+      "delivery": "[heartfelt, warm]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Memory image: the driver behind the wheel of the express bus, calm kind face in the soft light of the rainy windshield. The driver is always the same Korean express bus driver in his mid fifties (기사님: short neat graying hair, calm kind lined face, a white short-sleeved uniform shirt with a navy tie and navy trousers). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "기사님",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "카페 사장"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "그날 버스가 삼십 분 늦은 이유. 누구도, 그 승객을 혼자 두지 않았기 때문입니다.",
+      "delivery": "[warm, resonant, slow]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The express bus pulling away from the rest area into the misty highway, rain clearing, a soft break of sunlight in the clouds ahead. ONE single full-frame picture, not a grid. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "ko_review": "내레이션: 가족도 선뜻 하기 힘든 일을, 처음 본 승객에게 해 준 고속버스 기사님이 있습니다.\n내레이션: 올해 팔월, 아침 일곱 시. 서울에서 경남 양산으로 가는 고속버스였습니다.\n내레이션: 이 버스에는, 누나 결혼식에 다녀오던 양산의 한 카페 사장님이 가족과 함께 타고 있었습니다.\n내레이션: 그리고 지팡이 없이는 걷기 힘든, 몸이 불편한 승객 한 분도 함께였습니다.\n내레이션: 그런데 가는 도중, 그 승객이 화장실을 오래 참다가, 끝내 자리에서 실수를 하고 말았습니다.\n내레이션: 몸이 불편해, 제때 화장실에 가지 못한 탓이었습니다. 자칫하면 평생 부끄러운 기억으로 남을 수 있는 순간이었습니다.\n내레이션: 버스가 휴게소에 서자, 기사님은 망설이지 않았습니다. 승객을 부축해, 직접 씻겨 드리기 시작했습니다.\n카페 사장: 기사님 혼자서는 힘드실 것 같았어요. 그래서 저도 같이 도와드렸습니다.\n내레이션: 사장님은 휴게소 매장으로 달려가, 승객이 갈아입을 바지를 사 왔습니다.\n카페 사장: 기사님이랑 같이 몸에 묻은 걸 씻겨 드리고, 새 바지를 입혀 드렸어요.\n내레이션: 밖에는 비가 내리고 있었습니다. 사장님은 지팡이를 챙겨 드리고, 비를 맞지 않도록 우산을 씌워 버스까지 모셨습니다.\n내레이션: 기사님의 일은 거기서 끝나지 않았습니다. 자리를 깨끗이 정리하고, 그 위에 방석까지 깔아 드렸습니다.\n카페 사장: 기사님은 처음부터 끝까지, 싫은 내색을 한 번도 안 하셨어요.\n기사님: 바짓값은 제가 드릴게요.\n카페 사장: 아니에요, 기사님. 저도 누군가한테 조금이나마 도움이 될 수 있어서, 뜻깊었습니다.\n내레이션: 이 일로 버스는 삼십 분쯤 늦게 도착했습니다. 사장님의 카페도, 그날은 늦게 문을 열었습니다.\n내레이션: 사장님이 이 일을 SNS에 올리자, 사람들은 카페 주소를 나누며 꼭 한번 들르겠다고 했습니다.\n카페 사장: 이 기사님, 진짜 좋은 분이세요.\n내레이션: 그날 버스가 삼십 분 늦은 이유. 누구도, 그 승객을 혼자 두지 않았기 때문입니다."
+}
