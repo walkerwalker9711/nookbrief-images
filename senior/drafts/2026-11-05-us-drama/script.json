@@ -1,0 +1,507 @@
+{
+  "pillar": "True story (touching)",
+  "topic": "An 82-year-old Walmart cashier and widower retires after a pest-control owner's TikTok raises $150,000; why he was still working",
+  "title": "He Was 82 and Still Working at Walmart. Nobody Knew Why #truestory",
+  "mood": "touching",
+  "music": "touching-piano",
+  "case_tag": "TRUE STORY · Dec 2022 · Maryland",
+  "sources": [
+    {
+      "name": "NPR",
+      "url": "https://www.npr.org/2023/01/13/1148742950/walmart-employee-gofundme-tiktok-retirement"
+    },
+    {
+      "name": "WJLA",
+      "url": "https://wjla.com/newsletter-daily/over-125k-raised-for-walmart-worker-a-navy-veteran-so-he-could-finally-retire-warren-butch-marion-cumberland-maryland-rory-mccarty-bug-boys-tiktok"
+    },
+    {
+      "name": "FOX 13 / Scripps",
+      "url": "https://www.fox13now.com/tiktok-helps-another-walmart-cashier-retire"
+    }
+  ],
+  "description": "#truestory #kindness #veteran\n\n\"How could I get so lucky?\"\n\nButch was 82, a Navy vet, still working 8 to 9-hour shifts at a Walmart register. A guy buying batteries asked his TikTok followers one question. What nobody in that line knew was why Butch was still working at all.\n\n#mayorofmainst #truestory #kindness\n\nSource: NPR, WJLA, Cumberland Times-News (Jan 2023)\n\nRetold with AI voice & visuals",
+  "tags": [
+    "true story",
+    "kindness",
+    "veteran",
+    "widower",
+    "heartwarming",
+    "Mayor of Main St"
+  ],
+  "fact_notes": "NPR 2023-01-13 (Jaclyn Diaz): last month (Dec 2022) Rory McCarty at his local Walmart near Cumberland, Md., ran in for batteries, stuck in line; quote 'I kind of looked up and I seen this little, older guy there at the register, just grinding... Look at this guy. He's got to be in his 80s.'; Warren 'Butch' Marion, 82, part time 16 years (WJLA: 40-hour weeks, sometimes more); decades at General Motors and Honeywell, 10-year stint in U.S. Navy; 'I've been working since I've been 11 years old'; debt; McCarty's TikTok for pest control company Bug Boys, more than 250,000 followers (WJLA 300K, Scripps 279K); 42-second video; caption '82yr old Butch still putting in work... We ought to do that for Butch. Who would donate?'; days later returned to Walmart to tell him; with his approval created GoFundMe; 'In two days. It raised over $100,000'; almost $150,000 at writing; put in two weeks notice; 'We're like peas and carrots'; 'Out of all the people. I was the one that was chosen... it's a beautiful, beautiful experience'. WJLA/TND 2023-01-09: Navy veteran and widower; GoFundMe text 'Working 8 to 9 hour shifts'; check handed with balloons and applause, first word 'wow'; Cumberland Times News: pay off his house, travel to Florida to see his kids; 'All I can tell you is the good Lord has blessed me for what I did in my younger years'. Scripps/FOX13 (Simplemost): retired from GM to help care for his ex-wife and her first husband until they died; then cared for his wife through breast cancer; she died 2005, he returned to work to make ends meet; check for more than $108,000, 'How could I get so lucky?'; 'I'll be able to travel to Florida whenever I feel like going and see my kids. I'm very, very blessed.'; total more than $152,000. Paraphrased: Rory's TikTok line ('We ought to help Butch retire'). Assumed (not reported): looks/clothes, Rory's age, home office/diner/porch/Florida scenes drawn as illustrations of what was reported, Navy photo era.",
+  "characters": [
+    {
+      "id": "Butch",
+      "label": "Warren \"Butch\" Marion · 82",
+      "voice": "elder_m",
+      "look": "a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag"
+    },
+    {
+      "id": "Rory",
+      "label": "Rory McCarty",
+      "voice": "adult_m",
+      "look": "a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos"
+    },
+    {
+      "id": "Young Butch",
+      "label": "Butch · younger",
+      "voice": "adult_m2",
+      "look": "the same Butch in his early sixties, graying brown hair, wire-rimmed glasses, a flannel shirt"
+    },
+    {
+      "id": "Wife",
+      "label": "Butch's wife",
+      "voice": "adult_f",
+      "look": "a gentle white American woman in her sixties, short silver-blond hair, a soft lavender cardigan"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.0,
+  "caption_words": [],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "He was 82, still standing at a Walmart register 40 hours a week. Nobody in that line knew why.",
+      "delivery": "[quiet, intriguing, unhurried]",
+      "caption": "82 and still working",
+      "hot": [
+        "Nobody"
+      ],
+      "image_prompt": "At a bright American big-box store checkout lane in December, conveyor belt, card reader, other shoppers, no signs, logos or store names: Butch scanning groceries at the register, a little hunched but smiling at a customer, a line of shoppers behind. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "December 2022. Cumberland, Maryland. Rory McCarty runs a pest control business in town. He ran into Walmart for batteries and got stuck in line.",
+      "delivery": "[easy, storytelling]",
+      "caption": "Dec 2022, Maryland",
+      "hot": [
+        "batteries"
+      ],
+      "image_prompt": "At a bright American big-box store checkout lane in December, conveyor belt, card reader, other shoppers, no signs, logos or store names: Rory standing in a long checkout line holding a small pack of batteries, checking his watch, a little impatient, winter coats on the shoppers. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "I kind of looked up, and I seen this little older guy at the register, just grinding. I'm thinking, man, look at this guy. He's got to be in his 80s.",
+      "delivery": "[amazed, casual, real guy talking]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Rory in the checkout line looking up, eyebrows raised in surprise, Butch visible at the register ahead, shown from the waist up, at a bright American big-box store checkout lane in December, conveyor belt, card reader, other shoppers, no signs, logos or store names. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory,Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Rory"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "His name's Warren Marion. Everybody calls him Butch. 16 years at that Walmart. Eight, nine-hour shifts, on his feet.",
+      "delivery": "[warm, matter-of-fact]",
+      "caption": "16 years, 9-hour shifts",
+      "hot": [
+        "Butch"
+      ],
+      "image_prompt": "Close-up of Butch at the register handing a receipt to a customer with both hands, a warm smile, his name tag blank, at a bright American big-box store checkout lane in December, conveyor belt, card reader, other shoppers, no signs, logos or store names. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "I've been working since I've been 11 years old.",
+      "delivery": "[proud, plain, a little chuckle]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Butch leaning on the register counter for a moment, chatting with Rory across the conveyor belt, Rory smiling, at a bright American big-box store checkout lane in December, conveyor belt, card reader, other shoppers, no signs, logos or store names. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch,Rory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Butch"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Before that, decades at General Motors and Honeywell. And 10 years in the Navy.",
+      "delivery": "[respectful, steady]",
+      "caption": "10 years, U.S. Navy",
+      "hot": [
+        "Navy"
+      ],
+      "image_prompt": "A framed old photo on a living room shelf brought to life: Young Butch as a young sailor in a 1960s U.S. Navy white uniform on a ship deck, smiling, ocean behind. Young sailor Butch: a young slim white American man around twenty, short dark hair, wire-rimmed glasses, white Navy uniform and cap.  ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Rory runs a TikTok for his business. About a quarter million followers. So he posted a quick video of Butch and asked one question.",
+      "delivery": "[building, curious]",
+      "caption": "250K followers",
+      "hot": [
+        "one question"
+      ],
+      "image_prompt": "Rory at night in a small home office, sitting at a desk with his phone in hand, recording himself talking, a lamp on, a pest control sprayer leaning in the corner. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "82 years old, still putting in work. We ought to help Butch retire. Who would donate?",
+      "delivery": "[earnest, talking to camera]",
+      "caption": "Who would donate?",
+      "hot": [],
+      "image_prompt": "Rory looking straight into his phone camera, holding it at arm's length, serious and hopeful face, home office at night. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Rory"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "A few days later, he went back to the store to find Butch and tell him. With Butch's okay, he set up a GoFundMe.",
+      "delivery": "[warm, moving forward]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "At a bright American big-box store checkout lane in December, conveyor belt, card reader, other shoppers, no signs, logos or store names: Rory showing Butch something on his phone across the register, Butch leaning in, eyes wide behind his glasses. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory,Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "twist",
+      "speaker": "host",
+      "line": "2 days later, the GoFundMe was over a hundred grand.",
+      "delivery": "[surprised, bright]",
+      "caption": "$100,000 in 2 days",
+      "hot": [
+        "a hundred grand"
+      ],
+      "image_prompt": "Rory sitting on his couch staring at his phone in disbelief, mouth open, the phone screen glowing with blank notification bubbles stacking up, a cozy living room at night. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "So Butch did what Butch does. He put in his two weeks.",
+      "delivery": "[gentle humor]",
+      "caption": "He put in his two weeks",
+      "hot": [
+        "two weeks"
+      ],
+      "image_prompt": "Butch in a small store break room handing a folded sheet of paper to a manager whose back is to the viewer, Butch smiling shyly, lockers and a coffee maker behind. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Then Rory walked in with balloons, a crowd, and a giant check. The first word out of Butch's mouth was wow.",
+      "delivery": "[uplifting, building]",
+      "caption": "Wow",
+      "hot": [
+        "giant check"
+      ],
+      "image_prompt": "At a bright American big-box store checkout lane in December, conveyor belt, card reader, other shoppers, no signs, logos or store names: Rory and a small cheering crowd with balloons presenting Butch with an oversized blank cardboard check, Butch with both hands over his mouth, eyes shining. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory,Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "How could I get so lucky?",
+      "delivery": "[choked up, soft, disbelieving]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of Butch holding one edge of the oversized blank check, tears in his eyes, Rory's hand on his shoulder, balloons behind, at a bright American big-box store checkout lane in December, conveyor belt, card reader, other shoppers, no signs, logos or store names. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch,Rory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Butch"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "What most folks in that store didn't know was why an 82-year-old was still working at all.",
+      "delivery": "[slowing down, quieter]",
+      "caption": "Why he was still working",
+      "hot": [
+        "why"
+      ],
+      "image_prompt": "Butch alone at an empty register after closing, store lights half dimmed, quietly wiping the counter, a thoughtful look. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Years back, Butch left his job at General Motors to take care of his ex-wife and her first husband. He looked after them both until they passed.",
+      "delivery": "[tender, low]",
+      "caption": "He cared for them both",
+      "hot": [
+        "both"
+      ],
+      "image_prompt": "A modest 1990s American living room: Young Butch gently helping a frail elderly couple to their armchairs, bringing them tea on a tray, soft afternoon light. The couple: a frail white-haired American woman and a frail white-haired American man in their seventies, shown from the waist up. Young Butch: the same Butch in his early sixties, graying brown hair, wire-rimmed glasses, a flannel shirt ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Young Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Then his wife got breast cancer. He took care of her too. She passed in 2005. After that, he went back to work to make ends meet.",
+      "delivery": "[tender, heavy, slow]",
+      "caption": "2005",
+      "hot": [
+        "went back to work"
+      ],
+      "image_prompt": "A quiet bedroom at dusk: Young Butch sitting beside his wife, holding her hand on a quilt, both smiling softly at each other, a lamp on, family photos on the wall. Young Butch: the same Butch in his early sixties, graying brown hair, wire-rimmed glasses, a flannel shirt Butch's wife: a gentle white American woman in her sixties, short silver-blond hair, a soft lavender cardigan ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Young Butch,Wife",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "All I can tell you is the good Lord has blessed me for what I did in my younger years.",
+      "delivery": "[humble, warm, slow]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Butch sitting at his small kitchen table at home, holding a framed photo of his wife, smiling with wet eyes, morning light through a window. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Butch"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "I'll be able to travel to Florida whenever I feel like going and see my kids. I'm very, very blessed.",
+      "delivery": "[light, grateful, a little laugh]",
+      "caption": "Florida, to see his kids",
+      "hot": [],
+      "image_prompt": "Butch outdoors on a sunny Florida porch, palm trees behind, hugging his grown son and daughter (both in their fifties, shown from the waist up), all laughing. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Butch"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "The money paid off his house. And Rory and Butch? A month earlier they were strangers. Now they hang out all the time.",
+      "delivery": "[warm, easy]",
+      "caption": "Strangers a month ago",
+      "hot": [
+        "strangers"
+      ],
+      "image_prompt": "Rory and Butch sitting side by side in a small-town diner booth, coffee mugs, Butch telling a story with his hands, Rory laughing. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory,Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "We're like peas and carrots.",
+      "delivery": "[grinning, affectionate]",
+      "caption": "Peas and carrots",
+      "hot": [],
+      "image_prompt": "Rory with his arm around Butch's shoulders outside the diner on a winter day, both grinning at the viewer. Rory: a white American man in his late thirties, short dark hair, short trimmed beard, broad shoulders, a plain black work polo shirt and a plain gray ball cap, no logos Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Rory,Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Rory"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "Out of all the people, I was the one that was chosen. It's a beautiful, beautiful experience.",
+      "delivery": "[quiet, moved, slow]",
+      "caption": "A beautiful experience",
+      "hot": [],
+      "image_prompt": "Butch on his own front porch in late afternoon light, looking out at a quiet small-town street, a peaceful smile, a coffee mug in his hands. Butch: a short, slim 82-year-old white American man, thinning white hair combed back, wire-rimmed glasses, kind tired eyes, deep smile lines, a plain navy blue store employee vest over a gray long-sleeve shirt, a blank name tag ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Butch",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Butch"
+    }
+  ]
+}
