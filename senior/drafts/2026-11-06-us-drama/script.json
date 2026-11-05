@@ -1,0 +1,567 @@
+{
+  "pillar": "True story (incident)",
+  "topic": "A 73-year-old Long Island grandma, a retired 911 dispatcher, plays along with a grandparent scam and gets the fake bail bondsman arrested on her lawn",
+  "title": "Scammers Wanted $8,000 From This Grandma. She Had Other Plans #truestory",
+  "mood": "alert",
+  "music": "alert-chase",
+  "case_tag": "TRUE STORY · Jan 2022 · Long Island, NY",
+  "sources": [
+    {
+      "name": "ABC7 / WABC",
+      "url": "https://abc7.com/scammer-payback-grandma-tricks-elderly-scam-scams/11498839/"
+    },
+    {
+      "name": "CBS New York",
+      "url": "https://www.cbsnews.com/newyork/news/seaford-long-island-grandmother-elderly-scam-suspect-caught/"
+    },
+    {
+      "name": "Oxygen (WNBC, WLNY)",
+      "url": "https://www.oxygen.com/crime-news/joshua-gomez-lured-to-arrest-by-grandmother-he-tried-to-scam"
+    },
+    {
+      "name": "Fox News",
+      "url": "https://www.foxnews.com/politics/new-york-grandmother-tricks-scammer-captured-on-video"
+    }
+  ],
+  "description": "#truestory #scam #grandparentscam\n\n\"Bored grandma, one. Bad guy, zero.\"\n\nA fake grandson in jail, a fake lawyer, a fake bail bondsman. Jean, 73, spent 20 years as a 911 dispatcher, so she played along and handed the guy an envelope full of paper towels. The cops were waiting.\n\nIf you get a call like this, hang up and call your grandkid yourself.\n\n#mayorofmainst #truestory #scamalert\n\nSource: WABC, WNBC, WLNY, Fox News (Jan 2022)\n\nRetold with AI voice & visuals",
+  "tags": [
+    "true story",
+    "grandparent scam",
+    "scam alert",
+    "Long Island",
+    "bail scam",
+    "Mayor of Main St"
+  ],
+  "fact_notes": "ABC7/WABC 2022-01 (Seaford, N.Y.): 73-year-old woman from Seaford, Long Island, asked to be identified by first name Jean; Thursday afternoon call from a man claiming to be her grandson; former 911 dispatcher; police arrested him for drunk driving, in jail; 'He started calling me grandma, and I don't have a grandson who drives, so I knew it was a scam' (WCBS); played along; after several calls a person claiming to be grandson's lawyer said $8,000 for bail; Jean contacted police, officers told her to play along; fake bail bondsman said he was in the neighborhood and could stop by to pick up cash; 'I told him I had the money in the house, and I figure he's not going to fall for that. Well, he fell for it. Hook, line and sinker.'; envelope stuffed with paper towels; as he walked away officers pounced and arrested him, 28-year-old; third-degree attempted grand larceny; 'so many people fall for this and you only hear about it on the other end after they've lost $8,000'. Oxygen (citing WNBC, WLNY, WABC, Nassau PD release): grandson caller said in jail after a car accident, charged with DUI; 'He starts calling me grandma, and then I'm like, I don't have a grandson that drives'; 'I played stupid grandma. Oh my poor grandson, please don't tell his mother'; after the lawyer call she called 911; Nassau County 911 dispatcher for more than 20 years (WNBC); officers were already at her house interviewing her about the first two calls when the third call (bail bondsman) came in; 'Apparently they thought they had the big fish. They actually thought I was gonna give them money.'; officers told her to play along, she gave her address; tackled on her front yard, caught on her Ring doorbell camera; 'Bored grandma: one. Bad guy: zero.' (WNBC); son told her 'stop, stop'; police ask residents to call police first rather than set up scammers themselves; released on appearance ticket. Fox News (Fox & Friends): son 'hang up ma', 'you're 40 years old I'm 73 and you're telling me to hang up?'. Not named on purpose: Jean asked for first name only; the man is only charged, so no name on screen. Paraphrased (not verbatim): the three scam callers' lines, built from what police and Jean said they told her. Assumed: looks, house interior, grandkid photo, the outro picture.",
+  "characters": [
+    {
+      "id": "Jean",
+      "label": "Jean · 73, retired 911 dispatcher",
+      "voice": "old_f",
+      "look": "a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck"
+    },
+    {
+      "id": "Son",
+      "label": "Jean's son",
+      "voice": "adult_m2",
+      "look": "a white American man around forty, short brown hair, light stubble, a gray zip-up hoodie, worried face"
+    },
+    {
+      "id": "Caller",
+      "label": "Fake bail bondsman",
+      "voice": "scammer",
+      "look": "a young man around twenty-eight in a black puffer jacket and a dark knit beanie, face partly in shadow"
+    },
+    {
+      "id": "Fake grandson",
+      "label": "Fake grandson (phone)",
+      "voice": "scammer",
+      "look": "heard only on the phone"
+    },
+    {
+      "id": "Fake lawyer",
+      "label": "Fake lawyer (phone)",
+      "voice": "adult_m",
+      "look": "heard only on the phone"
+    },
+    {
+      "id": "Fake bondsman",
+      "label": "Fake bail bondsman (phone)",
+      "voice": "scammer",
+      "look": "heard only on the phone"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.0,
+  "caption_words": [],
+  "ko_review": "(see /mnt/project-files/시니어쇼츠/미국_3편_대본_20261106.md)",
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "A scammer told a 73-year-old grandma to have 8 grand ready. She told him to come on over. The cops were already in her living room.",
+      "delivery": "[sly, intriguing, building]",
+      "caption": "She told him to come over",
+      "hot": [
+        "cops"
+      ],
+      "image_prompt": "In a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees: Jean on the landline phone with a sly little smile, two police officers standing quietly behind her couch, listening. Nassau County police officers in plain dark navy uniforms with no readable patches or text. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "January 2022. Seaford, Long Island. On a Thursday afternoon, Jean's phone rings.",
+      "delivery": "[easy, storytelling]",
+      "caption": "Jan 2022, Long Island",
+      "hot": [
+        "phone rings"
+      ],
+      "image_prompt": "Exterior of a modest Long Island house on a gray January afternoon, then Jean inside by the window reaching for a ringing beige landline phone, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "Grandma, it's me. I was in an accident. They got me for a DUI and I'm in jail. I need your help.",
+      "delivery": "[panicked, rushed, pleading]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of Jean holding the landline receiver to her ear, eyebrows raised, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "call",
+        "sender": "Unknown",
+        "time": "",
+        "messages": [
+          {
+            "text": "Grandma, it's me",
+            "me": false
+          },
+          {
+            "text": "I'm in jail. I need help",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Fake grandson"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Problem was, Jean doesn't have a grandson old enough to drive.",
+      "delivery": "[dry, amused]",
+      "caption": "No grandson who drives",
+      "hot": [
+        "old enough to drive"
+      ],
+      "image_prompt": "Jean pausing mid-call, looking at a framed photo on the end table of two small grandkids about six and eight years old, a knowing smirk, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "He starts calling me grandma, and I'm like, I don't have a grandson that drives. So I knew it was a scam.",
+      "delivery": "[wry, confident, a little laugh]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Jean sitting in her armchair talking toward the viewer, one hand raised as she makes her point, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jean"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "And Jean isn't just anybody. She was a Nassau County 911 dispatcher for over 20 years.",
+      "delivery": "[proud, a beat of humor]",
+      "caption": "20+ years at 911",
+      "hot": [
+        "911 dispatcher"
+      ],
+      "image_prompt": "Flashback: Jean about twenty years younger with short dark-gray curly hair and the same red glasses, wearing a headset at a 1990s emergency dispatch console with several monitors, calm and focused, colleagues blurred behind.  ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "This is your grandson's attorney. Bail is set at 8,000 dollars. We need to move fast.",
+      "delivery": "[smooth, official, pushy]",
+      "caption": "$8,000 for bail",
+      "hot": [
+        "8,000 dollars"
+      ],
+      "image_prompt": "Jean back on the landline, listening, eyes narrowing behind her red glasses, a notepad and pen in her hand, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "call",
+        "sender": "Attorney",
+        "time": "",
+        "messages": [
+          {
+            "text": "Bail is $8,000",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Fake lawyer"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "I played stupid grandma. Oh, my poor grandson. Please don't tell his mother.",
+      "delivery": "[playful, then fake-worried old-lady voice]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Jean on the phone pressing a hand to her chest in mock worry, but winking at the viewer, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jean"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Her son was right there the whole time, and he was not having it.",
+      "delivery": "[light, amused]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Jean's son standing in the living room doorway, arms out, mouthing hang up, Jean waving him off with the phone at her ear, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck Jean's son: a white American man around forty, short brown hair, light stubble, a gray zip-up hoodie, worried face ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean,Son",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "My son was like, hang up, Ma. And I'm thinking, you're 40 years old, I'm 73, and you're telling me to hang up?",
+      "delivery": "[sassy, fond, New York attitude]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Jean turning in her armchair to give her son a look over her glasses, her son shrugging helplessly, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck Jean's son: a white American man around forty, short brown hair, light stubble, a gray zip-up hoodie, worried face ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean,Son",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jean"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "She told the lawyer she had the cash right there in the house. Then she hung up and called 911.",
+      "delivery": "[building, quicker]",
+      "caption": "She called 911",
+      "hot": [
+        "called 911"
+      ],
+      "image_prompt": "Jean hanging up the landline and immediately dialing again with a determined look, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "I figured, he's not going to fall for that. Well, he fell for it. Hook, line and sinker.",
+      "delivery": "[delighted, dry]",
+      "caption": "Hook, line and sinker",
+      "hot": [],
+      "image_prompt": "Jean leaning back in her armchair with a satisfied grin, arms crossed, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jean"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Officers were in her living room, going over the first two calls, when the phone rang again.",
+      "delivery": "[tense, low]",
+      "caption": "",
+      "hot": [
+        "rang again"
+      ],
+      "image_prompt": "In a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees: two police officers with notebooks standing by Jean's couch, all three turning to look at the ringing landline. Nassau County police officers in plain dark navy uniforms with no readable patches or text. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "This is the bail bondsman. I'm in the area. I can swing by and grab the cash.",
+      "delivery": "[casual, confident, a little cocky]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Jean holding the receiver while an officer beside her nods and gives a thumbs-up, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Nassau County police officers in plain dark navy uniforms with no readable patches or text. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "call",
+        "sender": "Bail bondsman",
+        "time": "",
+        "messages": [
+          {
+            "text": "I'm in the area",
+            "me": false
+          },
+          {
+            "text": "I can pick up the cash",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Fake bondsman"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "The officers told her to play along. So Jean gave him her address.",
+      "delivery": "[tense, steady]",
+      "caption": "She gave him her address",
+      "hot": [
+        "play along"
+      ],
+      "image_prompt": "Jean calmly reading her street address into the phone while the officers move out of sight behind the kitchen doorway, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Nassau County police officers in plain dark navy uniforms with no readable patches or text. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "Apparently they thought they had the big fish. They actually thought I was gonna give them money.",
+      "delivery": "[amused, a little incredulous]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of Jean peeking through the living room blinds at the street, smiling to herself, in a cozy Long Island living room in January, a beige landline phone on an end table, family photos, a window with bare winter trees. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jean"
+    },
+    {
+      "kind": "twist",
+      "speaker": "host",
+      "line": "He showed up at the door. Jean handed him a nice fat envelope. It was stuffed with paper towels.",
+      "delivery": "[punchy, satisfying]",
+      "caption": "Paper towels",
+      "hot": [
+        "paper towels"
+      ],
+      "image_prompt": "At Jean's front door on a gray winter afternoon: Jean handing a thick white envelope with paper towels poking out to the caller on her doorstep. The caller: a young man around twenty-eight in a black puffer jacket and a dark knit beanie, face partly in shadow. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck The caller: a young man around twenty-eight in a black puffer jacket and a dark knit beanie, face partly in shadow ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean,Caller",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "He turned and walked off. He didn't make it off the lawn. Officers tackled him right there, and her doorbell camera caught the whole thing.",
+      "delivery": "[fast, punchy]",
+      "caption": "Tackled on the lawn",
+      "hot": [
+        "tackled"
+      ],
+      "image_prompt": "Jean's small front lawn in winter: two police officers tackling the caller onto the brown grass, the envelope flying, seen from a doorbell camera angle slightly above. Nassau County police officers in plain dark navy uniforms with no readable patches or text. The caller: a young man around twenty-eight in a black puffer jacket and a dark knit beanie, face partly in shadow. The caller: a young man around twenty-eight in a black puffer jacket and a dark knit beanie, face partly in shadow ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Caller",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Police say he was 28. He was charged with attempted grand larceny.",
+      "delivery": "[flat, matter-of-fact]",
+      "caption": "Attempted grand larceny",
+      "hot": [
+        "charged"
+      ],
+      "image_prompt": "The caller in handcuffs being walked to a police car parked on the quiet street, officers on either side, shown from the waist up. Nassau County police officers in plain dark navy uniforms with no readable patches or text. The caller: a young man around twenty-eight in a black puffer jacket and a dark knit beanie, face partly in shadow. The caller: a young man around twenty-eight in a black puffer jacket and a dark knit beanie, face partly in shadow ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Caller",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "Bored grandma, one. Bad guy, zero.",
+      "delivery": "[deadpan, proud]",
+      "caption": "Bored grandma 1, bad guy 0",
+      "hot": [],
+      "image_prompt": "Jean standing in her open front doorway, arms folded, a small triumphant smile, police lights reflecting softly on the snowless street behind. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jean"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "So many people fall for this, and you only hear about it after they've lost 8,000 dollars.",
+      "delivery": "[serious now, caring]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Jean sitting at her kitchen table, serious and warm, holding a mug, looking straight at the viewer. Jean: a 73-year-old white American grandmother, short curly silver hair, red reading glasses on a beaded chain, sharp amused eyes, a cozy burgundy cardigan over a cream turtleneck ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jean",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jean"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "Police did ask folks not to try this at home. If you get that call, hang up and call them first.",
+      "delivery": "[warm, wry]",
+      "caption": "Hang up. Call police first.",
+      "hot": [
+        "call them first"
+      ],
+      "image_prompt": "A quiet small-town street at dusk, a beige landline phone on a porch table, warm porch light.  ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ]
+}

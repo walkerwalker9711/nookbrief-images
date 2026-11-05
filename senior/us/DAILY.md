@@ -36,6 +36,8 @@ push 전에 꼭 `git pull --rebase origin claude/project-thread-loj7pm`.
 - 한국어 대사표: `/mnt/project-files/시니어쇼츠/미국_<N>편_대본_<YYYYMMDD>.md`(표 + 렌더 전 점검 + AI 티 점검 + 미국 입말 점검에서 고친 곳 줄별).
 - 4번 점검을 통과하면 07:00 KST 전에 스레드에 대본 알림 1번(사연 3줄 + 대사표 attached_outputs + "고칠 줄은 말씀만, 렌더 시작").
 
+- 새 역할 목소리가 필요하면(예: 미국 할머니) 대본 알림에 후보 링크(docs/preview/us/<이름>_N.mp3, Pages)를 같이 올리고, 주인님이 고른 뒤 `audition us save <역할> <번호>` → voices.json us에 저장 → 렌더.
+
 ## 4. 렌더 전 점검 (하나라도 걸리면 고치고 다시)
 1. 길이: 1편 기준 초당 14.8자 → 2분 50초(약 2,500자) 이하, 1분 이상.
 2. 숫자는 숫자로 쓴다(자막도 숫자). 단어로 쓴 숫자는 caption_words.
