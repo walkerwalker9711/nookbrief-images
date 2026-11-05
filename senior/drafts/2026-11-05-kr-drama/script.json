@@ -28,7 +28,7 @@
     "실제사연",
     "부산"
   ],
-  "fact_notes": "데일리안 2025-05-05: 5월 3일 오전 10시30분께 덕천지구대 앞 남성이 종이상자 두고 감, CCTV에 포착. 손편지·라면 한 박스·1000원 지폐 35매·어린이용 바람막이. '세 아이 아빠', 첫째 장애 3급, 기초수급자. 편지 '한 달 동안 열심히 폐지를 모아 마련한 돈', '금액이 많지 않아 정말 미안하고 죄송하다', '과자를 사려고 하니 금액이 모자라 라면 한 박스와 아기 바람막이 옷을 샀고 남은 금액은 얼마 안 되지만 맛있는 치킨이라도 사 먹었으면', '과자를 못 사 마음에 걸린다', '바람막이 옷 입고 밖에 나가 뛰어놀고 웃었으면'. 매년 어린이날·크리스마스 같은 방식 12번째. 경찰은 편지대로 덕천2동 행정복지센터에 전달 예정. 헤럴드경제·트윅 2025-08-15: 8월 13일 같은 지구대 앞 상자, 라면·여러 과자·1000원 30장·손편지. 트윅 '어머니의 두 번째 기일을 뜻있게 보내고 싶어 폐지를 팔아 조금씩 모은 돈으로 기부', '올해 어린이날에 돈이 부족해 아이들 친구에게 과자를 사서 주지 못한 게 마음에서 지워지지 않았습니다. 과자 선물을 받고 아이들 마음이 풀렸으면 하네요. 그땐 아저씨가 미안했어'. 헤럴드 '그때는 아저씨가 정말 미안해. 미안했어.' 장면4 경찰관 대사는 상자를 열어 편지를 발견한 상황을 말로 옮긴 것. 아빠 나이·옷·얼굴(가림), 경찰관 외모, 공원 아이는 그림용 추정.",
+  "fact_notes": "데일리안 2025-05-05: 5월 3일 오전 10시30분께 덕천지구대 앞 남성이 종이상자 두고 감, CCTV에 포착. 손편지·라면 한 박스·1000원 지폐 35매·어린이용 바람막이. '세 아이 아빠', 첫째 장애 3급, 기초수급자. 편지 '한 달 동안 열심히 폐지를 모아 마련한 돈', '금액이 많지 않아 정말 미안하고 죄송하다', '과자를 사려고 하니 금액이 모자라 라면 한 박스와 아기 바람막이 옷을 샀고 남은 금액은 얼마 안 되지만 맛있는 치킨이라도 사 먹었으면', '과자를 못 사 마음에 걸린다', '바람막이 옷 입고 밖에 나가 뛰어놀고 웃었으면'. 매년 어린이날·크리스마스 같은 방식 12번째. 경찰은 편지대로 덕천2동 행정복지센터에 전달 예정. 헤럴드경제·트윅 2025-08-15: 8월 13일 같은 지구대 앞 상자, 라면·여러 과자·1000원 30장·손편지. 트윅 '어머니의 두 번째 기일을 뜻있게 보내고 싶어 폐지를 팔아 조금씩 모은 돈으로 기부', '올해 어린이날에 돈이 부족해 아이들 친구에게 과자를 사서 주지 못한 게 마음에서 지워지지 않았습니다. 과자 선물을 받고 아이들 마음이 풀렸으면 하네요. 그땐 아저씨가 미안했어'. 헤럴드 '그때는 아저씨가 정말 미안해. 미안했어.' 장면4 경찰관 대사는 상자를 열어 편지를 발견한 상황을 말로 옮긴 것. 아빠 나이·옷·얼굴(가림), 경찰관 외모, 공원 아이는 그림용 추정. 경찰관은 목소리(adult_m2, 50대)에 맞춰 50대로 그림.",
   "characters": [
     {
       "id": "아빠",
@@ -40,7 +40,7 @@
       "id": "경찰관",
       "label": "덕천지구대 경찰관",
       "voice": "adult_m2",
-      "look": "short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest"
+      "look": "short neat graying hair, kind lined face, a light blue Korean police uniform shirt with a navy vest, mid fifties"
     }
   ],
   "format": "drama",
@@ -135,7 +135,7 @@
       "delivery": "[curious, softly surprised]",
       "caption": "",
       "hot": [],
-      "image_prompt": "The officer crouching on the steps, lifting the flap of the cardboard box and finding a folded letter on top. The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). A small Korean neighborhood police box (지구대) on a Busan hillside street: a low two-story building with blue and white trim, glass doors, a few steps, potted plants. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "The officer crouching on the steps, lifting the flap of the cardboard box and finding a folded letter on top. The officer is always the same Korean police officer in his mid fifties (경찰관: short neat graying hair, kind lined face, a light blue Korean police uniform shirt with a navy vest). A small Korean neighborhood police box (지구대) on a Busan hillside street: a low two-story building with blue and white trim, glass doors, a few steps, potted plants. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "경찰관",
       "phone": {
         "app": "none",
@@ -179,7 +179,7 @@
       "hot": [
         "세 아이 아빠"
       ],
-      "image_prompt": "Inside the police box at a desk, the officer unfolding a handwritten letter on lined paper (lines drawn as squiggles, no readable text), his expression turning gentle. The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "Inside the police box at a desk, the officer unfolding a handwritten letter on lined paper (lines drawn as squiggles, no readable text), his expression turning gentle. The officer is always the same Korean police officer in his mid fifties (경찰관: short neat graying hair, kind lined face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "경찰관",
       "phone": {
         "app": "none",
@@ -301,7 +301,7 @@
       "delivery": "[warm, steady]",
       "caption": "어려운 가정에 전달",
       "hot": [],
-      "image_prompt": "At the counter of a Korean community service center, the officer handing the cardboard box to a smiling staff member in a cardigan. The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "At the counter of a Korean community service center, the officer handing the cardboard box to a smiling staff member in a cardigan. The officer is always the same Korean police officer in his mid fifties (경찰관: short neat graying hair, kind lined face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "경찰관",
       "phone": {
         "app": "none",
@@ -345,7 +345,7 @@
       "hot": [
         "과자"
       ],
-      "image_prompt": "The officer opening the box on a desk, his eyebrows lifting: it is packed with many colorful bags of snacks and chips, a case of ramen, and a small stack of pale blue 1000-won notes (plain, no readable print). The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "The officer opening the box on a desk, his eyebrows lifting: it is packed with many colorful bags of snacks and chips, a case of ramen, and a small stack of pale blue 1000-won notes (plain, no readable print). The officer is always the same Korean police officer in his mid fifties (경찰관: short neat graying hair, kind lined face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "경찰관",
       "phone": {
         "app": "none",
@@ -405,7 +405,7 @@
       "delivery": "[slow, hushed]",
       "caption": "편지 끝에 적힌 이유",
       "hot": [],
-      "image_prompt": "The officer at his desk holding the letter close, reading the last lines, his face softening and eyes glistening. The officer is always the same Korean police officer in his thirties (경찰관: short neat black hair, kind round face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "The officer at his desk holding the letter close, reading the last lines, his face softening and eyes glistening. The officer is always the same Korean police officer in his mid fifties (경찰관: short neat graying hair, kind lined face, a light blue Korean police uniform shirt with a navy vest). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "경찰관",
       "phone": {
         "app": "none",
