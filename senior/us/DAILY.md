@@ -57,6 +57,7 @@ push 전에 꼭 `git pull --rebase origin claude/project-thread-loj7pm`.
   링크 https://github.com/walkerwalker9711/nookbrief-images/raw/claude/project-thread-loj7pm/senior/drafts/<오늘>-us-drama/preview.mp4
 
 ## 7. 예약 업로드
+- 업로드 방식은 주인님 선택을 따른다(11-05 카드 "자동 업로드, 보류만 말하기" / "미리보기 보고 올려" / "대본·영상 둘 다 확인"). 선택 전이거나 "올려" 방식이면 미리보기를 보내고 주인님 "올려"를 받은 뒤에만 uploads/request를 push한다.
 - upload.json에 `"publish_at"` = 미국 동부 저녁 7시 = 오늘 09:00 KST(`<오늘 KST 날짜>T00:00:00Z`, 서머타임 기간 3~11월 초엔 08:00 KST `T23:00:00Z` 전날). 그 시각이 이미 지났거나 30분도 안 남았으면 다음 날 같은 시각. tags 확인.
 - `senior/uploads/request`에 폴더 → push. 비공개로 올라가고 그 시각에 자동 공개.
 - upload_result.json 확인 → episodes.csv 오늘 줄(status scheduled) → push.
