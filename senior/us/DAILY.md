@@ -38,6 +38,8 @@ push 전에 꼭 `git pull --rebase origin claude/project-thread-loj7pm`.
 
 - 새 역할 목소리가 필요하면(예: 미국 할머니) 대본 알림에 후보 링크(docs/preview/us/<이름>_N.mp3, Pages)를 같이 올리고, 주인님이 고른 뒤 `audition us save <역할> <번호>` → voices.json us에 저장 → 렌더.
 
+- 11-06 해설 목소리 시험(주인님 OK): 낮은 톤 후보 us_mayor_low 1~4 (docs/preview/us/mayor_low_N.mp3). 주인님이 고르면 `audition us save us_mayor_low <N>` → voices.json us voice_id 교체(옛 id는 old_voice_id로 보관), speed 1.1. 1~3편 = 옛 목소리, 고른 다음 편부터 새 목소리. 3~4편 쌓이면 `us stats`로 평균 시청 유지율을 비교해 주인님께 보고.
+
 ## 4. 렌더 전 점검 (하나라도 걸리면 고치고 다시)
 1. 길이: 1편 기준 초당 14.8자 → 2분 50초(약 2,500자) 이하, 1분 이상.
 2. 숫자는 숫자로 쓴다(자막도 숫자). 단어로 쓴 숫자는 caption_words.
