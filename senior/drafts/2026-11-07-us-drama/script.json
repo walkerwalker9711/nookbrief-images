@@ -1,0 +1,435 @@
+{
+  "pillar": "True story (touching)",
+  "topic": "Vietnam vet Jim Langdon meets the son he thought was in Thailand; he'd been in the US since age 4 (DNA match, Pensacola 2024)",
+  "title": "He Thought His Son Was in Thailand. He'd Been in America All Along #truestory",
+  "mood": "touching",
+  "music": "touching-family",
+  "case_tag": "TRUE STORY · Feb 2024 · Florida",
+  "sources": [
+    {
+      "name": "WEAR / CBS Austin",
+      "url": "https://cbsaustin.com/news/nation-world/vietnam-veterans-emotional-reunion-with-long-lost-son-after-51-years-apart-thailand-ancestry-com-dna-results-pensacola-florida-international-airport"
+    },
+    {
+      "name": "Upworthy",
+      "url": "https://scoop.upworthy.com/veteran-finally-reunites-with-longlost-son-after-half-a-century-of-looking-for-each-other"
+    },
+    {
+      "name": "iHeart / Y102",
+      "url": "https://y102reading.iheart.com/featured/andi-y102/content/2024-02-08-ddg-ancestrycom-leads-vietnam-vet-to-connect-with-son-he-never-met"
+    }
+  ],
+  "description": "#truestory #veteran #reunion\n\n\"He didn't know I spoke English.\"\n\nJim left Thailand in 1972 with his girlfriend pregnant. For 51 years he figured his son was over there somewhere. A DNA test found him, a lot closer than Jim ever guessed.\n\n#mayorofmainst #truestory #dnamatch\n\nSource: WEAR, CBS Austin (Feb 2024)\n\nRetold with AI voice & visuals",
+  "tags": [
+    "true story",
+    "veteran",
+    "Vietnam veteran",
+    "father and son",
+    "DNA test",
+    "reunion",
+    "Mayor of Main St"
+  ],
+  "fact_notes": "WEAR via CBS Austin/The National Desk (2024-02): Milton, Fla.; Vietnam veteran always knew he had a son somewhere in Thailand; mother pregnant when he had to leave once deployment was up; son moved to US at 4, searching for dad all along; Ancestry.com; together Tuesday night for the first time; Jim Langdon paced inside Pensacola International Airport; 51-year-old son; 'She was pregnant when I left in October. He was born in January of 73'; Thai girlfriend Get; 'I was stationed in Thailand in 1971-72... Was with her most of my tour there. We actually had plans to marry, but we waited too late'; lost touch for decades; 'Something I never thought would happen. After so many years, I just thought that there was no way to find my son. Let alone find out he's here in the states and that his mother is still alive'; 'When I called him, he thought I was still in Thailand. He didn't know I spoke English' (John Hermann); moved with mother and American stepfather at 4; pizza night in East Milton with step-mom Cathy; match with his first cousin, Langdon's niece; 'Being around him, it feels like a sense of belonging'; within the last 4 months; one-way ticket from San Diego; 'After 51 years, goodbyes can wait'. Upworthy/iHeart: Air Force in Thailand early 70s; hugged and broke into tears; wife Cathy Langdon; Get living in US since the 70s. Assumed: looks, clothes, the 1977 arrival picture, street-food date picture, who called whom first is reported as John calling Jim.",
+  "characters": [
+    {
+      "id": "Jim",
+      "label": "Jim Langdon · Vietnam vet",
+      "voice": "elder_m",
+      "look": "a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt"
+    },
+    {
+      "id": "John",
+      "label": "John Hermann · 51",
+      "voice": "adult_m",
+      "look": "a Thai-American man aged fifty-one, short black hair with a little gray, warm round face, a light gray quarter-zip pullover over a white T-shirt, a carry-on backpack"
+    },
+    {
+      "id": "Young Jim",
+      "label": "Jim · 1971",
+      "voice": "adult_m2",
+      "look": "the same Jim at about twenty-one in 1971, a lean young U.S. Air Force airman, short brown crew cut, a plain olive-drab utility uniform with no readable name tapes"
+    },
+    {
+      "id": "Get",
+      "label": "Get · 1971",
+      "voice": "adult_f",
+      "look": "a young Thai woman around twenty in 1971, long black hair, a gentle smile, a simple pastel 1970s blouse"
+    },
+    {
+      "id": "Cathy",
+      "label": "Cathy · Jim's wife",
+      "voice": "old_f",
+      "look": "Jim's wife, a white American woman in her early seventies, short silver bob, a coral cardigan"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.0,
+  "caption_words": [],
+  "ko_review": "(see /mnt/project-files/시니어쇼츠/미국_4편_대본_20261107.md)",
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "For 51 years, a Vietnam vet figured his son was somewhere in Thailand. Then the phone rang. It was his son, speaking English.",
+      "delivery": "[quiet, intriguing, warm]",
+      "caption": "51 years apart",
+      "hot": [
+        "speaking English"
+      ],
+      "image_prompt": "Jim sitting in his Florida living room holding a cordless phone to his ear, frozen in surprise, an old faded photo of a young couple on the side table. Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "1971. Jim Langdon is a young airman from Florida, stationed in Thailand during the Vietnam War.",
+      "delivery": "[storytelling, nostalgic]",
+      "caption": "1971, Thailand",
+      "hot": [
+        "Thailand"
+      ],
+      "image_prompt": "A sunny 1971 airbase in Thailand: Young Jim walking past parked gray military transport planes and palm trees, squinting into the sun, no weapons, no combat. Young Jim: the same Jim at about twenty-one in 1971, a lean young U.S. Air Force airman, short brown crew cut, a plain olive-drab utility uniform with no readable name tapes ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Young Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "He meets a young woman named Get. They're together for most of his tour.",
+      "delivery": "[gentle, warm]",
+      "caption": "",
+      "hot": [
+        "Get"
+      ],
+      "image_prompt": "1971 Thailand: Young Jim and Get sitting side by side at a small open-air street-food stall at dusk, laughing, string lights overhead. Young Jim: the same Jim at about twenty-one in 1971, a lean young U.S. Air Force airman, short brown crew cut, a plain olive-drab utility uniform with no readable name tapes Get: a young Thai woman around twenty in 1971, long black hair, a gentle smile, a simple pastel 1970s blouse ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Young Jim,Get",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "We actually had plans to marry, but we waited too late.",
+      "delivery": "[wistful, quiet regret]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Present day: Jim on his front porch in Florida looking at a faded 1970s photo in his hands, eyes heavy. Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jim"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Then his deployment was up, and he had to go home.",
+      "delivery": "[heavy, slow]",
+      "caption": "",
+      "hot": [
+        "go home"
+      ],
+      "image_prompt": "1972: Young Jim at the foot of a military plane's boarding stairs, duffel bag on his shoulder, looking back at Get standing at the fence in the distance, shown from the waist up. Young Jim: the same Jim at about twenty-one in 1971, a lean young U.S. Air Force airman, short brown crew cut, a plain olive-drab utility uniform with no readable name tapes Get: a young Thai woman around twenty in 1971, long black hair, a gentle smile, a simple pastel 1970s blouse ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Young Jim,Get",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "She was pregnant when I left in October. He was born in January of '73.",
+      "delivery": "[soft, choked up]",
+      "caption": "Born Jan 1973",
+      "hot": [],
+      "image_prompt": "Jim at his kitchen table, hands folded, looking down, morning light. Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jim"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "After that, they lost touch. For decades, Jim figured he had a son over there he'd never get to meet.",
+      "delivery": "[tender, low]",
+      "caption": "Decades",
+      "hot": [
+        "never get to meet"
+      ],
+      "image_prompt": "Jim alone on his porch at dusk staring out at a quiet Florida street, an empty rocking chair beside him. Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Then Jim's niece took an Ancestry DNA test. It matched her with a first cousin. A guy named John Hermann.",
+      "delivery": "[building, curious]",
+      "caption": "DNA match",
+      "hot": [
+        "first cousin"
+      ],
+      "image_prompt": "A woman's hands holding a smartphone showing a blank DNA-results screen with an abstract family-tree diagram, no readable text, a cup of coffee beside it.  ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "So John picked up the phone and called his dad for the first time.",
+      "delivery": "[hopeful, building]",
+      "caption": "The first call",
+      "hot": [
+        "first time"
+      ],
+      "image_prompt": "John sitting on the edge of a bed in a San Diego apartment, phone to his ear, nervous smile, palm trees outside the window. John: a Thai-American man aged fifty-one, short black hair with a little gray, warm round face, a light gray quarter-zip pullover over a white T-shirt, a carry-on backpack ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "John",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "twist",
+      "speaker": "host",
+      "line": "When I called him, he thought I was still in Thailand. He didn't know I spoke English.",
+      "delivery": "[laughing through emotion]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of John on the phone, laughing and wiping one eye, warm lamp light. John: a Thai-American man aged fifty-one, short black hair with a little gray, warm round face, a light gray quarter-zip pullover over a white T-shirt, a carry-on backpack ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "John",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "John"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Turns out John had been in America since he was 4. His mom married an American and moved here. And he'd been looking for his dad the whole time.",
+      "delivery": "[revealing, warm]",
+      "caption": "In America since age 4",
+      "hot": [
+        "the whole time"
+      ],
+      "image_prompt": "A 1977 flashback: a four-year-old Thai-American boy holding his young mother Get's hand as they step off a plane onto an American airport tarmac, an American stepfather carrying the suitcases, shown from the waist up. Get in her mid twenties. Get: a young Thai woman around twenty in 1971, long black hair, a gentle smile, a simple pastel 1970s blouse ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Get",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "Something I never thought would happen. After so many years, I just thought there was no way to find my son. Let alone find out he's here in the States, and that his mother is still alive.",
+      "delivery": "[overwhelmed, slow, emotional]",
+      "caption": "His mother's still alive",
+      "hot": [],
+      "image_prompt": "Jim sitting on his couch with the phone on his knee, hand over his mouth, tears in his eyes, Cathy beside him with her hand on his back. Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt Cathy: Jim's wife, a white American woman in her early seventies, short silver bob, a coral cardigan ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Cathy",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jim"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "February 2024. Pensacola International Airport. Jim's pacing the terminal.",
+      "delivery": "[tense, quiet anticipation]",
+      "caption": "Feb 2024, Pensacola",
+      "hot": [
+        "pacing"
+      ],
+      "image_prompt": "Inside a bright small-city airport arrivals area, no signs or logos: Jim pacing near the exit of the arrivals gate, Cathy waiting on a bench behind him. Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt Cathy: Jim's wife, a white American woman in her early seventies, short silver bob, a coral cardigan ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Cathy",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "John flies in from San Diego. They hug, and they both break down.",
+      "delivery": "[moving, swelling]",
+      "caption": "First hug",
+      "hot": [
+        "hug"
+      ],
+      "image_prompt": "At the airport arrivals area: Jim and John locked in a tight hug, both crying, John's backpack slipping off his shoulder, Cathy smiling through tears behind them. Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt John: a Thai-American man aged fifty-one, short black hair with a little gray, warm round face, a light gray quarter-zip pullover over a white T-shirt, a carry-on backpack Cathy: Jim's wife, a white American woman in her early seventies, short silver bob, a coral cardigan ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,John,Cathy",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "A few hours later, they're home in East Milton. Pizza night with his dad and his stepmom, Cathy.",
+      "delivery": "[warm, light]",
+      "caption": "Pizza night",
+      "hot": [
+        "Pizza night"
+      ],
+      "image_prompt": "A cozy Florida kitchen at night: Jim, John and Cathy around the table sharing pizza from a plain cardboard box, old photos spread out between them, everyone laughing. Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt John: a Thai-American man aged fifty-one, short black hair with a little gray, warm round face, a light gray quarter-zip pullover over a white T-shirt, a carry-on backpack Cathy: Jim's wife, a white American woman in her early seventies, short silver bob, a coral cardigan ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,John,Cathy",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "Being around him, it feels like a sense of belonging.",
+      "delivery": "[quiet, sincere]",
+      "caption": "A sense of belonging",
+      "hot": [],
+      "image_prompt": "John on Jim's porch in the evening, Jim's arm around his shoulders, both looking out at the yard, content. John: a Thai-American man aged fifty-one, short black hair with a little gray, warm round face, a light gray quarter-zip pullover over a white T-shirt, a carry-on backpack Jim: a white American Vietnam-era veteran in his mid seventies, short white hair, white mustache, weathered kind face, a plain navy ball cap with no text, a tan button-up shirt ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "John,Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "John"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "One more thing. John only bought a one-way ticket. After 51 years, goodbyes can wait.",
+      "delivery": "[warm, a small smile]",
+      "caption": "One-way ticket",
+      "hot": [
+        "one-way ticket"
+      ],
+      "image_prompt": "A single paper airline boarding pass with no readable text resting on a porch table next to two coffee mugs, warm morning light, nobody in the picture.  ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ]
+}
