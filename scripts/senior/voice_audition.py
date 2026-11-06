@@ -65,6 +65,13 @@ DESIGN = {
                   "talk with attitude, bright youthful voice, natural American English.",
                   "A spirited American teenage girl around seventeen, a firecracker who tells a boy off, crisp and "
                   "fast, clear young voice, playful but annoyed, natural American accent."],
+    # 11-06 owner OK'd a test: a lower, deeper narrator for Mayor of Main St. (read at speed 1.1)
+    "us_mayor_low": ["A deep, low-pitched American man in his early thirties, a rich dark baritone close to bass, calm and "
+                     "warm, telling a true story to a friend over coffee, natural conversational American English, "
+                     "relaxed but engaging, never announcer-like or movie-trailer.",
+                     "A grounded American guy around thirty-three with a very low, smooth, slightly husky voice, a little "
+                     "gravel at the bottom, steady storytelling pace, plain Midwestern accent, sincere and quietly "
+                     "emotional, clearly young but deep."],
     # Mayor ep 3 (11-06): a sharp 73-year-old grandma from Long Island, a retired 911 dispatcher
     "us_old_f": ["A 73-year-old American grandmother from Long Island, New York, a retired 911 dispatcher. Sharp, quick "
                  "and confident with a dry sense of humor, a light Long Island accent, a little raspy with age but full of "
