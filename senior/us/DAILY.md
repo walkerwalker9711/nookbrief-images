@@ -8,7 +8,7 @@ push 전에 꼭 `git pull --rebase origin claude/project-thread-loj7pm`.
 
 ## 0. 시작 점검
 - `git fetch origin claude/project-thread-loj7pm claude/project-thread-9sna6x && git checkout -B claude/project-thread-loj7pm origin/claude/project-thread-loj7pm`
-  그다음 `git merge --no-edit origin/claude/project-thread-9sna6x`(공용 스크립트 고친 것 받기, 충돌 나면 9sna6x 쪽 scripts/를 따른다).
+  그다음 `git merge --no-commit origin/claude/project-thread-9sna6x`(공용 스크립트 받기). senior/*/request, senior/samples/el_request 는 반드시 이 브랜치 것을 유지(`git checkout --ours`)해야 한국 편 업로드·렌더가 다시 돌지 않는다(11-06 한 번 겹쳐 돌았음).
 - `senior/us/episodes.csv` 마지막 줄. 오늘 줄이 이미 있으면 그 편 마무리만.
 - 어제 편이 scheduled인데 `upload_result.json`이 없으면 업로드 실패 → 원인부터.
 - 크레딧: `senior/samples/el_request`에 `music check` push → `senior/samples/music_credits_check.txt`.
