@@ -12,5 +12,6 @@
   ],
   "made_with_ai": true,
   "video": "video.mp4",
-  "status": "draft"
+  "status": "draft",
+  "privacy": "public"
 }
