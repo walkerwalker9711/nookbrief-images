@@ -720,6 +720,11 @@ def drama_image(channel, script, scene, out, folder):
     if refs:
         prompt = (f"{scene['image_prompt']}\n\nThe people, drawn exactly like the reference pictures (same face, hair, "
                   f"clothes, colors), in this order: {' / '.join(looks)}. Style: {style(channel)}")
+    elif scene["image_prompt"].lstrip().lower().startswith("no people"):  # object or place shot: the style text asks for people
+        st = (style(channel).replace(" (American people, small-town American setting)", " (small-town American setting)")
+              .split(" Frame people")[0] + " Calm bottom third. Absolutely no text, letters, numbers or logos.")
+        prompt = (f"{scene['image_prompt']}\n\nAn empty scene: no person, face, hand or silhouette anywhere, not even far "
+                  f"in the background. Style: {st}")
     else:
         prompt = f"{scene['image_prompt']}\n\nAny people are background figures or shadows. Style: {style(channel)}"
     for model in models("OPENAI_IMAGE_MODEL", IMAGE_MODELS):
