@@ -1,0 +1,2 @@
+https://www.heraldk.com/article/2026020302000015126
+error HTTPSConnectionPool(host='www.heraldk.com', port=443): Max retries exceeded with url: /article/2026020302000015126 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.heraldk.com', port=443) at 0x73ae5c074740>, 'Connection to www.heraldk.com timed out. (connect timeout=30)'))
