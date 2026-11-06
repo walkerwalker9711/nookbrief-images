@@ -61,7 +61,7 @@
 
 ## 7. 예약 업로드
 - `senior/uploads/request`에 `senior/drafts/<오늘>-kr-drama` → push. upload.py가 비공개로 올리고 18:00 KST에 자동 공개.
-- upload_result.json(video_id, publish_at) 확인 → episodes.csv에 오늘 줄 추가(status scheduled) → push.
+- upload_result.json(video_id, publish_at) 확인. thumbnail이 "failed 403"이면 같은 폴더로 uploads/request를 한 번 더 push(11-06: 업로드 직후 403, 재시도로 적용됨) → episodes.csv에 오늘 줄 추가(status scheduled) → push.
 
 ## 8. 주인님께 알림 (스레드 한 번)
 - 제목, 장르·사건 종류, 출처, 길이, 미리보기 링크, 썸네일 링크, 공개 시각, 유튜브 주소, 틱톡용 raw 영상 링크
