@@ -47,6 +47,7 @@ push 전에 꼭 `git pull --rebase origin claude/project-thread-loj7pm`.
    같은 편 같은 성별·나이대 둘이면 voice_pitch로 구분. 70~80대 여성 목소리는 아직 없음 → 필요하면 오디션(`audition us old_f`) 후 주인님 선택.
 4. 인물이 나오는 장면은 cast에 모두. 멀리 있는 인물은 "shown from the waist up". 기준 그림과 나이가 다른 회상은 cast 비우고 모습 직접 적기.
 5. Two checks(AI 티, 미국 입말) 통과.
+6. 사람이 없어야 하는 장면(cast 비움)은 image_prompt 맨 앞에 "No people anywhere in the picture."를 쓴다. 끝에만 쓰면 엉뚱한 젊은 남녀가 그려짐(11-06, 11-07 두 번).
 
 ## 5. 렌더
 - `senior/drafts/request`에 `us drama @<오늘> rerender` → push. senior-draft(약 20분).
