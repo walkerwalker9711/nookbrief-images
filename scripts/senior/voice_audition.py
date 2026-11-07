@@ -31,6 +31,12 @@ DESIGN = {
                "An ordinary Korean woman around 72, the kind of grandmother you meet at the market. Plain, homely, "
                "clearly older voice with a mild rasp, firm and stubborn when upset, steady breath, natural standard "
                "Korean, never robotic, never shaky, never theatrical."],
+    # teen_m: a Korean high school boy, 17 (11-08: two students saved a man in his 80s; every saved voice is an adult)
+    "teen_m": ["A Korean high school boy aged 17, a clear light young male voice that has just finished changing, "
+               "polite and a little shy, sincere, speaks naturally in everyday standard Korean, clearly a teenager, "
+               "never deep, never childish.",
+               "An ordinary 17-year-old Korean student from Ulsan, bright and earnest young voice, light baritone-tenor, "
+               "slightly nervous but proud when talking to a reporter, natural Korean, clearly a teenager."],
     # mid_m: a worn-out man in his late 50s (owner 10-30: the 57-year-old sounded like a young man)
     "mid_m": ["A Korean man aged 57, worn out by years of hardship. Low, husky, slightly hoarse middle-aged voice with "
               "audible age and fatigue, speaks slowly and emotionally in natural Korean, never youthful.",
