@@ -23,6 +23,14 @@ DESIGN = {
               "rasp, warm but worried, speaks slowly in natural Korean.",
               "An elderly Korean woman around 80, frail and breathy, a bit hoarse, gentle countryside accent, "
               "talks slowly and hesitantly."],
+    # old_f2: a grandma in her 70s (owner 11-07: the frail, shaky 80s design sounded like "an alien" once v3 acted
+    # it out), so a healthy, steady old voice with no tremble or breathiness asked for
+    "old_f2": ["A Korean grandmother in her early seventies, healthy and lively. Natural warm aged voice, a little low "
+               "and slightly husky, steady and clear, no tremble, no breathiness, speaks at a normal pace in natural "
+               "everyday Korean like a real neighborhood halmeoni.",
+               "An ordinary Korean woman around 72, the kind of grandmother you meet at the market. Plain, homely, "
+               "clearly older voice with a mild rasp, firm and stubborn when upset, steady breath, natural standard "
+               "Korean, never robotic, never shaky, never theatrical."],
     # mid_m: a worn-out man in his late 50s (owner 10-30: the 57-year-old sounded like a young man)
     "mid_m": ["A Korean man aged 57, worn out by years of hardship. Low, husky, slightly hoarse middle-aged voice with "
               "audible age and fatigue, speaks slowly and emotionally in natural Korean, never youthful.",

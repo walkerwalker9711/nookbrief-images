@@ -1,0 +1,487 @@
+{
+  "pillar": "사건 실화",
+  "topic": "SNS로 퇴역 미군을 사칭한 남자에게 속아 2,700만 원을 해외로 보내려던 70대 여성, 은행 직원 신고와 경찰 3시간 설득으로 막은 로맨스스캠",
+  "title": "\"내 남자친구한테 보내겠다는데\" 70대 할머니와 '미군 남자친구'의 정체 #실화",
+  "mood": "alert",
+  "music": "alert-mystery",
+  "case_tag": "실제 사건 재구성 · 2025년 9월 서울 금천구",
+  "sources": [
+    {
+      "name": "트윅",
+      "url": "https://twig24.com/news/world/2025/09/14/20250914500099"
+    },
+    {
+      "name": "데일리안",
+      "url": "https://m.dailian.co.kr/news/view/1548753"
+    }
+  ],
+  "description": "#사건실화 #로맨스스캠 #실제사건\n\n\"내 남자친구한테 내 돈 보내겠다는데, 왜들 그래요?\"\nSNS로만 알던 '미군 남자친구'에게 2,700만 원을 보내려던 70대 할머니.\n\n▶ \"결혼하려고 한국에 가고 싶어요\"로 시작된 메시지\n▶ 택배비·귀국 경비를 달라던 남자\n▶ 은행 직원의 신고, 그리고 3시간의 설득\n\n#한국이장님 #사건실화 #로맨스스캠 #실화재구성\n\n📰 출처: 트윅, 데일리안(2025년 9월)\n※ AI 음성·그림으로 재구성",
+  "tags": [
+    "한국이장님",
+    "사건실화",
+    "로맨스스캠",
+    "사기예방",
+    "실제사건",
+    "어르신"
+  ],
+  "fact_notes": "트윅·데일리안 2025-09-14: 서울경찰청 기동순찰대, 9월 8일 아침 9시쯤 서울 금천구 은행, 해외 송금 시도 여성 사기 의심 은행 직원 신고. 70대 A씨, SNS에서 퇴역 앞둔 미군 사칭범 메시지. '결혼하기 위해 한국에 가고 싶어', '택배 비용과 귀국 경비가 필요하다' 지속 금전 요구. 홀로 거주. 약 2700만원 해외 송금 시도. 은행 직원 수상히 여겨 곧바로 경찰 제보. 기동순찰대 즉시 출동, 전형적 로맨스스캠. A씨 '내 남자 친구에게 내 돈을 보내겠다는데 왜 그러느냐' 피해 인정 못 함. 경찰 약 3시간 로맨스스캠 개념·유사 피해 사례 설명·설득, 피해 막음. 서울청 '외국인 등을 사칭해 친분 및 신뢰를 형성한 후 투자를 유도하거나 배송비 등 대납을 요구하는 사례'. 장면8 은행 직원 질문, 장면9 할머니 답, 장면12·15 경찰 설명은 '수상히 여겼다', '개념과 유사 사례를 설명' 을 말로 옮긴 것. 인물 외모·순찰 경관 수는 그림용 추정.",
+  "characters": [
+    {
+      "id": "할머니",
+      "label": "70대 할머니",
+      "voice": "old_f",
+      "look": "seventies, short permed gray hair, lilac cardigan over a cream blouse, reading glasses on a chain"
+    },
+    {
+      "id": "은행 직원",
+      "label": "은행 직원",
+      "voice": "adult_f",
+      "look": "thirties, hair tied back, navy bank uniform vest over a white blouse"
+    },
+    {
+      "id": "경찰관",
+      "label": "기동순찰대 경찰관",
+      "voice": "adult_m",
+      "look": "late thirties, short black hair, navy police patrol jacket with reflective stripe"
+    },
+    {
+      "id": "사칭범",
+      "label": "미군 사칭범",
+      "voice": "scammer",
+      "look": "only ever a smiling profile photo of a man in a US army uniform on the phone screen"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.1,
+  "caption_words": [
+    {
+      "spoken": "이천칠백만 원",
+      "written": "2,700만 원"
+    },
+    {
+      "spoken": "구월",
+      "written": "9월"
+    },
+    {
+      "spoken": "세 시간",
+      "written": "3시간"
+    },
+    {
+      "spoken": "한 시간, 두 시간",
+      "written": "1시간, 2시간"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "\"내 남자친구한테 내 돈 보내겠다는데, 왜들 그래요?\" 은행에서 70대 할머니가 경찰관에게 한 말입니다. 그 남자친구는, SNS로만 알던 미군이었습니다.",
+      "delivery": "[tense, intriguing]",
+      "caption": "\"내 남자친구한테 보내겠다는데\"",
+      "hot": [
+        "미군이었습니다"
+      ],
+      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The grandmother clutching her handbag and bankbook to her chest, frowning stubbornly at the officer who stands before her with an open hand, the bank teller watching worriedly behind the counter. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). The officer is always the same Korean police officer in his late thirties (경찰관: short black hair, steady kind face, a navy Korean police patrol jacket with a reflective stripe). The bank teller is always the same Korean woman in her thirties (은행 직원: hair tied back neatly, calm attentive face, a navy bank uniform vest over a white blouse, a name badge with no text). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니,경찰관,은행 직원",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "작년 구월, 서울 금천구. 홀로 사는 70대 할머니에게, SNS 메시지 하나가 날아왔습니다.",
+      "delivery": "[calm, ominous]",
+      "caption": "2025년 9월, 서울 금천구",
+      "hot": [
+        "홀로 사는"
+      ],
+      "image_prompt": "A small tidy one-room apartment where she lives alone: a low table, a TV, framed family photos, morning light through lace curtains. The grandmother sitting alone at the low table, peering at her smartphone through her reading glasses as it lights up with a new message. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "scammer",
+      "line": "저는 곧 퇴역하는 미군입니다. 당신과 결혼하기 위해, 한국에 가고 싶어요.",
+      "delivery": "[sweet, smooth, warm]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "A smartphone screen held in the grandmother's hand showing a chat with a profile photo of a smiling man in a US army uniform (drawn plain, no badges with text), message bubbles drawn as blank shapes. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "sms",
+        "sender": "미군 남자친구",
+        "time": "",
+        "messages": [
+          {
+            "text": "곧 퇴역하는 미군입니다",
+            "me": false
+          },
+          {
+            "text": "결혼하기 위해 한국에 가고 싶어요",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사칭범"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "다정한 메시지는 날마다 이어졌습니다. 그렇게 할머니는, 그를 남자친구라고 믿게 됐습니다.",
+      "delivery": "[soft, uneasy]",
+      "caption": "날마다 이어진 메시지",
+      "hot": [
+        "남자친구"
+      ],
+      "image_prompt": "Evening in the grandmother's room, she smiles shyly at her phone, a cup of tea beside her, the TV off; warm lamp light but a faint shadowy feeling. A small tidy one-room apartment where she lives alone: a low table, a TV, framed family photos, morning light through lace curtains. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "scammer",
+      "line": "한국으로 보낼 짐 택배 비용이랑, 귀국 경비가 필요해요. 조금만 도와줘요.",
+      "delivery": "[pleading, sweet but pushy]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close view of the smartphone in the grandmother's hand, a new chat bubble arriving under the uniformed profile photo, her thumb hesitating above the screen. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "sms",
+        "sender": "미군 남자친구",
+        "time": "",
+        "messages": [
+          {
+            "text": "택배 비용이랑 귀국 경비가 필요해요",
+            "me": false
+          },
+          {
+            "text": "조금만 도와줘요",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사칭범"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "돈 얘기는 한 번으로 끝나지 않았습니다. 그때마다 할머니는, 그를 돕고 싶었습니다.",
+      "delivery": "[slow, ominous]",
+      "caption": "끝나지 않은 돈 얘기",
+      "hot": [],
+      "image_prompt": "A small tidy one-room apartment where she lives alone: a low table, a TV, framed family photos, morning light through lace curtains. The grandmother at the low table counting through her bankbooks with a worried but determined face, the phone face-up beside her glowing. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "결국 할머니는 아침 일찍 은행으로 향했습니다. 해외로 보낼 돈은, 약 이천칠백만 원이었습니다.",
+      "delivery": "[tense, building]",
+      "caption": "해외 송금 2,700만 원",
+      "hot": [
+        "이천칠백만 원"
+      ],
+      "image_prompt": "Early morning on a Seoul street, the grandmother walking briskly toward a bank entrance holding her handbag tight, determined. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "고객님, 해외로 큰돈을 보내시네요. 받으시는 분이 어떤 분이세요?",
+      "delivery": "[polite, careful]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The bank teller behind the counter looking up from the remittance form with a careful, polite expression, the grandmother seated across. The bank teller is always the same Korean woman in her thirties (은행 직원: hair tied back neatly, calm attentive face, a navy bank uniform vest over a white blouse, a name badge with no text). The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "은행 직원,할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "은행 직원"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "우리 남자친구예요. 한국에 오려면 돈이 필요하대서.",
+      "delivery": "[shy, proud, a little defensive]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The grandmother at the counter answering with a shy, slightly proud smile, hands folded over her handbag. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할머니"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "이상한 낌새를 느낀 은행 직원은, 곧바로 경찰에 신고했습니다.",
+      "delivery": "[tense, quick]",
+      "caption": "곧바로 경찰에 신고",
+      "hot": [],
+      "image_prompt": "Only ONE person in the picture: the bank teller alone at a back desk, nobody else. Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The bank teller quietly pressing a phone to her ear at a back desk glancing sideways toward the counter, serious. The bank teller is always the same Korean woman in her thirties (은행 직원: hair tied back neatly, calm attentive face, a navy bank uniform vest over a white blouse, a name badge with no text). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "은행 직원",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "근처를 순찰하던 서울경찰청 기동순찰대가 바로 은행으로 달려왔습니다.",
+      "delivery": "[urgent]",
+      "caption": "출동한 기동순찰대",
+      "hot": [],
+      "image_prompt": "Two Korean police officers on foot patrol hurrying through the glass doors of the bank branch, the lead officer in front. The officer is always the same Korean police officer in his late thirties (경찰관: short black hair, steady kind face, a navy Korean police patrol jacket with a reflective stripe). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "선생님, 이건 로맨스 스캠이라는 사기입니다. 사랑하는 척하면서 돈을 받아 가는 수법이에요.",
+      "delivery": "[respectful, calm, firm]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The officer crouching respectfully beside the grandmother's chair to meet her eyes, speaking gently, one hand open in explanation. The officer is always the same Korean police officer in his late thirties (경찰관: short black hair, steady kind face, a navy Korean police patrol jacket with a reflective stripe). The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "내 남자친구한테 내 돈 보내겠다는데, 왜들 그래요?",
+      "delivery": "[upset, stubborn, raising voice]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The grandmother pulling her phone and bankbook close to her chest, turning away from the officer, eyes wet and angry. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). The officer is always the same Korean police officer in his late thirties (경찰관: short black hair, steady kind face, a navy Korean police patrol jacket with a reflective stripe). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할머니"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "할머니는 속았다는 사실을 좀처럼 믿지 않았습니다. 경찰관은 비슷한 피해 사례를 하나씩 보여 드리며, 설득을 이어 갔습니다.",
+      "delivery": "[patient, steady]",
+      "caption": "좀처럼 믿지 않은 할머니",
+      "hot": [],
+      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The officer seated beside the grandmother in the waiting area, holding his own phone so she can see it, patiently explaining; the grandmother listening reluctantly with her arms folded. The officer is always the same Korean police officer in his late thirties (경찰관: short black hair, steady kind face, a navy Korean police patrol jacket with a reflective stripe). The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "결혼하자면서 택배비, 귀국 경비를 먼저 달라고 하는 게, 이 사기범들 수법 그대로입니다.",
+      "delivery": "[gentle, earnest]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close view of the officer's face, earnest and kind, speaking softly. The officer is always the same Korean police officer in his late thirties (경찰관: short black hair, steady kind face, a navy Korean police patrol jacket with a reflective stripe). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "한 시간, 두 시간. 그렇게 설득은 세 시간 가까이 이어졌습니다.",
+      "delivery": "[slow, building]",
+      "caption": "설득만 3시간",
+      "hot": [
+        "세 시간"
+      ],
+      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The wall clock hands moving past noon, the officer and the grandmother still seated together in the emptying waiting area, afternoon light now slanting in. ONE single full-frame picture, not a grid. The officer is always the same Korean police officer in his late thirties (경찰관: short black hair, steady kind face, a navy Korean police patrol jacket with a reflective stripe). The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "결국 할머니는, 돈을 보내지 않았습니다. 이천칠백만 원은, 그대로 할머니 통장에 남았습니다.",
+      "delivery": "[relieved, warm]",
+      "caption": "2,700만 원, 그대로",
+      "hot": [
+        "그대로"
+      ],
+      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The grandmother slowly putting her bankbook back into her handbag, tired but calmer, the officer and the bank teller nearby with relieved faces. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). The officer is always the same Korean police officer in his late thirties (경찰관: short black hair, steady kind face, a navy Korean police patrol jacket with a reflective stripe). The bank teller is always the same Korean woman in her thirties (은행 직원: hair tied back neatly, calm attentive face, a navy bank uniform vest over a white blouse, a name badge with no text). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니,경찰관,은행 직원",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "경찰은 외국인을 사칭해 친분을 쌓은 뒤, 배송비 같은 돈을 대신 내 달라고 하는 사례가 있다며 주의를 당부했습니다.",
+      "delivery": "[calm, serious]",
+      "caption": "배송비 대납 요구 = 사기",
+      "hot": [],
+      "image_prompt": "The grandmother back home at her low table, looking at her phone screen with a thoughtful, sobered expression, the uniformed profile photo dimmed on the screen. A small tidy one-room apartment where she lives alone: a low table, a TV, framed family photos, morning light through lace curtains. The grandmother is always the same Korean woman in her seventies who lives alone (할머니: short permed gray hair, round soft face, a lilac cardigan over a cream blouse, reading glasses on a chain). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할머니",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "결혼하자며 돈부터 꺼내는 사람. 그건 사랑이 아니라, 사기입니다.",
+      "delivery": "[firm, resonant]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "NO PEOPLE anywhere in the picture, no hands, only objects. A smartphone lying face-down on a low wooden table in soft morning light through lace curtains, a teacup beside it, a small tidy room behind. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "ko_review": "내레이션: \"내 남자친구한테 내 돈 보내겠다는데, 왜들 그래요?\" 은행에서 70대 할머니가 경찰관에게 한 말입니다. 그 남자친구는, SNS로만 알던 미군이었습니다.\n내레이션: 작년 구월, 서울 금천구. 홀로 사는 70대 할머니에게, SNS 메시지 하나가 날아왔습니다.\n사칭범: 저는 곧 퇴역하는 미군입니다. 당신과 결혼하기 위해, 한국에 가고 싶어요.\n내레이션: 다정한 메시지는 날마다 이어졌습니다. 그렇게 할머니는, 그를 남자친구라고 믿게 됐습니다.\n사칭범: 한국으로 보낼 짐 택배 비용이랑, 귀국 경비가 필요해요. 조금만 도와줘요.\n내레이션: 돈 얘기는 한 번으로 끝나지 않았습니다. 그때마다 할머니는, 그를 돕고 싶었습니다.\n내레이션: 결국 할머니는 아침 일찍 은행으로 향했습니다. 해외로 보낼 돈은, 약 이천칠백만 원이었습니다.\n은행 직원: 고객님, 해외로 큰돈을 보내시네요. 받으시는 분이 어떤 분이세요?\n할머니: 우리 남자친구예요. 한국에 오려면 돈이 필요하대서.\n내레이션: 이상한 낌새를 느낀 은행 직원은, 곧바로 경찰에 신고했습니다.\n내레이션: 근처를 순찰하던 서울경찰청 기동순찰대가 바로 은행으로 달려왔습니다.\n경찰관: 선생님, 이건 로맨스 스캠이라는 사기입니다. 사랑하는 척하면서 돈을 받아 가는 수법이에요.\n할머니: 내 남자친구한테 내 돈 보내겠다는데, 왜들 그래요?\n내레이션: 할머니는 속았다는 사실을 좀처럼 믿지 않았습니다. 경찰관은 비슷한 피해 사례를 하나씩 보여 드리며, 설득을 이어 갔습니다.\n경찰관: 결혼하자면서 택배비, 귀국 경비를 먼저 달라고 하는 게, 이 사기범들 수법 그대로입니다.\n내레이션: 한 시간, 두 시간. 그렇게 설득은 세 시간 가까이 이어졌습니다.\n내레이션: 결국 할머니는, 돈을 보내지 않았습니다. 이천칠백만 원은, 그대로 할머니 통장에 남았습니다.\n내레이션: 경찰은 외국인을 사칭해 친분을 쌓은 뒤, 배송비 같은 돈을 대신 내 달라고 하는 사례가 있다며 주의를 당부했습니다.\n내레이션: 결혼하자며 돈부터 꺼내는 사람. 그건 사랑이 아니라, 사기입니다."
+}
