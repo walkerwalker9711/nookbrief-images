@@ -1,0 +1,483 @@
+{
+ "pillar": "True story (touching)",
+ "topic": "Iowa carpenter Dale Schroeder, two pairs of jeans, left almost $3M that sent 33 small-town kids to college (KCCI/CBS 2019)",
+ "title": "He Owned 2 Pairs of Jeans. He Sent 33 Strangers to College #truestory",
+ "mood": "touching",
+ "music": "touching-hope",
+ "case_tag": "TRUE STORY · July 2019 · Iowa",
+ "sources": [
+  {
+   "name": "KCCI via ABC7",
+   "url": "https://abc7.com/education/carpenter-leaves-life-changing-gift-for-33-poor-hardworking-students/5403273/"
+  },
+  {
+   "name": "FOX 32 Chicago",
+   "url": "https://www.fox32chicago.com/news/man-leaves-3m-fortune-after-death-to-put-33-people-he-didnt-know-through-college"
+  },
+  {
+   "name": "Upworthy (CBS News quotes)",
+   "url": "https://www.upworthy.com/dale-schroeder-college-tuition-iowa"
+  }
+ ],
+ "description": "#truestory #iowa #carpenter\n\n\"How much are we talking about, Dale?\"\n\nDale Schroeder was a carpenter in Iowa who owned two pairs of jeans and a rusty Chevy. When he died, his lawyer found out what he'd saved. It sent 33 small-town kids to college, debt-free.\n\n#mayorofmainst #truestory #payitforward\n\nSource: KCCI, CBS News, FOX 32 (July 2019)\n\nRetold with AI voice & visuals",
+ "tags": [
+  "true story",
+  "pay it forward",
+  "Dale Schroeder",
+  "Iowa",
+  "college scholarship",
+  "Dale's Kids",
+  "Mayor of Main St"
+ ],
+ "fact_notes": "KCCI via ABC7 (2019-07-18): Iowa carpenter, two pair of jeans (work jeans, church jeans), old rusty Chevrolet truck, 33 strangers to college; grew up poor, never went to college, never married, same business 67 years; Steve Nielsen friend: 'He was that kind of a blue-collar, lunch pail kind of a guy. Went to work every day, worked really hard, was frugal like a lot of Iowans.'; died 2005, no descendants; 'He wanted to help kids that were like him that probably wouldn't have an opportunity to go to college but for his gift'; almost $3 million; 33 people free; got together 14 years after his death around his old lunch box; Kira Conard 'Dale's Kids', at her high school graduation party preparing to tell friends she wouldn't go to college, had the grades not the money, phone rang, 'I broke down into tears immediately'; 'All we ask is that you pay it forward... You can't pay it back, because Dale's gone, but you can remember him, and you can emulate him.' FOX 32: friend and lawyer Stephen Nielsen; grew up in the Depression, father abandoned family at an early age; worked until 82, died at 86; full ride tuition, books, fees, room and board; committee sent gas money to students who couldn't afford to get to interviews. Upworthy (CBS News quotes): carpenter from Ames; 'Finally, I was curious and I said, How much are we talking about, Dale? And he said, Oh, just shy of $3 million. I nearly fell out of my chair'; Kira: 'For a man that would never meet me, to give me basically a full ride to college, that's incredible. That doesn't happen.' Assumed: looks, clothes, the law office, the car at the gas station, the group photo, the 2019 gathering picture.",
+ "characters": [
+  {
+   "id": "Dale",
+   "label": "Dale Schroeder · carpenter",
+   "voice": "elder_m",
+   "look": "a white Iowa carpenter in his early eighties, thin, wispy white hair, weathered face and big work-rough hands, a faded red flannel shirt and worn blue work jeans"
+  },
+  {
+   "id": "Steve",
+   "label": "Steve Nielsen · Dale's lawyer",
+   "voice": "adult_m",
+   "look": "a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt"
+  },
+  {
+   "id": "Kira",
+   "label": "Kira Conard · one of Dale's Kids",
+   "voice": "adult_f",
+   "look": "a white Iowa teenage girl about eighteen, long light-brown hair, freckles, a simple blue sundress"
+  }
+ ],
+ "format": "drama",
+ "voice_tempo": 1.0,
+ "caption_words": [],
+ "ko_review": "(see /mnt/project-files/시니어쇼츠/미국_5편_대본_20261108.md)",
+ "scenes": [
+  {
+   "kind": "hook",
+   "speaker": "host",
+   "line": "This guy owned two pairs of jeans. One for work, one for church. Nobody knew he was sitting on almost $3 million.",
+   "delivery": "[quiet, intriguing, warm]",
+   "caption": "Almost $3 million",
+   "hot": [
+    "$3 million"
+   ],
+   "image_prompt": "Dale standing beside an old rusty red Chevy pickup truck in a small Iowa town at dusk, lunch box in one hand, plain and humble. Dale: a white Iowa carpenter in his early eighties, thin, wispy white hair, weathered face and big work-rough hands, a faded red flannel shirt and worn blue work jeans, shown from the waist up. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Dale",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Dale Schroeder grew up poor in Iowa during the Depression. His dad left the family early on.",
+   "delivery": "[storytelling, low]",
+   "caption": "Iowa, 1930s",
+   "hot": [
+    "Depression"
+   ],
+   "image_prompt": "1930s Great Depression flashback: a skinny eight-year-old Iowa farm boy in patched overalls standing alone on a dirt road in front of a weathered farmhouse, looking down the empty road, gray sky, sepia-muted colors. Only this one child in the picture. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "No college. He went to work as a carpenter. Same company, 67 years.",
+   "delivery": "[steady, matter-of-fact]",
+   "caption": "67 years",
+   "hot": [
+    "67 years"
+   ],
+   "image_prompt": "Dale in a wood shop planing a board at a workbench, sawdust in the warm window light, focused. Dale: a white Iowa carpenter in his early eighties, thin, wispy white hair, weathered face and big work-rough hands, a faded red flannel shirt and worn blue work jeans. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Dale",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Never married. No kids. Drove a rusty old Chevy.",
+   "delivery": "[warm, a little dry]",
+   "caption": "",
+   "hot": [
+    "rusty old Chevy"
+   ],
+   "image_prompt": "Dale sitting on the tailgate of his rusty red Chevy pickup at a job site, eating from an old dented metal lunch box, alone and content. Dale: a white Iowa carpenter in his early eighties, thin, wispy white hair, weathered face and big work-rough hands, a faded red flannel shirt and worn blue work jeans. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Dale",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "He was that kind of a blue-collar, lunch pail kind of a guy. Went to work every day, worked really hard, was frugal like a lot of Iowans.",
+   "delivery": "[fond, folksy]",
+   "caption": "Blue-collar guy",
+   "hot": [],
+   "image_prompt": "Present day: Steve in his small-town law office, leaning back in his chair, smiling as he remembers, bookshelves behind him. Steve: a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Steve",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Steve"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Before he died, Dale went to see his friend and lawyer, Steve Nielsen. He wanted to talk about his money.",
+   "delivery": "[building, curious]",
+   "caption": "",
+   "hot": [
+    "his money"
+   ],
+   "image_prompt": "Early 2000s: Dale sitting across a wooden desk from Steve in a small law office, cap in his hands, serious. Dale: a white Iowa carpenter in his early eighties, thin, wispy white hair, weathered face and big work-rough hands, a faded red flannel shirt and worn blue work jeans. Steve: a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Dale,Steve",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "Finally, I was curious and I said, 'How much are we talking about, Dale?'",
+   "delivery": "[curious, leaning in]",
+   "caption": "",
+   "hot": [],
+   "image_prompt": "Steve leaning forward over his desk with a pen and a legal pad, eyebrows raised, asking a question. Steve: a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Steve",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Steve"
+  },
+  {
+   "kind": "twist",
+   "speaker": "host",
+   "line": "Oh, just shy of $3 million.",
+   "delivery": "[casual, plain, like it's nothing]",
+   "caption": "Just shy of $3 million",
+   "hot": [],
+   "image_prompt": "Close-up of Dale shrugging slightly with a calm, plain expression, sitting in a law office chair. Dale: a white Iowa carpenter in his early eighties, thin, wispy white hair, weathered face and big work-rough hands, a faded red flannel shirt and worn blue work jeans. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Dale",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Dale"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "I nearly fell out of my chair.",
+   "delivery": "[laughing, still amazed]",
+   "caption": "",
+   "hot": [],
+   "image_prompt": "Steve jolting back in his office chair, eyes wide, pen dropping from his hand, comic shock. Steve: a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Steve",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Steve"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "He wanted to help kids that were like him, that probably wouldn't have an opportunity to go to college but for his gift.",
+   "delivery": "[sincere, slow]",
+   "caption": "Kids like him",
+   "hot": [],
+   "image_prompt": "Present day: Steve looking out his office window at a small Iowa main street, thoughtful. Steve: a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Steve",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Steve"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Dale died in 2005. He was 86. His money went into a scholarship for small-town Iowa kids. A full ride. Tuition, books, room and board.",
+   "delivery": "[warm, building]",
+   "caption": "Full ride",
+   "hot": [
+    "Full ride"
+   ],
+   "image_prompt": "No people anywhere in the picture, an empty wood shop. An old dented metal lunch box and a folded pair of worn work jeans resting on a carpenter's workbench, soft morning light through a dusty window, quiet and peaceful. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Some kids were so broke, the committee sent them gas money just to make it to the interview.",
+   "delivery": "[gentle, a small smile]",
+   "caption": "Gas money",
+   "hot": [
+    "gas money"
+   ],
+   "image_prompt": "No people anywhere in the picture. An old beat-up compact car parked alone at a small rural Iowa gas station at sunrise, cornfields behind it, an envelope resting on the dashboard seen through the windshield. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Kira Conard had the grades. Not the money. At her own graduation party, she was about to tell everybody she wasn't going to college.",
+   "delivery": "[soft, heavy]",
+   "caption": "",
+   "hot": [
+    "wasn't going"
+   ],
+   "image_prompt": "A backyard high school graduation party in small-town Iowa, balloons and a folding table behind her: Kira standing apart from the crowd, forcing a smile, sad eyes. Kira: a white Iowa teenage girl about eighteen, long light-brown hair, freckles, a simple blue sundress, shown from the waist up. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Kira",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Then her phone rang.",
+   "delivery": "[hushed, a beat]",
+   "caption": "Then the phone rang",
+   "hot": [
+    "phone"
+   ],
+   "image_prompt": "Kira at the graduation party looking down at her ringing smartphone with a blank screen, surprised. Kira: a white Iowa teenage girl about eighteen, long light-brown hair, freckles, a simple blue sundress. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Kira",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "I broke down into tears immediately.",
+   "delivery": "[emotional, voice breaking]",
+   "caption": "",
+   "hot": [],
+   "image_prompt": "Close-up of Kira with the phone at her ear, hand over her mouth, tears streaming, at the party. Kira: a white Iowa teenage girl about eighteen, long light-brown hair, freckles, a simple blue sundress. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Kira",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Kira"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "For a man that would never meet me, to give me basically a full ride to college, that's incredible. That doesn't happen.",
+   "delivery": "[amazed, sincere]",
+   "caption": "That doesn't happen",
+   "hot": [],
+   "image_prompt": "Kira a few years later on a college campus lawn in autumn, holding books to her chest, smiling through happy tears. Kira: a white Iowa teenage girl about eighteen, long light-brown hair, freckles, a simple blue sundress. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Kira",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Kira"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Over 14 years, Dale's money put 33 kids through college. No debt. They call themselves Dale's Kids.",
+   "delivery": "[proud, swelling]",
+   "caption": "Dale's Kids",
+   "hot": [
+    "33"
+   ],
+   "image_prompt": "A group of about thirty young adults in their twenties and thirties posing together on the steps of a small Iowa building, smiling, Steve standing at the front. Steve: a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt, shown from the waist up. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Steve",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "In 2019, they all got together around one thing. Dale's old lunch box.",
+   "delivery": "[tender, quiet]",
+   "caption": "Dale's lunch box",
+   "hot": [
+    "lunch box"
+   ],
+   "image_prompt": "Indoors: Kira, Steve and a few other young adults gathered around a table, looking at an old dented metal lunch box sitting in the middle, moved. Kira: a white Iowa teenage girl about eighteen, long light-brown hair, freckles, a simple blue sundress, now in her early twenties in a cream sweater. Steve: a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Kira,Steve",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "All we ask is that you pay it forward. You can't pay it back, because Dale's gone, but you can remember him, and you can emulate him.",
+   "delivery": "[warm, firm, emotional]",
+   "caption": "Pay it forward",
+   "hot": [],
+   "image_prompt": "Steve standing at the head of the table speaking to the group, hand resting on the old lunch box. Steve: a white American small-town lawyer in his sixties, short gray hair, wire-rim glasses, a navy blazer over an open-collar light blue shirt. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Steve",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Steve"
+  },
+  {
+   "kind": "outro",
+   "speaker": "host",
+   "line": "Not bad for a guy with two pairs of jeans.",
+   "delivery": "[warm, a small smile]",
+   "caption": "Two pairs of jeans",
+   "hot": [
+    "two pairs of jeans"
+   ],
+   "image_prompt": "No people anywhere in the picture, an empty gravel driveway. An old rusty red Chevy pickup truck parked at golden hour in front of a small Iowa house, an old metal lunch box on the hood, peaceful. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  }
+ ]
+}
