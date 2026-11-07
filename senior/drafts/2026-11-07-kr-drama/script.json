@@ -285,7 +285,7 @@
       "delivery": "[tense, quick]",
       "caption": "곧바로 경찰에 신고",
       "hot": [],
-      "image_prompt": "Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The bank teller quietly pressing a phone to her ear at a back desk, glancing toward the grandmother, serious. The bank teller is always the same Korean woman in her thirties (은행 직원: hair tied back neatly, calm attentive face, a navy bank uniform vest over a white blouse, a name badge with no text). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "Only ONE person in the picture: the bank teller alone at a back desk, nobody else. Inside a small Korean bank branch in Seoul Geumcheon-gu on a weekday morning: counters with glass partitions, a waiting area with gray chairs, potted plants. The bank teller quietly pressing a phone to her ear at a back desk glancing sideways toward the counter, serious. The bank teller is always the same Korean woman in her thirties (은행 직원: hair tied back neatly, calm attentive face, a navy bank uniform vest over a white blouse, a name badge with no text). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "은행 직원",
       "phone": {
         "app": "none",
@@ -469,7 +469,7 @@
       "delivery": "[firm, resonant]",
       "caption": "",
       "hot": [],
-      "image_prompt": "The smartphone lying face-down on the low table in morning light, the grandmother's hand resting gently beside it. A small tidy one-room apartment where she lives alone: a low table, a TV, framed family photos, morning light through lace curtains. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "image_prompt": "NO PEOPLE anywhere in the picture, no hands, only objects. A smartphone lying face-down on a low wooden table in soft morning light through lace curtains, a teacup beside it, a small tidy room behind. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
       "cast": "",
       "phone": {
         "app": "none",
