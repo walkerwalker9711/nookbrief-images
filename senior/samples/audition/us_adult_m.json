@@ -1,0 +1,35 @@
+[
+  {
+    "n": 1,
+    "name": "designed 1",
+    "source": "voice design (unsaved)",
+    "voice_id": null,
+    "generated_voice_id": "Z0Lj6Eg11SvsiptW8a9q",
+    "about": "An American man around sixty from Indiana, friendly everyday Midwestern voice, warm and sincere, medium-low pitch with a bit of gravel, natural conversational American English, not a narrator."
+  },
+  {
+    "n": 2,
+    "name": "designed 2",
+    "source": "voice design (unsaved)",
+    "voice_id": null,
+    "generated_voice_id": "6CvF2qHLMCS3NEZHMUGD",
+    "about": "An American man around sixty from Indiana, friendly everyday Midwestern voice, warm and sincere, medium-low pitch with a bit of gravel, natural conversational American English, not a narrator."
+  },
+  {
+    "n": 3,
+    "name": "designed 3",
+    "source": "voice design (unsaved)",
+    "voice_id": null,
+    "generated_voice_id": "NVtQlVkE69FZqtsQLVmQ",
+    "about": "A regular guy in his early sixties from the Indianapolis suburbs, easygoing and kind, a little choked up, plain Midwestern accent, relaxed conversational pace.",
+    "saved_voice_id": "NVtQlVkE69FZqtsQLVmQ"
+  },
+  {
+    "n": 4,
+    "name": "designed 4",
+    "source": "voice design (unsaved)",
+    "voice_id": null,
+    "generated_voice_id": "me7N43Hn8EOcNCxoqSOw",
+    "about": "A regular guy in his early sixties from the Indianapolis suburbs, easygoing and kind, a little choked up, plain Midwestern accent, relaxed conversational pace."
+  }
+]

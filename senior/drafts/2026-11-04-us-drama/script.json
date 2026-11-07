@@ -1,0 +1,489 @@
+{
+  "pillar": "True story (touching)",
+  "topic": "An Indiana man skipped the All-Star Game to share a widower's birthday cake for his late wife",
+  "title": "He Skipped the All-Star Game for a Widower He'd Just Met #truestory",
+  "mood": "touching",
+  "music": "touching-guitar",
+  "case_tag": "TRUE STORY · July 2018 · Indiana",
+  "sources": [
+    {
+      "name": "FOX 13",
+      "url": "https://www.fox13news.com/news/stranger-joins-widower-to-celebrate-late-wifes-birthday-after-meeting-in-grocery-store"
+    },
+    {
+      "name": "CBS News",
+      "url": "https://www.cbsnews.com/news/gregory-johnson-joins-elderly-widower-celebrating-birthday-late-wife-kroger-supermarket-greenwood-indiana/"
+    }
+  ],
+  "description": "#truestory #kindness #widower\n\n\"Looks like you've got a big night planned.\"\n\nA dozen roses, a birthday cake, and a man in a wheelchair at the deli. His wife passed five years ago, and he still buys her a cake every birthday. A stranger skipped the All-Star Game to sit at his table.\n\n#mayorofmainst #truestory #kindness\n\nSource: FOX 13, CBS News (July 2018), Gregory Johnson's Facebook post\n\nRetold with AI voice & visuals",
+  "tags": [
+    "true story",
+    "kindness",
+    "widower",
+    "heartwarming",
+    "Pops Knows",
+    "All-Star Game"
+  ],
+  "fact_notes": "FOX 13 (2018-07): Gregory Johnson, Kroger (Indianapolis area; CBS: Greenwood, Ind.), Tuesday of MLB All-Star Game (2018-07-17), teriyaki chicken breast, deli line, older man Jim in wheelchair, dozen roses + birthday cake, 'It looks like you've got a big night planned', 'saddest eyes', wife died 5 years ago, roses+cake every birthday; met Gloria in high school, he star basketball player, she cheerleader at rival school, his team beat hers in semi-finals, friend introduced, asked her to come back next night, her quote 'Furthermore, I don't even know you and I have much better things to do tomorrow night than watch your high school play again', stormed out with friends, next night sectional championship win, she showed up, stuck around to congratulate, together ever since; first house, children; loved her as much the day she passed as the day they married; about an hour; 'no way I was cutting this visit short over a silly baseball game. Jim needed a friend to talk to'; manager photographs Jim yearly for bulletin board, noticed him more cheerful, second photo with Gregory; Jim asked if he lived nearby and could stop by home for cake; 'I'd be honored to sit at his table and have a piece of cake with him in remembrance of his wife'; missed the game, 'there will always be another one'; 'Hopefully, I made that little old man's night a tad bit better, because he certainly made mine one of the best'. Assumed (not reported): Jim's age (mid 80s from 'little old man'), 1950s era of flashback, clothes, Gregory's look, kitchen/porch scenes drawn as the visit he agreed to.",
+  "characters": [
+    {
+      "id": "Jim",
+      "label": "Jim · widower",
+      "voice": "elder_m",
+      "look": "a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair"
+    },
+    {
+      "id": "Gregory",
+      "label": "Gregory Johnson",
+      "voice": "adult_m",
+      "look": "an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening)"
+    },
+    {
+      "id": "Young Jim",
+      "label": "Jim · high school",
+      "voice": "adult_m2",
+      "look": "the same Jim as a tall seventeen-year-old in the 1950s, short dark hair, a white and maroon high school basketball uniform"
+    },
+    {
+      "id": "Gloria",
+      "label": "Gloria · high school",
+      "voice": "adult_f",
+      "look": "a seventeen-year-old American girl in the 1950s, brown ponytail with a ribbon, bright fiery eyes, a navy and gold cheerleader sweater and pleated skirt (rival school colors)"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.0,
+  "caption_words": [
+    {
+      "spoken": "five",
+      "written": "5"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "He skipped the All-Star Game to have birthday cake with a total stranger.",
+      "delivery": "[warm, intriguing, unhurried]",
+      "caption": "Skipped the All-Star Game",
+      "hot": [
+        "total stranger"
+      ],
+      "image_prompt": "Evening in a small cozy Indiana kitchen: Gregory and Jim sitting together at a kitchen table with a birthday cake and a vase of a dozen red roses, Jim smiling softly, Gregory leaning in. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "July 2018. A grocery store just outside Indianapolis. Gregory Johnson ran in to grab some teriyaki chicken. In and out. The All-Star Game was on that night.",
+      "delivery": "[easy, storytelling]",
+      "caption": "July 2018, Indiana",
+      "hot": [
+        "All-Star Game"
+      ],
+      "image_prompt": "Gregory walking briskly into a bright suburban American grocery store deli counter in July, glass deli case, other shoppers in the background, no signs or logos, glancing at his wristwatch, a summer evening outside the windows. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Waiting at the deli was an older guy in a wheelchair named Jim. His cart had a dozen red roses and a birthday cake.",
+      "delivery": "[gentle, noticing]",
+      "caption": "12 roses, 1 cake",
+      "hot": [
+        "red roses"
+      ],
+      "image_prompt": "At a bright suburban American grocery store deli counter in July, glass deli case, other shoppers in the background, no signs or logos: Jim in his wheelchair beside a shopping cart holding a dozen red roses wrapped in paper and a white frosted birthday cake in a clear box; Gregory standing in line behind him, noticing. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "Looks like you've got a big night planned.",
+      "delivery": "[friendly, light, small talk]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Gregory smiling down at Jim at the deli counter, gesturing kindly at the roses and cake in the cart. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gregory,Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Gregory"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Jim looked up. Gregory said they were the saddest eyes he'd ever seen.",
+      "delivery": "[quiet, heavy]",
+      "caption": "The saddest eyes",
+      "hot": [
+        "saddest eyes"
+      ],
+      "image_prompt": "Close-up of Jim in his wheelchair looking up, eyes glistening with held-back tears, deep sorrow, soft deli lights behind him. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "My wife passed five years ago. I still get her roses and a cake every year on her birthday.",
+      "delivery": "[soft, shaky, holding back tears]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Jim gently touching the roses in his cart, looking down, Gregory listening beside him with his hand about to rest on Jim's shoulder, at a bright suburban American grocery store deli counter in July, glass deli case, other shoppers in the background, no signs or logos. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jim"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Then Jim told him how they met. High school. He was the star basketball player. Gloria was a cheerleader for the rival school.",
+      "delivery": "[warmer, nostalgic]",
+      "caption": "Star player, rival cheerleader",
+      "hot": [
+        "rival school"
+      ],
+      "image_prompt": "Flashback, warm sepia-tinted 1950s Indiana high school gymnasium packed with fans: Young Jim dribbling a basketball on the court, Gloria standing on the opposite sideline with her rival squad, shown from the waist up, clapping with both hands, a normal complete body with nothing missing. Young Jim: the same Jim as a tall seventeen-year-old in the 1950s, short dark hair, a white and maroon high school basketball uniform. Gloria: a seventeen-year-old American girl in the 1950s, brown ponytail with a ribbon, bright fiery eyes, a navy and gold cheerleader sweater and pleated skirt (rival school colors). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Young Jim,Gloria",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "His team beat her school in the semifinals. A buddy introduced them, and Jim asked her to come back the next night and root for his team.",
+      "delivery": "[playful, nostalgic]",
+      "caption": "Semifinals",
+      "hot": [
+        "root for his team"
+      ],
+      "image_prompt": "Flashback, sepia-tinted 1950s gym after the game: a teenage friend introducing Young Jim to Gloria; Young Jim grinning confidently, Gloria with arms crossed and an unimpressed look. Young Jim: the same Jim as a tall seventeen-year-old in the 1950s, short dark hair, a white and maroon high school basketball uniform. Gloria: a seventeen-year-old American girl in the 1950s, brown ponytail with a ribbon, bright fiery eyes, a navy and gold cheerleader sweater and pleated skirt (rival school colors). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Young Jim,Gloria",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "I don't even know you. And I've got much better things to do tomorrow night than watch your team play again.",
+      "delivery": "[sassy, fiery, annoyed]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Flashback, sepia-tinted 1950s gym: Gloria pointing a finger at Young Jim and telling him off, chin up, eyes blazing; Young Jim taken aback. Gloria: a seventeen-year-old American girl in the 1950s, brown ponytail with a ribbon, bright fiery eyes, a navy and gold cheerleader sweater and pleated skirt (rival school colors). Young Jim: the same Jim as a tall seventeen-year-old in the 1950s, short dark hair, a white and maroon high school basketball uniform. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gloria,Young Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Gloria"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "She grabbed her jacket and stormed out with her friends. Jim figured that was the last he'd ever see of her.",
+      "delivery": "[amused, a little wistful]",
+      "caption": "",
+      "hot": [
+        "stormed out"
+      ],
+      "image_prompt": "Flashback, sepia-tinted 1950s gym doors: Gloria storming out with her jacket over her arm and two cheerleader friends, Young Jim left standing alone on the court watching her go. Gloria: a seventeen-year-old American girl in the 1950s, brown ponytail with a ribbon, bright fiery eyes, a navy and gold cheerleader sweater and pleated skirt (rival school colors). Young Jim: the same Jim as a tall seventeen-year-old in the 1950s, short dark hair, a white and maroon high school basketball uniform. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gloria,Young Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "twist",
+      "speaker": "host",
+      "line": "The next night, his team won sectionals. And guess who showed up. Gloria. She stuck around to congratulate him. They were together from then on.",
+      "delivery": "[building, then tender]",
+      "caption": "She showed up",
+      "hot": [
+        "guess who showed up"
+      ],
+      "image_prompt": "Flashback, sepia-tinted 1950s gym after a championship win, confetti and cheering crowd: Gloria, now in a plain coat, smiling shyly as she congratulates sweaty, beaming Young Jim. Gloria: a seventeen-year-old American girl in the 1950s, brown ponytail with a ribbon, bright fiery eyes, a navy and gold cheerleader sweater and pleated skirt (rival school colors). Young Jim: the same Jim as a tall seventeen-year-old in the 1950s, short dark hair, a white and maroon high school basketball uniform. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gloria,Young Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Their deli orders came up. Jim kept going. The first house they built. How the kids were doing.",
+      "delivery": "[gentle, flowing]",
+      "caption": "",
+      "hot": [
+        "Jim kept going"
+      ],
+      "image_prompt": "Back at a bright suburban American grocery store deli counter in July, glass deli case, other shoppers in the background, no signs or logos: a deli worker setting two wrapped orders on the counter, while Jim keeps talking with a soft smile and Gregory listens, ignoring the food. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "I loved her as much the day she passed as the day we got married.",
+      "delivery": "[tender, slow, voice breaking]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of Jim in his wheelchair, a single tear on his cheek, a faint loving smile, holding one red rose. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jim"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "An hour went by. The game was still on his mind. Gregory stayed put.",
+      "delivery": "[quiet, steady]",
+      "caption": "1 hour later",
+      "hot": [
+        "stayed put"
+      ],
+      "image_prompt": "Wide shot of the grocery store deli area later in the evening, darker sky through the windows, Gregory still standing beside Jim's wheelchair, listening, his car keys forgotten in his hand. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gregory,Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "There was no way I was cutting this short over a silly baseball game. Jim needed a friend to talk to.",
+      "delivery": "[reflective, sincere, inner voice]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Inside the bright suburban grocery store deli area in the evening: close-up of Gregory alone, thoughtful and kind, glancing at his wristwatch and then deciding to stay, soft warm store lights behind him, no other people near him. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Gregory"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Every year on her birthday, the store manager snaps Jim's picture for the bulletin board. This time, the manager saw Jim perk up and asked for another one. With Gregory in it.",
+      "delivery": "[warm, lifting]",
+      "caption": "1 more photo",
+      "hot": [
+        "With Gregory in it"
+      ],
+      "image_prompt": "At a bright suburban American grocery store deli counter in July, glass deli case, other shoppers in the background, no signs or logos: a store manager seen only from behind holding up a phone camera, Jim in his wheelchair smiling brightly with the roses in his lap and Gregory crouching beside him, both posing. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "You live around here? Why don't you come by the house and have a piece of cake with me?",
+      "delivery": "[hopeful, shy, warm]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Jim looking up at Gregory with hopeful shy eyes, holding the boxed birthday cake on his lap. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Jim"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "I'd be honored to sit at your table and have a piece of cake with you. For Gloria.",
+      "delivery": "[moved, gentle, a little choked up]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Gregory resting his hand on Jim's shoulder, eyes wet, nodding with a warm smile. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gregory,Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Gregory"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "Gregory missed the game. He figured there'd always be another one.",
+      "delivery": "[soft, satisfied]",
+      "caption": "",
+      "hot": [
+        "another one"
+      ],
+      "image_prompt": "Night, a small cozy Indiana kitchen: Jim cutting the birthday cake at the table, the roses in a vase, a framed old photo of young Gloria on the wall, Gregory sitting across from him laughing. Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Jim,Gregory",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "Hopefully I made that little old man's night a tad bit better. 'Cause he sure made mine one of the best I've had in a long time.",
+      "delivery": "[heartfelt, quiet, smiling]",
+      "caption": "One of the best",
+      "hot": [],
+      "image_prompt": "Night, Gregory standing on Jim's front porch under a warm porch light, waving goodbye, Jim smiling in his wheelchair in the doorway. Gregory: an American man around sixty, short graying brown hair, clean-shaven, friendly round face, a navy polo shirt and khaki shorts (a summer evening). Jim: a frail white-haired American man in his mid eighties, thin kind face, deep wrinkles, sad gentle eyes, a tan cardigan over a light blue button-up shirt, sitting in a wheelchair. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+      "cast": "Gregory,Jim",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "Gregory"
+    }
+  ],
+  "ko_review": "(see /mnt/project-files/시니어쇼츠/미국_첫편_대본_20261104.md)"
+}

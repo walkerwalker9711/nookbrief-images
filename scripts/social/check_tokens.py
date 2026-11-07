@@ -20,17 +20,19 @@ def main():
         except RuntimeError as e:
             print(name, "REJECTED:", e)
             bad = True
-    try:
-        tok = google_token()
-        if not tok:
-            print("YT_REFRESH_TOKEN not set")
-        else:
+    # NookBrief, then the senior Shorts channels (한국이장님, Pops Knows), each its own refresh token
+    for name in ("YT_REFRESH_TOKEN", "KR_YT_REFRESH_TOKEN", "US_YT_REFRESH_TOKEN"):
+        try:
+            tok = google_token(name)
+            if not tok:
+                print(name, "not set")
+                continue
             ch = call("GET", f"{YT}/youtube/v3/channels", params={"part": "snippet", "mine": "true"},
                       headers={"Authorization": f"Bearer {tok}"}).get("items", [])
-            print("YT_REFRESH_TOKEN ok:", ch[0]["snippet"]["title"] if ch else "no channel on this account yet")
-    except RuntimeError as e:
-        print("YT_REFRESH_TOKEN REJECTED:", e)
-        bad = True
+            print(name, "ok:", ch[0]["snippet"]["title"] if ch else "no channel on this account yet")
+        except RuntimeError as e:
+            print(name, "REJECTED:", e)
+            bad = True
     return 1 if bad else 0
 
 

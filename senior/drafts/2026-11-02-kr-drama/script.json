@@ -1,0 +1,522 @@
+{
+  "pillar": "사기 실화",
+  "topic": "3년 전 보이스피싱으로 1억3천 잃은 70대 택시기사, 손님 행동에서 수거책 알아보고 신고해 현행범 체포",
+  "title": "1억 3천 날린 택시기사, 손님 내려 주고 떠나지 않은 이유 #실화",
+  "mood": "alert",
+  "music": "alert-chase",
+  "case_tag": "실제 사건 재구성 · 2026년 7월 김제경찰서",
+  "sources": [
+    {
+      "name": "세계일보",
+      "url": "https://www.segye.com/newsView/20260721507559"
+    }
+  ],
+  "description": "#사기실화 #보이스피싱 #실제사건\n\n3년 전 보이스피싱으로 평생 모은 1억 3천만 원을 잃은 70대 택시기사.\n어느 날 그의 택시에, 그때와 똑같은 모습의 손님이 탔습니다.\n\n▶ \"부안 신협으로 빨리\" 재촉하던 60대 남성\n▶ 손님을 내려 주고도 떠나지 않은 이유\n▶ 7차례 7억 7500만 원, 상습 수거책의 정체\n\n수상하면 망설이지 말고 112.\n\n#한국이장님 #사기실화 #보이스피싱수거책 #택시기사 #실화재구성\n\n📰 출처: 김제경찰서(세계일보)",
+  "tags": [
+    "한국이장님",
+    "사기실화",
+    "보이스피싱",
+    "수거책",
+    "택시기사",
+    "실제사건"
+  ],
+  "fact_notes": "세계일보 2026-07-21 김제: 개인택시 박모(70대) 7/10 오후 7시쯤 손님 태움, 60대로 보이는 남성 커다란 가방, 초조, '부안 신협으로 가 달라' 재촉. 3년 전 보이스피싱 조직에 속아 평생 모은 1억3000만원 잃음, 그때 수거책 행동과 닮음. 박씨 '김제에도 신협이 있다'며 김제신협 앞에 내려줌, 떠나지 않고 지켜봄, 승객 가방에서 현금 꺼내 ATM 입금하려는 듯, 112 '보이스피싱 수거책으로 의심되는 사람이 신협 안으로 들어갔습니다', 경찰 도착까지 인상착의·동선·행동 112상황실에 실시간 전달. 김제경찰서 수사팀·형사팀·지역경찰 8명 투입, 현행범 체포, 현장 피해금 2000만원 회수 → 투자 리딩방 사기 40대 직장인 여성 피해자에게 반환, 같은 피의자 7차례 7억7500만원 추가 범행. 7/20 감사장·신고 포상금, 신원 노출 원치 않음, 자신의 경험이 또 다른 피해를 막아 큰 보람. 인용 '그 사람을 보는 순간 3년 전 제 모습이 떠올랐습니다'. 대사 4('빨리요'=재촉), 14(실시간 전달), 16(체포)는 기사 행동을 말로 옮긴 것.",
+  "characters": [
+    {
+      "id": "박씨",
+      "label": "택시기사 · 70대",
+      "voice": "old_m",
+      "look": "A Korean man in his early seventies, short gray crew cut, tanned lined face, a beige jacket over a collared shirt, a taxi driver."
+    },
+    {
+      "id": "승객",
+      "label": "수거책 · 60대",
+      "voice": "adult_m2",
+      "look": "A Korean man in his sixties with a black cap, a dark navy windbreaker, gray stubble and a large black bag."
+    },
+    {
+      "id": "경찰관",
+      "label": "경찰관",
+      "voice": "adult_m",
+      "look": "A Korean male detective in his late thirties with short black hair, a dark jacket with a police vest without readable insignia."
+    },
+    {
+      "id": "피해자",
+      "label": "피해 여성 · 40대",
+      "voice": "adult_f",
+      "look": "A Korean office worker woman in her forties with a short bob, a gray blazer and white blouse."
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.12,
+  "caption_words": [
+    {
+      "spoken": "칠월 십일",
+      "written": "7월 10일"
+    },
+    {
+      "spoken": "일곱 시",
+      "written": "7시"
+    },
+    {
+      "spoken": "일일이",
+      "written": "112"
+    },
+    {
+      "spoken": "여덟 명",
+      "written": "8명"
+    },
+    {
+      "spoken": "일곱 차례",
+      "written": "7차례"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "평생 모은 1억 3천만 원을 보이스피싱으로 잃은 택시기사. 3년 뒤, 그의 택시에 똑같은 수법의 수거책이 올라탔습니다.",
+      "delivery": "[low, tense, intriguing]",
+      "caption": "1억 3천 잃은 택시기사의 택시에",
+      "hot": [
+        "수거책이"
+      ],
+      "image_prompt": "Night, inside a Korean taxi: the elderly driver glancing sharply into the rear-view mirror, in the back seat a man in a black cap clutching a large black bag, tense red-tinted city lights outside. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "전북 김제에서 개인택시를 모는 70대 박 씨. 지난 칠월 십일 저녁 일곱 시쯤, 평소처럼 손님 한 명을 태웠습니다.",
+      "delivery": "[calm, matter-of-fact]",
+      "caption": "7월 10일 저녁, 김제",
+      "hot": [
+        "손님 한 명을"
+      ],
+      "image_prompt": "A small-town Korean street at dusk in summer, a yellow Korean taxi with a roof sign pulling over by the curb, the elderly driver behind the wheel, a man in a black cap opening the back door. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "60대로 보이는 남성. 커다란 가방을 꼭 끌어안고, 어딘가 초조해 보였습니다.",
+      "delivery": "[slow, suspicious]",
+      "caption": "커다란 가방, 초조한 손님",
+      "hot": [
+        "초조해"
+      ],
+      "image_prompt": "Close-up in the back seat of the taxi: the man in his sixties hugging a large black bag tightly to his chest, eyes darting, sweat on his temple. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "부안 신협으로 가 주세요. 빨리요.",
+      "delivery": "[nervous, hurried, low]",
+      "caption": "",
+      "hot": [
+        "빨리요"
+      ],
+      "image_prompt": "The passenger leaning forward between the front seats, urging the driver, clutching the bag. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "승객,박씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "승객"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그 순간, 박 씨의 머릿속에 3년 전 악몽이 스쳐 지나갔습니다.",
+      "delivery": "[slow, ominous]",
+      "caption": "3년 전 악몽",
+      "hot": [
+        "악몽이"
+      ],
+      "image_prompt": "The elderly taxi driver's eyes in the rear-view mirror, his face freezing, a faint ghostly flashback overlay of himself handing over an envelope of cash. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "3년 전, 박 씨는 보이스피싱 조직에 속아 평생 모은 돈 1억 3천만 원을 잃었습니다.",
+      "delivery": "[heavy, sad]",
+      "caption": "3년 전, 평생 모은 1억 3천만 원",
+      "hot": [
+        "1억 3천만 원을"
+      ],
+      "image_prompt": "Flashback in desaturated tones: the same driver three years earlier, standing on a sidewalk handing a thick envelope of cash to a stranger seen only from behind, phone pressed to his ear. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그때 돈을 받아 가던 수거책의 모습이, 지금 뒷자리 손님과 너무도 닮아 있었습니다.",
+      "delivery": "[tense, slow]",
+      "caption": "그때 그 수거책과 똑같았다",
+      "hot": [
+        "너무도 닮아"
+      ],
+      "image_prompt": "Split composition: on top the faded flashback of a stranger walking away with an envelope, below the present-day passenger clutching his bag in the taxi, the same nervous posture. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "그 사람을 보는 순간, 3년 전 제 모습이 떠올랐습니다.",
+      "delivery": "[quiet, heavy, determined]",
+      "caption": "",
+      "hot": [
+        "3년 전"
+      ],
+      "image_prompt": "Close-up of the elderly taxi driver gripping the steering wheel, jaw set, eyes narrowing with resolve. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "박씨"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "손님, 김제에도 신협 있어요. 거기 내려 드릴게요.",
+      "delivery": "[calm, casual, friendly]",
+      "caption": "",
+      "hot": [
+        "김제에도"
+      ],
+      "image_prompt": "The driver turning his head slightly to the back seat with a calm, friendly face, hiding his suspicion. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "박씨"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "박 씨는 손님을 김제신협 앞에 내려 줬습니다. 그리고 떠나지 않고, 차 안에서 조용히 지켜봤습니다.",
+      "delivery": "[hushed, tense]",
+      "caption": "떠나지 않고 지켜봤다",
+      "hot": [
+        "지켜봤습니다"
+      ],
+      "image_prompt": "Evening, a taxi parked across the street from a small credit union branch with glowing windows, the elderly driver watching from the driver's seat, the passenger walking in with his bag. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "예상은 빗나가지 않았습니다. 남성은 가방에서 현금 뭉치를 꺼내, 현금인출기에 넣으려 했습니다.",
+      "delivery": "[tense, building]",
+      "caption": "가방 속 현금 뭉치",
+      "hot": [
+        "현금 뭉치를"
+      ],
+      "image_prompt": "Through the glass of the credit union lobby: the passenger at an ATM pulling thick bundles of cash out of the black bag, glancing over his shoulder. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "보이스피싱 수거책으로 의심되는 사람이 신협 안으로 들어갔습니다.",
+      "delivery": "[urgent, low, firm]",
+      "caption": "",
+      "hot": [
+        "수거책"
+      ],
+      "image_prompt": "The elderly driver in his parked taxi pressing a phone to his ear, eyes fixed on the credit union, urgent. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨",
+      "phone": {
+        "app": "call",
+        "sender": "112",
+        "time": "",
+        "messages": [
+          {
+            "text": "수거책 의심 신고",
+            "me": true
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "박씨"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "신고를 마친 뒤에도 박 씨는 자리를 지켰습니다. 경찰이 올 때까지 남성의 인상착의와 움직임을 하나하나 전했습니다.",
+      "delivery": "[tense, steady]",
+      "caption": "경찰이 올 때까지 실시간 중계",
+      "hot": [
+        "하나하나"
+      ],
+      "image_prompt": "The driver still on the phone in the taxi, leaning forward to watch, the passenger visible through the bank window at the ATM. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "아직 기계 앞에 있습니다. 안 나왔어요.",
+      "delivery": "[whispering, urgent]",
+      "caption": "",
+      "hot": [
+        "아직"
+      ],
+      "image_prompt": "Tight close-up of the driver whispering into his phone, eyes locked forward. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "박씨"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "김제경찰서는 형사 등 여덟 명을 곧바로 보냈습니다.",
+      "delivery": "[fast, rising]",
+      "caption": "경찰 8명 긴급 출동",
+      "hot": [
+        "여덟 명"
+      ],
+      "image_prompt": "Police cars with flashing lights pulling up in front of the credit union at night, plainclothes detectives and uniformed officers moving in quickly. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "경찰입니다. 보이스피싱 수거 혐의로 현행범 체포합니다.",
+      "delivery": "[firm, formal, commanding]",
+      "caption": "",
+      "hot": [
+        "현행범 체포"
+      ],
+      "image_prompt": "A police officer gripping the passenger's arm at the ATM, the black bag open on the floor with cash bundles, the passenger frozen in shock. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,승객",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "가방 속 2천만 원은, 투자 리딩방 사기를 당한 40대 직장인 여성에게 그대로 돌아갔습니다.",
+      "delivery": "[relieved, warm]",
+      "caption": "2천만 원, 피해자 품으로",
+      "hot": [
+        "그대로 돌아갔습니다"
+      ],
+      "image_prompt": "A Korean office worker woman in her forties at a police station receiving a returned envelope of money, tears of relief, bowing slightly. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "피해자",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "twist",
+      "speaker": "host",
+      "line": "수사 결과는 더 놀라웠습니다. 이 남성은 일곱 차례에 걸쳐 7억 7천5백만 원을 더 받아 간 상습 수거책이었습니다.",
+      "delivery": "[shocked, emphatic]",
+      "caption": "7차례, 7억 7500만 원",
+      "hot": [
+        "7억 7천5백만 원"
+      ],
+      "image_prompt": "The passenger in handcuffs in an interrogation room, head down, a stack of case files on the table, a detective standing over him. The passenger is always the same Korean man in his sixties (승객: black cap, dark navy windbreaker, gray stubble, a large black bag), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "승객,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "경찰은 박 씨에게 감사장과 신고 포상금을 전했습니다. 박 씨는 얼굴이 알려지는 건 원치 않았지만, 자신의 아픈 경험이 또 다른 피해를 막았다는 데 큰 보람을 느낀다고 했습니다.",
+      "delivery": "[warm, gentle]",
+      "caption": "감사장, 그리고 보람",
+      "hot": [
+        "보람을"
+      ],
+      "image_prompt": "The elderly driver at a police station receiving a certificate of appreciation, seen from the side with his face half turned away, a quiet humble smile. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "평생 모은 돈을 잃은 그날의 기억이, 다른 누군가의 평생을 지켰습니다. 수상하면 망설이지 말고 일일이.",
+      "delivery": "[warm, resonant, firm]",
+      "caption": "",
+      "hot": [
+        "일일이"
+      ],
+      "image_prompt": "The elderly driver's taxi driving off into the night on a quiet Gimje road, warm streetlights, seen from behind. The taxi driver is always the same Korean man in his early seventies (박씨: short gray crew cut, tanned lined face, beige jacket over a collared shirt), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "박씨",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "ko_review": "내레이션: 평생 모은 1억 3천만 원을 보이스피싱으로 잃은 택시기사. 3년 뒤, 그의 택시에 똑같은 수법의 수거책이 올라탔습니다.\n내레이션: 전북 김제에서 개인택시를 모는 70대 박 씨. 지난 칠월 십일 저녁 일곱 시쯤, 평소처럼 손님 한 명을 태웠습니다.\n내레이션: 60대로 보이는 남성. 커다란 가방을 꼭 끌어안고, 어딘가 초조해 보였습니다.\n승객: 부안 신협으로 가 주세요. 빨리요.\n내레이션: 그 순간, 박 씨의 머릿속에 3년 전 악몽이 스쳐 지나갔습니다.\n내레이션: 3년 전, 박 씨는 보이스피싱 조직에 속아 평생 모은 돈 1억 3천만 원을 잃었습니다.\n내레이션: 그때 돈을 받아 가던 수거책의 모습이, 지금 뒷자리 손님과 너무도 닮아 있었습니다.\n박씨: 그 사람을 보는 순간, 3년 전 제 모습이 떠올랐습니다.\n박씨: 손님, 김제에도 신협 있어요. 거기 내려 드릴게요.\n내레이션: 박 씨는 손님을 김제신협 앞에 내려 줬습니다. 그리고 떠나지 않고, 차 안에서 조용히 지켜봤습니다.\n내레이션: 예상은 빗나가지 않았습니다. 남성은 가방에서 현금 뭉치를 꺼내, 현금인출기에 넣으려 했습니다.\n박씨: 보이스피싱 수거책으로 의심되는 사람이 신협 안으로 들어갔습니다.\n내레이션: 신고를 마친 뒤에도 박 씨는 자리를 지켰습니다. 경찰이 올 때까지 남성의 인상착의와 움직임을 하나하나 전했습니다.\n박씨: 아직 기계 앞에 있습니다. 안 나왔어요.\n내레이션: 김제경찰서는 형사 등 여덟 명을 곧바로 보냈습니다.\n경찰관: 경찰입니다. 보이스피싱 수거 혐의로 현행범 체포합니다.\n내레이션: 가방 속 2천만 원은, 투자 리딩방 사기를 당한 40대 직장인 여성에게 그대로 돌아갔습니다.\n내레이션: 수사 결과는 더 놀라웠습니다. 이 남성은 일곱 차례에 걸쳐 7억 7천5백만 원을 더 받아 간 상습 수거책이었습니다.\n내레이션: 경찰은 박 씨에게 감사장과 신고 포상금을 전했습니다. 박 씨는 얼굴이 알려지는 건 원치 않았지만, 자신의 아픈 경험이 또 다른 피해를 막았다는 데 큰 보람을 느낀다고 했습니다.\n내레이션: 평생 모은 돈을 잃은 그날의 기억이, 다른 누군가의 평생을 지켰습니다. 수상하면 망설이지 말고 일일이."
+}

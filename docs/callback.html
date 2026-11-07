@@ -1,0 +1,13 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ijang Uploader login</title><style>body{font:16px/1.7 system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#1b1f2a}h1{font-size:24px}</style></head><body>
+<h1>로그인 완료 / Login done</h1>
+<p>아래 코드를 복사해서 Claude에게 보내 주세요. 코드는 몇 분 안에 만료됩니다.</p>
+<p>Copy the code below. It expires in a few minutes.</p>
+<textarea id="c" rows="4" style="width:100%;font:15px monospace" readonly></textarea>
+<p id="e" style="color:#b00020"></p>
+<script>
+const q=new URLSearchParams(location.search);
+document.getElementById('c').value=q.get('code')||'';
+if(q.get('error'))document.getElementById('e').textContent=q.get('error')+': '+(q.get('error_description')||'');
+</script>
+</body></html>

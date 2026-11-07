@@ -1,0 +1,51 @@
+[
+  {
+    "n": 1,
+    "name": "Cornelius - Wise & Heartwarming Old Man",
+    "source": "library",
+    "voice_id": "2baru8J0e15nxuG3bzXy",
+    "about": "calm A warm, gentle, and authentically aged voice that carries wisdom, kindness, and deep emotion. Perfect for cozy bedtime s"
+  },
+  {
+    "n": 2,
+    "name": "Bongpal - Cheerful, Clear and Measured",
+    "source": "library",
+    "voice_id": "PLfpgtLkFW07fDYbUiRJ",
+    "about": "crisp A cheerful and funny old man's voice"
+  },
+  {
+    "n": 3,
+    "name": "Alex - Calm Russian Analyst",
+    "source": "library",
+    "voice_id": "9AjtU6o19uipv7QL8dLL",
+    "about": "mature A native Russian male voice, approximately 50–60 years old. Medium-low pitch with a warm, slightly textured baritone. Ca"
+  },
+  {
+    "n": 4,
+    "name": "designed 4",
+    "source": "voice design",
+    "voice_id": "EH12Vp6AVEvuBL3Wenrm",
+    "about": "A Korean man aged 57, worn out by years of hardship. Low, husky, slightly hoarse middle-aged voice with audible age and fatigue, speaks slowly and emotionally in natural Korean, never youthful."
+  },
+  {
+    "n": 5,
+    "name": "designed 5",
+    "source": "voice design",
+    "voice_id": "5pAt0KkqUZgwiYpynCz1",
+    "about": "A Korean man aged 57, worn out by years of hardship. Low, husky, slightly hoarse middle-aged voice with audible age and fatigue, speaks slowly and emotionally in natural Korean, never youthful."
+  },
+  {
+    "n": 6,
+    "name": "designed 6",
+    "source": "voice design",
+    "voice_id": "cYhlacI3i4BpbgbpKtHY",
+    "about": "A weathered Korean man in his late fifties, rough tired voice with a gravelly texture, quiet and choked with emotion, clearly middle-aged, natural Korean."
+  },
+  {
+    "n": 7,
+    "name": "designed 7",
+    "source": "voice design",
+    "voice_id": "fKuRsxsRQCltAoRKJ5FM",
+    "about": "A weathered Korean man in his late fifties, rough tired voice with a gravelly texture, quiet and choked with emotion, clearly middle-aged, natural Korean."
+  }
+]

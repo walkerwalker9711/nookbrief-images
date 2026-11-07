@@ -1,0 +1,263 @@
+{
+  "pillar": "Scam",
+  "topic": "Fake USPS delivery texts demanding an address correction and card payment",
+  "title": "Pops Sends the Delivery Scam to the Wrong Inbox",
+  "mood": "alert",
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "scammer",
+      "line": "This is USPS. Your package can't be delivered because your address is incomplete.",
+      "delivery": "[official, clipped]",
+      "caption": "Fake delivery meets the wrong grandpa",
+      "hot": [
+        "USPS",
+        "incomplete"
+      ],
+      "image_prompt": "2D flat cartoon, vertical framing, centered scammer at a desk in a dim call center, smug expression while composing a deceptive message on a smartphone, blank screen bubbles and icons only, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "scammer",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "phone",
+      "speaker": "scammer",
+      "line": "Use this redelivery link to update your address and pay the fee.",
+      "delivery": "[smooth, reassuring]",
+      "caption": "There's the bait",
+      "hot": [
+        "link",
+        "fee"
+      ],
+      "image_prompt": "2D flat cartoon, vertical over-the-shoulder close-up of Pops holding his phone on a warm small-town front porch, rocking chair arm visible, phone displays blank message bubbles and simple icons only, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "host",
+      "phone": {
+        "app": "sms",
+        "sender": "+1 (202) 555-0148",
+        "time": "9:41",
+        "messages": [
+          {
+            "text": "USPS: Your package cannot be delivered due to an incomplete address. Update your address and pay the redelivery fee: https://parcel-update.example/redelivery",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "That redelivery link? Let me get it to the right department.",
+      "delivery": "[innocent, unhurried]",
+      "caption": "Special delivery",
+      "hot": [
+        "link"
+      ],
+      "image_prompt": "2D flat cartoon, vertical medium frontal shot of Pops in his front-porch rocking chair, raising one eyebrow while studying his phone, warm small-town America, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "host",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "Just enter your card details. Then we can release your package.",
+      "delivery": "[pushy, fast]",
+      "caption": "An address needs a card?",
+      "hot": [
+        "card",
+        "release"
+      ],
+      "image_prompt": "2D flat cartoon, vertical close-up of the scammer leaning toward his smartphone at a desk in a dim call center, impatient finger hovering over the screen, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "scammer",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "Funny. My street address doesn't have an expiration date.",
+      "delivery": "[dry, skeptical]",
+      "caption": "Explain that one",
+      "hot": [
+        "expiration"
+      ],
+      "image_prompt": "2D flat cartoon, vertical side-angle shot of Pops gently rocking on his front porch, deadpan expression and phone resting safely away from his tapping hand, warm small-town America, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "host",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "Pay now, or your package goes back!",
+      "delivery": "[threatening, impatient]",
+      "caption": "Now comes the pressure",
+      "hot": [
+        "Pay",
+        "now"
+      ],
+      "image_prompt": "2D flat cartoon, vertical medium shot of the scammer gripping his phone beside a dim call-center desk, exaggerated impatient expression, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "scammer",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "twist",
+      "speaker": "host",
+      "line": "Your redelivery link already went to 7726 with your text, and I blocked you. Nice try, pal.",
+      "delivery": "[satisfied, firm]",
+      "caption": "Returned to spam",
+      "hot": [
+        "7726",
+        "blocked"
+      ],
+      "image_prompt": "2D flat cartoon, vertical split composition showing Pops relaxed on his sunny front porch and the scammer frozen at his dim call-center desk, a blank message bubble moving toward a shield icon between them, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "both",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "talk",
+      "speaker": "scammer",
+      "line": "Wait, you forwarded WHAT?",
+      "delivery": "[panicked, squeaky]",
+      "caption": "Wrong inbox, buddy",
+      "hot": [
+        "forwarded"
+      ],
+      "image_prompt": "2D flat cartoon, vertical tight close-up of the scammer recoiling from his smartphone in a dim call center, eyes wide and mouth open as he drops the conversation, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "scammer",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "steps",
+      "speaker": "host",
+      "line": "Real life, kid: don't reply or tap. Forward to 7726; check delivery at USPS dot com.",
+      "delivery": "[warm, practical]",
+      "caption": "Skip the conversation",
+      "hot": [
+        "7726"
+      ],
+      "image_prompt": "2D flat cartoon, vertical medium shot of Pops on his front porch holding his phone beside simple floating shield and package icons, calm reassuring expression, blank screen bubbles only, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "host",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [
+        {
+          "text": "Don't reply or tap the link.",
+          "ok": true
+        },
+        {
+          "text": "Forward the scam text to 7726.",
+          "ok": true
+        },
+        {
+          "text": "Open USPS.com yourself to check tracking.",
+          "ok": true
+        }
+      ],
+      "items": [],
+      "cta": ""
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "Send your folks this before their next package text.",
+      "delivery": "[gentle, knowing]",
+      "caption": "Give your folks a heads-up",
+      "hot": [],
+      "image_prompt": "2D flat cartoon, vertical wide shot of Pops settling into his front-porch rocking chair with his phone lowered, a plain closed parcel beside the porch steps, warm small-town America, no text, numbers, logos or brand names anywhere, bottom third calm for captions.",
+      "cast": "host",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "Send this to your folks."
+    }
+  ],
+  "sources": [
+    {
+      "name": "USPIS",
+      "url": "https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams"
+    },
+    {
+      "name": "FTC",
+      "url": "https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages?trk=public_post-text"
+    },
+    {
+      "name": "Censys",
+      "url": "https://censys.com/blog/following-a-usps-smishing-kit-through-censys-dns-data/"
+    }
+  ],
+  "description": "A cartoon dramatization of a fake delivery text, not a real exchange.\nKid, don't reply or tap. Send this to your folks.\nSources:\nUSPIS: https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams\nFTC: https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages?trk=public_post-text\nCensys: https://censys.com/blog/following-a-usps-smishing-kit-through-censys-dns-data/\nAI voice & visuals",
+  "tags": [
+    "Pops Knows",
+    "scam text",
+    "USPS text scam",
+    "delivery scam",
+    "smishing"
+  ],
+  "ko_review": "1. 사기꾼: 우체국입니다. 주소가 불완전해서 고객님 소포를 배송할 수 없습니다.\n2. 사기꾼: 이 재배송 링크에서 주소를 수정하고 수수료를 내세요.\n3. Pops: 그 재배송 링크 말이지? 담당 부서로 잘 보내줘야겠구먼.\n4. 사기꾼: 카드 정보만 입력하세요. 그러면 소포를 보내드릴 수 있습니다.\n5. Pops: 이상하네. 우리 집 주소에는 유효기간이 없는데.\n6. 사기꾼: 지금 결제하지 않으면 소포가 반송됩니다!\n7. Pops: 네 재배송 링크는 문자째로 벌써 7726에 보냈고, 네 번호도 차단했어. 어림없다, 이 친구야.\n8. 사기꾼: 잠깐, 뭘 전달했다고요?\n9. Pops: 실제로는 말이다, 얘야. 답장도 링크 클릭도 하지 마. 7726으로 전달하고, 배송은 USPS 닷컴에 직접 들어가 확인해.\n10. Pops: 부모님께 다음 택배 문자가 오기 전에 이 영상 보내드려.",
+  "fact_notes": "선정: 제공된 최근 7일 트렌드의 'scam text'에서 미국 시청자에게 맞는 USPS 사칭 문자를 골랐다. USPS 사칭 문자 자체의 이번 주 검색량이나 급증 여부는 별도로 확인하지 못했으므로 최신 유행·급증이라는 표현은 쓰지 않았다.\n장면 1~2: 배송 문제를 내세워 링크로 유인하는 USPS 사칭 문자 수법은 USPIS 공식 경고에 근거한다. 대사는 실제 문자의 직접 인용이 아니라 수법을 설명하는 만화 재연이다. ([uspis.gov](https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams))\n장면 2·4: 주소 오류나 배송 문제를 미끼로 삼는 문자와 카드 정보를 수집하는 피싱 사이트는 Censys가 2026년 6월 12일 공개한 직접 조사에서 확인했다. 조사 통계나 피해액은 대본에 넣지 않았다. ([censys.com](https://censys.com/blog/following-a-usps-smishing-kit-through-censys-dns-data/))\n장면 3·5~8: 등장인물의 대화와 신고 완료 반전은 교육용 만화 연출이며 실제 피해 사례나 실제 신고 기록으로 제시하지 않는다. 문자 대화를 의인화한 것으로, 시청자에게 사기꾼과 대화하라고 권하지 않는다.\n장면 7·9의 7726: 연도별 통계가 아니라 미국 스팸 문자 신고용 단축번호다. 의심 문자를 전달하는 방법은 USPIS와 FTC가 안내한다. ([uspis.gov](https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams))\n장면 7의 차단은 Pops가 자기 휴대전화에서 직접 차단했다는 연출이다. 신고 즉시 통신사가 번호를 차단하거나 사이트를 폐쇄했다고 주장하지 않는다. FTC는 휴대전화와 통신사를 통한 스팸 차단 방법을 안내한다. ([consumer.ftc.gov](https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages?trk=public_post-text&utm_source=openai))\n장면 9: 답장·링크 클릭을 피하고 USPS.com에 직접 방문해 배송을 확인하라는 행동은 USPIS 공식 안내에 근거한다. ([uspis.gov](https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams))\n화면의 발신번호는 재연용 가상 번호이며 .example 링크는 실제 접속용 주소가 아니다. 자막에는 출처명을 넣지 않고 sources의 자료를 별도 출처 푸터에 사용한다. 약 130단어로, 연기 호흡을 포함해 50~55초를 목표로 한다."
+}
