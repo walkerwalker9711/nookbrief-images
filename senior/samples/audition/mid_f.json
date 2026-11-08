@@ -1,0 +1,51 @@
+[
+  {
+    "n": 1,
+    "name": "Jennie - Calm & Kind",
+    "source": "library",
+    "voice_id": "cOEUzzSDV65wtWpjhzHF",
+    "about": "calm Calm, middle-aged female voice.\n"
+  },
+  {
+    "n": 2,
+    "name": "Eunhye - Composed and Reassuring",
+    "source": "library",
+    "voice_id": "ZubHeGTOAkECknc02Zmo",
+    "about": "pleasant A poised, middle-aged South Korean female voice. She carries a calm, measured warmth with a refined clarity that feels b"
+  },
+  {
+    "n": 3,
+    "name": "Park Hyun-mi",
+    "source": "library",
+    "voice_id": "JxIGrv4AVuvbo1Dxzryu",
+    "about": "chill Middle-aged female voice."
+  },
+  {
+    "n": 4,
+    "name": "designed 4",
+    "source": "voice design",
+    "voice_id": "GoKyoHpRGEDOsejgE3eh",
+    "about": "A Korean woman aged 62, a warm mother's voice, mature and gentle, clearly in her early sixties but not frail or elderly, steady breath, speaks softly and emotionally in natural Korean."
+  },
+  {
+    "n": 5,
+    "name": "designed 5",
+    "source": "voice design",
+    "voice_id": "nsoYB6P4tvhyadqdPLQU",
+    "about": "A Korean woman aged 62, a warm mother's voice, mature and gentle, clearly in her early sixties but not frail or elderly, steady breath, speaks softly and emotionally in natural Korean."
+  },
+  {
+    "n": 6,
+    "name": "designed 6",
+    "source": "voice design",
+    "voice_id": null,
+    "about": "A Korean mother in her early sixties, soft warm alto with a little maturity in the tone, healthy and clear, not shaky, natural standard Korean, emotional and tender."
+  },
+  {
+    "n": 7,
+    "name": "designed 7",
+    "source": "voice design",
+    "voice_id": null,
+    "about": "A Korean mother in her early sixties, soft warm alto with a little maturity in the tone, healthy and clear, not shaky, natural standard Korean, emotional and tender."
+  }
+]

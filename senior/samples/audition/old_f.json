@@ -1,0 +1,51 @@
+[
+  {
+    "n": 1,
+    "name": "Lisa - Lovely and Emotional",
+    "source": "library",
+    "voice_id": "p2Wol3C7j3rHbfOrbL18",
+    "about": "gentle A warm, lively voice full of character and life experience. From heartfelt memories to mischievous anecdotes, this grand"
+  },
+  {
+    "n": 2,
+    "name": "Haemi",
+    "source": "library",
+    "voice_id": "ZjAPD4f11zlnEnZpKDgo",
+    "about": "casual A gentle, calm, and clear middle-aged woman’s voice, like one used in a spoken fairy tale."
+  },
+  {
+    "n": 3,
+    "name": "Johanna - Calm, Friendly and Inviting",
+    "source": "library",
+    "voice_id": "F6nGuJbivpy6qJE45XFS",
+    "about": "mature A gentle, delicate voice of an elderly woman, soft and unhurried, with a warm, lived-in texture. Perfect for conversatio"
+  },
+  {
+    "n": 4,
+    "name": "designed 4",
+    "source": "voice design",
+    "voice_id": "uEV8xT6DWhCGem6FwhS2",
+    "about": "A Korean grandmother in her late 70s from a rural town. Thin, slightly shaky, aged voice with a soft rasp, warm but worried, speaks slowly in natural Korean."
+  },
+  {
+    "n": 5,
+    "name": "designed 5",
+    "source": "voice design",
+    "voice_id": "eyAA1lys7jA746bir3OH",
+    "about": "A Korean grandmother in her late 70s from a rural town. Thin, slightly shaky, aged voice with a soft rasp, warm but worried, speaks slowly in natural Korean."
+  },
+  {
+    "n": 6,
+    "name": "designed 6",
+    "source": "voice design",
+    "voice_id": "nxnPRUkfyaCGREc2Uj4f",
+    "about": "An elderly Korean woman around 80, frail and breathy, a bit hoarse, gentle countryside accent, talks slowly and hesitantly."
+  },
+  {
+    "n": 7,
+    "name": "designed 7",
+    "source": "voice design",
+    "voice_id": "NwONhoPL6abQHglVQki2",
+    "about": "An elderly Korean woman around 80, frail and breathy, a bit hoarse, gentle countryside accent, talks slowly and hesitantly."
+  }
+]

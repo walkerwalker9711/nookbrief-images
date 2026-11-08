@@ -1,0 +1,503 @@
+{
+  "pillar": "감동 실화",
+  "topic": "손이 떨려 손톱을 못 깎는다며 지하철 타고 네일숍을 찾은 93세 6·25 참전용사 할아버지와 사장님의 우정",
+  "title": "93세 할아버지가 네일숍 단골이 된 이유 #실화",
+  "mood": "touching",
+  "music": "touching-guitar",
+  "case_tag": "실제 사연 재구성 · 경기 안양",
+  "sources": [
+    {
+      "name": "파이낸셜뉴스",
+      "url": "https://www.fnnews.com/news/202412111453462841"
+    },
+    {
+      "name": "SBS",
+      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1007910488"
+    },
+    {
+      "name": "서울신문",
+      "url": "https://www.twig24.com/news/world/2024/12/11/20241211500253"
+    }
+  ],
+  "description": "#감동실화 #참전용사 #실제사연\n\n손이 떨려 손톱을 못 깎는다며, 지하철을 타고 네일숍을 찾아온 93세 할아버지.\n\n▶ \"하우 머치?\" 기어코 쥐여 준 5천 원\n▶ 가게 앞을 지날 때마다 사장님 월세 걱정\n▶ 알고 보니 6·25 참전용사\n\n#한국이장님 #감동실화 #6·25참전용사 #실화재구성\n\n📰 출처: 파이낸셜뉴스, SBS, 서울신문(2024년 12월)",
+  "tags": [
+    "한국이장님",
+    "감동실화",
+    "참전용사",
+    "실제사연",
+    "네일숍",
+    "할아버지"
+  ],
+  "fact_notes": "파이낸셜뉴스·서울신문 2024-12-11, SBS 2024-12-13. 경기 안양 네일샵 사장 A씨 인스타 영상 3편. 1편(2024-10): '손이 떨려서 못 깎으신다고 지하철 타고 오셨다더라. 우리 할아버지가 생각났다'. 할아버지 '예쁘다', '하우 머치', A '30분 미만이라 돈을 받지 않겠다', 할아버지 '그냥 가면 안 된다. 30분 끌었다고 하자, 내가 주고 싶은 대로 주겠다' 5000원, '다음에 또 오겠다', A '세 번 하러 오실 수 있는 돈이다. 다음에 또 오셔야 된다. 감기 조심하셔라'. 94만 회. 2편(11-21): 93세, 6·25 참전용사, 지나갈 때마다 손님 왜 없냐고 월세 걱정, 1만원, A '10분도 안 하고 돈 받으면 사람들이 욕한다', 할아버지 '내가 주고 싶어서 주는 거다. 노인네가 주는 건데 누가 뭐라고 그러냐'. 3편(12-05): 참전유공자 모자, 계란빵을 품에 안고 와 나눔, A 떡 나눔, 발톱 정리, '이런 호강을 다해본다', 매주 목욕 나올 때 가게 지남, 눈 마주치면 차 한잔, 6·25 전쟁 이야기 보따리, A '오래오래 건강하게 우리 가게 다니셔야 한다'. 101만 회. 가정: 사장 A씨 성별·나이는 기사에 없음 → 30대 여성으로 그림(추정). '한 달 뒤'는 10월→11월 21일. '백발'은 93세 외모 묘사.",
+  "characters": [
+    {
+      "id": "할아버지",
+      "label": "할아버지 · 93세",
+      "voice": "elder_m",
+      "look": "thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater"
+    },
+    {
+      "id": "사장",
+      "label": "네일숍 사장",
+      "voice": "adult_f",
+      "look": "dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.08,
+  "caption_words": [
+    {
+      "spoken": "아흔세 살",
+      "written": "93살"
+    },
+    {
+      "spoken": "삼십 분",
+      "written": "30분"
+    },
+    {
+      "spoken": "오천 원",
+      "written": "5천 원"
+    },
+    {
+      "spoken": "구십사만 번",
+      "written": "94만 번"
+    },
+    {
+      "spoken": "십 분",
+      "written": "10분"
+    },
+    {
+      "spoken": "만 원",
+      "written": "1만 원"
+    },
+    {
+      "spoken": "육이오",
+      "written": "6·25"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "아흔세 살 할아버지가, 젊은 사람들 가는 네일숍의 단골이 됐습니다.",
+      "delivery": "[warm, intriguing, slow]",
+      "caption": "93세 할아버지, 네일숍 단골이 되다",
+      "hot": [
+        "단골이"
+      ],
+      "image_prompt": "Inside a small cozy neighborhood nail shop in Anyang with a white manicure table, a soft desk lamp, shelves of nail polish bottles, a glass front door, the grandfather sitting at the manicure table holding out his hands, the owner across from him smiling as she files his nails. ONE single full-frame picture, not a grid. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "재작년 가을, 경기도 안양의 한 작은 네일숍. 문을 열고 들어온 손님은, 백발의 할아버지였습니다.",
+      "delivery": "[gentle, storytelling]",
+      "caption": "안양의 작은 네일숍",
+      "hot": [
+        "백발의 할아버지"
+      ],
+      "image_prompt": "The glass front door of a small cozy neighborhood nail shop in Anyang with a white manicure table, a soft desk lamp, shelves of nail polish bottles, a glass front door opening on an autumn afternoon, the grandfather stepping in a little shyly; the owner looking up from behind the counter, surprised. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "손이 떨려서… 손톱을 못 깎겠어. 좀 깎아 줄 수 있나?",
+      "delivery": "[shy, slow, a little embarrassed]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of the grandfather holding up his two slightly trembling, wrinkled hands with long uneven fingernails, looking embarrassed. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할아버지"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "지하철을 타고 찾아온 길이었습니다. 그 모습에, 사장님은 문득 자기 할아버지가 생각났습니다.",
+      "delivery": "[soft, moved]",
+      "caption": "지하철 타고 찾아온 할아버지",
+      "hot": [
+        "할아버지가 생각났습니다"
+      ],
+      "image_prompt": "The owner looking at the grandfather with a soft, moved expression, eyes slightly glistening, inside a small cozy neighborhood nail shop in Anyang with a white manicure table, a soft desk lamp, shelves of nail polish bottles, a glass front door. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사장,할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "사장님은 떨리는 손을 가만히 붙잡고, 손톱을 하나하나 정성껏 다듬었습니다.",
+      "delivery": "[gentle, tender]",
+      "caption": "하나하나 정성껏",
+      "hot": [
+        "정성껏"
+      ],
+      "image_prompt": "Close-up from above of the manicure table: the owner's hands gently holding the grandfather's wrinkled trembling hand, carefully trimming one nail with clippers under a warm desk lamp. ONE single full-frame picture, not a grid. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "허허, 예쁘다… 하우 머치?",
+      "delivery": "[delighted, playful]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The grandfather admiring his neatly trimmed nails, holding his hands up to the light with a delighted grin. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할아버지"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "삼십 분도 안 걸렸으니까, 돈은 안 받을게요.",
+      "delivery": "[warm, cheerful]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Over-the-shoulder view from behind the grandfather's white-haired head and charcoal jacket (he sits on the left foreground), across the manicure table the owner smiling and waving her hand no. Only these two people; nobody else in the shop. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사장,할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사장"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "그냥 가면 안 되지. 삼십 분 끌었다고 하자. 내가 주고 싶은 대로 줄게.",
+      "delivery": "[stubborn, kind, chuckling]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The grandfather reaching into his jacket pocket for his wallet with a determined smile. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할아버지"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "할아버지는 오천 원짜리 한 장을 꺼내, 기어코 사장님 손에 쥐여 줬습니다.",
+      "delivery": "[warm, light]",
+      "caption": "기어코 쥐여 준 5천 원",
+      "hot": [
+        "기어코"
+      ],
+      "image_prompt": "Close-up of the grandfather's wrinkled hand pressing a folded banknote into the owner's palm; the banknote is plain greenish paper with no readable numbers. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "이거면 세 번은 하러 오실 수 있는 돈이에요. 다음에 꼭 또 오셔야 돼요. 감기 조심하시고요!",
+      "delivery": "[bright, caring]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "At the shop's glass door, the owner seeing the grandfather off with a wave as he walks out into the autumn street, smiling back at her. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사장,할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사장"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "사장님이 올린 이 영상은, 구십사만 번 넘게 재생됐습니다. 사람들은 할아버지가 다시 왔는지 궁금해했습니다.",
+      "delivery": "[upbeat, curious]",
+      "caption": "영상 94만 회",
+      "hot": [
+        "구십사만 번"
+      ],
+      "image_prompt": "Close-up of a smartphone lying alone on a white manicure table next to nail polish bottles, its screen showing a video player of an old man's hands with many pink heart icons floating up. No people anywhere in the picture, no faces. No readable text or numbers. ONE single full-frame picture, not a grid. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "한 달 뒤, 할아버지가 다시 찾아왔습니다. 가게 앞을 지날 때마다, 손님이 왜 없냐며 사장님 월세 걱정을 하던 할아버지였습니다.",
+      "delivery": "[warm, amused]",
+      "caption": "한 달 뒤, 다시 온 할아버지",
+      "hot": [
+        "월세 걱정을"
+      ],
+      "image_prompt": "Late autumn, the grandfather standing outside the glass window of a small cozy neighborhood nail shop in Anyang with a white manicure table, a soft desk lamp, shelves of nail polish bottles, a glass front door, peering in with a worried frown at the empty chairs; the owner inside laughing and waving him in. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "십 분도 안 하고 돈 받으면, 사람들이 저 욕해요.",
+      "delivery": "[laughing, pleading]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The owner pushing a folded banknote back across the table toward the grandfather, laughing. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사장,할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사장"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "내가 주고 싶어서 주는 거야. 노인네가 주는 건데, 누가 뭐라고 그래.",
+      "delivery": "[firm, affectionate, chuckling]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The grandfather standing up from the chair, leaving the banknote on the table and putting on his jacket with a satisfied smile. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할아버지"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그날도 할아버지는 만 원을 두고 일어났습니다. 아흔세 살. 육이오 전쟁에 나가 싸운, 참전용사였습니다.",
+      "delivery": "[slow, respectful, moving]",
+      "caption": "93세, 6·25 참전용사",
+      "hot": [
+        "참전용사였습니다"
+      ],
+      "image_prompt": "The grandfather putting on a navy blue veteran's cap with a small embroidered emblem shape (no readable text) at the shop door, standing a little straighter, dignified; soft light behind him. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "다음에 올 때는 따뜻한 계란빵을 품에 안고 왔습니다. 사장님은 떡을 꺼내 나눴습니다.",
+      "delivery": "[warm, cozy]",
+      "caption": "계란빵과 떡",
+      "hot": [
+        "계란빵을"
+      ],
+      "image_prompt": "Winter day inside a small cozy neighborhood nail shop in Anyang with a white manicure table, a soft desk lamp, shelves of nail polish bottles, a glass front door, the grandfather in his navy veteran's cap and the owner sitting together at the table sharing warm Korean egg bread from a paper bag and rice cakes, both laughing. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "허허, 내가 이런 호강을 다 해 보네.",
+      "delivery": "[delighted, laughing softly]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The grandfather sitting back in the chair with his feet on a small towel stool, laughing happily, his navy veteran's cap on, after the owner has tidied his toenails. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "할아버지"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그 뒤로 할아버지는, 매주 목욕 가는 길에 가게 앞을 지납니다. 눈이 마주치면 들어와 차 한 잔. 전쟁 이야기 보따리를 한참 풀고 갑니다.",
+      "delivery": "[gentle, nostalgic]",
+      "caption": "매주 목욕 가는 길에",
+      "hot": [
+        "이야기 보따리를"
+      ],
+      "image_prompt": "Inside a small cozy neighborhood nail shop in Anyang with a white manicure table, a soft desk lamp, shelves of nail polish bottles, a glass front door with steam rising from two cups of hot tea, the grandfather in his veteran's cap talking animatedly with his hands, the owner listening closely, chin in hand. ONE single full-frame picture, not a grid. The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "할아버지, 오래오래 건강하게 우리 가게 다니셔야 돼요.",
+      "delivery": "[tender, a little teary]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of the owner holding the grandfather's hand in both of hers across the table, looking at him with warmth. The nail shop owner is always the same Korean woman in her early thirties (사장: dark brown hair in a low ponytail, warm friendly face, a black apron over a cream sweater). The grandfather is always the same Korean man of ninety-three (할아버지: thin neatly combed white hair, deeply lined kind face, small gentle eyes, a charcoal-gray padded jacket over a beige knit sweater), never young. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "사장,할아버지",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "사장"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "나라를 지킨 손. 이제는 떨리는 그 손을, 누군가 대신 잡아 줍니다.",
+      "delivery": "[warm, resonant, slow]",
+      "caption": "",
+      "hot": [
+        "나라를 지킨 손"
+      ],
+      "image_prompt": "Close-up of the manicure table under warm golden lamp light: the grandfather's old wrinkled hand with neatly trimmed nails resting in the owner's young hands, his navy blue veteran's cap lying beside them; the frame shows only hands, sleeves (his charcoal-gray padded jacket sleeve, her cream sweater sleeve) and the cap, no faces. ONE single full-frame picture, not a grid. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "할아버지,사장",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "ko_review": "내레이션: 아흔세 살 할아버지가, 젊은 사람들 가는 네일숍의 단골이 됐습니다.\n내레이션: 재작년 가을, 경기도 안양의 한 작은 네일숍. 문을 열고 들어온 손님은, 백발의 할아버지였습니다.\n할아버지: 손이 떨려서… 손톱을 못 깎겠어. 좀 깎아 줄 수 있나?\n내레이션: 지하철을 타고 찾아온 길이었습니다. 그 모습에, 사장님은 문득 자기 할아버지가 생각났습니다.\n내레이션: 사장님은 떨리는 손을 가만히 붙잡고, 손톱을 하나하나 정성껏 다듬었습니다.\n할아버지: 허허, 예쁘다… 하우 머치?\n사장: 삼십 분도 안 걸렸으니까, 돈은 안 받을게요.\n할아버지: 그냥 가면 안 되지. 삼십 분 끌었다고 하자. 내가 주고 싶은 대로 줄게.\n내레이션: 할아버지는 오천 원짜리 한 장을 꺼내, 기어코 사장님 손에 쥐여 줬습니다.\n사장: 이거면 세 번은 하러 오실 수 있는 돈이에요. 다음에 꼭 또 오셔야 돼요. 감기 조심하시고요!\n내레이션: 사장님이 올린 이 영상은, 구십사만 번 넘게 재생됐습니다. 사람들은 할아버지가 다시 왔는지 궁금해했습니다.\n내레이션: 한 달 뒤, 할아버지가 다시 찾아왔습니다. 가게 앞을 지날 때마다, 손님이 왜 없냐며 사장님 월세 걱정을 하던 할아버지였습니다.\n사장: 십 분도 안 하고 돈 받으면, 사람들이 저 욕해요.\n할아버지: 내가 주고 싶어서 주는 거야. 노인네가 주는 건데, 누가 뭐라고 그래.\n내레이션: 그날도 할아버지는 만 원을 두고 일어났습니다. 아흔세 살. 육이오 전쟁에 나가 싸운, 참전용사였습니다.\n내레이션: 다음에 올 때는 따뜻한 계란빵을 품에 안고 왔습니다. 사장님은 떡을 꺼내 나눴습니다.\n할아버지: 허허, 내가 이런 호강을 다 해 보네.\n내레이션: 그 뒤로 할아버지는, 매주 목욕 가는 길에 가게 앞을 지납니다. 눈이 마주치면 들어와 차 한 잔. 전쟁 이야기 보따리를 한참 풀고 갑니다.\n사장: 할아버지, 오래오래 건강하게 우리 가게 다니셔야 돼요.\n내레이션: 나라를 지킨 손. 이제는 떨리는 그 손을, 누군가 대신 잡아 줍니다."
+}

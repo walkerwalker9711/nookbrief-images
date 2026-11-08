@@ -1,0 +1,435 @@
+{
+  "pillar": "사건 실화",
+  "topic": "서울 독립문역 사거리 추돌로 넘어진 차 속 엄마와 아기를, 어르신들이 먼저 뛰어들고 시민 10여 명이 차를 밀어 세워 구한 사고",
+  "title": "넘어진 차 속 \"아기 살려!\", 가장 먼저 뛰어든 건 어르신들이었다 #실화",
+  "mood": "alert",
+  "music": "alert-pressure",
+  "case_tag": "실제 사고 재구성 · 2024년 6월 서울 종로",
+  "sources": [
+    {
+      "name": "SBS",
+      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1007688266"
+    }
+  ],
+  "description": "#사건실화 #사고 #실제사건\n\n신호를 기다리던 엄마와 아기의 차를, 뒤에서 달려온 차가 들이받았습니다.\n한 바퀴를 구르고 옆으로 넘어진 차, 그리고 \"아기 살려!!\"\n\n▶ 가장 먼저 차도로 뛰어든 어르신들\n▶ 순식간에 모인 시민 10여 명\n▶ 함께 차를 민 시민이 남긴 말\n\n#한국이장님 #사건실화 #교통사고 #시민영웅 #실화재구성\n\n📰 출처: SBS(2024년 6월)",
+  "tags": [
+    "한국이장님",
+    "사건실화",
+    "교통사고",
+    "시민영웅",
+    "실제사건",
+    "어르신"
+  ],
+  "fact_notes": "SBS 2024-06-18. 6월 13일(목) 오후 서울 종로구 독립문역 사거리. 주행하던 승용차 바퀴에서 흰 연기, 빠른 속도로 신호 대기 중 앞 차량 들이받음, 들이받힌 차 한 바퀴 구른 뒤 옆으로 넘어짐, 도로 희뿌연 연기. 제목 '\"아기 살려!!\" 전복 차량 속 외침'. 인도에서 지켜본 시민 여러 명 뛰어듦, 뒤따르던 차 운전자 갓길에 차 대고 달려감, 시민 10여 명 힘 모아 넘어진 차 밀어 세움. 가해 차량 70대 운전자 브레이크 대신 가속 페달(대본엔 나이 생략). 모자 차량과 앞차까지 총 6명 피해, 모두 큰 부상 피함. 피해자 A씨 사흘 지나서야 블랙박스 확인, 커뮤니티 글 '경황이 없어서 감사하다는 말씀을 제대로 드리지 못했다', '신속하게 제 차를 세워주신 분들 덕분에 아기와 조속하게 탈출할 수 있었다'. 하루 뒤 17일 도운 시민 글 '칭찬받을 일을 한 것이 아니고…', '저보다 먼저 달려가셨던 어르신들이 정말 대단하시다. 그분들이 먼저 나서지 않았다면 누군가 먼저 달려가지 않았을 것'. 장면9 '다 같이 밀어! 하나, 둘, 셋!'은 '힘을 모아 밀었다'를 말로 옮긴 것. 어르신 수(3명)·옷·시민 성별은 그림용 추정.",
+  "characters": [
+    {
+      "id": "엄마",
+      "label": "아기 엄마",
+      "voice": "adult_f",
+      "look": "shoulder-length black hair, round gentle face, a light beige summer blouse"
+    },
+    {
+      "id": "아기",
+      "label": "아기",
+      "voice": "adult_f",
+      "look": "chubby cheeks, short tufty hair, a pale yellow onesie"
+    },
+    {
+      "id": "어르신들",
+      "label": "먼저 달려간 어르신들",
+      "voice": "old_m",
+      "look": "a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse"
+    },
+    {
+      "id": "시민",
+      "label": "함께 차를 민 시민",
+      "voice": "adult_m",
+      "look": "short black hair, a white short-sleeved office shirt and gray slacks"
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.1,
+  "caption_words": [
+    {
+      "spoken": "유월",
+      "written": "6월"
+    },
+    {
+      "spoken": "열 명",
+      "written": "10명"
+    },
+    {
+      "spoken": "여섯 명",
+      "written": "6명"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "넘어진 차 안에서, 아기 엄마가 비명을 질렀습니다. 그때 가장 먼저 뛰어든 건, 머리 희끗한 어르신들이었습니다.",
+      "delivery": "[urgent, gripping]",
+      "caption": "가장 먼저 뛰어든 어르신들",
+      "hot": [
+        "어르신들이었습니다"
+      ],
+      "image_prompt": "At a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk, a small white car lying on its side in the road in a haze of white smoke; three seniors running toward it from the sidewalk, arms outstretched. ONE single full-frame picture, not a grid. The elders are always the same group of three Korean seniors in their late sixties and seventies drawn together (어르신들: a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "어르신들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "재작년 유월, 서울 종로 독립문역 사거리. 신호를 기다리던 작은 승용차 안에는, 엄마와 어린 아기가 타고 있었습니다.",
+      "delivery": "[calm, ominous]",
+      "caption": "2024년 6월, 서울 종로",
+      "hot": [
+        "엄마와 어린 아기가"
+      ],
+      "image_prompt": "Inside a small white car stopped at a red light at a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk: the mother at the wheel glancing back and smiling at the baby in a rear-facing child seat. The mother is always the same Korean woman in her early thirties (엄마: shoulder-length black hair, round gentle face, a light beige summer blouse). The baby is always the same Korean baby about one year old (아기: chubby cheeks, short tufty hair, a pale yellow onesie). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "엄마,아기",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그때, 뒤에서 달려오던 차 바퀴에서 흰 연기가 피어올랐습니다.",
+      "delivery": "[tense, building]",
+      "caption": "뒤에서 달려오는 차",
+      "hot": [
+        "흰 연기가"
+      ],
+      "image_prompt": "Low dramatic angle on the road at a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk: a dark sedan speeding toward us, white smoke pouring from its wheels, the small white car waiting at the light ahead. No people visible. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "차는 그대로 엄마의 차를 들이받았습니다. 엄마의 차는 한 바퀴를 구르더니, 옆으로 넘어졌습니다.",
+      "delivery": "[sharp, shocked]",
+      "caption": "한 바퀴 구르고 넘어진 차",
+      "hot": [
+        "옆으로 넘어졌습니다"
+      ],
+      "image_prompt": "The moment of impact at a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk: the small white car tumbling over in mid-roll, glass fragments and dust flying, motion blur, dramatic. No people visible, no injuries shown. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "도로는 순식간에, 뿌연 연기로 뒤덮였습니다.",
+      "delivery": "[hushed, tense]",
+      "caption": "연기로 뒤덮인 도로",
+      "hot": [
+        "뿌연 연기로"
+      ],
+      "image_prompt": "The small white car lying on its side in the middle of a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk, thick white smoke drifting across the road, stopped cars and stunned onlookers on the sidewalk in the background. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "아기 살려!! 아기 좀 살려 주세요!!",
+      "delivery": "[screaming, panicked, desperate]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Inside the overturned car seen through the cracked side window: the mother hanging sideways in her seatbelt, reaching back toward the baby in the child seat, screaming; the baby crying, unhurt. The mother is always the same Korean woman in her early thirties (엄마: shoulder-length black hair, round gentle face, a light beige summer blouse). The baby is always the same Korean baby about one year old (아기: chubby cheeks, short tufty hair, a pale yellow onesie). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "엄마,아기",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "엄마"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그 순간, 인도에서 사고를 지켜보던 사람들이 차도로 뛰어들었습니다. 맨 앞에는 동네 어르신들이 있었습니다.",
+      "delivery": "[fast, rising]",
+      "caption": "맨 앞에 선 어르신들",
+      "hot": [
+        "맨 앞에는"
+      ],
+      "image_prompt": "The three seniors running into the road at a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk toward the overturned smoking car, determined faces, the woman in the floral blouse leading; other pedestrians starting to follow behind them. The elders are always the same group of three Korean seniors in their late sixties and seventies drawn together (어르신들: a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "어르신들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "뒤따르던 차 운전자도 갓길에 차를 세우고 뛰어왔습니다. 순식간에 열 명 넘는 시민이 모였습니다.",
+      "delivery": "[fast, rising]",
+      "caption": "순식간에 모인 시민 10여 명",
+      "hot": [
+        "열 명 넘는"
+      ],
+      "image_prompt": "At a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk, the helper in a white office shirt jumping out of his parked car door and running; around the overturned car more than ten citizens of all ages gathering, the three seniors already at the car. ONE single full-frame picture, not a grid. The helper is always the same Korean man in his late thirties (시민: short black hair, a white short-sleeved office shirt and gray slacks). The elders are always the same group of three Korean seniors in their late sixties and seventies drawn together (어르신들: a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "시민,어르신들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "다 같이 밀어! 하나, 둘, 셋!",
+      "delivery": "[shouting, strong, commanding]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The gray-haired man in the navy windbreaker and cap, both hands on the WHITE roof of the small white car lying on its side, shouting to the crowd; the others lined up beside him with hands on the car, straining. The elders are always the same group of three Korean seniors in their late sixties and seventies drawn together (어르신들: a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "어르신들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "어르신들"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "넘어졌던 차가, 쿵 하고 다시 네 바퀴로 섰습니다.",
+      "delivery": "[triumphant, relieved]",
+      "caption": "다시 바로 선 차",
+      "hot": [
+        "다시 네 바퀴로"
+      ],
+      "image_prompt": "At a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk, more than ten citizens and the three seniors pushing the small white car back upright, the car mid-way landing on its wheels, dust and smoke swirling, faces straining with effort. ONE single full-frame picture, not a grid. The elders are always the same group of three Korean seniors in their late sixties and seventies drawn together (어르신들: a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse). The helper is always the same Korean man in his late thirties (시민: short black hair, a white short-sleeved office shirt and gray slacks). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "어르신들,시민",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "엄마는 아기를 꼭 끌어안고, 무사히 차에서 빠져나왔습니다.",
+      "delivery": "[relieved, warm]",
+      "caption": "아기를 안고 빠져나온 엄마",
+      "hot": [
+        "무사히"
+      ],
+      "image_prompt": "The mother stepping out of the open car door clutching the baby tightly to her chest, tears of relief, the woman senior in the floral blouse supporting her arm. The mother is always the same Korean woman in her early thirties (엄마: shoulder-length black hair, round gentle face, a light beige summer blouse). The baby is always the same Korean baby about one year old (아기: chubby cheeks, short tufty hair, a pale yellow onesie). The elders are always the same group of three Korean seniors in their late sixties and seventies drawn together (어르신들: a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "엄마,아기,어르신들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "브레이크 대신 가속 페달을 밟은 사고였습니다. 여섯 명이 피해를 입었지만, 시민들 덕분에 모두 큰 부상은 피했습니다.",
+      "delivery": "[calm, explaining]",
+      "caption": "6명 피해, 큰 부상 없이",
+      "hot": [
+        "큰 부상은 피했습니다"
+      ],
+      "image_prompt": "Aftermath at a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk: an ambulance and its paramedics arriving, the damaged cars at the side of the road, citizens standing around catching their breath. ONE single full-frame picture, not a grid.  Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "사흘 뒤, 엄마는 블랙박스 영상을 보고서야 그날 무슨 일이 있었는지 알게 됐습니다.",
+      "delivery": "[quiet, reflective]",
+      "caption": "사흘 뒤, 블랙박스 영상",
+      "hot": [
+        "블랙박스 영상을"
+      ],
+      "image_prompt": "Night at home, the mother sitting on the sofa holding the sleeping baby, watching dashcam footage on a smartphone, her hand over her mouth, eyes filling with tears. The phone screen shows only a blurry road scene, no text. The mother is always the same Korean woman in her early thirties (엄마: shoulder-length black hair, round gentle face, a light beige summer blouse). The baby is always the same Korean baby about one year old (아기: chubby cheeks, short tufty hair, a pale yellow onesie). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "엄마,아기",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "경황이 없어서, 감사하다는 말씀도 제대로 못 드렸어요. 차를 세워 주신 분들 덕분에, 아기와 빨리 탈출할 수 있었습니다.",
+      "delivery": "[tearful, grateful, soft]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "Close-up of the mother typing on her phone with the baby asleep on her shoulder, crying softly with gratitude. The mother is always the same Korean woman in her early thirties (엄마: shoulder-length black hair, round gentle face, a light beige summer blouse). The baby is always the same Korean baby about one year old (아기: chubby cheeks, short tufty hair, a pale yellow onesie). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "엄마,아기",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "엄마"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "다음 날, 그날 함께 차를 밀었던 한 시민도 글을 올렸습니다.",
+      "delivery": "[warm, curious]",
+      "caption": "함께 차를 밀었던 시민의 글",
+      "hot": [
+        "한 시민도"
+      ],
+      "image_prompt": "The helper in his white office shirt at his desk in an office at lunchtime, typing a post on his phone, a thoughtful smile. The helper is always the same Korean man in his late thirties (시민: short black hair, a white short-sleeved office shirt and gray slacks). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "시민",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "칭찬받을 일 한 거 아닙니다. 저보다 먼저 달려가신 어르신들이 정말 대단하세요. 그분들이 먼저 나서지 않았다면, 아무도 먼저 달려가지 않았을 겁니다.",
+      "delivery": "[sincere, humble, moved]",
+      "caption": "",
+      "hot": [],
+      "image_prompt": "The helper looking up from his phone toward the window, remembering; a soft translucent memory image of the three seniors running into the road behind him. The helper is always the same Korean man in his late thirties (시민: short black hair, a white short-sleeved office shirt and gray slacks). The elders are always the same group of three Korean seniors in their late sixties and seventies drawn together (어르신들: a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "시민,어르신들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "시민"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "누군가 먼저 뛰어야, 모두가 뜁니다. 그날 맨 앞에 선 건, 우리 어르신들이었습니다.",
+      "delivery": "[warm, proud, resonant]",
+      "caption": "",
+      "hot": [
+        "맨 앞에 선 건"
+      ],
+      "image_prompt": "Golden late afternoon at a busy Seoul city intersection in early summer daylight near a subway station entrance, with tall buildings and a wide crosswalk, the three seniors walking away together along the crosswalk seen from behind, the city bustling normally again. ONE single full-frame picture, not a grid. The elders are always the same group of three Korean seniors in their late sixties and seventies drawn together (어르신들: a gray-haired man in a navy windbreaker and cap, a white-haired man in a light blue short-sleeved shirt, and a woman with short gray permed hair in a floral blouse). Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos, no blood or gore.",
+      "cast": "어르신들",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "ko_review": "내레이션: 넘어진 차 안에서, 아기 엄마가 비명을 질렀습니다. 그때 가장 먼저 뛰어든 건, 머리 희끗한 어르신들이었습니다.\n내레이션: 재작년 유월, 서울 종로 독립문역 사거리. 신호를 기다리던 작은 승용차 안에는, 엄마와 어린 아기가 타고 있었습니다.\n내레이션: 그때, 뒤에서 달려오던 차 바퀴에서 흰 연기가 피어올랐습니다.\n내레이션: 차는 그대로 엄마의 차를 들이받았습니다. 엄마의 차는 한 바퀴를 구르더니, 옆으로 넘어졌습니다.\n내레이션: 도로는 순식간에, 뿌연 연기로 뒤덮였습니다.\n엄마: 아기 살려!! 아기 좀 살려 주세요!!\n내레이션: 그 순간, 인도에서 사고를 지켜보던 사람들이 차도로 뛰어들었습니다. 맨 앞에는 동네 어르신들이 있었습니다.\n내레이션: 뒤따르던 차 운전자도 갓길에 차를 세우고 뛰어왔습니다. 순식간에 열 명 넘는 시민이 모였습니다.\n어르신들: 다 같이 밀어! 하나, 둘, 셋!\n내레이션: 넘어졌던 차가, 쿵 하고 다시 네 바퀴로 섰습니다.\n내레이션: 엄마는 아기를 꼭 끌어안고, 무사히 차에서 빠져나왔습니다.\n내레이션: 브레이크 대신 가속 페달을 밟은 사고였습니다. 여섯 명이 피해를 입었지만, 시민들 덕분에 모두 큰 부상은 피했습니다.\n내레이션: 사흘 뒤, 엄마는 블랙박스 영상을 보고서야 그날 무슨 일이 있었는지 알게 됐습니다.\n엄마: 경황이 없어서, 감사하다는 말씀도 제대로 못 드렸어요. 차를 세워 주신 분들 덕분에, 아기와 빨리 탈출할 수 있었습니다.\n내레이션: 다음 날, 그날 함께 차를 밀었던 한 시민도 글을 올렸습니다.\n시민: 칭찬받을 일 한 거 아닙니다. 저보다 먼저 달려가신 어르신들이 정말 대단하세요. 그분들이 먼저 나서지 않았다면, 아무도 먼저 달려가지 않았을 겁니다.\n내레이션: 누군가 먼저 뛰어야, 모두가 뜁니다. 그날 맨 앞에 선 건, 우리 어르신들이었습니다."
+}

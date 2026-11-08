@@ -1,0 +1,35 @@
+[
+  {
+    "n": 1,
+    "name": "designed 1",
+    "source": "voice design (unsaved)",
+    "voice_id": null,
+    "generated_voice_id": "QTotoQ4zyG9BoJTaDKwE",
+    "about": "A frail American widower in his mid eighties from Indiana. Soft, thin, slightly shaky old voice, a little hoarse, speaks slowly, holding back tears, natural Midwestern American English, clearly very old."
+  },
+  {
+    "n": 2,
+    "name": "designed 2",
+    "source": "voice design (unsaved)",
+    "voice_id": null,
+    "generated_voice_id": "jcIYujy1q094tBKXwOdi",
+    "about": "A frail American widower in his mid eighties from Indiana. Soft, thin, slightly shaky old voice, a little hoarse, speaks slowly, holding back tears, natural Midwestern American English, clearly very old."
+  },
+  {
+    "n": 3,
+    "name": "designed 3",
+    "source": "voice design (unsaved)",
+    "voice_id": null,
+    "generated_voice_id": "tOWaVtO86FWbDVV8QujG",
+    "about": "An elderly American man around 86, gentle and lonely, light papery wavering voice with a dry rasp, slow with pauses, kind small-town Indiana accent, never deep or booming.",
+    "saved_voice_id": "tOWaVtO86FWbDVV8QujG"
+  },
+  {
+    "n": 4,
+    "name": "designed 4",
+    "source": "voice design (unsaved)",
+    "voice_id": null,
+    "generated_voice_id": "3NGbBomWpTmuv8XtQOAx",
+    "about": "An elderly American man around 86, gentle and lonely, light papery wavering voice with a dry rasp, slow with pauses, kind small-town Indiana accent, never deep or booming."
+  }
+]

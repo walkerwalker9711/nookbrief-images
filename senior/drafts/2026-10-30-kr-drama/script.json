@@ -1,0 +1,566 @@
+{
+  "pillar": "감동 실화",
+  "topic": "폭염 속 길에서 울던 50대 노숙인, 경찰 설득으로 30년 만에 형과 재회",
+  "title": "길에서 울던 50대 노숙인, 30년 전 집을 나온 진짜 이유 #실화",
+  "mood": "touching",
+  "music": "touching-family",
+  "case_tag": "실제 사건 재구성 · 2026년 8월 성남중원경찰서",
+  "scenes": [
+    {
+      "kind": "hook",
+      "speaker": "host",
+      "line": "지난 팔월 육일 아침 일곱 시 삼십육 분, 일일이에 신고 한 통이 들어왔습니다.",
+      "delivery": "[calm, low, intriguing]",
+      "caption": "8월 6일 아침, 112 신고",
+      "hot": [
+        "일일이"
+      ],
+      "image_prompt": "Early summer morning on a quiet Seongnam street, heat haze rising off the asphalt, a police car parked by the curb, harsh sunlight. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "여기 길에서 어떤 남자분이 크게 울고 계세요.",
+      "delivery": "[worried, hushed]",
+      "caption": "",
+      "hot": [
+        "울고"
+      ],
+      "image_prompt": "A Korean woman passerby in her forties on the sidewalk holding a phone to her ear, glancing back worriedly, morning heat. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "행인",
+      "phone": {
+        "app": "call",
+        "sender": "112",
+        "time": "",
+        "messages": [
+          {
+            "text": "길에서 사람이 울고 있어요",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "행인"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "출동한 경찰관이 성남의 한 길가에서 찾은 건, 바닥에 주저앉아 울고 있는 쉰일곱 살 남성이었습니다. 아침부터 푹푹 찌는 폭염이었습니다.",
+      "delivery": "[slow, heavy]",
+      "caption": "폭염 속 길가의 57세 남성",
+      "hot": [
+        "폭염"
+      ],
+      "image_prompt": "Wide shot of a worn-out Korean man in his late fifties sitting on the curb of a roadside, head bowed, sobbing, shabby clothes and a plastic bag beside him, blazing sun, a police officer walking toward him. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "선생님, 경찰입니다. 괜찮으십니까?",
+      "delivery": "[gentle, concerned, respectful]",
+      "caption": "",
+      "hot": [
+        "괜찮으십니까"
+      ],
+      "image_prompt": "The police officer crouching down beside the crying man on the sidewalk, one hand on his shoulder, sincere worried face. The man with the officer is always the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt), never a young man. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "남성은 더위에 지쳐 쓰러지기 직전이었습니다. 경찰관은 젖은 수건으로 몸을 닦아 열을 식히며, 정신을 잃지 않도록 계속 말을 걸었습니다.",
+      "delivery": "[urgent but warm]",
+      "caption": "젖은 수건으로 열을 식히며",
+      "hot": [
+        "젖은 수건"
+      ],
+      "image_prompt": "Close-up of the police officer wiping the exhausted man's face and neck with a wet towel, sweat on both of them, the man's eyes half closed. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "선생님, 제 목소리 들리십니까? 조금만 버티십시오.",
+      "delivery": "[firm, steady, caring]",
+      "caption": "",
+      "hot": [
+        "버티십시오"
+      ],
+      "image_prompt": "Medium close-up of the police officer holding the man's arm and speaking to him steadily, bright sun behind. The man with the officer is always the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt), never a young man. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "더운데… 길에서 사는 게 너무 힘들고… 서러워서요…",
+      "delivery": "[broken, sobbing, exhausted]",
+      "caption": "",
+      "hot": [
+        "서러워서요"
+      ],
+      "image_prompt": "Close-up of the man's tear-streaked weathered face, lips trembling, looking down. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "남성"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "파출소로 모셔 와 신원을 확인해 보니, 이 남성은 삼십 년 전 가족이 실종 신고를 낸 사람이었습니다.",
+      "delivery": "[low, revealing]",
+      "caption": "30년 전 실종 신고된 사람",
+      "hot": [
+        "실종 신고"
+      ],
+      "image_prompt": "Inside a small police substation, the officer at a desk looking at a monitor in surprise; in the background the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt) sits on a bench holding a paper cup of water. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "선생님, 형님께서 예전에 선생님 실종 신고를 하셨습니다.",
+      "delivery": "[gentle, careful]",
+      "caption": "",
+      "hot": [
+        "형님께서"
+      ],
+      "image_prompt": "The officer sitting across from the man in the substation, leaning forward, speaking softly; the man looks up startled. The man with the officer is always the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt), never a young man. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "고향은 전남 여수. 그는 태어날 때부터 소아마비를 앓았습니다. 치료비로 가족이 더 힘들어질까 봐, 삼십 년 전 스스로 집을 나왔던 겁니다.",
+      "delivery": "[slow, tender]",
+      "caption": "가족에게 짐이 될까 봐",
+      "hot": [
+        "스스로"
+      ],
+      "image_prompt": "Faded memory scene: a young Korean man with a slight limp walking away from a small seaside house in Yeosu at dawn with a bag, looking back once, harbor in the distance, muted warm tones. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "안 됩니다… 연락하지 마세요. 형한테 또 짐이 될 순 없어요.",
+      "delivery": "[pleading, choked]",
+      "caption": "",
+      "hot": [
+        "짐이"
+      ],
+      "image_prompt": "Close-up of the man in the substation shaking his head, hands clasped tightly, eyes wet. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "남성"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그는 끝까지 거부했습니다. 하지만 경찰관은 포기하지 않고, 꼬박 한 시간을 곁에서 설득했습니다.",
+      "delivery": "[steady]",
+      "caption": "1시간의 설득",
+      "hot": [
+        "한 시간을"
+      ],
+      "image_prompt": "The officer sitting next to the man on the substation bench, a wall clock above them, the man staring at the floor. The man with the officer is always the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt), never a young man. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "형님은 지금도 선생님 소식을 기다리고 계실 겁니다. 한 번만 연락드려 보시지요.",
+      "delivery": "[warm, sincere, respectful]",
+      "caption": "",
+      "hot": [
+        "기다리고"
+      ],
+      "image_prompt": "Medium close-up of the officer speaking earnestly to the man, kind eyes. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "한참을 망설이던 그가, 마침내 고개를 끄덕였습니다.",
+      "delivery": "[soft, hopeful]",
+      "caption": "",
+      "hot": [
+        "고개를"
+      ],
+      "image_prompt": "Close-up of the man slowly nodding, a tear falling, the officer's hand on his shoulder. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "성남 도촌파출소입니다. 동생분을 찾았습니다.",
+      "delivery": "[calm, official, warm]",
+      "caption": "",
+      "hot": [
+        "찾았습니다"
+      ],
+      "image_prompt": "The officer at the substation desk on the phone, the man watching anxiously beside him. The man with the officer is always the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt), never a young man. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "경찰관,남성",
+      "phone": {
+        "app": "call",
+        "sender": "도촌파출소",
+        "time": "",
+        "messages": [
+          {
+            "text": "동생분을 찾았습니다",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "경찰관"
+    },
+    {
+      "kind": "phone",
+      "speaker": "host",
+      "line": "정말… 정말 살아 있습니까? 당장 가겠습니다!",
+      "delivery": "[shocked, voice cracking, urgent]",
+      "caption": "",
+      "hot": [
+        "살아"
+      ],
+      "image_prompt": "A Korean man in his sixties in a Yeosu home, phone pressed to his ear, standing up abruptly, hand over his mouth, eyes filling with tears. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "형",
+      "phone": {
+        "app": "call",
+        "sender": "도촌파출소",
+        "time": "",
+        "messages": [
+          {
+            "text": "정말 살아 있습니까?",
+            "me": false
+          }
+        ]
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "형"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "형은 그 길로 여수에서 출발했고, 다섯 시간 만에 파출소 문을 열고 들어왔습니다.",
+      "delivery": "[building, emotional]",
+      "caption": "5시간 만에 도착",
+      "hot": [
+        "다섯 시간"
+      ],
+      "image_prompt": "The older brother pushing open the glass door of the police substation, breathless, afternoon light behind him. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "형",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "삼십 년 만에 마주한 형제는, 서로를 끌어안고 한참을 울었습니다.",
+      "delivery": "[moved, slow]",
+      "caption": "30년 만의 재회",
+      "hot": [
+        "삼십 년 만에"
+      ],
+      "image_prompt": "The two brothers embracing tightly inside the substation, both crying, the officer standing a step back, moved. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "형",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "talk",
+      "speaker": "host",
+      "line": "동생 여수로 데려가서… 잘 살겠습니다. 정말 고맙습니다.",
+      "delivery": "[tearful, grateful]",
+      "caption": "",
+      "hot": [
+        "잘 살겠습니다"
+      ],
+      "image_prompt": "The older brother bowing deeply to the officer while holding his younger brother's hand. The younger brother is the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt); the older brother is the man in his sixties with short gray hair and a checked shirt. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "형,남성,경찰관",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "형"
+    },
+    {
+      "kind": "scene",
+      "speaker": "host",
+      "line": "그리고 형제는 함께, 삼십 년 만에 고향 여수로 돌아갔습니다.",
+      "delivery": "[warm, gentle]",
+      "caption": "함께 고향 여수로",
+      "hot": [
+        "여수로"
+      ],
+      "image_prompt": "The two brothers walking side by side toward the Yeosu harbor at golden hour, the older one supporting the younger, backs to the viewer. The younger brother is the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt); the older brother is the man in his sixties with short gray hair and a checked shirt. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "형,남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    },
+    {
+      "kind": "outro",
+      "speaker": "host",
+      "line": "길가의 울음소리를 지나치지 않은 신고 한 통, 그리고 한 시간의 설득이 삼십 년을 되돌렸습니다.",
+      "delivery": "[warm, resonant, slow]",
+      "caption": "",
+      "hot": [
+        "삼십 년을"
+      ],
+      "image_prompt": "Wide warm sunset over the Yeosu sea, the two brothers standing together on the pier seen from behind, the older one's arm around the younger. The younger brother is the 57-year-old man (남성, weathered face, messy graying hair, stubble, faded sweat-stained T-shirt); the older brother is the man in his sixties with short gray hair and a checked shirt. Korean 2D flat webtoon drama, vertical composition, lower third empty, no text, numbers or logos.",
+      "cast": "형,남성",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [],
+      "cta": "",
+      "role": "내레이션"
+    }
+  ],
+  "sources": [
+    {
+      "name": "아시아경제",
+      "url": "https://www.asiae.co.kr/article/2026080717001524288"
+    },
+    {
+      "name": "머니투데이(뉴시스)",
+      "url": "https://supple.kr/news/cmsiblhux003d8sshaz2z5av6"
+    }
+  ],
+  "description": "#감동실화 #가족 #실제사건\n\n폭염 속 길가에서 울던 57세 남성.\n알고 보니 30년 전 가족이 실종 신고를 낸 사람이었습니다.\n\n▶ 젖은 수건으로 열을 식히며 말을 건 경찰관\n▶ 가족에게 짐이 될까 봐 스스로 집을 나온 이유\n▶ 한 시간의 설득, 그리고 형의 한마디 \"정말 살아있느냐, 당장 가겠다\"\n\n#한국이장님 #감동실화 #가족상봉 #실화재구성\n\n📰 출처: 성남중원경찰서(아시아경제, 뉴시스·머니투데이)",
+  "tags": [
+    "한국이장님",
+    "감동실화",
+    "가족상봉",
+    "실제사건",
+    "경찰미담",
+    "30년만의재회"
+  ],
+  "fact_notes": "8/6 07:36 112 신고(행인 '길에서 사람이 울고 있다'), 도촌파출소 손성욱·모성갑 경사 출동, 강모씨(57) 폭염에 지쳐 노상에 앉아 울고 있었음, 젖은 수건으로 체온 낮추고 계속 말을 걺, 본인 '더운 날씨에 노숙 생활이 너무 힘들고 서러워 울었다', 신원 확인 결과 실종 신고 상태(형 60대 B씨가 과거 신고), 여수 출신 선천성 소아마비, 가족에게 치료비 등 경제적 부담 주기 싫어 30년 전 고향 떠남, 부산 등지 거쳐 6년간 성남, 연락 강하게 거부 → 약 1시간 설득 → 동의, 형 '정말 살아있느냐. 당장 가겠다', 5시간여 만에 도착, 서로 끌어안고 눈물, 형 '동생을 여수로 데려가 잘 살겠다', 함께 여수로 돌아감. 경찰관 대사 4·6·13·15번은 '설득·말을 걸었다'를 말로 옮긴 것.",
+  "characters": [
+    {
+      "id": "경찰관",
+      "label": "경찰관",
+      "voice": "adult_m",
+      "look": "A Korean male police officer in his mid-thirties with short black hair, a light blue short-sleeved uniform shirt, navy trousers, and a dark utility belt without readable insignia."
+    },
+    {
+      "id": "행인",
+      "label": "신고한 시민",
+      "voice": "adult_f",
+      "look": "A Korean woman in her forties with shoulder-length black hair, a beige summer blouse and a tote bag."
+    },
+    {
+      "id": "남성",
+      "label": "57세 남성",
+      "voice": "adult_m2",
+      "look": "A thin Korean man aged 57 with sunburned weathered skin, messy graying hair, stubble, a faded sweat-stained T-shirt and worn trousers."
+    },
+    {
+      "id": "형",
+      "label": "형 · 60대",
+      "voice": "old_m",
+      "look": "A Korean man in his sixties with short gray hair, a tanned face, a plain checked short-sleeved shirt and slacks."
+    }
+  ],
+  "format": "drama",
+  "voice_tempo": 1.12,
+  "caption_words": [
+    {
+      "spoken": "팔월 육일",
+      "written": "8월 6일"
+    },
+    {
+      "spoken": "일곱 시 삼십육 분",
+      "written": "7시 36분"
+    },
+    {
+      "spoken": "일일이",
+      "written": "112"
+    },
+    {
+      "spoken": "쉰일곱 살",
+      "written": "57세"
+    },
+    {
+      "spoken": "삼십 년",
+      "written": "30년"
+    },
+    {
+      "spoken": "한 시간",
+      "written": "1시간"
+    },
+    {
+      "spoken": "다섯 시간",
+      "written": "5시간"
+    }
+  ],
+  "ko_review": "내레이션: 지난 팔월 육일 아침 일곱 시 삼십육 분, 일일이에 신고 한 통이 들어왔습니다.\n행인: 여기 길에서 어떤 남자분이 크게 울고 계세요.\n내레이션: 출동한 경찰관이 성남의 한 길가에서 찾은 건, 바닥에 주저앉아 울고 있는 쉰일곱 살 남성이었습니다. 아침부터 푹푹 찌는 폭염이었습니다.\n경찰관: 선생님, 경찰입니다. 괜찮으십니까?\n내레이션: 남성은 더위에 지쳐 쓰러지기 직전이었습니다. 경찰관은 젖은 수건으로 몸을 닦아 열을 식히며, 정신을 잃지 않도록 계속 말을 걸었습니다.\n경찰관: 선생님, 제 목소리 들리십니까? 조금만 버티십시오.\n남성: 더운데… 길에서 사는 게 너무 힘들고… 서러워서요…\n내레이션: 파출소로 모셔 와 신원을 확인해 보니, 이 남성은 삼십 년 전 가족이 실종 신고를 낸 사람이었습니다.\n경찰관: 선생님, 형님께서 예전에 선생님 실종 신고를 하셨습니다.\n내레이션: 고향은 전남 여수. 그는 태어날 때부터 소아마비를 앓았습니다. 치료비로 가족이 더 힘들어질까 봐, 삼십 년 전 스스로 집을 나왔던 겁니다.\n남성: 안 됩니다… 연락하지 마세요. 형한테 또 짐이 될 순 없어요.\n내레이션: 그는 끝까지 거부했습니다. 하지만 경찰관은 포기하지 않고, 꼬박 한 시간을 곁에서 설득했습니다.\n경찰관: 형님은 지금도 선생님 소식을 기다리고 계실 겁니다. 한 번만 연락드려 보시지요.\n내레이션: 한참을 망설이던 그가, 마침내 고개를 끄덕였습니다.\n경찰관: 성남 도촌파출소입니다. 동생분을 찾았습니다.\n형: 정말… 정말 살아 있습니까? 당장 가겠습니다!\n내레이션: 형은 그 길로 여수에서 출발했고, 다섯 시간 만에 파출소 문을 열고 들어왔습니다.\n내레이션: 삼십 년 만에 마주한 형제는, 서로를 끌어안고 한참을 울었습니다.\n형: 동생 여수로 데려가서… 잘 살겠습니다. 정말 고맙습니다.\n내레이션: 그리고 형제는 함께, 삼십 년 만에 고향 여수로 돌아갔습니다.\n내레이션: 길가의 울음소리를 지나치지 않은 신고 한 통, 그리고 한 시간의 설득이 삼십 년을 되돌렸습니다."
+}

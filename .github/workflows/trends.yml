@@ -1,0 +1,33 @@
+name: trends
+# Daily, read-only YouTube collection for the senior Shorts trend board (scripts/trends). The schedule only runs from
+# main; until PR #4 is merged a push touching this file runs it (last manual run 2026-10-28).
+on:
+  schedule:
+    - cron: "0 21 * * *"  # 06:00 KST
+  workflow_dispatch:
+  push:
+    branches: [claude/project-thread-9sna6x]
+    paths: [scripts/trends/**, .github/workflows/trends.yml]
+permissions:
+  contents: write
+concurrency: { group: trends, cancel-in-progress: false }
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install requests==2.32.3
+      - working-directory: scripts/trends
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python collect.py && python build_page.py
+      - run: |
+          git config user.name "nookbrief-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add trends
+          git commit -m "trends: $(date -u +%F)" || exit 0
+          for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done

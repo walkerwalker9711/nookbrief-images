@@ -1,0 +1,85 @@
+{
+  "pillar": "혜택·서류",
+  "topic": "2026년 근로장려금 기한 후 신청 조건과 마감",
+  "title": "근로장려금 신청 놓쳤다면, 저장할 8가지",
+  "mood": "warm",
+  "scenes": [
+    {
+      "kind": "list",
+      "speaker": "host",
+      "line": "아, 아. 놓친 장려금, 아직 신청됩니다. 저장하고 부모님 것도 봐드리세요.",
+      "delivery": "[warm, clear]",
+      "caption": "2026 근로장려금\n모르면 손해 보는 8가지",
+      "hot": [
+        "장려금",
+        "저장하고"
+      ],
+      "image_prompt": "2D flat cartoon, warm Korean village community hall atmosphere, the village chief character centered, waist up, pointing upward toward an empty area reserved for a benefit card overlay, a small village loudspeaker in the background, vertical composition, keep the bottom third clear for subtitles, no text, no numbers, no logos.",
+      "cast": "host",
+      "phone": {
+        "app": "none",
+        "sender": "",
+        "time": "",
+        "messages": []
+      },
+      "steps": [],
+      "items": [
+        {
+          "label": "기한 후 신청 마감",
+          "value": "2026.12.1."
+        },
+        {
+          "label": "단독 연소득",
+          "value": "2025년 2,200만원 미만"
+        },
+        {
+          "label": "홑벌이 부부합산",
+          "value": "2025년 3,200만원 미만"
+        },
+        {
+          "label": "맞벌이 부부합산",
+          "value": "2025년 4,400만원 미만"
+        },
+        {
+          "label": "가구원 전체 재산",
+          "value": "2025.6.1. 기준 2.4억원 미만"
+        },
+        {
+          "label": "재산에 따른 감액",
+          "value": "1.7억~2.4억원 미만: 50%"
+        },
+        {
+          "label": "기한 후 추가 감액",
+          "value": "5% 감액"
+        },
+        {
+          "label": "신청: 홈택스·손택스",
+          "value": ""
+        }
+      ],
+      "cta": ""
+    }
+  ],
+  "sources": [
+    {
+      "name": "국세청",
+      "url": "https://webtv.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&nttSn=1350768"
+    },
+    {
+      "name": "국세청",
+      "url": "https://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=238977&mi=40397"
+    }
+  ],
+  "description": "놓친 근로장려금, 기한 후 신청 확인표를 저장하세요.\n2025년 근로·사업·종교인소득이 있는 가구 대상이며, 부채는 재산에서 빼지 않습니다. 세부 요건 심사 후 지급됩니다.\n출처: 국세청, 2026.4.30. 근로·자녀장려금 정기 신청 보도자료\nhttps://webtv.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&nttSn=1350768\n출처: 국세청, 신청기간 및 방법\nhttps://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=238977&mi=40397\nAI 음성·그림",
+  "tags": [
+    "한국이장님",
+    "근로장려금",
+    "2026근로장려금",
+    "기한후신청",
+    "홈택스",
+    "손택스",
+    "부모님혜택"
+  ],
+  "ko_review": "한 장 카드로 11초 유지. 도입 음성만 약 6초, 금액과 조건은 읽지 않습니다.\n음성: 아, 아. 놓친 장려금, 아직 신청됩니다. 저장하고 부모님 것도 봐드리세요.\n카드: 2026 근로장려금 / 모르면 손해 보는 8가지\n① 신청 마감: 2026.12.1.\n② 단독 연소득: 2025년 2,200만원 미만\n③ 홑벌이 부부합산: 2025년 3,200만원 미만\n④ 맞벌이 부부합산: 2025년 4,400만원 미만\n⑤ 가구원 전체 재산: 2025.6.1. 기준 2.4억원 미만\n⑥ 재산 1.7억~2.4억원 미만: 50% 감액\n⑦ 기한 후 신청: 추가 5% 감액\n⑧ 신청: 홈택스·손택스\n출처는 카드 제목이 아닌 별도 하단 출처 영역에 표시합니다.",
+  "fact_notes": "주간 검색량 자료가 제공되지 않았고 이번 검색에서도 실제 주간 검색 수요는 확인하지 못했습니다. 인기 급상승으로 표현하지 않고 현재 신청 가능한 주제를 선정했습니다.\n① 2026년 기한 후 신청 마감은 12월 1일입니다. 국세청 신청기간 안내로 확인했습니다. ([d.nts.go.kr](https://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=238977&mi=40397))\n②~④ 국세청 2026.4.30. 발표의 2025년 귀속 총소득 기준입니다. 단독 2,200만원, 홑벌이 부부합산 3,200만원, 맞벌이 부부합산 4,400만원 미만입니다. 올해 발표 수치이며 2026년 발생 소득 기준과 혼동하지 않도록 카드에 2025년을 명시했습니다. ([webtv.nts.go.kr](https://webtv.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&nttSn=1350768))\n⑤ 재산은 2025.6.1. 기준 가구원 전체 합계 2.4억원 미만이며 부채는 차감하지 않습니다. ([webtv.nts.go.kr](https://webtv.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&nttSn=1350768))\n⑥ 재산 1.7억원 이상 2.4억원 미만은 산정액의 50%만 지급합니다. ([webtv.nts.go.kr](https://webtv.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&nttSn=1350768))\n⑦ 기한 후 신청은 산정액의 95% 지급, 즉 5% 감액입니다. 재산 감액과 별개로 적용되는 조건이므로 카드에 추가 감액으로 표시했습니다. ([webtv.nts.go.kr](https://webtv.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&nttSn=1350768))\n⑧ 홈택스 모바일·PC 신청이 가능하며 모바일 앱은 손택스입니다. ([d.nts.go.kr](https://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=238977&mi=40397))\n근로·사업·종교인소득 및 가구 요건 등을 충족해야 하며, 이미 반기 신청을 완료한 가구는 중복 정기 신청이 필요하지 않습니다. 신청만으로 지급이 확정되는 것은 아닙니다. ([webtv.nts.go.kr](https://webtv.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&nttSn=1350768))"
+}

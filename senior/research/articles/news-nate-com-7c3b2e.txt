@@ -1,0 +1,2 @@
+https://news.nate.com/view/20260930n41714
+error HTTPSConnectionPool(host='news.nate.com', port=443): Max retries exceeded with url: /view/20260930n41714 (Caused by ConnectTimeoutError(<HTTPSConnection(host='news.nate.com', port=443) at 0x72180e2b4410>, 'Connection to news.nate.com timed out. (connect timeout=30)'))

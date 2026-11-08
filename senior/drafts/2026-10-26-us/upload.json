@@ -1,0 +1,15 @@
+{
+  "channel": "us",
+  "title": "Pops Sends the Delivery Scam to the Wrong Inbox",
+  "description": "A cartoon dramatization of a fake delivery text, not a real exchange.\nKid, don't reply or tap. Send this to your folks.\nSources:\nUSPIS: https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams\nFTC: https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages?trk=public_post-text\nCensys: https://censys.com/blog/following-a-usps-smishing-kit-through-censys-dns-data/\nAI voice & visuals",
+  "tags": [
+    "Pops Knows",
+    "scam text",
+    "USPS text scam",
+    "delivery scam",
+    "smishing"
+  ],
+  "made_with_ai": true,
+  "video": "video.mp4",
+  "status": "draft"
+}
