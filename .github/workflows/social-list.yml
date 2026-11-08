@@ -19,3 +19,5 @@ jobs:
         run: python pin_check.py
       - working-directory: scripts/social
         run: python redirect_check.py
+      - working-directory: scripts/social
+        run: python ga_check.py
