@@ -1,0 +1,326 @@
+{
+ "pillar": "True story (incident)",
+ "topic": "Hampton NH 3-year-old Eyas Tran notices newspapers piling up; elderly neighbor found trapped in her basement 3+ days (May 2020)",
+ "title": "He Was 3. He Noticed What Grown-Ups Missed #truestory",
+ "mood": "alert",
+ "music": "alert-mystery",
+ "case_tag": "TRUE STORY · May 2020 · New Hampshire",
+ "sources": [
+  {
+   "name": "WHDH 7News",
+   "url": "https://whdh.com/news/3-year-old-credited-with-helping-police-find-elderly-nh-woman-trapped-in-her-basement/"
+  },
+  {
+   "name": "AP via WCAX",
+   "url": "https://www.wcax.com/content/news/NH-boy-3-helps-police-find-trapped-elderly-neighbor--570307551.html"
+  },
+  {
+   "name": "CBS Boston",
+   "url": "https://www.cbsnews.com/boston/news/hampton-new-hampshire-police-woman-in-basement"
+  }
+ ],
+ "description": "#truestory #neighbors #rescue\n\n\"Thank the young boy for his keen observation.\"\n\nA 3-year-old in Hampton, New Hampshire wanted to drop off his neighbor's paper. There was already a pile. Police found her trapped in her basement after more than 3 days.\n\n#mayorofmainst #truestory #checkonyourneighbors\n\nSource: WHDH, AP, CBS Boston (May 2020)\n\nRetold with AI voice & visuals",
+ "tags": [
+  "true story",
+  "rescue",
+  "neighbors",
+  "New Hampshire",
+  "3 year old hero",
+  "wellness check",
+  "Mayor of Main St"
+ ],
+ "fact_notes": "WHDH (2020): Hampton, N.H.; 3-year-old boy hailed for alerting police; officers responding to a request for a wellness check around 2 p.m. on Drakes Landing found the woman in her basement trapped inside a small corridor; the little boy had alerted his mother to the pile of newspapers on his neighbor's porch after he asked to deliver her newspaper; trapped more than three days but still in good spirits; taken to Portsmouth Hospital for minor injuries; Hampton Police statement: 'The Hampton Police would like to thank the young boy for his keen observation and we encourage residents to check on the elderly and vulnerable folks during these uncertain times.' AP via WCAX (2020-05-08): Eyas Tran and his mother went for a walk Wednesday; the boy wanted to put a newspaper on her porch but noticed several more; the woman lives alone, wasn't answering her phone or the door; when police got in they found her trapped; good spirits, minor injuries. Woman's name not given by AP/WHDH, left out. Assumed: looks, clothes, who knocked and called (reported only that she did not answer), the officer's look, the stretcher picture, the outro picture.",
+ "characters": [
+  {
+   "id": "Eyas",
+   "label": "Eyas Tran · 3",
+   "voice": "adult_f",
+   "look": "a three-year-old boy, short dark hair, round cheeks, a small red hoodie and sneakers"
+  },
+  {
+   "id": "Mom",
+   "label": "Eyas's mom",
+   "voice": "adult_f",
+   "look": "Eyas's mother, a woman in her early thirties, dark hair in a ponytail, a gray zip-up jacket"
+  },
+  {
+   "id": "Neighbor",
+   "label": "The neighbor",
+   "voice": "old_f",
+   "look": "an older woman who lives alone, short gray hair, a lavender cardigan"
+  },
+  {
+   "id": "Officer",
+   "label": "Hampton Police",
+   "voice": "adult_m",
+   "look": "a New Hampshire town police officer in his forties, short brown hair, a navy police uniform with no readable badge, patch or name text"
+  }
+ ],
+ "format": "drama",
+ "voice_tempo": 1.0,
+ "caption_words": [],
+ "ko_review": "(see /mnt/project-files/시니어쇼츠/미국_6편_대본_20261109.md)",
+ "scenes": [
+  {
+   "kind": "hook",
+   "speaker": "host",
+   "line": "A 3-year-old just wanted to drop off his neighbor's newspaper. That's how she got found.",
+   "delivery": "[quiet, intriguing]",
+   "caption": "3 years old",
+   "hot": [
+    "3-year-old"
+   ],
+   "image_prompt": "Eyas holding a rolled-up newspaper with both hands on a quiet suburban sidewalk in spring, looking up at a house, serious little face. Eyas: a three-year-old boy, short dark hair, round cheeks, a small red hoodie and sneakers, full body, small in the frame. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Eyas",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "May 2020. Hampton, New Hampshire. Little Eyas Tran is out for a walk with his mom.",
+   "delivery": "[storytelling, easy]",
+   "caption": "May 2020, New Hampshire",
+   "hot": [
+    "walk"
+   ],
+   "image_prompt": "A small New England coastal town street in May, gray-shingled houses, Eyas holding his mom's hand on a walk, both seen from the waist up for Mom. Eyas: a three-year-old boy, short dark hair, round cheeks, a small red hoodie and sneakers. Mom: Eyas's mother, a woman in her early thirties, dark hair in a ponytail, a gray zip-up jacket. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Eyas,Mom",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "He wants to drop the paper on the porch for his neighbor. An older lady who lives alone.",
+   "delivery": "[gentle]",
+   "caption": "",
+   "hot": [
+    "lives alone"
+   ],
+   "image_prompt": "Eyas tugging at his mom's hand and pointing at a neighbor's front porch, Mom smiling down at him. Eyas: a three-year-old boy, short dark hair, round cheeks, a small red hoodie and sneakers. Mom: Eyas's mother, a woman in her early thirties, dark hair in a ponytail, a gray zip-up jacket. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Eyas,Mom",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "But when he gets up there, there's already a pile. Newspapers, just sitting there.",
+   "delivery": "[slower, a little uneasy]",
+   "caption": "Papers piling up",
+   "hot": [
+    "pile"
+   ],
+   "image_prompt": "No people anywhere in the picture, an empty front porch. Several rolled newspapers in plastic sleeves piled by the front door of a gray-shingled New England house, a closed door, curtains drawn, overcast light, quietly wrong. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Eyas points them out to his mom.",
+   "delivery": "[curious]",
+   "caption": "",
+   "hot": [
+    "points them out"
+   ],
+   "image_prompt": "Eyas on the porch steps pointing at the pile of newspapers, looking back at his mom, who is frowning now. Eyas: a three-year-old boy, short dark hair, round cheeks, a small red hoodie and sneakers. Mom: Eyas's mother, a woman in her early thirties, dark hair in a ponytail, a gray zip-up jacket. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Eyas,Mom",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Nobody's answering the door. Nobody's answering the phone.",
+   "delivery": "[tense, building]",
+   "caption": "No answer",
+   "hot": [
+    "Nobody"
+   ],
+   "image_prompt": "Mom knocking on the neighbor's front door with one hand, phone at her ear with the other, worried. Mom: Eyas's mother, a woman in her early thirties, dark hair in a ponytail, a gray zip-up jacket, shown from the waist up. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Mom",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "Around 2 p.m., police show up for a wellness check.",
+   "delivery": "[tense]",
+   "caption": "Wellness check",
+   "hot": [
+    "wellness check"
+   ],
+   "image_prompt": "A police officer walking up the front path of the gray-shingled house in the afternoon, a police car parked at the curb with no readable text. Officer: a New Hampshire town police officer in his forties, short brown hair, a navy police uniform with no readable badge, patch or name text. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Officer",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "twist",
+   "speaker": "host",
+   "line": "They find her in the basement. Stuck in a tiny corridor. She'd been trapped down there for more than 3 days.",
+   "delivery": "[low, serious]",
+   "caption": "Trapped 3+ days",
+   "hot": [
+    "3 days"
+   ],
+   "image_prompt": "A dim cramped basement corridor lit by a flashlight beam: the officer kneeling to reach the neighbor, who sits wedged in the narrow passage, looking up with relief. Officer: a New Hampshire town police officer in his forties, short brown hair, a navy police uniform with no readable badge, patch or name text. Neighbor: an older woman who lives alone, short gray hair, a lavender cardigan. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Officer,Neighbor",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "scene",
+   "speaker": "host",
+   "line": "And get this. She was still in good spirits. Minor injuries. They took her to Portsmouth Hospital.",
+   "delivery": "[relieved, a small smile]",
+   "caption": "Good spirits",
+   "hot": [
+    "good spirits"
+   ],
+   "image_prompt": "The neighbor on a stretcher outside her house, wrapped in a blanket, smiling weakly and giving a small wave, an ambulance behind her with no readable text. Neighbor: an older woman who lives alone, short gray hair, a lavender cardigan. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Neighbor",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "The Hampton Police would like to thank the young boy for his keen observation.",
+   "delivery": "[warm, official]",
+   "caption": "Keen observation",
+   "hot": [],
+   "image_prompt": "The officer standing on a sunny sidewalk, smiling as he speaks, a hint of pride. Officer: a New Hampshire town police officer in his forties, short brown hair, a navy police uniform with no readable badge, patch or name text. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Officer",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Officer"
+  },
+  {
+   "kind": "talk",
+   "speaker": "host",
+   "line": "We encourage residents to check on the elderly and vulnerable folks during these uncertain times.",
+   "delivery": "[sincere]",
+   "caption": "Check on your neighbors",
+   "hot": [],
+   "image_prompt": "The officer looking toward a row of small houses on the street, thoughtful. Officer: a New Hampshire town police officer in his forties, short brown hair, a navy police uniform with no readable badge, patch or name text. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Officer",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "Officer"
+  },
+  {
+   "kind": "outro",
+   "speaker": "host",
+   "line": "Most of us walk right past a stack of newspapers. A 3-year-old didn't.",
+   "delivery": "[warm, a small smile]",
+   "caption": "He noticed",
+   "hot": [
+    "3-year-old"
+   ],
+   "image_prompt": "Eyas sitting on his own front steps in the golden afternoon, swinging his legs, a single newspaper on his lap, smiling. Eyas: a three-year-old boy, short dark hair, round cheeks, a small red hoodie and sneakers. ONE single full-frame picture, not a grid. Webtoon drama, vertical composition, lower third calm, no text, numbers or logos.",
+   "cast": "Eyas",
+   "phone": {
+    "app": "none",
+    "sender": "",
+    "time": "",
+    "messages": []
+   },
+   "steps": [],
+   "items": [],
+   "cta": "",
+   "role": "내레이션"
+  }
+ ],
+ "label": "⚠ TRUE RESCUE"
+}

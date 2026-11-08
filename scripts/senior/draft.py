@@ -974,7 +974,7 @@ def build_props(channel, script, images, work, folder=None):
         shutil.copy(logo, Path(work) / "logo.png")
     props = {"lang": "ko" if channel == "kr" else "en", "logo": "logo.png" if logo.exists() else None,
              "case": script.get("case_tag", "") if script.get("format") in ("story", "drama") else "",
-             "drama": script.get("format") == "drama", "mood": script["mood"], "label": c["labels"][script["mood"]],
+             "drama": script.get("format") == "drama", "mood": script["mood"], "label": script.get("label") or c["labels"][script["mood"]],
              "brand": c["name"], "host": c["host"], "mic": bool(scenes[0]["vo_at"]), "scenes": scenes, **audio,
              "source": f"{c['source']}: " + ", ".join(dict.fromkeys(s["name"] for s in script["sources"][:2]))}
     path = Path(work) / "props.json"
