@@ -1,0 +1,13 @@
+{
+  "started_for": null,
+  "pinterest": "skipped: Pinterest secrets not set",
+  "instagram": {
+    "media_id": "18004166990810108",
+    "published_at": 1793597897
+  },
+  "youtube": {
+    "video_id": "tH27HULqMzA",
+    "privacy": "public",
+    "thumbnail": "set"
+  }
+}

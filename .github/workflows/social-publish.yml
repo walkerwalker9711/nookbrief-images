@@ -6,6 +6,7 @@ on:
     paths: ["social/queue/**"]
   schedule:
     - cron: "23 * * * *"  # starts approved posts that were given a later "not_before"
+    - cron: "53 * * * *"  # second slot: GitHub drops many hourly runs, and each run starts only one delayed post
   workflow_dispatch:
     inputs:
       topic:
