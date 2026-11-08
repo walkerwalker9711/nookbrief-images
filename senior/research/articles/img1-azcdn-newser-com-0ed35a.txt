@@ -1,0 +1,2 @@
+https://img1-azcdn.newser.com/story/290661/3-year-olds-keen-observation-saves-elderly-neighbor.html
+error HTTPSConnectionPool(host='img1-azcdn.newser.com', port=443): Max retries exceeded with url: /story/290661/3-year-olds-keen-observation-saves-elderly-neighbor.html (Caused by NameResolutionError("HTTPSConnection(host='img1-azcdn.newser.com', port=443): Failed to resolve 'img1-azcdn.newser.com' ([Errno -2] Name or service not known)"))
