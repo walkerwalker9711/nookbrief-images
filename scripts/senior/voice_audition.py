@@ -189,7 +189,20 @@ def save(channel, text):
     return clone(channel, text)
 
 
+def delete(text):
+    """'audition kr delete <voice_id> ...': delete named voices only (owner said yes 11-08), never a voices.json one."""
+    used = json.dumps(json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8")))
+    for vid in text.split():
+        if vid in used:
+            print("kept (in use)", vid)
+            continue
+        r = requests.delete(f"{API}/voices/{vid}", headers=headers(), timeout=30)
+        print("deleted", vid, r.status_code)
+
+
 def main(channel, role, text):
+    if role == "delete":
+        return delete(text)
     if role == "save":
         return save(channel, text)
     if role == "clone":
