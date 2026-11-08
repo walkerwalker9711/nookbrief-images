@@ -31,7 +31,10 @@
     "extra_mid_f_chosen": "2026-10-31: old_f grandma voice far too old for a 63-year-old mother (owner); audition mid_f no. 5, steady low alto (~155 Hz), clearly apart from the daughter's Jiyoung (~225 Hz)",
     "extra_old_pitch": 0,
     "extra_elder_m_voice_id": "VI3r6B5hvriPWL61mvT0",
-    "extra_elder_m_voice_name": "kr elder_m 6 (owner pick 11-03, 90s grandfather)"
+    "extra_elder_m_voice_name": "kr elder_m 6 (owner pick 11-03, 90s grandfather)",
+    "extra_teen_m_voice_id": "6MpcjyokRbGjFheBMdMU",
+    "extra_teen_m_voice_name": "kr teen_m 5 (Voice Design, 20세 안팎 젊은 남자 = 고등학생 역)",
+    "extra_teen_m_chosen": "owner picked no. 2 (= teen_m_5) on 2026-11-08"
   },
   "us": {
     "provider": "elevenlabs",

@@ -31,6 +31,11 @@ DESIGN = {
                "An ordinary Korean woman around 72, the kind of grandmother you meet at the market. Plain, homely, "
                "clearly older voice with a mild rasp, firm and stubborn when upset, steady breath, natural standard "
                "Korean, never robotic, never shaky, never theatrical."],
+    # teen_m: the voice of a high school boy (11-08; a design that says 17 or high school is blocked by ElevenLabs as a minor, so the description says around twenty: two students saved a man in his 80s; every saved voice is an adult)
+    "teen_m": ["A young Korean man around twenty, a light clear youthful male voice, polite and a little shy, sincere, "
+               "speaks naturally in everyday standard Korean, sounds very young, never deep, never childish.",
+               "A Korean college freshman, bright and earnest young male voice, light tenor, slightly nervous but proud "
+               "when talking to a reporter, natural everyday Korean, sounds very young."],
     # mid_m: a worn-out man in his late 50s (owner 10-30: the 57-year-old sounded like a young man)
     "mid_m": ["A Korean man aged 57, worn out by years of hardship. Low, husky, slightly hoarse middle-aged voice with "
               "audible age and fatigue, speaks slowly and emotionally in natural Korean, never youthful.",
@@ -198,7 +203,20 @@ def save(channel, text):
     return clone(channel, text)
 
 
+def delete(text):
+    """'audition kr delete <voice_id> ...': delete named voices only (owner said yes 11-08), never a voices.json one."""
+    used = json.dumps(json.loads((ROOT / "senior" / "voices.json").read_text(encoding="utf-8")))
+    for vid in text.split():
+        if vid in used:
+            print("kept (in use)", vid)
+            continue
+        r = requests.delete(f"{API}/voices/{vid}", headers=headers(), timeout=30)
+        print("deleted", vid, r.status_code)
+
+
 def main(channel, role, text):
+    if role == "delete":
+        return delete(text)
     if role == "save":
         return save(channel, text)
     if role == "clone":
@@ -227,7 +245,7 @@ def main(channel, role, text):
         for p in design(desc, long)[:2]:
             n += 1
             (OUT / f"{role}_{n}.mp3").write_bytes(base64.b64decode(p.get("audio_base_64") or p.get("audio_base64")))
-            if channel == "us":  # keep slots free: save only the owner's pick later
+            if channel == "us" or role == "teen_m":  # keep slots free (10/10 on 11-08): save only the owner's pick later
                 found.append({"n": n, "name": f"designed {n}", "source": "voice design (unsaved)", "voice_id": None,
                               "generated_voice_id": p["generated_voice_id"], "about": desc})
                 continue
